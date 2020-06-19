@@ -1,0 +1,807 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>5 快速开启第一个Angular</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="第三课" href="third.html" />
+    <link rel="prev" title="4 学习TypeScript知识" href="typescript.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/main-page-logo-small-hat.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">目录：</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="start.html">Angular 9</a></li>
+<li class="toctree-l1"><a class="reference internal" href="first.html">第一课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="whatisangular.html"><span class="sectnum">1</span> Angular概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="howtolearn.html"><span class="sectnum">2</span> 学习Angular需要什么基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nodejs.html"><span class="sectnum">3</span> 掌握Node.js和npm基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="second.html">第二课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="typescript.html"><span class="sectnum">4</span> 学习TypeScript知识</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#"><span class="sectnum">5</span> 快速开启第一个Angular</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#angular-cli"><span class="sectnum">5.1</span> 初识Angular CLI</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1"><span class="sectnum">5.1.1</span> 安装Angular CLI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2"><span class="sectnum">5.1.2</span> 运行Angular CLI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3"><span class="sectnum">5.1.3</span> 卸载及更新Angular CLI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cli-ex100-angular"><span class="sectnum">5.1.4</span> [示例 cli-ex100] 快速开启第一个Angular</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id4"><span class="sectnum">5.2</span> 准备Angular的开发环境</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ide"><span class="sectnum">5.2.1</span> 如何扩展IDE的功能</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cli-ex200"><span class="sectnum">5.2.2</span> [示例 cli-ex200] 在运行时编辑工程</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5"><span class="sectnum">5.2.3</span> 编译时的错误提醒</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6"><span class="sectnum">5.2.4</span> 运行时的错误提醒</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id7"><span class="sectnum">5.3</span> Angular CLI常用命令及选项</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id8"><span class="sectnum">5.3.1</span> 初始化命令及选项介绍</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9"><span class="sectnum">5.3.2</span> 创建命令及选项介绍</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id10"><span class="sectnum">5.4</span> Angular项目结构概述</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id11"><span class="sectnum">5.5</span> 如何启动Angular应用程序</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id12"><span class="sectnum">5.6</span> Angular的启动过程有哪些步骤</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id13"><span class="sectnum">5.7</span> 小结</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="third.html">第三课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angcomponent.html"><span class="sectnum">6</span> 学习Angular组件知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angtemplate.html"><span class="sectnum">7</span> 学习Angular模板知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angdirective.html"><span class="sectnum">8</span> 掌握Angular指令应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fourth.html">第四课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angmodule.html"><span class="sectnum">9</span> 学习Angular模块知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angroute.html"><span class="sectnum">10</span> 熟悉Angular路由功能</a></li>
+<li class="toctree-l1"><a class="reference internal" href="injection.html"><span class="sectnum">11</span> 学习Angular的服务及依赖注入</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fifth.html">第五课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reactive.html"><span class="sectnum">12</span> 掌握响应式编程基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form.html"><span class="sectnum">13</span> 学习Angular表单知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="httpclient.html"><span class="sectnum">14</span> 熟悉HttpClient模块</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sixth.html">第六课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pipe.html"><span class="sectnum">15</span> 深入学习Angular管道知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ui.html"><span class="sectnum">16</span> Angular与Angular Material组件库</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rxjs.html"><span class="sectnum">17</span> 学习RxJS在Angular中的实际应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="seventh.html">第七课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="material.html"><span class="sectnum">18</span> 实战基于Angular Material实现表格组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bootstrap.html"><span class="sectnum">19</span> 集成Bootstrap前端组件库</a></li>
+<li class="toctree-l1"><a class="reference internal" href="echart.html"><span class="sectnum">20</span> 在Angular项目中使用图表</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appid.html"><span class="sectnum">21</span> 使用IBM Cloud™ App ID对Angular应用进行认证</a></li>
+<li class="toctree-l1"><a class="reference internal" href="communication.html"><span class="sectnum">22</span> 掌握在Angular组件间通信</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pwa.html"><span class="sectnum">23</span> Angular与渐进式WEB应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="message.html"><span class="sectnum">24</span> 实现简单的消息通知机制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="localdata.html"><span class="sectnum">25</span> 如何与本地数据打交道</a></li>
+<li class="toctree-l1"><a class="reference internal" href="test.html"><span class="sectnum">26</span> 熟悉Angular测试</a></li>
+<li class="toctree-l1"><a class="reference internal" href="package.html"><span class="sectnum">27</span> 熟悉Angular环境配置及打包</a></li>
+<li class="toctree-l1"><a class="reference internal" href="universal.html"><span class="sectnum">28</span> 学习Angular服务端渲染</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deploy.html"><span class="sectnum">29</span> 如何部署Angular应用程序</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user.html"><span class="sectnum">30</span> 实战用户管理系统</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">CVI Talent</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">首页</a> &raquo;</li>
+        
+      <li><span class="sectnum">5</span> 快速开启第一个Angular</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        <a href="https://pages.github.ibm.com/lanzejun/talent/index.html" class="fa fa-github"> CVITube</a>
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="angular">
+<h1><span class="sectnum">5</span> 快速开启第一个Angular<a class="headerlink" href="#angular" title="Permalink to this headline">¶</a></h1>
+<p>使用Angular可以构建现代Web、移动端或桌面应用程序。本章带领读者如何在本地开发环境中使用Angular CLI工具来构建并运行一个简单的Angular应用。</p>
+<div class="section" id="angular-cli">
+<h2><span class="sectnum">5.1</span> 初识Angular CLI<a class="headerlink" href="#angular-cli" title="Permalink to this headline">¶</a></h2>
+<p>Angular CLI（Command Line Interface Tool）是一个命令行工具，用于实现自动化开发工作流程。它能用来创建项目、生成应用和组件代码，并在开发期间执行多种任务，比如测试、打包和部署。在终端中使用的ng命令就是Angular CLI命令，它能帮助开发者更好的工作。Angular CLI包含的命令有很多，读者暂时不需要为这些繁琐的命令而烦恼，因为以后可以随时查看Angular CLI的帮助信息。</p>
+<p>目前，只要记住以下这些就够了：</p>
+<ul class="simple">
+<li><p>它可以创建新的Angular应用程序；</p></li>
+<li><p>它可以通过实时、重新加载及更新来运行开发服务器；</p></li>
+<li><p>它可以添加功能到现有的Angular应用程序；</p></li>
+<li><p>它可以运行应用程序的单元测试和端到端 (E2E) 测试；</p></li>
+<li><p>它可以构建应用程序；</p></li>
+<li><p>它可以打包及部署应用程序。</p></li>
+</ul>
+<p>在详细介绍Angular CLI之前，我们先来看一下如何安装Angular CLI。</p>
+<div class="section" id="id1">
+<h3><span class="sectnum">5.1.1</span> 安装Angular CLI<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>Angular CLI依赖Node.js环境，因此必须确保系统中已经有了Node.js环境。</p>
+<p>要安装Angular CLI，只需在终端行中运行以下命令，该命令将自行下载并安装：</p>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>npm install -g angular-cli
+</pre></div>
+</div>
+</div></blockquote>
+<p>一般情况下，推荐全局安装Angular CLI，这样可以在任何目录下使用该命令。</p>
+</div>
+<div class="section" id="id2">
+<h3><span class="sectnum">5.1.2</span> 运行Angular CLI<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>验证是否成功安装 Angular CLI，可在终端执行 <code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">version</span></code> 命令，例如：</p>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ ng version
+
+    _                      _                 ____ _     ___
+   / <span class="se">\ </span>  _ __   __ _ _   _<span class="p">|</span> <span class="p">|</span> __ _ _ __     / ___<span class="p">|</span> <span class="p">|</span>   <span class="p">|</span>_ _<span class="p">|</span>
+  / △ <span class="se">\ </span><span class="p">|</span> <span class="s1">&#39;_ \ / _` | | | | |/ _` | &#39;</span>__<span class="p">|</span>   <span class="p">|</span> <span class="p">|</span>   <span class="p">|</span> <span class="p">|</span>    <span class="p">|</span> <span class="p">|</span>
+ / ___ <span class="se">\|</span> <span class="p">|</span> <span class="p">|</span> <span class="p">|</span> <span class="o">(</span>_<span class="p">|</span> <span class="p">|</span> <span class="p">|</span>_<span class="p">|</span> <span class="p">|</span> <span class="p">|</span> <span class="o">(</span>_<span class="p">|</span> <span class="p">|</span> <span class="p">|</span>      <span class="p">|</span> <span class="p">|</span>___<span class="p">|</span> <span class="p">|</span>___ <span class="p">|</span> <span class="p">|</span>
+/_/   <span class="se">\_\_</span><span class="p">|</span> <span class="p">|</span>_<span class="p">|</span><span class="se">\_</span>_, <span class="p">|</span><span class="se">\_</span>_,_<span class="p">|</span>_<span class="p">|</span><span class="se">\_</span>_,_<span class="p">|</span>_<span class="p">|</span>       <span class="se">\_</span>___<span class="p">|</span>_____<span class="p">|</span>___<span class="p">|</span>
+                <span class="p">|</span>___/
+
+
+Angular CLI: <span class="m">9</span>.0.2
+Node: <span class="m">12</span>.16.0
+OS: darwin x64
+
+Angular: <span class="m">9</span>.0.1
+... animations, common, compiler, compiler-cli, core, forms
+... language-service, platform-browser, platform-browser-dynamic
+... router
+Ivy Workspace: Yes
+
+Package                           Version
+-----------------------------------------------------------
+@angular-devkit/architect         <span class="m">0</span>.900.2
+@angular-devkit/build-angular     <span class="m">0</span>.900.2
+@angular-devkit/build-optimizer   <span class="m">0</span>.900.2
+@angular-devkit/build-webpack     <span class="m">0</span>.900.2
+@angular-devkit/core              <span class="m">9</span>.0.2
+@angular-devkit/schematics        <span class="m">9</span>.0.2
+@angular/cli                      <span class="m">9</span>.0.2
+@ngtools/webpack                  <span class="m">9</span>.0.2
+@schematics/angular               <span class="m">9</span>.0.2
+@schematics/update                <span class="m">0</span>.900.2
+rxjs                              <span class="m">6</span>.5.4
+typescript                        <span class="m">3</span>.7.5
+webpack                           <span class="m">4</span>.41.2
+</pre></div>
+</div>
+</div></blockquote>
+<p>上述命令显示Angular CLI安装成功，版本是9.0.2。</p>
+<div class="admonition-google admonition">
+<p class="admonition-title">关于Google收集统计信息</p>
+<p>当我们使用CLI命令是，有时候会出现提示下面的信息：</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ ng g d log
+? Would you like to share anonymous usage data about this project with the Angular Team at
+Google under Google’s Privacy Policy at https://policies.google.com/privacy? For more
+details and how to change this setting, see http://angular.io/analytics. No
+</pre></div>
+</div>
+<p>从Angular CLI版本8开始，Angular小组将analytics命令添加到CLI中。analytics命令用于收集系统信息（如操作系统信息、CPU内核数、内存大小和Node.js版本等信息），收集这些信息的目的是帮助Angular小组持续优化CLI功能以及调整改进的优先级。当出现上述信息时，系统会提示是否愿意共享项目信息，用户可以拒绝或跳过提示，则不会收集任何数据。也可以使用下面的命令禁止或启用analytics命令：</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng analytics off <span class="c1"># 禁用analytics</span>
+ng analytics on <span class="c1"># 启用用analytics</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id3">
+<h3><span class="sectnum">5.1.3</span> 卸载及更新Angular CLI<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>要更新Angular CLI版本，应将其先卸载然后重新安装：</p>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>npm uninstall -g @angular/cli <span class="c1"># 卸载Angular CLI</span>
+npm install -g @angular/cli <span class="c1"># 安装最新版本的Angular CLI</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="cli-ex100-angular">
+<h3><span class="sectnum">5.1.4</span> [示例 cli-ex100] 快速开启第一个Angular<a class="headerlink" href="#cli-ex100-angular" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>打开终端窗口。</p></li>
+<li><p>导航到合适的文件夹。例如，～/work。</p></li>
+<li><p>输入 <code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">new</span> <span class="pre">cli-ex100</span></code> 命令，该命令将在名为“app”的文件夹中创建一个新的Angular应用程序，例如：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ ng new cli-ex100
+? Would you like to add Angular routing? No
+? Which stylesheet format would you like to use? CSS
+</pre></div>
+</div>
+</div></blockquote>
+<p>执行命令时，终端窗口将显示2个问题，需要用户作出回答。第一个问题提示是否创建路由，关于什么是路由，本书后续章节将会详细介绍。这里回答 <code class="docutils literal notranslate"><span class="pre">No</span></code> ，表示不创建路由。接着第2个问题提示选择样式文件格式，这里直接回车，默认选择第一项 <code class="docutils literal notranslate"><span class="pre">CSS</span></code> ，等待命令执行完成，至此，我们创建了一个新的Angular工程。</p>
+<div class="admonition- admonition">
+<p class="admonition-title">提醒</p>
+<p>可以在ng new命令后，附加参数 <code class="docutils literal notranslate"><span class="pre">--routing=false|true</span></code> 来选择是否需要添加routing，附加参数 <code class="docutils literal notranslate"><span class="pre">--style=css|scss|sass|less|styl</span></code> 来选择添加的样式文件的格式，
+上述操作等同命令： <code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">new</span> <span class="pre">cli-ex100</span> <span class="pre">--routing=false</span> <span class="pre">--style=css</span></code> 。</p>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>进入到项目根目录下，例如：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> cli-ex100/
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="5">
+<li><p>使用 <code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">serve</span></code> 命令启动工程，例如：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ ng serve
+<span class="m">10</span>% building <span class="m">3</span>/3 modules <span class="m">0</span> activeℹ ｢wds｣: Project is running at http://localhost:4200/webpack-dev-server/
+ℹ ｢wds｣: webpack output is served from /
+ℹ ｢wds｣: 404s will fallback to //index.html
+
+chunk <span class="o">{</span>main<span class="o">}</span> main.js, main.js.map <span class="o">(</span>main<span class="o">)</span> <span class="m">47</span>.8 kB <span class="o">[</span>initial<span class="o">]</span> <span class="o">[</span>rendered<span class="o">]</span>
+chunk <span class="o">{</span>polyfills<span class="o">}</span> polyfills.js, polyfills.js.map <span class="o">(</span>polyfills<span class="o">)</span> <span class="m">268</span> kB <span class="o">[</span>initial<span class="o">]</span> <span class="o">[</span>rendered<span class="o">]</span>
+chunk <span class="o">{</span>runtime<span class="o">}</span> runtime.js, runtime.js.map <span class="o">(</span>runtime<span class="o">)</span> <span class="m">6</span>.15 kB <span class="o">[</span>entry<span class="o">]</span> <span class="o">[</span>rendered<span class="o">]</span>
+chunk <span class="o">{</span>styles<span class="o">}</span> styles.js, styles.js.map <span class="o">(</span>styles<span class="o">)</span> <span class="m">9</span>.72 kB <span class="o">[</span>initial<span class="o">]</span> <span class="o">[</span>rendered<span class="o">]</span>
+chunk <span class="o">{</span>vendor<span class="o">}</span> vendor.js, vendor.js.map <span class="o">(</span>vendor<span class="o">)</span> <span class="m">3</span>.81 MB <span class="o">[</span>initial<span class="o">]</span> <span class="o">[</span>rendered<span class="o">]</span>
+Date: <span class="m">2020</span>-01-31T10:23:02.399Z - Hash: 5ae110266d5037ce487f - Time: 11397ms
+** Angular Live Development Server is listening on localhost:4200, open your browser on http://localhost:4200/ **
+ℹ ｢wdm｣: Compiled successfully.
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="6">
+<li><p>打开Web浏览器并浏览到 “<a class="reference external" href="http://localhost:4200">http://localhost:4200</a>”。 应该看到文本“cli-ex100 app is running!”，如图5-1所示，这意味着应用程序正在运行。</p></li>
+</ol>
+<a class="reference internal image-reference" href="../_images/Figure5-1.png"><img alt="../_images/Figure5-1.png" src="../_images/Figure5-1.png" style="width: 600px;" /></a>
+<p>图5-1 快速开启的第一个Angular应用程序</p>
+</div>
+</div>
+<div class="section" id="id4">
+<h2><span class="sectnum">5.2</span> 准备Angular的开发环境<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>Angular工程其实就是Node.js工程，因此，之前准备的Node.js开发环境同样适用于Angular的开发环境。</p>
+<div class="section" id="ide">
+<h3><span class="sectnum">5.2.1</span> 如何扩展IDE的功能<a class="headerlink" href="#ide" title="Permalink to this headline">¶</a></h3>
+<p>俗话说，工欲善其事，必先利其器，一个好的开发环境确实能为开发工作增色不少。VSCode编辑器的功能可以通过插件进行扩展。这些插件包含JSON格式化工具、代码分析工具、文本编辑工具及语法高亮等等，这里我们通过安装一个Icon插件工具，带领大家熟悉插件的安装过程，其他插件的安装过程与此类似。</p>
+<p>“Material Icon Theme”插件会基于文件类型，在显示文件名旁添加一个类型图标，让用户更容易的识别文件。它是专门为VSCode编辑器设计的文件图标主题，安装它之后，VSCode编辑器里工程的目录和文件图标变得漂亮多了，给用户带来了全新的视觉效果，安装步骤如图5-2所示：</p>
+<a class="reference internal image-reference" href="../_images/Figure5-2.png"><img alt="../_images/Figure5-2.png" src="../_images/Figure5-2.png" style="width: 400px;" /></a>
+<p>图5-2 安装Material Icon Theme文件图标主题</p>
+<ol class="arabic simple">
+<li><p>打开VSCode编辑器，先切换到左侧的EXTENSIONS面板，然后在搜索框中输入“Material Icon Theme”，面板下面将自动从VSCode的软件市场中搜索该主题并显示在下方列表中；</p></li>
+<li><p>选择Material Icon Theme主题，点击右下方的Install安装按钮，等待安装完成；</p></li>
+</ol>
+<p>安装完成后，重启VSCode编辑器。导入的Angular工程文件的图标显示的效果如下：</p>
+<a class="reference internal image-reference" href="../_images/Figure5-3.png"><img alt="../_images/Figure5-3.png" src="../_images/Figure5-3.png" style="width: 300px;" /></a>
+<p>图5-3 Material Icon Theme文件图标主题效果</p>
+<p>VSCode编辑器的插件是可选的，用户可以选择安装自己需要的插件。卸载插件也很方便，同样的，在编辑器的EXTENSIONS面板中找到已经安装好的插件，点击Uninstall按钮即可。</p>
+</div>
+<div class="section" id="cli-ex200">
+<h3><span class="sectnum">5.2.2</span> [示例 cli-ex200] 在运行时编辑工程<a class="headerlink" href="#cli-ex200" title="Permalink to this headline">¶</a></h3>
+<p>让我们尝试在运行时编辑工程，看看会发生什么。</p>
+<ol class="arabic simple">
+<li><p>在VSCode编辑器的TERMINAL窗口，输入 <code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">serve</span></code> 命令启动应用程序。</p></li>
+<li><p>编辑组件。双击打开 src/app/app.component.ts 文件，找到下面语句：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="nx">title</span> <span class="o">=</span> <span class="s1">&#39;cli-ex100&#39;</span><span class="p">;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><p>将上面的文本内容修改为：“cli-ex100-test”，并保存（快捷键：Ctrl+s）；</p></li>
+<li><p>观察TERMINAL窗口，发现应用程序代码自动编译并部署；</p></li>
+<li><p>查看应用程序结果。打开Web浏览器并浏览到 “<a class="reference external" href="http://localhost:4200">http://localhost:4200</a>”。 应该看到之前的文本已经变更成“cli-ex100-test app is running!”，如图5-4所示，这意味着应用程序已经成功修改了。</p></li>
+</ol>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/Figure5-4.png"><img alt="../_images/Figure5-4.png" src="../_images/Figure5-4.png" style="width: 300px;" /></a>
+<p>图5-4 VSCode编辑器中编辑工程示例</p>
+</div></blockquote>
+<p>VSCode编辑器可以创建多个并定位到不同位置的终端(TERMINAL)，并在它们之间轻松导航。意味着这些终端窗口可以同时运行多条命令。可以通过单击TERMINAL面板右上角的加号（+）图标或快捷键“Ctrl + Shift +`”命令来添加终端实例。</p>
+<div class="admonition- admonition">
+<p class="admonition-title">参考</p>
+<p>TERMINAL多终端的设计对开发Angular应用程序非常适用，如在开发Angular应用程序期间，可以在其中一个终端执行 <code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">serve</span></code> 命令启动应用程序并保持服务处于运行状态，在另一个终端执行其他的Angular CLI命令。</p>
+</div>
+</div>
+<div class="section" id="id5">
+<h3><span class="sectnum">5.2.3</span> 编译时的错误提醒<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p>这次尝试故意让程序代码编译报错，看看会发生什么：</p>
+<ol class="arabic simple">
+<li><p>继续编辑组件。还是刚编辑的那行代码，去掉单引号，使其变为： <code class="docutils literal notranslate"><span class="pre">title</span> <span class="pre">=</span> <span class="pre">cli-ex100-test;</span></code> ，然后保存文件；</p></li>
+<li><p>观察刚编辑的代码，此行语句的下方已经出现了提示错误信息（错误代码处下方出现红色的波浪线，鼠标移动到代码处，会出现提示错误信息窗口），如图5-5所示：</p></li>
+</ol>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/Figure5-5.png"><img alt="../_images/Figure5-5.png" src="../_images/Figure5-5.png" style="width: 400px;" /></a>
+<p>图5-5 VSCode编辑器中代码编译时错误</p>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><p>观察TERMINAL窗口，也同样发现代码自动编译且报错了；</p></li>
+<li><p>观察Web浏览器窗口，页面已经变成了空白页，如果鼠标右键打开浏览器的开发者模式，发现里面的Console控制台同样也有错误信息产生；</p></li>
+<li><p>加上单引号，还原并保存代码，发现上述的3处错误信息都会自动消失，应用程序恢复到图5-4时的状态。</p></li>
+</ol>
+</div>
+<div class="section" id="id6">
+<h3><span class="sectnum">5.2.4</span> 运行时的错误提醒<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<p>在项目中引入运行时错误，看看会发生什么：</p>
+<ol class="arabic simple">
+<li><p>编辑模板文件。双击打开 src/app/app.component.html 文件，找到下面语句：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&lt;span&gt;{{ title }} app is running!&lt;/span&gt;
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>将上面代码中的变量名“title”修改为“title123”，代码如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&lt;span&gt;{{ title123 }} app is running!&lt;/span&gt;
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><p>观察TERMINAL窗口，发现代码自动编译，注意这里并没有错误产生；</p></li>
+<li><p>观察浏览器的开发者模式，发现里面的Console控制台同样也有错误信息产生；</p></li>
+<li><p>观察Web浏览器窗口，页面依然正常加载，但是注意页面中的文本内容中少了部分信息，title变量的值变为了空，如图5-6所示：</p></li>
+</ol>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/Figure5-6.png"><img alt="../_images/Figure5-6.png" src="../_images/Figure5-6.png" style="width: 300px;" /></a>
+<p>图5-6 Angular工程运行时错误</p>
+</div></blockquote>
+<p>通过示例cli-ex200的演示，我们得出如下结论：</p>
+<ol class="arabic simple">
+<li><p>Angular CLI的 <code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">serve</span></code> 命令会监视已更改的文件，自动编译和重新加载应用程序。</p></li>
+<li><p>Angular应用程序针对不同的错误，处理的策略不同，如：编译错误导致整个页面加载失败，而运行时错误不影响页面的加载。</p></li>
+<li><p>借助集成开发环境开发Angular应用程序，能更大的方便用户，如：实时提供代码编译错误信息。</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="id7">
+<h2><span class="sectnum">5.3</span> Angular CLI常用命令及选项<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<p>Angular CLI是一个命令行工具，它能用来创建项目、生成模块、组件、服务和指令等代码，还能在开发期间执行各种各样的任务。
+下面我们详细的介绍一些常用的Angular CLI命令的使用方法。</p>
+<div class="section" id="id8">
+<h3><span class="sectnum">5.3.1</span> 初始化命令及选项介绍<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<p>Angular CLI的命令 <code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">new</span></code> 负责创建并初始化一个新的Angular应用程序。该命令提供交互式提示，以提供可选配置，也可以通过添加选项参数来默认选择配置。</p>
+<p>初始化命令格式如： <code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">new</span> <span class="pre">&lt;name&gt;</span> <span class="pre">[options]</span></code> ，可以简写为： <code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">n</span> <span class="pre">&lt;name&gt;</span> <span class="pre">[options]</span></code> 。参数&lt;name&gt;是新建项目的名称， [options]选项除了在[示例 cli-ex200]中介绍了两个参数选项外，下面的一些选项也是经常使用到的：</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">--inlineTemplate=true|false</span></code> 是否使用内联模板生成组件。组件模板标记将在组件内生成，而不是在单独的文件中生成；</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--inlineStyle=true|false</span></code> 是否生成具有内联样式的组件。组件样式将在组件内生成，而不是在单独的文件中生成；</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--skipTests=true|false</span></code> 如果为true，则不会为新项目生成“spec.ts”测试文件；</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--minimal=true|false</span></code> 如果为true，则相当于 <code class="docutils literal notranslate"><span class="pre">--inlineTemplate=true</span> <span class="pre">--inlineStyle=true</span> <span class="pre">--skipTests=true</span></code> 以及不含e2e测试文件；</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--interactive=true|false</span></code> 如果为false，则禁用交互式输入提示，相当于： <code class="docutils literal notranslate"><span class="pre">--routing=false</span> <span class="pre">--style=css</span></code> ；</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--defaults=true|false</span></code> 如果为true，同 <code class="docutils literal notranslate"><span class="pre">--interactive=true</span></code> 。</p></li>
+</ul>
+<p>上述命令的值默认均为false，部分命令可以简写，如：</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">--inlineTemplate=true</span></code> 可以简写成 <code class="docutils literal notranslate"><span class="pre">--inline-template</span></code> 或 <code class="docutils literal notranslate"><span class="pre">-t</span></code>  (小写字母t)；</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--inlineStyle=true</span></code> 可以简写成 <code class="docutils literal notranslate"><span class="pre">--inline-style</span></code>  或 <code class="docutils literal notranslate"><span class="pre">-s</span></code>  (小写字母s)；</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--skipTests=true</span></code> 可以简写成 <code class="docutils literal notranslate"><span class="pre">-S</span></code> (大写字母S) 。</p></li>
+</ul>
+<p>比如常用命令 <code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">n</span> <span class="pre">appName</span> <span class="pre">-s</span> <span class="pre">-t</span> <span class="pre">--interactive=false</span></code> 的含义是：使用无交互模式，直接创建名为appName的工程，该工程组件默认使用内联模板和内联样式，且无路由和默认使用CSS作为样式文件。</p>
+</div>
+<div class="section" id="id9">
+<h3><span class="sectnum">5.3.2</span> 创建命令及选项介绍<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<p>创建命令的格式如：ng generate &lt;type&gt; [options]，可以简写为：ng g &lt;type&gt; [options]。</p>
+<p>创建命令根据&lt;type&gt;的种类生成或创建相应的文件。命令行中&lt;type&gt;支持的种类有很多，这里简单的介绍几种，见表5-1所示。</p>
+<table class="colwidths-given docutils align-default" id="id14">
+<caption><span class="caption-text">表5-1 ng generate命令</span><a class="headerlink" href="#id14" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 28%" />
+<col style="width: 45%" />
+<col style="width: 28%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>支持的种类</p></th>
+<th class="head"><p>示例</p></th>
+<th class="head"><p>说明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Component</p></td>
+<td><p>ng g component new-component</p></td>
+<td><p>创建组件</p></td>
+</tr>
+<tr class="row-odd"><td><p>Directive</p></td>
+<td><p>ng g directive new-directive</p></td>
+<td><p>创建指令</p></td>
+</tr>
+<tr class="row-even"><td><p>Pipe</p></td>
+<td><p>ng g pipe new-pipe</p></td>
+<td><p>创建管道</p></td>
+</tr>
+<tr class="row-odd"><td><p>Service</p></td>
+<td><p>ng g service new-service</p></td>
+<td><p>创建服务类</p></td>
+</tr>
+<tr class="row-even"><td><p>Class</p></td>
+<td><p>ng g class new-class</p></td>
+<td><p>创建类</p></td>
+</tr>
+<tr class="row-odd"><td><p>Interface</p></td>
+<td><p>ng g pipe new-pipe</p></td>
+<td><p>创建接口</p></td>
+</tr>
+<tr class="row-even"><td><p>Enum</p></td>
+<td><p>ng g enum new-enum</p></td>
+<td><p>创建枚举类</p></td>
+</tr>
+<tr class="row-odd"><td><p>Module</p></td>
+<td><p>ng g module new-module</p></td>
+<td><p>创建模块</p></td>
+</tr>
+</tbody>
+</table>
+<p>命令行中的&lt;options&gt;所支持的选项随着&lt;type&gt;的种类不同而不同，换句话说，不同的&lt;type&gt;有不同的&lt;options&gt;与之相对应。如：component所对应的选项有:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">--inlineStyle=true|false</span></code> 默认值为false。为true时，生成具有内联样式的组件。组件样式将在组件内生成，而不是在单独的文件中生成。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--inlineTemplate=true|false</span></code> 默认值为false。为true时，使用内联模板生成组件。组件模板标记将在组件内生成，而不是在单独的文件中生成。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--skipTests=true|false</span></code> 默认值为false。为true时，不为新组件创建“spec.ts”测试文件。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--flat=true|false</span></code> 默认值为false。为true时，则在当前项目的根目录下创建新文件。</p></li>
+</ul>
+<p>关于这些选项的使用方法，本书后续章节的示例中将会大量的涉及到。另，读者也可以通过官方API（<a class="reference external" href="https://angular.io/cli">https://angular.io/cli</a>）查询更多的细节。</p>
+<p>Angular CLI还有其他的一些命令，本书后续章节会陆续的进行介绍。</p>
+</div>
+</div>
+<div class="section" id="id10">
+<h2><span class="sectnum">5.4</span> Angular项目结构概述<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
+<p>在示例cli-ex200，我们已经修改了项目中的一个文件，除了这个文件外，项目中还有大量的其他文件，下面开始介绍下Angular工程的项目结构。</p>
+<table class="colwidths-given docutils align-default" id="id15">
+<caption><span class="caption-text">表5-1 Angular工程的项目结构</span><a class="headerlink" href="#id15" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 60%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>目录</p></th>
+<th class="head"><p>文件</p></th>
+<th class="head"><p>说明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>根目录</p></td>
+<td><p>e2e</p></td>
+<td><p>端到端的自动化集成测试目录</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>node_modules</p></td>
+<td><p>第三方依赖包存放目录</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>src</p></td>
+<td><p>应用程序源代码目录</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>.editorconfig</p></td>
+<td><p>统一编译器中的代码风格</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>.gitignore</p></td>
+<td><p>git中的忽略文件列表</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>angular.json</p></td>
+<td><p>Angular的配置文件</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>browserslist</p></td>
+<td><p>配置浏览器兼容性的文件</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>karma.conf.js</p></td>
+<td><p>自动化测试框架Karma的配置文件</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>package-lock.json</p></td>
+<td><p>依赖包版本锁定文件</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>package.json</p></td>
+<td><div class="line-block">
+<div class="line">标准的npm工具的配置文件，这个文件的内容包含：</div>
+<div class="line">1. 该应用程序所使用的第三方依赖包信息</div>
+<div class="line">2. 跟工程相关的执行命令</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>README.md</p></td>
+<td><p>项目说明的MakeDown文件</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>tsconfig.app.json</p></td>
+<td><p>当前项目的TypeScript编译器的配置文件</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>tsconfig.json</p></td>
+<td><p>整个工作区的TypeScript配置文件</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>tsconfig.spec.json</p></td>
+<td><p>用于测试的TypeScript配置文件</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>tslint.json</p></td>
+<td><p>是tslint的配置文件，用来定义TypeScript代码质量检查的规则</p></td>
+</tr>
+<tr class="row-odd"><td><p>src目录</p></td>
+<td><p>app</p></td>
+<td><p>工程源码目录</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>assets</p></td>
+<td><p>资源目录，存储静态资源的，比如图片</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>environments</p></td>
+<td><p>环境配置目录</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>favicon.ico</p></td>
+<td><p>header里的icon，浏览器的图标文件</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>index.html</p></td>
+<td><p>当前应用程序的根HTML文件，程序启动就是访问这个页面</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>main.ts</p></td>
+<td><p>整个项目的入口ts文件，Angular通过这个文件来启动项目</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>polyfills.ts</p></td>
+<td><div class="line-block">
+<div class="line">不同浏览器兼容脚本加载，主要是用来导入一些必要库，</div>
+<div class="line">为了让Angular能兼容老版本的浏览器</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>style.css</p></td>
+<td><p>整个项目的全局css</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>test.ts</p></td>
+<td><p>测试入口</p></td>
+</tr>
+<tr class="row-even"><td><p>app目录</p></td>
+<td><p>app-routing.module.ts</p></td>
+<td><p>app模块的路由配置文件</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>app.component.css</p></td>
+<td><p>app组件的样式</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>app.component.html</p></td>
+<td><p>app组件的模板</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>app.component.spec.ts</p></td>
+<td><p>app组件的测试类文件</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>app.component.ts</p></td>
+<td><p>app的组件类文件</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>app.module.ts</p></td>
+<td><p>app的模块类文件</p></td>
+</tr>
+<tr class="row-even"><td><p>environments目录</p></td>
+<td><p>environments.prod.ts</p></td>
+<td><p>生产环境配置</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>environments.ts</p></td>
+<td><p>开发环境配置</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id11">
+<h2><span class="sectnum">5.5</span> 如何启动Angular应用程序<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h2>
+<p>Node.js项目的package.json文件是配置和描述如何与程序交互和运行的中心，是标准的npm工具的配置文件，这个文件的内容包含：</p>
+<ol class="arabic simple">
+<li><p>应用程序所使用的第三方依赖包信息</p></li>
+<li><p>跟工程相关的执行命令，npm通过这些命令启动项目、运行脚本、安装依赖项、发布到npm注册表以及执行其它的任务。</p></li>
+</ol>
+<p>Node.js项目相关的执行命令都可以在这个package.json文件中找到相应的信息，所有的命令集中记录在文件中的scripts节点处，在项目中用户可以通过组合这些命令重用脚本：</p>
+<blockquote>
+<div><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&quot;scripts&quot;: {
+  &quot;ng&quot;: &quot;ng&quot;,
+  &quot;start&quot;: &quot;ng serve&quot;,
+  &quot;build&quot;: &quot;ng build&quot;,
+  &quot;test&quot;: &quot;ng test&quot;,
+  &quot;lint&quot;: &quot;ng lint&quot;,
+  &quot;e2e&quot;: &quot;ng e2e&quot;
+},
+</pre></div>
+</div>
+</div></blockquote>
+<p>scripts节点中键（key）对应运行npm命令行的缩写，比如start键对应的是执行 <code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">run</span> <span class="pre">start</span></code> 命令行，冒号（:）右边的内容是执行的具体脚本命令。比如执行 <code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">run</span> <span class="pre">start</span></code> 命令对应的就是执行 <code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">serve</span></code> 命令。</p>
+<p>Angular项目本身也是Node.js项目，它通过scripts节点将npm命令与Angular CLI命令对应起来，即左边对应的是npm命令，右边对应的是Angular CLI命令。</p>
+<p>因此，在上面的示例中执行的 <code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">serve</span></code> 命令也可以替换为 <code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">run</span> <span class="pre">start</span></code> 命令。</p>
+<div class="admonition- admonition">
+<p class="admonition-title">提示</p>
+<p>在npm中，仅有4个命令可以省略关键字 <code class="docutils literal notranslate"><span class="pre">run</span></code> ，这4个命令分别是： <code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">test</span></code> ，<code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">start</span></code> ，<code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">restart</span></code> 和 <code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">stop</span></code> 命令。</p>
+</div>
+</div>
+<div class="section" id="id12">
+<h2><span class="sectnum">5.6</span> Angular的启动过程有哪些步骤<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h2>
+<p>在Angular应用程序启动时，会发生以下情况：</p>
+<ol class="arabic simple">
+<li><p>当在终端执行 <code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">serve</span></code> 时，Angular CLI会根据 angular.json文件中的main元素找到应用程序的入口文件main.ts；</p></li>
+<li><p>main.ts文件加载AppModule根模块（app.module.ts文件）；</p></li>
+<li><p>AppModule根模块引导AppComponent根组件（app.component.ts文件）；</p></li>
+<li><p>AppComponent根组件完成自身的初始化工作，如：完成标签&lt;app-root&gt;的初始化工作。</p></li>
+</ol>
+<p>在上述工作完成后，当打开WEB浏览器并浏览到“<a class="reference external" href="http://localhost:4200">http://localhost:4200</a>”时，会发生以下情况：</p>
+<ol class="arabic simple">
+<li><p>在默认情况下，WEB浏览器会打开文件index.html；</p></li>
+<li><p>index.html文件中加载&lt;app-root&gt;标签，显示应用程序内容。</p></li>
+</ol>
+</div>
+<div class="section" id="id13">
+<h2><span class="sectnum">5.7</span> 小结<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h2>
+<p>本章带领读者初识Angular CLI的内容，接着快速开启第一个Angular应用程序，然后准备了Angular的开发环境，最后对工程结构和Angular的启动过程做了简单的介绍。</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="third.html" class="btn btn-neutral float-right" title="第三课" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="typescript.html" class="btn btn-neutral float-left" title="4 学习TypeScript知识" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright CVI Talent
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

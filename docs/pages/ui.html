@@ -1,0 +1,1113 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>16 Angular与Angular Material组件库</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="17 学习RxJS在Angular中的实际应用" href="rxjs.html" />
+    <link rel="prev" title="15 深入学习Angular管道知识" href="pipe.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/main-page-logo-small-hat.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">目录：</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="start.html">Angular 9</a></li>
+<li class="toctree-l1"><a class="reference internal" href="first.html">第一课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="whatisangular.html"><span class="sectnum">1</span> Angular概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="howtolearn.html"><span class="sectnum">2</span> 学习Angular需要什么基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nodejs.html"><span class="sectnum">3</span> 掌握Node.js和npm基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="second.html">第二课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="typescript.html"><span class="sectnum">4</span> 学习TypeScript知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="firstangular.html"><span class="sectnum">5</span> 快速开启第一个Angular</a></li>
+<li class="toctree-l1"><a class="reference internal" href="third.html">第三课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angcomponent.html"><span class="sectnum">6</span> 学习Angular组件知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angtemplate.html"><span class="sectnum">7</span> 学习Angular模板知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angdirective.html"><span class="sectnum">8</span> 掌握Angular指令应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fourth.html">第四课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angmodule.html"><span class="sectnum">9</span> 学习Angular模块知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angroute.html"><span class="sectnum">10</span> 熟悉Angular路由功能</a></li>
+<li class="toctree-l1"><a class="reference internal" href="injection.html"><span class="sectnum">11</span> 学习Angular的服务及依赖注入</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fifth.html">第五课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reactive.html"><span class="sectnum">12</span> 掌握响应式编程基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form.html"><span class="sectnum">13</span> 学习Angular表单知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="httpclient.html"><span class="sectnum">14</span> 熟悉HttpClient模块</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sixth.html">第六课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pipe.html"><span class="sectnum">15</span> 深入学习Angular管道知识</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#"><span class="sectnum">16</span> Angular与Angular Material组件库</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#angular-material"><span class="sectnum">16.1</span> 什么是Angular Material</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1"><span class="sectnum">16.1.1</span> 如何安装Angular Material</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2"><span class="sectnum">16.1.2</span> 如何使用Angular Material</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ui-ex100-angular-material"><span class="sectnum">16.1.3</span> [示例 ui-ex100] 使用Angular Material的最佳实践</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3"><span class="sectnum">16.1.4</span> 使用Angular Material的生成器快速创建组件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ui-ex200-angular-material"><span class="sectnum">16.1.5</span> [示例 ui-ex200] 使用Angular Material的生成器命令</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#web"><span class="sectnum">16.2</span> 关于WEB页面的布局设计</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id4"><span class="sectnum">16.2.1</span> 什么是响应式页面设计</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5"><span class="sectnum">16.2.2</span> 什么是自适应网页设计</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6"><span class="sectnum">16.2.3</span> 什么是媒体查询</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id7"><span class="sectnum">16.3</span> 使用 Angular Material 的媒体查询设计网页</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id8"><span class="sectnum">16.3.1</span> 学习 Angular Material 的网格列表布局</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ui-ex300-angular-material"><span class="sectnum">16.3.2</span> [示例 ui-ex300] 使用Angular Material的网格列表布局</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id9"><span class="sectnum">16.4</span> 小结</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="rxjs.html"><span class="sectnum">17</span> 学习RxJS在Angular中的实际应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="seventh.html">第七课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="material.html"><span class="sectnum">18</span> 实战基于Angular Material实现表格组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bootstrap.html"><span class="sectnum">19</span> 集成Bootstrap前端组件库</a></li>
+<li class="toctree-l1"><a class="reference internal" href="echart.html"><span class="sectnum">20</span> 在Angular项目中使用图表</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appid.html"><span class="sectnum">21</span> 使用IBM Cloud™ App ID对Angular应用进行认证</a></li>
+<li class="toctree-l1"><a class="reference internal" href="communication.html"><span class="sectnum">22</span> 掌握在Angular组件间通信</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pwa.html"><span class="sectnum">23</span> Angular与渐进式WEB应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="message.html"><span class="sectnum">24</span> 实现简单的消息通知机制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="localdata.html"><span class="sectnum">25</span> 如何与本地数据打交道</a></li>
+<li class="toctree-l1"><a class="reference internal" href="test.html"><span class="sectnum">26</span> 熟悉Angular测试</a></li>
+<li class="toctree-l1"><a class="reference internal" href="package.html"><span class="sectnum">27</span> 熟悉Angular环境配置及打包</a></li>
+<li class="toctree-l1"><a class="reference internal" href="universal.html"><span class="sectnum">28</span> 学习Angular服务端渲染</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deploy.html"><span class="sectnum">29</span> 如何部署Angular应用程序</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user.html"><span class="sectnum">30</span> 实战用户管理系统</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">CVI Talent</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">首页</a> &raquo;</li>
+        
+      <li><span class="sectnum">16</span> Angular与Angular Material组件库</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        <a href="https://pages.github.ibm.com/lanzejun/talent/index.html" class="fa fa-github"> CVITube</a>
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="angularangular-material">
+<h1><span class="sectnum">16</span> Angular与Angular Material组件库<a class="headerlink" href="#angularangular-material" title="Permalink to this headline">¶</a></h1>
+<p>Angular是一个完整的框架，在其之上设计了所有的工具和最佳实践。Angular鼓励用户重复使用组件，即将UI拆分成独立的、可重用的部分。</p>
+<div class="section" id="angular-material">
+<h2><span class="sectnum">16.1</span> 什么是Angular Material<a class="headerlink" href="#angular-material" title="Permalink to this headline">¶</a></h2>
+<p>Google公司有一款著名的UI设计语言：Material Design。Angular Material就是基于Material Design语言的设计，同样也是由 Angular 开发团队构建，打造与Angular无缝集成，使用横跨Web、移动端和桌面环境的综合性组件库构建的现代应用组件库。简单的说，Angular Material是Angular官方开发的一款UI组件库产品。</p>
+<p>Angular Material 作为 Angular 的官方组件库，无论是设计交互还是易用性都有着极高的质量。其目的就是构建基于 Angular 和 TypeScript 的高质量组件库。Angular Material 还提供了一个组件开发工具包（CDK，Component Dev Kit），CDK 是一组工具库，它代表了 Angular Material 库中一些核心功能的抽象，没有使用任何专属于 Material Design 的样式。可以将 CDK 看做实现了基本功能的组件库，该库中的组件没有样式，CDK的目的就是让用户基于它来开发自定义组件。</p>
+<p>因此，Angular Material主要由两部分组成：直接拿来用的组件库和用于开发自定义组件的CDK。</p>
+<div class="section" id="id1">
+<h3><span class="sectnum">16.1.1</span> 如何安装Angular Material<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>Angular Material是Angular自家的产品，它也随着Angular CLI命令发布。使用如下命令安装Angular Material：</p>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng add @angular/material
+</pre></div>
+</div>
+</div></blockquote>
+<p>ng add命令安装Angular Material的同时，还安装了它的核心组件开发工具包（CDK）和Angular动画库（Angular Animations），并且询问以下问题来确定要包含哪些功能：</p>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ ng add @angular/material
+Installing packages <span class="k">for</span> tooling via npm.
+Installed packages <span class="k">for</span> tooling via npm.
+? Choose a prebuilt theme name, or <span class="s2">&quot;custom&quot;</span> <span class="k">for</span> a custom theme: <span class="o">(</span>Use arrow keys<span class="o">)</span>
+❯ Indigo/Pink        <span class="o">[</span> Preview: https://material.angular.io?theme<span class="o">=</span>indigo-pink <span class="o">]</span>
+Deep Purple/Amber  <span class="o">[</span> Preview: https://material.angular.io?theme<span class="o">=</span>deeppurple-amber <span class="o">]</span>
+Pink/Blue Grey     <span class="o">[</span> Preview: https://material.angular.io?theme<span class="o">=</span>pink-bluegrey <span class="o">]</span>
+Purple/Green       <span class="o">[</span> Preview: https://material.angular.io?theme<span class="o">=</span>purple-green <span class="o">]</span>
+Custom
+</pre></div>
+</div>
+</div></blockquote>
+<p>Angular Material内置了一些主题样式，所谓主题样式可以简单的理解为界面元素的外观和格式。当然了，Angular Material还支持自定义主题。有了主题后，用户可以在此基础上进行快速的开发。
+上面的问题提示用户选择一个内置的主题，或者选择 “custom “的自定义主题。从问题答案列表可以看出，Angular Material内置了4个主题，分别是：Indigo/Pink、Deep Purple/Amber、Pink/Blue Grey和Purple/Green，除了这4个内置主题外，还可以通过Custom来扩展已有的主题，让用户自定义适合自己的主题样式。我们默认选择第一个，接着出现下面的问题：</p>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>? Choose a prebuilt theme name, or <span class="s2">&quot;custom&quot;</span> <span class="k">for</span> a custom theme: Indigo/Pink        <span class="o">[</span> Prev
+iew: https://material.angular.io?theme<span class="o">=</span>indigo-pink <span class="o">]</span>
+? Set up global Angular Material typography styles? Yes
+? Set up browser animations <span class="k">for</span> Angular Material? Yes
+UPDATE package.json <span class="o">(</span><span class="m">970</span> bytes<span class="o">)</span>
+✔ Packages installed successfully.
+UPDATE src/app/app.module.ts <span class="o">(</span><span class="m">423</span> bytes<span class="o">)</span>
+UPDATE angular.json <span class="o">(</span><span class="m">3163</span> bytes<span class="o">)</span>
+UPDATE src/index.html <span class="o">(</span><span class="m">510</span> bytes<span class="o">)</span>
+UPDATE src/styles.css <span class="o">(</span><span class="m">181</span> bytes<span class="o">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>上面的问题提示用户是否同意将Angular Material样式设置为全局的样式，以及是否同意为Angular Material设置浏览器动画。我们都输入字母“Y”，表示同意。等待片刻，命令将会成功的安装完成Angular Material。</p>
+<p>ng add命令在安装Angular Material的同时，自动完成了以下额外的配置：</p>
+<ul>
+<li><p>在package.json中添加项目的依赖关系；</p></li>
+<li><p>将Roboto字体添加到首页index.html中；</p></li>
+<li><p>将Material的设计图标字体添加到首页index.html中；</p></li>
+<li><p>添加一些全局CSS样式：</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>删除页面&lt;body&gt;标签中的页边距（margin）；</p></li>
+<li><p>设置&lt;html&gt;和&lt;body&gt;的样式：“height: 100%”；</p></li>
+<li><p>设置应用程序默认字体为Roboto。</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<p>接下来，我们介绍如何在Angular应用程序中使用Angular Material。</p>
+</div>
+<div class="section" id="id2">
+<h3><span class="sectnum">16.1.2</span> 如何使用Angular Material<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>Angular Material组件库中提供了许多组件，打开官方网站，找到显示组件（components）的页面，下面我们选取一个组件作为代表，演示如何使用Angular Material。</p>
+<p>我们选取滑块开关组件，详细步骤如下：</p>
+<ol class="arabic simple">
+<li><p>将滑块开关组件的模块添加到NgModule类的imports数组中。打开Angular Material官方网站，找到滑块开关组件的API页面，如图16-1所示：</p></li>
+</ol>
+<blockquote>
+<div><blockquote>
+<div><a class="reference internal image-reference" href="../_images/Figure16-1.png"><img alt="../_images/Figure16-1.png" src="../_images/Figure16-1.png" style="width: 600px;" /></a>
+<p>图16-1 滑块开关组件API页面</p>
+</div></blockquote>
+<p>按照API页面中的提示，将滑块开关组件的模块添加到NgModule类的imports数组中，参阅如下代码：</p>
+<div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">BrowserModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/platform-browser&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">NgModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">MatSlideToggleModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/material/slide-toggle&#39;</span><span class="p">;</span> <span class="c1">// 导入滑块开关模块</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">AppComponent</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./app.component&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">BrowserAnimationsModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/platform-browser/animations&#39;</span><span class="p">;</span>
+
+<span class="kd">@NgModule</span><span class="p">({</span>
+<span class="nx">declarations</span><span class="o">:</span> <span class="p">[</span>
+   <span class="nx">AppComponent</span>
+<span class="p">],</span>
+<span class="nx">imports</span><span class="o">:</span> <span class="p">[</span>
+   <span class="nx">BrowserModule</span><span class="p">,</span>
+   <span class="nx">BrowserAnimationsModule</span><span class="p">,</span>
+   <span class="nx">MatSlideToggleModule</span> <span class="c1">// 滑块开关模块</span>
+<span class="p">],</span>
+<span class="nx">providers</span><span class="o">:</span> <span class="p">[],</span>
+<span class="nx">bootstrap</span><span class="o">:</span> <span class="p">[</span><span class="nx">AppComponent</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">AppModule</span> <span class="p">{</span> <span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>在组件模块中使用滑块开关组件。还是在官方网站的同一个页面，切换到OVERVIEW面板，接着打开下面的HTML代码面板，如图16-2所示：</p></li>
+</ol>
+<blockquote>
+<div><blockquote>
+<div><a class="reference internal image-reference" href="../_images/Figure16-2.png"><img alt="../_images/Figure16-2.png" src="../_images/Figure16-2.png" style="width: 600px;" /></a>
+<p>图16-2 滑块开关组件HTML页面</p>
+<p>按照HTML页面中的提示，将滑块开关组件的模板示例代码拷贝到应用程序的组件模板中，参阅如下代码：</p>
+</div></blockquote>
+<div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Component</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+
+<span class="kd">@Component</span><span class="p">({</span>
+<span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-root&#39;</span><span class="p">,</span>
+<span class="nx">template</span><span class="o">:</span> <span class="sb">`</span>
+<span class="sb">   &lt;mat-slide-toggle&gt;Slide me!&lt;/mat-slide-toggle&gt;</span>
+<span class="sb">`</span><span class="p">,</span>
+<span class="nx">styles</span><span class="o">:</span> <span class="p">[]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">AppComponent</span> <span class="p">{</span>
+   <span class="nx">title</span> <span class="o">=</span> <span class="s1">&#39;ui-ex100&#39;</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><p>观察应用程序页面，点击滑块开关，页面显示效果如图16-3所示：</p></li>
+</ol>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/Figure16-3.png"><img alt="../_images/Figure16-3.png" src="../_images/Figure16-3.png" style="width: 300px;" /></a>
+<p>图16-3 滑块开关控件</p>
+</div></blockquote>
+<p>至此，我们已经学会如何使用Angular Material中的滑块开关组件，其他组件的使用方法与此相似，不同的是各组件的属性和方法。</p>
+<p>从上面的步骤2中看出，每添加一个Angular Material的组件，就需要往NgModule类的imports数组中导入相应的模块，而且各组件之间也有相互的依赖关系，比如步进器组件模块（MatStepperModule）依赖图标组件模块（MatIconModule），而且Material的组件有很多，随着项目UI的增加，NgModule类中不得不继续导入其他的Material组件模块。</p>
+<p>在实践中，一般是单独创建一个Moudle来引入Angular Material的组件模块。下面通过示例演示使用Angular Material的最佳实践。</p>
+</div>
+<div class="section" id="ui-ex100-angular-material">
+<h3><span class="sectnum">16.1.3</span> [示例 ui-ex100] 使用Angular Material的最佳实践<a class="headerlink" href="#ui-ex100-angular-material" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>用Angular CLI构建应用程序，具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng n ui-ex100 -S --routing --interactive<span class="o">=</span><span class="nb">false</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>启动服务，具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng serve
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><p>查看应用程序结果。打开Web浏览器并浏览到 “<a class="reference external" href="http://localhost:4200">http://localhost:4200</a>”，应该看到文本 “Welcome to ui-ex100!”。</p></li>
+<li><p>安装 Angular Material，具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng add @angular/material --defaults<span class="o">=</span><span class="nb">true</span> <span class="c1"># defaults=true表示问答时选择默认值</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="5">
+<li><p>新建Material模块，具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng g m material --flat <span class="c1"># flat参数表示让该模块位于根目录下</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="6">
+<li><p>编辑Material模块，编辑文件src/app/material.module.ts，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">NgModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">MatSlideToggleModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/material/slide-toggle&#39;</span><span class="p">;</span>
+
+<span class="kr">const</span> <span class="nx">materialModules</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="nx">MatSlideToggleModule</span><span class="p">,</span>
+  <span class="c1">// 新的Module在这里添加</span>
+<span class="p">];</span>
+
+<span class="kd">@NgModule</span><span class="p">({</span>
+  <span class="nx">imports</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">...</span><span class="nx">materialModules</span>
+  <span class="p">],</span>
+  <span class="nx">exports</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">...</span><span class="nx">materialModules</span>
+  <span class="p">],</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">MaterialModule</span> <span class="p">{</span> <span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="7">
+<li><p>编辑模块。编辑文件src/app/app.module.ts，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">BrowserModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/platform-browser&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">NgModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">AppRoutingModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./app-routing.module&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">AppComponent</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./app.component&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">BrowserAnimationsModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/platform-browser/animations&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">MaterialModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./material.module&#39;</span><span class="p">;</span>
+
+<span class="kd">@NgModule</span><span class="p">({</span>
+  <span class="nx">declarations</span><span class="o">:</span> <span class="p">[</span>
+    <span class="nx">AppComponent</span>
+  <span class="p">],</span>
+  <span class="nx">imports</span><span class="o">:</span> <span class="p">[</span>
+    <span class="nx">BrowserModule</span><span class="p">,</span>
+    <span class="nx">AppRoutingModule</span><span class="p">,</span>
+    <span class="nx">BrowserAnimationsModule</span><span class="p">,</span>
+    <span class="nx">MaterialModule</span> <span class="c1">// 这里是关键点</span>
+  <span class="p">],</span>
+  <span class="nx">providers</span><span class="o">:</span> <span class="p">[],</span>
+  <span class="nx">bootstrap</span><span class="o">:</span> <span class="p">[</span><span class="nx">AppComponent</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">AppModule</span> <span class="p">{</span> <span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="8">
+<li><p>编辑组件模板。编辑文件src/app/app.component.html，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">mat-slide-toggle</span><span class="p">&gt;</span>Slide me!<span class="p">&lt;/</span><span class="nt">mat-slide-toggle</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="9">
+<li><p>观察应用程序页面，页面显示效果与图16-3的效果一模一样。</p></li>
+</ol>
+<p>在上面的示例ui-ex100中的关键点是：创建了一个单独的Material模块。这个模块用来放置所有与Material组件相关的模块，然后在AppModule中导入Material模块，这样在整个应用中都可以使用Material组件的功能了。</p>
+<div class="admonition- admonition">
+<p class="admonition-title">注意</p>
+<p>在实践过程中，Angular Material的组件有很多，随着版本的迭代，上面示例仅演示导入了一个滑块开关模块。因此，读者在实践时，如果遇到没有导入的模块，需要手动自行添加。</p>
+</div>
+</div>
+<div class="section" id="id3">
+<h3><span class="sectnum">16.1.4</span> 使用Angular Material的生成器快速创建组件<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>Angular Material还提供了一些生成器，用于快速的生成Material Design的组合组件，这些命令如下：</p>
+<blockquote>
+<div><table class="colwidths-given docutils align-default" id="id10">
+<caption><span class="caption-text">生成Material Design的组合组件的生成器</span><a class="headerlink" href="#id10" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>生成器</p></td>
+<td><p>说明</p></td>
+</tr>
+<tr class="row-even"><td><p>address-form</p></td>
+<td><p>创建一个表单组，它使用多个表单控件接收一个送货地址</p></td>
+</tr>
+<tr class="row-odd"><td><p>navigation</p></td>
+<td><p>创建一个带有响应式的侧边栏组件和一个用于显示应用名称的工具栏组件</p></td>
+</tr>
+<tr class="row-even"><td><p>dashboard</p></td>
+<td><p>创建一个仪表盘页面，并且带有多个卡片和菜单的网格式布局组件</p></td>
+</tr>
+<tr class="row-odd"><td><p>table</p></td>
+<td><p>生成一个支持排序和分页的数据表组件</p></td>
+</tr>
+<tr class="row-even"><td><p>tree</p></td>
+<td><p>生成一个树结构的组件</p></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>以生成器“address-form”为例，使用命令的格式如：</p>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng generate @angular/material:address-form &lt;component-name&gt;
+</pre></div>
+</div>
+</div></blockquote>
+<p>使用其他命令的格式以此类推，仅需将address-form换成上表中对应的生成器名称。另外Angular CDK也提供了一个生成器命令：</p>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng generate @angular/cdk/drag-drop &lt;component-name&gt;
+</pre></div>
+</div>
+</div></blockquote>
+<p>上述命令，将创建一个带有 CDK 拖放指令的组件。</p>
+<p>下面，我们通过具体的示例演示Angular Material的生成器命令的使用。</p>
+</div>
+<div class="section" id="ui-ex200-angular-material">
+<h3><span class="sectnum">16.1.5</span> [示例 ui-ex200] 使用Angular Material的生成器命令<a class="headerlink" href="#ui-ex200-angular-material" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>用Angular CLI构建应用程序，具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng n ui-ex200 -S --routing --interactive<span class="o">=</span><span class="nb">false</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>启动服务，具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng serve
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><p>查看应用程序结果。打开Web浏览器并浏览到 “<a class="reference external" href="http://localhost:4200">http://localhost:4200</a>”，应该看到文本 “Welcome to ui-ex200!”。</p></li>
+<li><p>安装 Angular Material，具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng add @angular/material --defaults<span class="o">=</span><span class="nb">true</span> <span class="c1"># defaults=true 表示问答时选择默认值</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="5">
+<li><p>新建Material模块，具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng g m material --route main --module app
+</pre></div>
+</div>
+<p>注意，上述命令中附带的参数含义说明如下：</p>
+<p>“–route” 选项告诉Angular CLI命令，新建一个延迟加载的特性模块，并且不需要在根模块中对其引用；route选项参数“main”表示将生成一个path为main的延迟加载路由，并且将其添加到以 –module 选项指定的模块中，具体的位置是添加到该模块声明的 routes 数组中；命令中的module选项参数“app”表示在指定的模块文件（省略了扩展名，指的是app.module.ts模块文件）中添加延迟加载路由的配置;</p>
+</div></blockquote>
+<ol class="arabic simple" start="6">
+<li><p>使用生成器命令依次创建组件模块，具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng g @angular/material:navigation navigation --module material
+ng g @angular/material:dashboard dashboard --module<span class="o">=</span>material
+ng g @angular/material:address-form address-form --module<span class="o">=</span>material
+ng g @angular/material:table table --module<span class="o">=</span>material
+ng g @angular/material:tree tree --module<span class="o">=</span>material
+</pre></div>
+</div>
+<p>命令中的module选项参数“material”表示在指定的模块文件（省略了扩展名，指的是material.module.ts模块文件）中添加Angular Material模块的配置。上述命令执行完成后，在文件src/app/material.module.ts中将会看到大量的模块和组件类被添加到&#64;NgModul装饰器中。</p>
+</div></blockquote>
+<ol class="arabic simple" start="7">
+<li><p>编辑导航模板，编辑文件src/app/navigation/navigation.component.html，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-scss notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="nt">mat-sidenav-container</span> <span class="nt">class</span><span class="o">=</span><span class="s2">&quot;sidenav-container&quot;</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="nt">mat-sidenav</span> <span class="nn">#drawer</span> <span class="nt">class</span><span class="o">=</span><span class="s2">&quot;sidenav&quot;</span> <span class="nt">fixedInViewport</span>
+      <span class="o">[</span><span class="nt">attr</span><span class="nc">.role</span><span class="o">]=</span><span class="s2">&quot;(isHandset$ | async) ? &#39;dialog&#39; : &#39;navigation&#39;&quot;</span>
+      <span class="o">[</span><span class="nt">mode</span><span class="o">]=</span><span class="s2">&quot;(isHandset$ | async) ? &#39;over&#39; : &#39;side&#39;&quot;</span>
+      <span class="o">[</span><span class="nt">opened</span><span class="o">]=</span><span class="s2">&quot;(isHandset$ | async) === false&quot;</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nt">mat-toolbar</span><span class="o">&gt;</span><span class="nt">Menu</span><span class="o">&lt;/</span><span class="nt">mat-toolbar</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nt">mat-nav-list</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nt">a</span> <span class="nt">mat-list-item</span> <span class="nt">href</span><span class="o">=</span><span class="s2">&quot;dashboard&quot;</span><span class="o">&gt;</span><span class="nt">仪表盘</span><span class="o">&lt;/</span><span class="nt">a</span><span class="o">&gt;</span> <span class="o">&lt;!</span><span class="nt">--新增的link--</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nt">a</span> <span class="nt">mat-list-item</span> <span class="nt">href</span><span class="o">=</span><span class="s2">&quot;address&quot;</span><span class="o">&gt;</span><span class="nt">表单</span><span class="o">&lt;/</span><span class="nt">a</span><span class="o">&gt;&lt;!</span><span class="nt">--新增的link--</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nt">a</span> <span class="nt">mat-list-item</span> <span class="nt">href</span><span class="o">=</span><span class="s2">&quot;table&quot;</span><span class="o">&gt;</span><span class="nt">表格</span><span class="o">&lt;/</span><span class="nt">a</span><span class="o">&gt;&lt;!</span><span class="nt">--新增的link--</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nt">a</span> <span class="nt">mat-list-item</span> <span class="nt">href</span><span class="o">=</span><span class="s2">&quot;tree&quot;</span><span class="o">&gt;</span><span class="nt">树</span><span class="o">&lt;/</span><span class="nt">a</span><span class="o">&gt;&lt;!</span><span class="nt">--新增的link--</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="nt">mat-nav-list</span><span class="o">&gt;</span>
+  <span class="o">&lt;/</span><span class="nt">mat-sidenav</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="nt">mat-sidenav-content</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nt">mat-toolbar</span> <span class="nt">color</span><span class="o">=</span><span class="s2">&quot;primary&quot;</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nt">button</span>
+        <span class="nt">type</span><span class="o">=</span><span class="s2">&quot;button&quot;</span>
+        <span class="nt">aria-label</span><span class="o">=</span><span class="s2">&quot;Toggle sidenav&quot;</span>
+        <span class="nt">mat-icon-button</span>
+        <span class="o">(</span><span class="nt">click</span><span class="o">)=</span><span class="s2">&quot;drawer.toggle()&quot;</span>
+        <span class="o">*</span><span class="nt">ngIf</span><span class="o">=</span><span class="s2">&quot;isHandset$ | async&quot;</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nt">mat-icon</span> <span class="nt">aria-label</span><span class="o">=</span><span class="s2">&quot;Side nav toggle icon&quot;</span><span class="o">&gt;</span><span class="nt">menu</span><span class="o">&lt;/</span><span class="nt">mat-icon</span><span class="o">&gt;</span>
+      <span class="o">&lt;/</span><span class="nt">button</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nt">span</span><span class="o">&gt;</span><span class="nt">ui-ex200</span><span class="o">&lt;/</span><span class="nt">span</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="nt">mat-toolbar</span><span class="o">&gt;</span>
+    <span class="o">&lt;!</span><span class="nt">--</span> <span class="nt">Add</span> <span class="nt">Content</span> <span class="nt">Here</span> <span class="nt">--</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nt">router-outlet</span><span class="o">&gt;&lt;/</span><span class="nt">router-outlet</span><span class="o">&gt;</span> <span class="o">&lt;!</span><span class="nt">--新增的路由器出口--</span><span class="o">&gt;</span>
+  <span class="o">&lt;/</span><span class="nt">mat-sidenav-content</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="nt">mat-sidenav-container</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>重点关注上述代码中的注释部分，新增了4个link和1个路由器出口。</p>
+</div></blockquote>
+<ol class="arabic simple" start="8">
+<li><p>编辑Material路由模块。编辑文件src/app/material/material-routing.module.ts，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">NgModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">Routes</span><span class="p">,</span> <span class="nx">RouterModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/router&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">TreeComponent</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;../tree/tree.component&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">AddressFormComponent</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;../address-form/address-form.component&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">DashboardComponent</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;../dashboard/dashboard.component&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">NavigationComponent</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;../navigation/navigation.component&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">TableComponent</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;../table/table.component&#39;</span><span class="p">;</span>
+
+<span class="kr">const</span> <span class="nx">routes</span>: <span class="kt">Routes</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="p">{</span>
+    <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="nx">component</span>: <span class="kt">NavigationComponent</span><span class="p">,</span>
+    <span class="nx">children</span><span class="o">:</span> <span class="p">[</span>
+      <span class="p">{</span> <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="nx">redirectTo</span><span class="o">:</span> <span class="s1">&#39;dashboard&#39;</span><span class="p">,</span> <span class="nx">pathMatch</span><span class="o">:</span> <span class="s1">&#39;full&#39;</span> <span class="p">},</span>
+      <span class="p">{</span> <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;dashboard&#39;</span><span class="p">,</span> <span class="nx">component</span>: <span class="kt">DashboardComponent</span> <span class="p">},</span>
+      <span class="p">{</span> <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;address&#39;</span><span class="p">,</span> <span class="nx">component</span>: <span class="kt">AddressFormComponent</span> <span class="p">},</span>
+      <span class="p">{</span> <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;table&#39;</span><span class="p">,</span> <span class="nx">component</span>: <span class="kt">TableComponent</span> <span class="p">},</span>
+      <span class="p">{</span> <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;tree&#39;</span><span class="p">,</span> <span class="nx">component</span>: <span class="kt">TreeComponent</span> <span class="p">},</span>
+    <span class="p">]</span>
+  <span class="p">}</span>
+<span class="p">];</span>
+
+<span class="kd">@NgModule</span><span class="p">({</span>
+  <span class="nx">imports</span><span class="o">:</span> <span class="p">[</span><span class="nx">RouterModule</span><span class="p">.</span><span class="nx">forChild</span><span class="p">(</span><span class="nx">routes</span><span class="p">)],</span>
+  <span class="nx">exports</span><span class="o">:</span> <span class="p">[</span><span class="nx">RouterModule</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">MaterialRoutingModule</span> <span class="p">{</span> <span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="9">
+<li><p>编辑根组件模板。编辑文件src/app/app.component.html，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">router-outlet</span><span class="p">&gt;&lt;/</span><span class="nt">router-outlet</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="10">
+<li><p>编辑根路由模板。编辑文件src/app/app-routing.module.ts，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">NgModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">Routes</span><span class="p">,</span> <span class="nx">RouterModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/router&#39;</span><span class="p">;</span>
+
+
+<span class="kr">const</span> <span class="nx">routes</span>: <span class="kt">Routes</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="p">{</span> <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="nx">redirectTo</span><span class="o">:</span> <span class="s1">&#39;/main&#39;</span><span class="p">,</span> <span class="nx">pathMatch</span><span class="o">:</span> <span class="s1">&#39;full&#39;</span> <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;main&#39;</span><span class="p">,</span>
+    <span class="nx">loadChildren</span><span class="o">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="kr">import</span><span class="p">(</span><span class="s1">&#39;./material/material.module&#39;</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">m</span> <span class="o">=&gt;</span> <span class="nx">m</span><span class="p">.</span><span class="nx">MaterialModule</span><span class="p">)</span>
+  <span class="p">}];</span>
+
+<span class="kd">@NgModule</span><span class="p">({</span>
+  <span class="nx">imports</span><span class="o">:</span> <span class="p">[</span><span class="nx">RouterModule</span><span class="p">.</span><span class="nx">forRoot</span><span class="p">(</span><span class="nx">routes</span><span class="p">)],</span>
+  <span class="nx">exports</span><span class="o">:</span> <span class="p">[</span><span class="nx">RouterModule</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">AppRoutingModule</span> <span class="p">{</span> <span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="11">
+<li><p>观察应用程序页面，页面显示效果如图16-4所示：</p></li>
+</ol>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/Figure16-4.png"><img alt="../_images/Figure16-4.png" src="../_images/Figure16-4.png" style="width: 500px;" /></a>
+<p>图16-4 使用Angular Material的生成器命令创建的应用</p>
+</div></blockquote>
+<p>在上面的示例ui-ex200中，完成了以下内容：</p>
+<ol class="arabic simple">
+<li><p>步骤5中新建了一个带路由功能的Material模块，除了根模块外，在本示例中，一共存在2个独立的模块。</p></li>
+<li><p>步骤6中使用生成器命令依次创建组件模块，都是基于Material模块，应用程序中使用的组件库均在Material模块范围内使用，因此，本示例无需额外的创建一个共享的Material组件库模块；</p></li>
+<li><p>步骤8中，在Material路由模块的routes数组中配置了1个父子关系的路由节点，将NavigationComponent作为父节点，其他组件作为子节点，因此，在步骤7中，将主路由器出口放置在NavigationComponent组件的模板中；</p></li>
+</ol>
+<p>本示例重点演示的是如何使用Angular Material的生成器命令。生成器的优势在于，自动生成好代码和配置。</p>
+</div>
+</div>
+<div class="section" id="web">
+<h2><span class="sectnum">16.2</span> 关于WEB页面的布局设计<a class="headerlink" href="#web" title="Permalink to this headline">¶</a></h2>
+<p>在学习Angular Material 布局前，我们先了解下关于网页布局的流行设计知识。
+响应式网页设计（RWD，Responsive Web Design）和自适应网页设计（AWD，Adaptive Web Design）在现阶段非常流行，它们是网页设计中的两种模式，简称：R+A模式，下面分别对它们进行介绍。</p>
+<div class="section" id="id4">
+<h3><span class="sectnum">16.2.1</span> 什么是响应式页面设计<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>响应式网页（RWD，Responsive Web Design）就是一个网站能够针对多个终端提供不同的显示样式，而不是针对每个终端制作一个特定的版本。
+响应式页面就是随着设备属性（如宽高）的变化，网页的布局也随着变化。响应式页面用到的主要技术就是CSS，如：</p>
+<ol class="arabic simple">
+<li><p>多使用 max-width、min-width等属性，不硬编码具体的宽度；</p></li>
+<li><p>使用媒体查询(Media Query)来响应不同屏幕尺寸和分辨率的设备；</p></li>
+<li><p>多使用流式网格布局。流式布局就是页面元素的宽度按照屏幕进行适配调整。简单来说，就是 HTML 页面中的元素会根据分辨率的不同而变化大小，但位置并不会有任何变化；</p></li>
+<li><p>多使用相对单位替换绝对单位，如设置宽度可以使用百分值替代px像素值；</p></li>
+<li><p>使用能够适应比例变化的图片，即图片可伸缩，不固定宽高；</p></li>
+</ol>
+<p>响应式网页带来的优势就是比较灵活，一个页面适应不同终端。从运营和维护的便利性考虑，当网站交互少，功能少，升级不频繁时，建议使用响应式页面设计。如介绍公司的产品，宣传展示之类的网站。</p>
+</div>
+<div class="section" id="id5">
+<h3><span class="sectnum">16.2.2</span> 什么是自适应网页设计<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p>自适应网页（AWD，Adaptive Web Design）是指页面内容自动适应屏幕大小，指的是页面宽度不固定。自适应页面可以是响应式的，也可以不是响应式的。目前，各种新型设备(手机/平板电脑)、平台和浏览器都需要兼容显示WEB应用程序，需要一种设计兼容所有的设备。自适应网页设计应运而生，它提供不同的布局来为不同的设备提供最好的体验，它代表了一种必然的设计趋势。实现自适应一般是采用如下技术：</p>
+<ol class="arabic simple">
+<li><p>使用媒体查询(Media Query)技术，但是仅是针对有限的设备进行设计；</p></li>
+<li><p>用 Javascript 来操作 HTML 内容；</p></li>
+<li><p>在服务器端操作 HTML 内容（比如为移动端减少内容，为桌面端提供更多内容）。</p></li>
+</ol>
+<p>自适应网页的理念就是针对不同的设备进行一对一的设计，在不同的终端可能会有不一样的代码结构和体验。从页面个性化多功能方面考虑，当网站功能功能复杂、用户交互频繁、用户量较大，自适应网页设计更合适。如电商类网站，WEB桌面端和移动端为了提供较好的用户体验，针对显示的内容会有取舍。</p>
+</div>
+<div class="section" id="id6">
+<h3><span class="sectnum">16.2.3</span> 什么是媒体查询<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<p>媒体查询是CSS3中引入的一个新特性，它可以使用自定义的“&#64;media”规则，根据一定条件来加载一段特定的CSS样式。
+媒体查询可针对不同设备场景使用不同CSS，媒体查询技术的原理：通过匹配不同屏幕设备的特征，让不同特征下的CSS代码生效。</p>
+<p>下面示例代码演示媒体查询的用法：</p>
+<blockquote>
+<div><div class="highlight-HTML notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>媒体查询示例<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+    <span class="p">@</span><span class="k">media</span> <span class="o">(</span><span class="nt">max-width</span><span class="o">:</span> <span class="nt">50em</span><span class="o">)</span><span class="p">{</span>
+      <span class="nt">body</span> <span class="p">{</span>
+        <span class="k">background-color</span><span class="p">:</span> <span class="kc">red</span><span class="p">;</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="p">@</span><span class="k">media</span> <span class="o">(</span><span class="nt">min-width</span><span class="o">:</span> <span class="nt">50em</span><span class="o">)</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">max-width</span><span class="o">:</span> <span class="nt">80em</span><span class="o">)</span> <span class="p">{</span>
+      <span class="nt">body</span> <span class="p">{</span>
+        <span class="k">background-color</span><span class="p">:</span> <span class="kc">blue</span><span class="p">;</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>在上面的示例中，完成了以下内容：</p>
+<ol class="arabic simple">
+<li><p>CSS样式“background-color”仅在满足“&#64;media”条件时加载；</p></li>
+<li><p>当屏幕宽度值达到最大50em时，即小于或者等于50em时，页面背景色设置为红色；</p></li>
+<li><p>当屏幕宽度值位于50em到80em之间时，页面背景色设置为蓝色；</p></li>
+</ol>
+<p>上面示例中的max-width和min-width称为媒体匹配特征（Media Feature），常见的媒体匹配特征如下表所示：</p>
+<blockquote>
+<div><table class="colwidths-given docutils align-default" id="id11">
+<caption><span class="caption-text">常见的媒体匹配特征</span><a class="headerlink" href="#id11" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 67%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>特征名称</p></td>
+<td><p>说明</p></td>
+</tr>
+<tr class="row-even"><td><p>max-width</p></td>
+<td><p>设置屏的最大宽度，表示屏宽小于或等于它的值时生效</p></td>
+</tr>
+<tr class="row-odd"><td><p>min-width</p></td>
+<td><p>设置屏的最小宽度，表示屏宽大于或等于它的值时生效</p></td>
+</tr>
+<tr class="row-even"><td><p>width/height</p></td>
+<td><p>浏览器的宽度和高度</p></td>
+</tr>
+<tr class="row-odd"><td><p>device-width/device-height</p></td>
+<td><p>移动设备屏幕的宽度和高度</p></td>
+</tr>
+<tr class="row-even"><td><p>resolution</p></td>
+<td><p>设备分辨率</p></td>
+</tr>
+<tr class="row-odd"><td><p>orientation（方向）</p></td>
+<td><p>它有两个值：portrait(纵向)和landscape(横向)</p></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>本示例仅是带来读者了解媒体查询。“&#64;media”语法中的“and”称为查询操作符，max-width和min-width的值表示设置屏幕的断点，通过媒体查询的语法，我们可以构造复杂的使用场景。有关媒体查询的详细语法，读者可以自行查阅相关文档。</p>
+</div>
+</div>
+<div class="section" id="id7">
+<h2><span class="sectnum">16.3</span> 使用 Angular Material 的媒体查询设计网页<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<p>Angular Material 布局模块提供了一些工具来构建响应式用户界面，以响应屏幕尺寸的变化。BreakpointObserver工具类就是其中的一种，该类用于对媒体查询进行求值，并对其变化作出响应。</p>
+<p>下面示例代码演示使用Angular Material 布局模块提供的媒体查询，对应着不同设备类型的断点。</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span><span class="nx">BreakpointObserver</span><span class="p">,</span> <span class="nx">Breakpoints</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/cdk/layout&#39;</span><span class="p">;</span>
+
+<span class="kd">@Component</span><span class="p">({...})</span>
+<span class="kr">class</span> <span class="nx">MyComponent</span> <span class="p">{</span>
+  <span class="kr">constructor</span><span class="p">(</span><span class="nx">breakpointObserver</span>: <span class="kt">BreakpointObserver</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">breakpointObserver</span><span class="p">.</span><span class="nx">observe</span><span class="p">([</span>
+      <span class="nx">Breakpoints</span><span class="p">.</span><span class="nx">HandsetLandscape</span><span class="p">,</span> <span class="c1">// 媒体查询条件</span>
+      <span class="nx">Breakpoints</span><span class="p">.</span><span class="nx">HandsetPortrait</span>
+    <span class="p">]).</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">result</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">matches</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;匹配上了&#39;</span><span class="p">);</span>
+      <span class="p">}</span>
+    <span class="p">});</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>上述代码在执行过程中，当只要其中指定的任何一个媒体查询条件满足时，会执行打印控制台信息。用户可以拉缩浏览器宽度，模拟手持设备竖屏（HandsetPortrait）时，会发现页面控制台打印出文本“匹配上了”。Breakpoints是Angular Material 布局模块提供的设置媒体查询的断点常量类，常见的断点常量如下表所示：</p>
+<blockquote>
+<div><table class="colwidths-given docutils align-default" id="id12">
+<caption><span class="caption-text">常见设备类型的断点常量</span><a class="headerlink" href="#id12" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>设备类型常量</p></td>
+<td><p>说明</p></td>
+</tr>
+<tr class="row-even"><td><p>Handset</p></td>
+<td><p>手持设备</p></td>
+</tr>
+<tr class="row-odd"><td><p>Tablet</p></td>
+<td><p>平板电脑</p></td>
+</tr>
+<tr class="row-even"><td><p>Web</p></td>
+<td><p>浏览器</p></td>
+</tr>
+<tr class="row-odd"><td><p>WebPortrait</p></td>
+<td><p>Web 竖屏</p></td>
+</tr>
+<tr class="row-even"><td><p>WebLandscape</p></td>
+<td><p>Web 横屏</p></td>
+</tr>
+<tr class="row-odd"><td><p>HandsetPortrait</p></td>
+<td><p>手持设备竖屏</p></td>
+</tr>
+<tr class="row-even"><td><p>TabletPortrait</p></td>
+<td><p>平板电脑竖屏</p></td>
+</tr>
+<tr class="row-odd"><td><p>HandsetLandscape</p></td>
+<td><p>手持设备横屏</p></td>
+</tr>
+<tr class="row-even"><td><p>TabletLandscape</p></td>
+<td><p>平板电脑横屏</p></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<div class="section" id="id8">
+<h3><span class="sectnum">16.3.1</span> 学习 Angular Material 的网格列表布局<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<p>Angular Material的网格列表（MatGridList）采用响应式页面设计模式，纯粹是作为容器布局装饰使用。MatGridList是MatGridListModule类中的一个指令，它的选择器是“mat-grid-list”，即在HTML中的标签为&lt;mat-grid-list&gt;。MatGridList指令渲染的网格列表是一个二维列表，用于把一些单元格按基于网格的布局排列。MatGridList指令的API定义如下：</p>
+<blockquote>
+<div><table class="colwidths-given docutils align-default" id="id13">
+<caption><span class="caption-text">MatGridList指令的API定义</span><a class="headerlink" href="#id13" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>输入属性</p></td>
+<td><p>说明</p></td>
+</tr>
+<tr class="row-even"><td><p>&#64;Input() cols: number</p></td>
+<td><p>设置列的数量，必需项</p></td>
+</tr>
+<tr class="row-odd"><td><p>&#64;Input() gutterSize: string</p></td>
+<td><p>设置单元格之间的间隙，默认值为：1px</p></td>
+</tr>
+<tr class="row-even"><td><p>&#64;Input() rowHeight: string | number</p></td>
+<td><p>设置行高</p></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>关于上述表格中的rowHeight属性，设置行高时，它可以接受3种不同场景下的值：</p>
+<ol class="arabic simple">
+<li><p>当设置为固定行高时，它接受一个字符串的高度值（如：100px、50vh），如果省略了单位，即接受一个数值，其默认单位为px；</p></li>
+<li><p>当设置为宽高比时，该比例表示“列宽:行高”，并须用冒号形式表示（比如 4:3）；</p></li>
+<li><p>当设置为固定字符串值“fit”时，它表示填充满，这时必须要设置&lt;mat-grid-list&gt;标签容器的高度。</p></li>
+</ol>
+<p>如上所述，MatGridList指令作为容器布局，那么它下面需要有子。MatGridTile指令也是来自MatGridListModule类，它作为MatGridList容器指令的子容器，MatGridTile指令的选择器是“mat-grid-tile“，在Angular Material布局中，MatGridList和MatGridTile指令总是成对出现的。下面是关于MatGridTile指令API的定义说明：</p>
+<blockquote>
+<div><table class="colwidths-given docutils align-default" id="id14">
+<caption><span class="caption-text">MatGridTile指令的API定义</span><a class="headerlink" href="#id14" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>输入属性</p></td>
+<td><p>说明</p></td>
+</tr>
+<tr class="row-even"><td><p>&#64;Input() colspan: number</p></td>
+<td><p>设置单元格所占的列数，默认为：1</p></td>
+</tr>
+<tr class="row-odd"><td><p>&#64;Input() rowspan: number</p></td>
+<td><p>设置单元格所占的行数，默认为：1</p></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>MatGridTile指令下面又有个子指令：MatGridTileText指令，它里面可以包含&lt;mat-grid-tile-header&gt;和&lt;mat-grid-tile-footer&gt;，分别用来设备单元格的头和脚。</p>
+<p>综上所述，MatGridList、MatGridTile和MatGridTileText指令它们之间的关系，用下面的层级标签表示：</p>
+<blockquote>
+<div><div class="highlight-HTML notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">mat-grid-list</span> <span class="na">cols</span><span class="o">=</span><span class="s">&quot;总的列数&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">mat-grid-tile</span> <span class="na">colspan</span><span class="o">=</span><span class="s">&quot;单元格占的列数&quot;</span> <span class="na">rowspan</span><span class="o">=</span><span class="s">&quot;单元格占的行数&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">mat-grid-tile-header</span><span class="p">&gt;</span>单元格头<span class="p">&lt;/</span><span class="nt">mat-grid-tile-header</span><span class="p">&gt;</span>
+      内容
+    <span class="p">&lt;</span><span class="nt">mat-grid-tile-footer</span><span class="p">&gt;</span>单元格脚<span class="p">&lt;/</span><span class="nt">mat-grid-tile-footer</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">mat-grid-tile</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">mat-grid-tile</span><span class="p">&gt;</span>……<span class="p">&lt;/</span><span class="nt">mat-grid-tile</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">mat-grid-list</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>下面演示如何使用 Angular Material 的网格列表布局。</p>
+</div>
+<div class="section" id="ui-ex300-angular-material">
+<h3><span class="sectnum">16.3.2</span> [示例 ui-ex300] 使用Angular Material的网格列表布局<a class="headerlink" href="#ui-ex300-angular-material" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>用Angular CLI构建应用程序，具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng n ui-ex300 -S --routing --defaults<span class="o">=</span><span class="nb">true</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>启动服务，具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng serve
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><p>查看应用程序结果。打开Web浏览器并浏览到 “<a class="reference external" href="http://localhost:4200">http://localhost:4200</a>”，应该看到文本 “Welcome to ui-ex300!”。</p></li>
+<li><p>安装 Angular Material，具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng add @angular/material --defaults<span class="o">=</span><span class="nb">true</span> <span class="c1"># defaults=true表示问答时选择默认值</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="5">
+<li><p>新建Material模块，具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng g m material --route main --module app
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="6">
+<li><p>编辑Material模块。编辑文件src/app/material/material.module.ts，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">NgModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">CommonModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/common&#39;</span><span class="p">;</span>
+
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">MaterialRoutingModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./material-routing.module&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">MaterialComponent</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./material.component&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">MatGridListModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/material/grid-list&#39;</span><span class="p">;</span>
+
+
+<span class="kd">@NgModule</span><span class="p">({</span>
+  <span class="nx">declarations</span><span class="o">:</span> <span class="p">[</span><span class="nx">MaterialComponent</span><span class="p">],</span>
+  <span class="nx">imports</span><span class="o">:</span> <span class="p">[</span>
+    <span class="nx">CommonModule</span><span class="p">,</span>
+    <span class="nx">MaterialRoutingModule</span><span class="p">,</span>
+    <span class="nx">MatGridListModule</span>
+  <span class="p">]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">MaterialModule</span> <span class="p">{</span> <span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="7">
+<li><p>编辑Material组件。编辑文件src/app/material/material.component.ts，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Component</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+
+<span class="kr">export</span> <span class="kr">interface</span> <span class="nx">Tile</span> <span class="p">{</span>
+  <span class="nx">color</span>: <span class="kt">string</span><span class="p">;</span>
+  <span class="nx">cols</span>: <span class="kt">number</span><span class="p">;</span>
+  <span class="nx">rows</span>: <span class="kt">number</span><span class="p">;</span>
+  <span class="nx">text</span>: <span class="kt">string</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">@Component</span><span class="p">({</span>
+  <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-material&#39;</span><span class="p">,</span>
+  <span class="nx">templateUrl</span><span class="o">:</span> <span class="s1">&#39;./material.component.html&#39;</span><span class="p">,</span>
+  <span class="nx">styleUrls</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;./material.component.css&#39;</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">MaterialComponent</span> <span class="p">{</span>
+
+  <span class="kr">constructor</span><span class="p">()</span> <span class="p">{</span> <span class="p">}</span>
+
+  <span class="nx">tiles</span>: <span class="kt">Tile</span><span class="p">[]</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span> <span class="nx">text</span><span class="o">:</span> <span class="s1">&#39;One&#39;</span><span class="p">,</span> <span class="nx">cols</span>: <span class="kt">3</span><span class="p">,</span> <span class="nx">rows</span>: <span class="kt">1</span><span class="p">,</span> <span class="nx">color</span><span class="o">:</span> <span class="s1">&#39;lightblue&#39;</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="nx">text</span><span class="o">:</span> <span class="s1">&#39;Two&#39;</span><span class="p">,</span> <span class="nx">cols</span>: <span class="kt">1</span><span class="p">,</span> <span class="nx">rows</span>: <span class="kt">2</span><span class="p">,</span> <span class="nx">color</span><span class="o">:</span> <span class="s1">&#39;lightgreen&#39;</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="nx">text</span><span class="o">:</span> <span class="s1">&#39;Three&#39;</span><span class="p">,</span> <span class="nx">cols</span>: <span class="kt">1</span><span class="p">,</span> <span class="nx">rows</span>: <span class="kt">1</span><span class="p">,</span> <span class="nx">color</span><span class="o">:</span> <span class="s1">&#39;lightpink&#39;</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="nx">text</span><span class="o">:</span> <span class="s1">&#39;Four&#39;</span><span class="p">,</span> <span class="nx">cols</span>: <span class="kt">2</span><span class="p">,</span> <span class="nx">rows</span>: <span class="kt">1</span><span class="p">,</span> <span class="nx">color</span><span class="o">:</span> <span class="s1">&#39;#DDBDF1&#39;</span> <span class="p">},</span>
+  <span class="p">];</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="8">
+<li><p>编辑Material组件模板。编辑文件src/app/material/material.component.html，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-scss notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="nt">mat-grid-list</span> <span class="nt">cols</span><span class="o">=</span><span class="s2">&quot;4&quot;</span> <span class="nt">class</span><span class="o">=</span><span class="s2">&quot;myGridList&quot;</span> <span class="nt">rowHeight</span><span class="o">=</span><span class="s2">&quot;fit&quot;</span> <span class="nt">gutterSize</span><span class="o">=</span><span class="s2">&quot;1px&quot;</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nt">mat-grid-tile</span> <span class="o">*</span><span class="nt">ngFor</span><span class="o">=</span><span class="s2">&quot;let tile of tiles&quot;</span> <span class="o">[</span><span class="nt">colspan</span><span class="o">]=</span><span class="s2">&quot;tile.cols&quot;</span> <span class="o">[</span><span class="nt">rowspan</span><span class="o">]=</span><span class="s2">&quot;tile.rows&quot;</span>
+        <span class="o">[</span><span class="nt">style</span><span class="nc">.background</span><span class="o">]=</span><span class="s2">&quot;tile.color&quot;</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nt">mat-grid-tile-header</span><span class="o">&gt;</span><span class="p">{{</span><span class="nt">tile</span><span class="nc">.color</span><span class="p">}}</span><span class="o">&lt;/</span><span class="nt">mat-grid-tile-header</span><span class="o">&gt;</span>
+        <span class="p">{{</span><span class="nt">tile</span><span class="nc">.text</span><span class="p">}}</span>
+        <span class="o">&lt;</span><span class="nt">mat-grid-tile-footer</span><span class="o">&gt;</span><span class="p">{{</span><span class="nt">tile</span><span class="nc">.color</span><span class="p">}}</span><span class="o">&lt;/</span><span class="nt">mat-grid-tile-footer</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="nt">mat-grid-tile</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="nt">mat-grid-list</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="9">
+<li><p>编辑Material组件模板样式。编辑文件src/app/material/material.component.css，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="nc">myGridList</span> <span class="p">{</span>
+    <span class="k">height</span><span class="p">:</span> <span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="10">
+<li><p>编辑组件模板。编辑文件src/app/app.component.html，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">router-outlet</span><span class="p">&gt;&lt;/</span><span class="nt">router-outlet</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="11">
+<li><p>编辑根路由模板。编辑文件src/app/app-routing.module.ts，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">NgModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">Routes</span><span class="p">,</span> <span class="nx">RouterModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/router&#39;</span><span class="p">;</span>
+
+<span class="kr">const</span> <span class="nx">routes</span>: <span class="kt">Routes</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="p">{</span> <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="nx">redirectTo</span><span class="o">:</span> <span class="s1">&#39;/main&#39;</span><span class="p">,</span> <span class="nx">pathMatch</span><span class="o">:</span> <span class="s1">&#39;full&#39;</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;main&#39;</span><span class="p">,</span> <span class="nx">loadChildren</span><span class="o">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="kr">import</span><span class="p">(</span><span class="s1">&#39;./material/material.module&#39;</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">m</span> <span class="o">=&gt;</span> <span class="nx">m</span><span class="p">.</span><span class="nx">MaterialModule</span><span class="p">)</span> <span class="p">}</span>
+<span class="p">];</span>
+
+<span class="kd">@NgModule</span><span class="p">({</span>
+  <span class="nx">imports</span><span class="o">:</span> <span class="p">[</span><span class="nx">RouterModule</span><span class="p">.</span><span class="nx">forRoot</span><span class="p">(</span><span class="nx">routes</span><span class="p">)],</span>
+  <span class="nx">exports</span><span class="o">:</span> <span class="p">[</span><span class="nx">RouterModule</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">AppRoutingModule</span> <span class="p">{</span> <span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="12">
+<li><p>观察应用程序页面，页面显示效果如图16-5所示：</p></li>
+</ol>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/Figure16-5.png"><img alt="../_images/Figure16-5.png" src="../_images/Figure16-5.png" style="width: 500px;" /></a>
+<p>图16-5 使用Angular Material的网格列表布局</p>
+</div></blockquote>
+<p>在上面的示例ui-ex300中，完成了以下内容：</p>
+<ol class="arabic simple">
+<li><p>步骤5中新建了带路由功能的Material模块，同样，在本示例中，一共存在2个独立的模块，在根模块中通过延迟加载特性加载Material模块；</p></li>
+<li><p>步骤6中在模块中导入MatGridListModule类，该类负责产生网格列表布局相关的指令；</p></li>
+<li><p>步骤8中，在Material组件的模板中使用了网格列表的属性：rowHeight=”fit”，同时在步骤9中设置了该容器的高度样式；</p></li>
+</ol>
+<p>通过使用Angular Material的网格列表，用户可以自由的创建响应式的页面布局。</p>
+</div>
+</div>
+<div class="section" id="id9">
+<h2><span class="sectnum">16.4</span> 小结<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+<p>本章带领读者认识Angular Material，介绍了如何使用Angular Material组件库的知识，然后介绍了WEB页面的设计方法，最后通过示例演示如何使用 Angular Material 的媒体查询设计网页。</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="rxjs.html" class="btn btn-neutral float-right" title="17 学习RxJS在Angular中的实际应用" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="pipe.html" class="btn btn-neutral float-left" title="15 深入学习Angular管道知识" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright CVI Talent
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

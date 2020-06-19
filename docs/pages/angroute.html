@@ -1,0 +1,1548 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>10 熟悉Angular路由功能</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="11 学习Angular的服务及依赖注入" href="injection.html" />
+    <link rel="prev" title="9 学习Angular模块知识" href="angmodule.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/main-page-logo-small-hat.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">目录：</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="start.html">Angular 9</a></li>
+<li class="toctree-l1"><a class="reference internal" href="first.html">第一课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="whatisangular.html"><span class="sectnum">1</span> Angular概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="howtolearn.html"><span class="sectnum">2</span> 学习Angular需要什么基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nodejs.html"><span class="sectnum">3</span> 掌握Node.js和npm基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="second.html">第二课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="typescript.html"><span class="sectnum">4</span> 学习TypeScript知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="firstangular.html"><span class="sectnum">5</span> 快速开启第一个Angular</a></li>
+<li class="toctree-l1"><a class="reference internal" href="third.html">第三课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angcomponent.html"><span class="sectnum">6</span> 学习Angular组件知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angtemplate.html"><span class="sectnum">7</span> 学习Angular模板知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angdirective.html"><span class="sectnum">8</span> 掌握Angular指令应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fourth.html">第四课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angmodule.html"><span class="sectnum">9</span> 学习Angular模块知识</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#"><span class="sectnum">10</span> 熟悉Angular路由功能</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1"><span class="sectnum">10.1</span> Angular路由介绍</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2"><span class="sectnum">10.1.1</span> 创建应用的路由模块</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3"><span class="sectnum">10.1.2</span> 理解系统路由服务</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id4"><span class="sectnum">10.2</span> 简单的路由配置</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id5"><span class="sectnum">10.2.1</span> 基本路由配置</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6"><span class="sectnum">10.2.2</span> 什么是路由器出口</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id7"><span class="sectnum">10.2.2.1</span> 主路由出口</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id8"><span class="sectnum">10.2.2.2</span> 命名路由出口</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id9"><span class="sectnum">10.2.3</span> 使用路由器链接</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id10"><span class="sectnum">10.2.4</span> 路由链接的激活状态</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#route-ex100"><span class="sectnum">10.2.5</span> [示例 route-ex100] 演示使用路由器链接指令</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id11"><span class="sectnum">10.3</span> 理解路由器状态</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id12"><span class="sectnum">10.3.1</span> 图解路由器状态及激活路由状态</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#activatedroute"><span class="sectnum">10.3.2</span> 理解ActivatedRoute对象和其快照对象</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#route-ex200-activatedroute"><span class="sectnum">10.3.3</span> [示例 route-ex200] 演示ActivatedRoute对象和其快照对象的应用</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id13"><span class="sectnum">10.4</span> 路由事件有哪些</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id14"><span class="sectnum">10.5</span> 如何在路由中传递参数</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id15"><span class="sectnum">10.5.1</span> 传递配置参数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id16"><span class="sectnum">10.5.2</span> 传递路径参数</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id17"><span class="sectnum">10.5.2.1</span> 传递必选参数</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id18"><span class="sectnum">10.5.2.2</span> 传递可选参数</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id19"><span class="sectnum">10.5.3</span> 传递查询参数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#route-ex300"><span class="sectnum">10.5.4</span> [示例 route-ex300] 演示使用路由传递参数</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id20"><span class="sectnum">10.6</span> 什么是路由守卫</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id21"><span class="sectnum">10.6.1</span> 理解路由守卫的基本概念</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id22"><span class="sectnum">10.6.2</span> 如何配置路由守卫</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canactivate"><span class="sectnum">10.6.3</span> CanActivate守卫的应用</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canactivatechild"><span class="sectnum">10.6.4</span> CanActivateChild守卫的应用</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#candeactivate"><span class="sectnum">10.6.5</span> CanDeactivate守卫的应用</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#resolve"><span class="sectnum">10.6.6</span> Resolve守卫的应用</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canload"><span class="sectnum">10.6.7</span> CanLoad守卫的应用</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id23"><span class="sectnum">10.7</span> 路由器的延迟加载功能</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id24"><span class="sectnum">10.7.1</span> 了解延迟加载</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id25"><span class="sectnum">10.7.2</span> 实施延迟加载</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#route-ex400"><span class="sectnum">10.7.3</span> [示例 route-ex400] 演示路由延迟加载功能</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id26"><span class="sectnum">10.8</span> 小结</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="injection.html"><span class="sectnum">11</span> 学习Angular的服务及依赖注入</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fifth.html">第五课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reactive.html"><span class="sectnum">12</span> 掌握响应式编程基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form.html"><span class="sectnum">13</span> 学习Angular表单知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="httpclient.html"><span class="sectnum">14</span> 熟悉HttpClient模块</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sixth.html">第六课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pipe.html"><span class="sectnum">15</span> 深入学习Angular管道知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ui.html"><span class="sectnum">16</span> Angular与Angular Material组件库</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rxjs.html"><span class="sectnum">17</span> 学习RxJS在Angular中的实际应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="seventh.html">第七课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="material.html"><span class="sectnum">18</span> 实战基于Angular Material实现表格组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bootstrap.html"><span class="sectnum">19</span> 集成Bootstrap前端组件库</a></li>
+<li class="toctree-l1"><a class="reference internal" href="echart.html"><span class="sectnum">20</span> 在Angular项目中使用图表</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appid.html"><span class="sectnum">21</span> 使用IBM Cloud™ App ID对Angular应用进行认证</a></li>
+<li class="toctree-l1"><a class="reference internal" href="communication.html"><span class="sectnum">22</span> 掌握在Angular组件间通信</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pwa.html"><span class="sectnum">23</span> Angular与渐进式WEB应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="message.html"><span class="sectnum">24</span> 实现简单的消息通知机制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="localdata.html"><span class="sectnum">25</span> 如何与本地数据打交道</a></li>
+<li class="toctree-l1"><a class="reference internal" href="test.html"><span class="sectnum">26</span> 熟悉Angular测试</a></li>
+<li class="toctree-l1"><a class="reference internal" href="package.html"><span class="sectnum">27</span> 熟悉Angular环境配置及打包</a></li>
+<li class="toctree-l1"><a class="reference internal" href="universal.html"><span class="sectnum">28</span> 学习Angular服务端渲染</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deploy.html"><span class="sectnum">29</span> 如何部署Angular应用程序</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user.html"><span class="sectnum">30</span> 实战用户管理系统</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">CVI Talent</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">首页</a> &raquo;</li>
+        
+      <li><span class="sectnum">10</span> 熟悉Angular路由功能</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        <a href="https://pages.github.ibm.com/lanzejun/talent/index.html" class="fa fa-github"> CVITube</a>
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="angular">
+<h1><span class="sectnum">10</span> 熟悉Angular路由功能<a class="headerlink" href="#angular" title="Permalink to this headline">¶</a></h1>
+<p>Angular路由器（Angular Router）使开发人员可以构建具有多个视图的单页应用程序，并允许用户在这些视图之间导航。
+Angular路由器的主要功能有从处理应用程序导航，加强路由防护，以及促进模块的延迟加载等。Angular路由对于大多数应用程序都是必不可少的。</p>
+<p>接下来，我们详细了解Angular路由的基本概念。</p>
+<div class="section" id="id1">
+<h2><span class="sectnum">10.1</span> Angular路由介绍<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>Angular路由服务是一个可选的服务，它用来呈现指定的URL所对应的视图。它并不是Angular核心库的一部分，而是位于&#64;angular/router包中。像其它 Angular包一样，需要时才从此包中导入。</p>
+<div class="section" id="id2">
+<h3><span class="sectnum">10.1.1</span> 创建应用的路由模块<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>默认情况下，使用Angular CLI命令 <code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">new</span></code> 构建应用程序时会提示是否需要路由服务功能，可以在命令后添加选项参数 <code class="docutils literal notranslate"><span class="pre">--routing</span></code> 来指定需要路由服务功能。当选择需要路由时，构建命令将会生成一个独立的路由模块文件，该文件名默认为app-routing.module.ts，它的初始代码如下：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">NgModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">Routes</span><span class="p">,</span> <span class="nx">RouterModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/router&#39;</span><span class="p">;</span>
+
+<span class="kr">const</span> <span class="nx">routes</span>: <span class="kt">Routes</span> <span class="o">=</span> <span class="p">[];</span>
+
+<span class="kd">@NgModule</span><span class="p">({</span>
+   <span class="nx">imports</span><span class="o">:</span> <span class="p">[</span><span class="nx">RouterModule</span><span class="p">.</span><span class="nx">forRoot</span><span class="p">(</span><span class="nx">routes</span><span class="p">)],</span>
+   <span class="nx">exports</span><span class="o">:</span> <span class="p">[</span><span class="nx">RouterModule</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">AppRoutingModule</span> <span class="p">{</span> <span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>从上面的代码可以看出，AppRoutingModule类由&#64;NgModule()装饰器声明，说明它是一个NgModule类，我们称之为应用的路由模块。
+应用的路由模块用于封装路由器配置，它可以在根模块和特性模块的级别上使用。</p>
+<p>应用的路由模块具有以下特征：</p>
+<ol class="arabic simple">
+<li><p>路由模块不需要declarations，即不需要声明组件、指令和管道；</p></li>
+<li><p>RouterModule.forRoot(routes)方法将会注册并返回一个全局的单例RouterModule对象，imports元数据导入这个单例对象；</p></li>
+<li><p>exports元数据导出RouterModule对象，这里是专门提供给根模块导入的；</p></li>
+<li><p>路由模块最终由根模块导入。执行 <code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">new</span></code> 命令时，Angular已经默认帮我们在根模块AppModule的imports元数据中导入了AppRoutingModule。</p></li>
+</ol>
+</div>
+<div class="section" id="id3">
+<h3><span class="sectnum">10.1.2</span> 理解系统路由服务<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>上面的AppRoutingModule路由模块代码中引用了Routes和RouterModule对象，它们都是从&#64;angular/router包中导入的系统路由对象。Routes类用于创建路由配置，RouterModule也是一个独立的 NgModule类，用于提供所需的路由服务，这些服务包含在应用视图之间进行导航的指令。RouterModule类中提供了 路由器（Router）服务，该服务是全局的一个单例服务。同时还提供了一些路由指令，比如RouterOutlet和routerLink等指令。</p>
+<p>AppRoutingModule路由模块中导出了RouterModule对象，应用的根模块AppModule中导入了AppRoutingModule，即导入了RouterModule对象，RouterModule对象注册了一个全局的路由器服务，该服务让应用的根组件可以访问各个路由器指令。</p>
+<p>如果在特性模块中需要使用路由器指令，那么需要在特性模块导入RouterModule，这样它们的组件模板中才能使用这些路由器指令。</p>
+<p>RouterModule对象有一个forChild()方法，也可以传入Route对象数组，尽管forChild()和 forRoot()方法都包含路由指令和配置，但是forRoot()方法可以返回Router对象，由于Router服务会改变浏览器的Location对象（可以理解为地址栏中的URL），而Location对象又是一个全局单例对象，所以Router服务对象也必须全局单例。这就是必须在根模块中只使用一次forRoot()方法的原因，特性模块中应当使用forChild()方法。</p>
+<p>另外需要注意：导入模块的顺序很重要，尤其是针对路由模块。因为当应用程序中有多个路由模块时，路由器会接受第一个匹配路径的那个路由，因此，需要将AppRoutingModule放置在根模块AppModule中imports元数据列表的最后一项。</p>
+</div>
+</div>
+<div class="section" id="id4">
+<h2><span class="sectnum">10.2</span> 简单的路由配置<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>每个带路由的Angular应用都有一个Router（路由器）服务的单例对象。当浏览器的URL变化时，路由器会查找对应的Route（路由），并据此决定该显示哪个组件。</p>
+<p>路由器需要先配置才会有路由信息。路由配置是由静态方法RouterModule.forRoot(routes)完成的，forRoot()方法接收Route对象数组，稍后，我们会在这里进行具体的路由定义。路由配置好后，Router根据这些信息负责将用户导航到指定的视图。</p>
+<div class="section" id="id5">
+<h3><span class="sectnum">10.2.1</span> 基本路由配置<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p>Route对象数组中的每个Route对象都会把一个URL映射到一个组件。
+Route对象是一个接口类型，它支持静态、参数化、重定向和通配符路由，以及自定义路由数据和解析方法。该接口中有个path属性，用来映射URL地址，Router会先解析，然后构建最终的URL，这样允许用户使用相对或绝对路径在应用的多个视图之间导航。
+关于path属性的值需要满足以下规则：</p>
+<ol class="arabic simple">
+<li><p>path的值类型是一个字符串，字符串的值不能以斜杠（/）开头；</p></li>
+<li><p>path的值可以为空（’’），表示应用程序的默认路径，通常是应用程序的首页地址；</p></li>
+<li><p>path的值可以使用通配符字符串（**）。如果请求的URL与定义路由的任何路径都不匹配，则路由器将选择此路由；</p></li>
+<li><p>如果请求的URL找不到匹配项，一般需要显示的配置类似“Not Found”的视图或重定向到特定视图。</p></li>
+<li><p>路由配置的顺序很重要，路由器仅会接受第一个匹配路径的那个路由。</p></li>
+</ol>
+<p>我们看一个简单的路由配置示例：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">routes</span>: <span class="kt">Routes</span> <span class="o">=</span> <span class="p">[</span>
+   <span class="p">{</span> <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="nx">redirectTo</span><span class="o">:</span> <span class="s1">&#39;/main&#39;</span><span class="p">,</span> <span class="nx">pathMatch</span><span class="o">:</span> <span class="s1">&#39;full&#39;</span> <span class="p">},</span> <span class="c1">// 默认路径导航到仪表盘页面</span>
+   <span class="p">{</span> <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;main&#39;</span><span class="p">,</span> <span class="nx">component</span>: <span class="kt">DashboardComponent</span> <span class="p">},</span> <span class="c1">// 路径导航到仪表盘页面</span>
+   <span class="p">{</span> <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;**&#39;</span><span class="p">,</span> <span class="nx">component</span>: <span class="kt">PageNotFoundComponent</span> <span class="p">}</span> <span class="c1">// 导航到 Not Found 页面</span>
+<span class="p">];</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>上述路由配置完成了以下内容：</p>
+<ol class="arabic simple">
+<li><p>路由中的空路径（’’）表示应用的默认路径，当URL为空时就会访问这里。这个默认路由会重定向到路径“/main”，显示其对应的DashboardComponent组件内容；</p></li>
+<li><p>当URL为“/main”时，这个路由将会显示DashboardComponent组件内容；</p></li>
+<li><p>最后一个路由中的“**”路径是一个通配符。当所请求的 URL 不匹配前面定义的任何路径时，路由器就会选择此路由。</p></li>
+<li><p>故意将这个通配符路由放置在最后，就是确保路由找不到时，才进入此路由。当找不到路径时，显示PageNotFoundComponent组件内容。</p></li>
+</ol>
+</div>
+<div class="section" id="id6">
+<h3><span class="sectnum">10.2.2</span> 什么是路由器出口<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<p>路由器出口（RouterOutlet）是一个来自RouterModule模块中的指令，它的用法类似于模板中的插值表达式。它扮演一个占位符的角色，用于在模板中标出一个位置，Router路由器将会在这个出口处显示对应的组件内容。简单的说，上面我们介绍的路由配置中的组件内容都将在这个占位符中显示。RouterOutlet指令的用法如下：</p>
+<blockquote>
+<div><div class="highlight-scss notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="nt">router-outlet</span><span class="o">&gt;&lt;/</span><span class="nt">router-outlet</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>由Angular CLI命令 <code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">new</span></code> 构建的应用程序中，可以在根模板中找到&lt;router-outlet&gt;标签。
+当完成了路由配置，有了渲染组件的路由器出口后，用户可以在浏览器中输入URL，当URL满足匹配的路由配置规则时，其对应的组件内容将显示在路由器出口的位置。</p>
+<div class="section" id="id7">
+<h4><span class="sectnum">10.2.2.1</span> 主路由出口<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h4>
+<p>上面介绍的路由出口称为主路由出口，一般放在根模块视图中。Angular设计中规定，在同一个模板视图中，路由器只能支持一个主路由出口，一个路由出口对应一个唯一的URL。主路由出口名称是相对其他路由出口而言的，如果应用程序中仅有一个路由出口，默认就是主路由出口。</p>
+<p>Angular应用程序的视图可以看成是一颗组件树，由一个个的组件组合而成，这些组件中有且仅有一个根组件。有时候，我们需要动态地的显示这些组件，有一种方法就是使用路由器和路由器出口，可以根据当前 URL 在程序中同一个模板的某个位置渲染不同的组件。例如，有一个用户信息应用程序，根据当前URL可能会显示首页，然后根据另一个URL显示用户信息列表，如图10-1所示：</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/Figure10-1.png"><img alt="../_images/Figure10-1.png" src="../_images/Figure10-1.png" style="width: 400px;" /></a>
+<p>图10-1 根据不同的URL显示不同的组件</p>
+</div></blockquote>
+<p>图10-1所示内容就是一个使用路由器出口的示例，它展示了通过使用路由器和路由器出口根据不同的URL显示不同的组件：</p>
+<ol class="arabic simple">
+<li><p>AppComponent是根组件，在其模板视图中放置了一个路由器出口标签；</p></li>
+<li><p>当URL为 <code class="docutils literal notranslate"><span class="pre">localhost:4200/home</span></code> 时，路由器会将HomeComponent组件的内容显示在路由器出口标签的位置；</p></li>
+<li><p>当URL为 <code class="docutils literal notranslate"><span class="pre">localhost:4200/users</span></code> 时，路由器会将UsersComponent组件的内容显示在路由器出口标签的位置；</p></li>
+</ol>
+</div>
+<div class="section" id="id8">
+<h4><span class="sectnum">10.2.2.2</span> 命名路由出口<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h4>
+<p>在实际应用中，有时候遇到类似这样的案例，在某个页面上弹出一个对话框，然后要求在应用中的不同页面之间切换，这个弹出框也始终保持打开状态，直到对话框完成任务或者用户手动取消。显然，这个弹出框的URL在设计上应该是个不同的路由，而我们的主路由出口在同一时间仅支持一个路由。Angular提供了命名路由出口解决类似这样的需求。</p>
+<p>命名路由出口相对主路由来讲，一般称为第二路由，同一个模板视图可以有多个命名路由出口，这些命名路由出口可以在同一时间显示来自不同路由的内容。第二路由就是在&lt;router-outlet&gt;标签中，增加了一个name属性。代码如下:</p>
+<blockquote>
+<div><div class="highlight-scss notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="nt">router-outlet</span> <span class="nt">name</span><span class="o">=</span><span class="s2">&quot;popup&quot;</span><span class="o">&gt;&lt;/</span><span class="nt">router-outlet</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>命名路由出口在路由的配置文件中，Route接口中提供了outlet属性供显示组件在指定的命名路由出口，如下配置：</p>
+<blockquote>
+<div><div class="highlight-scss notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nt">path</span><span class="nd">:</span> <span class="s1">&#39;compose&#39;</span><span class="o">,</span>
+  <span class="nt">component</span><span class="nd">:</span> <span class="nt">ComposeMessageComponent</span><span class="o">,</span>
+  <span class="nt">outlet</span><span class="nd">:</span> <span class="s1">&#39;popup&#39;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>上述配置中当URL地址为’compose’时，ComposeMessageComponent组件内容将显示在模块中的 &lt;router-outlet name=”popup”&gt;&lt;/router-outlet&gt; 处。</p>
+</div>
+</div>
+<div class="section" id="id9">
+<h3><span class="sectnum">10.2.3</span> 使用路由器链接<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<p>HTML中的&lt;a href=‘’&gt;标签可以实现从一个视图导航到另一个视图，其中的href属性值就是对应视图的URL地址。当用户点击&lt;a&gt;标签时，浏览器地址栏的URL将变成了新的URL，同时当前页面将重新加载新的页面。Angular中提供了RouterLink指令用于实现相同的导航功能，由于Angular是单页面应用程序，在应用程序中不应重新加载页面。RouterLink导航到新的URL，在不重新加载页面的情况下，将新组件的内容替换路由器出口标签。简单的用法如下：</p>
+<blockquote>
+<div><div class="highlight-scss notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="nt">div</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="nt">a</span> <span class="nt">routerLink</span><span class="o">=</span><span class="s2">&quot;/users&quot;</span><span class="o">&gt;</span><span class="nt">Users</span><span class="o">&lt;/</span><span class="nt">a</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="nt">div</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="nt">router-outlet</span><span class="o">&gt;&lt;/</span><span class="nt">router-outlet</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>上述代码中，routerLink指令替代了&lt;a&gt;标签中的href属性，当用户点击这个链接时，路由器会先找到路由配置中的path为”/users”的组件，然后将其内容渲染在下面的路由器出口标签位置。</p>
+<p>关于RouterLink指令还有一些属性，如：</p>
+<ol class="arabic simple">
+<li><p>queryParams属性，负责提供给路由的查询参数，这些参数以键值对（[k: string]: any）的方式出现，跳转过去就是类似这种“/user?id=2”；</p></li>
+<li><p>skipLocationChange属性，内容跳转，路由保持不变，换句话说，就是停留在上个页面的URL而不是新的URL；</p></li>
+<li><p>fragment属性，负责定位客户端页面的位置，值是一个字符串值。以#号附加在URL的末尾，如：“/user/bob#education”。</p></li>
+</ol>
+<p>可以像这样设置查询参数和 # 片段：</p>
+<blockquote>
+<div><div class="highlight-scss notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="nt">a</span> <span class="o">[</span><span class="nt">routerLink</span><span class="o">]=</span><span class="s2">&quot;[&#39;/user/bob&#39;]&quot;</span> <span class="o">[</span><span class="nt">queryParams</span><span class="o">]=</span><span class="s2">&quot;{debug: true}&quot;</span> <span class="nt">fragment</span><span class="o">=</span><span class="s2">&quot;education&quot;</span><span class="o">&gt;</span>
+  <span class="nt">link</span> <span class="nt">to</span> <span class="nt">user</span> <span class="nt">component</span>
+<span class="o">&lt;/</span><span class="nt">a</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>上面的代码，RouterLink将会生成链接：/user/bob#education?debug=true。</p>
+<p>假设有这样的路由配置：[{ path: ‘user/:name’, component: UserComponent }]。如果要链接到这个 ‘user/:name’ 路由，使用 RouterLink 指令的具体写法如下：</p>
+<ol class="arabic simple">
+<li><p>如果该链接是静态的，可以使用： <code class="docutils literal notranslate"><span class="pre">&lt;a</span> <span class="pre">routerLink=&quot;/user/bob&quot;&gt;链接到user组件&lt;/a&gt;</span></code></p></li>
+<li><p>如果要使用动态值来生成该链接，可以传入一组路径片段。比如 <code class="docutils literal notranslate"><span class="pre">&lt;a</span> <span class="pre">routerLink=&quot;['/user',</span> <span class="pre">userName]&quot;&gt;链接到user组件&lt;/a&gt;</span></code> ，其中userName是个模板变量。</p></li>
+</ol>
+<p>路径片段也可以包含多组，比如 [‘/team’, teamId, ‘user’, userName, {details: true}] 表示生成一个到“/team/11/user/bob;details=true”的链接。这个多组的静态片段可以合并为一个，比如 [‘/team/11/user’, userName, {details: true}]）。</p>
+</div>
+<div class="section" id="id10">
+<h3><span class="sectnum">10.2.4</span> 路由链接的激活状态<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<p>当点击RouterLink指令中的链接后，意味着当前的路由被激活，RouterLinkActive指令会往宿主元素上添加一个 CSS 类。因此Angular中RouterLinkActive指令一般和RouterLink指令一起配合使用。如下面的代码片段：</p>
+<blockquote>
+<div><div class="highlight-scss notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="nt">a</span> <span class="nt">routerLink</span><span class="o">=</span><span class="s2">&quot;/user/bob&quot;</span> <span class="nt">routerLinkActive</span><span class="o">=</span><span class="s2">&quot;active&quot;</span><span class="o">&gt;</span><span class="nt">Bob</span><span class="o">&lt;/</span><span class="nt">a</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>当URL地址是“/user”或“/user/bob”时，当前的路由为活动状态，active样式类将会被添加到&lt;a&gt;标签上。如果URL发生变化，则active样式类将自动从&lt;a&gt;标签上移除。</p>
+<p>默认情况下，路由链接的激活状态会向下级联到路由树中的每个层级，所以，父子路由链接可能会同时激活。由于上述代码片段中，“/user”是“/user/bob”的父级路由，因此它们都会激活当前的路由状态。要覆盖这种行为，可以把设置RouterLinkActive指令中的routerLinkActiveOptions属性值为“{ exact: true }”，这样只有当URL与当前URL精确匹配时路由链接才会激活。routerLinkActiveOptions属性的用法如下面所示：</p>
+<blockquote>
+<div><div class="highlight-scss notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="nt">a</span> <span class="nt">routerLink</span><span class="o">=</span><span class="s2">&quot;/user/bob&quot;</span> <span class="nt">routerLinkActive</span><span class="o">=</span><span class="s2">&quot;active&quot;</span> <span class="o">[</span><span class="nt">routerLinkActiveOptions</span><span class="o">]=</span><span class="s2">&quot;{exact:true}&quot;</span><span class="o">&gt;</span><span class="nt">Bob</span><span class="o">&lt;/</span><span class="nt">a</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>下面，我们通过示例演示如何使用路由器链接和路由链接的激活状态。</p>
+</div>
+<div class="section" id="route-ex100">
+<h3><span class="sectnum">10.2.5</span> [示例 route-ex100] 演示使用路由器链接指令<a class="headerlink" href="#route-ex100" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>用Angular CLI构建应用程序，具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng new route-ex100 --minimal --routing -s -t --interactive<span class="o">=</span><span class="nb">false</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>启动服务，具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng serve
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><p>查看应用程序结果。打开Web浏览器并浏览到 “<a class="reference external" href="http://localhost:4200">http://localhost:4200</a>”，应该看到文本 “Welcome to route-ex100!”。</p></li>
+<li><p>创建3个组件。具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng g c first
+ng g c second
+ng g c third
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="5">
+<li><p>编辑路由模块。编辑文件src/app/app-routing.module.ts，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">NgModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">Routes</span><span class="p">,</span> <span class="nx">RouterModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/router&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">FirstComponent</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./first/first.component&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">SecondComponent</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./second/second.component&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">ThirdComponent</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./third/third.component&#39;</span><span class="p">;</span>
+
+<span class="kr">const</span> <span class="nx">routes</span>: <span class="kt">Routes</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="p">{</span> <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;first&#39;</span><span class="p">,</span> <span class="nx">component</span>: <span class="kt">FirstComponent</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;second&#39;</span><span class="p">,</span> <span class="nx">component</span>: <span class="kt">SecondComponent</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;third&#39;</span><span class="p">,</span> <span class="nx">component</span>: <span class="kt">ThirdComponent</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;**&#39;</span><span class="p">,</span> <span class="nx">redirectTo</span><span class="o">:</span> <span class="s1">&#39;first&#39;</span> <span class="p">}</span>
+<span class="p">];</span>
+
+<span class="kd">@NgModule</span><span class="p">({</span>
+  <span class="nx">imports</span><span class="o">:</span> <span class="p">[</span><span class="nx">RouterModule</span><span class="p">.</span><span class="nx">forRoot</span><span class="p">(</span><span class="nx">routes</span><span class="p">)],</span>
+  <span class="nx">exports</span><span class="o">:</span> <span class="p">[</span><span class="nx">RouterModule</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">AppRoutingModule</span> <span class="p">{</span> <span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="6">
+<li><p>编辑组件。编辑文件src/app/app.component.ts，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Component</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+
+<span class="kd">@Component</span><span class="p">({</span>
+  <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-root&#39;</span><span class="p">,</span>
+  <span class="nx">template</span><span class="o">:</span> <span class="sb">`</span>
+<span class="sb">  &lt;div class=&quot;container&quot;&gt;</span>
+<span class="sb">    &lt;a routerLinkActive=&quot;active&quot; routerLink=&quot;/first&quot;&gt;First&lt;/a&gt; |</span>
+<span class="sb">    &lt;a routerLinkActive=&quot;active&quot; routerLink=&quot;/second&quot;&gt;Second&lt;/a&gt; |</span>
+<span class="sb">    &lt;a routerLinkActive=&quot;active&quot; routerLink=&quot;/third&quot;&gt;Third&lt;/a&gt;</span>
+
+<span class="sb">    &lt;router-outlet&gt;&lt;/router-outlet&gt;</span>
+<span class="sb">  &lt;/div&gt;</span>
+<span class="sb">  `</span><span class="p">,</span>
+  <span class="nx">styles</span><span class="o">:</span> <span class="p">[</span> <span class="sb">`</span>
+<span class="sb">    .active {</span>
+<span class="sb">      color: orange;</span>
+<span class="sb">    }</span>
+<span class="sb">    `</span>
+  <span class="p">]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">AppComponent</span> <span class="p">{</span>
+  <span class="nx">title</span> <span class="o">=</span> <span class="s1">&#39;route-ex100&#39;</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="7">
+<li><p>观察应用程序页面，页面显示效果如图10-2所示。</p></li>
+</ol>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/Figure10-2.png"><img alt="../_images/Figure10-2.png" src="../_images/Figure10-2.png" style="width: 360px;" /></a>
+<p>图10-2 演示使用路由器链接指令</p>
+</div></blockquote>
+<p>在上面的示例route-ex100中，完成了以下内容：</p>
+<ol class="arabic simple">
+<li><p>在 <code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">new</span></code> 命令后添加 <code class="docutils literal notranslate"><span class="pre">--routing</span></code> 选项使项目包含了一个路由模块；</p></li>
+<li><p>在路由模块的routes数组中配置了4个路由节点，最后一个路径是一个使用通配符的路由；</p></li>
+<li><p>在根模块组件中的每个&lt;a&gt;标签中添加了：routerLinkActive=”active” ，表示当此路由激活时，宿主元素上添加了一个active的CSS类，active样式在styles元数据中定义。</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="id11">
+<h2><span class="sectnum">10.3</span> 理解路由器状态<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h2>
+<p>Angular应用程序的页面是由若干个组件视图组成，当应用程序在组件之间导航时，路由器使用页面上的路由器出口来呈现这些组件，然后在URL中反映所呈现的状态。换句话说，一个URL将对应若干个可呈现或可视化的组件视图。我们称应用程序中所有的这些可视化的组件视图及其排列为路由器状态。为此，路由器需要某种方式将URL与要加载的可视化的组件集相关联。Angular中定义一个了配置对象来实现此目的，这个对象不仅维护着路由器状态，而且描述了给定URL显示哪些组件。</p>
+<div class="section" id="id12">
+<h3><span class="sectnum">10.3.1</span> 图解路由器状态及激活路由状态<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<p>例如，下面是一个简单应用程序的路由配置：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">RouterModule</span><span class="p">,</span> <span class="nx">Route</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/router&#39;</span><span class="p">;</span>
+
+<span class="kr">const</span> <span class="nx">ROUTES</span>: <span class="kt">Route</span><span class="p">[]</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="p">{</span> <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;home&#39;</span><span class="p">,</span> <span class="nx">component</span>: <span class="kt">HomeComponent</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;users&#39;</span><span class="p">,</span>
+    <span class="nx">children</span><span class="o">:</span> <span class="p">[</span>
+      <span class="p">{</span> <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="nx">component</span>: <span class="kt">UsersComponent</span> <span class="p">},</span>
+      <span class="p">{</span> <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;:id&#39;</span><span class="p">,</span> <span class="nx">component</span>: <span class="kt">UserComponent</span> <span class="p">}</span>
+    <span class="p">]</span>
+  <span class="p">},</span>
+<span class="p">];</span>
+
+<span class="kd">@NgModule</span><span class="p">({</span>
+  <span class="nx">imports</span><span class="o">:</span> <span class="p">[</span>
+    <span class="nx">RouterModule</span><span class="p">.</span><span class="nx">forRoot</span><span class="p">(</span><span class="nx">ROUTES</span><span class="p">)</span>
+  <span class="p">]</span>
+<span class="p">})</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>上述代码中通过导入RouterModule，并将Route对象的数组传递到其forRoot方法中，在应用程序中创建并注册了一个全局的路由器对象。路由器对象维护着一个全局的路由器状态，路由器状态可以理解为全部的可视化组件的排列集合，它是一个树结构，如图10-3所示：</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/Figure10-3.png"><img alt="../_images/Figure10-3.png" src="../_images/Figure10-3.png" style="width: 280px;" /></a>
+<p>图10-3 路由器状态树</p>
+</div></blockquote>
+<p>在某一时刻，页面上仅显示出部分的组件，这些组件对应的路由处于激活状态，我们把这个处于激活状态的路由称为激活路由状态。因此，激活路由状态是路由器状态树的子集。
+例如在某一时刻，当URL为“/users”时，路由器状态树及激活路由状态（其中标出的彩色部分）的呈现如下图10-4所示：</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/Figure10-4.png"><img alt="../_images/Figure10-4.png" src="../_images/Figure10-4.png" style="width: 280px;" /></a>
+<p>图10-4 激活路由状态</p>
+</div></blockquote>
+<p>每当应用程序中发生导航时，路由器都会获取其导航的目的URL地址，并尝试将其与路由器状态树中的路径进行匹配。路由器状态在Angular中用RouterState对象表示，RouterState对象维护的是一个路由状态树，表示所有的路由器状态。Angular中用ActivatedRoute对象表示激活状态的路由。因此，RouterState对象中包含了ActivatedRoute对象，我们看看这两个类的接口定义：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">interface</span> <span class="nx">RouterState</span> <span class="p">{</span>
+  <span class="nx">snapshot</span>: <span class="kt">RouterStateSnapshot</span><span class="p">;</span>
+  <span class="nx">root</span>: <span class="kt">ActivatedRoute</span><span class="p">;</span> <span class="c1">// 它的类型就是ActivatedRoute</span>
+<span class="p">}</span>
+
+<span class="kr">interface</span> <span class="nx">ActivatedRoute</span> <span class="p">{</span>
+  <span class="nx">snapshot</span>: <span class="kt">ActivatedRouteSnapshot</span><span class="p">;</span>
+  <span class="nx">url</span>: <span class="kt">Observable</span><span class="o">&lt;</span><span class="nx">UrlSegment</span><span class="p">[]</span><span class="o">&gt;</span>
+  <span class="nx">params</span>: <span class="kt">Observable</span><span class="o">&lt;</span><span class="nx">Params</span><span class="o">&gt;</span>
+  <span class="c1">// ……</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>从上面的接口定义中，可以看出，RouterState中root属性返回的是ActivatedRoute，这在数据结构中，RouterState确实是ActivatedRoute的树。</p>
+</div>
+<div class="section" id="activatedroute">
+<h3><span class="sectnum">10.3.2</span> 理解ActivatedRoute对象和其快照对象<a class="headerlink" href="#activatedroute" title="Permalink to this headline">¶</a></h3>
+<p>每个ActivatedRoute都提供了从任意激活路由开始向上或向下遍历路由树的一种方式，以获得关于父、子、兄弟路由的信息。在应用程序中，可以通过注入ActivatedRoute来获取当前路由的相关信息，ActivatedRoute也可用于遍历路由器状态树。其中通过ActivatedRoute对象获取路由的数据信息方式主要有2种：一种是通过snapshot属性，获取到当前路由的快照，快照的类型是ActivatedRouteSnapshot类型；另一个方式是直接通过params属性获取，它返回的是一个Observable&lt;Params&gt;对象类型。</p>
+<p>关于ActivatedRoute对象和其快照(ActivatedRouteSnapshot)对象的区别如下：</p>
+<ol class="arabic simple">
+<li><p>每当导航发生时，添加、删除组件或更新参数时，路由器就会创建一个新的ActivatedRouteSnapshot快照对象；</p></li>
+<li><p>ActivatedRouteSnapshot快照是一个不变的数据结构，它仅表示路由器在特定时间的状态。在程序中的表现方式是，该数据在组件生命周期中仅执行一次，如在ngOnInit()方法中执行一次，代表着某一时刻的一个激活路由的快照版本；</p></li>
+<li><p>ActivatedRoute类似于ActivatedRouteSnapshot，不同之处在于它表示路由器随时间变化的状态，换句话说，它是一个可观察的数据流对象（Observable类型）。因此，在程序中需要通过订阅（subscribe）的方式获取其值，进而要求取消订阅（unsubscrib），甚者要求实现销毁方法（OnDestroy）等。</p></li>
+</ol>
+<p>ActivatedRoute类的snapshot属性返回的值是ActivatedRouteSnapshot类型的对象。ActivatedRouteSnapshot对象的使用方法如下：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">constructor</span><span class="p">(</span><span class="kr">private</span> <span class="nx">route</span>: <span class="kt">ActivatedRoute</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+
+<span class="nx">ngOnInit() {</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">title</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">route</span><span class="p">.</span><span class="nx">snapshot</span><span class="p">.</span><span class="nx">data</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">];</span> <span class="c1">// 通过快照的方式获取值</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>ActivatedRoute对象的使用方法如下：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span>  <span class="kr">constructor</span><span class="p">(</span><span class="kr">private</span> <span class="nx">route</span>: <span class="kt">ActivatedRoute</span><span class="p">)</span> <span class="p">{}</span>
+
+  <span class="nx">ngOnInit() {</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">route</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">data</span> <span class="o">=&gt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">users</span> <span class="o">=</span> <span class="nx">data</span><span class="p">.</span><span class="nx">users</span><span class="p">);</span> <span class="c1">// 通过订阅的方式获取值</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>在实际应用中，ActivatedRoute对象可以返回可观察者对象，只要是路由状态发生了变化，订阅在ActivatedRoute对象上的方法都会再次执行，直到取消订阅为止。这也是Angular应用编程中的核心亮点之一。</p>
+<div class="admonition- admonition">
+<p class="admonition-title">提示</p>
+<p>关于可观察者对象（Observable）知识的介绍，本书后续章节会详细的讲解，这里读者仅了解下即可。</p>
+</div>
+<p>下面通过一个示例演示ActivatedRoute对象和其快照对象的实际应用。</p>
+</div>
+<div class="section" id="route-ex200-activatedroute">
+<h3><span class="sectnum">10.3.3</span> [示例 route-ex200] 演示ActivatedRoute对象和其快照对象的应用<a class="headerlink" href="#route-ex200-activatedroute" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>用Angular CLI构建应用程序，具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng new route-ex200 --minimal --routing -s -t --interactive<span class="o">=</span><span class="nb">false</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>启动服务，具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng serve
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><p>查看应用程序结果。打开Web浏览器并浏览到 “<a class="reference external" href="http://localhost:4200">http://localhost:4200</a>”，应该看到文本 “Welcome to route-ex200!”。</p></li>
+<li><p>编辑组件。编辑文件src/app/app.component.ts，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Component</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">Router</span><span class="p">,</span> <span class="nx">ActivatedRoute</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/router&#39;</span><span class="p">;</span>
+
+<span class="kd">@Component</span><span class="p">({</span>
+  <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-root&#39;</span><span class="p">,</span>
+  <span class="nx">template</span><span class="o">:</span> <span class="sb">`</span>
+<span class="sb">    &lt;div&gt;{{title}}&lt;/div&gt;</span>
+<span class="sb">    &lt;p&gt;</span>
+<span class="sb">      演示ActivatedRoute对象与其快照属性</span>
+<span class="sb">    &lt;/p&gt;</span>
+
+<span class="sb">    &lt;button (click)=&quot;goto(&#39;home&#39;)&quot;&gt;go to home&lt;/button&gt;</span>
+<span class="sb">    &lt;button (click)=&quot;goto(&#39;product&#39;)&quot;&gt;go to product&lt;/button&gt;</span>
+
+<span class="sb">    &lt;router-outlet&gt;&lt;/router-outlet&gt;</span>
+<span class="sb">  `</span><span class="p">,</span>
+  <span class="nx">styles</span><span class="o">:</span> <span class="p">[]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">AppComponent</span> <span class="p">{</span>
+  <span class="nx">title</span> <span class="o">=</span> <span class="s1">&#39;route-ex200&#39;</span><span class="p">;</span>
+
+  <span class="kr">constructor</span><span class="p">(</span><span class="kr">private</span> <span class="nx">router</span>: <span class="kt">Router</span><span class="p">,</span> <span class="kr">private</span> <span class="nx">route</span>: <span class="kt">ActivatedRoute</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;这条消息仅执行一次: 打印title的值 &#39;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">title</span><span class="p">);</span> <span class="c1">// 位置1</span>
+
+    <span class="kd">let</span> <span class="nx">params</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">route</span><span class="p">.</span><span class="nx">snapshot</span><span class="p">.</span><span class="nx">fragment</span><span class="p">;</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;这条消息仅执行一次: 打印fragment的值 &#39;</span><span class="p">,</span> <span class="nx">params</span><span class="p">);</span> <span class="c1">// 位置2</span>
+
+    <span class="k">this</span><span class="p">.</span><span class="nx">route</span><span class="p">.</span><span class="nx">fragment</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">((</span><span class="nx">frament</span>: <span class="kt">string</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;订阅消息: &#39;</span> <span class="o">+</span> <span class="nx">frament</span><span class="p">);</span> <span class="c1">// 位置3</span>
+    <span class="p">});</span>
+  <span class="p">}</span>
+
+  <span class="kr">goto</span><span class="p">(</span><span class="nx">path</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">router</span><span class="p">.</span><span class="nx">navigate</span><span class="p">([</span><span class="s1">&#39;/&#39;</span><span class="p">],</span> <span class="p">{</span> <span class="nx">fragment</span>: <span class="kt">path</span> <span class="p">});</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="5">
+<li><p>观察应用程序页面，打开控制台，点击页面上的按钮，观察控制台上的打印信息，如图10-5所示：</p></li>
+</ol>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/Figure10-5.png"><img alt="../_images/Figure10-5.png" src="../_images/Figure10-5.png" style="width: 600px;" /></a>
+<p>图10-5 ActivatedRoute对象与其快照属性</p>
+</div></blockquote>
+<p>在上面的示例route-ex200中，完成了以下内容：</p>
+<ol class="arabic simple">
+<li><p>在constructor构造函数中注入了Router和ActivatedRoute对象，同时订阅了ActivatedRoute对象的fragment属性的返回值；</p></li>
+<li><p>goto()方法中，调用Router类的navigate方法进行导航，页面URL地址依然是当前页，仅是设置不同的#片段（fragment）；由于URL地址不变，组件类的构造方法（constructor）仅执行一次，代码中依次执行位置1、位置2和位置3处的语句，在控制台打印出信息；</p></li>
+<li><p>每次点击按钮时，不再执行位置1和位置2处的语句，他们在组件构建时仅执行一次；</p></li>
+<li><p>每次点击按钮时，代码中位置3处的语句均再次被执行，控制台打印出：“订阅消息: home” 或 “订阅消息: product”；</p></li>
+</ol>
+<p>通过上述示例，发现ActivatedRoute对象能产生可观察的数据流对象，订阅在流对象的方法会一直监控着其内容，只要内容发生变化，其订阅方法会再次执行。ActivatedRouteSnapshot快照可以通过ActivatedRoute对象的snapshot属性获得，其值是一个普通的对象值，通过它也可以获取路由信息，但是不具备订阅功能。</p>
+</div>
+</div>
+<div class="section" id="id13">
+<h2><span class="sectnum">10.4</span> 路由事件有哪些<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h2>
+<p>与组件生命周期类似，路由器也有生命周期，在路由的导航期间，路由器会触发一系列的事件，可以通过在RouterModule.forRoot()方法中添加{enableTracing: true}参数来查看路由器触发的事件，如下代码所示：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kd">@NgModule</span><span class="p">({</span>
+  <span class="nx">imports</span><span class="o">:</span> <span class="p">[</span><span class="nx">RouterModule</span><span class="p">.</span><span class="nx">forRoot</span><span class="p">(</span><span class="nx">routes</span><span class="p">,</span> <span class="p">{</span>
+    <span class="nx">enableTracing</span>: <span class="kt">true</span> <span class="c1">// 控制台打印所有路由事件</span>
+  <span class="p">})],</span>
+  <span class="nx">exports</span><span class="o">:</span> <span class="p">[</span><span class="nx">RouterModule</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">AppRoutingModule</span> <span class="p">{</span> <span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>我们在[示例 route-ex100]中添加{enableTracing: true}参数，打开控制台后，可以看到如下图10-6所示的信息：</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/Figure10-6.png"><img alt="../_images/Figure10-6.png" src="../_images/Figure10-6.png" style="width: 800px;" /></a>
+<p>图10-6 控制台打印所有路由事件</p>
+</div></blockquote>
+<p>在路由的导航周期中，一些值得注意的事件是：</p>
+<ol class="arabic simple">
+<li><p>NavigationStart事件：表示导航周期的开始；</p></li>
+<li><p>NavigationCancel事件：取消导航，比如用在路由守卫中，拒绝用户访问此路由；</p></li>
+<li><p>RoutesRecognized事件：当URL与路由匹配时，触发此事件；</p></li>
+<li><p>NavigationEnd事件：在导航成功结束时触发。</p></li>
+</ol>
+</div>
+<div class="section" id="id14">
+<h2><span class="sectnum">10.5</span> 如何在路由中传递参数<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h2>
+<p>在Angular中，路由中传递参数的方式有多种，下面分别来进行介绍。</p>
+<div class="section" id="id15">
+<h3><span class="sectnum">10.5.1</span> 传递配置参数<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
+<p>在配置路由时，可以通过路由配置中Route对象的data属性用来存放于每个具体路由有关的任意信息。该数据可以被任何一个激活路由(ActivatedRoute)访问，一般用来保存诸如：页标题、面包屑以及其它静态只读数据。如下代码所示：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">routes</span>: <span class="kt">Routes</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="p">{</span> <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;first&#39;</span><span class="p">,</span> <span class="nx">component</span>: <span class="kt">FirstComponent</span><span class="p">,</span> <span class="nx">data</span><span class="o">:</span> <span class="p">{</span> <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;First Page&#39;</span> <span class="p">}</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;second&#39;</span><span class="p">,</span> <span class="nx">component</span>: <span class="kt">SecondComponent</span><span class="p">,</span> <span class="nx">data</span><span class="o">:</span> <span class="p">{</span> <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;Second Page&#39;</span> <span class="p">}</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;third&#39;</span><span class="p">,</span> <span class="nx">component</span>: <span class="kt">ThirdComponent</span><span class="p">,</span> <span class="nx">data</span><span class="o">:</span> <span class="p">{</span> <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;Third Page&#39;</span> <span class="p">}</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;**&#39;</span><span class="p">,</span> <span class="nx">redirectTo</span><span class="o">:</span> <span class="s1">&#39;first&#39;</span> <span class="p">}</span>
+<span class="p">];</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>data属性接收一个键值对（[name: string]: any）类型的数据对象，多个键值对时，以逗号分隔。在代码中，通过激活路由对象（ActivatedRoute）的属性获取data对象中的属性值，如：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">constructor</span><span class="p">(</span><span class="kr">private</span> <span class="nx">actRoute</span>: <span class="kt">ActivatedRoute</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">title</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">actRoute</span><span class="p">.</span><span class="nx">snapshot</span><span class="p">.</span><span class="nx">data</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">];</span> <span class="c1">// 通过ActivatedRoute对象的snapshot属性获取参数</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="id16">
+<h3><span class="sectnum">10.5.2</span> 传递路径参数<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
+<p>可以将数据参数作为URL路径的一部分传递给路由配置中的组件。路径参数分为必选参数和可选参数，这涉及到路由的定义。</p>
+<div class="section" id="id17">
+<h4><span class="sectnum">10.5.2.1</span> 传递必选参数<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h4>
+<p>必选参数在URL中呈现的格式如：“localhost:4200/user/123”，其中123就是传递的必选参数。必选参数在路由配置中是这么定义的：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span> <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;user/:id&#39;</span><span class="p">,</span> <span class="nx">component</span>: <span class="kt">UserComponent</span> <span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>上面配置创建了一个包含必选参数id的路由，这个路由中的“:id”相当于是在路径中创建了一个空位，这个空位不补全是没法导航的：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="k">this</span><span class="p">.</span><span class="nx">router</span><span class="p">.</span><span class="nx">navigate</span><span class="p">([</span><span class="s1">&#39;/user&#39;</span><span class="p">]);</span> <span class="c1">// 跳转错误，无效路由</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">router</span><span class="p">.</span><span class="nx">navigate</span><span class="p">([</span><span class="s1">&#39;/user&#39;</span><span class="p">,</span> <span class="mi">123</span><span class="p">]);</span> <span class="c1">// 正确跳转，跳转URL为：/user/123</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>在模板视图中，含有必选参数的路由是这么定义的：</p>
+<blockquote>
+<div><div class="highlight-scss notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="nt">a</span> <span class="o">[</span><span class="nt">routerLink</span><span class="o">]=</span><span class="s2">&quot;[&#39;/user&#39;, userId]&quot;</span><span class="o">&gt;</span><span class="nt">链接到user组件</span><span class="o">&lt;/</span><span class="nt">a</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>在代码中，通过Router对象的navigate()方法导航到含有必选参数的路由，如下代码片段：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Router</span><span class="p">,</span> <span class="nx">ActivatedRoute</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/router&#39;</span><span class="p">;</span>
+<span class="kr">constructor</span><span class="p">(</span><span class="kr">private</span> <span class="nx">router</span>: <span class="kt">Router</span><span class="p">,</span> <span class="kr">private</span> <span class="nx">actRoute</span>: <span class="kt">ActivatedRoute</span><span class="p">)</span> <span class="p">{}</span>
+
+<span class="nx">gotoUser() {</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">router</span><span class="p">.</span><span class="nx">navigate</span><span class="p">([</span><span class="s1">&#39;/user&#39;</span><span class="p">,</span> <span class="nx">user</span><span class="p">.</span><span class="nx">id</span><span class="p">]);</span>  <span class="c1">// 导航到“user/123”的路由</span>
+<span class="p">}</span>
+
+<span class="nx">ngOnInit() {</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">user_id</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">actRoute</span><span class="p">.</span><span class="nx">snapshot</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">id</span><span class="p">;</span> <span class="c1">// 通过快照的方式获取值</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="id18">
+<h4><span class="sectnum">10.5.2.2</span> 传递可选参数<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h4>
+<p>可选参数在URL中呈现的格式如：“localhost:4200/users;a=123;b=234”，其中“a=123;b=234”就是传递的可选参数。可选参数是应用在导航期间传送任意信息的一种方式。</p>
+<p>和必选参数一样，路由器也支持通过可选参数导航。在实际应用中一般是先定义完必选参数之后，再通过一个独立的对象来定义可选参数。
+可选参数不涉及到模式匹配并在表达上提供了巨大的灵活性。通常，对于强制性的值（比如用于区分两个路由路径的）使用必选参数；当这个值是可选的、复杂的或多值的时，使用可选参数。可选参数的导航方式在程序中是这样的：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="k">this</span><span class="p">.</span><span class="nx">router</span><span class="p">.</span><span class="nx">navigate</span><span class="p">([</span><span class="s1">&#39;/user&#39;</span><span class="p">]);</span> <span class="c1">// 正确跳转。不涉及到模式匹配，参数可传可不传</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">router</span><span class="p">.</span><span class="nx">navigate</span><span class="p">([</span><span class="s1">&#39;/user&#39;</span><span class="p">,</span> <span class="p">{</span><span class="nx">a</span>: <span class="kt">123</span><span class="p">,</span> <span class="nx">b</span>: <span class="kt">234</span><span class="p">}]);</span> <span class="c1">// 正确跳转，跳转URL为：localhost:4200/users;a=123;b=234</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>在模板视图中，含有可选参数的路由是这么定义的：</p>
+<blockquote>
+<div><div class="highlight-scss notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="nt">a</span> <span class="o">[</span><span class="nt">routerLink</span><span class="o">]=</span><span class="s2">&quot;[&#39;/users&#39;, {a: 123, b: 234}]&quot;</span><span class="o">&gt;</span><span class="nt">返回</span><span class="o">&lt;/</span><span class="nt">a</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>在代码中，通过Router对象的navigate()方法导航到含有必选参数的路由，如下代码片段：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Router</span><span class="p">,</span> <span class="nx">ActivatedRoute</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/router&#39;</span><span class="p">;</span>
+<span class="kr">constructor</span><span class="p">(</span><span class="kr">private</span> <span class="nx">router</span>: <span class="kt">Router</span><span class="p">,</span> <span class="kr">private</span> <span class="nx">actRoute</span>: <span class="kt">ActivatedRoute</span><span class="p">)</span> <span class="p">{}</span>
+
+<span class="c1">// 导航到“localhost:4200/users;a=123;b=234”的路由</span>
+<span class="nx">gotoUser() {</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">router</span><span class="p">.</span><span class="nx">navigate</span><span class="p">([</span><span class="s1">&#39;/users&#39;</span><span class="p">,</span> <span class="p">{</span><span class="nx">a</span>: <span class="kt">123</span><span class="p">,</span> <span class="nx">b</span>: <span class="kt">234</span><span class="p">}]);</span>
+<span class="p">}</span>
+
+<span class="nx">ngOnInit() {</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">actRoute</span><span class="p">.</span><span class="nx">paramMap</span><span class="p">.</span><span class="nx">pipe</span><span class="p">(</span>
+    <span class="nx">switchMap</span><span class="p">(</span><span class="nx">params</span> <span class="o">=&gt;</span> <span class="k">of</span><span class="p">(</span><span class="nx">params</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)))</span>
+  <span class="p">).</span><span class="nx">subscribe</span><span class="p">((</span><span class="nx">data</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="nx">data</span><span class="p">);</span>
+  <span class="p">});</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="id19">
+<h3><span class="sectnum">10.5.3</span> 传递查询参数<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h3>
+<p>查询参数在URL中呈现的格式如：“localhost:4200/use?id=123”，其中“id=123”就是传递的查询参数。从技术上讲，查询参数类似路径参数的可选参数，也不涉及到模式匹配并在表达上提供了巨大的灵活性。</p>
+<p>查询参数的导航方式在程序中是这样的：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="k">this</span><span class="p">.</span><span class="nx">router</span><span class="p">.</span><span class="nx">navigate</span><span class="p">([</span><span class="s1">&#39;/user&#39;</span><span class="p">]);</span> <span class="c1">// 正确跳转。不涉及到模式匹配，参数可传可不传</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">router</span><span class="p">.</span><span class="nx">navigate</span><span class="p">([</span><span class="s1">&#39;/user&#39;</span><span class="p">],</span> <span class="p">{</span> <span class="nx">queryParams</span><span class="o">:</span> <span class="p">{</span> <span class="nx">id</span>: <span class="kt">123</span> <span class="p">}</span> <span class="p">});</span> <span class="c1">// 正确跳转，跳转URL为：localhost:4200/use?id=123</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>我们看一下Router类的navigate()方法的定义：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="nx">navigate</span><span class="p">(</span><span class="nx">commands</span>: <span class="kt">any</span><span class="p">[],</span> <span class="nx">extras</span>: <span class="kt">NavigationExtras</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">skipLocationChange</span>: <span class="kt">false</span> <span class="p">})</span><span class="o">:</span> <span class="nx">Promise</span><span class="o">&lt;</span><span class="kr">boolean</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>其中，navigate()方法的第2个参数类型是NavigationExtras接口，它的定义如下：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">interface</span> <span class="nx">NavigationExtras</span> <span class="p">{</span>
+  <span class="nx">relativeTo?</span>: <span class="kt">ActivatedRoute</span> <span class="o">|</span> <span class="kc">null</span>
+  <span class="nx">queryParams?</span>: <span class="kt">Params</span> <span class="o">|</span> <span class="kc">null</span>
+  <span class="nx">fragment?</span>: <span class="kt">string</span>
+  <span class="nx">queryParamsHandling?</span>: <span class="kt">QueryParamsHandling</span> <span class="o">|</span> <span class="kc">null</span>
+  <span class="nx">preserveFragment?</span>: <span class="kt">boolean</span>
+  <span class="nx">skipLocationChange?</span>: <span class="kt">boolean</span>
+  <span class="nx">replaceUrl?</span>: <span class="kt">boolean</span>
+  <span class="nx">state</span><span class="o">?:</span> <span class="p">{...}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>我们看到了queryParams关键字，结合上面介绍的在程序中导航的方式，可以想象出，还能通过fragment关键字传递参数，如：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="k">this</span><span class="p">.</span><span class="nx">router</span><span class="p">.</span><span class="nx">navigate</span><span class="p">([</span><span class="s1">&#39;/user&#39;</span><span class="p">,</span> <span class="nx">user</span><span class="p">.</span><span class="nx">name</span><span class="p">],</span> <span class="p">{</span> <span class="nx">fragment</span><span class="o">:</span> <span class="s1">&#39;education&#39;</span> <span class="p">});</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>上面的代码其实就是本章前面讲解RouterLink指令时，提到的fragment属性的使用案例，对应在模板视图中的定义如下：</p>
+<blockquote>
+<div><div class="highlight-scss notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="nt">a</span> <span class="o">[</span><span class="nt">routerLink</span><span class="o">]=</span><span class="s2">&quot;[&#39;/user/bob&#39;]&quot;</span> <span class="o">[</span><span class="nt">queryParams</span><span class="o">]=</span><span class="s2">&quot;{debug: true}&quot;</span> <span class="nt">fragment</span><span class="o">=</span><span class="s2">&quot;education&quot;</span><span class="o">&gt;</span>
+  <span class="nt">link</span> <span class="nt">to</span> <span class="nt">user</span> <span class="nt">component</span>
+<span class="o">&lt;/</span><span class="nt">a</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>上面的代码，RouterLink指令将会生成链接：/user/bob#education?debug=true。
+同样的，queryParamsHandling参数的含义是：是否需要将当前URL中的查询参数传递给下一个路由，使用语法为：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="c1">// 比如当前的url是 “/user;a=123?code=bbb”</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">router</span><span class="p">.</span><span class="nx">navigate</span><span class="p">([</span><span class="s1">&#39;/others&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">{</span>
+  <span class="nx">queryParamsHandling</span><span class="o">:</span> <span class="s1">&#39;preserve&#39;</span><span class="p">,</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>使用上面的代码，跳转后的链接为：/others/1?code=bbb。可以看到查询参数被保留了。</p>
+<p>在代码中，通过Router对象的queryParamMap和fragment属性分别获取对应的查询参数，如下代码片段：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Router</span><span class="p">,</span> <span class="nx">ActivatedRoute</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/router&#39;</span><span class="p">;</span>
+<span class="kr">constructor</span><span class="p">(</span><span class="kr">private</span> <span class="nx">route</span>: <span class="kt">ActivatedRoute</span><span class="p">)</span> <span class="p">{}</span>
+
+<span class="nx">ngOnInit() {</span>
+  <span class="c1">// 获取会话(session)的值，如果不存在，默认返回值为：None。</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">sessionId</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">route</span>
+    <span class="p">.</span><span class="nx">queryParamMap</span>
+    <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">map</span><span class="p">(</span><span class="nx">params</span> <span class="o">=&gt;</span> <span class="nx">params</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;session_id&#39;</span><span class="p">)</span> <span class="o">||</span> <span class="s1">&#39;None&#39;</span><span class="p">));</span>
+
+  <span class="c1">// 获取会话fragment片段值，如果不存在，默认返回值为：None。</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">token</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">route</span>
+    <span class="p">.</span><span class="nx">fragment</span>
+    <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">map</span><span class="p">(</span><span class="nx">fragment</span> <span class="o">=&gt;</span> <span class="nx">fragment</span> <span class="o">||</span> <span class="s1">&#39;None&#39;</span><span class="p">));</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>关于NavigationExtras接口中还有其他的属性，它们的使用方法与上面介绍的类似，在此就不做一一介绍了，读者可以前往官方文档查阅。</p>
+<p>下面，我们通过展示用户列表和用户详情示例，演示如何在路由中传递参数。</p>
+</div>
+<div class="section" id="route-ex300">
+<h3><span class="sectnum">10.5.4</span> [示例 route-ex300] 演示使用路由传递参数<a class="headerlink" href="#route-ex300" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>用Angular CLI构建应用程序，具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng new route-ex300 --minimal --routing -s -t --interactive<span class="o">=</span><span class="nb">false</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>启动服务，具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng serve
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><p>查看应用程序结果。打开Web浏览器并浏览到 “<a class="reference external" href="http://localhost:4200">http://localhost:4200</a>”，应该看到文本 “Welcome to route-ex300!”。</p></li>
+<li><p>创建2个组件和1个接口。具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng g c user-list
+ng g c user-detail
+ng g i user-face <span class="c1"># ng generate interface user-face 的简写</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="5">
+<li><p>编辑接口。编辑文件src/app/user-face.ts，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">export</span> <span class="kr">interface</span> <span class="nx">UserFace</span> <span class="p">{</span>
+    <span class="nx">id</span>: <span class="kt">number</span><span class="p">;</span>
+    <span class="nx">name</span>: <span class="kt">string</span><span class="p">;</span>
+    <span class="nx">email</span>: <span class="kt">string</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="6">
+<li><p>编辑路由模块。编辑文件src/app/app-routing.module.ts，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">NgModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">Routes</span><span class="p">,</span> <span class="nx">RouterModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/router&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">UserListComponent</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./user-list/user-list.component&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">UserDetailComponent</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./user-detail/user-detail.component&#39;</span><span class="p">;</span>
+
+<span class="kr">const</span> <span class="nx">routes</span>: <span class="kt">Routes</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="p">{</span> <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="nx">redirectTo</span><span class="o">:</span> <span class="s1">&#39;/users&#39;</span><span class="p">,</span> <span class="nx">pathMatch</span><span class="o">:</span> <span class="s1">&#39;full&#39;</span> <span class="p">},</span> <span class="c1">// 默认路径导航到用户列表页面</span>
+  <span class="p">{</span>
+    <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;users&#39;</span><span class="p">,</span>
+    <span class="nx">children</span><span class="o">:</span> <span class="p">[</span> <span class="c1">// 定义子路由，路径导航到用户列表和详情页面</span>
+      <span class="p">{</span> <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="nx">component</span>: <span class="kt">UserListComponent</span><span class="p">,</span> <span class="nx">data</span><span class="o">:</span> <span class="p">{</span> <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;用户列表页面&#39;</span> <span class="p">}</span> <span class="p">},</span>
+      <span class="p">{</span> <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;:id&#39;</span><span class="p">,</span> <span class="nx">component</span>: <span class="kt">UserDetailComponent</span><span class="p">,</span> <span class="nx">data</span><span class="o">:</span> <span class="p">{</span> <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;用户详细页面&#39;</span> <span class="p">}</span> <span class="p">}</span>
+    <span class="p">]</span>
+  <span class="p">},</span>
+  <span class="p">{</span> <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;**&#39;</span><span class="p">,</span> <span class="nx">redirectTo</span><span class="o">:</span> <span class="s1">&#39;users&#39;</span> <span class="p">}</span> <span class="c1">// 跳转到用户列表页面</span>
+<span class="p">];</span>
+
+<span class="kd">@NgModule</span><span class="p">({</span>
+  <span class="nx">imports</span><span class="o">:</span> <span class="p">[</span><span class="nx">RouterModule</span><span class="p">.</span><span class="nx">forRoot</span><span class="p">(</span><span class="nx">routes</span><span class="p">)],</span>
+  <span class="nx">exports</span><span class="o">:</span> <span class="p">[</span><span class="nx">RouterModule</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">AppRoutingModule</span> <span class="p">{</span> <span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="7">
+<li><p>编辑用户详情组件。编辑文件src/app/user-detail/user-detail.component.ts，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">OnInit</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">Router</span><span class="p">,</span> <span class="nx">ActivatedRoute</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/router&#39;</span><span class="p">;</span>
+
+<span class="kd">@Component</span><span class="p">({</span>
+  <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-user-detail&#39;</span><span class="p">,</span>
+  <span class="nx">template</span><span class="o">:</span> <span class="sb">`</span>
+<span class="sb">    &lt;h4&gt; 标题：{{title}} &lt;/h4&gt;</span>
+<span class="sb">    &lt;div (click) = &quot;gotoUser()&quot;&gt;</span>
+<span class="sb">      {{userId}} | {{userName}} | {{userEmail}}</span>
+<span class="sb">    &lt;/div&gt;</span>
+<span class="sb">    &lt;br&gt;</span>
+<span class="sb">    &lt;div&gt;</span>
+<span class="sb">      &lt;a [routerLink]=&quot;[&#39;/users&#39;, {a: 123, b: 234}]&quot;&gt;演示可选参数&lt;/a&gt; &lt;br&gt;</span>
+<span class="sb">      &lt;a [routerLink]=&quot;[&#39;/users&#39;, {a: 123, b: 234}]&quot; [queryParams]=&quot;{c: 345}&quot;&gt;演示查询参数&lt;/a&gt;</span>
+<span class="sb">    &lt;/div&gt;</span>
+<span class="sb">  `</span><span class="p">,</span>
+  <span class="nx">styles</span><span class="o">:</span> <span class="p">[]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">UserDetailComponent</span> <span class="kr">implements</span> <span class="nx">OnInit</span> <span class="p">{</span>
+
+  <span class="nx">title</span>: <span class="kt">string</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">;</span> <span class="c1">// 接收来自路由配置中的参数</span>
+  <span class="nx">userId</span>: <span class="kt">string</span><span class="p">;</span> <span class="c1">// 接收来自路径中的参数</span>
+  <span class="nx">userName</span>: <span class="kt">string</span><span class="p">;</span> <span class="c1">// 接收来自路径中的参数</span>
+  <span class="nx">userEmail</span>: <span class="kt">string</span><span class="p">;</span> <span class="c1">// 接收来自路径中的参数</span>
+
+  <span class="kr">constructor</span><span class="p">(</span><span class="kr">private</span> <span class="nx">router</span>: <span class="kt">Router</span><span class="p">,</span> <span class="c1">// 注入Router</span>
+    <span class="kr">private</span> <span class="nx">actRoute</span>: <span class="kt">ActivatedRoute</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span> <span class="c1">// 注入ActivatedRoute</span>
+
+  <span class="nx">ngOnInit</span><span class="p">()</span><span class="o">:</span> <span class="k">void</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">title</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">actRoute</span><span class="p">.</span><span class="nx">snapshot</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">title</span><span class="p">;</span> <span class="c1">// 通过快照的方式获取来自路由配置中的参数</span>
+    <span class="kd">let</span> <span class="nx">params</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">actRoute</span><span class="p">.</span><span class="nx">snapshot</span><span class="p">.</span><span class="nx">params</span><span class="p">;</span> <span class="c1">// 通过快照的方式获取来自路径中的必选参数</span>
+    <span class="kr">const</span> <span class="p">{</span> <span class="nx">id</span><span class="p">,</span> <span class="nx">name</span><span class="p">,</span> <span class="nx">email</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">params</span><span class="p">;</span> <span class="c1">// 解析params里面的参数</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">userId</span> <span class="o">=</span> <span class="nx">id</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">userName</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">userEmail</span> <span class="o">=</span> <span class="nx">email</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="c1">// 导航到含有可选参数的路由</span>
+  <span class="nx">gotoUser() {</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">router</span><span class="p">.</span><span class="nx">navigate</span><span class="p">([</span><span class="s1">&#39;/users&#39;</span><span class="p">,</span> <span class="p">{</span> <span class="nx">a</span>: <span class="kt">123</span><span class="p">,</span> <span class="nx">b</span>: <span class="kt">234</span> <span class="p">}]);</span>
+  <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="8">
+<li><p>编辑用户列表组件。编辑文件src/app/user-list/user-list.component.ts，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">OnInit</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">UserFace</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;../user-face&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">ActivatedRoute</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/router&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">switchMap</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;rxjs/operators&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="k">of</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;rxjs&#39;</span><span class="p">;</span>
+
+<span class="kd">@Component</span><span class="p">({</span>
+  <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-user-list&#39;</span><span class="p">,</span>
+  <span class="nx">template</span><span class="o">:</span> <span class="sb">`</span>
+<span class="sb">    &lt;h4&gt; 标题：{{title}} &lt;/h4&gt;</span>
+<span class="sb">    &lt;div *ngFor=&quot;let item of users; let i = index;&quot;&gt;</span>
+<span class="sb">      &lt;p&gt;{{i+1}}、&lt;a [routerLink]=&quot;[&#39;/users/&#39;, item.id, {name: item.name, email: item.email}]&quot;&gt;</span>
+<span class="sb">      {{item.name}}&lt;/a&gt;&lt;/p&gt;</span>
+<span class="sb">    &lt;/div&gt;</span>
+<span class="sb">  `</span><span class="p">,</span>
+  <span class="nx">styles</span><span class="o">:</span> <span class="p">[]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">UserListComponent</span> <span class="kr">implements</span> <span class="nx">OnInit</span> <span class="p">{</span>
+
+  <span class="nx">title</span>: <span class="kt">string</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+
+  <span class="kr">public</span> <span class="nx">users</span>: <span class="kt">UserFace</span><span class="p">[]</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span> <span class="s2">&quot;id&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;user001&quot;</span><span class="p">,</span> <span class="s2">&quot;email&quot;</span><span class="o">:</span> <span class="s2">&quot;email@user1.com&quot;</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="s2">&quot;id&quot;</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;user002&quot;</span><span class="p">,</span> <span class="s2">&quot;email&quot;</span><span class="o">:</span> <span class="s2">&quot;email@user2.com&quot;</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="s2">&quot;id&quot;</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;user003&quot;</span><span class="p">,</span> <span class="s2">&quot;email&quot;</span><span class="o">:</span> <span class="s2">&quot;email@user3.com&quot;</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="s2">&quot;id&quot;</span><span class="o">:</span> <span class="mi">4</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;user004&quot;</span><span class="p">,</span> <span class="s2">&quot;email&quot;</span><span class="o">:</span> <span class="s2">&quot;email@user4.com&quot;</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="s2">&quot;id&quot;</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;user005&quot;</span><span class="p">,</span> <span class="s2">&quot;email&quot;</span><span class="o">:</span> <span class="s2">&quot;email@user5.com&quot;</span> <span class="p">},</span>
+  <span class="p">];</span>
+
+  <span class="kr">constructor</span><span class="p">(</span><span class="kr">private</span> <span class="nx">actRoute</span>: <span class="kt">ActivatedRoute</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+
+  <span class="nx">ngOnInit</span><span class="p">()</span><span class="o">:</span> <span class="k">void</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">title</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">actRoute</span><span class="p">.</span><span class="nx">snapshot</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">title</span><span class="p">;</span> <span class="c1">// 通过快照的方式获取来自路由配置中的参数</span>
+    <span class="kd">let</span> <span class="nx">params</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">actRoute</span><span class="p">.</span><span class="nx">snapshot</span><span class="p">.</span><span class="nx">params</span><span class="p">;</span> <span class="c1">// 通过快照的方式获取来自路由路径中的可选参数</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="nx">params</span><span class="p">.</span><span class="nx">a</span><span class="p">);</span>
+
+    <span class="k">this</span><span class="p">.</span><span class="nx">actRoute</span><span class="p">.</span><span class="nx">paramMap</span><span class="p">.</span><span class="nx">pipe</span><span class="p">(</span> <span class="c1">// 订阅来自路由路径中的可选参数</span>
+      <span class="nx">switchMap</span><span class="p">(</span><span class="nx">params</span> <span class="o">=&gt;</span> <span class="k">of</span><span class="p">(</span><span class="nx">params</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)))</span>
+    <span class="p">).</span><span class="nx">subscribe</span><span class="p">((</span><span class="nx">data</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="nx">data</span><span class="p">);</span>
+    <span class="p">});</span>
+
+    <span class="k">this</span><span class="p">.</span><span class="nx">actRoute</span><span class="p">.</span><span class="nx">queryParamMap</span><span class="p">.</span><span class="nx">pipe</span><span class="p">(</span> <span class="c1">// 订阅来自路由路径中的查询参数</span>
+      <span class="nx">switchMap</span><span class="p">(</span><span class="nx">params</span> <span class="o">=&gt;</span> <span class="k">of</span><span class="p">(</span><span class="nx">params</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;c&#39;</span><span class="p">)))</span>
+    <span class="p">).</span><span class="nx">subscribe</span><span class="p">((</span><span class="nx">data</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="nx">data</span><span class="p">);</span>
+    <span class="p">});</span>
+
+  <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="9">
+<li><p>编辑根组件。编辑文件src/app/app.component.ts，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Component</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+
+<span class="kd">@Component</span><span class="p">({</span>
+  <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-root&#39;</span><span class="p">,</span>
+  <span class="nx">template</span><span class="o">:</span> <span class="sb">`</span>
+<span class="sb">    &lt;router-outlet&gt;&lt;/router-outlet&gt;</span>
+<span class="sb">  `</span><span class="p">,</span>
+  <span class="nx">styles</span><span class="o">:</span> <span class="p">[]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">AppComponent</span> <span class="p">{</span>
+  <span class="nx">title</span> <span class="o">=</span> <span class="s1">&#39;route-ex300&#39;</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="10">
+<li><p>观察应用程序页面，留意浏览器地址栏中的URL，页面显示效果如图10-7所示。</p></li>
+</ol>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/Figure10-7.png"><img alt="../_images/Figure10-7.png" src="../_images/Figure10-7.png" style="width: 550px;" /></a>
+<p>图10-7 演示使用路由传递参数</p>
+</div></blockquote>
+<p>在上面的示例route-ex300中，完成了以下内容：</p>
+<ol class="arabic simple">
+<li><p>在路由模块中配置了子路由，子路由中设置了data属性，用来传递路由配置参数，然后在组件中通过路由对象快照的方式获取它们；</p></li>
+<li><p>在用户列表组件中，通过ngFor指令展示用户列表，在循环中，通过RouterLink指令构建导航到用户详情页面的路由，该路由上附加了必选参数和可选参数。同时在ngOnInit()方法中，分别演示了两种方式（快照方式和订阅方式）获取参数，其中订阅方式分别订阅了来自路由路径中的可选参数和查询参数；</p></li>
+<li><p>在用户详情组件中，分别构建了路径参数和查询参数的链接，同时，在ngOnInit()方法中演示了快照方式获取参数的方法，在gotoUser()方法中演示了命令导航，导航到含有可选参数的路由。</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="id20">
+<h2><span class="sectnum">10.6</span> 什么是路由守卫<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h2>
+<p>Angular的路由守卫从字面上理解，它的职责就是保护路由的。路由守卫（Route guards）是一个守卫着路由的接口，守卫的意义是为了在进入路由或者离开路由的时候，判断当前用户是否有权限或者有未完成的操作。它可以控制进入路由前后的业务逻辑，类似于其他语言中的拦截器。</p>
+<div class="section" id="id21">
+<h3><span class="sectnum">10.6.1</span> 理解路由守卫的基本概念<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h3>
+<p>Angular中一共提供了五种不同类型的守卫，每种守卫都按特定的顺序被调用。路由器会根据使用守卫的类型来调整路由的具体行为，这五种不同类型的守卫接口分别是：</p>
+<ul class="simple">
+<li><p>CanActivate守卫，用来处理导航到某路由的逻辑；</p></li>
+<li><p>CanActivateChild守卫，用来处理导航到某子路由的逻辑；</p></li>
+<li><p>CanDeactivate守卫，用来处理从当前路由离开的逻辑；</p></li>
+<li><p>Resolve守卫，用在路由激活之前获取业务数据；</p></li>
+<li><p>CanLoad守卫，用来处理异步导航到某特性模块的逻辑。</p></li>
+</ul>
+<p>Angular中的路由守卫类似组件，指令和模块，也是可以通过Angular CLI命令构建的独立类文件，命令格式如下：</p>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ ng generate guard my-can-activate <span class="c1"># my-can-activate 是将要生成守卫的文件名</span>
+? Which interfaces would you like to implement? <span class="o">(</span>Press &lt;space&gt; to <span class="k">select</span>, &lt;a&gt; to toggle all, &lt;i&gt; to invert selection<span class="o">)</span>
+❯◉ CanActivate
+◯ CanActivateChild
+◯ CanDeactivate
+◯ CanLoad
+</pre></div>
+</div>
+</div></blockquote>
+<p>执行命令时，终端窗口将提示用户选择需要实现那种类型的守卫接口。也可以在命令行中添加选项参数 <code class="docutils literal notranslate"><span class="pre">--implements=CanActivate</span></code> 来指定要实现的守卫接口。命令执行完后，将在项目根目录下生成守卫文件：my-can-activate.guard.ts，初始化代码如下：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Injectable</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">CanActivate</span><span class="p">,</span> <span class="nx">ActivatedRouteSnapshot</span><span class="p">,</span> <span class="nx">RouterStateSnapshot</span><span class="p">,</span> <span class="nx">UrlTree</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/router&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">Observable</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;rxjs&#39;</span><span class="p">;</span>
+
+<span class="kd">@Injectable</span><span class="p">({</span>
+  <span class="nx">providedIn</span><span class="o">:</span> <span class="s1">&#39;root&#39;</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">MyCanActivateGuard</span> <span class="kr">implements</span> <span class="nx">CanActivate</span> <span class="p">{</span>
+  <span class="nx">canActivate</span><span class="p">(</span>
+    <span class="nx">next</span>: <span class="kt">ActivatedRouteSnapshot</span><span class="p">,</span>
+    <span class="nx">state</span>: <span class="kt">RouterStateSnapshot</span><span class="p">)</span><span class="o">:</span> <span class="nx">Observable</span><span class="o">&lt;</span><span class="kr">boolean</span> <span class="o">|</span> <span class="nx">UrlTree</span><span class="o">&gt;</span> <span class="o">|</span> <span class="nx">Promise</span><span class="o">&lt;</span><span class="kr">boolean</span> <span class="o">|</span> <span class="nx">UrlTree</span><span class="o">&gt;</span> <span class="o">|</span> <span class="kr">boolean</span> <span class="o">|</span> <span class="nx">UrlTree</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+  <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>通过MyCanActivateGuard类的代码，可以看出：</p>
+<ul class="simple">
+<li><p>&#64;Injectable()装饰器用来提供依赖注入服务，元数据providedIn属性的值为root，表示注入的服务是全局的单例服务，即MyCanActivateGuard服务可以在根模块或者其他模块中调用。</p></li>
+<li><p>由于执行命令时，我们选择的是CanActivate接口，因此，MyCanActivateGuard类实现CanActivate接口。CanActivate接口中默认canActivate()方法注入了2个参数：ActivatedRouteSnapshot类型的next参数和RouterStateSnapshot类型的state参数。该方法的返回值是（boolean | UrlTree）类型的三种形式之一（Observable，Promise和基本类型）。初始化代码中没有任何业务逻辑，默认返回true。</p></li>
+</ul>
+<div class="admonition- admonition">
+<p class="admonition-title">提示</p>
+<p>有关&#64;Injectable()装饰器及依赖注入的知识，本书将在后续章节详细讲解。</p>
+</div>
+</div>
+<div class="section" id="id22">
+<h3><span class="sectnum">10.6.2</span> 如何配置路由守卫<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h3>
+<p>有了路由守卫类之后，可以往路由配置中添加守卫来守卫着路由。守卫返回一个值，以控制路由器的行为：</p>
+<ul class="simple">
+<li><p>如果它返回 true，导航过程会继续；</p></li>
+<li><p>如果它返回 false，导航过程就会终止，且用户留在原地；</p></li>
+<li><p>如果它返回 UrlTree（Angular中提供的解析URL的对象），则取消当前的导航，并且开始导航到返回的这个 UrlTree。</p></li>
+</ul>
+<p>在路由模块中，Route接口中提供了属性供配置具体的守卫：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">interface</span> <span class="nx">Route</span> <span class="p">{</span>
+  <span class="nx">path?</span>: <span class="kt">string</span>
+  <span class="nx">pathMatch?</span>: <span class="kt">string</span>
+  <span class="nx">matcher?</span>: <span class="kt">UrlMatcher</span>
+  <span class="nx">component?</span>: <span class="kt">Type</span><span class="o">&lt;</span><span class="nx">any</span><span class="o">&gt;</span>
+  <span class="nx">redirectTo?</span>: <span class="kt">string</span>
+  <span class="nx">outlet?</span>: <span class="kt">string</span>
+  <span class="nx">canActivate?</span>: <span class="kt">any</span><span class="p">[]</span> <span class="c1">// 配置CanActivate类型的守卫</span>
+  <span class="nx">canActivateChild?</span>: <span class="kt">any</span><span class="p">[]</span> <span class="c1">// 配置CanActivateChild类型的守卫</span>
+  <span class="nx">canDeactivate?</span>: <span class="kt">any</span><span class="p">[]</span> <span class="c1">// 配置CanDeactivate类型的守卫</span>
+  <span class="nx">canLoad?</span>: <span class="kt">any</span><span class="p">[]</span> <span class="c1">// 配置CanLoad类型的守卫</span>
+  <span class="nx">data?</span>: <span class="kt">Data</span>
+  <span class="nx">resolve?</span>: <span class="kt">ResolveData</span> <span class="c1">// 配置Resolve类型的守卫</span>
+  <span class="nx">children?</span>: <span class="kt">Routes</span>
+  <span class="nx">loadChildren?</span>: <span class="kt">LoadChildren</span>
+  <span class="nx">runGuardsAndResolvers?</span>: <span class="kt">RunGuardsAndResolvers</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>以canActivate属性为例，它接受的是一个数组对象，因此可以配置一个或者多个CanActivate守卫。例如配置一个CanActivate守卫的代码如下：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">routes</span>: <span class="kt">Routes</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span> <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="nx">redirectTo</span><span class="o">:</span> <span class="s1">&#39;/users&#39;</span><span class="p">,</span> <span class="nx">pathMatch</span><span class="o">:</span> <span class="s1">&#39;full&#39;</span> <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;users&#39;</span><span class="p">,</span>
+      <span class="nx">children</span><span class="o">:</span> <span class="p">[</span>
+        <span class="p">{</span> <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="nx">component</span>: <span class="kt">UserListComponent</span><span class="p">,</span> <span class="nx">data</span><span class="o">:</span> <span class="p">{</span> <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;用户列表页面&#39;</span> <span class="p">}</span> <span class="p">},</span>
+        <span class="p">{</span> <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;:id&#39;</span><span class="p">,</span>
+          <span class="nx">component</span>: <span class="kt">UserDetailComponent</span><span class="p">,</span>
+          <span class="nx">data</span><span class="o">:</span> <span class="p">{</span> <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;用户详细页面&#39;</span> <span class="p">},</span>
+          <span class="nx">canActivate</span><span class="o">:</span> <span class="p">[</span><span class="nx">MyCanActivateGuard</span><span class="p">]</span> <span class="c1">// 配置CanActivate守卫</span>
+        <span class="p">}</span>
+      <span class="p">]</span>
+    <span class="p">},</span>
+    <span class="p">{</span> <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;**&#39;</span><span class="p">,</span> <span class="nx">redirectTo</span><span class="o">:</span> <span class="s1">&#39;users&#39;</span> <span class="p">}</span>
+  <span class="p">];</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>上面的配置表示当用户访问的URL类似 “/users/:id” 时，路由会进入MyCanActivateGuard守卫并执行其中的业务逻辑。其他守卫的配置与CanActivate守卫的配置类似。</p>
+<p>如果配置了多个守卫，这些守卫会按照配置的先后顺序执行，如果所有守卫都返回true，就会继续导航。如果任何一个守卫返回了false，就会取消导航。如果任何一个守卫返回了UrlTree，就会取消当前导航，并开始导航到这个守卫所返回的UrlTree。</p>
+<p>下面分别对五种不同类型守卫的应用进行讲解。</p>
+</div>
+<div class="section" id="canactivate">
+<h3><span class="sectnum">10.6.3</span> CanActivate守卫的应用<a class="headerlink" href="#canactivate" title="Permalink to this headline">¶</a></h3>
+<p>CanActivate守卫是一个实现CanActivate接口的守卫类，该守卫决定当前路由能否激活。如果守卫都返回 true，就会继续导航。如果返回了 false，就会取消导航。 如果返回了 UrlTree，就会取消当前导航，并转向导航到返回的 UrlTree。</p>
+<p>CanActivate接口中有个canActivate()方法，该接口的定义如下：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">interface</span> <span class="nx">CanActivate</span> <span class="p">{</span>
+  <span class="nx">canActivate</span><span class="p">(</span>
+    <span class="nx">route</span>: <span class="kt">ActivatedRouteSnapshot</span><span class="p">,</span>
+    <span class="nx">state</span>: <span class="kt">RouterStateSnapshot</span>
+    <span class="p">)</span><span class="o">:</span> <span class="nx">Observable</span><span class="o">&lt;</span><span class="kr">boolean</span> <span class="o">|</span> <span class="nx">UrlTree</span><span class="o">&gt;</span> <span class="o">|</span> <span class="nx">Promise</span><span class="o">&lt;</span><span class="kr">boolean</span> <span class="o">|</span> <span class="nx">UrlTree</span><span class="o">&gt;</span> <span class="o">|</span> <span class="kr">boolean</span> <span class="o">|</span> <span class="nx">UrlTree</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>canActivate()方法中注入了两个类型的参数，可以直接在方法中调用这些参数的属性或方法完成具体的业务逻辑。这两个参数的类型分别是RouterStateSnapshot和ActivatedRouteSnapshot，我们已经知道RouterState对象维护的是一个全局路由状态树，ActivatedRoute对象维护的是激活状态路由树。那么，RouterStateSnapshot快照和ActivatedRouteSnapshot快照代表是这两个状态树的瞬时状态。</p>
+<p>canActivate()方法返回值是（boolean | UrlTree）类型的三种形式之一（Observable，Promise和基本类型）。CanActivate守卫一般用来对访问者进行权限验证，如，判断是否是登录用户，判断凭证是否有效等业务。</p>
+</div>
+<div class="section" id="canactivatechild">
+<h3><span class="sectnum">10.6.4</span> CanActivateChild守卫的应用<a class="headerlink" href="#canactivatechild" title="Permalink to this headline">¶</a></h3>
+<p>CanActivateChild守卫实现CanActivateChild接口，该守卫决定当前路由的子路由能否激活。CanActivateChild守卫的应用场景与CanActivate守卫类似，不同之处在于，CanActivate守卫是保护的当前路由，而CanActivateChild守卫配置在父路由上，对它的子路由进行保护，如：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">routes</span>: <span class="kt">Routes</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span> <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="nx">redirectTo</span><span class="o">:</span> <span class="s1">&#39;/users&#39;</span><span class="p">,</span> <span class="nx">pathMatch</span><span class="o">:</span> <span class="s1">&#39;full&#39;</span> <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;users&#39;</span><span class="p">,</span>
+      <span class="nx">canActivate</span><span class="o">:</span> <span class="p">[</span><span class="nx">MyCanActivateChildGuard</span><span class="p">]</span> <span class="c1">// 配置CanActivateChild守卫</span>
+      <span class="nx">children</span><span class="o">:</span> <span class="p">[</span>
+        <span class="p">{</span> <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="nx">component</span>: <span class="kt">UserListComponent</span><span class="p">,</span> <span class="nx">data</span><span class="o">:</span> <span class="p">{</span> <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;用户列表页面&#39;</span> <span class="p">}</span> <span class="p">},</span>
+        <span class="p">{</span> <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;:id&#39;</span><span class="p">,</span>
+          <span class="nx">component</span>: <span class="kt">UserDetailComponent</span><span class="p">,</span>
+          <span class="nx">data</span><span class="o">:</span> <span class="p">{</span> <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;用户详细页面&#39;</span> <span class="p">},</span>
+          <span class="nx">canActivate</span><span class="o">:</span> <span class="p">[</span><span class="nx">MyCanActivateGuard</span><span class="p">]</span> <span class="c1">// 配置CanActivate守卫</span>
+        <span class="p">}</span>
+      <span class="p">]</span>
+    <span class="p">},</span>
+    <span class="p">{</span> <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;**&#39;</span><span class="p">,</span> <span class="nx">redirectTo</span><span class="o">:</span> <span class="s1">&#39;users&#39;</span> <span class="p">}</span>
+  <span class="p">];</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>上述配置代码中，完成了以下内容：</p>
+<ul class="simple">
+<li><p>通过将MyCanActivateChildGuard守卫类配置在users父路由上，它将守卫着URL为 “/users” 和 “/users/:id” 的子路由；</p></li>
+<li><p>通过将MyCanActivateGuard守卫类配置在子路由上，它将守卫着URL为 “/users/:id” 的路由。</p></li>
+</ul>
+</div>
+<div class="section" id="candeactivate">
+<h3><span class="sectnum">10.6.5</span> CanDeactivate守卫的应用<a class="headerlink" href="#candeactivate" title="Permalink to this headline">¶</a></h3>
+<p>CanDeactivate守卫实现CanDeactivate接口，该守卫用来处理从当前路由离开的逻辑，业务场景中一般用在提醒用户执行保存操作后才能离开当前页面。CanDeactivate接口中有个canDeactivate()方法，该接口的定义如下：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">interface</span> <span class="nx">CanDeactivate</span><span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;</span> <span class="p">{</span>
+  <span class="nx">canDeactivate</span><span class="p">(</span>
+    <span class="nx">component</span>: <span class="kt">T</span><span class="p">,</span>
+    <span class="nx">currentRoute</span>: <span class="kt">ActivatedRouteSnapshot</span><span class="p">,</span>
+    <span class="nx">currentState</span>: <span class="kt">RouterStateSnapshot</span><span class="p">,</span>
+    <span class="nx">nextState?</span>: <span class="kt">RouterStateSnapshot</span>
+  <span class="p">)</span><span class="o">:</span> <span class="nx">Observable</span><span class="o">&lt;</span><span class="kr">boolean</span> <span class="o">|</span> <span class="nx">UrlTree</span><span class="o">&gt;</span> <span class="o">|</span> <span class="nx">Promise</span><span class="o">&lt;</span><span class="kr">boolean</span> <span class="o">|</span> <span class="nx">UrlTree</span><span class="o">&gt;</span> <span class="o">|</span> <span class="kr">boolean</span> <span class="o">|</span> <span class="nx">UrlTree</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>canDeactivate()方法第一个参数就是接口指定的泛型类型的组件，可以直接调用该组件的属性或方法，如：根据这个要保护的组件的状态，或者调用方法来决定用户是否能够离开。</p>
+</div>
+<div class="section" id="resolve">
+<h3><span class="sectnum">10.6.6</span> Resolve守卫的应用<a class="headerlink" href="#resolve" title="Permalink to this headline">¶</a></h3>
+<p>Resolve守卫实现Resolve接口，该守卫用来用在路由激活之前获取业务数据。Resolve接口中有个resolve()方法，该接口的定义如下：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">interface</span> <span class="nx">Resolve</span><span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;</span> <span class="p">{</span>
+  <span class="nx">resolve</span><span class="p">(</span>
+    <span class="nx">route</span>: <span class="kt">ActivatedRouteSnapshot</span><span class="p">,</span>
+    <span class="nx">state</span>: <span class="kt">RouterStateSnapshot</span>
+  <span class="p">)</span><span class="o">:</span> <span class="nx">Observable</span><span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;</span> <span class="o">|</span> <span class="nx">Promise</span><span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;</span> <span class="o">|</span> <span class="nx">T</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>业务场景中一般HTTP请求数据返回有延迟，导致模板视图无法立刻显示。比如：数据返回之前模板上所有需要用插值表达式显示值的地方都是空的，这对用户的体验不好。Resolve守卫的解决办法是：在进入路由之前先去服务器读数据，把需要的数据都读好以后，带着这些数据再进到路由里，立刻就把数据显示出来。</p>
+<p>resolve()方法返回的值是个泛型类型，它一般对应着组件视图中的数据对象。该对象存储在路由器状态中，在组件类中可以通过下面的方式获取：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">constructor</span><span class="p">(</span><span class="kr">private</span> <span class="nx">route</span>: <span class="kt">ActivatedRoute</span><span class="p">)</span> <span class="p">{}</span>
+
+<span class="nx">ngOnInit() {</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">route</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">data</span> <span class="o">=&gt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">users</span> <span class="o">=</span> <span class="nx">data</span><span class="p">.</span><span class="nx">users</span><span class="p">);</span> <span class="c1">// 通过订阅的方式获取resolve()方法返回的值</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="canload">
+<h3><span class="sectnum">10.6.7</span> CanLoad守卫的应用<a class="headerlink" href="#canload" title="Permalink to this headline">¶</a></h3>
+<p>CanLoad守卫实现CanLoad接口，该守卫用来处理异步导航到某特性模块的逻辑。CanLoad接口中有个canLoad()方法，该接口的定义如下：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">interface</span> <span class="nx">CanLoad</span> <span class="p">{</span>
+  <span class="nx">canLoad</span><span class="p">(</span>
+    <span class="nx">route</span>: <span class="kt">Route</span><span class="p">,</span>
+    <span class="nx">segments</span>: <span class="kt">UrlSegment</span><span class="p">[]</span>
+  <span class="p">)</span><span class="o">:</span> <span class="nx">Observable</span><span class="o">&lt;</span><span class="kr">boolean</span><span class="o">&gt;</span> <span class="o">|</span> <span class="nx">Promise</span><span class="o">&lt;</span><span class="kr">boolean</span><span class="o">&gt;</span> <span class="o">|</span> <span class="kr">boolean</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>业务场景中，CanLoad守卫用来保护对特性模块的未授权加载，如：在路由配置中，配置canLoad守卫来保护是否加载路由。</p>
+<blockquote>
+<div><div class="highlight-scss notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nt">path</span><span class="nd">:</span> <span class="s1">&#39;admin&#39;</span><span class="o">,</span>
+  <span class="nt">loadChildren</span><span class="nd">:</span> <span class="o">()</span> <span class="o">=&gt;</span> <span class="nt">import</span><span class="o">(</span><span class="s1">&#39;./admin/admin.module&#39;</span><span class="o">)</span><span class="nc">.then</span><span class="o">(</span><span class="nt">m</span> <span class="o">=&gt;</span> <span class="nt">m</span><span class="nc">.AdminModule</span><span class="o">),</span>
+  <span class="nt">canLoad</span><span class="nd">:</span> <span class="o">[</span><span class="nt">AuthGuard</span><span class="o">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>上述配置中，loadChildren属性中的语法是异步延迟加载模块，本章下一节对其进行讲解。</p>
+<p>在CanLoad守卫中代码如下：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="nx">canload</span><span class="p">(</span><span class="nx">route</span>: <span class="kt">Route</span><span class="p">)</span><span class="o">:</span> <span class="kr">boolean</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">url</span> <span class="o">=</span> <span class="sb">`</span><span class="si">${</span><span class="nx">route</span><span class="p">.</span><span class="nx">path</span><span class="si">}</span><span class="sb">`</span><span class="p">;</span>   <span class="c1">// route为准备访问的目标地址</span>
+    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">checkLogin</span><span class="p">(</span><span class="nx">url</span><span class="p">);</span> <span class="c1">// 判断是否继续加载，返回boolean</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="id23">
+<h2><span class="sectnum">10.7</span> 路由器的延迟加载功能<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h2>
+<p>随着时间的发展，应用程序中越来越多的功能将封装在特性模块中。例如，销售书籍的网站可能具有书籍、订单和用户等模块。一般情况下，应用程序首次加载时，不需要显示所有的这些模块数据，而且没有理由将所有这些数据都包含在根模块中。如果包含的话，它只会使根模块的文件膨胀，并在加载应用程序时导致更长的下载时间。最好的做法是在用户导航时按需加载这些模块，Angular路由器提供了延迟加载功能来解决这个问题。</p>
+<div class="section" id="id24">
+<h3><span class="sectnum">10.7.1</span> 了解延迟加载<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h3>
+<p>Angular处理延迟加载的方式是通过模块完成的。每个应用程序都有一个名为NgModule类的根模块，根模块位于应用程序app.module.ts文件中，并包含所有导入模块和组件声明。根模块中导入的所有模块是在编译时捆绑在一起并推送到浏览器的。默认情况下，模块的NgModule类都是急性加载的，也就是说所有模块会在应用加载时一起加载，无论是否立即使用他们。因此，当Angular应用程序想要促进延迟加载时，需要将根模块分成若干个较小的特性模块，然后仅将最重要的模块首先加载到根模块中。</p>
+<p>Angular路由器提供了延迟加载功能：一种按需加载NgModule类的模式。延迟加载本质上可以减小初始包的尺寸，从而减少应用的初始加载时间。对于配置有很多路由的大型应用，推荐使用延迟加载功能。</p>
+</div>
+<div class="section" id="id25">
+<h3><span class="sectnum">10.7.2</span> 实施延迟加载<a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h3>
+<p>所谓延迟加载是指延迟加载特性模块，因此，在项目中除了根模块外，至少需要一个额外的特性模块。实施延迟加载特性模块有3个主要步骤：</p>
+<ol class="arabic simple">
+<li><p>创建一个带路由的特性模块；</p></li>
+<li><p>删除默认的急性加载；</p></li>
+<li><p>配置延迟加载的路由。</p></li>
+</ol>
+<p>实际上，以上3个步骤，可以通过一条Angular CLI命令完成：</p>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng generate module 模块名 --route 延迟加载模块的path路径 --module app.module
+</pre></div>
+</div>
+</div></blockquote>
+<p>我们通过示例来说明上面的命令及选项参数：</p>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ ng generate module my-feature --route featurepath --module app
+CREATE src/app/my-feature/my-feature-routing.module.ts <span class="o">(</span><span class="m">357</span> bytes<span class="o">)</span>
+CREATE src/app/my-feature/my-feature.module.ts <span class="o">(</span><span class="m">372</span> bytes<span class="o">)</span>
+CREATE src/app/my-feature/my-feature.component.ts <span class="o">(</span><span class="m">273</span> bytes<span class="o">)</span>
+UPDATE src/app/app-routing.module.ts <span class="o">(</span><span class="m">359</span> bytes<span class="o">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>使用 ng generate module 命令附带 <code class="docutils literal notranslate"><span class="pre">--route</span></code> 选项时，它将告诉Angular CLI命令，新建一个延迟加载的特性模块，并且不需要在根模块中对其引用。
+上述命令中的route选项参数 <code class="docutils literal notranslate"><span class="pre">featurepath</span></code> 表示将生成一个path为featurepath的延迟加载路由，并且将其添加到以 <code class="docutils literal notranslate"><span class="pre">--module</span></code> 选项指定的模块中声明的 routes 数组中；命令中的module选项参数 <code class="docutils literal notranslate"><span class="pre">app</span></code> 表示在指定的模块文件（省略了扩展名，指的是app.module.ts模块文件）中添加延迟加载路由的配置;</p>
+<div class="admonition- admonition">
+<p class="admonition-title">提示</p>
+<p>注意区别 ng generate module 命令中的选项参数 <code class="docutils literal notranslate"><span class="pre">--route</span></code> 与 选项参数 <code class="docutils literal notranslate"><span class="pre">--routing</span></code> ，前者是创建延迟加载路由，后者是创建普通的路由。如果两者同时使用，route选项将覆盖routing选项。</p>
+</div>
+<p>我们打开根模块的路由文件app-routing.module.ts，新创建的特性模块的路由已经添加进routes 数组中了：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">NgModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">Routes</span><span class="p">,</span> <span class="nx">RouterModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/router&#39;</span><span class="p">;</span>
+
+
+<span class="kr">const</span> <span class="nx">routes</span>: <span class="kt">Routes</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="p">{</span>
+    <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;featurepath&#39;</span><span class="p">,</span>
+    <span class="nx">loadChildren</span><span class="o">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="kr">import</span><span class="p">(</span><span class="s1">&#39;./my-feature/my-feature.module&#39;</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">m</span> <span class="o">=&gt;</span> <span class="nx">m</span><span class="p">.</span><span class="nx">MyFeatureModule</span><span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">]</span>
+
+<span class="kd">@NgModule</span><span class="p">({</span>
+  <span class="nx">imports</span><span class="o">:</span> <span class="p">[</span><span class="nx">RouterModule</span><span class="p">.</span><span class="nx">forRoot</span><span class="p">(</span><span class="nx">routes</span><span class="p">)],</span>
+  <span class="nx">exports</span><span class="o">:</span> <span class="p">[</span><span class="nx">RouterModule</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">AppRoutingModule</span> <span class="p">{</span> <span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>延迟加载语法使用Routed对象的loadChildren属性，其后是一个使用浏览器内置的 import(‘…’) 语法进行动态导入的函数。其导入路径是到当前模块的相对路径。</p>
+<p>我们查看新创建的特性模块的路由模块文件my-feature-routing.module.ts：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">NgModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">Routes</span><span class="p">,</span> <span class="nx">RouterModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/router&#39;</span><span class="p">;</span>
+
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">MyFeatureComponent</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./my-feature.component&#39;</span><span class="p">;</span>
+
+<span class="kr">const</span> <span class="nx">routes</span>: <span class="kt">Routes</span> <span class="o">=</span> <span class="p">[{</span> <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="nx">component</span>: <span class="kt">MyFeatureComponent</span> <span class="p">}];</span>
+
+<span class="kd">@NgModule</span><span class="p">({</span>
+  <span class="nx">imports</span><span class="o">:</span> <span class="p">[</span><span class="nx">RouterModule</span><span class="p">.</span><span class="nx">forChild</span><span class="p">(</span><span class="nx">routes</span><span class="p">)],</span>
+  <span class="nx">exports</span><span class="o">:</span> <span class="p">[</span><span class="nx">RouterModule</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">MyFeatureRoutingModule</span> <span class="p">{</span> <span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>读者可能已经注意到了，Angular CLI 命令把RouterModule.forRoot(routes)添加到根模块路由中，而把RouterModule.forChild(routes)添加到各个特性模块中。这是因为forRoot(routes)方法将会注册并返回一个全局的单例RouterModule对象，所以必须在根模块中只使用一次forRoot()方法，各个特性模块中应当使用forChild()方法。</p>
+<p>下面我们通过示例演示路由延迟加载功能。</p>
+</div>
+<div class="section" id="route-ex400">
+<h3><span class="sectnum">10.7.3</span> [示例 route-ex400] 演示路由延迟加载功能<a class="headerlink" href="#route-ex400" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>用Angular CLI构建应用程序，具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng new route-ex400 --minimal --routing -s -t --interactive<span class="o">=</span><span class="nb">false</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>启动服务，具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng serve
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><p>查看应用程序结果。打开Web浏览器并浏览到 “<a class="reference external" href="http://localhost:4200">http://localhost:4200</a>”，应该看到文本 “Welcome to route-ex400!”。</p></li>
+<li><p>创建2个特性模块。具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng g m features/users --route users --module app.module <span class="c1"># 创建带路由的users模块，并且配置为延迟加载模块</span>
+ng g m features/posts --route posts --module app.module <span class="c1"># 创建带路由的posts模块，并且配置为延迟加载模块</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="5">
+<li><p>编辑根组件。编辑文件src/app/app.component.ts，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Component</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+
+<span class="kd">@Component</span><span class="p">({</span>
+  <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-root&#39;</span><span class="p">,</span>
+  <span class="nx">template</span><span class="o">:</span> <span class="sb">`</span>
+<span class="sb">    &lt;h1&gt;</span>
+<span class="sb">      {{title}}</span>
+<span class="sb">    &lt;/h1&gt;</span>
+
+<span class="sb">    &lt;button routerLink=&quot;/users&quot;&gt;用户信息&lt;/button&gt;</span>
+<span class="sb">    &lt;button routerLink=&quot;/posts&quot;&gt;留言信息&lt;/button&gt;</span>
+<span class="sb">    &lt;button routerLink=&quot;&quot;&gt;Home&lt;/button&gt;</span>
+
+<span class="sb">    &lt;router-outlet&gt;&lt;/router-outlet&gt;</span>
+<span class="sb">  `</span><span class="p">,</span>
+  <span class="nx">styles</span><span class="o">:</span> <span class="p">[]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">AppComponent</span> <span class="p">{</span>
+  <span class="nx">title</span> <span class="o">=</span> <span class="s1">&#39;route-ex400&#39;</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="8">
+<li><p>观察应用程序页面，查看控制台打印信息，页面显示效果如图10-8所示。</p></li>
+</ol>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/Figure10-8.png"><img alt="../_images/Figure10-8.png" src="../_images/Figure10-8.png" style="width: 500px;" /></a>
+<p>图10-8 演示路由延迟加载功能</p>
+</div></blockquote>
+<p>在上面的示例route-ex400中，完成了以下内容：</p>
+<ol class="arabic simple">
+<li><p>步骤4中通过Angular CLI命令创建2个特性模块，这2个特性模块均放在feature文件夹下，同时命令已经在主路由配置文件中配置了延迟加载功能；</p></li>
+<li><p>可以使用Chrome开发者工具来确认一下这些模块真的是延迟加载的。在Chrome浏览器中，按 Cmd+Option+i（Mac）或 Ctrl+Shift+j（PC），并选中 Network 页标签。点击“用户信息”或“留言信息”按钮，可以看到Network的记录中出现了一条加载模块信息，特性模块被延迟加载成功了。无论来回切换按钮多少次，Users和Posts加载的信息都只出现一次。</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="id26">
+<h2><span class="sectnum">10.8</span> 小结<a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h2>
+<p>本章主要介绍了路由方面的知识，包括路由器配置，路由器状态以及路由器事件等。通过示例演示如何在路由中传递参数，如何使用路由守卫和如何使用延迟加载功能，这些知识在实际应用中都非常有用。</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="injection.html" class="btn btn-neutral float-right" title="11 学习Angular的服务及依赖注入" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="angmodule.html" class="btn btn-neutral float-left" title="9 学习Angular模块知识" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright CVI Talent
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

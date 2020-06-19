@@ -1,0 +1,1639 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>4 学习TypeScript知识</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="5 快速开启第一个Angular" href="firstangular.html" />
+    <link rel="prev" title="第二课" href="second.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/main-page-logo-small-hat.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">目录：</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="start.html">Angular 9</a></li>
+<li class="toctree-l1"><a class="reference internal" href="first.html">第一课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="whatisangular.html"><span class="sectnum">1</span> Angular概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="howtolearn.html"><span class="sectnum">2</span> 学习Angular需要什么基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nodejs.html"><span class="sectnum">3</span> 掌握Node.js和npm基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="second.html">第二课</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#"><span class="sectnum">4</span> 学习TypeScript知识</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1"><span class="sectnum">4.1</span> 什么是TypeScript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2"><span class="sectnum">4.2</span> 快速上手TypeScript</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id3"><span class="sectnum">4.2.1</span> 安装TypeScript</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4"><span class="sectnum">4.2.2</span> 转译TypeScript</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tsc-ex100-typescript"><span class="sectnum">4.2.3</span> [示例 tsc-ex100] 开始第一个TypeScript工程示例</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id5"><span class="sectnum">4.3</span> 认识TypeScript的数据类型</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id6"><span class="sectnum">4.3.1</span> TypeScript的类型注解</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7"><span class="sectnum">4.3.2</span> TypeScript有哪些基础类型</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8"><span class="sectnum">4.3.3</span> TypeScript中的类型转换</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id9"><span class="sectnum">4.3.3.1</span> 字符串转换为数字</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id10"><span class="sectnum">4.3.3.2</span> 数字转换为字符串</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id11"><span class="sectnum">4.3.4</span> 什么是TypeScript类型断言</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id12"><span class="sectnum">4.3.5</span> 什么是TypeScript类型保护</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#in"><span class="sectnum">4.3.5.1</span> 使用 in 操作符进行类型保护</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#typeof"><span class="sectnum">4.3.5.2</span> 使用 typeof 操作符进行类型保护</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#instanceof"><span class="sectnum">4.3.5.3</span> 使用 instanceof 操作符进行类型保护</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id13"><span class="sectnum">4.3.6</span> 什么是TypeScript的联合类型</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id14"><span class="sectnum">4.3.7</span> 什么是TypeScript的类型别名</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id15"><span class="sectnum">4.3.8</span> 什么是TypeScript的交叉类型</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id16"><span class="sectnum">4.4</span> 学习TypeScript的函数</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id17"><span class="sectnum">4.4.1</span> 什么是箭头函数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id18"><span class="sectnum">4.4.2</span> TypeScript的函数类型</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id19"><span class="sectnum">4.4.3</span> 函数中的可选参数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id20"><span class="sectnum">4.4.4</span> 函数中的默认参数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id21"><span class="sectnum">4.4.5</span> 函数中的剩余参数</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id22"><span class="sectnum">4.5</span> 学习TypeScript的数组</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id23"><span class="sectnum">4.5.1</span> TypeScript的数组类型</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id24"><span class="sectnum">4.5.2</span> 使用TypeScript数组的查找和检索方法</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id25"><span class="sectnum">4.6</span> 学习TypeScript接口</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id26"><span class="sectnum">4.7</span> 学习TypeScript类</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id27"><span class="sectnum">4.7.1</span> 类的构造函数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id28"><span class="sectnum">4.7.2</span> 类方法和属性</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id29"><span class="sectnum">4.7.3</span> 类的继承</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id30"><span class="sectnum">4.7.4</span> 类的存取器方法</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id31"><span class="sectnum">4.8</span> 学习TypeScript的映射类型</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#partial"><span class="sectnum">4.8.1</span> Partial 映射类型</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#readonly"><span class="sectnum">4.8.2</span> Readonly (只读)映射类型</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#exclude"><span class="sectnum">4.8.3</span> Exclude映射类型</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id32"><span class="sectnum">4.9</span> 识别TypeScript的相等性判断</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id33"><span class="sectnum">4.9.1</span> 非严格相等比较 (==)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id34"><span class="sectnum">4.9.2</span> 严格相等比较 (===)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id35"><span class="sectnum">4.10</span> 学习TypeScript析构表达式</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id36"><span class="sectnum">4.10.1</span> 对象的析构表达式</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id37"><span class="sectnum">4.10.2</span> 数组的析构表达式</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id38"><span class="sectnum">4.11</span> TypeScript模块</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id39"><span class="sectnum">4.11.1</span> 导出声明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id40"><span class="sectnum">4.11.2</span> 导出语句</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id41"><span class="sectnum">4.11.3</span> 默认导出</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id42"><span class="sectnum">4.11.4</span> 导入内容</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id43"><span class="sectnum">4.12</span> 小结</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="firstangular.html"><span class="sectnum">5</span> 快速开启第一个Angular</a></li>
+<li class="toctree-l1"><a class="reference internal" href="third.html">第三课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angcomponent.html"><span class="sectnum">6</span> 学习Angular组件知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angtemplate.html"><span class="sectnum">7</span> 学习Angular模板知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angdirective.html"><span class="sectnum">8</span> 掌握Angular指令应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fourth.html">第四课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angmodule.html"><span class="sectnum">9</span> 学习Angular模块知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angroute.html"><span class="sectnum">10</span> 熟悉Angular路由功能</a></li>
+<li class="toctree-l1"><a class="reference internal" href="injection.html"><span class="sectnum">11</span> 学习Angular的服务及依赖注入</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fifth.html">第五课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reactive.html"><span class="sectnum">12</span> 掌握响应式编程基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form.html"><span class="sectnum">13</span> 学习Angular表单知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="httpclient.html"><span class="sectnum">14</span> 熟悉HttpClient模块</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sixth.html">第六课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pipe.html"><span class="sectnum">15</span> 深入学习Angular管道知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ui.html"><span class="sectnum">16</span> Angular与Angular Material组件库</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rxjs.html"><span class="sectnum">17</span> 学习RxJS在Angular中的实际应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="seventh.html">第七课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="material.html"><span class="sectnum">18</span> 实战基于Angular Material实现表格组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bootstrap.html"><span class="sectnum">19</span> 集成Bootstrap前端组件库</a></li>
+<li class="toctree-l1"><a class="reference internal" href="echart.html"><span class="sectnum">20</span> 在Angular项目中使用图表</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appid.html"><span class="sectnum">21</span> 使用IBM Cloud™ App ID对Angular应用进行认证</a></li>
+<li class="toctree-l1"><a class="reference internal" href="communication.html"><span class="sectnum">22</span> 掌握在Angular组件间通信</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pwa.html"><span class="sectnum">23</span> Angular与渐进式WEB应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="message.html"><span class="sectnum">24</span> 实现简单的消息通知机制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="localdata.html"><span class="sectnum">25</span> 如何与本地数据打交道</a></li>
+<li class="toctree-l1"><a class="reference internal" href="test.html"><span class="sectnum">26</span> 熟悉Angular测试</a></li>
+<li class="toctree-l1"><a class="reference internal" href="package.html"><span class="sectnum">27</span> 熟悉Angular环境配置及打包</a></li>
+<li class="toctree-l1"><a class="reference internal" href="universal.html"><span class="sectnum">28</span> 学习Angular服务端渲染</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deploy.html"><span class="sectnum">29</span> 如何部署Angular应用程序</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user.html"><span class="sectnum">30</span> 实战用户管理系统</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">CVI Talent</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">首页</a> &raquo;</li>
+        
+      <li><span class="sectnum">4</span> 学习TypeScript知识</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        <a href="https://pages.github.ibm.com/lanzejun/talent/index.html" class="fa fa-github"> CVITube</a>
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="typescript">
+<h1><span class="sectnum">4</span> 学习TypeScript知识<a class="headerlink" href="#typescript" title="Permalink to this headline">¶</a></h1>
+<p>Angular是一个完全用TypeScript构建的现代框架，而且还将TypeScript作为其主要开发语言。本章带领读者学习入门TypeScript的知识。</p>
+<div class="section" id="id1">
+<h2><span class="sectnum">4.1</span> 什么是TypeScript<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>学习TypeScript之前，我们先了解下JavaScript语言的发展历史。ECMAScript是一种由ECMA的组织（前身为欧洲计算机制造商协会）于1997年发布的MCMA-262的标准，该标准制定了MCMAscript语言规范(ECMAScript Language Specification)，简称ES规范。ES规范里包含了多种语言技术，JavaScript语言是其中的一种，也是最出名的一种。</p>
+<p>2015年6月，ES规范发展到了第6个版本，即ECMAScript 2015（ES2015），人们通俗的称之为“ES6”。在这之前的版本是“ES5”，也就是大家熟知的JavaScript。ES6相比ES5来讲，增强了很多新特性。</p>
+<p>TypeScript是由Microsoft开发的一种开源编程语言，它是“ES6”的一个超集，扩展了“ES6”的语法。TypeScript的第一个版本于2012年10月发布，经历了多次更新后，现在已成为前端社区中不可忽视的力量，不仅在Microsoft内部得到广泛运用，而且Google的Angular也使用了TypeScript作为主要开发语言。这意味着，TypeScript背后至少有Microsoft和Google两大公司的支持。</p>
+<p>TypeScript代码文件约定以“.ts”后缀命名。现如今支持ES6的浏览器还比较少，更不用说TypeScript了。这个问题需要用转译器来解决，TypeScript转译器能把TypeScript代码转换为几乎所有浏览器都支持的“ES5”代码。关于TypeScript、ES5和ES6他们之间的关系如图4-1所示：</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/Figure4-1.png"><img alt="../_images/Figure4-1.png" src="../_images/Figure4-1.png" style="width: 250px;" /></a>
+</div></blockquote>
+<p>图4-1 TypeScript、ES5和ES6之间的关系</p>
+<p>TypeScript是ES6的超集，所有的ES6代码都是完全有效且可编译的TypeScript代码。我们把TypeScript 与 JavaScript 常见的区别整理在一张表中，方便读者比较。详细见表4-1所示：</p>
+<blockquote>
+<div><table class="colwidths-given docutils align-default" id="id44">
+<caption><span class="caption-text">表4-1 TypeScript与JavaScript的区别</span><a class="headerlink" href="#id44" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>TypeScript</p></td>
+<td><p>JavaScript</p></td>
+</tr>
+<tr class="row-even"><td><p>JavaScript 的超集，用于解决大型项目的代码复杂性</p></td>
+<td><p>一种脚本语言，用于创建动态网页</p></td>
+</tr>
+<tr class="row-odd"><td><p>可以在编译期间发现并纠正错误</p></td>
+<td><p>作为一种解释型语言，只能在运行时发现错误</p></td>
+</tr>
+<tr class="row-even"><td><p>强类型，支持静态和动态类型</p></td>
+<td><p>弱类型，没有静态类型选项</p></td>
+</tr>
+<tr class="row-odd"><td><p>最终编译成 JavaScript 代码</p></td>
+<td><p>可以直接在浏览器中使用</p></td>
+</tr>
+<tr class="row-even"><td><p>支持模块、泛型和接口</p></td>
+<td><p>不支持模块，泛型或接口</p></td>
+</tr>
+<tr class="row-odd"><td><p>支持 ES5 和 ES6 等</p></td>
+<td><p>不支持 ES5 和 ES6 等</p></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>另外，TypeScript为JavaScript语言提供了更多功能。TypeScript可以与大多数使用的JavaScript库很好地集成。</p>
+<p>JavaScript程序也是一个有效的TypeScript程序，一个TypeScript程序可以无缝地使用JavaScript代码，因此可以直接将扩展名为“.js”的文件更改为“.ts”文件。</p>
+<p>进行Angular开发时，开发人员不需要单独下载或安装TypeScript，Angular工程已经自动为项目设置成了TypeScript的语言环境。</p>
+</div>
+<div class="section" id="id2">
+<h2><span class="sectnum">4.2</span> 快速上手TypeScript<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>快速上手TypeScript之前，需要先学会如何安装它，稍后需要准备一个能编辑和解析TypeScript语言的环境。在安装完成TypeScript之后，就可以使用它的转译器工具（tsc）将TypeScript代码转译为JavaScript代码了。</p>
+<div class="section" id="id3">
+<h3><span class="sectnum">4.2.1</span> 安装TypeScript<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>使用npm包管理工具下载TypeScript包并在全局环境下安装，命令如下:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">npm</span> <span class="n">install</span> <span class="o">-</span><span class="n">g</span> <span class="n">typescript</span>
+</pre></div>
+</div>
+<p>安装成功后，可以通过 tsc -v 命令查看当前TypeScript版本。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ tsc -v
+Version 3.7.5
+</pre></div>
+</div>
+<p>上述命令执行结果表示：当前TypeScript的版本是：3.7.5。</p>
+</div>
+<div class="section" id="id4">
+<h3><span class="sectnum">4.2.2</span> 转译TypeScript<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>通过tsc命令转译TypeScript源码，tsc命令后接TypeScript文件名，如：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tsc</span> <span class="n">hello</span><span class="o">.</span><span class="n">ts</span>
+</pre></div>
+</div>
+<p>上述命令执行完成后，将会在当前目录下生成一个同文件名的JavaScript文件：hello.js。</p>
+<p>下面通过示例演示搭建一个简单的TypeScript工程的开发环境。</p>
+</div>
+<div class="section" id="tsc-ex100-typescript">
+<h3><span class="sectnum">4.2.3</span> [示例 tsc-ex100] 开始第一个TypeScript工程示例<a class="headerlink" href="#tsc-ex100-typescript" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>打开终端，新建一个文件夹并进入目录下，运行 npm init 命令初始化Node项目：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ mkdir mytsc <span class="o">&amp;&amp;</span> <span class="nb">cd</span> mytsc <span class="c1"># 新建mytsc文件夹，并进入文件夹目录中</span>
+$ npm init <span class="c1"># 初始化项目</span>
+</pre></div>
+</div>
+<p>npm init 命令将会要求按照提示输入项目的一些相关信息，也可以使用 <code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">init</span> <span class="pre">-y</span></code> 命令默认选择信息，这些信息后续可以在项目中更新。</p>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>添加Typescript开发依赖包，执行命令：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ npm i typescript --save-dev
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><p>初始化Typescript项目信息，执行命令：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ tsc --init
+</pre></div>
+</div>
+<p>上述命令执行完成后，在工程目录下，将会生成一个tsconfig.json文件，该文件用来配置Typescript的环境信息。</p>
+</div></blockquote>
+<ol class="arabic simple" start="4">
+<li><p>打开VSCode编辑器，导入工程，或者直接在终端输入命令“code .”，该命令会直接打开VSCode编辑器，并自动导入当前工程。</p></li>
+<li><p>编辑tsconfig.json文件，找到outDir和rootDir节点注释，并修改内容如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;outDir&quot;</span><span class="o">:</span> <span class="s2">&quot;dist&quot;</span><span class="p">,</span>     <span class="c1">// 定义输出文件夹路径</span>
+<span class="s2">&quot;rootDir&quot;</span><span class="o">:</span> <span class="s2">&quot;src&quot;</span><span class="p">,</span>     <span class="c1">// 定义源文件夹路径</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="6">
+<li><p>创建一个TypeScript类文件。创建src/index.ts文件，并修改内容如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">greeter</span><span class="p">(</span><span class="nx">name</span>: <span class="kt">string</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// 定义变量name的类型为字符串类型</span>
+    <span class="k">return</span> <span class="s2">&quot;Hello, &quot;</span> <span class="o">+</span> <span class="nx">name</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">let</span> <span class="nx">user</span> <span class="o">=</span> <span class="s2">&quot;Murphy&quot;</span><span class="p">;</span> <span class="c1">// let 是TypeScript语言的变量声明符</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">greeter</span><span class="p">(</span><span class="nx">user</span><span class="p">))</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="7">
+<li><p>编辑package.json文件，并修改内容如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;mytsc&quot;</span><span class="p">,</span>
+<span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0.0&quot;</span><span class="p">,</span>
+<span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="nt">&quot;main&quot;</span><span class="p">:</span> <span class="s2">&quot;src/index.ts&quot;</span><span class="p">,</span>
+<span class="nt">&quot;scripts&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;start&quot;</span><span class="p">:</span> <span class="s2">&quot;tsc&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;test&quot;</span><span class="p">:</span> <span class="s2">&quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;</span>
+    <span class="p">},</span>
+<span class="nt">&quot;keywords&quot;</span><span class="p">:</span> <span class="p">[],</span>
+<span class="nt">&quot;author&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="nt">&quot;license&quot;</span><span class="p">:</span> <span class="s2">&quot;ISC&quot;</span><span class="p">,</span>
+<span class="nt">&quot;devDependencies&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;typescript&quot;</span><span class="p">:</span> <span class="s2">&quot;^3.8.3&quot;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="8">
+<li><p>编译TypeScript类文件，执行start命令：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ npm start
+</pre></div>
+</div>
+<p>上述命令执行完成后，在工程dist目录下，将会生成一个index.js文件。</p>
+</div></blockquote>
+<ol class="arabic simple" start="9">
+<li><p>执行JavaScript类文件，命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>node dist/hello.js
+</pre></div>
+</div>
+<p>上述命令执行完成后，控制台将打印信息：”Hello, Murphy“。</p>
+</div></blockquote>
+<p>在上面的示例tsc-ex100中，完成了以下内容：</p>
+<ol class="arabic">
+<li><p>步骤1中，完成了创建及初始化Node.js工程；</p></li>
+<li><p>步骤2中，完成了初始化TypeScript开发环境，TypeScript开发环境依赖Node.js；</p></li>
+<li><p>步骤5中，通过Typescript的配置文件配置了源代码和编译后输出文件的路径；</p></li>
+<li><p>步骤7中，在项目的配置文件中，增加了start的执行命令，该命令执行tsc命令，将TypeScript类文件编译后生成JavaScript类文件；</p></li>
+<li><p>对比源文件hello.ts和目标文件hello.js的内容：</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>生成的目标文件中自动添加了”use strict”声明， “use strict”的目的是指定代码在严格条件下执行；</p></li>
+<li><p>源文件中的TypeScript类型声明自动在目标文件中省略了；</p></li>
+<li><p>源文件user变量的修饰符在生成的文件中由let变成了var声明；</p></li>
+<li><p>生成后的hello.js文件比源文件少了空行。</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ol>
+<p>生成的hello.js文件，可以在任何JavaScript环境下运行了。</p>
+</div>
+</div>
+<div class="section" id="id5">
+<h2><span class="sectnum">4.3</span> 认识TypeScript的数据类型<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>通常，可以把数据类型看作是是一组值的集合。TypeScript是ES5(JavaScript)的超集，意味着，ES5中的类型在TypeScript中同样有效。
+如上所述，TypeScript是强类型的语言，支持静态和动态类型，而且数据类型这块的知识是掌握TypeScript知识的基础，对初学者来说至关重要，下面对这些内容进行详细讲解。</p>
+<div class="section" id="id6">
+<h3><span class="sectnum">4.3.1</span> TypeScript的类型注解<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<p>TypeScript是类型化语言，因此可以通过类型注解指定变量（也可以是函数参数或对象属性等）的类型。
+类型注解在TypeScript中不是强制的。它的作用是帮助编译器检查变量的类型，并在处理数据类型时避免错误，也就是描述变量可以接受的值。</p>
+<p>类型注解的格式是变量之后使用冒号进行类型标识（:type），冒号和变量名之间可以有空格。例如以下代码告诉TypeScript变量“age”只能存储数字：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">age</span>: <span class="kt">number</span><span class="p">;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<div class="admonition- admonition">
+<p class="admonition-title">注意</p>
+<p>类型注解是TypeScript语言的特性，因此，上面的代码仅在支持TypeScript的环境下运行，不能在JavaScript下运行。</p>
+</div>
+<p>下面的代码演示的是对函数参数进行类型注解：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="nx">display</span><span class="p">(</span><span class="nx">id</span>: <span class="kt">number</span><span class="p">,</span> <span class="nx">name</span>: <span class="kt">string</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Id = &quot;</span> <span class="o">+</span> <span class="nx">id</span> <span class="o">+</span> <span class="s2">&quot;, Name = &quot;</span> <span class="o">+</span> <span class="nx">name</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nx">display</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Murphy&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>如果声明变量时没有使用类型注解，TypeScript可以对变量的类型进行推断。例如下面这行代码：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">11</span><span class="p">;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>TypeScript会推断出变量a的类型是数值类型（number）。</p>
+</div>
+<div class="section" id="id7">
+<h3><span class="sectnum">4.3.2</span> TypeScript有哪些基础类型<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<p>在TypeScript中主要有以下几种类型：</p>
+<ul class="simple">
+<li><p>布尔基本类型（boolean）（小写字母b）：具有两个元素true和false的集合。</p></li>
+</ul>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">a</span>: <span class="kt">boolean</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+<span class="c1">// ES5：var a = false;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ul class="simple">
+<li><p>布尔对象类型（Boolean）（大写字母B）：布尔对象类型是布尔基本类型的包装对象。</p></li>
+</ul>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="c1">// 使用Boolean()函数将字符串转换为布尔值。</span>
+<span class="kd">let</span> <span class="nx">hi</span>: <span class="kt">Boolean</span> <span class="o">=</span> <span class="nb">Boolean</span><span class="p">(</span><span class="s1">&#39;Hi&#39;</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">hi</span><span class="p">);</span> <span class="c1">// 由于字符串不为空，因此返回true。控制台打印：true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="nx">hi</span><span class="p">);</span> <span class="c1">// 控制台打印：boolean</span>
+
+<span class="kd">let</span> <span class="nx">hi</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Boolean</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">hi</span><span class="p">);</span> <span class="c1">// 控制台打印：[Boolean: false]</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="nx">hi</span><span class="p">);</span> <span class="c1">// 控制台打印：object</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ul class="simple">
+<li><p>数值类型（number）：所有数字的集合。</p></li>
+</ul>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">count</span>: <span class="kt">number</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+<span class="c1">// ES5：var count = 5;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ul class="simple">
+<li><p>字符串类型（string）：所有字符串的集合。</p></li>
+</ul>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">name</span>: <span class="kt">string</span> <span class="o">=</span> <span class="s2">&quot;Murphy&quot;</span><span class="p">;</span>
+<span class="c1">// ES5：var name = &quot;Murphy&quot;;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ul class="simple">
+<li><p>数组类型（array）：存储一系列的值的集合。</p></li>
+</ul>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">list</span>: <span class="kt">number</span><span class="p">[]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">];</span>
+<span class="c1">// ES5：var list = [1, 2, 3];</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ul class="simple">
+<li><p>枚举类型：所有对象的集合（包括函数和数组）。</p></li>
+</ul>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="c1">// 常量枚举</span>
+<span class="kr">enum</span> <span class="nx">Color</span> <span class="p">{</span> <span class="nx">Red</span><span class="p">,</span> <span class="nx">Green</span><span class="p">,</span> <span class="nx">Blue</span> <span class="p">}</span> <span class="c1">// 等同于：enum Color { Red = 1, Green, Blue }</span>
+<span class="kd">let</span> <span class="nx">c</span>: <span class="kt">Color</span> <span class="o">=</span> <span class="nx">Color</span><span class="p">.</span><span class="nx">Green</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">c</span><span class="p">);</span> <span class="c1">// 控制台打印：1</span>
+
+<span class="kd">let</span> <span class="nx">colorName</span>: <span class="kt">string</span> <span class="o">=</span> <span class="nx">Color</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">colorName</span><span class="p">);</span> <span class="c1">// 控制台打印：Blue</span>
+
+<span class="c1">// 字符串枚举</span>
+<span class="kr">enum</span> <span class="nx">Color</span> <span class="p">{</span> <span class="nx">Red</span> <span class="o">=</span> <span class="s1">&#39;Red&#39;</span><span class="p">,</span> <span class="nx">Green</span> <span class="o">=</span> <span class="s1">&#39;Green&#39;</span><span class="p">,</span> <span class="nx">Blue</span> <span class="o">=</span> <span class="s1">&#39;Blue&#39;</span> <span class="p">}</span>
+<span class="kd">let</span> <span class="nx">c</span>: <span class="kt">Color</span> <span class="o">=</span> <span class="nx">Color</span><span class="p">.</span><span class="nx">Green</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">c</span><span class="p">);</span> <span class="c1">// 控制台打印：Green</span>
+
+<span class="kd">let</span> <span class="nx">colorName</span>: <span class="kt">string</span> <span class="o">=</span> <span class="nx">Color</span><span class="p">[</span><span class="s1">&#39;Green&#39;</span><span class="p">];</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">colorName</span><span class="p">);</span> <span class="c1">// 控制台打印：Green</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ul class="simple">
+<li><p>object类型（小写字母o）：所有对象的集合，它用于表示非原始类型，包括函数和数组，不包含number，string，boolean，bigint，symbol，null和undefined类型。</p></li>
+</ul>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">declare</span> <span class="kd">function</span> <span class="nx">create</span><span class="p">(</span><span class="nx">o</span>: <span class="kt">object</span> <span class="o">|</span> <span class="kc">null</span><span class="p">)</span><span class="o">:</span> <span class="k">void</span><span class="p">;</span>
+
+<span class="nx">create</span><span class="p">({</span> <span class="nx">prop</span>: <span class="kt">0</span> <span class="p">});</span> <span class="c1">// 正确</span>
+<span class="nx">create</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span> <span class="c1">// 正确</span>
+<span class="nx">create</span><span class="p">({});</span> <span class="c1">// 正确</span>
+
+<span class="nx">create</span><span class="p">(</span><span class="mi">42</span><span class="p">);</span> <span class="c1">// 错误</span>
+<span class="nx">create</span><span class="p">(</span><span class="s2">&quot;string&quot;</span><span class="p">);</span> <span class="c1">// 错误</span>
+<span class="nx">create</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span> <span class="c1">// 错误</span>
+<span class="nx">create</span><span class="p">(</span><span class="kc">undefined</span><span class="p">);</span> <span class="c1">// 错误</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ul class="simple">
+<li><p>Object类型（大写字母O）：Object类型是所有类的实例的类型。</p></li>
+<li><p>{}类型：表示空对象类型。</p></li>
+</ul>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="c1">// 在ES5的环境下，下面的代码是正常的：</span>
+<span class="kr">const</span> <span class="nx">es</span> <span class="o">=</span> <span class="p">{};</span>
+<span class="nx">es</span><span class="p">.</span><span class="nx">x</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+<span class="nx">es</span><span class="p">.</span><span class="nx">y</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">es</span><span class="p">)</span> <span class="c1">// 控制台打印：{ x: 3, y: 4 }</span>
+</pre></div>
+</div>
+<p>然而，在TypeScript的环境下，上面的代码是错误的，将会提示下面的错误信息：</p>
+<div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">es</span> <span class="o">=</span> <span class="p">{};</span> <span class="c1">// (A)</span>
+<span class="c1">// Property &#39;x&#39; does not exist on type &#39;{}&#39;</span>
+<span class="nx">es</span><span class="p">.</span><span class="nx">x</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span> <span class="c1">// Error</span>
+<span class="c1">// Property &#39;y&#39; does not exist on type &#39;{}&#39;</span>
+<span class="nx">es</span><span class="p">.</span><span class="nx">y</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span> <span class="c1">// Error</span>
+</pre></div>
+</div>
+<p>在TypeScript的环境下，我们需要显示的初始化es对象，例如下面代码这样：</p>
+<div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">es</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">x</span>: <span class="kt">3</span><span class="p">,</span>
+    <span class="nx">y</span>: <span class="kt">4</span><span class="p">,</span>
+<span class="p">};</span>
+<span class="nx">es</span><span class="p">.</span><span class="nx">x</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">es</span><span class="p">)</span> <span class="c1">// 控制台打印：{ x: 5, y: 4 }</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ul class="simple">
+<li><p>null和undefined类型：具有唯一元素“null”或“undefined”的集合。</p></li>
+</ul>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">u</span>: <span class="kt">undefined</span> <span class="o">=</span> <span class="kc">undefined</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">n</span>: <span class="kt">null</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ul class="simple">
+<li><p>any类型：任意值类型，存储任意值的集合。TypeScript 允许对 any 类型的值执行任何操作，而无需事先执行任何形式的检查，例如下面的代码：</p></li>
+</ul>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">value</span>: <span class="kt">any</span><span class="p">;</span>
+
+<span class="nx">value</span><span class="p">.</span><span class="nx">foo</span><span class="p">.</span><span class="nx">bar</span><span class="p">;</span> <span class="c1">// OK</span>
+<span class="nx">value</span><span class="p">.</span><span class="nx">trim</span><span class="p">();</span> <span class="c1">// OK</span>
+<span class="nx">value</span><span class="p">();</span> <span class="c1">// OK</span>
+<span class="k">new</span> <span class="nx">value</span><span class="p">();</span> <span class="c1">// OK</span>
+<span class="nx">value</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">];</span> <span class="c1">// OK</span>
+</pre></div>
+</div>
+<p>在许多场景下，这太宽松了。使用 any 类型，可以很容易地编写类型正确但在运行时有问题的代码。如果使用 any 类型，就无法使用 TypeScript 提供的大量的保护机制。为了解决 any 带来的问题，TypeScript 3.0+ 引入了 unknown 类型。</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>unknown类型：同any类型一样，所有类型也都可以赋值给 unknown类型，但是对类型为 unknown 的值执行操作时，会发生编译错误：</p></li>
+</ul>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">value</span>: <span class="kt">unknown</span><span class="p">;</span>
+
+<span class="nx">value</span><span class="p">.</span><span class="nx">foo</span><span class="p">.</span><span class="nx">bar</span><span class="p">;</span> <span class="c1">// Error</span>
+<span class="nx">value</span><span class="p">.</span><span class="nx">trim</span><span class="p">();</span> <span class="c1">// Error</span>
+<span class="nx">value</span><span class="p">();</span> <span class="c1">// Error</span>
+<span class="k">new</span> <span class="nx">value</span><span class="p">();</span> <span class="c1">// Error</span>
+<span class="nx">value</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">];</span> <span class="c1">// Error</span>
+</pre></div>
+</div>
+<p>unknown 类型只能被赋值给 any 类型和 unknown 类型本身，它一般用在那些将取得任意值，但不知类型的地方。如下面方法中的参数，request是来自客户端的请求，我们不清楚它具体的类型：</p>
+<div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="nx">intercept</span><span class="p">(</span><span class="nx">request</span>: <span class="kt">HttpRequest</span><span class="o">&lt;</span><span class="nx">unknown</span><span class="o">&gt;</span><span class="p">,</span> <span class="nx">next</span>: <span class="kt">HttpHandler</span><span class="p">)</span><span class="o">:</span> <span class="nx">Observable</span><span class="o">&lt;</span><span class="nx">HttpEvent</span><span class="o">&lt;</span><span class="nx">unknown</span><span class="o">&gt;&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">request</span><span class="p">));</span> <span class="c1">// 打印请求信息</span>
+    <span class="k">return</span> <span class="nx">next</span><span class="p">.</span><span class="nx">handle</span><span class="p">(</span><span class="nx">request</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>使用unknown类型将会进行类型检查，因此它相比any类型更加安全。在没有先断言或指定到更具体类型的情况下，不允许对 unknown 进行任何操作。</p>
+<div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">value</span>: <span class="kt">unknown</span> <span class="o">=</span> <span class="s2">&quot;Murphy&quot;</span><span class="p">;</span>
+<span class="kr">const</span> <span class="nx">onevalue</span>: <span class="kt">string</span> <span class="o">=</span> <span class="nx">value</span> <span class="kr">as</span> <span class="kt">string</span><span class="p">;</span> <span class="c1">// 定义类型断言</span>
+<span class="kr">const</span> <span class="nx">otherString</span> <span class="o">=</span> <span class="nx">onevalue</span><span class="p">.</span><span class="nx">toUpperCase</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">otherString</span><span class="p">);</span> <span class="c1">// 控制台打印： &quot;MURPHY&quot;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ul class="simple">
+<li><p>never类型：当函数永远不会返回值时，可以用never类型表示。</p></li>
+</ul>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="c1">// 抛出异常</span>
+<span class="kd">function</span> <span class="nx">error</span><span class="p">(</span><span class="nx">message</span>: <span class="kt">string</span><span class="p">)</span><span class="o">:</span> <span class="nx">never</span> <span class="p">{</span>
+<span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="nx">message</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// 永远不能返回</span>
+<span class="kd">function</span> <span class="nx">continuousProcess</span><span class="p">()</span><span class="o">:</span> <span class="nx">never</span> <span class="p">{</span>
+<span class="k">while</span> <span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+<span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ul class="simple">
+<li><p>元组（Tuple）类型：类似数组的结构，里面存储不同类型的值。</p></li>
+</ul>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">tupleType</span><span class="o">:</span> <span class="p">[</span><span class="kt">string</span><span class="p">,</span> <span class="kr">boolean</span><span class="p">];</span>
+<span class="nx">tupleType</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Murphy&quot;</span><span class="p">,</span> <span class="kc">true</span><span class="p">];</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">tupleType</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span> <span class="c1">// 控制台打印： Murphy</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">tupleType</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span> <span class="c1">// 控制台打印： true</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ul class="simple">
+<li><p>void类型：与 any 类型相反，它表示没有任何类型。</p></li>
+</ul>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="c1">// 声明函数返回值为 void 类型</span>
+<span class="kd">function</span> <span class="nx">getName</span><span class="p">()</span><span class="o">:</span> <span class="k">void</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;This is my name&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="id8">
+<h3><span class="sectnum">4.3.3</span> TypeScript中的类型转换<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<p>类型转换是将一种数据类型转换为另一种数据类型的能力。TypeScript提供了执行类型转换的内置函数。</p>
+<div class="section" id="id9">
+<h4><span class="sectnum">4.3.3.1</span> 字符串转换为数字<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h4>
+<p>TypeScript中常见的有4种方式，将字符串转换为数字：</p>
+<ol class="arabic simple">
+<li><p>使用Number()方法；</p></li>
+<li><p>使用parseInt()方法；</p></li>
+<li><p>使用parseFloat()方法；</p></li>
+<li><p>使用“+”号操作符。</p></li>
+</ol>
+<p>TypeScript提供了Number函数来将数字格式的字符串转换为number型：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">str</span>: <span class="kt">string</span> <span class="o">=</span> <span class="s1">&#39;10&#39;</span><span class="p">;</span>
+
+<span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="nb">Number</span><span class="p">(</span><span class="nx">str</span><span class="p">)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="nx">a</span><span class="p">,</span> <span class="nx">a</span><span class="p">);</span>  <span class="c1">// 控制台打印：number 10</span>
+
+<span class="kd">let</span> <span class="nx">b</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">str</span><span class="p">)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="nx">b</span><span class="p">,</span> <span class="nx">b</span><span class="p">);</span>  <span class="c1">// 控制台打印：number 10</span>
+
+<span class="kd">let</span> <span class="nx">c</span> <span class="o">=</span> <span class="nb">parseFloat</span><span class="p">(</span><span class="nx">str</span><span class="p">)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="nx">c</span><span class="p">,</span> <span class="nx">c</span><span class="p">);</span>  <span class="c1">// 控制台打印：number 10</span>
+
+<span class="kd">let</span> <span class="nx">d</span> <span class="o">=</span> <span class="o">+</span><span class="nx">str</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="nx">d</span><span class="p">,</span> <span class="nx">d</span><span class="p">);</span>  <span class="c1">// 控制台打印：number 10</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="id10">
+<h4><span class="sectnum">4.3.3.2</span> 数字转换为字符串<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h4>
+<p>TypeScript中常见的有3种方式，将数字转换为字符串：</p>
+<ol class="arabic simple">
+<li><p>附加空字符串的方式；</p></li>
+<li><p>使用toString()方法；</p></li>
+<li><p>使用String()方法。</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">num</span>: <span class="kt">number</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">num</span><span class="p">.</span><span class="nx">toString</span><span class="p">());</span>  <span class="c1">// 控制台打印：10</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">num</span><span class="p">.</span><span class="nx">toString</span><span class="p">(</span><span class="mi">2</span><span class="p">));</span>  <span class="c1">// 控制台打印2进制数值格式的字符串：1010</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">num</span><span class="p">.</span><span class="nx">toString</span><span class="p">(</span><span class="mi">8</span><span class="p">));</span> <span class="c1">// 控制台打印8进制数值格式的字符串：12</span>
+
+<span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="nx">num</span> <span class="o">+</span> <span class="s1">&#39;&#39;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="nx">a</span><span class="p">,</span> <span class="nx">a</span><span class="p">);</span>  <span class="c1">// 控制台打印：string 10</span>
+
+<span class="kd">let</span> <span class="nx">b</span> <span class="o">=</span> <span class="nb">String</span><span class="p">(</span><span class="nx">num</span><span class="p">)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="nx">b</span><span class="p">,</span> <span class="nx">b</span><span class="p">);</span>  <span class="c1">// 控制台打印：string 10</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="id11">
+<h3><span class="sectnum">4.3.4</span> 什么是TypeScript类型断言<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<p>TypeScript 允许我们以任何方式覆盖原先推断的类型。当我们比编译器本身能更好地理解变量类型时，通过类型断言这种方式可以告诉编译器确定的类型。类型断言好比其他语言里的类型转换，但是不进行特殊的数据检查和解构。它没有运行时的影响，只是在编译阶段起作用。</p>
+<p>类型断言有两种形式： “&lt;&gt;” 尖括号语法和“as”语法。</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">one</span>: <span class="kt">any</span> <span class="o">=</span> <span class="s2">&quot;this is a string&quot;</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">two</span>: <span class="kt">number</span> <span class="o">=</span> <span class="p">(</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="nx">one</span><span class="p">).</span><span class="nx">length</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">three</span>: <span class="kt">number</span> <span class="o">=</span> <span class="p">(</span><span class="nx">one</span> <span class="kr">as</span> <span class="kt">string</span><span class="p">).</span><span class="nx">length</span><span class="p">;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>假设，我们想定义一个{}类型对象，但是事先不清楚该对象里面的元素类型：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">friend</span> <span class="o">=</span> <span class="p">{};</span>
+<span class="nx">friend</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="s1">&#39;Murphy&#39;</span><span class="p">;</span>  <span class="c1">// Error! Property &#39;name&#39; does not exist on type &#39;{}&#39;.ts(2339)</span>
+
+<span class="kr">interface</span> <span class="nx">Person</span> <span class="p">{</span>
+<span class="nx">name</span>: <span class="kt">string</span><span class="p">;</span>
+<span class="nx">age</span>: <span class="kt">number</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kr">const</span> <span class="nx">person</span> <span class="o">=</span> <span class="p">{}</span> <span class="kr">as</span> <span class="nx">Person</span><span class="p">;</span>
+<span class="nx">person</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="s1">&#39;Murphy&#39;</span><span class="p">;</span>  <span class="c1">// 正确</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="id12">
+<h3><span class="sectnum">4.3.5</span> 什么是TypeScript类型保护<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<p>类型保护是可执行运行时检查的一种表达式，用于确保该类型在一定的范围内。换句话说，类型保护可以保证一个字符串是一个string类型，尽管它的值也可以是一个数值。目前主要有3种的方式来实现类型保护：</p>
+<div class="section" id="in">
+<h4><span class="sectnum">4.3.5.1</span> 使用 in 操作符进行类型保护<a class="headerlink" href="#in" title="Permalink to this headline">¶</a></h4>
+<p>in 操作符会检查一个属性在某对象上是否存在，例如下面的示例代码，将检查person对象里面是否有name属性：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">interface</span> <span class="nx">Person</span> <span class="p">{</span>
+    <span class="nx">name</span>: <span class="kt">string</span><span class="p">;</span>
+    <span class="nx">age</span>: <span class="kt">number</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kr">const</span> <span class="nx">person</span>: <span class="kt">Person</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;Murphy&#39;</span><span class="p">,</span>
+    <span class="nx">age</span>: <span class="kt">37</span><span class="p">,</span>
+<span class="p">};</span>
+
+<span class="kr">const</span> <span class="nx">checkForName</span> <span class="o">=</span> <span class="s1">&#39;name&#39;</span> <span class="k">in</span> <span class="nx">person</span><span class="p">;</span> <span class="c1">// 检查person对象里面是否有name属性，返回 true</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="typeof">
+<h4><span class="sectnum">4.3.5.2</span> 使用 typeof 操作符进行类型保护<a class="headerlink" href="#typeof" title="Permalink to this headline">¶</a></h4>
+<p>typeof操作符返回一个字符串，表示接收参数的类型。当将typeof操作符接收包含布尔值的变量时，将获得字符串“boolean”，如下例所示：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">isPending</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">isDone</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="nx">isPending</span><span class="p">);</span> <span class="c1">//  控制台打印：boolean</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="nx">isDone</span><span class="p">);</span> <span class="c1">// 控制台打印：boolean</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="instanceof">
+<h4><span class="sectnum">4.3.5.3</span> 使用 instanceof 操作符进行类型保护<a class="headerlink" href="#instanceof" title="Permalink to this headline">¶</a></h4>
+<p>JavaScript中还有个instanceof操作符也可以用来识别对象类型，如接收的参数是指定的对象类型，则返回true，反之返回false。下面示例用instanceof操作符来识别变量类型：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">foo</span> <span class="k">instanceof</span> <span class="nb">Boolean</span><span class="p">);</span> <span class="c1">// 控制台打印：false</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">object</span> <span class="k">instanceof</span> <span class="nb">Boolean</span><span class="p">);</span> <span class="c1">// 控制台打印：true</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="id13">
+<h3><span class="sectnum">4.3.6</span> 什么是TypeScript的联合类型<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<p>联合类型（Union Types）表示取值可以为多种类型中的一种。有时候期望变量是几种类型之中的一种，要描述这些变量，可以使用联合类型。例如，在下面的代码中，变量a即可以是null类型也可以是number类型：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">a</span>: <span class="kt">null</span><span class="o">|</span><span class="kt">number</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+<span class="nx">a</span> <span class="o">=</span> <span class="mi">11</span><span class="p">;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>当TypeScript不确定一个联合类型的变量到底是哪个类型的时候，我们只能访问此联合类型的所有类型里共有的属性或方法：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">a</span>: <span class="kt">string</span> <span class="o">|</span> <span class="kt">number</span>  <span class="o">=</span> <span class="s1">&#39;hello&#39;</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">.</span><span class="nx">toString</span><span class="p">());</span> <span class="c1">// toString()方法是联合类型变量a的公共方法</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="id14">
+<h3><span class="sectnum">4.3.7</span> 什么是TypeScript的类型别名<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
+<p>类型别名用来给一个类型起个新名字。例如下面的代码，我们给联合类型重新定义了别名“Message”：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="nx">type</span> <span class="nx">Message</span> <span class="o">=</span> <span class="kt">string</span> <span class="o">|</span> <span class="kt">string</span><span class="p">[];</span>
+
+<span class="kd">let</span> <span class="nx">greet</span> <span class="o">=</span> <span class="p">(</span><span class="nx">message</span>: <span class="kt">Message</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="id15">
+<h3><span class="sectnum">4.3.8</span> 什么是TypeScript的交叉类型<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
+<p>交叉类型是将多种类型叠加到一起成为一种类型，新类型包含了所需的所有类型的特征。例如下面的代码，我们将Person和Worker类型叠加到一起成为一种新的Employee类型：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">interface</span> <span class="nx">Person</span> <span class="p">{</span>
+    <span class="nx">name</span>: <span class="kt">string</span><span class="p">;</span>
+    <span class="nx">age</span>: <span class="kt">number</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kr">interface</span> <span class="nx">Worker</span> <span class="p">{</span>
+    <span class="nx">companyId</span>: <span class="kt">string</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nx">type</span> <span class="nx">Employee</span> <span class="o">=</span> <span class="nx">Person</span> <span class="o">&amp;</span> <span class="nx">Worker</span><span class="p">;</span>
+
+<span class="kr">const</span> <span class="nx">staff</span>: <span class="kt">Employee</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">id</span><span class="o">:</span> <span class="s1">&#39;010100&#39;</span><span class="p">,</span>
+    <span class="nx">age</span>: <span class="kt">37</span><span class="p">,</span>
+    <span class="nx">companyId</span><span class="o">:</span> <span class="s1">&#39;ABC&#39;</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<p>上述代码中，定义staff对象的类似为Employee类型，这样staff对象同时拥有Person和Worker类型的特征。</p>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="id16">
+<h2><span class="sectnum">4.4</span> 学习TypeScript的函数<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h2>
+<p>TypeScript中的函数知识包含这些内容：箭头函数、函数类型、可选参数、默认参数和剩余参数。下面我们对它们进行分别介绍。</p>
+<div class="section" id="id17">
+<h3><span class="sectnum">4.4.1</span> 什么是箭头函数<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
+<p>ES6中箭头函数的基本语法如下：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">func</span> <span class="o">=</span> <span class="nx">value</span> <span class="o">=&gt;</span> <span class="nx">value</span><span class="p">;</span>
+<span class="c1">// 或对参数进行类型声明</span>
+<span class="kd">let</span> <span class="nx">func</span> <span class="o">=</span> <span class="p">(</span><span class="nx">value</span>: <span class="kt">string</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">value</span><span class="p">;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>上面的代码相当于：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">func</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">value</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>如果需要传入多个参数：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">func</span> <span class="o">=</span> <span class="p">(</span><span class="nx">value1</span><span class="p">,</span> <span class="nx">value2</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">value1</span> <span class="o">*</span> <span class="nx">value2</span><span class="p">;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>上面箭头函数例子中都省略了return关键字和花括号，在箭头函数中如果方法体中只有一行代码，可以省略return关键字和方法体的花括号，直接简化成value =&gt; value。如果函数的代码块有多条语句，则不能省略return关键字和方法体的花括号：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">func</span> <span class="o">=</span> <span class="p">(</span><span class="nx">value1</span><span class="p">,</span> <span class="nx">value2</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">value1</span> <span class="o">=</span> <span class="nx">value1</span> <span class="o">+</span> <span class="mi">10</span><span class="p">;</span>
+    <span class="k">return</span> <span class="nx">value1</span> <span class="o">*</span> <span class="nx">value2</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>如果需要返回一个对象，箭头函数的方法体必须放在括号中，这样做的原因是：没有括号，JS引擎没办分区分是正常定义一个对象还是一个箭头函数体：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">func</span> <span class="o">=</span> <span class="p">(</span><span class="nx">value1</span><span class="p">,</span> <span class="nx">value2</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">({</span> <span class="nx">value1</span>: <span class="kt">value1</span><span class="p">,</span> <span class="nx">value2</span>: <span class="kt">value2</span> <span class="p">});</span> <span class="c1">//正确写法</span>
+<span class="kd">let</span> <span class="nx">func</span> <span class="o">=</span> <span class="p">(</span><span class="nx">value1</span><span class="p">,</span> <span class="nx">value2</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="nx">value1</span>: <span class="kt">value1</span><span class="p">,</span> <span class="nx">value2</span>: <span class="kt">value2</span> <span class="p">};</span> <span class="c1">//会报错</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="id18">
+<h3><span class="sectnum">4.4.2</span> TypeScript的函数类型<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h3>
+<p>函数类型也是Object类型的一种。函数类型顾名思义就是对函数进行类型声明。</p>
+<p>下面看一个函数类型的例子：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="nx">type</span> <span class="nx">Add</span> <span class="o">=</span> <span class="p">(</span><span class="nx">name</span>: <span class="kt">string</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="kt">string</span><span class="p">;</span> <span class="c1">// 定义函数类型</span>
+<span class="kd">let</span> <span class="nx">myAdd</span>: <span class="kt">Add</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">a</span>: <span class="kt">string</span><span class="p">)</span><span class="o">:</span> <span class="kt">string</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="s1">&#39;Hello&#39;</span> <span class="o">+</span> <span class="nx">a</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>其中Add就是定义的一种函数类型，它接受一个字符类型参数并且返回值为字符串，myAdd函数使用Add函数类型作为它的类型注解。</p>
+<p>上面TypeScript代码经过编译后，生成下面的JavaScript代码：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">myAdd</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">a</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="s1">&#39;Hello&#39;</span> <span class="o">+</span> <span class="nx">a</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>可以通过下面的方式调用myAdd函数：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="nx">myAdd</span><span class="p">(</span><span class="s1">&#39;Murphy&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="id19">
+<h3><span class="sectnum">4.4.3</span> 函数中的可选参数<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h3>
+<p>标识符后面的问号表示该参数是可选的。例如下面函数中第二个参数lastName就是一个可选参数：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="c1">//这是一个拼接名字的函数：</span>
+<span class="kd">function</span> <span class="nx">buildName</span><span class="p">(</span><span class="nx">firstName</span>: <span class="kt">string</span><span class="p">,</span> <span class="nx">lastName?</span>: <span class="kt">string</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">lastName</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">firstName</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="nx">lastName</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">firstName</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">buildName</span><span class="p">(</span><span class="s2">&quot;Murphy&quot;</span><span class="p">);</span>  <span class="c1">// 省略了第2个参数</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span> <span class="c1">// 控制台打印：Murphy</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>由于lastName参数是可选的，因此调用buildName函数时，可以选择传1个或者2个参数。</p>
+</div>
+<div class="section" id="id20">
+<h3><span class="sectnum">4.4.4</span> 函数中的默认参数<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h3>
+<p>默认参数的作用使用户调用函数时，可以选择忽略该参数。TypeScript会将添加了默认值的参数识别为可选参数。
+默认参数通常可以省略类型注解，TypeScript会主动为我们推断出参数的类型，也就是默认值的类型，如果给可选参数传值就必须对应默认参数的类型。</p>
+<p>下面的示例里，在定义函数类型时，给参数b设定了默认参数：’China’：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">hi</span> <span class="p">(</span><span class="nx">a</span>: <span class="kt">string</span><span class="p">,</span> <span class="nx">b</span> <span class="o">=</span> <span class="s1">&#39;China&#39;</span><span class="p">)</span><span class="o">:</span> <span class="k">void</span><span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span> <span class="o">+</span> <span class="s1">&#39;:&#39;</span> <span class="o">+</span> <span class="nx">b</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="nx">hi</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">);</span> <span class="c1">// 控制台打印：hello:China</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="id21">
+<h3><span class="sectnum">4.4.5</span> 函数中的剩余参数<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h3>
+<p>当函数中最后一个参数是数组时，可以使用 …rest 的方式设置函数中的剩余参数（rest参数）：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">push</span><span class="p">(</span><span class="nx">array</span><span class="p">,</span> <span class="p">...</span><span class="nx">items</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">items</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">item</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">array</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">item</span><span class="p">);</span>
+    <span class="p">});</span>
+<span class="p">}</span>
+
+<span class="kd">let</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[];</span>
+<span class="nx">push</span><span class="p">(</span><span class="nx">arr</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">);</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>上面示例中，items 是一个数组，因此可以用数组的类型来定义它：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">push</span><span class="p">(</span><span class="nx">array</span><span class="p">,</span> <span class="p">...</span><span class="nx">items</span>: <span class="kt">number</span><span class="p">[])</span> <span class="p">{</span>
+    <span class="nx">items</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">item</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">array</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">item</span><span class="p">);</span>
+    <span class="p">});</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="id22">
+<h2><span class="sectnum">4.5</span> 学习TypeScript的数组<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h2>
+<p>学习TypeScript的数组知识，我们从定义数组类型开始，然后介绍几种常见操作数组的方法。</p>
+<div class="section" id="id23">
+<h3><span class="sectnum">4.5.1</span> TypeScript的数组类型<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h3>
+<p>数组类型也是Object类型的一种。TypeScript的数组类型有两种表示形式，一是作为列表形式，另一种是作为元组形式。</p>
+<p>数组作为列表时，有两种表示方式：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">arr</span>: <span class="kt">number</span><span class="p">[]</span> <span class="o">=</span> <span class="p">[];</span>
+<span class="kd">let</span> <span class="nx">arr</span>: <span class="kt">Array</span><span class="o">&lt;</span><span class="kt">number</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">[];</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>上面arr数组中所有元素都具有相同的类型（number类型），数组中的元素个数不固定。
+如果元素个数不固定且类型未知，这种情况可直接声明成any类型：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">arr</span>: <span class="kt">any</span><span class="p">[]</span> <span class="o">=</span> <span class="p">[];</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>如果想让数组中元素的个数固定，可以使用TypeScript的元组类型：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">address</span><span class="o">:</span> <span class="p">[</span><span class="kt">string</span><span class="p">,</span> <span class="kt">number</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Wuhan&#39;</span><span class="p">,</span> <span class="mi">27</span><span class="p">];</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="id24">
+<h3><span class="sectnum">4.5.2</span> 使用TypeScript数组的查找和检索方法<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h3>
+<p>下面介绍关于数组的2个常用方法：</p>
+<ol class="arabic simple">
+<li><p>find()方法返回数组元素中的第一个数匹配的值。</p></li>
+<li><p>findIndex()方法返回数组元素中的第一个数匹配的元素的索引。</p></li>
+</ol>
+<p>下面示例查找（返回值）第一个大于18的元素及索引：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">numbers</span>: <span class="kt">number</span><span class="p">[]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">49</span><span class="p">];</span>
+<span class="kd">function</span> <span class="nx">myFunction</span><span class="p">(</span><span class="nx">value</span><span class="p">,</span> <span class="nx">index</span><span class="p">,</span> <span class="nx">array</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">value</span> <span class="o">&gt;</span> <span class="mi">18</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kd">let</span> <span class="nx">first</span> <span class="o">=</span> <span class="nx">numbers</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="nx">myFunction</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">firstIndex</span> <span class="o">=</span> <span class="nx">numbers</span><span class="p">.</span><span class="nx">findIndex</span><span class="p">(</span><span class="nx">myFunction</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">first</span><span class="p">);</span> <span class="c1">// 控制台打印：35</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">firstIndex</span><span class="p">);</span> <span class="c1">// 控制台打印：3</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="id25">
+<h2><span class="sectnum">4.6</span> 学习TypeScript接口<a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h2>
+<p>接口是一系列抽象方法的声明，是一些方法特征的集合，这些方法都应该是抽象的，需要由具体的类去实现，然后第三方就可以通过这组抽象方法调用，让具体的类执行具体的方法。</p>
+<p>TypeScript接口定义如下：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">interface</span> <span class="nx">name</span> <span class="p">{</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>可以将接口看作是做某事的规范（如以某种方式实现函数）或存储特定数据（如属性、数组）。TypeScript接口可以应用于函数，例如下面的代码：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">interface</span> <span class="nx">MyFind</span> <span class="p">{</span>
+    <span class="p">(</span><span class="nx">source</span>: <span class="kt">string</span><span class="p">,</span> <span class="nx">subString</span>: <span class="kt">string</span><span class="p">)</span><span class="o">:</span> <span class="kr">boolean</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kd">let</span> <span class="nx">mySearch</span>: <span class="kt">MyFind</span><span class="p">;</span> <span class="c1">// 接口应用于函数</span>
+<span class="nx">mySearch</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">source</span>: <span class="kt">string</span><span class="p">,</span> <span class="nx">subString</span>: <span class="kt">string</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">source</span><span class="p">.</span><span class="nx">search</span><span class="p">(</span><span class="nx">subString</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">result</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>上述示例中：</p>
+<ol class="arabic simple">
+<li><p>定义了MyFind接口，该接口里包含了2个字符串参数，接口返回布尔类型（boolean）；</p></li>
+<li><p>mySearch函数的类型注解是MyFind接口。</p></li>
+</ol>
+<p>TypeScript接口也可以应用于属性。接口可以具有强制执行属性，但也可以具有可选属性，例如下面的代码：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">interface</span> <span class="nx">Clothing</span> <span class="p">{</span>
+    <span class="nx">label</span>: <span class="kt">string</span><span class="p">;</span>
+    <span class="nx">size</span>: <span class="kt">number</span><span class="p">;</span>
+    <span class="nx">color?</span>: <span class="kt">string</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kd">function</span> <span class="nx">printLabel</span><span class="p">(</span><span class="nx">labelled</span>: <span class="kt">Clothing</span><span class="p">)</span> <span class="p">{</span>  <span class="c1">// 接口应用于属性</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">labelled</span><span class="p">.</span><span class="nx">label</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="nx">labelled</span><span class="p">.</span><span class="nx">size</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="kd">let</span> <span class="nx">myObj</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">size</span>: <span class="kt">10</span><span class="p">,</span> <span class="nx">label</span><span class="o">:</span> <span class="s2">&quot;衣服&quot;</span> <span class="p">};</span>
+<span class="nx">printLabel</span><span class="p">(</span><span class="nx">myObj</span><span class="p">);</span> <span class="c1">// 控制台打印：衣服 10</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>上述示例中：</p>
+<ol class="arabic simple">
+<li><p>定义了Clothing接口，该接口里包含了3个属性，其中color是可选属性；</p></li>
+<li><p>printLabel函数中的labelled参数的类型注解是Clothing接口；</p></li>
+<li><p>定义了myObj对象，该对象里的属性名与Clothing接口中的属性名一致；</p></li>
+<li><p>调用printLabel函数时，传递的是myObj对象参数。</p></li>
+</ol>
+<p>Typescript接口也可以应用于数组，例如下面的代码：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">interface</span> <span class="nx">StringArray</span> <span class="p">{</span>
+    <span class="p">[</span><span class="nx">index</span>: <span class="kt">number</span><span class="p">]</span><span class="o">:</span> <span class="kt">string</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kd">let</span> <span class="nx">myArray</span>: <span class="kt">StringArray</span><span class="p">;</span>
+<span class="nx">myArray</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Murphy&quot;</span><span class="p">,</span> <span class="s2">&quot;Jack&quot;</span><span class="p">];</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>上述示例中：</p>
+<ol class="arabic simple">
+<li><p>定义了StringArray接口，该接口表示索引的类型是数字，值的类型是字符串；</p></li>
+<li><p>定义了myArray变量，该变量的类型注解是StringArray接口；</p></li>
+</ol>
+</div>
+<div class="section" id="id26">
+<h2><span class="sectnum">4.7</span> 学习TypeScript类<a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h2>
+<p>类和接口一样，都是是一堆抽象概念的集合，他们描述的是对象相关的属性和方法。可以从类中创建出享有共同属性和方法的实例对象。类与接口的区别在于：接口仅提供描述，并不提供具体创建此对象实例的方法。</p>
+<p>TypeScript是面向对象的语言，面向对象主要有3大特性：封装、继承、多态。从ES6开始，JavaScript程序员将能够使用基于类的面向对象的方式。TypeScript支持面向对象的所有特性，并且编译后的JavaScript可以在所有主流浏览器和平台上运行。</p>
+<p>TypeScript 类定义方式如下：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">class</span> <span class="nx">class_name</span> <span class="p">{</span>
+    <span class="c1">// 类作用域</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<div class="section" id="id27">
+<h3><span class="sectnum">4.7.1</span> 类的构造函数<a class="headerlink" href="#id27" title="Permalink to this headline">¶</a></h3>
+<p>TypeScript使用constructor关键字而不是类名来声明构造函数。在constructor方法中可以通过this关键字来访问当前类体中的属性和方法。下面的例子定义了一个Student类：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">class</span> <span class="nx">Student</span> <span class="p">{</span>  <span class="c1">// 定义Student类</span>
+    <span class="nx">name</span>: <span class="kt">string</span><span class="p">;</span>  <span class="c1">// 定义类的属性name</span>
+    <span class="kr">constructor</span><span class="p">(</span><span class="nx">myname</span>: <span class="kt">string</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// 定义构造函数</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">myname</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nx">study() {</span> <span class="c1">//定义类的方法</span>
+        <span class="c1">//定义该方法所要实现的功能</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>构造函数就是在new一个类的时候，调用的方法。如：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">s</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Student</span><span class="p">(</span><span class="s1">&#39;Murphy&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>上述代码实际上调用的就是Student类的构造函数，该构造函数接收一个字符串参数。</p>
+<p>在TypeScript的类中不写constructor不代表没有constructor，意思是他会有一个默认的空constructor，如下代码：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">constructor</span><span class="p">()</span> <span class="p">{}</span> <span class="c1">// 无参数，无实现内容</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>构造函数还有另一个用途：TypeScript自动将构造函数的参数赋值为属性。即不需要在构造函数中分配实例变量，TypeScript已经完成了此工作。
+例如下面的类：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="c1">// 推荐写法</span>
+<span class="kr">class</span> <span class="nx">Person</span> <span class="p">{</span>
+    <span class="kr">constructor</span><span class="p">(</span><span class="kr">public</span> <span class="nx">firstName</span>: <span class="kt">string</span><span class="p">,</span> <span class="kr">public</span> <span class="nx">lastName</span>: <span class="kt">string</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// 无实现</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>等同于下面的写法：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">class</span> <span class="nx">Person</span> <span class="p">{</span>
+    <span class="kr">public</span> <span class="nx">firstName</span>: <span class="kt">string</span><span class="p">;</span>
+    <span class="kr">public</span> <span class="nx">lastName</span>: <span class="kt">string</span><span class="p">;</span>
+    <span class="kr">constructor</span><span class="p">(</span><span class="nx">firstName</span>: <span class="kt">string</span><span class="p">,</span> <span class="nx">lastName</span>: <span class="kt">string</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">firstName</span> <span class="o">=</span> <span class="nx">firstName</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">lastName</span> <span class="o">=</span> <span class="nx">lastName</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>类成员属性的访问范围修饰符一般有3种：</p>
+<ul class="simple">
+<li><p>私有（private）：声明访问范围不能在类的外部访问</p></li>
+<li><p>受保护（protected）：声明访问范围在派生类中仍然可以访问。</p></li>
+<li><p>公共（public）：声明访问范围不做任何限制。</p></li>
+</ul>
+<p>如果类成员属性前无修饰符，TypeScript默认为public修饰符。</p>
+</div>
+<div class="section" id="id28">
+<h3><span class="sectnum">4.7.2</span> 类方法和属性<a class="headerlink" href="#id28" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>方法：JavaScript中，统称函数，但是有了类之后，类中的函数成员，统称方法。</p></li>
+<li><p>只读属性：可以使用readonly关键字将属性设置成只读，相当于类字段的const。如下面的代码：</p></li>
+</ul>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="nx">readonly</span> <span class="nx">name</span>: <span class="kt">string</span> <span class="o">=</span> <span class="s1">&#39;Murphy&#39;</span><span class="p">;</span> <span class="c1">// name变量只读</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ul class="simple">
+<li><p>静态方法：使用static修饰符修饰的方法称为静态方法，它们不需要实例化，而是直接通过类来调用：</p></li>
+</ul>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">class</span> <span class="nx">Animal</span> <span class="p">{</span>
+    <span class="kr">constructor</span><span class="p">(</span><span class="kr">private</span> <span class="nx">name</span>: <span class="kt">string</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+    <span class="kr">static</span> <span class="nx">isAnimal</span><span class="p">(</span><span class="nx">animal</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">animal</span> <span class="k">instanceof</span> <span class="nx">Animal</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">let</span> <span class="nx">dog</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Animal</span><span class="p">(</span><span class="s1">&#39;Dog&#39;</span><span class="p">);</span>
+<span class="nx">Animal</span><span class="p">.</span><span class="nx">isAnimal</span><span class="p">(</span><span class="nx">dog</span><span class="p">);</span> <span class="c1">// 控制台打印：true</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ul class="simple">
+<li><p>静态属性：同样，使用static修饰符修饰的属性称为静态属性。</p></li>
+</ul>
+</div>
+<div class="section" id="id29">
+<h3><span class="sectnum">4.7.3</span> 类的继承<a class="headerlink" href="#id29" title="Permalink to this headline">¶</a></h3>
+<p>TypeScript使用extends关键字实现继承，子类中使用super关键字来调用父类的构造函数和方法：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">class</span> <span class="nx">Animal</span> <span class="p">{</span>
+    <span class="nx">name</span>: <span class="kt">string</span><span class="p">;</span>
+    <span class="kr">constructor</span><span class="p">(</span><span class="nx">theName</span>: <span class="kt">string</span><span class="p">)</span> <span class="p">{</span> <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">theName</span><span class="p">;</span> <span class="p">}</span>
+    <span class="nx">move</span><span class="p">(</span><span class="nx">meters</span>: <span class="kt">number</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">+</span> <span class="s2">&quot; moved &quot;</span> <span class="o">+</span> <span class="nx">meters</span> <span class="o">+</span> <span class="s2">&quot;m.&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kr">class</span> <span class="nx">Snake</span> <span class="kr">extends</span> <span class="nx">Animal</span> <span class="p">{</span>
+    <span class="kr">constructor</span><span class="p">(</span><span class="nx">name</span>: <span class="kt">string</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kr">super</span><span class="p">(</span><span class="nx">name</span><span class="p">);</span>  <span class="c1">// 子类调用父类的constructor方法</span>
+    <span class="p">}</span>
+    <span class="nx">move</span><span class="p">(</span><span class="nx">meters</span> <span class="o">=</span> <span class="mi">5</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Snake...&quot;</span><span class="p">);</span>
+        <span class="kr">super</span><span class="p">.</span><span class="nx">move</span><span class="p">(</span><span class="nx">meters</span><span class="p">);</span> <span class="c1">// 子类调用父类的move方法</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kr">class</span> <span class="nx">Horse</span> <span class="kr">extends</span> <span class="nx">Animal</span> <span class="p">{</span>
+    <span class="kr">constructor</span><span class="p">(</span><span class="nx">name</span>: <span class="kt">string</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kr">super</span><span class="p">(</span><span class="nx">name</span><span class="p">);</span>  <span class="c1">// 子类调用父类的constructor方法</span>
+    <span class="p">}</span>
+    <span class="nx">move</span><span class="p">(</span><span class="nx">meters</span> <span class="o">=</span> <span class="mi">45</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Horse...&quot;</span><span class="p">);</span>
+        <span class="kr">super</span><span class="p">.</span><span class="nx">move</span><span class="p">(</span><span class="nx">meters</span><span class="p">);</span> <span class="c1">// 子类调用父类的move方法</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>类可以实现接口，TypeScript使用implements关键字实现接口：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">interface</span> <span class="nx">ClockInterface</span> <span class="p">{</span>
+    <span class="nx">currentTime</span>: <span class="kt">Date</span><span class="p">;</span>
+    <span class="nx">setTime</span><span class="p">(</span><span class="nx">d</span>: <span class="kt">Date</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kr">class</span> <span class="nx">Clock</span> <span class="kr">implements</span> <span class="nx">ClockInterface</span> <span class="p">{</span>
+    <span class="nx">currentTime</span>: <span class="kt">Date</span><span class="p">;</span>
+    <span class="nx">setTime</span><span class="p">(</span><span class="nx">d</span>: <span class="kt">Date</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">currentTime</span> <span class="o">=</span> <span class="nx">d</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="kr">constructor</span><span class="p">(</span><span class="nx">h</span>: <span class="kt">number</span><span class="p">,</span> <span class="nx">m</span>: <span class="kt">number</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="id30">
+<h3><span class="sectnum">4.7.4</span> 类的存取器方法<a class="headerlink" href="#id30" title="Permalink to this headline">¶</a></h3>
+<p>TypeScript提供了get和set方法，俗称存取器方法，存取器方法可以像Java语法那样使用“.”符号进行调用：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">class</span> <span class="nx">Foo</span> <span class="p">{</span>
+    <span class="kr">private</span> <span class="nx">_bar</span>: <span class="kt">boolean</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+    <span class="nx">get</span> <span class="nx">bar</span><span class="p">()</span><span class="o">:</span> <span class="kr">boolean</span> <span class="p">{</span> <span class="c1">// get方法</span>
+        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">_bar</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nx">set</span> <span class="nx">bar</span><span class="p">(</span><span class="nx">theBar</span>: <span class="kt">boolean</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// set方法</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">_bar</span> <span class="o">=</span> <span class="nx">theBar</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="kd">let</span> <span class="nx">myFoo</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Foo</span><span class="p">();</span>
+<span class="kd">let</span> <span class="nx">myBar</span> <span class="o">=</span> <span class="nx">myFoo</span><span class="p">.</span><span class="nx">bar</span><span class="p">;</span> <span class="c1">// 实际调用的是get bar()方法</span>
+<span class="nx">myFoo</span><span class="p">.</span><span class="nx">bar</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>  <span class="c1">// 实际调用的是set bar()方法</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="id31">
+<h2><span class="sectnum">4.8</span> 学习TypeScript的映射类型<a class="headerlink" href="#id31" title="Permalink to this headline">¶</a></h2>
+<p>所谓映射类型，就是通过在属性类型上建立映射，从现有的类型创建出新的类型。已知类型的每个属性都会根据指定的映射类型进行转换。TypeScript 内置了一些常用的映射类型，比如Partial、Required、Readonly、Exclude、Extract、Record 和 ReturnType 等。出于篇幅考虑，本章只简单介绍其中几种映射类型。</p>
+<div class="section" id="partial">
+<h3><span class="sectnum">4.8.1</span> Partial 映射类型<a class="headerlink" href="#partial" title="Permalink to this headline">¶</a></h3>
+<p>Partial映射类型的作用就是将已知类型的属性全部变为可选项，即在属性后添加“？”操作符。Partial映射类型在源码中的定义如下：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="nx">type</span> <span class="nx">Partial</span><span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">{</span>
+<span class="p">[</span><span class="nx">P</span> <span class="k">in</span> <span class="nx">keyof</span> <span class="nx">T</span><span class="p">]</span><span class="o">?:</span> <span class="nx">T</span><span class="p">[</span><span class="nx">P</span><span class="p">];</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>在代码中，首先通过 keyof 拿到 T 的所有属性名，然后使用 in 进行遍历，将值赋给 P，最后通过 T[P] 取得相应的属性值。中间的 ? 号，用于将所有属性变为可选。</p>
+<p>请看Partial映射类型的示例：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="nx">type</span> <span class="nx">Person</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">name</span>: <span class="kt">string</span><span class="p">;</span>
+    <span class="nx">age</span>: <span class="kt">number</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">let</span> <span class="nx">murphy</span>: <span class="kt">Person</span> <span class="o">=</span> <span class="p">{</span> <span class="c1">// 2个属性缺一不可</span>
+    <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;Murphy&#39;</span><span class="p">,</span>
+    <span class="nx">age</span>: <span class="kt">37</span>
+<span class="p">};</span>
+
+<span class="nx">type</span> <span class="nx">PartialPerson</span> <span class="o">=</span> <span class="nx">Partial</span><span class="o">&lt;</span><span class="nx">Person</span><span class="o">&gt;</span><span class="p">;</span>
+
+<span class="kd">let</span> <span class="nx">partialPerson</span>: <span class="kt">PartialPerson</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;Murphy&#39;</span> <span class="c1">// 属性变为可选项了，因此可以仅有一个属性</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>上述代码中，使用Partial类型将原先的Person类型映射成了新类型PartialPerson，其里面的属性都成为了可选项。</p>
+</div>
+<div class="section" id="readonly">
+<h3><span class="sectnum">4.8.2</span> Readonly (只读)映射类型<a class="headerlink" href="#readonly" title="Permalink to this headline">¶</a></h3>
+<p>TypeScript 中可以创建只读属性。 Readonly 类型接受一个类型 T，并将其所有属性设置为只读。Readonly映射类型在源码中的定义如下：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="nx">type</span> <span class="nx">Readonly</span><span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">{</span>
+<span class="nx">readonly</span> <span class="p">[</span><span class="nx">P</span> <span class="k">in</span> <span class="nx">keyof</span> <span class="nx">T</span><span class="p">]</span><span class="o">:</span> <span class="nx">T</span><span class="p">[</span><span class="nx">P</span><span class="p">];</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>在代码中，首先通过 keyof 拿到 T 的所有属性名，然后使用 in 进行遍历，将值赋给 P，最后通过 T[P] 取得相应的属性值。前面的readonly关键字，用于将所有属性变为只读。</p>
+</div>
+<div class="section" id="exclude">
+<h3><span class="sectnum">4.8.3</span> Exclude映射类型<a class="headerlink" href="#exclude" title="Permalink to this headline">¶</a></h3>
+<p>Exclude映射类型将某个类型中属于另一个的类型移除掉。Exclude映射类型在源码中的定义如下：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="nx">type</span> <span class="nx">Exclude</span><span class="o">&lt;</span><span class="nx">T</span><span class="p">,</span> <span class="nx">U</span><span class="o">&gt;</span> <span class="o">=</span> <span class="nx">T</span> <span class="kr">extends</span> <span class="nx">U</span> <span class="o">?</span> <span class="nx">never</span> : <span class="kt">T</span><span class="p">;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>上述代码的意思是：如果 T 能赋值给 U 类型的话，那么就会返回 never 类型，否则返回 T，最终结果是将 T 中的某些属于 U 的类型移除掉，举个例子：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="nx">type</span> <span class="nx">T00</span> <span class="o">=</span> <span class="nx">Exclude</span><span class="o">&lt;</span><span class="s2">&quot;a&quot;</span> <span class="o">|</span> <span class="s2">&quot;b&quot;</span> <span class="o">|</span> <span class="s2">&quot;c&quot;</span> <span class="o">|</span> <span class="s2">&quot;d&quot;</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span> <span class="o">|</span> <span class="s2">&quot;c&quot;</span> <span class="o">|</span> <span class="s2">&quot;f&quot;</span><span class="o">&gt;</span><span class="p">;</span>  <span class="c1">// &quot;b&quot; | &quot;d&quot;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>上述代码的意思是把第一组的字符（”a” | “b” | “c” | “d”）属于第二组的字符（”a” | “c” | “f”）移除掉，最后变为了字符（”b” | “d”）。</p>
+</div>
+</div>
+<div class="section" id="id32">
+<h2><span class="sectnum">4.9</span> 识别TypeScript的相等性判断<a class="headerlink" href="#id32" title="Permalink to this headline">¶</a></h2>
+<p>在进行相等性判断时，一般有两种比较符：非严格相等比较和严格相等比较。</p>
+<div class="section" id="id33">
+<h3><span class="sectnum">4.9.1</span> 非严格相等比较 (==)<a class="headerlink" href="#id33" title="Permalink to this headline">¶</a></h3>
+<p>在JavaScript里，两个等号的判断会进行隐式的类型转换，如：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">2</span> <span class="o">==</span> <span class="s2">&quot;2&quot;</span><span class="p">);</span> <span class="c1">// 控制台打印：true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">0</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span><span class="p">);</span> <span class="c1">// 控制台打印：true</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>在TypeScript中，因为有了类型声明，因此这两个结果在TypeScript中结果都为false，并且还会在编译阶段有报错。但是null和undefined的相等性判断与JavaScript里相同：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">0</span> <span class="o">==</span> <span class="kc">undefined</span><span class="p">);</span> <span class="c1">// 控制台打印：false</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;&#39;</span> <span class="o">==</span> <span class="kc">undefined</span><span class="p">);</span> <span class="c1">// 控制台打印：false</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="kc">false</span> <span class="o">==</span> <span class="kc">undefined</span><span class="p">);</span> <span class="c1">// 控制台打印：false</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="kc">undefined</span> <span class="o">==</span> <span class="kc">undefined</span><span class="p">);</span> <span class="c1">// 控制台打印：true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="kc">null</span> <span class="o">==</span> <span class="kc">undefined</span><span class="p">);</span> <span class="c1">// 控制台打印：true</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>在TypeScript中，做相等性判断时要避免两个不同类型的比较，另一方面使用严格相等（===，3个等号）来代替两个等号，保证在编译期和运行期具有相同的语义。</p>
+</div>
+<div class="section" id="id34">
+<h3><span class="sectnum">4.9.2</span> 严格相等比较 (===)<a class="headerlink" href="#id34" title="Permalink to this headline">¶</a></h3>
+<p>严格相等比较操作符比较两个值是否相等，两个被比较的值在比较前都不进行隐式转换。</p>
+<ul class="simple">
+<li><p>如果两个被比较的值具有不同的类型，这两个值是不严格相等的。</p></li>
+<li><p>如果两个值的类型相同，值也相同，并且都不是number类型时，两个值严格相等。</p></li>
+<li><p>如果两个值都是number类型，当两个都不是NaN，并且数值相同，或是两个值分别为 +0和-0时，两个值被认为是严格相等的。</p></li>
+</ul>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">num</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">String</span><span class="p">(</span><span class="s2">&quot;0&quot;</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">str</span> <span class="o">=</span> <span class="s2">&quot;0&quot;</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">num</span> <span class="o">===</span> <span class="nx">obj</span><span class="p">);</span> <span class="c1">// 控制台打印：false</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">num</span> <span class="o">===</span> <span class="nx">str</span><span class="p">);</span> <span class="c1">// 控制台打印：false</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">obj</span> <span class="o">===</span> <span class="nx">str</span><span class="p">);</span> <span class="c1">// 控制台打印：false</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="o">+</span><span class="mi">0</span> <span class="o">===</span> <span class="o">-</span><span class="mi">0</span><span class="p">);</span>   <span class="c1">// 控制台打印：true</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="id35">
+<h2><span class="sectnum">4.10</span> 学习TypeScript析构表达式<a class="headerlink" href="#id35" title="Permalink to this headline">¶</a></h2>
+<p>TypeScript析构表达式的作用是：通过表达式将对象和数组拆解成为任意数量的变量。这里对它们进行分别介绍。</p>
+<div class="section" id="id36">
+<h3><span class="sectnum">4.10.1</span> 对象的析构表达式<a class="headerlink" href="#id36" title="Permalink to this headline">¶</a></h3>
+<p>对象的析构表达式使用大括号进行拆解。</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">getInfo() {</span>
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="nx">myAge</span>: <span class="kt">30</span><span class="p">,</span>
+        <span class="nx">myName</span><span class="o">:</span> <span class="s1">&#39;Murphy&#39;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">let</span> <span class="p">{</span> <span class="nx">myAge</span><span class="p">,</span> <span class="nx">myName</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">getInfo</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myAge</span><span class="p">);</span> <span class="c1">// 控制台打印：30</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myName</span><span class="p">);</span> <span class="c1">// 控制台打印：Murphy</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>对象的析构表达式还有一个使用场景，这个场景用在页面返回user信息时，屏蔽掉敏感信息。</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">user</span> <span class="o">=</span> <span class="nx">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">usersService</span><span class="p">.</span><span class="nx">findOne</span><span class="p">(</span><span class="nx">username</span><span class="p">);</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">user</span> <span class="o">&amp;&amp;</span> <span class="nx">user</span><span class="p">.</span><span class="nx">password</span> <span class="o">===</span> <span class="nx">pass</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kr">const</span> <span class="p">{</span> <span class="nx">password</span><span class="p">,</span> <span class="p">...</span><span class="nx">result</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">user</span><span class="p">;</span> <span class="c1">// 将user类的属性进行拆解</span>
+    <span class="k">return</span> <span class="nx">result</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>上述代码中，将user类的属性进行拆解，拆解分为两个变量：password和result，其中password对应user实例中的同名属性的值，result对应其他的所有属性，相当于将user实例中剥离了password属性。</p>
+</div>
+<div class="section" id="id37">
+<h3><span class="sectnum">4.10.2</span> 数组的析构表达式<a class="headerlink" href="#id37" title="Permalink to this headline">¶</a></h3>
+<p>数组的析构表达式使用中括号进行拆解。</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">array</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">];</span>
+
+<span class="kd">let</span> <span class="p">[</span><span class="nx">number1</span><span class="p">,</span> <span class="nx">number2</span><span class="p">]</span> <span class="o">=</span> <span class="nx">array</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">number1</span><span class="p">);</span> <span class="c1">// 控制台打印：1</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">number2</span><span class="p">);</span> <span class="c1">// 控制台打印：2</span>
+
+<span class="kd">let</span> <span class="p">[</span><span class="nx">num1</span><span class="p">,</span> <span class="p">,</span> <span class="p">,</span> <span class="nx">num2</span><span class="p">]</span> <span class="o">=</span> <span class="nx">array</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">num1</span><span class="p">);</span> <span class="c1">// 控制台打印：1</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">num2</span><span class="p">);</span> <span class="c1">// 控制台打印：4</span>
+
+<span class="kd">let</span> <span class="p">[,</span> <span class="p">,</span> <span class="nx">num3</span><span class="p">,</span> <span class="nx">num4</span><span class="p">]</span> <span class="o">=</span> <span class="nx">array</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">num3</span><span class="p">);</span> <span class="c1">// 控制台打印：3</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">num4</span><span class="p">);</span> <span class="c1">// 控制台打印：4</span>
+
+
+<span class="kd">let</span> <span class="p">[</span><span class="nx">no1</span><span class="p">,</span> <span class="nx">no2</span><span class="p">,</span> <span class="p">...</span><span class="nx">others</span><span class="p">]</span> <span class="o">=</span> <span class="nx">array</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">no1</span><span class="p">);</span> <span class="c1">// 控制台打印：1</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">no2</span><span class="p">);</span> <span class="c1">// 控制台打印：2</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">others</span><span class="p">);</span> <span class="c1">// 控制台打印：[3, 4]</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>无论对象或者数组的析构表达式，注意的地方就是只能在末尾参数的位置使用rest参数（…操作符）。</p>
+</div>
+</div>
+<div class="section" id="id38">
+<h2><span class="sectnum">4.11</span> TypeScript模块<a class="headerlink" href="#id38" title="Permalink to this headline">¶</a></h2>
+<p>模块是ES6中引入了的概念，TypeScript也沿用这个概念。模块使用模块加载器去导入其它的模块。 在运行时，模块加载器的作用是在执行此模块代码前去查找并执行这个模块的所有依赖。</p>
+<p>模块在其自身的作用域里执行，而不是在全局作用域里；这意味着定义在一个模块里的变量，函数，类等等在模块外部是不可见的，除非你明确地导出（export）它们。 相反，如果想使用其它模块导出的变量，函数，类，接口等的时候，你必须要导入（import）它们。</p>
+<p>模块是自声明的；两个模块之间的关系是通过在文件级别上使用imports和exports建立的。TypeScript与ES6一样，任何包含顶级import或者export的文件都被当成一个模块。</p>
+<div class="section" id="id39">
+<h3><span class="sectnum">4.11.1</span> 导出声明<a class="headerlink" href="#id39" title="Permalink to this headline">¶</a></h3>
+<p>任何声明（比如变量、函数、方法、类、类型别名或接口）都能够通过添加export关键字来导出。例如下面的代码：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">export</span> <span class="kr">interface</span> <span class="nx">StringValidator</span> <span class="p">{</span> <span class="c1">// 导出接口</span>
+    <span class="nx">isAcceptable</span><span class="p">(</span><span class="nx">s</span>: <span class="kt">string</span><span class="p">)</span><span class="o">:</span> <span class="kr">boolean</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kr">export</span> <span class="kr">const</span> <span class="nx">numberRegexp</span> <span class="o">=</span> <span class="sr">/^[0-9]+$/</span><span class="p">;</span>  <span class="c1">// 导出常量</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">ZipCodeValidator</span> <span class="kr">implements</span> <span class="nx">StringValidator</span> <span class="p">{</span> <span class="c1">// 导出类</span>
+    <span class="nx">isAcceptable</span><span class="p">(</span><span class="nx">s</span>: <span class="kt">string</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">s</span><span class="p">.</span><span class="nx">length</span> <span class="o">===</span> <span class="mi">5</span> <span class="o">&amp;&amp;</span> <span class="nx">numberRegexp</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">s</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="id40">
+<h3><span class="sectnum">4.11.2</span> 导出语句<a class="headerlink" href="#id40" title="Permalink to this headline">¶</a></h3>
+<p>导出语句很便利，也可以对导出的部分重命名，参照下面的示例：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">class</span> <span class="nx">ZipCodeValidator</span> <span class="kr">implements</span> <span class="nx">StringValidator</span> <span class="p">{</span>
+    <span class="nx">isAcceptable</span><span class="p">(</span><span class="nx">s</span>: <span class="kt">string</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">s</span><span class="p">.</span><span class="nx">length</span> <span class="o">===</span> <span class="mi">5</span> <span class="o">&amp;&amp;</span> <span class="nx">numberRegexp</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">s</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="kr">export</span> <span class="p">{</span> <span class="nx">ZipCodeValidator</span> <span class="p">};</span> <span class="c1">// 导出语句</span>
+<span class="kr">export</span> <span class="p">{</span> <span class="nx">ZipCodeValidator</span> <span class="kr">as</span> <span class="nx">mainValidator</span> <span class="p">};</span> <span class="c1">// 导出并重命名</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>导出语句使export语句集中写在一起，方便阅读，因此这也是常规的写法。</p>
+</div>
+<div class="section" id="id41">
+<h3><span class="sectnum">4.11.3</span> 默认导出<a class="headerlink" href="#id41" title="Permalink to this headline">¶</a></h3>
+<p>每个模块都可以有一个默认导出。 默认导出使用default关键字标记；并且一个模块只能有一个default导出。例如下面代码：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">numberRegexp</span> <span class="o">=</span> <span class="sr">/^[0-9]+$/</span><span class="p">;</span>
+
+<span class="kr">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">s</span>: <span class="kt">string</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// 默认导出</span>
+    <span class="k">return</span> <span class="nx">s</span><span class="p">.</span><span class="nx">length</span> <span class="o">===</span> <span class="mi">5</span> <span class="o">&amp;&amp;</span> <span class="nx">numberRegexp</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">s</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="id42">
+<h3><span class="sectnum">4.11.4</span> 导入内容<a class="headerlink" href="#id42" title="Permalink to this headline">¶</a></h3>
+<p>模块的导入操作与导出一样简单，使用import关键字来导入其它模块中的导出内容。例如下面导入另一个模块中的某个导出内容：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">ZipCodeValidator</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;./ZipCodeValidator&quot;</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">myValidator</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ZipCodeValidator</span><span class="p">();</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>上述代码中，ZipCodeValidator导入的类ZipCodeValidator类与当前类不在一个文件里，它位于当前类的同级目录下。也可以将整个模块导入到一个变量，并通过它来访问模块的导出部分：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="o">*</span> <span class="kr">as</span> <span class="nx">validator</span> <span class="nx">from</span> <span class="s2">&quot;./ZipCodeValidator&quot;</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">myValidator</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">validator</span><span class="p">.</span><span class="nx">ZipCodeValidator</span><span class="p">();</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>上述代码中导入了整个文件”./ZipCodeValidator”里面的所有内容，并赋值给变量validator，然后使用“.”操作符访问它里面的内容。</p>
+<p>导入默认导出时，import后面导入的内容（类、函数或者其他）是可以省略的。如导入默认的导出内容：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="c1">// 导出类，文件名为：abc.ts</span>
+<span class="kr">const</span> <span class="nx">numberRegexp</span> <span class="o">=</span> <span class="sr">/^[0-9]+$/</span><span class="p">;</span>
+
+<span class="kr">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">s</span>: <span class="kt">string</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// 默认导出</span>
+    <span class="k">return</span> <span class="nx">s</span><span class="p">.</span><span class="nx">length</span> <span class="o">===</span> <span class="mi">5</span> <span class="o">&amp;&amp;</span> <span class="nx">numberRegexp</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">s</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// 导入类</span>
+<span class="kr">import</span> <span class="nx">validate</span> <span class="nx">from</span> <span class="s2">&quot;./abc&quot;</span><span class="p">;</span> <span class="c1">// 导入abc模块</span>
+
+<span class="kd">let</span> <span class="nx">strings</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Hello&quot;</span><span class="p">,</span> <span class="s2">&quot;98052&quot;</span><span class="p">,</span> <span class="s2">&quot;101&quot;</span><span class="p">];</span>
+
+<span class="c1">// Use function validate</span>
+<span class="nx">strings</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">s</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`&quot;</span><span class="si">${</span><span class="nx">s</span><span class="si">}</span><span class="sb">&quot; </span><span class="si">${</span><span class="nx">validate</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span> <span class="o">?</span> <span class="s2">&quot; matches&quot;</span> <span class="o">:</span> <span class="s2">&quot; does not match&quot;</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="id43">
+<h2><span class="sectnum">4.12</span> 小结<a class="headerlink" href="#id43" title="Permalink to this headline">¶</a></h2>
+<p>TypeScript发展至今，已经成为大型项目的标配，其提供的静态类型系统，大大增强了代码的可读性以及可维护性；同时，它提供最新和不断发展的JavaScript特性，帮助开发人员快速实现更强大的功能。本章的篇幅较长，主要宗旨是对TypeScript语言的知识进行归纳性的总结。对于初学者，可作为大纲来指导式的学习；对于有经验的读者，可结合本章的内容对现有知识进行查缺补漏。总之，本章提供了一站式的学习TypeScript的捷径。</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="firstangular.html" class="btn btn-neutral float-right" title="5 快速开启第一个Angular" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="second.html" class="btn btn-neutral float-left" title="第二课" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright CVI Talent
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

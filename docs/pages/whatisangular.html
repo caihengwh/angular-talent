@@ -1,0 +1,366 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>1 Angular概述</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="2 学习Angular需要什么基础" href="howtolearn.html" />
+    <link rel="prev" title="第一课" href="first.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/main-page-logo-small-hat.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">目录：</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="start.html">Angular 9</a></li>
+<li class="toctree-l1"><a class="reference internal" href="first.html">第一课</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#"><span class="sectnum">1</span> Angular概述</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1"><span class="sectnum">1.1</span> 什么是Angular</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2"><span class="sectnum">1.2</span> 为什么要用Angular</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id3"><span class="sectnum">1.2.1</span> 速度和性能</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4"><span class="sectnum">1.2.2</span> 跨平台运行</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5"><span class="sectnum">1.2.3</span> 可伸缩性的设计</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6"><span class="sectnum">1.2.4</span> 稳定性</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#google"><span class="sectnum">1.2.5</span> Google和微软公司的支持</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7"><span class="sectnum">1.2.6</span> 强大的生态系统</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id8"><span class="sectnum">1.3</span> Angular的版本</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id9"><span class="sectnum">1.4</span> Angular的核心概念</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id10"><span class="sectnum">1.4.1</span> 组件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id11"><span class="sectnum">1.4.2</span> 模板和数据绑定</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id12"><span class="sectnum">1.4.3</span> 服务</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id13"><span class="sectnum">1.4.4</span> 依赖注入</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id14"><span class="sectnum">1.4.5</span> 指令</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id15"><span class="sectnum">1.4.6</span> 管道</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id16"><span class="sectnum">1.4.7</span> 模块</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id17"><span class="sectnum">1.5</span> Angular的运行</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id18"><span class="sectnum">1.6</span> 小结</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="howtolearn.html"><span class="sectnum">2</span> 学习Angular需要什么基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nodejs.html"><span class="sectnum">3</span> 掌握Node.js和npm基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="second.html">第二课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="typescript.html"><span class="sectnum">4</span> 学习TypeScript知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="firstangular.html"><span class="sectnum">5</span> 快速开启第一个Angular</a></li>
+<li class="toctree-l1"><a class="reference internal" href="third.html">第三课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angcomponent.html"><span class="sectnum">6</span> 学习Angular组件知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angtemplate.html"><span class="sectnum">7</span> 学习Angular模板知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angdirective.html"><span class="sectnum">8</span> 掌握Angular指令应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fourth.html">第四课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angmodule.html"><span class="sectnum">9</span> 学习Angular模块知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angroute.html"><span class="sectnum">10</span> 熟悉Angular路由功能</a></li>
+<li class="toctree-l1"><a class="reference internal" href="injection.html"><span class="sectnum">11</span> 学习Angular的服务及依赖注入</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fifth.html">第五课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reactive.html"><span class="sectnum">12</span> 掌握响应式编程基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form.html"><span class="sectnum">13</span> 学习Angular表单知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="httpclient.html"><span class="sectnum">14</span> 熟悉HttpClient模块</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sixth.html">第六课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pipe.html"><span class="sectnum">15</span> 深入学习Angular管道知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ui.html"><span class="sectnum">16</span> Angular与Angular Material组件库</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rxjs.html"><span class="sectnum">17</span> 学习RxJS在Angular中的实际应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="seventh.html">第七课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="material.html"><span class="sectnum">18</span> 实战基于Angular Material实现表格组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bootstrap.html"><span class="sectnum">19</span> 集成Bootstrap前端组件库</a></li>
+<li class="toctree-l1"><a class="reference internal" href="echart.html"><span class="sectnum">20</span> 在Angular项目中使用图表</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appid.html"><span class="sectnum">21</span> 使用IBM Cloud™ App ID对Angular应用进行认证</a></li>
+<li class="toctree-l1"><a class="reference internal" href="communication.html"><span class="sectnum">22</span> 掌握在Angular组件间通信</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pwa.html"><span class="sectnum">23</span> Angular与渐进式WEB应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="message.html"><span class="sectnum">24</span> 实现简单的消息通知机制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="localdata.html"><span class="sectnum">25</span> 如何与本地数据打交道</a></li>
+<li class="toctree-l1"><a class="reference internal" href="test.html"><span class="sectnum">26</span> 熟悉Angular测试</a></li>
+<li class="toctree-l1"><a class="reference internal" href="package.html"><span class="sectnum">27</span> 熟悉Angular环境配置及打包</a></li>
+<li class="toctree-l1"><a class="reference internal" href="universal.html"><span class="sectnum">28</span> 学习Angular服务端渲染</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deploy.html"><span class="sectnum">29</span> 如何部署Angular应用程序</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user.html"><span class="sectnum">30</span> 实战用户管理系统</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">CVI Talent</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">首页</a> &raquo;</li>
+        
+      <li><span class="sectnum">1</span> Angular概述</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        <a href="https://pages.github.ibm.com/lanzejun/talent/index.html" class="fa fa-github"> CVITube</a>
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="angular">
+<h1><span class="sectnum">1</span> Angular概述<a class="headerlink" href="#angular" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2><span class="sectnum">1.1</span> 什么是Angular<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>Angular是由Google公司开发的一款前端开源框架，也是SPA（single-page-application，单页应用程序）框架。所谓SPA是指只有一个Web页面的应用程序，它是通过动态重写当前页面而不是从服务器加载整个新页面来与用户交互的Web应用程序或网站。SPA的优势就是为用户提供了一个更接近本地移动或桌面应用程序的体验。</p>
+<p>Angular是基于客户端TypeScript的框架，用于构建动态的移动和桌面Web应用程序。它充分利用现代Web平台的各种能力，提供了创建Web应用程序的强大工具，帮助开发者快速从事Web开发。使用Angular可以极大地简化前端开发的负担，并为用户提供良好的体验。</p>
+</div>
+<div class="section" id="id2">
+<h2><span class="sectnum">1.2</span> 为什么要用Angular<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>Angular很强大，用户选择Angular的理由有很多，下面列举了其中几种：</p>
+<div class="section" id="id3">
+<h3><span class="sectnum">1.2.1</span> 速度和性能<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>速度和性能是选择Angular的重要原因之一。通过Web Worker和服务端渲染技术，Angular的强大渲染引擎在发布应用程序的时候能把APP压缩到是原来的60%左右，达到在如今的Web平台上所能达到的最高速度。</p>
+</div>
+<div class="section" id="id4">
+<h3><span class="sectnum">1.2.2</span> 跨平台运行<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>Angular的模板编译是跨平台的，能同时支持移动端和桌面端，即一套框架，多种平台。让用户界面能更好的的呈现在用户面前。</p>
+</div>
+<div class="section" id="id5">
+<h3><span class="sectnum">1.2.3</span> 可伸缩性的设计<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p>Angular的模块化，组件化的设计能让用户有效的掌控可伸缩性，提高程序员的开发速度，很容易的编写保持一致风格化和更具备可伸缩性的代码。</p>
+</div>
+<div class="section" id="id6">
+<h3><span class="sectnum">1.2.4</span> 稳定性<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<p>Angular从一开始构建的时候就非常注重稳定性。在Google内部，当一个工程师改了一行Angular代码的时候有成千上万的单元测试都会被运行，因此Angular是一个稳定的平台，新出的版本不会破坏以前现有产品的开发。</p>
+</div>
+<div class="section" id="google">
+<h3><span class="sectnum">1.2.5</span> Google和微软公司的支持<a class="headerlink" href="#google" title="Permalink to this headline">¶</a></h3>
+<p>Google公司在2017年的开发者大会上，确认将长期支持Angular。许多开发人员认为Google支持Angular，使该平台值得信赖。同时，Angular框架选择使用TypeScript语言开发，TypeScript编程语言是微软公司的产品，因此Angular背后有Google和微软两大公司的支持。</p>
+</div>
+<div class="section" id="id7">
+<h3><span class="sectnum">1.2.6</span> 强大的生态系统<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<p>Angular强大的第三方组件生态系统。 Angular的流行导致出现了数以千计的可用于Angular应用程序的其他工具和组件。用户可以直接复用这些组件和工具，如：AOT、Angular Universal和Angular CLI，使用这些工具有助于用户快速开发项目。</p>
+</div>
+</div>
+<div class="section" id="id8">
+<h2><span class="sectnum">1.3</span> Angular的版本<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<p>Angular的历史可追溯到2009年，当时Misko Hevery和Google工程师Adam Abrons开发了后来被称为AngularJS的框架，并于2010年正式发布。AngularJS的主要优势是它可以将基于HTML的文档转换为动态内容。 在AngularJS出现之前，Web标记语言HTML始终是静态的，这意味着用户无法主动与HTML页面上的接口进行交互。 有一些方法可以构建动态的单页面应用程序（SPA），但它们太复杂。 AngularJS减少了创建动态内容的开发工作量，用户可以获得具有动态表单和元素的网页。</p>
+<p>2016年9月，Google发布了Angular 2。它是由 AngularJS 的同一个开发团队完全重写的，与网络日益现代的需求相匹配。现在人们常说的Angular（后面没有js）框架泛指从2到最新版本8的Angular框架。</p>
+<p>Angular的版本号由3部分组成：[主要版本号].[小版本号].[补丁版本号]</p>
+<ul class="simple">
+<li><p>主要版本号的变化表明软件中主要的功能接口发生了变化，可能不再兼容低版本的代码，因为API已经改变了。如Angular从7变成8时，这是主版本号的变化。</p></li>
+<li><p>小版本号的变更表示功能更新，如增加了新功能。</p></li>
+<li><p>补丁版本号是用来修复bug的。</p></li>
+</ul>
+<p>Angular 8于2019年5月28日发布，目前最新版本是8.2.15，本书讲解及示例都基于此版本。</p>
+</div>
+<div class="section" id="id9">
+<h2><span class="sectnum">1.4</span> Angular的核心概念<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id10">
+<h3><span class="sectnum">1.4.1</span> 组件<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<p>组件是构成Angular应用程序的基础和核心，它是一个模板的控制类，应用程序使用组件处理页面逻辑及视图显示。组件知道如何渲染自己及配置依赖注入，并通过一些由属性和方法组成的API与视图进行交互，每个组件都能独立完成各自的功能。</p>
+<p>在基于Angular组件的体系结构中，应用程序把逻辑功能和组件分开。这些组件可以轻松替换和解耦，并可以在应用程序的其他部分中重复使用。此外，组件独立性不仅使测试Web应用程序变得容易，而且还能确保每个组件都能无缝运行。</p>
+</div>
+<div class="section" id="id11">
+<h3><span class="sectnum">1.4.2</span> 模板和数据绑定<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<p>使用组件时，Angular是通过模板渲染来显示组件内容。组件模板通过数据绑定来动态设置 DOM（文档对象模型）的值。如：实现把组件数据映射到模板上，或者从模板（如input控件）中取回数据到组件中。</p>
+</div>
+<div class="section" id="id12">
+<h3><span class="sectnum">1.4.3</span> 服务<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<p>Angular把组件和服务区分开，以提高模块性和复用性。 通过把组件中和视图有关的功能与其他类型的处理分离开，你可以让组件类更加精简、高效。</p>
+<p>组件聚焦于展示数据，而把数据访问的职责委托给某个服务。因此服务是实现单一目的的业务逻辑单元，封装了某一特定功能，诸如从服务器获取数据、验证用户输入或直接往控制台中写日志等工作。服务是可以通过注入的方式供他人使用的独立模块。</p>
+</div>
+<div class="section" id="id13">
+<h3><span class="sectnum">1.4.4</span> 依赖注入<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<p>依赖性注入（Dependency Injection）其实不是Angular独有的概念，这是一个已经存在很长时间的设计模式，也可以叫做控制反转 （Inverse of Control）。 这种模式对于熟悉 Java 和 .Net 的读者不会陌生，Java的Spring框架里的IOC就是一个这样的设计模式。</p>
+<p>Angular也提供了依赖注入。因为组件是用TypeScript语言写的类，所以依赖关系通常通过使用构造函数进行注入。在Angular中，可以创建一个可重用的软件对象来处理与服务器的通信，通过构造函数将它注入给每个需要它的对象(类)。然后，在类中就有了与服务器通信的现成方法。</p>
+<p>依赖注入的好处是编写一次代码（如处理与服务器的通信服务），在许多地方可以多次使用它。</p>
+</div>
+<div class="section" id="id14">
+<h3><span class="sectnum">1.4.5</span> 指令<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
+<p>Angular模板是动态的。当Angular渲染它们时，它会根据指令对DOM进行修改。
+在Angular中包含以下三种类型的指令：</p>
+<ol class="arabic simple">
+<li><p>属性指令：以元素的属性形式来使用的指令。</p></li>
+<li><p>结构指令：用来改变DOM树的结构</p></li>
+<li><p>组件：作为指令的一个重要子类，组件本质上可以看作是一个带有模板的指令。</p></li>
+</ol>
+</div>
+<div class="section" id="id15">
+<h3><span class="sectnum">1.4.6</span> 管道<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
+<p>Angular管道的作用是把数据作为输入，然后转换它，给出期望的输出。 常见的有日期管道负责转换日期为友好的本地格式，货币管道负责转换货币格式，异步管道实时订阅数据等。</p>
+</div>
+<div class="section" id="id16">
+<h3><span class="sectnum">1.4.7</span> 模块<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
+<p>Angular的模块作用是把组件、指令、服务等打包成内聚的功能块，封装和暴露相应的功能，从而达到模块间的解耦，高度自治的一种程序设计模式。 换句话说，模块对应的是业务和功能，组件对应的才是页面展示和交互。</p>
+</div>
+</div>
+<div class="section" id="id17">
+<h2><span class="sectnum">1.5</span> Angular的运行<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h2>
+<p>Angular应用程序代码是用TypeScript语言编写的。TypeScript扩展了JavaScript语法，任何已经存在的JavaScript程序，可以不加任何改动，在TypeScript环境下运行。TypeScript只是向JavaScript添加了一些新的遵循ES6规范的语法，以及基于类的面向对象编程的这种特性。</p>
+<p>ES6规范是在2015年发布的，而目前所有主流的浏览器并没有完全支持ES6规范，所以用ES6写的东西并不能直接在浏览器中运行。因此，要想使Angular应用程序代码运行在浏览器中，则需要先将TypeScript代码编译为JavaScript代码。</p>
+<p>Angular提供了一个Angular CLI命令行界面工具，该工具可用于初始化、开发、构建和维护Angular应用程序。用户可以直接使用Angular CLI工具来构建并运行Angular应用程序。无论是Angular CLI命令，还是TypeScript语言运行环境，都需要在Node.js的环境中运行，因此，我们将会准备一个Node.js的环境。</p>
+<p>使用Angular框架开发的应用程序最终是被转换为JavaScript语言代码的应用程序，它能直接运行在Web浏览器中。</p>
+</div>
+<div class="section" id="id18">
+<h2><span class="sectnum">1.6</span> 小结<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h2>
+<p>本章主要是带领读者对Angular有个主观的认识，分别介绍了什么是Angular，学习Angular的原因，包括它的核心概念以及Angular的版本历史。</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="howtolearn.html" class="btn btn-neutral float-right" title="2 学习Angular需要什么基础" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="first.html" class="btn btn-neutral float-left" title="第一课" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright CVI Talent
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

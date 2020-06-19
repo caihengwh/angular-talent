@@ -1,0 +1,521 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>21 使用IBM Cloud™ App ID对Angular应用进行认证</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="22 掌握在Angular组件间通信" href="communication.html" />
+    <link rel="prev" title="20 在Angular项目中使用图表" href="echart.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/main-page-logo-small-hat.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">目录：</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="start.html">Angular 9</a></li>
+<li class="toctree-l1"><a class="reference internal" href="first.html">第一课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="whatisangular.html"><span class="sectnum">1</span> Angular概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="howtolearn.html"><span class="sectnum">2</span> 学习Angular需要什么基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nodejs.html"><span class="sectnum">3</span> 掌握Node.js和npm基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="second.html">第二课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="typescript.html"><span class="sectnum">4</span> 学习TypeScript知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="firstangular.html"><span class="sectnum">5</span> 快速开启第一个Angular</a></li>
+<li class="toctree-l1"><a class="reference internal" href="third.html">第三课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angcomponent.html"><span class="sectnum">6</span> 学习Angular组件知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angtemplate.html"><span class="sectnum">7</span> 学习Angular模板知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angdirective.html"><span class="sectnum">8</span> 掌握Angular指令应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fourth.html">第四课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angmodule.html"><span class="sectnum">9</span> 学习Angular模块知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angroute.html"><span class="sectnum">10</span> 熟悉Angular路由功能</a></li>
+<li class="toctree-l1"><a class="reference internal" href="injection.html"><span class="sectnum">11</span> 学习Angular的服务及依赖注入</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fifth.html">第五课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reactive.html"><span class="sectnum">12</span> 掌握响应式编程基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form.html"><span class="sectnum">13</span> 学习Angular表单知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="httpclient.html"><span class="sectnum">14</span> 熟悉HttpClient模块</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sixth.html">第六课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pipe.html"><span class="sectnum">15</span> 深入学习Angular管道知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ui.html"><span class="sectnum">16</span> Angular与Angular Material组件库</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rxjs.html"><span class="sectnum">17</span> 学习RxJS在Angular中的实际应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="seventh.html">第七课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="material.html"><span class="sectnum">18</span> 实战基于Angular Material实现表格组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bootstrap.html"><span class="sectnum">19</span> 集成Bootstrap前端组件库</a></li>
+<li class="toctree-l1"><a class="reference internal" href="echart.html"><span class="sectnum">20</span> 在Angular项目中使用图表</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#"><span class="sectnum">21</span> 使用IBM Cloud™ App ID对Angular应用进行认证</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#ibm-cloud-app-id"><span class="sectnum">21.1</span> 什么是 IBM Cloud™ App ID 服务</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ibm-cloud-app-id-web"><span class="sectnum">21.2</span> 了解 IBM Cloud™ App ID Web 的认证流程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1"><span class="sectnum">21.3</span> 注册 IBM Cloud™ App ID 服务</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#appid-ex100-ibm-cloud-app-idangular"><span class="sectnum">21.4</span> [示例 appid-ex100] 使用IBM Cloud™ App ID对Angular应用进行认证</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2"><span class="sectnum">21.5</span> 小结</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="communication.html"><span class="sectnum">22</span> 掌握在Angular组件间通信</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pwa.html"><span class="sectnum">23</span> Angular与渐进式WEB应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="message.html"><span class="sectnum">24</span> 实现简单的消息通知机制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="localdata.html"><span class="sectnum">25</span> 如何与本地数据打交道</a></li>
+<li class="toctree-l1"><a class="reference internal" href="test.html"><span class="sectnum">26</span> 熟悉Angular测试</a></li>
+<li class="toctree-l1"><a class="reference internal" href="package.html"><span class="sectnum">27</span> 熟悉Angular环境配置及打包</a></li>
+<li class="toctree-l1"><a class="reference internal" href="universal.html"><span class="sectnum">28</span> 学习Angular服务端渲染</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deploy.html"><span class="sectnum">29</span> 如何部署Angular应用程序</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user.html"><span class="sectnum">30</span> 实战用户管理系统</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">CVI Talent</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">首页</a> &raquo;</li>
+        
+      <li><span class="sectnum">21</span> 使用IBM Cloud™ App ID对Angular应用进行认证</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        <a href="https://pages.github.ibm.com/lanzejun/talent/index.html" class="fa fa-github"> CVITube</a>
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="ibm-cloud-app-idangular">
+<h1><span class="sectnum">21</span> 使用IBM Cloud™ App ID对Angular应用进行认证<a class="headerlink" href="#ibm-cloud-app-idangular" title="Permalink to this headline">¶</a></h1>
+<p>目前大部分系统都期望为用户定制用户体验，比如系统的皮肤颜色、用户经常使用的模块、用户的偏好设置等。应用程序的成功都取决于系统与用户构建信任的能力，了解使用应用程序的对象是其中的一个关键部分。这归根结底是在保护访问的系统资源的同时，也要确保用户数据安全。系统从添加登录功能开始，用户进行登录，系统得到用户提交的信息，与系统中事先注册的身份进行比对，完全匹配后，表示登录成功，从而系统就能记住和识别这个用户了，这个过程就是认证。</p>
+<p>IBM Cloud™ App ID（简称 App ID）就是可以帮助开发者轻松地向其移动和 Web 应用程序添加认证，并在云中托管用户数据，开发者可以使用这些数据来构建和定制应用程序的个性化体验。</p>
+<div class="section" id="ibm-cloud-app-id">
+<h2><span class="sectnum">21.1</span> 什么是 IBM Cloud™ App ID 服务<a class="headerlink" href="#ibm-cloud-app-id" title="Permalink to this headline">¶</a></h2>
+<p>App ID 帮助开发者仅需几行代码即可轻松地向 Web 和移动应用程序添加认证，并在 IBM Cloud 上保护其云本机应用程序和服务。通过要求用户登录到应用程序，可以存储用户数据（例如，应用程序首选项或来自公共社交站点的个人信息），然后利用数据来定制应用程序中的每个用户的体验。App ID 提供了登录框架。</p>
+<p>App ID 基于 OAuth 2.0 授权框架和 Open ID Connect协议。OAuth 2.0 用于获取和验证用于访问受保护资源的授权，Open ID Connect 向应用程序添加认证和身份保护层。除了认证外，App ID 还符合以下规范：OAuth 2.0、OpenID Connect、JSON Web 令牌 (JWT)、JSON Web 签名 (JWS) 和跨域身份管理系统 (SCIM)。</p>
+<p>使用 App ID，可以轻松地向应用程序中添加认证步骤。可以使用 API、SDK、预先构建的 UI 或企业自己的品牌 UI 向应用程序添加电子邮件或用户名登录、社交登录（Facebook，Github，Google，微信，博客等）或企业登录（系统本身）。</p>
+<p>向应用程序添加认证和授权是风险与复杂性并存的操作，这也是我们选择App ID简化开发系统认证模块的原因。开发 Web 应用程序时，可以使用 IBM Cloud™ App ID Web 流程来安全地认证用户。然后，用户就可以在 Web 应用程序中访问服务器端受保护的内容。</p>
+</div>
+<div class="section" id="ibm-cloud-app-id-web">
+<h2><span class="sectnum">21.2</span> 了解 IBM Cloud™ App ID Web 的认证流程<a class="headerlink" href="#ibm-cloud-app-id-web" title="Permalink to this headline">¶</a></h2>
+<p>我们先了解App ID对Angular应用进行认证的流程。下图21-1显示了如何使用 App ID 对Angular应用用户进行安全认证和授权。</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/Figure21-1.png"><img alt="../_images/Figure21-1.png" src="../_images/Figure21-1.png" style="width: 800px;" /></a>
+<p>图21-1 IBM Cloud™ App ID Web 的认证流程</p>
+</div></blockquote>
+<p>图21-1 中各步骤的详细说明如下：</p>
+<ol class="arabic simple">
+<li><p>用户尝试获取对受保护 Web 应用程序的访问权，但该用户未经授权；</p></li>
+<li><p>应用程序将该用户重定向到 App ID；</p></li>
+<li><p>App ID 显示用户可用于认证的登录屏幕；</p></li>
+<li><p>用户输入其凭证，例如用户名和密码。App ID 对凭证进行验证；</p></li>
+<li><p>App ID 使用授权代码将用户重定向回应用程序；</p></li>
+<li><p>通过使用授权代码，应用程序向 App ID 发出请求以确保对用户进行验证；</p></li>
+<li><p>App ID 返回已验证用户的访问令牌和身份令牌；</p></li>
+<li><p>授权用户访问应用程序。</p></li>
+</ol>
+</div>
+<div class="section" id="id1">
+<h2><span class="sectnum">21.3</span> 注册 IBM Cloud™ App ID 服务<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>首先需要向 App ID 注册及添加应用程序，然后再创建应用程序凭证。具体的操作步骤如下：</p>
+<ol class="arabic simple">
+<li><p>注册用户。首先注册成为 IBM Cloud（网址：<a class="reference external" href="https://cloud.ibm.com/">https://cloud.ibm.com/</a>）用户，并登录到仪表板页面；</p></li>
+<li><p>创建App ID服务的实例。在IBM Cloud仪表板页面选择App ID服务类别，进入页面后，按照提示创建一个App ID服务的实例；</p></li>
+<li><p>创建应用程序。导航至应用程序选项卡，然后单击添加应用程序，为应用程序提供名称，从类型下拉列表中，选择单页面应用程序，单击保存；</p></li>
+<li><p>查看凭证。在资源列表中，选择应用程序（Applications）类别，单击刚创建的应用程序实例，查看到如图21-2所示的凭证信息。</p></li>
+</ol>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/Figure21-2.png"><img alt="../_images/Figure21-2.png" src="../_images/Figure21-2.png" style="width: 600px;" /></a>
+<p>图21-2 查看凭证</p>
+</div></blockquote>
+<ol class="arabic simple" start="5">
+<li><p>添加App ID服务返回的重定向URI跳转地址。在资源列表中，选择管理认证（Manage Authentication）类别，选择认证设置（Authentication Settings）选项卡，在输入框中输入跳转地址，这里作为本地运行环境，因此填写地址为“<a class="reference external" href="http://localhost:4200">http://localhost:4200</a>”，如图21-3所示：</p></li>
+</ol>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/Figure21-3.png"><img alt="../_images/Figure21-3.png" src="../_images/Figure21-3.png" style="width: 600px;" /></a>
+<p>图21-3 添加App ID服务返回的跳转地址</p>
+</div></blockquote>
+<p>完成了上述准备工作后，接下来创建本地应用，使用IBM Cloud™ App ID对Angular应用进行认证。</p>
+</div>
+<div class="section" id="appid-ex100-ibm-cloud-app-idangular">
+<h2><span class="sectnum">21.4</span> [示例 appid-ex100] 使用IBM Cloud™ App ID对Angular应用进行认证<a class="headerlink" href="#appid-ex100-ibm-cloud-app-idangular" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>用Angular CLI构建应用程序，具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng n appid-ex100 -S --routing --defaults<span class="o">=</span><span class="nb">true</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>启动服务，具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng serve
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><p>查看应用程序结果。打开Web浏览器并浏览到 “<a class="reference external" href="http://localhost:4200">http://localhost:4200</a>”，应该看到文本 “Welcome to appid-ex100!”。</p></li>
+<li><p>安装 IBM Cloud AppID SDK的依赖包，具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>npm install ibmcloud-appid-js -S
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="5">
+<li><p>创建两个组件，分别对应登录前页面和登录成功后的页面，具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng generate component welcome
+ng generate component home
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="6">
+<li><p>编辑welcome组件。编辑文件src/app/welcome/welcome.component.ts，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">Output</span><span class="p">,</span> <span class="nx">EventEmitter</span><span class="p">,</span> <span class="nx">OnInit</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">AppID</span> <span class="nx">from</span> <span class="s1">&#39;ibmcloud-appid-js&#39;</span><span class="p">;</span>
+<span class="kd">@Component</span><span class="p">({</span>
+<span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-welcome&#39;</span><span class="p">,</span>
+<span class="nx">templateUrl</span><span class="o">:</span> <span class="s1">&#39;./welcome.component.html&#39;</span><span class="p">,</span>
+<span class="nx">styleUrls</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;./welcome.component.css&#39;</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">WelcomeComponent</span> <span class="kr">implements</span> <span class="nx">OnInit</span> <span class="p">{</span>
+<span class="nx">style</span> <span class="o">=</span> <span class="s1">&#39;show&#39;</span><span class="p">;</span>
+<span class="nx">buttonDisplay</span> <span class="o">=</span> <span class="s1">&#39;show&#39;</span><span class="p">;</span>
+<span class="nx">errorStyle</span> <span class="o">=</span> <span class="s1">&#39;hide&#39;</span><span class="p">;</span>
+<span class="nx">errorMessage</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
+<span class="nx">appid</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">AppID</span><span class="p">();</span>
+<span class="kd">@Output</span><span class="p">()</span> <span class="nx">changeState</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">EventEmitter</span><span class="p">();</span>
+<span class="nx">async</span> <span class="nx">ngOnInit() {</span>
+   <span class="k">try</span> <span class="p">{</span>
+      <span class="nx">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">appid</span><span class="p">.</span><span class="nx">init</span><span class="p">({</span>
+      <span class="nx">clientId</span><span class="o">:</span> <span class="s1">&#39;对应图21-2中的clientId&#39;</span><span class="p">,</span>
+      <span class="nx">discoveryEndpoint</span><span class="o">:</span> <span class="s1">&#39;对应图21-2中的discoveryEndpoint&#39;</span>
+      <span class="p">});</span>
+   <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">errorMessage</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">message</span><span class="p">;</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">errorStyle</span> <span class="o">=</span> <span class="s1">&#39;show&#39;</span><span class="p">;</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+<span class="nx">async</span> <span class="nx">onLoginClick() {</span>
+   <span class="k">try</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">buttonDisplay</span> <span class="o">=</span> <span class="s1">&#39;hide&#39;</span><span class="p">;</span>
+      <span class="kr">const</span> <span class="nx">tokens</span> <span class="o">=</span> <span class="nx">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">appid</span><span class="p">.</span><span class="nx">signin</span><span class="p">();</span>
+      <span class="kr">const</span> <span class="nx">decodeIDTokens</span> <span class="o">=</span> <span class="nx">tokens</span><span class="p">.</span><span class="nx">idTokenPayload</span><span class="p">;</span>
+      <span class="kr">const</span> <span class="nx">userName</span> <span class="o">=</span> <span class="s1">&#39;Hi &#39;</span> <span class="o">+</span> <span class="nx">decodeIDTokens</span><span class="p">.</span><span class="nx">name</span> <span class="o">+</span> <span class="s1">&#39;, Congratulations!&#39;</span><span class="p">;</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">style</span> <span class="o">=</span> <span class="s1">&#39;hide&#39;</span><span class="p">;</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">changeState</span><span class="p">.</span><span class="nx">emit</span><span class="p">({</span> <span class="nx">userName</span> <span class="p">});</span>
+   <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">errorMessage</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">message</span><span class="p">;</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">errorStyle</span> <span class="o">=</span> <span class="s1">&#39;show&#39;</span><span class="p">;</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">buttonDisplay</span> <span class="o">=</span> <span class="s1">&#39;show&#39;</span><span class="p">;</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="7">
+<li><p>编辑welcome组件模板。编辑文件src/app/welcome/welcome.component.html，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&lt;div id=&quot;welcome&quot; [ngClass]=&quot;style&quot;&gt;
+   &lt;div class=&quot;welcome-display&quot;&gt;
+      &lt;div&gt;
+            &lt;img alt=&quot;App ID Logo&quot; class=&quot;logo-icon&quot;
+               src=&quot;https://appid-management.eu-gb.bluemix.net/swagger-ui/images/app_id_icon.svg&quot;&gt;
+            &lt;p&gt;
+               欢迎使用&lt;br&gt;
+               IBM Cloud App ID SPA SDK&lt;br&gt;
+               示例应用程序
+            &lt;/p&gt;
+      &lt;/div&gt;
+      &lt;button id=&quot;login&quot; [ngClass]=&#39;buttonDisplay&#39; (click)=&quot;onLoginClick()&quot;&gt;登录&lt;/button&gt;
+      &lt;div [ngClass]=&quot;errorStyle&quot; id=&quot;error&quot;&gt;{{errorMessage}}&lt;/div&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="8">
+<li><p>编辑home组件。编辑文件src/app/home/home.component.ts，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">Input</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+
+<span class="kd">@Component</span><span class="p">({</span>
+<span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-home&#39;</span><span class="p">,</span>
+<span class="nx">templateUrl</span><span class="o">:</span> <span class="s1">&#39;./home.component.html&#39;</span><span class="p">,</span>
+<span class="nx">styleUrls</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;./home.component.css&#39;</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">HomeComponent</span> <span class="p">{</span>
+<span class="kd">@Input</span><span class="p">()</span> <span class="nx">displayState</span>: <span class="kt">string</span><span class="p">;</span>
+<span class="kd">@Input</span><span class="p">()</span> <span class="nx">userName</span>: <span class="kt">string</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="9">
+<li><p>编辑home组件模板。编辑文件src/app/home/home.component.html，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&lt;div [ngClass]=&quot;displayState&quot;&gt;
+   &lt;div class=&quot;welcome-display&quot;&gt;
+      &lt;img alt=&quot;App ID Logo&quot; class=&quot;logo-icon&quot;
+            src=&quot;https://appid-management.eu-gb.bluemix.net/swagger-ui/images/app_id_icon.svg&quot;&gt;
+      &lt;p&gt;{{userName}}&lt;/p&gt;
+      &lt;p&gt;你已经完成了认证&lt;/p&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="10">
+<li><p>编辑根组件。编辑文件src/app/app.component.ts，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Component</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<span class="kd">@Component</span><span class="p">({</span>
+<span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-root&#39;</span><span class="p">,</span>
+<span class="nx">templateUrl</span><span class="o">:</span> <span class="s1">&#39;./app.component.html&#39;</span><span class="p">,</span>
+<span class="nx">styleUrls</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;./app.component.css&#39;</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">AppComponent</span> <span class="p">{</span>
+<span class="nx">title</span> <span class="o">=</span> <span class="s1">&#39;appid-ex100&#39;</span><span class="p">;</span>
+<span class="nx">displayStateStatus</span> <span class="o">=</span> <span class="s1">&#39;hide&#39;</span><span class="p">;</span>
+<span class="nx">userNameStatus</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
+<span class="nx">onChangeState</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+   <span class="k">this</span><span class="p">.</span><span class="nx">displayStateStatus</span> <span class="o">=</span> <span class="s1">&#39;show&#39;</span><span class="p">;</span>
+   <span class="k">this</span><span class="p">.</span><span class="nx">userNameStatus</span> <span class="o">=</span> <span class="nx">value</span><span class="p">.</span><span class="nx">userName</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="11">
+<li><p>编辑根组件模板。编辑文件src/app/app.component.html，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&lt;app-welcome (changeState)=&quot;onChangeState($event)&quot;&gt;&lt;/app-welcome&gt;
+&lt;app-home [displayState]=&quot;displayStateStatus&quot; [userName]=&quot;userNameStatus&quot;&gt;&lt;/app-home&gt;
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="11">
+<li><p>编辑全局样式。编辑文件src/styles.css，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">body</span> <span class="p">{</span><span class="k">margin</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span><span class="k">padding</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span><span class="k">max-width</span><span class="p">:</span> <span class="mi">100</span><span class="kt">%</span><span class="p">;</span><span class="k">overflow-x</span><span class="p">:</span> <span class="kc">hidden</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">hide</span> <span class="p">{</span><span class="k">display</span><span class="p">:</span> <span class="kc">none</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">show</span> <span class="p">{</span><span class="k">display</span><span class="p">:</span> <span class="kc">block</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">welcome-display</span> <span class="p">{</span><span class="k">display</span><span class="p">:</span> <span class="kc">block</span><span class="p">;</span><span class="k">font-family</span><span class="p">:</span> <span class="s1">&#39;IBMPlexSans-Light&#39;</span><span class="p">,</span> <span class="kc">sans-serif</span><span class="p">;</span><span class="k">font-size</span><span class="p">:</span> <span class="mf">1.5</span><span class="kt">vw</span><span class="p">;</span>
+   <span class="k">text-align</span><span class="p">:</span> <span class="kc">center</span><span class="p">;</span><span class="k">margin</span><span class="p">:</span> <span class="mi">10</span><span class="kt">%</span> <span class="kc">auto</span> <span class="mi">0</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">logo-icon</span> <span class="p">{</span><span class="k">width</span><span class="p">:</span> <span class="mi">70</span><span class="kt">px</span><span class="p">;</span><span class="k">height</span><span class="p">:</span> <span class="mi">70</span><span class="kt">px</span><span class="p">;}</span>
+<span class="p">#</span><span class="nn">login</span> <span class="p">{</span><span class="k">font-family</span><span class="p">:</span> <span class="s1">&#39;IBMPlexSans-Medium&#39;</span><span class="p">,</span> <span class="kc">sans-serif</span><span class="p">;</span><span class="k">font-size</span><span class="p">:</span> <span class="mi">14</span><span class="kt">px</span><span class="p">;</span><span class="k">color</span><span class="p">:</span> <span class="mh">#FFFFFF</span><span class="p">;</span>
+   <span class="k">text-align</span><span class="p">:</span> <span class="kc">center</span><span class="p">;</span><span class="k">background-color</span><span class="p">:</span> <span class="mh">#4178BE</span><span class="p">;</span><span class="k">border</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span><span class="k">cursor</span><span class="p">:</span> <span class="kc">pointer</span><span class="p">;</span><span class="k">width</span><span class="p">:</span> <span class="mi">158</span><span class="kt">px</span><span class="p">;</span>
+   <span class="k">height</span><span class="p">:</span> <span class="mi">40</span><span class="kt">px</span><span class="p">;</span><span class="k">margin</span><span class="p">:</span> <span class="mi">20</span><span class="kt">px</span> <span class="kc">auto</span> <span class="mi">0</span><span class="p">;}</span>
+<span class="p">#</span><span class="nn">error</span> <span class="p">{</span><span class="k">padding-top</span><span class="p">:</span> <span class="mi">20</span><span class="kt">px</span><span class="p">;</span><span class="k">font-size</span><span class="p">:</span> <span class="mi">14</span><span class="kt">px</span><span class="p">;</span><span class="k">color</span><span class="p">:</span> <span class="kc">red</span><span class="p">;}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="12">
+<li><p>观察应用程序页面，页面显示效果如图21-4所示：</p></li>
+</ol>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/Figure21-4.png"><img alt="../_images/Figure21-4.png" src="../_images/Figure21-4.png" style="width: 500px;" /></a>
+<p>图21-4 演示使用IBM Cloud™ App ID登录</p>
+</div></blockquote>
+<ol class="arabic simple" start="13">
+<li><p>用户点击“登录”按钮后，页面将弹出一个新的窗口，显示效果如图21-5所示：</p></li>
+</ol>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/Figure21-5.png"><img alt="../_images/Figure21-5.png" src="../_images/Figure21-5.png" style="width: 400px;" /></a>
+<p>图21-5 使用IBM Cloud™ App ID登录中</p>
+</div></blockquote>
+<ol class="arabic simple" start="13">
+<li><p>用户选择其中一种方式成功登录后，弹出的页面自动关闭，应用程序首页显示用户登录成功提示，效果如图21-6所示：</p></li>
+</ol>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/Figure21-6.png"><img alt="../_images/Figure21-6.png" src="../_images/Figure21-6.png" style="width: 500px;" /></a>
+<p>图21-6 使用IBM Cloud™ App ID登录成功</p>
+</div></blockquote>
+<p>在上面的步骤中，完成了以下内容：</p>
+<ol class="arabic simple">
+<li><p>安装了IBM Cloud AppID SDK的依赖包：ibmcloud-appid-js；</p></li>
+<li><p>步骤6在组件的OnInit()方法中调用AppID服务实例的init()方法初始化服务，初始化时，用到了注册 IBM Cloud™ App ID 服务时，创建应用程序后得到的凭证参数；在onLoginClick()登录方法中，显示的调用了AppID服务的signin()方法打开登录窗体页面，同时Angular应用的首页上的登录按钮被隐藏起来了；</p></li>
+<li><p>用户在新窗口中，选择登录方式，进行登录后，新的窗体将自动关闭，Angular应用程序首页显示出用户登录成功的提示；</p></li>
+<li><p>图21-5所示的窗体页面样式，可以在资源列表中，选择登录自定义（Login Customization）类别，在页面中对布局和Logo进行定制；</p></li>
+</ol>
+<p>此示例中仅演示了使用IBM Cloud™ App ID登录的基本功能，关于IBM Cloud™ App ID的其他功能，还有很多，读者可以自行前往官方文档中查阅。总之可以看出，选择App ID确实简化了开发系统认证模块的步骤。</p>
+</div>
+<div class="section" id="id2">
+<h2><span class="sectnum">21.5</span> 小结<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>本章介绍了使用IBM Cloud™ App ID对Angular应用进行认证的应用知识。2019年7月，IBM以340亿美元的高价完成了对开源混合云领导者红帽的收购，IBM Cloud在中国落地的合作伙伴选了神州数码，解决了云服务入华的问题。IBM Cloud已经与红帽此前的OpenShift、企业Linux等产品进行了快速融合，本章带领读者通过示例了解及认识了IBM Cloud，读者相信，IBM Cloud不久将会在国内占据一块技术市场。</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="communication.html" class="btn btn-neutral float-right" title="22 掌握在Angular组件间通信" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="echart.html" class="btn btn-neutral float-left" title="20 在Angular项目中使用图表" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright CVI Talent
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

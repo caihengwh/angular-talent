@@ -1,0 +1,915 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>7 学习Angular模板知识</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="8 掌握Angular指令应用" href="angdirective.html" />
+    <link rel="prev" title="6 学习Angular组件知识" href="angcomponent.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/main-page-logo-small-hat.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">目录：</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="start.html">Angular 9</a></li>
+<li class="toctree-l1"><a class="reference internal" href="first.html">第一课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="whatisangular.html"><span class="sectnum">1</span> Angular概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="howtolearn.html"><span class="sectnum">2</span> 学习Angular需要什么基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nodejs.html"><span class="sectnum">3</span> 掌握Node.js和npm基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="second.html">第二课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="typescript.html"><span class="sectnum">4</span> 学习TypeScript知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="firstangular.html"><span class="sectnum">5</span> 快速开启第一个Angular</a></li>
+<li class="toctree-l1"><a class="reference internal" href="third.html">第三课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angcomponent.html"><span class="sectnum">6</span> 学习Angular组件知识</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#"><span class="sectnum">7</span> 学习Angular模板知识</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1"><span class="sectnum">7.1</span> Angular模板语言基础介绍</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2"><span class="sectnum">7.2</span> 掌握模板表达式和语句的基础使用</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id3"><span class="sectnum">7.2.1</span> 模板表达式的基础使用</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4"><span class="sectnum">7.2.2</span> 模板表达式中有哪些运算符</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id5"><span class="sectnum">7.2.2.1</span> 管道运算符</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id6"><span class="sectnum">7.2.2.2</span> 安全导航运算符</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id7"><span class="sectnum">7.2.2.3</span> 非空断言运算符</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id8"><span class="sectnum">7.2.3</span> 模板语句的基础使用</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id9"><span class="sectnum">7.3</span> 什么是模板引用</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id10"><span class="sectnum">7.3.1</span> 使用模板引用变量</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#viewchild"><span class="sectnum">7.3.2</span> 使用&#64;ViewChild()装饰器</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#template-ex100-viewchild"><span class="sectnum">7.3.3</span> [示例 template-ex100] 使用&#64;ViewChild()引用模板元素</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#viewchildren"><span class="sectnum">7.3.4</span> 使用&#64;ViewChildren()装饰器</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#template-ex200-viewchildren"><span class="sectnum">7.3.5</span> [示例 template-ex200] 使用&#64;ViewChildren()引用多个模板元素</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id11"><span class="sectnum">7.4</span> Angular数据绑定知识总结</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id12"><span class="sectnum">7.4.1</span> 单向属性绑定总结</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id13"><span class="sectnum">7.4.2</span> 单向事件绑定总结</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id14"><span class="sectnum">7.4.3</span> 双向数据绑定总结</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#template-ex300"><span class="sectnum">7.4.4</span> [示例 template-ex300] 演示双向数据绑定</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id15"><span class="sectnum">7.5</span> 小结</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="angdirective.html"><span class="sectnum">8</span> 掌握Angular指令应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fourth.html">第四课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angmodule.html"><span class="sectnum">9</span> 学习Angular模块知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angroute.html"><span class="sectnum">10</span> 熟悉Angular路由功能</a></li>
+<li class="toctree-l1"><a class="reference internal" href="injection.html"><span class="sectnum">11</span> 学习Angular的服务及依赖注入</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fifth.html">第五课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reactive.html"><span class="sectnum">12</span> 掌握响应式编程基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form.html"><span class="sectnum">13</span> 学习Angular表单知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="httpclient.html"><span class="sectnum">14</span> 熟悉HttpClient模块</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sixth.html">第六课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pipe.html"><span class="sectnum">15</span> 深入学习Angular管道知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ui.html"><span class="sectnum">16</span> Angular与Angular Material组件库</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rxjs.html"><span class="sectnum">17</span> 学习RxJS在Angular中的实际应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="seventh.html">第七课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="material.html"><span class="sectnum">18</span> 实战基于Angular Material实现表格组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bootstrap.html"><span class="sectnum">19</span> 集成Bootstrap前端组件库</a></li>
+<li class="toctree-l1"><a class="reference internal" href="echart.html"><span class="sectnum">20</span> 在Angular项目中使用图表</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appid.html"><span class="sectnum">21</span> 使用IBM Cloud™ App ID对Angular应用进行认证</a></li>
+<li class="toctree-l1"><a class="reference internal" href="communication.html"><span class="sectnum">22</span> 掌握在Angular组件间通信</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pwa.html"><span class="sectnum">23</span> Angular与渐进式WEB应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="message.html"><span class="sectnum">24</span> 实现简单的消息通知机制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="localdata.html"><span class="sectnum">25</span> 如何与本地数据打交道</a></li>
+<li class="toctree-l1"><a class="reference internal" href="test.html"><span class="sectnum">26</span> 熟悉Angular测试</a></li>
+<li class="toctree-l1"><a class="reference internal" href="package.html"><span class="sectnum">27</span> 熟悉Angular环境配置及打包</a></li>
+<li class="toctree-l1"><a class="reference internal" href="universal.html"><span class="sectnum">28</span> 学习Angular服务端渲染</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deploy.html"><span class="sectnum">29</span> 如何部署Angular应用程序</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user.html"><span class="sectnum">30</span> 实战用户管理系统</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">CVI Talent</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">首页</a> &raquo;</li>
+        
+      <li><span class="sectnum">7</span> 学习Angular模板知识</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        <a href="https://pages.github.ibm.com/lanzejun/talent/index.html" class="fa fa-github"> CVITube</a>
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="angular">
+<h1><span class="sectnum">7</span> 学习Angular模板知识<a class="headerlink" href="#angular" title="Permalink to this headline">¶</a></h1>
+<p>前面章节熟悉组件的过程中，我们已经接触了Angular的模板，并对模板做了初步介绍，本章主要介绍Angular模板的详细语法。Angular模板语法解释了模板语言的基本原理，并描述了如何在文档中使用这些语法。</p>
+<div class="section" id="id1">
+<h2><span class="sectnum">7.1</span> Angular模板语言基础介绍<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>Angular模板语言是在Angular中编写组件模板时使用的语言。我们可以认为Angular模板语言是HTML的扩展，允许我们使用插值，Angular模板表达式和语句，数据绑定等。</p>
+<p>要了解Angular模板语法，首先，我们将研究Angular模板表达式和语句。</p>
+</div>
+<div class="section" id="id2">
+<h2><span class="sectnum">7.2</span> 掌握模板表达式和语句的基础使用<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>在数据绑定章节中，我们已经接触到了模板表达式和语句。模板表达式和语句本质上是从JavaScript表达式的子集派生来的，下表7-1汇总了Angular的常见模板表达式和语句的使用场景：</p>
+<table class="colwidths-given docutils align-default" id="id16">
+<caption><span class="caption-text">表7-1 模板表达式和语句的使用场景</span><a class="headerlink" href="#id16" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 34%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>绑定类型</p></th>
+<th class="head"><p>语法</p></th>
+<th class="head"><p>输入类型</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>插值表达式</p></td>
+<td><p>{{表达式}}</p></td>
+<td><p>如：{{firstName}}</p></td>
+</tr>
+<tr class="row-odd"><td><p>DOM属性绑定</p></td>
+<td><p>[perperty]=”表达式”</p></td>
+<td><p>[src]=”imageURL”（类属性）</p></td>
+</tr>
+<tr class="row-even"><td><p>HTML特性绑定</p></td>
+<td><p>[attr.attribute]=”表达式”</p></td>
+<td><p>[attr.colspan]=“tableSpan” （类属性）</p></td>
+</tr>
+<tr class="row-odd"><td><p>单个Class样式绑定</p></td>
+<td><p>[class.css-name]=”表达式”</p></td>
+<td><p>值为布尔类型，如[class.newclass]=”true”</p></td>
+</tr>
+<tr class="row-even"><td><p>多个Class样式绑定</p></td>
+<td><p>[class.css-names]=”表达式”</p></td>
+<td><div class="line-block">
+<div class="line">值为字符串，如”my-class1 my-class2 my-class3”</div>
+<div class="line">值为{[key: string]: boolean}，如{foo: true, bar: false}</div>
+<div class="line">值为Array&lt;string&gt;，如[‘my-class1’, ‘my-class2’]</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Style样式绑定</p></td>
+<td><p>[style.css-property]=”表达式”</p></td>
+<td><p>[style.color]=”myColor” （类属性）</p></td>
+</tr>
+<tr class="row-even"><td><p>事件绑定</p></td>
+<td><p>(event)=”语句”</p></td>
+<td><p>(click)=”onChange()”（类方法）</p></td>
+</tr>
+<tr class="row-odd"><td><p>双向绑定</p></td>
+<td><p>[(ngModel)]=”表达式”</p></td>
+<td><p>[(ngModel)]=”fg”</p></td>
+</tr>
+<tr class="row-even"><td><p>内置属性型指令</p></td>
+<td><p>[ngStyle]=”表达式”</p></td>
+<td><p>[ngStyle]=”{‘color’: fg, ‘padding’: ‘5px’}”</p></td>
+</tr>
+<tr class="row-odd"><td><p>内置属性型指令</p></td>
+<td><p>[ngClass]=”表达式”</p></td>
+<td><p>[ngClass]=”classes”</p></td>
+</tr>
+</tbody>
+</table>
+<p>表7-1中的“表达式”就是模板表达式的简称，“语句”是模板语句的简称。</p>
+<div class="section" id="id3">
+<h3><span class="sectnum">7.2.1</span> 模板表达式的基础使用<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>Angular模板表达式在双花括号{{ }}中计算并返回一个值，并把它赋值给绑定目标的属性，这个绑定目标可能是HTML元素、组件或指令。
+表达式的语法应该简单，遵循的准则是快速并且没有副作用。这是保证性能的关键，因为表达式会在更新期间周期性的计算该值。</p>
+<p>表达式语法与JavaScript表达式非常相似，但是存在一些限制。下面列出了模板表达式有关语法示例，请参见表7-2。</p>
+<table class="colwidths-given docutils align-default" id="id17">
+<caption><span class="caption-text">表7-2 模板表达式语法示例</span><a class="headerlink" href="#id17" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 34%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>运行状态</p></th>
+<th class="head"><p>示例</p></th>
+<th class="head"><p>说明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>正常</p></td>
+<td><p>{{variable}}</p></td>
+<td><p>基本绑定</p></td>
+</tr>
+<tr class="row-odd"><td><p>正常</p></td>
+<td><p>{{variable | pipe}}</p></td>
+<td><p>Angular pipe（管道）</p></td>
+</tr>
+<tr class="row-even"><td><p>正常</p></td>
+<td><p>{{varX + ‘’ + varY}}</p></td>
+<td><p>拼接字符串</p></td>
+</tr>
+<tr class="row-odd"><td><p>正常</p></td>
+<td><p>{{fistName}}</p></td>
+<td><p>绑定类属性</p></td>
+</tr>
+<tr class="row-even"><td><p>正常</p></td>
+<td><p>{{Object.fistName}}</p></td>
+<td><p>绑定类对象的属性</p></td>
+</tr>
+<tr class="row-odd"><td><p>正常</p></td>
+<td><p>{{Object?.SubObject?.fistName}}</p></td>
+<td><p>问号运算符</p></td>
+</tr>
+<tr class="row-even"><td><p>正常</p></td>
+<td><p>{{getProperty()}}</p></td>
+<td><p>访问类属性的get方法</p></td>
+</tr>
+<tr class="row-odd"><td><p>不推荐</p></td>
+<td><p>{{method()}}</p></td>
+<td><p>不报错，但避免method()方法副作用</p></td>
+</tr>
+<tr class="row-even"><td><p>不推荐</p></td>
+<td><p>{{varX&gt;1?varY:varZ|pipeX|pipeY}}</p></td>
+<td><p>不报错，但表达式太复杂了</p></td>
+</tr>
+<tr class="row-odd"><td><p>报错</p></td>
+<td><p>{{variableX;variableY}}</p></td>
+<td><p>表达式不完整，不是唯一值</p></td>
+</tr>
+<tr class="row-even"><td><p>报错</p></td>
+<td><p>{{variable=10}}</p></td>
+<td><p>不能使用赋值语句</p></td>
+</tr>
+<tr class="row-odd"><td><p>报错</p></td>
+<td><p>{{variable++}}</p></td>
+<td><p>不支持++或 <code class="docutils literal notranslate"><span class="pre">--</span></code> 运算符</p></td>
+</tr>
+<tr class="row-even"><td><p>报错</p></td>
+<td><p>{{variable|2}}</p></td>
+<td><p>不支持位运算，比如 | 和 &amp;</p></td>
+</tr>
+</tbody>
+</table>
+<p>模板表达式不能引用全局命名空间中的对象，比如 window 或 document。它们也不能调用 console.log 或 Math.max。</p>
+</div>
+<div class="section" id="id4">
+<h3><span class="sectnum">7.2.2</span> 模板表达式中有哪些运算符<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>Angular模板表达式的语言是JavaScript语言的子集，并为特定情况添加了一些特殊的运算符。接下来将介绍其中的三个运算符：管道运算符、安全导航运算符和非空断言运算符。</p>
+<div class="section" id="id5">
+<h4><span class="sectnum">7.2.2.1</span> 管道运算符<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
+<p>管道运算符的作用是对表达式的结果进行一些转换，如，将文本更改为大写，可以格式化日期显示，可以将数字显示为货币，或过滤列表并对其进行排序。</p>
+<p>管道运算符的格式很简单，使用“|”符号分隔表达式和管道函数，它会把它左侧的表达式结果传给它右侧的管道函数。
+下面通过示例代码说明管道运算符的运用：</p>
+<blockquote>
+<div><div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>小写：<span class="o">{{</span> <span class="s2">&quot;I love Angular and Java&quot;</span> <span class="p">|</span> lowercase <span class="o">}}</span> // 小写: i love angular and java
+大写：<span class="o">{{</span> <span class="s2">&quot;I love Angular and Java&quot;</span> <span class="p">|</span> uppercase <span class="o">}}</span> // 大写: I LOVE ANGULAR AND JAVA
+连续使用：<span class="o">{{</span> <span class="s2">&quot;I love Angular and Java&quot;</span> <span class="p">|</span> lowercase <span class="p">|</span> uppercase<span class="o">}}</span> // 连续使用：I LOVE ANGULAR AND JAVA
+百分比：<span class="o">{{</span> <span class="m">0</span>.5 <span class="p">|</span> percent <span class="o">}}</span> // 百分比: <span class="m">50</span>%
+输出JSON：&lt;p&gt;This is test: <span class="o">{{</span>item <span class="p">|</span> json<span class="o">}}</span>&lt;/p&gt;
+日期: <span class="o">{{</span> birthday <span class="p">|</span> date <span class="o">}}</span> // 日期: Apr <span class="m">23</span>, <span class="m">2020</span>
+指定日期格式: <span class="o">{{</span> birthday <span class="p">|</span> date:<span class="s1">&#39;yyyy-MM-dd&#39;</span> <span class="o">}}</span> // 指定日期格式: <span class="m">2020</span>-08-23
+</pre></div>
+</div>
+</div></blockquote>
+<p>关于更多的管道函数，本书后续章节有介绍。</p>
+</div>
+<div class="section" id="id6">
+<h4><span class="sectnum">7.2.2.2</span> 安全导航运算符<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
+<p>Angular安全导航运算符也被称为“?”运算符，可以对在属性路径中出现null和undefined值进行保护。
+Angular中通常存在空值问题，尤其是在模板表达式中。如果引用未初始化变量的属性，则可能导致模板表达式停止解析工作。例如，对象x的值为null，假设有代码：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="nx">Total</span> <span class="p">{{</span><span class="nx">x</span><span class="p">.</span><span class="nx">totalAmt</span><span class="p">}}</span>  <span class="c1">// 对象x的值为null</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>上述代码则会导致JavaScript报空异常错误，组件视图也将突然无法呈现。幸运的是，“?” 运算符能帮助我们。“?” 运算符是模板表达式中变量末尾的一个问号，如：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="nx">Total</span> <span class="p">{{</span><span class="nx">x</span><span class="o">?</span><span class="p">.</span><span class="nx">totalAmt</span><span class="p">}}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>上述代码模板表达式中的变量x后面紧跟着“?” 运算符，模板解析时，一旦发现该x变量为null，“?” 运算符就会告诉代码退出，留空。这将停止对属性的继续解析并绕过JavaScript的空异常错误。也可以在模板表达式中使用多个“?” 运算符。如：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="nx">Total</span> <span class="p">{{</span><span class="nx">x</span><span class="o">?</span><span class="p">.</span><span class="nx">amt</span><span class="o">?</span><span class="p">.</span><span class="nx">total</span><span class="p">}}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="id7">
+<h4><span class="sectnum">7.2.2.3</span> 非空断言运算符<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h4>
+<p>非空断言运算符是可选的，仅在打开严格空检查选项时必须使用它，目的是绕过类型检查。</p>
+<p>如果类型检查器在运行期间无法确定一个变量是null或undefined，那么它也会抛出一个错误。我们自己可能知道它不会为空，但类型检查器不知道。所以我们要告诉类型检查器，它不会为空，这时就要用到非空断言运算符。</p>
+<p>例如，在用*ngIf来检查过hero是已定义的之后，就可以断言hero属性一定是已定义的。</p>
+<blockquote>
+<div><div class="highlight-scss notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;!</span><span class="nt">--判断hero是否存在--</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="nt">div</span> <span class="o">*</span><span class="nt">ngIf</span><span class="o">=</span><span class="s2">&quot;hero&quot;</span><span class="o">&gt;</span>
+  <span class="nt">The</span> <span class="nt">hero</span><span class="s1">&#39;s name is {{hero!.name}} // 在打开严格空检查选项时，绕过类型检查</span>
+<span class="o">&lt;/</span><span class="nt">div</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>上述代码中，在打开严格空检查选项时，插值表达式如果使用{{hero.name}}，当遇到hero为空时，类型检查器在运行期间会抛出一个空值错误。这是因为，虽然我们在插值表达式之前做了非空判断，但是类型检查器不知道，因此这里需要加上非空断言运算符。</p>
+<p>如果没有打开严格空检查选项，上述代码无论是否有非空断言运算符均是合格的。</p>
+</div>
+</div>
+<div class="section" id="id8">
+<h3><span class="sectnum">7.2.3</span> 模板语句的基础使用<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<p>当使用事件绑定时，用到了模板语句。模板语句也应该同表达式一样，保持简单的方式编写它们。语句是事件驱动的，事件通常会通过用户操作来更新状态或数据。
+语句一般仅在绑定事件触发时运行，因此可以执行可能长时间运行的操作和任务。
+与表达式相比，类似的规则适用于语句的语法，但有一些例外。在大多数情况下，我们只会在语句内部调用一个方法。下面列出了模板语句有关语法示例，请参见表7-3。</p>
+<table class="colwidths-given docutils align-default" id="id18">
+<caption><span class="caption-text">表7-3 模板语句语法示例</span><a class="headerlink" href="#id18" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 34%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>运行状态</p></th>
+<th class="head"><p>示例</p></th>
+<th class="head"><p>说明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>正常</p></td>
+<td><p>(event)=”updateValue()”</p></td>
+<td><p>正常调用方法</p></td>
+</tr>
+<tr class="row-odd"><td><p>正常</p></td>
+<td><p>(event)=”updateValue($event)”</p></td>
+<td><p>参数是Angular的模板变量$event</p></td>
+</tr>
+<tr class="row-even"><td><p>正常</p></td>
+<td><p>(event)=”updateValue(var.property)”</p></td>
+<td><p>参数是模板变量</p></td>
+</tr>
+<tr class="row-odd"><td><p>正常</p></td>
+<td><p>(event)=”updateValue();validate()”</p></td>
+<td><p>调用多个方法</p></td>
+</tr>
+<tr class="row-even"><td><p>正常</p></td>
+<td><p>(event)=”var = 10”</p></td>
+<td><p>正常赋值</p></td>
+</tr>
+<tr class="row-odd"><td><p>报错</p></td>
+<td><p>(event)=”updateValue() | pipe”</p></td>
+<td><p>模板语句不能联合pipe管道使用</p></td>
+</tr>
+<tr class="row-even"><td><p>报错</p></td>
+<td><p>(event)=”var++”</p></td>
+<td><p>不支持++或 <code class="docutils literal notranslate"><span class="pre">--</span></code> 运算符</p></td>
+</tr>
+</tbody>
+</table>
+<p>模板表达式与语句使用时的注意点：</p>
+<ol class="arabic simple">
+<li><p>模板表达式与模板语句不同，不应执行复杂的逻辑，而应始终快速。</p></li>
+<li><p>模板表达式可以联合管道（Angular Pipe）运算符来使用。模板语句可以使用分号（；）调用多个方法，但是不能使用Angular管道。</p></li>
+<li><p>无论是模板表达式，还是模板语句都应该简单、简短和简洁。</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="id9">
+<h2><span class="sectnum">7.3</span> 什么是模板引用<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+<p>模板引用是用来从模板视图中获取匹配的元素，这些元素可以是一个或多个。</p>
+<div class="section" id="id10">
+<h3><span class="sectnum">7.3.1</span> 使用模板引用变量<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<p>模板引用变量通常是对模板中DOM元素的引用。它还可以引用指令、组件等。
+Angular使用井号（#）声明模板引用变量。</p>
+<p>以下代码示例中，模板引用变量#phone会在&lt;input&gt;元素上声明了一个phone变量，然后在button元素的事件绑定方法中引用它。</p>
+<blockquote>
+<div><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&lt;input #phone placeholder=&quot;phone number&quot; /&gt;
+
+&lt;!--phone指的是&lt;input&gt;。按钮的单击事件将把这个&lt;input&gt; 的值传给&lt;button&gt;的callPhone()方法 --&gt;
+&lt;button (click)=&quot;callPhone(phone.value)&quot;&gt;Call&lt;/button&gt;
+</pre></div>
+</div>
+</div></blockquote>
+<p>除了使用井号（#）声明模板引用变量，还有一种替代语法：用 ref- 前缀代替 #。如上面的#phone可以写成ref-phone，代码如下：</p>
+<blockquote>
+<div><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&lt;input ref-phone placeholder=&quot;phone number&quot; /&gt;
+
+&lt;!--phone指的是&lt;input&gt;。按钮的单击事件将把这个&lt;input&gt; 的值传给&lt;button&gt;的callPhone()方法 --&gt;
+&lt;button (click)=&quot;callPhone(phone.value)&quot;&gt;Call&lt;/button&gt;
+</pre></div>
+</div>
+</div></blockquote>
+<p>模板引用变量引用的对象不同，因此也有各自对应的属性和方法。关于如何准确的获取这些属性和方法，这里有个小技巧：可以通过变量的constructor属性，获取模板引用变量的实际类型。如参照上面的示例：</p>
+<blockquote>
+<div><div class="highlight-scss notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="nt">input</span> <span class="nn">#phone</span> <span class="nt">placeholder</span><span class="o">=</span><span class="s2">&quot;phone number&quot;</span> <span class="o">/&gt;</span>
+<span class="p">{{</span><span class="nt">phone</span><span class="nc">.constructor.name</span><span class="p">}}</span> <span class="c1">// 打印模板引用变量的类型，这里显示：HTMLInputElement</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>上述示例中，通过{{phone.constructor.name}}获取模板引用变量phone的类型为HTMLInputElement，然后去搜索HTMLInputElement的方法和属性。</p>
+</div>
+<div class="section" id="viewchild">
+<h3><span class="sectnum">7.3.2</span> 使用&#64;ViewChild()装饰器<a class="headerlink" href="#viewchild" title="Permalink to this headline">¶</a></h3>
+<p>&#64;ViewChild()是Angular提供的属性装饰器，用来从模板视图中获取匹配的元素，返回获取匹配的一个或首个元素。
+使用时有个注意的地方：视图查询在组件的生命周期AfterViewInit发生时完成，因此在ngAfterViewInit()方法中，就能正确获取查询的元素。</p>
+<p>下面示例演示使用&#64;ViewChild()属性装饰器获取模板中的元素。</p>
+</div>
+<div class="section" id="template-ex100-viewchild">
+<h3><span class="sectnum">7.3.3</span> [示例 template-ex100] 使用&#64;ViewChild()引用模板元素<a class="headerlink" href="#template-ex100-viewchild" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>用Angular CLI构建应用程序，具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng new template-ex100 --minimal --interactive<span class="o">=</span><span class="nb">false</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>启动服务，具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng serve
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><p>查看应用程序结果。打开Web浏览器并浏览到 “<a class="reference external" href="http://localhost:4200">http://localhost:4200</a>”，应该看到文本 “Welcome to template-ex100!”。</p></li>
+<li><p>编辑组件。编辑文件src/app/app.component.ts，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span>
+  <span class="nx">Component</span><span class="p">,</span> <span class="nx">AfterViewInit</span><span class="p">,</span> <span class="nx">ViewChild</span><span class="p">,</span> <span class="nx">AfterContentInit</span><span class="p">,</span>
+  <span class="nx">OnInit</span><span class="p">,</span> <span class="nx">ElementRef</span><span class="p">,</span> <span class="nx">AfterViewChecked</span>
+<span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+
+<span class="kd">@Component</span><span class="p">({</span>
+  <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-root&#39;</span><span class="p">,</span>
+  <span class="nx">template</span><span class="o">:</span> <span class="sb">`</span>
+<span class="sb">    &lt;h1&gt;Welcome to Angular World&lt;/h1&gt;</span>
+<span class="sb">    &lt;p #title1&gt;Hi {{ name }}&lt;/p&gt;</span>
+<span class="sb">    &lt;p #title2&gt;Hello {{ name }}&lt;/p&gt;</span>
+<span class="sb">  `</span><span class="p">,</span>
+  <span class="nx">styles</span><span class="o">:</span> <span class="p">[]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">AppComponent</span> <span class="kr">implements</span> <span class="nx">OnInit</span><span class="p">,</span> <span class="nx">AfterContentInit</span><span class="p">,</span> <span class="nx">AfterViewInit</span><span class="p">,</span>
+  <span class="nx">AfterViewChecked</span> <span class="p">{</span>
+
+  <span class="nx">name</span>: <span class="kt">string</span> <span class="o">=</span> <span class="s1">&#39;Murphy&#39;</span><span class="p">;</span>
+
+  <span class="kd">@ViewChild</span><span class="p">(</span><span class="s1">&#39;title1&#39;</span><span class="p">,</span> <span class="p">{</span> <span class="kr">static</span><span class="o">:</span> <span class="kc">false</span> <span class="p">})</span>
+  <span class="nx">ctitle1</span>: <span class="kt">ElementRef</span><span class="p">;</span>
+
+  <span class="kd">@ViewChild</span><span class="p">(</span><span class="s1">&#39;title2&#39;</span><span class="p">,</span> <span class="p">{</span> <span class="kr">static</span><span class="o">:</span> <span class="kc">true</span> <span class="p">})</span>
+  <span class="nx">ctitle2</span>: <span class="kt">ElementRef</span><span class="p">;</span>
+
+  <span class="c1">// 方法1</span>
+  <span class="nx">ngOnInit() {</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;ctitle1 in ngOnInit : &#39;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">getTitleValue</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">ctitle1</span><span class="p">))</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;ctitle2 in ngOnInit : &#39;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">getTitleValue</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">ctitle2</span><span class="p">))</span>
+  <span class="p">}</span>
+
+  <span class="c1">// 方法2</span>
+  <span class="nx">ngAfterContentInit() {</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;ctitle1 in ngAfterContentInit : &#39;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">getTitleValue</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">ctitle1</span><span class="p">))</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;ctitle2 in ngAfterContentInit : &#39;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">getTitleValue</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">ctitle2</span><span class="p">))</span>
+  <span class="p">}</span>
+
+  <span class="c1">// 方法3</span>
+  <span class="nx">ngAfterViewInit() {</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;ctitle1 in ngAfterViewInit : &#39;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">getTitleValue</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">ctitle1</span><span class="p">))</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;ctitle2 in ngAfterViewInit : &#39;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">getTitleValue</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">ctitle2</span><span class="p">))</span>
+  <span class="p">}</span>
+
+  <span class="c1">// 方法4</span>
+  <span class="nx">ngAfterViewChecked() {</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;ctitle1 in ngAfterViewChecked : &#39;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">getTitleValue</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">ctitle1</span><span class="p">))</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;ctitle2 in ngAfterViewChecked : &#39;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">getTitleValue</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">ctitle2</span><span class="p">))</span>
+  <span class="p">}</span>
+
+  <span class="c1">// 如果传入的元素为不为空，则输出该元素的文本内容</span>
+  <span class="nx">getTitleValue</span><span class="p">(</span><span class="nx">v</span>: <span class="kt">ElementRef</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">v</span> <span class="o">?</span> <span class="nx">v.nativeElement.innerHTML</span> : <span class="kt">v</span>
+  <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="5">
+<li><p>观察应用程序页面，进入开发者模式，控制台显示打印日志信息。如图7-1所示。</p></li>
+</ol>
+<a class="reference internal image-reference" href="../_images/Figure7-1.png"><img alt="../_images/Figure7-1.png" src="../_images/Figure7-1.png" style="width: 700px;" /></a>
+<p>图7-1 演示使用&#64;ViewChild()属性装饰器</p>
+<p>在上面的示例template-ex100中，完成了以下内容：</p>
+<ol class="arabic simple">
+<li><p>模板中定义了2个模板变量title1和title2，同时在类中也定义了2个类属性变量ctitle1和ctitle2，分别用&#64;ViewChild()属性装饰器引用模板变量，注意分别使用了不同的static值；</p></li>
+<li><p>模板中&lt;p&gt;标签的内容分别由静态字符串和动态插值表达式组成，Hello和Hi是静态字符串，而插值表达式{{name}}是动态的，它的值来自组件类中；</p></li>
+<li><p>组件类一共实现了4个生命周期接口，分别在每个周期接口的回调方法中尝试获取类变量引用的信息，并且在控制台中分别打印；</p></li>
+<li><p>4个生命周期接口的回调方法发生的顺序分别是：ngOnInit()方法1，ngAfterContentInit()方法2，ngAfterViewInit()()方法3，ngAfterViewChecked方法4。</p></li>
+<li><p>无论static值为true和false，在组件的生命周期AfterViewInit发生时和之后，&#64;ViewChild()属性装饰器都能获取到HTML元素中的内容，因此在方法3和方法4中能打印HTML元素中的内容；</p></li>
+<li><p>当static值为true时，&#64;ViewChild()属性装饰器可以获取HTML元素中的静态内容，因此在方法1和方法2中获取ctitle2的值为Hello；</p></li>
+<li><p>当static值为false时，在组件的生命周期AfterViewInit发生前，&#64;ViewChild()属性装饰器获取不到任何内容，因此在方法1和方法2中打印出ctitle1的值为undefined。</p></li>
+</ol>
+</div>
+<div class="section" id="viewchildren">
+<h3><span class="sectnum">7.3.4</span> 使用&#64;ViewChildren()装饰器<a class="headerlink" href="#viewchildren" title="Permalink to this headline">¶</a></h3>
+<p>&#64;ViewChildren()也是Angular提供的属性装饰器，与&#64;ViewChild()装饰器一样，用来从模板视图中获取匹配的元素，不同的是返回获取匹配的所有元素。</p>
+<p>下面示例演示使用&#64;ViewChildren()属性装饰器获取模板中的多个元素。</p>
+</div>
+<div class="section" id="template-ex200-viewchildren">
+<h3><span class="sectnum">7.3.5</span> [示例 template-ex200] 使用&#64;ViewChildren()引用多个模板元素<a class="headerlink" href="#template-ex200-viewchildren" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>在[示例 template-ex100]的基础上，编辑组件。编辑文件src/app/app.component.ts，增加&#64;ViewChildren()声明的属性变量：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kd">@ViewChildren</span><span class="p">(</span><span class="s1">&#39;title1, title2&#39;</span><span class="p">)</span>
+<span class="nx">ctitles</span>: <span class="kt">ElementRef</span><span class="p">[];</span>
+</pre></div>
+</div>
+<p>同时别忘了在文件的import语句中添加导入ViewChildren对象，然后在方法4中，增加一行代码：</p>
+<div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;ctitles in ngAfterViewInit : &#39;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">ctitles</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>观察应用程序页面，进入开发者模式，控制台显示打印日志信息。如下所示：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>ctitles in ngAfterViewInit : 2
+</pre></div>
+</div>
+</div></blockquote>
+<p>在上面的示例template-ex200中，完成了以下内容：</p>
+<ol class="arabic simple">
+<li><p>在组件类中定义了&#64;ViewChildren()属性装饰器声明的属性变量ctitles，它的类型是ElementRef对象数组；</p></li>
+<li><p>&#64;ViewChildren()属性装饰器和&#64;ViewChild()属性装饰器一样，都是在组件的生命周期AfterViewInit发生时和之后，获取HTML元素中的内容，不同的是&#64;ViewChildren()属性装饰器接收的可以是多个模板元素引用，以逗号分割；</p></li>
+<li><p>在方法4中打印出&#64;ViewChildren()属性装饰器选择的模板元素的个数。</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="id11">
+<h2><span class="sectnum">7.4</span> Angular数据绑定知识总结<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h2>
+<p>数据绑定借助模板表达式和语句，使Angular能动态的改变DOM属性的值，并能监听用户触发的事件，完成对应的业务逻辑。数据绑定按照数据流向分类有3种：源到视图（source-to-view），视图到源（view-to-source）以及源和视图的双向流动，在Angular中组件类提供源（数据源）。</p>
+<div class="section" id="id12">
+<h3><span class="sectnum">7.4.1</span> 单向属性绑定总结<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<p>Angular中的属性绑定就是源到视图（source-to-view）的单向数据绑定。从表7-1中可以看出，一共有5个直接关于属性绑定的场景，分别是[property]=“”、[attr.attribute]=“”、[class.css-name]=“”、[class.css-names]=“”和[style.css-property]=“”。</p>
+<p>其实，插值表达式{{表达式}}也被归类为源到视图的单向数据绑定。
+使用插值时，Angular会计算表达式并将插值结果绑定到元素属性。换句话说，Angular将插值转换为属性绑定。</p>
+<p>请看下面的数据绑定代码，所有这3个示例都绑定到textContent属性并产生相同的结果。</p>
+<blockquote>
+<div><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>1、&lt;div&gt;{{fisrtName}}&lt;/div&gt;
+2、&lt;div [textContent]=&quot;{{fisrtName}}&quot;&gt;&lt;/div&gt;
+3、&lt;div textContent=&quot;{{fisrtName}}&quot;&gt;&lt;/div&gt;
+</pre></div>
+</div>
+</div></blockquote>
+<p>属性绑定过程中，我们应该返回绑定属性（目标DOM属性）期望的类型。如下代码所示：</p>
+<blockquote>
+<div><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&lt;!-- TypeScript / 自定义的组件，分别期望3种不同类型的输入参数 --&gt;
+class CustomerComponent {
+@Input() name: string = &quot;Default Value&quot;;
+@Input() age: number = 14;
+@Input() account: Account;
+}
+
+&lt;!-- HTML / 分别传入3种不同类型的参数 --&gt;
+&lt;customer-component [name]=&quot;stringValue&quot;
+                    [age]=&quot;numberValue&quot;
+                    [account]=&quot;accountObject&quot;&gt;&lt;/customer-component&gt;
+</pre></div>
+</div>
+</div></blockquote>
+<p>总而言之，属性绑定后，每当源属性被更新时，对应的绑定视图将同步反映这些更新。</p>
+</div>
+<div class="section" id="id13">
+<h3><span class="sectnum">7.4.2</span> 单向事件绑定总结<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<p>Angular中的事件绑定就是视图到源（view-to-source）的单向数据绑定。事件绑定将事件连接到语句，当用户在元素（视图目标）上触发操作时，它会在我们的组件类（数据源）中调用一个方法。</p>
+<p>Angular提供了一个模板变量$event，引用的是DOM事件对象。在事件绑定中，可通过模板语句传递$event变量给类方法。$event变量包含有关事件的所有信息，也包括任何潜在的更新值。事件对象的类型取决于目标事件。如果目标事件是原生DOM元素事件，$event就是DOM事件对象，它有像target和target.value这样的属性。</p>
+<p>关于$event变量的应用，下面列出常见的3种用法：</p>
+<blockquote>
+<div><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&lt;!-- 访问模板变量 $event， $event.target.value返回当前控件（input）value属性的值--&gt;
+1、&lt;input (change)=&quot;updateName($event.target.value)&quot;&gt;
+
+&lt;!-- 与上面的结果一致。先声明一个模板变量#name，然后引用它的value属性的值 --&gt;
+2、&lt;input #name (change)=&quot;updateName(name.value)&quot;&gt;
+
+&lt;!-- 调用多个方法示例 --&gt;
+3、&lt;input (keyUp)=&quot;updateName($event.target.value); validate()&quot;&gt;
+</pre></div>
+</div>
+</div></blockquote>
+<p>上述代码完成了以下内容：</p>
+<ol class="arabic simple">
+<li><p>示例1中通过解析模板变量$event的target.value属性值，并将其传值给类updateName()方法;</p></li>
+<li><p>示例2中定义了模板变量，其指向当前input元素，然后通过引用模板变量的value值，并将其值传递给类updateName()方法，其效果与示例1相同，Angular推荐示例2的写法。</p></li>
+<li><p>示例3演示了模板语句调用多个方法，方法间以分号(;)分隔。</p></li>
+</ol>
+</div>
+<div class="section" id="id14">
+<h3><span class="sectnum">7.4.3</span> 双向数据绑定总结<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
+<p>双向数据绑定可以形象的表达为“视图到源到视图（View-to-Source-to-View）”，本质上是将属性绑定和事件绑定绑在一起的简写语法。
+因此可以将双向绑定看成属性绑定和事件绑定的结合体。下面通过一段代码将上面学习的属性绑定和事件绑定的知识组合在一起，演示双向数据绑定。</p>
+<blockquote>
+<div><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&lt;input [value]=&quot;username&quot; (input)=&quot;username = $event.target.value&quot;&gt;
+&lt;p&gt;Hi {{username}}!&lt;/p&gt;
+</pre></div>
+</div>
+</div></blockquote>
+<p>上述代码具体做了下面几件事情：</p>
+<ol class="arabic simple">
+<li><p>[value]=”username”表示通过属性绑定username的值到value属性上；</p></li>
+<li><p>(input)表示事件绑定，监听input事件；</p></li>
+<li><p>$event是Angular提供的模板变量，引用DOM事件对象，通过$event.target.value可以获取当前input控件的value值，“username = $event.target.value”是一个表达式，负责将用户输入的值赋值给username变量；</p></li>
+<li><p>代码中通过将属性绑定和事件绑定组合在一起，使模板和组件类共享username变量，用户输入值时，模板中通过插值{{username}}会实时看到结果。</p></li>
+</ol>
+<p>其实，在Angular中，双向数据绑定模式在组件中是这样定义的：定义一个名为x的&#64;Input输入变量，然后匹配一个名为xChange的&#64;Output输出变量，如：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kd">@Input</span><span class="p">()</span> <span class="nx">x</span>: <span class="kt">any</span><span class="p">;</span>
+<span class="kd">@Output</span><span class="p">()</span> <span class="nx">xChange</span>: <span class="kt">any</span><span class="p">;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>也可以这么理解，该元素具有名为 x 的可设置属性和名为 xChange 的相应事件。</p>
+<p>注意，它们的变量名称：x和xChange，其中的x仅是一个标识，可以替换为任何有效的变量名。</p>
+<p>下面通过示例演示双向数据绑定的应用。</p>
+</div>
+<div class="section" id="template-ex300">
+<h3><span class="sectnum">7.4.4</span> [示例 template-ex300] 演示双向数据绑定<a class="headerlink" href="#template-ex300" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>用Angular CLI构建应用程序，具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng new template-ex300 --minimal --interactive<span class="o">=</span><span class="nb">false</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>启动服务，具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng serve
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><p>查看应用程序结果。打开Web浏览器并浏览到 “<a class="reference external" href="http://localhost:4200">http://localhost:4200</a>”，应该看到文本 “Welcome to template-ex300!”。</p></li>
+<li><p>新增子组件。具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng g c two-way-binding --skipTests<span class="o">=</span><span class="nb">true</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="5">
+<li><p>编辑子组件。编辑文件src/app/two-way-binding/two-way-binding.component.ts，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">OnInit</span><span class="p">,</span> <span class="nx">Input</span><span class="p">,</span> <span class="nx">Output</span><span class="p">,</span> <span class="nx">EventEmitter</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+
+<span class="kd">@Component</span><span class="p">({</span>
+    <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-two-way-binding&#39;</span><span class="p">,</span>
+    <span class="nx">templateUrl</span><span class="o">:</span> <span class="s1">&#39;./two-way-binding.component.html&#39;</span><span class="p">,</span>
+    <span class="nx">styleUrls</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;./two-way-binding.component.css&#39;</span><span class="p">]</span>
+    <span class="p">})</span>
+    <span class="kr">export</span> <span class="kr">class</span> <span class="nx">TwoWayBindingComponent</span> <span class="p">{</span>
+
+    <span class="kd">@Input</span><span class="p">()</span>  <span class="nx">size</span>: <span class="kt">number</span><span class="p">;</span>
+    <span class="kd">@Output</span><span class="p">()</span> <span class="nx">sizeChange</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">EventEmitter</span><span class="o">&lt;</span><span class="kt">number</span><span class="o">&gt;</span><span class="p">();</span>
+
+    <span class="nx">dec() {</span> <span class="k">this</span><span class="p">.</span><span class="nx">resize</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span> <span class="p">}</span> <span class="c1">// 减1操作</span>
+    <span class="nx">inc() {</span> <span class="k">this</span><span class="p">.</span><span class="nx">resize</span><span class="p">(</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span> <span class="p">}</span> <span class="c1">// 加1操作</span>
+
+    <span class="nx">resize</span><span class="p">(</span><span class="nx">delta</span>: <span class="kt">number</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// resize方法通过sizeChange发射size值</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">size</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">size</span> <span class="o">+</span> <span class="nx">delta</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">sizeChange</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">size</span><span class="p">);</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="6">
+<li><p>编辑子组件的模板。编辑文件src/app/two-way-binding/two-way-binding.component.html，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&lt;div&gt;
+    &lt;button (click)=&quot;dec()&quot;&gt;-&lt;/button&gt;
+    &lt;button (click)=&quot;inc()&quot;&gt;+&lt;/button&gt;
+    &lt;br/&gt;
+    &lt;label [style.font-size.px]=&quot;size&quot;&gt;字体大小: {{size}}px&lt;/label&gt;
+&lt;/div&gt;
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="7">
+<li><p>编辑根组件。编辑文件src/app/app.component.ts，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Component</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+
+<span class="kd">@Component</span><span class="p">({</span>
+<span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-root&#39;</span><span class="p">,</span>
+<span class="nx">template</span><span class="o">:</span> <span class="sb">`</span>
+<span class="sb">    1. &lt;app-two-way-binding [(size)]=&quot;fontSizePx&quot;&gt;&lt;/app-two-way-binding&gt;</span>
+<span class="sb">    2. &lt;div [style.font-size.px]=&quot;fontSizePx&quot;&gt;两种方式实现双向数据绑定&lt;/div&gt;</span>
+<span class="sb">    3. &lt;app-two-way-binding [size]=&quot;fontSizePx&quot; (sizeChange)=&quot;fontSizePx = $event&quot;&gt;&lt;/app-two-way-binding&gt;</span>
+<span class="sb">`</span><span class="p">,</span>
+<span class="nx">styles</span><span class="o">:</span> <span class="p">[]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">AppComponent</span> <span class="p">{</span>
+    <span class="nx">fontSizePx</span> <span class="o">=</span> <span class="mi">15</span> <span class="c1">// 初始化默认字体大小</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="8">
+<li><p>观察应用程序页面，用户可以通过点击+或-按钮查看字体大小。如图7-2所示。</p></li>
+</ol>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/Figure7-2.png"><img alt="../_images/Figure7-2.png" src="../_images/Figure7-2.png" style="width: 300px;" /></a>
+<p>图7-2 通过点击+或-按钮查看字体大小</p>
+</div></blockquote>
+<p>通过示例template-ex300的演示，可以看出：</p>
+<ol class="arabic simple">
+<li><p>子组件（app-two-way-binding）的双向数据绑定遵循了命名规则：定义了名为 size 的可设置属性和名为 sizeChange 的相应事件；</p></li>
+<li><p>根组件模板中单击按钮后，将会传递size值到子组件，然后带上调整后的大小发出 sizeChange 事件。</p></li>
+<li><p>根组件模板中以2种方式实现双向数据绑定，其结果是一样的；</p></li>
+</ol>
+<p>然而在现实应用中，没有哪个原生 HTML 元素会遵循 x 值和 xChange 事件的命名模式。Angular提供了NgModel内置指令实现将数据双向绑定添加到HTML表单元素。关于NgModel内置指令的使用我们已经在上一章的“双向数据绑定示例[示例 components-ex700]”中进行了讲解，在此不在赘述。</p>
+<p>综上所述，实现双向数据绑定，我们已经展示了两大类3种实现方式：</p>
+<ol class="arabic">
+<li><dl>
+<dt>属性绑定和事件绑定结合方式；</dt><dd><p>a、原生方式：&lt;input [value]=”username” (input)=”username = $event.target.value”&gt;</p>
+<p>b、输入输出模式： x 值和 xChange 事件的命名模式</p>
+</dd>
+</dl>
+</li>
+<li><p>针对HTML表单元素的[{NgModel}]方式。</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="id15">
+<h2><span class="sectnum">7.5</span> 小结<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h2>
+<p>本章首先介绍了Angular模板语言，模板表达式和语句，接着介绍了模板引用，最后对Angular的数据绑定进行了总结。</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="angdirective.html" class="btn btn-neutral float-right" title="8 掌握Angular指令应用" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="angcomponent.html" class="btn btn-neutral float-left" title="6 学习Angular组件知识" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright CVI Talent
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

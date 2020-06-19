@@ -1,0 +1,882 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>20 在Angular项目中使用图表</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="21 使用IBM Cloud™ App ID对Angular应用进行认证" href="appid.html" />
+    <link rel="prev" title="19 集成Bootstrap前端组件库" href="bootstrap.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/main-page-logo-small-hat.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">目录：</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="start.html">Angular 9</a></li>
+<li class="toctree-l1"><a class="reference internal" href="first.html">第一课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="whatisangular.html"><span class="sectnum">1</span> Angular概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="howtolearn.html"><span class="sectnum">2</span> 学习Angular需要什么基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nodejs.html"><span class="sectnum">3</span> 掌握Node.js和npm基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="second.html">第二课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="typescript.html"><span class="sectnum">4</span> 学习TypeScript知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="firstangular.html"><span class="sectnum">5</span> 快速开启第一个Angular</a></li>
+<li class="toctree-l1"><a class="reference internal" href="third.html">第三课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angcomponent.html"><span class="sectnum">6</span> 学习Angular组件知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angtemplate.html"><span class="sectnum">7</span> 学习Angular模板知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angdirective.html"><span class="sectnum">8</span> 掌握Angular指令应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fourth.html">第四课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angmodule.html"><span class="sectnum">9</span> 学习Angular模块知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angroute.html"><span class="sectnum">10</span> 熟悉Angular路由功能</a></li>
+<li class="toctree-l1"><a class="reference internal" href="injection.html"><span class="sectnum">11</span> 学习Angular的服务及依赖注入</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fifth.html">第五课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reactive.html"><span class="sectnum">12</span> 掌握响应式编程基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form.html"><span class="sectnum">13</span> 学习Angular表单知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="httpclient.html"><span class="sectnum">14</span> 熟悉HttpClient模块</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sixth.html">第六课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pipe.html"><span class="sectnum">15</span> 深入学习Angular管道知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ui.html"><span class="sectnum">16</span> Angular与Angular Material组件库</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rxjs.html"><span class="sectnum">17</span> 学习RxJS在Angular中的实际应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="seventh.html">第七课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="material.html"><span class="sectnum">18</span> 实战基于Angular Material实现表格组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bootstrap.html"><span class="sectnum">19</span> 集成Bootstrap前端组件库</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#"><span class="sectnum">20</span> 在Angular项目中使用图表</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#echarts"><span class="sectnum">20.1</span> 为什么选择Echarts图表库</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ngx-echarts"><span class="sectnum">20.2</span> 安装及使用ngx-echarts图表库</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#echarts-ex100-ngx-echarts"><span class="sectnum">20.3</span> [示例 echarts-ex100] 使用ngx-echarts生成折线图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#echarts-ex200-ngx-echarts"><span class="sectnum">20.4</span> [示例 echarts-ex200] 使用ngx-echarts生成饼图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#echarts-ex300-ngx-echarts"><span class="sectnum">20.5</span> [示例 echarts-ex300] 使用ngx-echarts生成柱状图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1"><span class="sectnum">20.6</span> 小结</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="appid.html"><span class="sectnum">21</span> 使用IBM Cloud™ App ID对Angular应用进行认证</a></li>
+<li class="toctree-l1"><a class="reference internal" href="communication.html"><span class="sectnum">22</span> 掌握在Angular组件间通信</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pwa.html"><span class="sectnum">23</span> Angular与渐进式WEB应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="message.html"><span class="sectnum">24</span> 实现简单的消息通知机制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="localdata.html"><span class="sectnum">25</span> 如何与本地数据打交道</a></li>
+<li class="toctree-l1"><a class="reference internal" href="test.html"><span class="sectnum">26</span> 熟悉Angular测试</a></li>
+<li class="toctree-l1"><a class="reference internal" href="package.html"><span class="sectnum">27</span> 熟悉Angular环境配置及打包</a></li>
+<li class="toctree-l1"><a class="reference internal" href="universal.html"><span class="sectnum">28</span> 学习Angular服务端渲染</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deploy.html"><span class="sectnum">29</span> 如何部署Angular应用程序</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user.html"><span class="sectnum">30</span> 实战用户管理系统</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">CVI Talent</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">首页</a> &raquo;</li>
+        
+      <li><span class="sectnum">20</span> 在Angular项目中使用图表</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        <a href="https://pages.github.ibm.com/lanzejun/talent/index.html" class="fa fa-github"> CVITube</a>
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="angular">
+<h1><span class="sectnum">20</span> 在Angular项目中使用图表<a class="headerlink" href="#angular" title="Permalink to this headline">¶</a></h1>
+<p>现在越来越多的需求要求数据可视化，即将页面上的数据信息转化为图形界面，并提供可交互式的访问。在页面上添加图表来表示数据，可以增强用户的体验，提升页面上的整体醒目价值。使用Echarts图表库，我们可以在网页应用中创建出交互性强、响应性强、外观精美的，且具有丰富动画的图表。</p>
+<div class="section" id="echarts">
+<h2><span class="sectnum">20.1</span> 为什么选择Echarts图表库<a class="headerlink" href="#echarts" title="Permalink to this headline">¶</a></h2>
+<p>Echarts是一个由社区提供的开源图表库，有许多贡献者参与开发和维护，并由Apache开源基金会支持。这些图表可以在很大程度上进行配置，而且，它可以很容易地将不同类型的图表合并到一个单一的呈现形式。使用Echart库可以构建各种各样的图表，包括线状图、条形图、饼状图、散点图、基于地理/地图的图表、雷达图、热力图、仪表图、三维图、树状图等等，读者可以前往其官方网站上查阅详细的信息，其官方网站如图20-1所示。</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/Figure20-1.png"><img alt="../_images/Figure20-1.png" src="../_images/Figure20-1.png" style="width: 800px;" /></a>
+<p>图20-1 Echarts图表库的官方网站</p>
+</div></blockquote>
+<p>Echarts是基于Javascript的图表库，它为Web应用程序提供了多种高度可定制的图表选项。其对应的Angular项目为ngx-echarts。ngx-echarts包模块是专门为Angular项目定制的，它可以用来在使用Angular框架的react应用程序中构建基于echarts库的图表。</p>
+<p>目前市面上有很多图表库，比较著名的有ngx-charts、ngx-echarts、ng2-charts，angular-plotly.js和PrimeNG Charts图表库，本书选取ngx-echarts作为讲解的图表库，主要原因是它的图表种类比较丰富，其次，它是开源的。</p>
+</div>
+<div class="section" id="ngx-echarts">
+<h2><span class="sectnum">20.2</span> 安装及使用ngx-echarts图表库<a class="headerlink" href="#ngx-echarts" title="Permalink to this headline">¶</a></h2>
+<p>ngx-echarts基于Echarts图表库，因此首先需要安装Echarts，然后再安装ngx-echarts，具体命令如下：</p>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>npm install echarts -S
+npm install ngx-echarts -S
+npm install @types/echarts -S <span class="c1"># 可选的，方便开发时，在编辑器中提供代码提示功能，查询源码</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>使用ngx-echarts图表库前，首先需要在根模块中导入NgxEchartsModule模块，示例代码如下：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">NgxEchartsModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;ngx-echarts&#39;</span><span class="p">;</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * 下面将导入echarts中所有的模块，也可以单独导入具体的模块</span>
+<span class="cm"> *</span>
+<span class="cm"> */</span>
+<span class="kr">import</span> <span class="o">*</span> <span class="kr">as</span> <span class="nx">echarts</span> <span class="nx">from</span> <span class="s1">&#39;echarts&#39;</span><span class="p">;</span>
+
+<span class="kd">@NgModule</span><span class="p">({</span>
+<span class="nx">imports</span><span class="o">:</span> <span class="p">[</span>
+   <span class="nx">NgxEchartsModule</span><span class="p">.</span><span class="nx">forRoot</span><span class="p">({</span>
+      <span class="nx">echarts</span><span class="p">,</span>
+   <span class="p">}),</span>
+   <span class="p">],</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">AppModule</span> <span class="p">{}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>然后在组件模板中使用echarts指令生成图表，比如模板示例代码：</p>
+<blockquote>
+<div><div class="highlight-scss notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="nt">div</span> <span class="nt">echarts</span> <span class="o">[</span><span class="nt">options</span><span class="o">]=</span><span class="s2">&quot;chartOption&quot;</span> <span class="nt">class</span><span class="o">=</span><span class="s2">&quot;demo-chart&quot;</span><span class="o">&gt;&lt;/</span><span class="nt">div</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>最后在组件类中组装好对应的数据，如下示例代码片段：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">EChartOption</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;echarts&#39;</span><span class="p">;</span>
+
+<span class="nx">chartOption</span>: <span class="kt">EChartOption</span> <span class="o">=</span> <span class="p">{</span>
+<span class="nx">xAxis</span><span class="o">:</span> <span class="p">{</span>
+   <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;category&#39;</span><span class="p">,</span>
+   <span class="nx">data</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;Mon&#39;</span><span class="p">,</span> <span class="s1">&#39;Tue&#39;</span><span class="p">,</span> <span class="s1">&#39;Wed&#39;</span><span class="p">,</span> <span class="s1">&#39;Thu&#39;</span><span class="p">,</span> <span class="s1">&#39;Fri&#39;</span><span class="p">,</span> <span class="s1">&#39;Sat&#39;</span><span class="p">,</span> <span class="s1">&#39;Sun&#39;</span><span class="p">],</span>
+<span class="p">},</span>
+<span class="nx">yAxis</span><span class="o">:</span> <span class="p">{</span>
+   <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;value&#39;</span><span class="p">,</span>
+<span class="p">},</span>
+<span class="nx">series</span><span class="o">:</span> <span class="p">[</span>
+   <span class="p">{</span>
+      <span class="nx">data</span><span class="o">:</span> <span class="p">[</span><span class="mi">820</span><span class="p">,</span> <span class="mi">932</span><span class="p">,</span> <span class="mi">901</span><span class="p">,</span> <span class="mi">934</span><span class="p">,</span> <span class="mi">1290</span><span class="p">,</span> <span class="mi">1330</span><span class="p">,</span> <span class="mi">1320</span><span class="p">],</span>
+      <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;line&#39;</span><span class="p">,</span>
+   <span class="p">},</span>
+<span class="p">],</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>上述代码中，EChartOption对象中有个3个属性：xAxis、yAxis和series，它们的说明如下：</p>
+<ul>
+<li><p>xAxis表示直角坐标系 X 轴，它的子属性type表示坐标轴类型，该属性是可选的，如果没有设置 type，但是设置了 data，则默认为 type 是 “category”。type的值可以有下面4种：</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>值为”value”，表示是数值轴，适用于连续数据；</p></li>
+<li><p>值为”category”，表示是类目轴，适用于离散的类目数据。类目数据可自动从 series.data 或 dataset.source 中取，或者可通过 xAxis.data 设置类目数据；</p></li>
+<li><p>值为”time”，表示是时间轴，适用于连续的时序数据，与数值轴相比时间轴带有时间的格式化，在刻度计算上也有所不同，例如会根据跨度的范围来决定使用月，星期，日还是小时范围的刻度；</p></li>
+<li><p>值为”log”，表示是对数轴。适用于对数数据。</p></li>
+</ol>
+</div></blockquote>
+</li>
+<li><p>xAxis的子属性data表示显示在 X 轴上的数据。如果设置了 type 是 “category”，但没有设置 data，则 xAxis.data 的内容会自动从 series.data 中获取，这在实际应用中比较常见；关于xAxis的子属性除了上面介绍的这2个外还有其他的子属性，读者可以前往官方网站上查阅；</p></li>
+<li><p>yAxis表示直角坐标系 Y 轴，它的子属性type同xAxis的子属性type取值是一致的；</p></li>
+<li><p>series（系列）是指一组系列数值，每个系列通过 type 决定它的图表类型，通过data指定具体的数据。</p></li>
+</ul>
+<p>接下来，我们用示例来对几种常用类型的图表进行详细讲解。</p>
+</div>
+<div class="section" id="echarts-ex100-ngx-echarts">
+<h2><span class="sectnum">20.3</span> [示例 echarts-ex100] 使用ngx-echarts生成折线图<a class="headerlink" href="#echarts-ex100-ngx-echarts" title="Permalink to this headline">¶</a></h2>
+<p>折线图是最常见的一种表达数据和时间序列之间的关系，关心数据如何随着时间变化而变化，每周、月、年的变化趋势是增长、减少、上下波动或基本不变，这时候使用折线图更好地表现指标随时间呈现的趋势。</p>
+<ol class="arabic simple">
+<li><p>用Angular CLI构建应用程序，具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng n echarts-ex100 -S --defaults<span class="o">=</span><span class="nb">true</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>启动服务，具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng serve
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><p>查看应用程序结果。打开Web浏览器并浏览到 “<a class="reference external" href="http://localhost:4200">http://localhost:4200</a>”，应该看到文本 “Welcome to echarts-ex100!”。</p></li>
+<li><p>安装ngx-echarts图表库，具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>npm install echarts -S
+npm install ngx-echarts -S
+npm install @types/echarts -S
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="5">
+<li><p>导入NgxEchartsModule模块。编辑根模块类文件src/app/app.module.ts，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">BrowserModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/platform-browser&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">NgModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">AppComponent</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./app.component&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="o">*</span> <span class="kr">as</span> <span class="nx">echarts</span> <span class="nx">from</span> <span class="s1">&#39;echarts&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">NgxEchartsModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;ngx-echarts&#39;</span><span class="p">;</span>
+
+<span class="kd">@NgModule</span><span class="p">({</span>
+  <span class="nx">declarations</span><span class="o">:</span> <span class="p">[</span>
+    <span class="nx">AppComponent</span>
+  <span class="p">],</span>
+  <span class="nx">imports</span><span class="o">:</span> <span class="p">[</span>
+    <span class="nx">BrowserModule</span><span class="p">,</span>
+    <span class="nx">NgxEchartsModule</span><span class="p">.</span><span class="nx">forRoot</span><span class="p">({</span>
+      <span class="nx">echarts</span>
+    <span class="p">})</span>
+  <span class="p">],</span>
+  <span class="nx">providers</span><span class="o">:</span> <span class="p">[],</span>
+  <span class="nx">bootstrap</span><span class="o">:</span> <span class="p">[</span><span class="nx">AppComponent</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">AppModule</span> <span class="p">{</span> <span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="6">
+<li><p>编辑组件。编辑文件src/app/app.component.ts，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">OnInit</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">EChartOption</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;echarts&#39;</span><span class="p">;</span>
+
+<span class="kd">@Component</span><span class="p">({</span>
+  <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-root&#39;</span><span class="p">,</span>
+  <span class="nx">templateUrl</span><span class="o">:</span> <span class="s1">&#39;./app.component.html&#39;</span><span class="p">,</span>
+  <span class="nx">styleUrls</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;./app.component.css&#39;</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">AppComponent</span> <span class="kr">implements</span> <span class="nx">OnInit</span> <span class="p">{</span>
+  <span class="nx">title</span> <span class="o">=</span> <span class="s1">&#39;echarts-ex100&#39;</span><span class="p">;</span>
+  <span class="nx">chartOption</span>: <span class="kt">EChartOption</span><span class="p">;</span>
+  <span class="nx">ngOnInit</span><span class="p">()</span><span class="o">:</span> <span class="k">void</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">chartOption</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="nx">xAxis</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;category&#39;</span><span class="p">,</span>
+        <span class="nx">data</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;Mon&#39;</span><span class="p">,</span> <span class="s1">&#39;Tue&#39;</span><span class="p">,</span> <span class="s1">&#39;Wed&#39;</span><span class="p">,</span> <span class="s1">&#39;Thu&#39;</span><span class="p">,</span> <span class="s1">&#39;Fri&#39;</span><span class="p">,</span> <span class="s1">&#39;Sat&#39;</span><span class="p">,</span> <span class="s1">&#39;Sun&#39;</span><span class="p">],</span>
+      <span class="p">},</span>
+      <span class="nx">yAxis</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;value&#39;</span><span class="p">,</span>
+      <span class="p">},</span>
+      <span class="nx">series</span><span class="o">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+          <span class="nx">data</span><span class="o">:</span> <span class="p">[</span><span class="mi">820</span><span class="p">,</span> <span class="mi">932</span><span class="p">,</span> <span class="mi">901</span><span class="p">,</span> <span class="mi">934</span><span class="p">,</span> <span class="mi">1290</span><span class="p">,</span> <span class="mi">1330</span><span class="p">,</span> <span class="mi">1320</span><span class="p">],</span>
+          <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;line&#39;</span><span class="p">,</span>
+        <span class="p">},</span>
+      <span class="p">],</span>
+    <span class="p">};</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="7">
+<li><p>编辑组件模板。编辑文件src/app/app.component.html，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-scss notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="nt">div</span> <span class="nt">echarts</span> <span class="o">[</span><span class="nt">options</span><span class="o">]=</span><span class="s2">&quot;chartOption&quot;</span> <span class="nt">class</span><span class="o">=</span><span class="s2">&quot;demo-chart&quot;</span><span class="o">&gt;&lt;/</span><span class="nt">div</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="8">
+<li><p>观察应用程序页面，页面显示效果如图20-2所示：</p></li>
+</ol>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/Figure20-2.png"><img alt="../_images/Figure20-2.png" src="../_images/Figure20-2.png" style="width: 500px;" /></a>
+<p>图20-2 使用ngx-echarts生成折线图</p>
+</div></blockquote>
+<ol class="arabic simple" start="9">
+<li><p>添加数字显示。编辑文件src/app/app.component.ts，修改series属性部分，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="nx">series</span><span class="o">:</span> <span class="p">[</span>
+  <span class="p">{</span>
+    <span class="nx">data</span><span class="o">:</span> <span class="p">[</span><span class="mi">820</span><span class="p">,</span> <span class="mi">932</span><span class="p">,</span> <span class="mi">901</span><span class="p">,</span> <span class="mi">934</span><span class="p">,</span> <span class="mi">1290</span><span class="p">,</span> <span class="mi">1330</span><span class="p">,</span> <span class="mi">1320</span><span class="p">],</span>
+    <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;line&#39;</span><span class="p">,</span>
+    <span class="nx">itemStyle</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">normal</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">label</span><span class="o">:</span> <span class="p">{</span>
+          <span class="nx">show</span>: <span class="kt">true</span><span class="p">,</span> <span class="nx">position</span><span class="o">:</span> <span class="s1">&#39;top&#39;</span><span class="p">,</span> <span class="nx">color</span><span class="o">:</span> <span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="c1">// 在上方显示蓝色的数字</span>
+        <span class="p">}</span>
+      <span class="p">}</span>
+    <span class="p">},</span>
+  <span class="p">},</span>
+<span class="p">],</span>
+</pre></div>
+</div>
+<p>观察应用程序页面，折线的上方显示出所有的数字，且数字的颜色为蓝色。</p>
+</div></blockquote>
+<ol class="arabic simple" start="11">
+<li><p>自定义显示效果，过滤部分数字显示。编辑文件src/app/app.component.ts，修改series属性部分，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>  series: [
+    {
+      data: [820, 932, 901, 934, 1290, 1330, 1320],
+      type: &#39;line&#39;,
+      itemStyle: {
+        normal: {
+          label: {
+            show: true, position: &#39;top&#39;, color: &#39;blue&#39;, // 在上方显示蓝色的数字
+            formatter: function (params, ticket, callback) { // 自定义函数，过滤及显示部分数字
+              let n = params.value;
+              if (n &lt; 1200 &amp;&amp; n &gt; 900) { // 仅显示区间位于（900，1200）之间的数值
+                return n;
+              } else {
+                return &#39;&#39;;
+              }
+            }
+          }
+        }
+      },
+    },
+  ],
+
+观察应用程序页面，折线的上方仅显示出区间内的数字。
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="12">
+<li><p>添加多组数字。编辑文件src/app/app.component.ts，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">OnInit</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">EChartOption</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;echarts&#39;</span><span class="p">;</span>
+
+<span class="kd">@Component</span><span class="p">({</span>
+  <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-root&#39;</span><span class="p">,</span>
+  <span class="nx">templateUrl</span><span class="o">:</span> <span class="s1">&#39;./app.component.html&#39;</span><span class="p">,</span>
+  <span class="nx">styleUrls</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;./app.component.css&#39;</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">AppComponent</span> <span class="kr">implements</span> <span class="nx">OnInit</span> <span class="p">{</span>
+  <span class="nx">title</span> <span class="o">=</span> <span class="s1">&#39;echarts-ex100&#39;</span><span class="p">;</span>
+  <span class="nx">chartOption</span>: <span class="kt">EChartOption</span><span class="p">;</span>
+  <span class="nx">ngOnInit</span><span class="p">()</span><span class="o">:</span> <span class="k">void</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">chartOption</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="nx">xAxis</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;category&#39;</span><span class="p">,</span>
+        <span class="nx">data</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;Mon&#39;</span><span class="p">,</span> <span class="s1">&#39;Tue&#39;</span><span class="p">,</span> <span class="s1">&#39;Wed&#39;</span><span class="p">,</span> <span class="s1">&#39;Thu&#39;</span><span class="p">,</span> <span class="s1">&#39;Fri&#39;</span><span class="p">,</span> <span class="s1">&#39;Sat&#39;</span><span class="p">,</span> <span class="s1">&#39;Sun&#39;</span><span class="p">],</span>
+      <span class="p">},</span>
+      <span class="nx">yAxis</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;value&#39;</span><span class="p">,</span>
+      <span class="p">},</span>
+      <span class="nx">legend</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">data</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;line1&#39;</span><span class="p">,</span> <span class="s1">&#39;line2&#39;</span><span class="p">],</span>
+        <span class="nx">align</span><span class="o">:</span> <span class="s1">&#39;left&#39;</span><span class="p">,</span>
+      <span class="p">},</span>
+      <span class="nx">series</span><span class="o">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+          <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;line1&#39;</span><span class="p">,</span>
+          <span class="nx">data</span><span class="o">:</span> <span class="p">[</span><span class="mi">820</span><span class="p">,</span> <span class="mi">932</span><span class="p">,</span> <span class="mi">901</span><span class="p">,</span> <span class="mi">934</span><span class="p">,</span> <span class="mi">1290</span><span class="p">,</span> <span class="mi">1330</span><span class="p">,</span> <span class="mi">1320</span><span class="p">],</span>
+          <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;line&#39;</span><span class="p">,</span>
+          <span class="nx">itemStyle</span><span class="o">:</span> <span class="p">{</span>
+            <span class="nx">normal</span><span class="o">:</span> <span class="p">{</span>
+              <span class="nx">label</span><span class="o">:</span> <span class="p">{</span>
+                <span class="nx">show</span>: <span class="kt">true</span><span class="p">,</span> <span class="nx">position</span><span class="o">:</span> <span class="s1">&#39;top&#39;</span><span class="p">,</span> <span class="nx">color</span><span class="o">:</span> <span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="c1">// 在上方显示蓝色的数字</span>
+                <span class="nx">formatter</span>: <span class="kt">function</span> <span class="p">(</span><span class="nx">params</span><span class="p">,</span> <span class="nx">ticket</span><span class="p">,</span> <span class="nx">callback</span><span class="p">)</span> <span class="p">{</span>
+                  <span class="kd">let</span> <span class="nx">n</span> <span class="o">=</span> <span class="nx">params</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
+                  <span class="k">if</span> <span class="p">(</span><span class="nx">n</span> <span class="o">&lt;</span> <span class="mi">1200</span> <span class="o">&amp;&amp;</span> <span class="nx">n</span> <span class="o">&gt;</span> <span class="mi">900</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="k">return</span> <span class="nx">n</span><span class="p">;</span>
+                  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                    <span class="k">return</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
+                  <span class="p">}</span>
+                <span class="p">}</span>
+              <span class="p">}</span>
+            <span class="p">}</span>
+          <span class="p">},</span>
+        <span class="p">},</span>
+
+        <span class="p">{</span>
+          <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;line2&#39;</span><span class="p">,</span>
+          <span class="nx">data</span><span class="o">:</span> <span class="p">[</span><span class="mi">280</span><span class="p">,</span> <span class="mi">732</span><span class="p">,</span> <span class="mi">701</span><span class="p">,</span> <span class="mi">734</span><span class="p">,</span> <span class="mi">390</span><span class="p">,</span> <span class="mi">730</span><span class="p">,</span> <span class="mi">720</span><span class="p">],</span>
+          <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;line&#39;</span><span class="p">,</span>
+          <span class="nx">itemStyle</span><span class="o">:</span> <span class="p">{</span>
+            <span class="nx">normal</span><span class="o">:</span> <span class="p">{</span>
+              <span class="nx">label</span><span class="o">:</span> <span class="p">{</span>
+                <span class="nx">show</span>: <span class="kt">true</span><span class="p">,</span> <span class="nx">position</span><span class="o">:</span> <span class="s1">&#39;top&#39;</span><span class="p">,</span> <span class="nx">color</span><span class="o">:</span> <span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="c1">// 在上方显示红色的数字</span>
+              <span class="p">}</span>
+            <span class="p">}</span>
+          <span class="p">},</span>
+        <span class="p">},</span>
+      <span class="p">],</span>
+    <span class="p">};</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="13">
+<li><p>观察应用程序页面，页面最终显示效果如图20-3所示：</p></li>
+</ol>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/Figure20-3.png"><img alt="../_images/Figure20-3.png" src="../_images/Figure20-3.png" style="width: 500px;" /></a>
+<p>图20-3 使用ngx-echarts生成折线图，并自定义显示效果</p>
+</div></blockquote>
+<p>在上面的步骤中，完成了以下内容：</p>
+<ol class="arabic simple">
+<li><p>安装了ngx-echarts图表库，并项目的根模块中导入图表库的NgxEchartsModule模块；</p></li>
+<li><p>步骤6和7引用的是官方的一个示例，在组件的OnInit()方法中初始化图表；</p></li>
+<li><p>在步骤9中通过设置series中的itemStyle属性，显示折线图上的数字和颜色；</p></li>
+<li><p>在步骤11中通过formatter属性，使用函数进一步自定义折线图上的数字的显示，示例中是过滤掉区间外的数字，仅显示区间内的数字；</p></li>
+<li><p>在步骤12中添加了多组数字。这里注意的是legend属性的data数组对应着series数组项中的name属性值。</p></li>
+</ol>
+<p>此示例中演示了折线图的基本功能，在日常工作中，可能还需要些高级定制的功能，或者事件功能等，读者可以自行前往官方文档进行查阅。</p>
+</div>
+<div class="section" id="echarts-ex200-ngx-echarts">
+<h2><span class="sectnum">20.4</span> [示例 echarts-ex200] 使用ngx-echarts生成饼图<a class="headerlink" href="#echarts-ex200-ngx-echarts" title="Permalink to this headline">¶</a></h2>
+<p>要关注每个部分所占整体的百分比，如表达的信息包括：“份额”、“百分比”以及“预计将达到百分之多少”，这时候可以用到饼图；
+饼图更适合表现数据相对于总数的百分比等关系。</p>
+<ol class="arabic simple">
+<li><p>创建工程及安装安装ngx-echarts图表库，步骤请参考[示例 echarts-ex100]的1到5步骤，所不同仅是创建工程时定义名称为“echarts-ex200”；</p></li>
+<li><p>编辑组件。编辑文件src/app/app.component.ts，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">OnInit</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">EChartOption</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;echarts&#39;</span><span class="p">;</span>
+
+<span class="kd">@Component</span><span class="p">({</span>
+  <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-root&#39;</span><span class="p">,</span>
+  <span class="nx">templateUrl</span><span class="o">:</span> <span class="s1">&#39;./app.component.html&#39;</span><span class="p">,</span>
+  <span class="nx">styleUrls</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;./app.component.css&#39;</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">AppComponent</span> <span class="kr">implements</span> <span class="nx">OnInit</span> <span class="p">{</span>
+  <span class="nx">title</span> <span class="o">=</span> <span class="s1">&#39;echarts-ex200&#39;</span><span class="p">;</span>
+  <span class="nx">chartOption</span>: <span class="kt">EChartOption</span><span class="p">;</span>
+
+  <span class="nx">ngOnInit</span><span class="p">()</span><span class="o">:</span> <span class="k">void</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">chartOption</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="nx">title</span><span class="o">:</span> <span class="p">[{</span>
+        <span class="nx">text</span><span class="o">:</span> <span class="s1">&#39;主标题&#39;</span><span class="p">,</span>
+        <span class="nx">left</span><span class="o">:</span> <span class="s1">&#39;16.67%&#39;</span><span class="p">,</span> <span class="c1">// 饼图离容器左侧的距离</span>
+        <span class="nx">top</span>: <span class="kt">0</span><span class="p">,</span> <span class="c1">// 饼图离容器顶部侧的距离</span>
+        <span class="nx">textAlign</span><span class="o">:</span> <span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="c1">// 标题文字的对齐方式</span>
+        <span class="nx">textStyle</span><span class="o">:</span><span class="p">{</span>
+          <span class="nx">color</span><span class="o">:</span><span class="s1">&#39;red&#39;</span> <span class="c1">// 标题的文字的颜色</span>
+        <span class="p">}</span>
+      <span class="p">},</span> <span class="p">{</span>
+        <span class="nx">subtext</span><span class="o">:</span> <span class="s1">&#39;子标题&#39;</span><span class="p">,</span>
+        <span class="nx">left</span><span class="o">:</span> <span class="s1">&#39;16.67%&#39;</span><span class="p">,</span>
+        <span class="nx">top</span><span class="o">:</span> <span class="s1">&#39;60%&#39;</span><span class="p">,</span>
+        <span class="nx">textAlign</span><span class="o">:</span> <span class="s1">&#39;center&#39;</span>
+      <span class="p">}],</span>
+      <span class="nx">series</span><span class="o">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+          <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;pie&#39;</span><span class="p">,</span>
+          <span class="nx">radius</span><span class="o">:</span> <span class="s1">&#39;55%&#39;</span><span class="p">,</span> <span class="c1">// 饼图的半径比例。如果是数组值 [&#39;70%&#39;, &#39;85%&#39;]，表示环形</span>
+          <span class="nx">center</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;50%&#39;</span><span class="p">,</span> <span class="mi">60</span><span class="p">],</span> <span class="c1">// 饼图的中心（圆心）坐标，数组的第一项是横坐标，第二项是纵坐标</span>
+          <span class="nx">data</span><span class="o">:</span> <span class="p">[</span>
+            <span class="p">{</span> <span class="nx">value</span>: <span class="kt">335</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;苹果&#39;</span> <span class="p">},</span>
+            <span class="p">{</span> <span class="nx">value</span>: <span class="kt">310</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;梨子&#39;</span> <span class="p">},</span>
+            <span class="p">{</span> <span class="nx">value</span>: <span class="kt">274</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;葡萄&#39;</span> <span class="p">},</span>
+            <span class="p">{</span> <span class="nx">value</span>: <span class="kt">235</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;西瓜&#39;</span> <span class="p">},</span>
+            <span class="p">{</span> <span class="nx">value</span>: <span class="kt">400</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;西红柿&#39;</span> <span class="p">}</span>
+          <span class="p">].</span><span class="nx">sort</span><span class="p">((</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">x</span><span class="p">.</span><span class="nx">value</span> <span class="o">-</span> <span class="nx">y</span><span class="p">.</span><span class="nx">value</span><span class="p">),</span> <span class="c1">// 按照value的值升序排序</span>
+          <span class="nx">animation</span>: <span class="kt">true</span><span class="p">,</span> <span class="c1">// 是否开启动画</span>
+          <span class="nx">left</span>: <span class="kt">0</span><span class="p">,</span>
+          <span class="nx">right</span><span class="o">:</span> <span class="s1">&#39;67%&#39;</span><span class="p">,</span>
+          <span class="nx">top</span>: <span class="kt">80</span><span class="p">,</span>
+          <span class="nx">bottom</span>: <span class="kt">0</span><span class="p">,</span>
+        <span class="p">}</span>
+      <span class="p">]</span>
+    <span class="p">};</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><p>编辑组件模板。编辑文件src/app/app.component.html，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-scss notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="nt">div</span> <span class="nt">echarts</span> <span class="o">[</span><span class="nt">options</span><span class="o">]=</span><span class="s2">&quot;chartOption&quot;</span> <span class="nt">class</span><span class="o">=</span><span class="s2">&quot;demo-chart&quot;</span><span class="o">&gt;&lt;/</span><span class="nt">div</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="4">
+<li><p>观察应用程序页面，页面显示效果如图20-4所示：</p></li>
+</ol>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/Figure20-4.png"><img alt="../_images/Figure20-4.png" src="../_images/Figure20-4.png" style="width: 380px;" /></a>
+<p>图20-4 使用ngx-echarts生成饼图</p>
+</div></blockquote>
+<ol class="arabic simple" start="5">
+<li><p>添加百分比数字显示。编辑文件src/app/app.component.ts，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">OnInit</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">EChartOption</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;echarts&#39;</span><span class="p">;</span>
+
+<span class="kd">@Component</span><span class="p">({</span>
+  <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-root&#39;</span><span class="p">,</span>
+  <span class="nx">templateUrl</span><span class="o">:</span> <span class="s1">&#39;./app.component.html&#39;</span><span class="p">,</span>
+  <span class="nx">styleUrls</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;./app.component.css&#39;</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">AppComponent</span> <span class="kr">implements</span> <span class="nx">OnInit</span> <span class="p">{</span>
+  <span class="nx">title</span> <span class="o">=</span> <span class="s1">&#39;echarts-ex200&#39;</span><span class="p">;</span>
+  <span class="nx">chartOption</span>: <span class="kt">EChartOption</span><span class="p">;</span>
+
+  <span class="nx">data</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span> <span class="nx">value</span>: <span class="kt">335</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;苹果&#39;</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="nx">value</span>: <span class="kt">310</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;梨子&#39;</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="nx">value</span>: <span class="kt">274</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;葡萄&#39;</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="nx">value</span>: <span class="kt">235</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;西瓜&#39;</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="nx">value</span>: <span class="kt">400</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;西红柿&#39;</span> <span class="p">}</span>
+  <span class="p">].</span><span class="nx">sort</span><span class="p">((</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">x</span><span class="p">.</span><span class="nx">value</span> <span class="o">-</span> <span class="nx">y</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span> <span class="c1">// 按照value的值升序排序</span>
+
+  <span class="nx">ngOnInit</span><span class="p">()</span><span class="o">:</span> <span class="k">void</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">chartOption</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="nx">title</span><span class="o">:</span> <span class="p">[{</span>
+        <span class="nx">text</span><span class="o">:</span> <span class="s1">&#39;主标题&#39;</span><span class="p">,</span>
+        <span class="nx">left</span><span class="o">:</span> <span class="s1">&#39;16.67%&#39;</span><span class="p">,</span> <span class="c1">// 饼图离容器左侧的距离</span>
+        <span class="nx">top</span>: <span class="kt">0</span><span class="p">,</span> <span class="c1">// 饼图离容器顶部侧的距离</span>
+        <span class="nx">textAlign</span><span class="o">:</span> <span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="c1">// 标题文字的对齐方式</span>
+        <span class="nx">textStyle</span><span class="o">:</span> <span class="p">{</span>
+          <span class="nx">color</span><span class="o">:</span> <span class="s1">&#39;red&#39;</span> <span class="c1">// 标题的文字的颜色</span>
+        <span class="p">}</span>
+      <span class="p">},</span> <span class="p">{</span>
+        <span class="nx">subtext</span><span class="o">:</span> <span class="s1">&#39;子标题&#39;</span><span class="p">,</span>
+        <span class="nx">left</span><span class="o">:</span> <span class="s1">&#39;16.67%&#39;</span><span class="p">,</span>
+        <span class="nx">top</span><span class="o">:</span> <span class="s1">&#39;60%&#39;</span><span class="p">,</span>
+        <span class="nx">textAlign</span><span class="o">:</span> <span class="s1">&#39;center&#39;</span>
+      <span class="p">}],</span>
+      <span class="nx">series</span><span class="o">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+          <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;pie&#39;</span><span class="p">,</span>
+          <span class="nx">radius</span><span class="o">:</span> <span class="s1">&#39;55%&#39;</span><span class="p">,</span> <span class="c1">// 饼图的半径比例。如果是数组值 [&#39;70%&#39;, &#39;85%&#39;]，表示环形</span>
+          <span class="nx">center</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;50%&#39;</span><span class="p">,</span> <span class="mi">60</span><span class="p">],</span> <span class="c1">// 饼图的中心（圆心）坐标，数组的第一项是横坐标，第二项是纵坐标</span>
+          <span class="nx">data</span>: <span class="kt">this.data</span><span class="p">,</span>
+          <span class="nx">animation</span>: <span class="kt">true</span><span class="p">,</span> <span class="c1">// 是否开启动画</span>
+          <span class="nx">left</span>: <span class="kt">0</span><span class="p">,</span>
+          <span class="nx">right</span><span class="o">:</span> <span class="s1">&#39;67%&#39;</span><span class="p">,</span>
+          <span class="nx">top</span>: <span class="kt">80</span><span class="p">,</span>
+          <span class="nx">bottom</span>: <span class="kt">0</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+          <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;pie&#39;</span><span class="p">,</span>
+          <span class="nx">radius</span><span class="o">:</span> <span class="s1">&#39;55%&#39;</span><span class="p">,</span> <span class="c1">// 饼图的半径比例。如果是数组值 [&#39;70%&#39;, &#39;85%&#39;]，表示环形</span>
+          <span class="nx">center</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;50%&#39;</span><span class="p">,</span> <span class="mi">60</span><span class="p">],</span> <span class="c1">// 饼图的中心（圆心）坐标，数组的第一项是横坐标，第二项是纵坐标</span>
+          <span class="nx">data</span>: <span class="kt">this.data</span><span class="p">,</span>
+          <span class="nx">left</span>: <span class="kt">0</span><span class="p">,</span>
+          <span class="nx">right</span><span class="o">:</span> <span class="s1">&#39;67%&#39;</span><span class="p">,</span>
+          <span class="nx">top</span>: <span class="kt">80</span><span class="p">,</span>
+          <span class="nx">bottom</span>: <span class="kt">0</span><span class="p">,</span>
+          <span class="nx">itemStyle</span><span class="o">:</span> <span class="p">{</span>
+            <span class="nx">normal</span><span class="o">:</span> <span class="p">{</span>
+              <span class="nx">label</span><span class="o">:</span> <span class="p">{</span>            <span class="c1">//饼图图形上的文本标签</span>
+                <span class="nx">show</span>: <span class="kt">true</span><span class="p">,</span>
+                <span class="nx">position</span><span class="o">:</span> <span class="s1">&#39;inner&#39;</span><span class="p">,</span> <span class="c1">//标签的位置</span>
+                <span class="nx">textStyle</span><span class="o">:</span> <span class="p">{</span>
+                  <span class="nx">fontWeight</span>: <span class="kt">300</span><span class="p">,</span>
+                  <span class="nx">fontSize</span>: <span class="kt">12</span>    <span class="c1">//文字的字体大小</span>
+                <span class="p">},</span>
+                <span class="nx">formatter</span><span class="o">:</span> <span class="s1">&#39;{d}%&#39;</span> <span class="c1">// 百分比数字的格式</span>
+              <span class="p">}</span>
+            <span class="p">}</span>
+          <span class="p">}</span>
+        <span class="p">}</span>
+      <span class="p">]</span>
+    <span class="p">};</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="6">
+<li><p>观察应用程序页面，页面最终显示效果如图20-5所示：</p></li>
+</ol>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/Figure20-5.png"><img alt="../_images/Figure20-5.png" src="../_images/Figure20-5.png" style="width: 400px;" /></a>
+<p>图20-5 使用ngx-echarts生成饼图，并显示百分比效果</p>
+</div></blockquote>
+<p>在上面的步骤中，完成了以下内容：</p>
+<ol class="arabic simple">
+<li><p>步骤2中饼图的数据结构与上个示例中折线图中的数据结构类似，数据项的含义在代码示例中进行了详细的标注；</p></li>
+<li><p>步骤4之前的代码为默认情况下饼图的展现形式，即默认不显示百分比数据；</p></li>
+<li><p>步骤5中通过叠加两个饼图来达到同时显示文字和百分比的效果，即重复定义series数组的数据项，其中一个为默认显示风格，另一个添加itemStyle数据来呈现百分比数字；</p></li>
+</ol>
+</div>
+<div class="section" id="echarts-ex300-ngx-echarts">
+<h2><span class="sectnum">20.5</span> [示例 echarts-ex300] 使用ngx-echarts生成柱状图<a class="headerlink" href="#echarts-ex300-ngx-echarts" title="Permalink to this headline">¶</a></h2>
+<p>柱状图利用柱子的高度，能够比较清晰的反映数据的差异，一般情况下用来反映分类项目之间的比较，也可以用来反映时间趋势。</p>
+<ol class="arabic simple">
+<li><p>创建工程及安装安装ngx-echarts图表库，前面步骤同样请参考[示例 echarts-ex100]的1到5步骤，所不同仅是创建工程时定义名称为“echarts-ex300”；</p></li>
+<li><p>编辑组件。编辑文件src/app/app.component.ts，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">OnInit</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">EChartOption</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;echarts&#39;</span><span class="p">;</span>
+
+<span class="kd">@Component</span><span class="p">({</span>
+  <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-root&#39;</span><span class="p">,</span>
+  <span class="nx">templateUrl</span><span class="o">:</span> <span class="s1">&#39;./app.component.html&#39;</span><span class="p">,</span>
+  <span class="nx">styleUrls</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;./app.component.css&#39;</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">AppComponent</span> <span class="kr">implements</span> <span class="nx">OnInit</span> <span class="p">{</span>
+  <span class="nx">title</span> <span class="o">=</span> <span class="s1">&#39;echarts-ex300&#39;</span><span class="p">;</span>
+  <span class="nx">chartOption</span>: <span class="kt">EChartOption</span><span class="p">;</span>
+
+  <span class="nx">clothes</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">categories</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;衬衫&quot;</span><span class="p">,</span> <span class="s2">&quot;羊毛衫&quot;</span><span class="p">,</span> <span class="s2">&quot;雪纺衫&quot;</span><span class="p">,</span> <span class="s2">&quot;裤子&quot;</span><span class="p">,</span> <span class="s2">&quot;高跟鞋&quot;</span><span class="p">,</span> <span class="s2">&quot;袜子&quot;</span><span class="p">],</span>
+    <span class="nx">data</span><span class="o">:</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">36</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">]</span>
+  <span class="p">}</span>
+
+  <span class="nx">ngOnInit</span><span class="p">()</span><span class="o">:</span> <span class="k">void</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">chartOption</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="nx">title</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">text</span><span class="o">:</span> <span class="s1">&#39;柱状图示例&#39;</span>
+      <span class="p">},</span>
+      <span class="nx">tooltip</span><span class="o">:</span> <span class="p">{},</span>
+      <span class="nx">legend</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">data</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;销量&#39;</span><span class="p">]</span>
+      <span class="p">},</span>
+      <span class="nx">xAxis</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">data</span>: <span class="kt">this.clothes.categories</span>
+      <span class="p">},</span>
+      <span class="nx">yAxis</span><span class="o">:</span> <span class="p">{},</span>
+      <span class="nx">series</span><span class="o">:</span> <span class="p">[{</span>
+        <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;销量&#39;</span><span class="p">,</span>
+        <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;bar&#39;</span><span class="p">,</span>
+        <span class="nx">data</span>: <span class="kt">this.clothes.data</span>
+      <span class="p">}]</span>
+    <span class="p">};</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><p>编辑组件模板。编辑文件src/app/app.component.html，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-scss notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="nt">div</span> <span class="nt">echarts</span> <span class="o">[</span><span class="nt">options</span><span class="o">]=</span><span class="s2">&quot;chartOption&quot;</span> <span class="nt">class</span><span class="o">=</span><span class="s2">&quot;demo-chart&quot;</span><span class="o">&gt;&lt;/</span><span class="nt">div</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="4">
+<li><p>观察应用程序页面，页面显示出标准的柱状图。</p></li>
+<li><p>添加数字显示。编辑文件src/app/app.component.ts，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">OnInit</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">EChartOption</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;echarts&#39;</span><span class="p">;</span>
+
+<span class="kd">@Component</span><span class="p">({</span>
+  <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-root&#39;</span><span class="p">,</span>
+  <span class="nx">templateUrl</span><span class="o">:</span> <span class="s1">&#39;./app.component.html&#39;</span><span class="p">,</span>
+  <span class="nx">styleUrls</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;./app.component.css&#39;</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">AppComponent</span> <span class="kr">implements</span> <span class="nx">OnInit</span> <span class="p">{</span>
+  <span class="nx">title</span> <span class="o">=</span> <span class="s1">&#39;echarts-ex300&#39;</span><span class="p">;</span>
+  <span class="nx">chartOption</span>: <span class="kt">EChartOption</span><span class="p">;</span>
+
+  <span class="nx">clothes</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">categories</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;衬衫&quot;</span><span class="p">,</span> <span class="s2">&quot;羊毛衫&quot;</span><span class="p">,</span> <span class="s2">&quot;雪纺衫&quot;</span><span class="p">,</span> <span class="s2">&quot;裤子&quot;</span><span class="p">,</span> <span class="s2">&quot;高跟鞋&quot;</span><span class="p">,</span> <span class="s2">&quot;袜子&quot;</span><span class="p">],</span>
+    <span class="nx">data</span><span class="o">:</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">36</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">]</span>
+  <span class="p">}</span>
+
+  <span class="nx">ngOnInit</span><span class="p">()</span><span class="o">:</span> <span class="k">void</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">chartOption</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="nx">title</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">text</span><span class="o">:</span> <span class="s1">&#39;柱状图示例&#39;</span>
+      <span class="p">},</span>
+      <span class="nx">tooltip</span><span class="o">:</span> <span class="p">{},</span>
+      <span class="nx">legend</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">data</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;销量&#39;</span><span class="p">]</span>
+      <span class="p">},</span>
+      <span class="nx">xAxis</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">data</span>: <span class="kt">this.clothes.categories</span>
+      <span class="p">},</span>
+      <span class="nx">yAxis</span><span class="o">:</span> <span class="p">{},</span>
+      <span class="nx">series</span><span class="o">:</span> <span class="p">[{</span>
+        <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;销量&#39;</span><span class="p">,</span>
+        <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;bar&#39;</span><span class="p">,</span>
+        <span class="nx">data</span>: <span class="kt">this.clothes.data</span><span class="p">,</span>
+        <span class="nx">itemStyle</span><span class="o">:</span> <span class="p">{</span>
+          <span class="nx">normal</span><span class="o">:</span> <span class="p">{</span>
+            <span class="nx">label</span><span class="o">:</span> <span class="p">{</span>
+              <span class="nx">show</span>: <span class="kt">true</span><span class="p">,</span> <span class="nx">position</span><span class="o">:</span> <span class="s1">&#39;top&#39;</span><span class="p">,</span> <span class="nx">color</span><span class="o">:</span> <span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="c1">// 在上方显示蓝色的数字</span>
+            <span class="p">}</span>
+          <span class="p">}</span>
+        <span class="p">}</span>
+      <span class="p">}]</span>
+    <span class="p">};</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="6">
+<li><p>观察应用程序页面，页面最终显示效果如图20-6所示：</p></li>
+</ol>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/Figure20-6.png"><img alt="../_images/Figure20-6.png" src="../_images/Figure20-6.png" style="width: 400px;" /></a>
+<p>图20-6 使用ngx-echarts生成柱状图，并显示数字</p>
+</div></blockquote>
+<p>通过上面的示例可以看出，柱状图和折线图的数据结构类似，可以直接将示例echarts-ex300中series元素的type属性换成“line”，它就生成了一个折线图。</p>
+</div>
+<div class="section" id="id1">
+<h2><span class="sectnum">20.6</span> 小结<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>本章介绍了在Angular项目中使用图表的应用知识，详细介绍了如何安装和使用Echarts图表库，并带领读者通过示例演示了生成3种类型的图表的详细步骤。</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="appid.html" class="btn btn-neutral float-right" title="21 使用IBM Cloud™ App ID对Angular应用进行认证" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="bootstrap.html" class="btn btn-neutral float-left" title="19 集成Bootstrap前端组件库" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright CVI Talent
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

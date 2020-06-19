@@ -1,0 +1,1115 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>实战 Angular9</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Angular 9" href="pages/start.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="#">
+          
+
+          
+            
+            <img src="_static/main-page-logo-small-hat.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">目录：</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="pages/start.html">Angular 9</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pages/first.html">第一课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pages/whatisangular.html"><span class="sectnum">1</span> Angular概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pages/howtolearn.html"><span class="sectnum">2</span> 学习Angular需要什么基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pages/nodejs.html"><span class="sectnum">3</span> 掌握Node.js和npm基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pages/second.html">第二课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pages/typescript.html"><span class="sectnum">4</span> 学习TypeScript知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pages/firstangular.html"><span class="sectnum">5</span> 快速开启第一个Angular</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pages/third.html">第三课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pages/angcomponent.html"><span class="sectnum">6</span> 学习Angular组件知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pages/angtemplate.html"><span class="sectnum">7</span> 学习Angular模板知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pages/angdirective.html"><span class="sectnum">8</span> 掌握Angular指令应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pages/fourth.html">第四课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pages/angmodule.html"><span class="sectnum">9</span> 学习Angular模块知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pages/angroute.html"><span class="sectnum">10</span> 熟悉Angular路由功能</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pages/injection.html"><span class="sectnum">11</span> 学习Angular的服务及依赖注入</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pages/fifth.html">第五课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pages/reactive.html"><span class="sectnum">12</span> 掌握响应式编程基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pages/form.html"><span class="sectnum">13</span> 学习Angular表单知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pages/httpclient.html"><span class="sectnum">14</span> 熟悉HttpClient模块</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pages/sixth.html">第六课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pages/pipe.html"><span class="sectnum">15</span> 深入学习Angular管道知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pages/ui.html"><span class="sectnum">16</span> Angular与Angular Material组件库</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pages/rxjs.html"><span class="sectnum">17</span> 学习RxJS在Angular中的实际应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pages/seventh.html">第七课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pages/material.html"><span class="sectnum">18</span> 实战基于Angular Material实现表格组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pages/bootstrap.html"><span class="sectnum">19</span> 集成Bootstrap前端组件库</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pages/echart.html"><span class="sectnum">20</span> 在Angular项目中使用图表</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pages/appid.html"><span class="sectnum">21</span> 使用IBM Cloud™ App ID对Angular应用进行认证</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pages/communication.html"><span class="sectnum">22</span> 掌握在Angular组件间通信</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pages/pwa.html"><span class="sectnum">23</span> Angular与渐进式WEB应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pages/message.html"><span class="sectnum">24</span> 实现简单的消息通知机制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pages/localdata.html"><span class="sectnum">25</span> 如何与本地数据打交道</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pages/test.html"><span class="sectnum">26</span> 熟悉Angular测试</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pages/package.html"><span class="sectnum">27</span> 熟悉Angular环境配置及打包</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pages/universal.html"><span class="sectnum">28</span> 学习Angular服务端渲染</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pages/deploy.html"><span class="sectnum">29</span> 如何部署Angular应用程序</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pages/user.html"><span class="sectnum">30</span> 实战用户管理系统</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">CVI Talent</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="#">首页</a> &raquo;</li>
+        
+      <li>实战 Angular9</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        <a href="https://pages.github.ibm.com/lanzejun/talent/index.html" class="fa fa-github"> CVITube</a>
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="angular9">
+<h1>实战 Angular9<a class="headerlink" href="#angular9" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">目录：</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="pages/start.html">Angular 9</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pages/start.html#id1">目录</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pages/first.html">第一课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pages/whatisangular.html"><span class="sectnum">1</span> Angular概述</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pages/whatisangular.html#id1"><span class="sectnum">1.1</span> 什么是Angular</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/whatisangular.html#id2"><span class="sectnum">1.2</span> 为什么要用Angular</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pages/whatisangular.html#id3"><span class="sectnum">1.2.1</span> 速度和性能</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/whatisangular.html#id4"><span class="sectnum">1.2.2</span> 跨平台运行</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/whatisangular.html#id5"><span class="sectnum">1.2.3</span> 可伸缩性的设计</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/whatisangular.html#id6"><span class="sectnum">1.2.4</span> 稳定性</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/whatisangular.html#google"><span class="sectnum">1.2.5</span> Google和微软公司的支持</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/whatisangular.html#id7"><span class="sectnum">1.2.6</span> 强大的生态系统</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pages/whatisangular.html#id8"><span class="sectnum">1.3</span> Angular的版本</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/whatisangular.html#id9"><span class="sectnum">1.4</span> Angular的核心概念</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pages/whatisangular.html#id10"><span class="sectnum">1.4.1</span> 组件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/whatisangular.html#id11"><span class="sectnum">1.4.2</span> 模板和数据绑定</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/whatisangular.html#id12"><span class="sectnum">1.4.3</span> 服务</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/whatisangular.html#id13"><span class="sectnum">1.4.4</span> 依赖注入</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/whatisangular.html#id14"><span class="sectnum">1.4.5</span> 指令</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/whatisangular.html#id15"><span class="sectnum">1.4.6</span> 管道</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/whatisangular.html#id16"><span class="sectnum">1.4.7</span> 模块</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pages/whatisangular.html#id17"><span class="sectnum">1.5</span> Angular的运行</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/whatisangular.html#id18"><span class="sectnum">1.6</span> 小结</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pages/howtolearn.html"><span class="sectnum">2</span> 学习Angular需要什么基础</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pages/howtolearn.html#web"><span class="sectnum">2.1</span> 了解Web基础开发</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pages/howtolearn.html#id1"><span class="sectnum">2.1.1</span> 客户端和服务器通信</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pages/howtolearn.html#id2"><span class="sectnum">2.1.1.1</span> 运行在服务器端的Web应用程序</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pages/howtolearn.html#id3"><span class="sectnum">2.1.1.2</span> 运行在客户端的Web应用程序</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pages/howtolearn.html#html"><span class="sectnum">2.1.2</span> 什么是HTML</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/howtolearn.html#dom"><span class="sectnum">2.1.3</span> 什么是DOM文档</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/howtolearn.html#htmldom"><span class="sectnum">2.1.4</span> HTML特性与DOM属性</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pages/howtolearn.html#id4"><span class="sectnum">2.1.4.1</span> HTML特性与DOM属性的关系</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pages/howtolearn.html#id5"><span class="sectnum">2.1.4.2</span> HTML特性与DOM属性的区别</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pages/howtolearn.html#css"><span class="sectnum">2.1.5</span> 掌握CSS的基础知识</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pages/howtolearn.html#id6"><span class="sectnum">2.1.5.1</span> 块状元素</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pages/howtolearn.html#id7"><span class="sectnum">2.1.5.2</span> 行内元素</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pages/howtolearn.html#id8"><span class="sectnum">2.1.5.3</span> 行内块状元素</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pages/howtolearn.html#id9"><span class="sectnum">2.1.5.4</span> CSS属性</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pages/howtolearn.html#id10"><span class="sectnum">2.1.5.5</span> CSS度量单位</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pages/howtolearn.html#id11"><span class="sectnum">2.1.5.6</span> CSS选择器</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pages/howtolearn.html#id12"><span class="sectnum">2.1.6</span> 实战CSS布局</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pages/howtolearn.html#css-ex100"><span class="sectnum">2.1.6.1</span> [示例 css-ex100] 元素居中对齐</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pages/howtolearn.html#css-ex200"><span class="sectnum">2.1.6.2</span> [示例 css-ex200] 元素自适应屏幕及自动换行</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pages/howtolearn.html#nodenpm"><span class="sectnum">2.2</span> 掌握Node和npm基础</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/howtolearn.html#typescript"><span class="sectnum">2.3</span> 学习Typescript知识</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/howtolearn.html#id13"><span class="sectnum">2.4</span> 了解Web组件的知识</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pages/howtolearn.html#mvvm"><span class="sectnum">2.4.1</span> 什么是MVVM模式</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/howtolearn.html#id14"><span class="sectnum">2.4.2</span> MVVM模式的优点</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pages/howtolearn.html#id15"><span class="sectnum">2.5</span> 选择适合的开发工具</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/howtolearn.html#id16"><span class="sectnum">2.6</span> 如何学习Angular</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/howtolearn.html#id17"><span class="sectnum">2.7</span> 小结</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pages/nodejs.html"><span class="sectnum">3</span> 掌握Node.js和npm基础</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pages/nodejs.html#node-js"><span class="sectnum">3.1</span> 安装Node.js环境</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/nodejs.html#node"><span class="sectnum">3.2</span> 如何使用node命令</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/nodejs.html#id1"><span class="sectnum">3.3</span> 学习Node.js模块知识</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pages/nodejs.html#exports"><span class="sectnum">3.3.1</span> exports对象</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/nodejs.html#require"><span class="sectnum">3.3.2</span> require函数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/nodejs.html#module"><span class="sectnum">3.3.3</span> module对象</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pages/nodejs.html#npm"><span class="sectnum">3.4</span> 掌握NPM基础</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pages/nodejs.html#id2"><span class="sectnum">3.4.1</span> 使用npm命令安装模块</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pages/nodejs.html#global"><span class="sectnum">3.4.1.1</span> 什么是全局模式(global)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pages/nodejs.html#local"><span class="sectnum">3.4.1.2</span> 什么是本地模式(local)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pages/nodejs.html#id3"><span class="sectnum">3.4.2</span> 如何更新依赖</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/nodejs.html#id4"><span class="sectnum">3.4.3</span> 如何卸载依赖</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pages/nodejs.html#id5"><span class="sectnum">3.5</span> 开始第一个Node.js工程</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pages/nodejs.html#id6"><span class="sectnum">3.5.1</span> 初始化Node.js工程</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/nodejs.html#id7"><span class="sectnum">3.5.2</span> 安装Node.js工程依赖</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/nodejs.html#id8"><span class="sectnum">3.5.3</span> 启动Node.js项目</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pages/nodejs.html#id9"><span class="sectnum">3.6</span> 准备Node.js工程的开发环境</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pages/nodejs.html#ide"><span class="sectnum">3.6.1</span> 安装IDE集成开发环境</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/nodejs.html#id10"><span class="sectnum">3.6.2</span> Node.js项目结构介绍</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/nodejs.html#node-modules"><span class="sectnum">3.6.3</span> node_modules文件夹的作用</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/nodejs.html#package-json"><span class="sectnum">3.6.4</span> package.json文件介绍</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/nodejs.html#id11"><span class="sectnum">3.6.5</span> 识别依赖库的版本号</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/nodejs.html#package-lock-json"><span class="sectnum">3.6.6</span> package-lock.json文件的作用</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/nodejs.html#debug-node-js"><span class="sectnum">3.6.7</span> 如何调试(debug)Node.js工程</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pages/nodejs.html#id12"><span class="sectnum">3.7</span> 小结</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pages/second.html">第二课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pages/typescript.html"><span class="sectnum">4</span> 学习TypeScript知识</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pages/typescript.html#id1"><span class="sectnum">4.1</span> 什么是TypeScript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/typescript.html#id2"><span class="sectnum">4.2</span> 快速上手TypeScript</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pages/typescript.html#id3"><span class="sectnum">4.2.1</span> 安装TypeScript</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/typescript.html#id4"><span class="sectnum">4.2.2</span> 转译TypeScript</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/typescript.html#tsc-ex100-typescript"><span class="sectnum">4.2.3</span> [示例 tsc-ex100] 开始第一个TypeScript工程示例</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pages/typescript.html#id5"><span class="sectnum">4.3</span> 认识TypeScript的数据类型</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pages/typescript.html#id6"><span class="sectnum">4.3.1</span> TypeScript的类型注解</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/typescript.html#id7"><span class="sectnum">4.3.2</span> TypeScript有哪些基础类型</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/typescript.html#id8"><span class="sectnum">4.3.3</span> TypeScript中的类型转换</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pages/typescript.html#id9"><span class="sectnum">4.3.3.1</span> 字符串转换为数字</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pages/typescript.html#id10"><span class="sectnum">4.3.3.2</span> 数字转换为字符串</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pages/typescript.html#id11"><span class="sectnum">4.3.4</span> 什么是TypeScript类型断言</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/typescript.html#id12"><span class="sectnum">4.3.5</span> 什么是TypeScript类型保护</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pages/typescript.html#in"><span class="sectnum">4.3.5.1</span> 使用 in 操作符进行类型保护</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pages/typescript.html#typeof"><span class="sectnum">4.3.5.2</span> 使用 typeof 操作符进行类型保护</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pages/typescript.html#instanceof"><span class="sectnum">4.3.5.3</span> 使用 instanceof 操作符进行类型保护</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pages/typescript.html#id13"><span class="sectnum">4.3.6</span> 什么是TypeScript的联合类型</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/typescript.html#id14"><span class="sectnum">4.3.7</span> 什么是TypeScript的类型别名</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/typescript.html#id15"><span class="sectnum">4.3.8</span> 什么是TypeScript的交叉类型</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pages/typescript.html#id16"><span class="sectnum">4.4</span> 学习TypeScript的函数</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pages/typescript.html#id17"><span class="sectnum">4.4.1</span> 什么是箭头函数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/typescript.html#id18"><span class="sectnum">4.4.2</span> TypeScript的函数类型</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/typescript.html#id19"><span class="sectnum">4.4.3</span> 函数中的可选参数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/typescript.html#id20"><span class="sectnum">4.4.4</span> 函数中的默认参数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/typescript.html#id21"><span class="sectnum">4.4.5</span> 函数中的剩余参数</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pages/typescript.html#id22"><span class="sectnum">4.5</span> 学习TypeScript的数组</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pages/typescript.html#id23"><span class="sectnum">4.5.1</span> TypeScript的数组类型</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/typescript.html#id24"><span class="sectnum">4.5.2</span> 使用TypeScript数组的查找和检索方法</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pages/typescript.html#id25"><span class="sectnum">4.6</span> 学习TypeScript接口</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/typescript.html#id26"><span class="sectnum">4.7</span> 学习TypeScript类</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pages/typescript.html#id27"><span class="sectnum">4.7.1</span> 类的构造函数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/typescript.html#id28"><span class="sectnum">4.7.2</span> 类方法和属性</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/typescript.html#id29"><span class="sectnum">4.7.3</span> 类的继承</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/typescript.html#id30"><span class="sectnum">4.7.4</span> 类的存取器方法</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pages/typescript.html#id31"><span class="sectnum">4.8</span> 学习TypeScript的映射类型</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pages/typescript.html#partial"><span class="sectnum">4.8.1</span> Partial 映射类型</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/typescript.html#readonly"><span class="sectnum">4.8.2</span> Readonly (只读)映射类型</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/typescript.html#exclude"><span class="sectnum">4.8.3</span> Exclude映射类型</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pages/typescript.html#id32"><span class="sectnum">4.9</span> 识别TypeScript的相等性判断</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pages/typescript.html#id33"><span class="sectnum">4.9.1</span> 非严格相等比较 (==)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/typescript.html#id34"><span class="sectnum">4.9.2</span> 严格相等比较 (===)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pages/typescript.html#id35"><span class="sectnum">4.10</span> 学习TypeScript析构表达式</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pages/typescript.html#id36"><span class="sectnum">4.10.1</span> 对象的析构表达式</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/typescript.html#id37"><span class="sectnum">4.10.2</span> 数组的析构表达式</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pages/typescript.html#id38"><span class="sectnum">4.11</span> TypeScript模块</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pages/typescript.html#id39"><span class="sectnum">4.11.1</span> 导出声明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/typescript.html#id40"><span class="sectnum">4.11.2</span> 导出语句</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/typescript.html#id41"><span class="sectnum">4.11.3</span> 默认导出</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/typescript.html#id42"><span class="sectnum">4.11.4</span> 导入内容</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pages/typescript.html#id43"><span class="sectnum">4.12</span> 小结</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pages/firstangular.html"><span class="sectnum">5</span> 快速开启第一个Angular</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pages/firstangular.html#angular-cli"><span class="sectnum">5.1</span> 初识Angular CLI</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pages/firstangular.html#id1"><span class="sectnum">5.1.1</span> 安装Angular CLI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/firstangular.html#id2"><span class="sectnum">5.1.2</span> 运行Angular CLI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/firstangular.html#id3"><span class="sectnum">5.1.3</span> 卸载及更新Angular CLI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/firstangular.html#cli-ex100-angular"><span class="sectnum">5.1.4</span> [示例 cli-ex100] 快速开启第一个Angular</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pages/firstangular.html#id4"><span class="sectnum">5.2</span> 准备Angular的开发环境</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pages/firstangular.html#ide"><span class="sectnum">5.2.1</span> 如何扩展IDE的功能</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/firstangular.html#cli-ex200"><span class="sectnum">5.2.2</span> [示例 cli-ex200] 在运行时编辑工程</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/firstangular.html#id5"><span class="sectnum">5.2.3</span> 编译时的错误提醒</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/firstangular.html#id6"><span class="sectnum">5.2.4</span> 运行时的错误提醒</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pages/firstangular.html#id7"><span class="sectnum">5.3</span> Angular CLI常用命令及选项</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pages/firstangular.html#id8"><span class="sectnum">5.3.1</span> 初始化命令及选项介绍</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/firstangular.html#id9"><span class="sectnum">5.3.2</span> 创建命令及选项介绍</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pages/firstangular.html#id10"><span class="sectnum">5.4</span> Angular项目结构概述</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/firstangular.html#id11"><span class="sectnum">5.5</span> 如何启动Angular应用程序</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/firstangular.html#id12"><span class="sectnum">5.6</span> Angular的启动过程有哪些步骤</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/firstangular.html#id13"><span class="sectnum">5.7</span> 小结</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pages/third.html">第三课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pages/angcomponent.html"><span class="sectnum">6</span> 学习Angular组件知识</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pages/angcomponent.html#id1"><span class="sectnum">6.1</span> 什么是Angular组件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/angcomponent.html#id2"><span class="sectnum">6.2</span> 组件模板有哪几种</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pages/angcomponent.html#id3"><span class="sectnum">6.2.1</span> 内联模板</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/angcomponent.html#id4"><span class="sectnum">6.2.2</span> 外部模板</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/angcomponent.html#id5"><span class="sectnum">6.2.3</span> 矢量图模板</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pages/angcomponent.html#id6"><span class="sectnum">6.3</span> 组件样式介绍</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/angcomponent.html#id7"><span class="sectnum">6.4</span> 组件类的构成</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pages/angcomponent.html#id8"><span class="sectnum">6.4.1</span> 组件类装饰器</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/angcomponent.html#id9"><span class="sectnum">6.4.2</span> 组件类基础</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pages/angcomponent.html#id10"><span class="sectnum">6.5</span> 组件类与模板的数据绑定方式</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pages/angcomponent.html#id11"><span class="sectnum">6.5.1</span> 什么是单向数据绑定</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/angcomponent.html#id12"><span class="sectnum">6.5.2</span> 使用插值显示属性的值</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/angcomponent.html#components-ex100"><span class="sectnum">6.5.3</span> [示例 components-ex100] 使用插值显示属性的值</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/angcomponent.html#id13"><span class="sectnum">6.5.4</span> 属性绑定方式有哪些</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pages/angcomponent.html#dom"><span class="sectnum">6.5.4.1</span> DOM属性绑定介绍</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pages/angcomponent.html#components-ex200-dom"><span class="sectnum">6.5.4.2</span> [示例 components-ex200] 演示DOM属性绑定</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pages/angcomponent.html#html"><span class="sectnum">6.5.4.3</span> HTML特性绑定介绍</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pages/angcomponent.html#components-ex300-htmldom"><span class="sectnum">6.5.4.4</span> [示例 components-ex300] 演示HTML特性绑定与DOM属性绑定的区别</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pages/angcomponent.html#class"><span class="sectnum">6.5.4.5</span> Class样式绑定介绍</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pages/angcomponent.html#components-ex400-class"><span class="sectnum">6.5.4.6</span> [示例 components-ex400] 演示Class样式绑定的几种方式</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pages/angcomponent.html#style"><span class="sectnum">6.5.4.7</span> Style样式绑定介绍</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pages/angcomponent.html#components-ex500-style"><span class="sectnum">6.5.4.8</span> [示例 components-ex500] 演示Style样式绑定的几种方式</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pages/angcomponent.html#id14"><span class="sectnum">6.5.5</span> 什么是事件绑定</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/angcomponent.html#components-ex600"><span class="sectnum">6.5.6</span> [示例 components-ex600] 演示事件绑定</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/angcomponent.html#id15"><span class="sectnum">6.5.7</span> 什么是双向数据绑定</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/angcomponent.html#components-ex700"><span class="sectnum">6.5.8</span> [示例 components-ex700] 演示事件绑定</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pages/angcomponent.html#id16"><span class="sectnum">6.6</span> 介绍组件的生命周期</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/angcomponent.html#id17"><span class="sectnum">6.7</span> 掌握组件的交互</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pages/angcomponent.html#id18"><span class="sectnum">6.7.1</span> 从创建子组件开始</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/angcomponent.html#components-ex800"><span class="sectnum">6.7.2</span> [示例 components-ex800] 大组件分解为小组件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/angcomponent.html#id19"><span class="sectnum">6.7.3</span> 父子组件的交互</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pages/angcomponent.html#input"><span class="sectnum">6.7.3.1</span> &#64;Input()装饰器讲解</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pages/angcomponent.html#components-ex900"><span class="sectnum">6.7.3.2</span> [示例 components-ex900] 演示父组件传递数据到子组件</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pages/angcomponent.html#output"><span class="sectnum">6.7.3.3</span> &#64;Output()装饰器讲解</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pages/angcomponent.html#components-ex1000"><span class="sectnum">6.7.3.4</span> [示例 components-ex1000] 演示子组件传递数据到父组件</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pages/angcomponent.html#id20"><span class="sectnum">6.8</span> 小结</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pages/angtemplate.html"><span class="sectnum">7</span> 学习Angular模板知识</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pages/angtemplate.html#id1"><span class="sectnum">7.1</span> Angular模板语言基础介绍</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/angtemplate.html#id2"><span class="sectnum">7.2</span> 掌握模板表达式和语句的基础使用</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pages/angtemplate.html#id3"><span class="sectnum">7.2.1</span> 模板表达式的基础使用</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/angtemplate.html#id4"><span class="sectnum">7.2.2</span> 模板表达式中有哪些运算符</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pages/angtemplate.html#id5"><span class="sectnum">7.2.2.1</span> 管道运算符</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pages/angtemplate.html#id6"><span class="sectnum">7.2.2.2</span> 安全导航运算符</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pages/angtemplate.html#id7"><span class="sectnum">7.2.2.3</span> 非空断言运算符</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pages/angtemplate.html#id8"><span class="sectnum">7.2.3</span> 模板语句的基础使用</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pages/angtemplate.html#id9"><span class="sectnum">7.3</span> 什么是模板引用</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pages/angtemplate.html#id10"><span class="sectnum">7.3.1</span> 使用模板引用变量</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/angtemplate.html#viewchild"><span class="sectnum">7.3.2</span> 使用&#64;ViewChild()装饰器</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/angtemplate.html#template-ex100-viewchild"><span class="sectnum">7.3.3</span> [示例 template-ex100] 使用&#64;ViewChild()引用模板元素</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/angtemplate.html#viewchildren"><span class="sectnum">7.3.4</span> 使用&#64;ViewChildren()装饰器</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/angtemplate.html#template-ex200-viewchildren"><span class="sectnum">7.3.5</span> [示例 template-ex200] 使用&#64;ViewChildren()引用多个模板元素</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pages/angtemplate.html#id11"><span class="sectnum">7.4</span> Angular数据绑定知识总结</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pages/angtemplate.html#id12"><span class="sectnum">7.4.1</span> 单向属性绑定总结</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/angtemplate.html#id13"><span class="sectnum">7.4.2</span> 单向事件绑定总结</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/angtemplate.html#id14"><span class="sectnum">7.4.3</span> 双向数据绑定总结</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/angtemplate.html#template-ex300"><span class="sectnum">7.4.4</span> [示例 template-ex300] 演示双向数据绑定</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pages/angtemplate.html#id15"><span class="sectnum">7.5</span> 小结</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pages/angdirective.html"><span class="sectnum">8</span> 掌握Angular指令应用</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pages/angdirective.html#id1"><span class="sectnum">8.1</span> 学习Angular结构型指令</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pages/angdirective.html#ngif"><span class="sectnum">8.1.1</span> 学习NgIf指令</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/angdirective.html#directive-ex100-ngif"><span class="sectnum">8.1.2</span> [示例 directive-ex100] 演示使用NgIf指令来显示和隐藏元素</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/angdirective.html#ngfor"><span class="sectnum">8.1.3</span> 学习NgFor指令</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/angdirective.html#directive-ex200-ngfor"><span class="sectnum">8.1.4</span> [示例 directive-ex200] 演示使用NgFor指令来显示一个列表</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/angdirective.html#ngswitch"><span class="sectnum">8.1.5</span> 学习NgSwitch指令</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/angdirective.html#directive-ex300-ngswitch"><span class="sectnum">8.1.6</span> [示例 directive-ex300] 演示使用NgSwitch指令显示星期几</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/angdirective.html#ng-container"><span class="sectnum">8.1.7</span> 学习&lt;ng-container&gt;分组元素</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pages/angdirective.html#id2"><span class="sectnum">8.2</span> 学习Angular属性型指令</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pages/angdirective.html#ngclass"><span class="sectnum">8.2.1</span> 学习NgClass内置指令</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/angdirective.html#ngstyle"><span class="sectnum">8.2.2</span> 学习NgStyle内置指令</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/angdirective.html#ngcontent"><span class="sectnum">8.2.3</span> NgContent内置指令</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/angdirective.html#directive-ex400-ngcontent"><span class="sectnum">8.2.4</span> [示例 directive-ex400] 演示使用NgContent指令创建可重用添加按钮组件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/angdirective.html#contentchildren-ngcontent"><span class="sectnum">8.2.5</span> &#64;ContentChildren()装饰器中使用NgContent内置指令</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/angdirective.html#directive-ex500-contentchildren"><span class="sectnum">8.2.6</span> [示例 directive-ex500] 演示使用&#64;ContentChildren()装饰器查询子组件列表</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pages/angdirective.html#id3"><span class="sectnum">8.3</span> 如何创建指令</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pages/angdirective.html#dom"><span class="sectnum">8.3.1</span> 如何在指令中访问DOM属性</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/angdirective.html#directive-ex600"><span class="sectnum">8.3.2</span> [示例 directive-ex600] 演示使用自定义指令更改按钮的大小</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/angdirective.html#id4"><span class="sectnum">8.3.3</span> 如何在指令中监听事件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/angdirective.html#directive-ex700"><span class="sectnum">8.3.4</span> [示例 directive-ex700] 演示如何在指令中监听事件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/angdirective.html#hostbindingdom"><span class="sectnum">8.3.5</span> 在指令中使用HostBinding绑定DOM属性</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/angdirective.html#directive-ex800-hostbindingdom"><span class="sectnum">8.3.6</span> [示例 directive-ex800] 演示在指令中使用HostBinding绑定DOM属性</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/angdirective.html#hostlistenerdom"><span class="sectnum">8.3.7</span> 在指令中使用HostListener监听DOM事件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/angdirective.html#directive-ex900"><span class="sectnum">8.3.8</span> [示例 directive-ex900] 演示监听单击事件并实现当点击时增加计数</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pages/angdirective.html#id5"><span class="sectnum">8.4</span> 小结</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pages/fourth.html">第四课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pages/angmodule.html"><span class="sectnum">9</span> 学习Angular模块知识</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pages/angmodule.html#id1"><span class="sectnum">9.1</span> 什么是Angular模块</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pages/angmodule.html#id2"><span class="sectnum">9.1.1</span> Angular根模块介绍</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/angmodule.html#id3"><span class="sectnum">9.1.2</span> Angular特性模块介绍</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pages/angmodule.html#id4"><span class="sectnum">9.2</span> 常用内置模块介绍</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/angmodule.html#id5"><span class="sectnum">9.3</span> Angular模块业务上的分类</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pages/angmodule.html#id6"><span class="sectnum">9.3.1</span> 理解核心模块</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/angmodule.html#id7"><span class="sectnum">9.3.2</span> 防止重复导入模块</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/angmodule.html#id8"><span class="sectnum">9.3.3</span> 理解共享模块</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pages/angmodule.html#id9"><span class="sectnum">9.4</span> 如何正确的分割模块</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/angmodule.html#id10"><span class="sectnum">9.5</span> 小结</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pages/angroute.html"><span class="sectnum">10</span> 熟悉Angular路由功能</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pages/angroute.html#id1"><span class="sectnum">10.1</span> Angular路由介绍</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pages/angroute.html#id2"><span class="sectnum">10.1.1</span> 创建应用的路由模块</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/angroute.html#id3"><span class="sectnum">10.1.2</span> 理解系统路由服务</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pages/angroute.html#id4"><span class="sectnum">10.2</span> 简单的路由配置</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pages/angroute.html#id5"><span class="sectnum">10.2.1</span> 基本路由配置</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/angroute.html#id6"><span class="sectnum">10.2.2</span> 什么是路由器出口</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pages/angroute.html#id7"><span class="sectnum">10.2.2.1</span> 主路由出口</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pages/angroute.html#id8"><span class="sectnum">10.2.2.2</span> 命名路由出口</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pages/angroute.html#id9"><span class="sectnum">10.2.3</span> 使用路由器链接</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/angroute.html#id10"><span class="sectnum">10.2.4</span> 路由链接的激活状态</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/angroute.html#route-ex100"><span class="sectnum">10.2.5</span> [示例 route-ex100] 演示使用路由器链接指令</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pages/angroute.html#id11"><span class="sectnum">10.3</span> 理解路由器状态</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pages/angroute.html#id12"><span class="sectnum">10.3.1</span> 图解路由器状态及激活路由状态</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/angroute.html#activatedroute"><span class="sectnum">10.3.2</span> 理解ActivatedRoute对象和其快照对象</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/angroute.html#route-ex200-activatedroute"><span class="sectnum">10.3.3</span> [示例 route-ex200] 演示ActivatedRoute对象和其快照对象的应用</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pages/angroute.html#id13"><span class="sectnum">10.4</span> 路由事件有哪些</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/angroute.html#id14"><span class="sectnum">10.5</span> 如何在路由中传递参数</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pages/angroute.html#id15"><span class="sectnum">10.5.1</span> 传递配置参数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/angroute.html#id16"><span class="sectnum">10.5.2</span> 传递路径参数</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pages/angroute.html#id17"><span class="sectnum">10.5.2.1</span> 传递必选参数</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pages/angroute.html#id18"><span class="sectnum">10.5.2.2</span> 传递可选参数</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pages/angroute.html#id19"><span class="sectnum">10.5.3</span> 传递查询参数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/angroute.html#route-ex300"><span class="sectnum">10.5.4</span> [示例 route-ex300] 演示使用路由传递参数</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pages/angroute.html#id20"><span class="sectnum">10.6</span> 什么是路由守卫</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pages/angroute.html#id21"><span class="sectnum">10.6.1</span> 理解路由守卫的基本概念</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/angroute.html#id22"><span class="sectnum">10.6.2</span> 如何配置路由守卫</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/angroute.html#canactivate"><span class="sectnum">10.6.3</span> CanActivate守卫的应用</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/angroute.html#canactivatechild"><span class="sectnum">10.6.4</span> CanActivateChild守卫的应用</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/angroute.html#candeactivate"><span class="sectnum">10.6.5</span> CanDeactivate守卫的应用</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/angroute.html#resolve"><span class="sectnum">10.6.6</span> Resolve守卫的应用</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/angroute.html#canload"><span class="sectnum">10.6.7</span> CanLoad守卫的应用</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pages/angroute.html#id23"><span class="sectnum">10.7</span> 路由器的延迟加载功能</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pages/angroute.html#id24"><span class="sectnum">10.7.1</span> 了解延迟加载</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/angroute.html#id25"><span class="sectnum">10.7.2</span> 实施延迟加载</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/angroute.html#route-ex400"><span class="sectnum">10.7.3</span> [示例 route-ex400] 演示路由延迟加载功能</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pages/angroute.html#id26"><span class="sectnum">10.8</span> 小结</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pages/injection.html"><span class="sectnum">11</span> 学习Angular的服务及依赖注入</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pages/injection.html#id1"><span class="sectnum">11.1</span> 为什么需要服务</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/injection.html#id2"><span class="sectnum">11.2</span> 什么是依赖注入</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/injection.html#id3"><span class="sectnum">11.3</span> 创建可注入的服务类</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/injection.html#id4"><span class="sectnum">11.4</span> 如何选择注入器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/injection.html#id5"><span class="sectnum">11.5</span> 如何配置提供商</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pages/injection.html#id6"><span class="sectnum">11.5.1</span> 有哪些类型的提供商</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/injection.html#id7"><span class="sectnum">11.5.2</span> 配置提供商</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pages/injection.html#typeprovider"><span class="sectnum">11.5.2.1</span> TypeProvider提供商</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pages/injection.html#valueprovider"><span class="sectnum">11.5.2.2</span> ValueProvider提供商</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pages/injection.html#classprovider"><span class="sectnum">11.5.2.3</span> ClassProvider提供商</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pages/injection.html#constructorprovider"><span class="sectnum">11.5.2.4</span> ConstructorProvider提供商</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pages/injection.html#existingprovider"><span class="sectnum">11.5.2.5</span> ExistingProvider提供商</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pages/injection.html#factoryprovider"><span class="sectnum">11.5.2.6</span> FactoryProvider提供商</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pages/injection.html#id8"><span class="sectnum">11.6</span> 在类中注入服务</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pages/injection.html#id9"><span class="sectnum">11.6.1</span> 注入依赖类实例</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/injection.html#id10"><span class="sectnum">11.6.2</span> 注入可选的依赖类实例</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/injection.html#inject"><span class="sectnum">11.6.3</span> 使用&#64;Inject()装饰器指定注入的实例</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/injection.html#injector"><span class="sectnum">11.6.4</span> 注入Injector类对象实例</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/injection.html#injection-ex100-angular"><span class="sectnum">11.6.5</span> [示例 injection-ex100] 演示Angular配置和使用依赖注入</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pages/injection.html#id11"><span class="sectnum">11.7</span> 创建一个数据服务</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/injection.html#id12"><span class="sectnum">11.8</span> 小结</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pages/fifth.html">第五课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pages/reactive.html"><span class="sectnum">12</span> 掌握响应式编程基础</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pages/reactive.html#id2"><span class="sectnum">12.1</span> 响应式编程的基本概念</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pages/reactive.html#id3"><span class="sectnum">12.1.1</span> 理解异步事件流</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/reactive.html#observable"><span class="sectnum">12.1.2</span> 理解可观察对象(Observable)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pages/reactive.html#rxjs"><span class="sectnum">12.2</span> 什么是RxJS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/reactive.html#id4"><span class="sectnum">12.3</span> RxJS的创建器介绍</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pages/reactive.html#of"><span class="sectnum">12.3.1</span> of 创建器</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/reactive.html#from"><span class="sectnum">12.3.2</span> from 创建器</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/reactive.html#range"><span class="sectnum">12.3.3</span> range 创建器</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/reactive.html#fromevent"><span class="sectnum">12.3.4</span> fromEvent 创建器</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/reactive.html#timer"><span class="sectnum">12.3.5</span> timer 创建器</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/reactive.html#interval"><span class="sectnum">12.3.6</span> interval 创建器</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/reactive.html#defer"><span class="sectnum">12.3.7</span> defer 创建器</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/reactive.html#id5"><span class="sectnum">12.3.8</span> 随机数创建器</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pages/reactive.html#id6"><span class="sectnum">12.4</span> RxJS的基本操作符介绍</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pages/reactive.html#map"><span class="sectnum">12.4.1</span> map 操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/reactive.html#tap"><span class="sectnum">12.4.2</span> tap 操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/reactive.html#filter"><span class="sectnum">12.4.3</span> filter 操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/reactive.html#mapto"><span class="sectnum">12.4.4</span> mapTo 操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/reactive.html#retry"><span class="sectnum">12.4.5</span> retry 操作符</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pages/reactive.html#id7"><span class="sectnum">12.5</span> RxJS的合并操作符介绍</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pages/reactive.html#concat"><span class="sectnum">12.5.1</span> concat 串联操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/reactive.html#merge"><span class="sectnum">12.5.2</span> merge 并联操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/reactive.html#zip"><span class="sectnum">12.5.3</span> zip 拉链操作符</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pages/reactive.html#id8"><span class="sectnum">12.6</span> RxJS的高阶映射操作符介绍</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pages/reactive.html#concatmap"><span class="sectnum">12.6.1</span> concatMap 操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/reactive.html#mergemap"><span class="sectnum">12.6.2</span> mergeMap 操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/reactive.html#switchmap"><span class="sectnum">12.6.3</span> switchMap 操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/reactive.html#exhaustmap"><span class="sectnum">12.6.4</span> exhaustMap 操作符</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pages/reactive.html#id9"><span class="sectnum">12.7</span> 理解RxJS的可观察对象的冷热模式</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pages/reactive.html#id10"><span class="sectnum">12.7.1</span> 冷模式的可观察对象</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/reactive.html#id11"><span class="sectnum">12.7.2</span> 热模式的可观察对象</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pages/reactive.html#id12"><span class="sectnum">12.8</span> 小结</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pages/form.html"><span class="sectnum">13</span> 学习Angular表单知识</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pages/form.html#id1"><span class="sectnum">13.1</span> 什么是Angular表单</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pages/form.html#id2"><span class="sectnum">13.1.1</span> 什么是模板驱动表单</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/form.html#id3"><span class="sectnum">13.1.2</span> 什么是响应式表单</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pages/form.html#id4"><span class="sectnum">13.2</span> 认识表单模型</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pages/form.html#id5"><span class="sectnum">13.2.1</span> 认识表单模型的容器</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/form.html#formcontrol"><span class="sectnum">13.2.2</span> 认识FormControl模型</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/form.html#formarray"><span class="sectnum">13.2.3</span> 认识FormArray容器模型</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/form.html#formgroup"><span class="sectnum">13.2.4</span> 认识FormGroup容器模型</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pages/form.html#id6"><span class="sectnum">13.3</span> 认识表单指令</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/form.html#id7"><span class="sectnum">13.4</span> 了解表单数据访问器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/form.html#id8"><span class="sectnum">13.5</span> 学习模板驱动表单相关指令</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pages/form.html#ngform"><span class="sectnum">13.5.1</span> 学习NgForm指令</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/form.html#ngmodel"><span class="sectnum">13.5.2</span> 学习NgModel指令</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pages/form.html#id9"><span class="sectnum">13.5.2.1</span> 单独使用ngModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pages/form.html#id10"><span class="sectnum">13.5.2.2</span> 使用[ngModel]进行单向绑定</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pages/form.html#id11"><span class="sectnum">13.5.2.3</span> 使用[(ngModel)]进行双向绑定</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pages/form.html#id12"><span class="sectnum">13.5.2.4</span> 结合模板变量使用ngModel</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pages/form.html#ngmodelgroup"><span class="sectnum">13.5.3</span> 学习NgModelGroup指令</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pages/form.html#id13"><span class="sectnum">13.6</span> 学习响应式表单相关指令</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pages/form.html#formcontroldirective"><span class="sectnum">13.6.1</span> 使用FormControlDirective指令</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/form.html#formgroupdirective"><span class="sectnum">13.6.2</span> 使用FormGroupDirective指令</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/form.html#formcontrolname"><span class="sectnum">13.6.3</span> 使用FormControlName指令</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/form.html#formgroupname"><span class="sectnum">13.6.4</span> 使用FormGroupName指令</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/form.html#formarrayname"><span class="sectnum">13.6.5</span> 使用FormArrayName指令</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pages/form.html#id14"><span class="sectnum">13.7</span> 使用表单构建器来生成表单控件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/form.html#id15"><span class="sectnum">13.8</span> 使用表单验证</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pages/form.html#id16"><span class="sectnum">13.8.1</span> 内置验证器的用法</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/form.html#id17"><span class="sectnum">13.8.2</span> 组合使用内置验证器</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/form.html#id18"><span class="sectnum">13.8.3</span> 自定义验证器</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/form.html#css"><span class="sectnum">13.8.4</span> 表单控件状态的CSS样式类</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pages/form.html#ngsubmit"><span class="sectnum">13.9</span> 使用 ngSubmit 提交表单</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/form.html#id19"><span class="sectnum">13.10</span> 创建两种类型的表单示例</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pages/form.html#form-ex100"><span class="sectnum">13.10.1</span> [示例 form-ex100] 演示创建模板驱动表单以及数据绑定</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/form.html#form-ex200"><span class="sectnum">13.10.2</span> [示例 form-ex200] 演示创建响应式表单以及数据绑定</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pages/form.html#id20"><span class="sectnum">13.11</span> 可以并且应该将两者一起使用吗？</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/form.html#id21"><span class="sectnum">13.12</span> 小结</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pages/httpclient.html"><span class="sectnum">14</span> 熟悉HttpClient模块</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pages/httpclient.html#http"><span class="sectnum">14.1</span> HTTP协议的简单介绍</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pages/httpclient.html#id1"><span class="sectnum">14.1.1</span> 介绍HTTP请求</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/httpclient.html#id2"><span class="sectnum">14.1.2</span> 介绍HTTP响应</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pages/httpclient.html#id3"><span class="sectnum">14.2</span> 启用HttpClient模块</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/httpclient.html#restfull-api"><span class="sectnum">14.3</span> 创建RestFull API服务</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pages/httpclient.html#json-serverrestfull-api"><span class="sectnum">14.3.1</span> 使用json-server创建RestFull API服务</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pages/httpclient.html#json-server"><span class="sectnum">14.3.1.1</span> 安装json-server</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pages/httpclient.html#id4"><span class="sectnum">14.3.1.2</span> 如何使用json-server</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pages/httpclient.html#angular"><span class="sectnum">14.3.2</span> 使用Angular内存数据库模拟服务器</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pages/httpclient.html#id5"><span class="sectnum">14.3.2.1</span> 安装Angular内存数据库</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pages/httpclient.html#id6"><span class="sectnum">14.3.2.2</span> 创建模拟数据</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pages/httpclient.html#id7"><span class="sectnum">14.3.2.3</span> 启用Angular内存数据库</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pages/httpclient.html#id8"><span class="sectnum">14.4</span> 从服务器获取数据</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pages/httpclient.html#id9"><span class="sectnum">14.4.1</span> 请求带类型的响应</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/httpclient.html#httpclient-ex100-httpclientget"><span class="sectnum">14.4.2</span> [示例 httpclient-ex100] 演示使用HttpClient的GET方法从服务器获取数据</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pages/httpclient.html#id10"><span class="sectnum">14.5</span> 掌握HttpClient的请求头配置</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pages/httpclient.html#id11"><span class="sectnum">14.5.1</span> 如何添加请求头</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/httpclient.html#id12"><span class="sectnum">14.5.2</span> 如何读取完整的响应体</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/httpclient.html#id13"><span class="sectnum">14.5.3</span> 如何配置请求参数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/httpclient.html#id14"><span class="sectnum">14.5.4</span> 如何修改请求头</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/httpclient.html#jsonp"><span class="sectnum">14.5.5</span> 发起 JSONP 请求</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/httpclient.html#httpclient-ex200-api"><span class="sectnum">14.5.6</span> [示例 httpclient-ex200] 演示通过维基百科（中国）的API搜索关键字信息的实际场景</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/httpclient.html#json"><span class="sectnum">14.5.7</span> 请求非 JSON 数据</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pages/httpclient.html#httpclientrxjs"><span class="sectnum">14.6</span> HttpClient与RxJS配合</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pages/httpclient.html#id15"><span class="sectnum">14.6.1</span> 错误处理</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/httpclient.html#id16"><span class="sectnum">14.6.2</span> 重试</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pages/httpclient.html#id17"><span class="sectnum">14.7</span> 把数据发送到服务器</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pages/httpclient.html#post"><span class="sectnum">14.7.1</span> 发起 POST 请求</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/httpclient.html#delete"><span class="sectnum">14.7.2</span> 发起 DELETE 请求</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/httpclient.html#put"><span class="sectnum">14.7.3</span> 发起 PUT 请求</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/httpclient.html#httpclient-ex300-httpclient"><span class="sectnum">14.7.4</span> [示例 httpclient-ex300] 演示HttpClient方法的使用</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pages/httpclient.html#id18"><span class="sectnum">14.8</span> 深入掌握HTTP的请求和响应的不变性</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pages/httpclient.html#id19"><span class="sectnum">14.8.1</span> 理解HTTP的请求体和克隆体</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/httpclient.html#id20"><span class="sectnum">14.8.2</span> 如何清空请求体</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pages/httpclient.html#id21"><span class="sectnum">14.9</span> 学习使用Angular的拦截器</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pages/httpclient.html#id22"><span class="sectnum">14.9.1</span> 创建拦截器</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/httpclient.html#id23"><span class="sectnum">14.9.2</span> 配置拦截器提供商</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/httpclient.html#httpclient-ex400"><span class="sectnum">14.9.3</span> [示例 httpclient-ex400] 配置日志和错误信息的拦截器</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pages/httpclient.html#id24"><span class="sectnum">14.10</span> 小结</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pages/sixth.html">第六课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pages/pipe.html"><span class="sectnum">15</span> 深入学习Angular管道知识</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pages/pipe.html#id1"><span class="sectnum">15.1</span> Angular管道的使用方法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/pipe.html#id2"><span class="sectnum">15.2</span> 使用Angular的内置管道</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pages/pipe.html#async"><span class="sectnum">15.2.1</span> 使用async管道</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/pipe.html#currency"><span class="sectnum">15.2.2</span> 使用currency管道</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/pipe.html#date"><span class="sectnum">15.2.3</span> 使用date管道</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/pipe.html#i18nselect"><span class="sectnum">15.2.4</span> 使用i18nSelect管道</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pages/pipe.html#id3"><span class="sectnum">15.3</span> 用户自定义管道</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pages/pipe.html#id4"><span class="sectnum">15.3.1</span> 用户自定义管道的步骤</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/pipe.html#pipe-ex100"><span class="sectnum">15.3.2</span> [示例 pipe-ex100] 创建一个排序自定义管道</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pages/pipe.html#id5"><span class="sectnum">15.4</span> 小结</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pages/ui.html"><span class="sectnum">16</span> Angular与Angular Material组件库</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pages/ui.html#angular-material"><span class="sectnum">16.1</span> 什么是Angular Material</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pages/ui.html#id1"><span class="sectnum">16.1.1</span> 如何安装Angular Material</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/ui.html#id2"><span class="sectnum">16.1.2</span> 如何使用Angular Material</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/ui.html#ui-ex100-angular-material"><span class="sectnum">16.1.3</span> [示例 ui-ex100] 使用Angular Material的最佳实践</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/ui.html#id3"><span class="sectnum">16.1.4</span> 使用Angular Material的生成器快速创建组件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/ui.html#ui-ex200-angular-material"><span class="sectnum">16.1.5</span> [示例 ui-ex200] 使用Angular Material的生成器命令</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pages/ui.html#web"><span class="sectnum">16.2</span> 关于WEB页面的布局设计</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pages/ui.html#id4"><span class="sectnum">16.2.1</span> 什么是响应式页面设计</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/ui.html#id5"><span class="sectnum">16.2.2</span> 什么是自适应网页设计</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/ui.html#id6"><span class="sectnum">16.2.3</span> 什么是媒体查询</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pages/ui.html#id7"><span class="sectnum">16.3</span> 使用 Angular Material 的媒体查询设计网页</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pages/ui.html#id8"><span class="sectnum">16.3.1</span> 学习 Angular Material 的网格列表布局</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/ui.html#ui-ex300-angular-material"><span class="sectnum">16.3.2</span> [示例 ui-ex300] 使用Angular Material的网格列表布局</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pages/ui.html#id9"><span class="sectnum">16.4</span> 小结</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pages/rxjs.html"><span class="sectnum">17</span> 学习RxJS在Angular中的实际应用</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pages/rxjs.html#subject"><span class="sectnum">17.1</span> 什么是主题（Subject）</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pages/rxjs.html#id1"><span class="sectnum">17.1.1</span> 理解数据生产者和数据消费者</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/rxjs.html#id2"><span class="sectnum">17.1.2</span> 理解单播和多播</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pages/rxjs.html#id3"><span class="sectnum">17.2</span> 不同类型的主题（Subject）</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pages/rxjs.html#behaviorsubject"><span class="sectnum">17.2.1</span> 使用BehaviorSubject类型主题</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/rxjs.html#replaysubject"><span class="sectnum">17.2.2</span> 使用ReplaySubject类型主题</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/rxjs.html#asyncsubject"><span class="sectnum">17.2.3</span> 使用AsyncSubject类型主题</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pages/rxjs.html#rxjs-ex100-angular"><span class="sectnum">17.3</span> [示例 rxjs-ex100] 演示Angular请求防抖示例</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/rxjs.html#id4"><span class="sectnum">17.4</span> 什么时候需要取消订阅</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/rxjs.html#rxjs"><span class="sectnum">17.5</span> 通过RxJS实现缓存</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pages/rxjs.html#rxjs-ex200-httpclienthttp"><span class="sectnum">17.5.1</span> [示例 rxjs-ex200] 了解HttpClient执行Http请求的性能问题</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/rxjs.html#rxjssharereplay"><span class="sectnum">17.5.2</span> 使用RxJS的shareReplay操作符实现缓存效果</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pages/rxjs.html#id5"><span class="sectnum">17.6</span> 小结</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pages/seventh.html">第七课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pages/material.html"><span class="sectnum">18</span> 实战基于Angular Material实现表格组件</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pages/material.html#angular"><span class="sectnum">18.1</span> 准备及创建Angular工程</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pages/material.html#id1"><span class="sectnum">18.1.1</span> 创建Angular工程</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/material.html#id2"><span class="sectnum">18.1.2</span> 安装Angular Material依赖</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pages/material.html#id3"><span class="sectnum">18.2</span> 设计数据模型并创建数据结构</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pages/material.html#issue"><span class="sectnum">18.2.1</span> 设计Issue数据模型</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/material.html#id4"><span class="sectnum">18.2.2</span> 创建数据结构</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pages/material.html#id5"><span class="sectnum">18.3</span> 创建页面布局</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pages/material.html#id6"><span class="sectnum">18.3.1</span> 添加Angular Material的工具栏</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/material.html#id7"><span class="sectnum">18.3.2</span> 添加Angular Material的表格</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pages/material.html#id8"><span class="sectnum">18.4</span> 实现加载中效果</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/material.html#id9"><span class="sectnum">18.5</span> 添加表格数据过滤的功能</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/material.html#id10"><span class="sectnum">18.6</span> 添加拖拽、隐藏及排序数据列功能</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/material.html#id11"><span class="sectnum">18.7</span> 实现表格数据编辑功能</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/material.html#id12"><span class="sectnum">18.8</span> 自定义翻页组件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/material.html#id13"><span class="sectnum">18.9</span> 小结</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pages/bootstrap.html"><span class="sectnum">19</span> 集成Bootstrap前端组件库</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pages/bootstrap.html#id1"><span class="sectnum">19.1</span> 学习Bootstrap的公共样式</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pages/bootstrap.html#id2"><span class="sectnum">19.1.1</span> 学习文本处理的样式</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pages/bootstrap.html#id3"><span class="sectnum">19.1.1.1</span> 文本的对齐方式</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pages/bootstrap.html#id4"><span class="sectnum">19.1.1.2</span> 文本溢出换行的样式</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pages/bootstrap.html#id5"><span class="sectnum">19.1.1.3</span> 字母大小写转换的样式</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pages/bootstrap.html#marginpadding"><span class="sectnum">19.1.2</span> 简化Margin与Padding的间距处理</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/bootstrap.html#flex"><span class="sectnum">19.1.3</span> 掌握Flex弹性布局</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pages/bootstrap.html#id6"><span class="sectnum">19.2</span> 学习Bootstrap的布局</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pages/bootstrap.html#container"><span class="sectnum">19.2.1</span> Container容器</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/bootstrap.html#id7"><span class="sectnum">19.2.2</span> 响应式栅格系统</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pages/bootstrap.html#id8"><span class="sectnum">19.2.2.1</span> 列宽布局</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pages/bootstrap.html#id9"><span class="sectnum">19.2.2.2</span> 垂直和水平对齐</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pages/bootstrap.html#id10"><span class="sectnum">19.3</span> 学习Bootstrap的组件库</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/bootstrap.html#ng-bootstrap"><span class="sectnum">19.4</span> 安装 NG-Bootstrap 组件库</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/bootstrap.html#angularfontawesome"><span class="sectnum">19.5</span> Angular中使用FontAwesome字体</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pages/bootstrap.html#fontawesome"><span class="sectnum">19.5.1</span> 安装FontAwesome字体</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/bootstrap.html#id11"><span class="sectnum">19.5.2</span> 使用FontAwesome字体</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pages/bootstrap.html#bootstrap-ex100-ng-bootstrap"><span class="sectnum">19.6</span> [示例 bootstrap-ex100] 使用NG-Bootstrap打造产品展示界面</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/bootstrap.html#id12"><span class="sectnum">19.7</span> 小结</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pages/echart.html"><span class="sectnum">20</span> 在Angular项目中使用图表</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pages/echart.html#echarts"><span class="sectnum">20.1</span> 为什么选择Echarts图表库</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/echart.html#ngx-echarts"><span class="sectnum">20.2</span> 安装及使用ngx-echarts图表库</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/echart.html#echarts-ex100-ngx-echarts"><span class="sectnum">20.3</span> [示例 echarts-ex100] 使用ngx-echarts生成折线图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/echart.html#echarts-ex200-ngx-echarts"><span class="sectnum">20.4</span> [示例 echarts-ex200] 使用ngx-echarts生成饼图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/echart.html#echarts-ex300-ngx-echarts"><span class="sectnum">20.5</span> [示例 echarts-ex300] 使用ngx-echarts生成柱状图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/echart.html#id1"><span class="sectnum">20.6</span> 小结</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pages/appid.html"><span class="sectnum">21</span> 使用IBM Cloud™ App ID对Angular应用进行认证</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pages/appid.html#ibm-cloud-app-id"><span class="sectnum">21.1</span> 什么是 IBM Cloud™ App ID 服务</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/appid.html#ibm-cloud-app-id-web"><span class="sectnum">21.2</span> 了解 IBM Cloud™ App ID Web 的认证流程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/appid.html#id1"><span class="sectnum">21.3</span> 注册 IBM Cloud™ App ID 服务</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/appid.html#appid-ex100-ibm-cloud-app-idangular"><span class="sectnum">21.4</span> [示例 appid-ex100] 使用IBM Cloud™ App ID对Angular应用进行认证</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/appid.html#id2"><span class="sectnum">21.5</span> 小结</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pages/communication.html"><span class="sectnum">22</span> 掌握在Angular组件间通信</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pages/communication.html#id1"><span class="sectnum">22.1</span> Angular组件间的通信方式有哪些</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/communication.html#id2"><span class="sectnum">22.2</span> 通过组件的引用调用对方的属性和方法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/communication.html#id3"><span class="sectnum">22.3</span> 通过事件总线共享数据</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/communication.html#id4"><span class="sectnum">22.4</span> 通过服务的可观察对象共享数据</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/communication.html#id5"><span class="sectnum">22.5</span> 小结</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pages/pwa.html"><span class="sectnum">23</span> Angular与渐进式WEB应用</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pages/pwa.html#web"><span class="sectnum">23.1</span> 什么是渐进式WEB应用</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/pwa.html#pwa"><span class="sectnum">23.2</span> 了解PWA的核心技术</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pages/pwa.html#manifest"><span class="sectnum">23.2.1</span> Manifest技术</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/pwa.html#service-worker"><span class="sectnum">23.2.2</span> Service Worker技术</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/pwa.html#id1"><span class="sectnum">23.2.3</span> 离线通知技术</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/pwa.html#app-shell"><span class="sectnum">23.2.4</span> App Shell技术</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pages/pwa.html#id2"><span class="sectnum">23.3</span> PWA的优势和最低要求</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pages/pwa.html#id3"><span class="sectnum">23.3.1</span> PWA的优势有哪些</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/pwa.html#id4"><span class="sectnum">23.3.2</span> PWA的最低要求</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pages/pwa.html#angularpwa"><span class="sectnum">23.4</span> 为Angular项目添加PWA功能</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/pwa.html#angularapp-shell"><span class="sectnum">23.5</span> 为Angular项目应用App Shell技术</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/pwa.html#angularservice-worker"><span class="sectnum">23.6</span> Angular与Service Worker通讯</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/pwa.html#pwa-ex100"><span class="sectnum">23.7</span> [示例 pwa-ex100] 实战打造一个培训学校点名系统</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pages/pwa.html#angular"><span class="sectnum">23.7.1</span> 创建Angular工程</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/pwa.html#angular-material"><span class="sectnum">23.7.2</span> 安装Angular Material依赖</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/pwa.html#restfull-api"><span class="sectnum">23.7.3</span> 准备后端RestFull API服务</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/pwa.html#id5"><span class="sectnum">23.7.4</span> 设计数据模型</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/pwa.html#id6"><span class="sectnum">23.7.5</span> 创建页面布局</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/pwa.html#id7"><span class="sectnum">23.7.6</span> 学生列表组件的开发</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/pwa.html#id8"><span class="sectnum">23.7.7</span> 学生卡片组件的开发</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/pwa.html#id9"><span class="sectnum">23.7.8</span> 为应用添加PWA功能</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/pwa.html#id10"><span class="sectnum">23.7.9</span> 为应用增加App Shell技术</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pages/pwa.html#pwaapp-shell"><span class="sectnum">23.8</span> 正确理解PWA与App Shell技术</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/pwa.html#id11"><span class="sectnum">23.9</span> 小结</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pages/message.html"><span class="sectnum">24</span> 实现简单的消息通知机制</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pages/message.html#id2"><span class="sectnum">24.1</span> 实现简单的消息通知机制的需求分析</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/message.html#api-response"><span class="sectnum">24.2</span> 如何缓存API Response数据</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/message.html#rxjs"><span class="sectnum">24.3</span> 如何更新RxJS缓存</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/message.html#id3"><span class="sectnum">24.4</span> 页面的元素和数据流分析</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/message.html#api"><span class="sectnum">24.5</span> 合并页面事件流与API数据流</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/message.html#message-ex100"><span class="sectnum">24.6</span> [示例 message-ex100] 实现简单的消息通知机制</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/message.html#id4"><span class="sectnum">24.7</span> 小结</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pages/localdata.html"><span class="sectnum">25</span> 如何与本地数据打交道</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pages/localdata.html#json"><span class="sectnum">25.1</span> 读取本地JSON文件数据</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pages/localdata.html#typescriptjson"><span class="sectnum">25.1.1</span> 使用TypeScript语言特性读取本地JSON文件数据</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/localdata.html#localdata-ex100-typescriptjson"><span class="sectnum">25.1.2</span> [示例 localdata-ex100] 使用TypeScript语言特性导入及使用本地JSON文件数据</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/localdata.html#es6-json"><span class="sectnum">25.1.3</span> 使用ES6+导入语句导入本地的JSON文件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/localdata.html#localdata-ex200-es6-json"><span class="sectnum">25.1.4</span> [示例 localdata-ex200] 使用ES6+导入语句导入本地的JSON文件数据</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/localdata.html#angularhttpclientjson"><span class="sectnum">25.1.5</span> 使用Angular的HttpClient导入本地JSON文件数据</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/localdata.html#localdata-ex300-angularhttpclientjson"><span class="sectnum">25.1.6</span> [示例 localdata-ex300] 使用Angular的HttpClient导入本地JSON文件数据</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pages/localdata.html#excel"><span class="sectnum">25.2</span> 导出数据到EXCEL表格</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pages/localdata.html#xlsx"><span class="sectnum">25.2.1</span> 安装xlsx模块</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/localdata.html#localdata-ex400-xlsxexcel"><span class="sectnum">25.2.2</span> [示例 localdata-ex400] 使用xlsx模块导出数据到EXCEL表格</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pages/localdata.html#id2"><span class="sectnum">25.3</span> 小结</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pages/test.html"><span class="sectnum">26</span> 熟悉Angular测试</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pages/test.html#id1"><span class="sectnum">26.1</span> 测试驱动开发和行为驱动开发</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/test.html#id2"><span class="sectnum">26.2</span> 功能测试和非功能测试</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/test.html#jasmine"><span class="sectnum">26.3</span> 什么是Jasmine？</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pages/test.html#it"><span class="sectnum">26.3.1</span> it()方法</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/test.html#describe"><span class="sectnum">26.3.2</span> describe()方法</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/test.html#expect"><span class="sectnum">26.3.3</span> expect()方法</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/test.html#matcher"><span class="sectnum">26.3.4</span> 匹配方法（Matcher）</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/test.html#setup-teardown"><span class="sectnum">26.3.5</span> 启动（setup）和销毁（teardown）方法</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pages/test.html#karma"><span class="sectnum">26.4</span> 什么是Karma？</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pages/test.html#angularjasminekarma"><span class="sectnum">26.4.1</span> Angular中的Jasmine和Karma的配置</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pages/test.html#id3"><span class="sectnum">26.5</span> 使用 Jasmine 编写测试用例</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/test.html#id4"><span class="sectnum">26.6</span> 小结</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pages/package.html"><span class="sectnum">27</span> 熟悉Angular环境配置及打包</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pages/package.html#id1"><span class="sectnum">27.1</span> 熟悉Angular打包</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/package.html#id2"><span class="sectnum">27.2</span> 小结</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pages/universal.html"><span class="sectnum">28</span> 学习Angular服务端渲染</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pages/universal.html#angular-universal"><span class="sectnum">28.1</span> 什么是Angular Universal？</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/universal.html#id1"><span class="sectnum">28.2</span> Angular Universal如何工作？</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/universal.html#id2"><span class="sectnum">28.3</span> 为什么需要Angular Universal？</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pages/universal.html#seo"><span class="sectnum">28.3.1</span> 实现搜索引擎优化(SEO)来帮助网络爬虫</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/universal.html#id3"><span class="sectnum">28.3.2</span> 方便社交媒体爬虫的抓取</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/universal.html#id4"><span class="sectnum">28.3.3</span> 快速显示首页</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pages/universal.html#id5"><span class="sectnum">28.4</span> Angular Universal 应用的特点</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pages/universal.html#universal-html"><span class="sectnum">28.4.1</span> Universal 应用渲染出来的是完整的HTML代码</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/universal.html#universal"><span class="sectnum">28.4.2</span> Universal 应用中不能使用浏览器对象</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/universal.html#universal-web"><span class="sectnum">28.4.3</span> Universal Web服务器的选择</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pages/universal.html#id6"><span class="sectnum">28.5</span> 实现Angular服务端渲染</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pages/universal.html#angularangular-universal"><span class="sectnum">28.5.1</span> 为Angular应用添加Angular Universal功能</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/universal.html#id7"><span class="sectnum">28.5.2</span> 实时查看Angular Universal功能渲染的页面</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/universal.html#ssr"><span class="sectnum">28.5.3</span> 部署并使用SSR实时渲染动态页面</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/universal.html#id8"><span class="sectnum">28.5.4</span> 使用SSR提前渲染静态页面</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pages/universal.html#universal-ex100-angular"><span class="sectnum">28.6</span> [示例 universal-ex100] 实现Angular服务端渲染</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/universal.html#id9"><span class="sectnum">28.7</span> 小结</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pages/deploy.html"><span class="sectnum">29</span> 如何部署Angular应用程序</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pages/deploy.html#ng-build"><span class="sectnum">29.1</span> 使用ng build命令构建应用</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/deploy.html#github"><span class="sectnum">29.2</span> 部署到GitHub页面服务器上的方法</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pages/deploy.html#id1"><span class="sectnum">29.2.1</span> 手工发布到GitHub页面服务器</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/deploy.html#angular-cligithub"><span class="sectnum">29.2.2</span> 使用Angular CLI命令自动发布到GitHub页面服务</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pages/deploy.html#id2"><span class="sectnum">29.3</span> 为什么要在服务器端配置404页面</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/deploy.html#id3"><span class="sectnum">29.4</span> 使用容器部署Angular应用</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/deploy.html#id4"><span class="sectnum">29.5</span> 小结</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pages/user.html"><span class="sectnum">30</span> 实战用户管理系统</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pages/user.html#id2"><span class="sectnum">30.1</span> 注册</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/user.html#id3"><span class="sectnum">30.2</span> 登录</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="pages/start.html" class="btn btn-neutral float-right" title="Angular 9" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright CVI Talent
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

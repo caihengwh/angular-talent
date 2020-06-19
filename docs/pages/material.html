@@ -1,0 +1,1484 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>18 实战基于Angular Material实现表格组件</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="19 集成Bootstrap前端组件库" href="bootstrap.html" />
+    <link rel="prev" title="第七课" href="seventh.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/main-page-logo-small-hat.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">目录：</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="start.html">Angular 9</a></li>
+<li class="toctree-l1"><a class="reference internal" href="first.html">第一课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="whatisangular.html"><span class="sectnum">1</span> Angular概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="howtolearn.html"><span class="sectnum">2</span> 学习Angular需要什么基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nodejs.html"><span class="sectnum">3</span> 掌握Node.js和npm基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="second.html">第二课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="typescript.html"><span class="sectnum">4</span> 学习TypeScript知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="firstangular.html"><span class="sectnum">5</span> 快速开启第一个Angular</a></li>
+<li class="toctree-l1"><a class="reference internal" href="third.html">第三课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angcomponent.html"><span class="sectnum">6</span> 学习Angular组件知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angtemplate.html"><span class="sectnum">7</span> 学习Angular模板知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angdirective.html"><span class="sectnum">8</span> 掌握Angular指令应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fourth.html">第四课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angmodule.html"><span class="sectnum">9</span> 学习Angular模块知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angroute.html"><span class="sectnum">10</span> 熟悉Angular路由功能</a></li>
+<li class="toctree-l1"><a class="reference internal" href="injection.html"><span class="sectnum">11</span> 学习Angular的服务及依赖注入</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fifth.html">第五课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reactive.html"><span class="sectnum">12</span> 掌握响应式编程基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form.html"><span class="sectnum">13</span> 学习Angular表单知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="httpclient.html"><span class="sectnum">14</span> 熟悉HttpClient模块</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sixth.html">第六课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pipe.html"><span class="sectnum">15</span> 深入学习Angular管道知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ui.html"><span class="sectnum">16</span> Angular与Angular Material组件库</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rxjs.html"><span class="sectnum">17</span> 学习RxJS在Angular中的实际应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="seventh.html">第七课</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#"><span class="sectnum">18</span> 实战基于Angular Material实现表格组件</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#angular"><span class="sectnum">18.1</span> 准备及创建Angular工程</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1"><span class="sectnum">18.1.1</span> 创建Angular工程</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2"><span class="sectnum">18.1.2</span> 安装Angular Material依赖</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id3"><span class="sectnum">18.2</span> 设计数据模型并创建数据结构</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#issue"><span class="sectnum">18.2.1</span> 设计Issue数据模型</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4"><span class="sectnum">18.2.2</span> 创建数据结构</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id5"><span class="sectnum">18.3</span> 创建页面布局</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id6"><span class="sectnum">18.3.1</span> 添加Angular Material的工具栏</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7"><span class="sectnum">18.3.2</span> 添加Angular Material的表格</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id8"><span class="sectnum">18.4</span> 实现加载中效果</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id9"><span class="sectnum">18.5</span> 添加表格数据过滤的功能</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id10"><span class="sectnum">18.6</span> 添加拖拽、隐藏及排序数据列功能</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id11"><span class="sectnum">18.7</span> 实现表格数据编辑功能</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id12"><span class="sectnum">18.8</span> 自定义翻页组件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id13"><span class="sectnum">18.9</span> 小结</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="bootstrap.html"><span class="sectnum">19</span> 集成Bootstrap前端组件库</a></li>
+<li class="toctree-l1"><a class="reference internal" href="echart.html"><span class="sectnum">20</span> 在Angular项目中使用图表</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appid.html"><span class="sectnum">21</span> 使用IBM Cloud™ App ID对Angular应用进行认证</a></li>
+<li class="toctree-l1"><a class="reference internal" href="communication.html"><span class="sectnum">22</span> 掌握在Angular组件间通信</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pwa.html"><span class="sectnum">23</span> Angular与渐进式WEB应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="message.html"><span class="sectnum">24</span> 实现简单的消息通知机制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="localdata.html"><span class="sectnum">25</span> 如何与本地数据打交道</a></li>
+<li class="toctree-l1"><a class="reference internal" href="test.html"><span class="sectnum">26</span> 熟悉Angular测试</a></li>
+<li class="toctree-l1"><a class="reference internal" href="package.html"><span class="sectnum">27</span> 熟悉Angular环境配置及打包</a></li>
+<li class="toctree-l1"><a class="reference internal" href="universal.html"><span class="sectnum">28</span> 学习Angular服务端渲染</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deploy.html"><span class="sectnum">29</span> 如何部署Angular应用程序</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user.html"><span class="sectnum">30</span> 实战用户管理系统</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">CVI Talent</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">首页</a> &raquo;</li>
+        
+      <li><span class="sectnum">18</span> 实战基于Angular Material实现表格组件</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        <a href="https://pages.github.ibm.com/lanzejun/talent/index.html" class="fa fa-github"> CVITube</a>
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="angular-material">
+<h1><span class="sectnum">18</span> 实战基于Angular Material实现表格组件<a class="headerlink" href="#angular-material" title="Permalink to this headline">¶</a></h1>
+<p>本章带领读者基于Angular Material实战一个真实的应用：用数据表格显示后端API返回的数据。要求实现如下功能：</p>
+<ol class="arabic simple">
+<li><p>用表格展示数据，要求对数据具有排序、分页、过滤的功能；</p></li>
+<li><p>可以自定义显示、隐藏数据列；</p></li>
+<li><p>可以对表格的数据列进行拖拽排序；</p></li>
+<li><p>格式化显示表格中的数据，汇总统计表格列数据的总和；</p></li>
+<li><p>数据加载时，表格数据处于加载状态时，显示加载效果;</p></li>
+<li><p>可以对数据进行编辑。</p></li>
+</ol>
+<p>为了完整的实战上述功能，同时将读者的精力尽量聚焦在Angular知识本身，本示例的后端数据依然选择GitHub上的开源API数据，这里选择Angular仓库的Issue数据。接下来，进入实战开发环节，具体步骤如下：</p>
+<div class="section" id="angular">
+<h2><span class="sectnum">18.1</span> 准备及创建Angular工程<a class="headerlink" href="#angular" title="Permalink to this headline">¶</a></h2>
+<p>本示例中的表格来自Angular Material的组件库，因此，需要准备及创建一个Angular工程，且安装好Angular Material的依赖包。</p>
+<div class="section" id="id1">
+<h3><span class="sectnum">18.1.1</span> 创建Angular工程<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>用Angular CLI构建应用程序，具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng n material-ex100 -S --routing --defaults<span class="o">=</span><span class="nb">true</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>在项目根目录下启动服务，具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng serve
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><p>查看应用程序结果。打开Web浏览器并浏览到 “<a class="reference external" href="http://localhost:4200">http://localhost:4200</a>”，应该看到文本 “Welcome to material-ex100!”。</p></li>
+</ol>
+<p>在上面的步骤中，完成的主要内容是：使用Angular CLI命令创建并初始化了一个Angular工程，该工程默认带有一个路由模块。</p>
+</div>
+<div class="section" id="id2">
+<h3><span class="sectnum">18.1.2</span> 安装Angular Material依赖<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>安装 Angular Material，具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng add @angular/material --defaults<span class="o">=</span><span class="nb">true</span> <span class="c1"># defaults=true 表示问答时选择默认值</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>新建Material模块，具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng g m material --route main --module app
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><p>查看应用程序结果。打开Web浏览器并浏览到 “<a class="reference external" href="http://localhost:4200/main">http://localhost:4200/main</a>”，在页面的底部应该可以看到文本 “material works!”。</p></li>
+</ol>
+<p>在上面的步骤中，完成了以下内容：</p>
+<ol class="arabic simple">
+<li><p>安装了Angular Material依赖库；</p></li>
+<li><p>新建了一个带路由功能的Material模块，同时，在根模块中通过延迟加载特性加载Material模块，默认延迟加载的子路由路径为“main”；</p></li>
+</ol>
+<p>本应用中，单独新建的Material模块主要用来存放Angular Material的组件。</p>
+</div>
+</div>
+<div class="section" id="id3">
+<h2><span class="sectnum">18.2</span> 设计数据模型并创建数据结构<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>数据模型是连接业务与程序之间的桥梁，我们分解业务需要，将业务需求演变为具体的数据模型，进而创建出对应的数据结构。</p>
+<div class="section" id="issue">
+<h3><span class="sectnum">18.2.1</span> 设计Issue数据模型<a class="headerlink" href="#issue" title="Permalink to this headline">¶</a></h3>
+<p>GitHub上提供的查询API接口URL格式为：<a class="reference external" href="https://api.github.com/search/issues">https://api.github.com/search/issues</a>?q={query}{&amp;page,per_page,sort,order}。该接口接受的查询参数分别介绍如下：</p>
+<ol class="arabic simple">
+<li><p>参数query：查询的关键字；</p></li>
+<li><p>参数per_page：每页返回的记录数；</p></li>
+<li><p>参数page：查询从第几页开始；</p></li>
+<li><p>参数sort：指定进行排序的字段；</p></li>
+<li><p>参数order：升序还是降序。</p></li>
+</ol>
+<p>如查询关键字为angular的完整URL为：<a class="reference external" href="https://api.github.com/search/issues?q=angular&amp;sort=created&amp;order=desc&amp;page=1&amp;per_page=2">https://api.github.com/search/issues?q=angular&amp;sort=created&amp;order=desc&amp;page=1&amp;per_page=2</a>，该URL查询的含义为：查询最近的angular问题列表，对查询结果进行分页，每页显示2条记录，返回第一页的结果。</p>
+<p>Issue的API接口返回的信息很多，根据业务需求，我们挑选其中部分字段作为本应用的数据结构，比如，表格的列显示这些信息：Issue的唯一标识符、创建日期、状态、标题、回复数。接下来，根据这个业务模型，创建具体的数据结构。</p>
+</div>
+<div class="section" id="id4">
+<h3><span class="sectnum">18.2.2</span> 创建数据结构<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>查看及分析上述接口返回的信息，我们定义1个接口类，用来表示Github Issue数据模型。</p>
+<ol class="arabic simple">
+<li><p>创建Github Issue数据模型接口，具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng g i githubIssue
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>编辑Github Issue数据模型接口。编辑文件src/app/github-issue.ts，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">export</span> <span class="kr">interface</span> <span class="nx">GithubApi</span> <span class="p">{</span>
+    <span class="nx">items</span>: <span class="kt">GithubIssue</span><span class="p">[];</span>
+    <span class="nx">total_count</span>: <span class="kt">number</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kr">export</span> <span class="kr">interface</span> <span class="nx">GithubIssue</span> <span class="p">{</span>
+    <span class="nx">created_at</span>: <span class="kt">string</span><span class="p">;</span>
+    <span class="kt">number</span><span class="o">:</span> <span class="kt">string</span><span class="p">;</span>
+    <span class="nx">state</span>: <span class="kt">string</span><span class="p">;</span>
+    <span class="nx">title</span>: <span class="kt">string</span><span class="p">;</span>
+    <span class="nx">comments</span>: <span class="kt">string</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>在上面的步骤中，GithubApi和GithubIssue接口中的字段名与Issue接口返回的对应字段名完全匹配。</p>
+</div>
+</div>
+<div class="section" id="id5">
+<h2><span class="sectnum">18.3</span> 创建页面布局<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>一般应用程序的页面设计都是从布局开始。我们大体构思下整体的页面布局，为了简单起见，页面布局分为上下两部分，上面是工具栏，下面放置将要实现的表格。接下来，从创建工具栏开始。</p>
+<div class="section" id="id6">
+<h3><span class="sectnum">18.3.1</span> 添加Angular Material的工具栏<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<p>Angular Material的工具栏是一个具有头（Header）、标题（Title）或操作的容器。组件用标签&lt;mat-toolbar&gt;表示，在工具栏中，我们放置两个小图标组件。</p>
+<ol class="arabic simple">
+<li><p>添加工具栏和图标模块依赖。编辑文件src/app/material/material.module.ts，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">NgModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">CommonModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/common&#39;</span><span class="p">;</span>
+
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">MaterialRoutingModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./material-routing.module&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">MaterialComponent</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./material.component&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">MatToolbarModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/material/toolbar&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">MatIconModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/material/icon&#39;</span><span class="p">;</span>
+
+<span class="kd">@NgModule</span><span class="p">({</span>
+  <span class="nx">declarations</span><span class="o">:</span> <span class="p">[</span><span class="nx">MaterialComponent</span><span class="p">],</span>
+  <span class="nx">imports</span><span class="o">:</span> <span class="p">[</span>
+    <span class="nx">CommonModule</span><span class="p">,</span>
+    <span class="nx">MaterialRoutingModule</span><span class="p">,</span>
+    <span class="nx">MatToolbarModule</span><span class="p">,</span> <span class="c1">// 工具栏</span>
+    <span class="nx">MatIconModule</span> <span class="c1">// 图标</span>
+  <span class="p">]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">MaterialModule</span> <span class="p">{</span> <span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>编辑Material组件模板。编辑文件src/app/material/material.component.html，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">mat-toolbar</span> <span class="na">color</span><span class="o">=</span><span class="s">&quot;accent&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">mat-toolbar-row</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>Github 中 Angular 问题列表<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;example-spacer&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">mat-icon</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;example-icon&quot;</span> <span class="na">aria-hidden</span><span class="o">=</span><span class="s">&quot;false&quot;</span> <span class="na">aria-label</span><span class="o">=</span><span class="s">&quot;收藏&quot;</span><span class="p">&gt;</span>favorite<span class="p">&lt;/</span><span class="nt">mat-icon</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">mat-icon</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;example-icon&quot;</span> <span class="na">aria-hidden</span><span class="o">=</span><span class="s">&quot;false&quot;</span> <span class="na">aria-label</span><span class="o">=</span><span class="s">&quot;退出&quot;</span><span class="p">&gt;</span>logout<span class="p">&lt;/</span><span class="nt">mat-icon</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">mat-toolbar-row</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">mat-toolbar</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><p>编辑Material组件模板样式。编辑文件src/app/material/material.component.css，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-scss notranslate"><div class="highlight"><pre><span></span><span class="nc">.example-icon</span> <span class="p">{</span>
+    <span class="nt">padding</span><span class="nd">:</span> <span class="nt">0</span> <span class="nt">14px</span><span class="o">;</span>
+<span class="p">}</span>
+
+<span class="cm">/* 工具栏图标靠右的样式 */</span>
+<span class="nc">.example-spacer</span> <span class="p">{</span>
+    <span class="nt">flex</span><span class="nd">:</span> <span class="nt">1</span> <span class="nt">1</span> <span class="nt">auto</span><span class="o">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="4">
+<li><p>编辑根模块路由。编辑文件src/app/app-routing.module.ts，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">NgModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">Routes</span><span class="p">,</span> <span class="nx">RouterModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/router&#39;</span><span class="p">;</span>
+
+<span class="kr">const</span> <span class="nx">routes</span>: <span class="kt">Routes</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="p">{</span> <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="nx">redirectTo</span><span class="o">:</span> <span class="s1">&#39;/main&#39;</span><span class="p">,</span> <span class="nx">pathMatch</span><span class="o">:</span> <span class="s1">&#39;full&#39;</span> <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;main&#39;</span><span class="p">,</span> <span class="nx">loadChildren</span><span class="o">:</span> <span class="p">()</span> <span class="o">=&gt;</span>
+      <span class="kr">import</span><span class="p">(</span><span class="s1">&#39;./material/material.module&#39;</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">m</span> <span class="o">=&gt;</span> <span class="nx">m</span><span class="p">.</span><span class="nx">MaterialModule</span><span class="p">)</span>
+  <span class="p">}];</span>
+
+<span class="kd">@NgModule</span><span class="p">({</span>
+  <span class="nx">imports</span><span class="o">:</span> <span class="p">[</span><span class="nx">RouterModule</span><span class="p">.</span><span class="nx">forRoot</span><span class="p">(</span><span class="nx">routes</span><span class="p">)],</span>
+  <span class="nx">exports</span><span class="o">:</span> <span class="p">[</span><span class="nx">RouterModule</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">AppRoutingModule</span> <span class="p">{</span> <span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="5">
+<li><p>编辑根组件模板。编辑文件src/app/app.component.html，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">router-outlet</span><span class="p">&gt;&lt;/</span><span class="nt">router-outlet</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="6">
+<li><p>查看应用程序结果。打开Web浏览器并浏览到 “<a class="reference external" href="http://localhost:4200">http://localhost:4200</a>”，页面显示效果如图18-1所示：</p></li>
+</ol>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/Figure18-1.png"><img alt="../_images/Figure18-1.png" src="../_images/Figure18-1.png" style="width: 400px;" /></a>
+<p>图18-1 使用Angular Material的工具栏</p>
+</div></blockquote>
+<p>在上面的步骤中，完成了以下内容：</p>
+<ol class="arabic simple">
+<li><p>单独创建了Material模块，并在其中添加了工具栏和图标模块的依赖；</p></li>
+<li><p>在Material组件模板中添加了一个工具栏。注意example-spacer样式，它使用了flex属性，值为“1 1 auto”表示：将当前标签的宽度设置占满整个容器的剩余宽度，即工具栏中除了标题与mat-icon组件外，剩余的空间都被占满，因此，视觉上标题与mat-icon组件分两端显示；</p></li>
+<li><p>修改了默认主路径，使其跳转到Material组件。</p></li>
+</ol>
+</div>
+<div class="section" id="id7">
+<h3><span class="sectnum">18.3.2</span> 添加Angular Material的表格<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<p>Angular Material组件库中提供了一个支持 Material Design 样式的表格，可用来显示多行数据。表格组件用标签&lt;mat-table&gt;表示。mat-table组件分为3个部分：表格的数据源，列组件和行组件。</p>
+<ol class="arabic simple">
+<li><p>添加表格模块依赖。编辑文件src/app/material/material.module.ts，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">NgModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">CommonModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/common&#39;</span><span class="p">;</span>
+
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">MaterialRoutingModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./material-routing.module&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">MaterialComponent</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./material.component&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">MatToolbarModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/material/toolbar&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">MatIconModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/material/icon&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">MatTableModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/material/table&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">MatPaginatorModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/material/paginator&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">MatSortModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/material/sort&#39;</span><span class="p">;</span>
+
+<span class="kd">@NgModule</span><span class="p">({</span>
+  <span class="nx">declarations</span><span class="o">:</span> <span class="p">[</span><span class="nx">MaterialComponent</span><span class="p">],</span>
+  <span class="nx">imports</span><span class="o">:</span> <span class="p">[</span>
+    <span class="nx">CommonModule</span><span class="p">,</span>
+    <span class="nx">MaterialRoutingModule</span><span class="p">,</span>
+    <span class="nx">MatToolbarModule</span><span class="p">,</span> <span class="c1">// 工具栏</span>
+    <span class="nx">MatIconModule</span><span class="p">,</span> <span class="c1">// 图标</span>
+    <span class="nx">MatTableModule</span><span class="p">,</span> <span class="c1">// 表格</span>
+    <span class="nx">MatPaginatorModule</span><span class="p">,</span> <span class="c1">// 表格的分页</span>
+    <span class="nx">MatSortModule</span> <span class="c1">// 表格的排序</span>
+  <span class="p">]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">MaterialModule</span> <span class="p">{</span> <span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>编辑根模块，增加HttpClientModule。编辑文件src/app/app.module.ts，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">BrowserModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/platform-browser&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">NgModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">AppRoutingModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./app-routing.module&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">AppComponent</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./app.component&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">BrowserAnimationsModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/platform-browser/animations&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">HttpClientModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/common/http&#39;</span><span class="p">;</span>
+
+<span class="kd">@NgModule</span><span class="p">({</span>
+  <span class="nx">declarations</span><span class="o">:</span> <span class="p">[</span>
+    <span class="nx">AppComponent</span>
+  <span class="p">],</span>
+  <span class="nx">imports</span><span class="o">:</span> <span class="p">[</span>
+    <span class="nx">BrowserModule</span><span class="p">,</span>
+    <span class="nx">AppRoutingModule</span><span class="p">,</span>
+    <span class="nx">BrowserAnimationsModule</span><span class="p">,</span>
+    <span class="nx">HttpClientModule</span> <span class="c1">// HttpClient服务</span>
+  <span class="p">],</span>
+  <span class="nx">providers</span><span class="o">:</span> <span class="p">[],</span>
+  <span class="nx">bootstrap</span><span class="o">:</span> <span class="p">[</span><span class="nx">AppComponent</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">AppModule</span> <span class="p">{</span> <span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><p>新建服务。使用命令 <code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">g</span> <span class="pre">s</span> <span class="pre">issue</span></code> 新建服务，并将文件src/app/issue.service.ts更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Injectable</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">HttpClient</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/common/http&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">GithubApi</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./github-issue&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">Observable</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;rxjs&#39;</span><span class="p">;</span>
+
+<span class="kd">@Injectable</span><span class="p">({</span>
+  <span class="nx">providedIn</span><span class="o">:</span> <span class="s1">&#39;root&#39;</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">IssueService</span> <span class="p">{</span>
+
+  <span class="kr">constructor</span><span class="p">(</span><span class="kr">private</span> <span class="nx">http</span>: <span class="kt">HttpClient</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+
+  <span class="nx">getRepoIssues</span><span class="p">(</span><span class="nx">sort</span>: <span class="kt">string</span><span class="p">,</span> <span class="nx">order</span>: <span class="kt">string</span><span class="p">,</span> <span class="nx">page</span>: <span class="kt">number</span><span class="p">)</span><span class="o">:</span> <span class="nx">Observable</span><span class="o">&lt;</span><span class="nx">GithubApi</span><span class="o">&gt;</span> <span class="p">{</span>
+    <span class="kr">const</span> <span class="nx">href</span> <span class="o">=</span> <span class="s1">&#39;https://api.github.com/search/issues&#39;</span><span class="p">;</span>
+    <span class="kr">const</span> <span class="nx">requestUrl</span> <span class="o">=</span>
+      <span class="sb">`</span><span class="si">${</span><span class="nx">href</span><span class="si">}</span><span class="sb">?q=angular&amp;sort=</span><span class="si">${</span><span class="nx">sort</span><span class="si">}</span><span class="sb">&amp;order=</span><span class="si">${</span><span class="nx">order</span><span class="si">}</span><span class="sb">&amp;page=</span><span class="si">${</span><span class="nx">page</span> <span class="o">+</span> <span class="mi">1</span><span class="si">}</span><span class="sb">`</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">http</span><span class="p">.</span><span class="nx">get</span><span class="o">&lt;</span><span class="nx">GithubApi</span><span class="o">&gt;</span><span class="p">(</span><span class="nx">requestUrl</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="4">
+<li><p>编辑Material组件。编辑文件src/app/material/material.component.ts，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">AfterViewInit</span><span class="p">,</span> <span class="nx">ViewChild</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">IssueService</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;../issue.service&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">MatTableDataSource</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/material/table&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">GithubIssue</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;../github-issue&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">MatPaginator</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/material/paginator&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">MatSort</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/material/sort&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">merge</span><span class="p">,</span> <span class="k">of</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;rxjs&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">startWith</span><span class="p">,</span> <span class="nx">switchMap</span><span class="p">,</span> <span class="nx">map</span><span class="p">,</span> <span class="nx">catchError</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;rxjs/operators&#39;</span><span class="p">;</span>
+
+<span class="kd">@Component</span><span class="p">({</span>
+  <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-material&#39;</span><span class="p">,</span>
+  <span class="nx">templateUrl</span><span class="o">:</span> <span class="s1">&#39;./material.component.html&#39;</span><span class="p">,</span>
+  <span class="nx">styleUrls</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;./material.component.css&#39;</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">MaterialComponent</span> <span class="kr">implements</span> <span class="nx">AfterViewInit</span> <span class="p">{</span>
+
+  <span class="nx">title</span> <span class="o">=</span> <span class="s1">&#39;Github 中 Angular 问题列表&#39;</span>
+
+  <span class="c1">// 定义显示表格的列</span>
+  <span class="nx">displayedColumns</span>: <span class="kt">string</span><span class="p">[]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;number&#39;</span><span class="p">,</span> <span class="s1">&#39;created&#39;</span><span class="p">,</span> <span class="s1">&#39;state&#39;</span><span class="p">,</span> <span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="s1">&#39;comments&#39;</span><span class="p">,</span> <span class="s1">&#39;menu&#39;</span><span class="p">];</span>
+  <span class="c1">// 使用管道显示对应的文字</span>
+  <span class="nx">dicMap</span>: <span class="kt">any</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">&#39;open&#39;</span><span class="o">:</span> <span class="s1">&#39;打开&#39;</span><span class="p">,</span> <span class="s1">&#39;closed&#39;</span><span class="o">:</span> <span class="s1">&#39;关闭&#39;</span> <span class="p">};</span>
+  <span class="c1">// 定义表格接受的数据源</span>
+  <span class="nx">dataSource</span>: <span class="kt">MatTableDataSource</span><span class="o">&lt;</span><span class="nx">GithubIssue</span><span class="o">&gt;</span><span class="p">;</span>
+
+  <span class="kr">constructor</span><span class="p">(</span><span class="kr">private</span> <span class="nx">issueService</span>: <span class="kt">IssueService</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+
+  <span class="c1">// 对应页面上的分页和排序组件</span>
+  <span class="kd">@ViewChild</span><span class="p">(</span><span class="nx">MatPaginator</span><span class="p">,</span> <span class="p">{</span> <span class="kr">static</span><span class="o">:</span> <span class="kc">true</span> <span class="p">})</span> <span class="nx">paginator</span>: <span class="kt">MatPaginator</span><span class="p">;</span>
+  <span class="kd">@ViewChild</span><span class="p">(</span><span class="nx">MatSort</span><span class="p">,</span> <span class="p">{</span> <span class="kr">static</span><span class="o">:</span> <span class="kc">true</span> <span class="p">})</span> <span class="nx">sort</span>: <span class="kt">MatSort</span><span class="p">;</span>
+
+  <span class="nx">ngAfterViewInit() {</span>
+    <span class="c1">// 如果用户改变了排序顺序，则重置回第一页。</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">sort</span><span class="p">.</span><span class="nx">sortChange</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">paginator</span><span class="p">.</span><span class="nx">pageIndex</span> <span class="o">=</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="nx">merge</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">sort</span><span class="p">.</span><span class="nx">sortChange</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">paginator</span><span class="p">.</span><span class="nx">page</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span>
+        <span class="nx">startWith</span><span class="p">({}),</span>
+        <span class="nx">switchMap</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+          <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">issueService</span><span class="p">.</span><span class="nx">getRepoIssues</span><span class="p">(</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">sort</span><span class="p">.</span><span class="nx">active</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">sort</span><span class="p">.</span><span class="nx">direction</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">paginator</span><span class="p">.</span><span class="nx">pageIndex</span><span class="p">);</span>
+        <span class="p">}),</span>
+        <span class="nx">map</span><span class="p">(</span><span class="nx">data</span> <span class="o">=&gt;</span> <span class="p">{</span>
+          <span class="k">return</span> <span class="nx">data</span><span class="p">.</span><span class="nx">items</span><span class="p">;</span>
+        <span class="p">}),</span>
+        <span class="nx">catchError</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+          <span class="k">return</span> <span class="k">of</span><span class="p">([]);</span>
+        <span class="p">})</span>
+      <span class="p">).</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">data</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">dataSource</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MatTableDataSource</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">dataSource</span><span class="p">.</span><span class="nx">paginator</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">paginator</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">dataSource</span><span class="p">.</span><span class="nx">sort</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">sort</span><span class="p">;</span>
+      <span class="p">});</span>
+  <span class="p">}</span>
+
+  <span class="c1">// 点击行操作时，触发的方法</span>
+  <span class="nx">onRowClicked</span><span class="p">(</span><span class="nx">row</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;点击行操作: &#39;</span><span class="p">,</span> <span class="nx">row</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="c1">// 统计留言数</span>
+  <span class="nx">getTotalComments() {</span>
+    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">dataSource</span><span class="o">?</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">t</span> <span class="o">=&gt;</span> <span class="o">+</span><span class="nx">t</span><span class="p">.</span><span class="nx">comments</span><span class="p">).</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">acc</span><span class="p">,</span> <span class="nx">value</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">acc</span> <span class="o">+</span> <span class="nx">value</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+  <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="5">
+<li><p>编辑Material组件模板。编辑文件src/app/material/material.component.html，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-scss notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="nt">mat-toolbar</span> <span class="nt">color</span><span class="o">=</span><span class="s2">&quot;accent&quot;</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nt">mat-toolbar-row</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nt">span</span><span class="o">&gt;</span><span class="p">{{</span><span class="nt">title</span><span class="p">}}</span><span class="o">&lt;/</span><span class="nt">span</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nt">span</span> <span class="nt">class</span><span class="o">=</span><span class="s2">&quot;example-spacer&quot;</span><span class="o">&gt;&lt;/</span><span class="nt">span</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nt">mat-icon</span> <span class="nt">class</span><span class="o">=</span><span class="s2">&quot;example-icon&quot;</span> <span class="nt">aria-hidden</span><span class="o">=</span><span class="s2">&quot;false&quot;</span> <span class="nt">aria-label</span><span class="o">=</span><span class="s2">&quot;收藏&quot;</span><span class="o">&gt;</span><span class="nt">favorite</span><span class="o">&lt;/</span><span class="nt">mat-icon</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nt">mat-icon</span> <span class="nt">class</span><span class="o">=</span><span class="s2">&quot;example-icon&quot;</span> <span class="nt">aria-hidden</span><span class="o">=</span><span class="s2">&quot;false&quot;</span> <span class="nt">aria-label</span><span class="o">=</span><span class="s2">&quot;退出&quot;</span><span class="o">&gt;</span><span class="nt">logout</span><span class="o">&lt;/</span><span class="nt">mat-icon</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="nt">mat-toolbar-row</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="nt">mat-toolbar</span><span class="o">&gt;</span>
+
+
+<span class="o">&lt;</span><span class="nt">div</span> <span class="nt">class</span><span class="o">=</span><span class="s2">&quot;example-container mat-elevation-z8&quot;</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nt">div</span> <span class="nt">class</span><span class="o">=</span><span class="s2">&quot;example-table-container&quot;</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nt">mat-table</span> <span class="o">[</span><span class="nt">dataSource</span><span class="o">]=</span><span class="s2">&quot;dataSource&quot;</span> <span class="nt">class</span><span class="o">=</span><span class="s2">&quot;mat-elevation-z8&quot;</span> <span class="nt">matSort</span> <span class="nt">matSortActive</span><span class="o">=</span><span class="s2">&quot;created&quot;</span>
+            <span class="nt">matSortDisableClear</span> <span class="nt">matSortDirection</span><span class="o">=</span><span class="s2">&quot;desc&quot;</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="nt">ng-container</span> <span class="nt">matColumnDef</span><span class="o">=</span><span class="s2">&quot;menu&quot;</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nt">mat-header-cell</span> <span class="o">*</span><span class="nt">matHeaderCellDef</span><span class="o">&gt;</span><span class="nt">操作</span><span class="o">&lt;/</span><span class="nt">mat-header-cell</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nt">mat-cell</span> <span class="o">*</span><span class="nt">matCellDef</span><span class="o">=</span><span class="s2">&quot;let row&quot;</span><span class="o">&gt;&lt;</span><span class="nt">mat-icon</span> <span class="nt">color</span><span class="o">=</span><span class="s2">&quot;accent&quot;</span><span class="o">&gt;</span><span class="nt">edit</span><span class="o">&lt;/</span><span class="nt">mat-icon</span><span class="o">&gt;&lt;/</span><span class="nt">mat-cell</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nt">mat-cell</span> <span class="nt">mat-footer-cell</span> <span class="o">*</span><span class="nt">matFooterCellDef</span><span class="o">&gt;&lt;/</span><span class="nt">mat-cell</span><span class="o">&gt;</span>
+            <span class="o">&lt;/</span><span class="nt">ng-container</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="nt">ng-container</span> <span class="nt">matColumnDef</span><span class="o">=</span><span class="s2">&quot;number&quot;</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nt">mat-header-cell</span> <span class="o">*</span><span class="nt">matHeaderCellDef</span> <span class="nt">mat-sort-header</span><span class="o">&gt;</span><span class="nn">#</span><span class="o">&lt;/</span><span class="nt">mat-header-cell</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nt">mat-cell</span> <span class="o">*</span><span class="nt">matCellDef</span><span class="o">=</span><span class="s2">&quot;let row&quot;</span><span class="o">&gt;</span><span class="p">{{</span><span class="nt">row</span><span class="nc">.number</span><span class="p">}}</span><span class="o">&lt;/</span><span class="nt">mat-cell</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nt">mat-cell</span> <span class="nt">mat-footer-cell</span> <span class="o">*</span><span class="nt">matFooterCellDef</span><span class="o">&gt;</span><span class="nt">汇总</span><span class="o">&lt;/</span><span class="nt">mat-cell</span><span class="o">&gt;</span>
+            <span class="o">&lt;/</span><span class="nt">ng-container</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="nt">ng-container</span> <span class="nt">matColumnDef</span><span class="o">=</span><span class="s2">&quot;title&quot;</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nt">mat-header-cell</span> <span class="o">*</span><span class="nt">matHeaderCellDef</span> <span class="nt">mat-sort-header</span><span class="o">&gt;</span><span class="nt">标题</span><span class="o">&lt;/</span><span class="nt">mat-header-cell</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nt">mat-cell</span> <span class="o">*</span><span class="nt">matCellDef</span><span class="o">=</span><span class="s2">&quot;let row&quot;</span><span class="o">&gt;</span><span class="p">{{</span><span class="nt">row</span><span class="nc">.title</span><span class="p">}}</span><span class="o">&lt;/</span><span class="nt">mat-cell</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nt">mat-cell</span> <span class="nt">mat-footer-cell</span> <span class="o">*</span><span class="nt">matFooterCellDef</span><span class="o">&gt;&lt;/</span><span class="nt">mat-cell</span><span class="o">&gt;</span>
+            <span class="o">&lt;/</span><span class="nt">ng-container</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="nt">ng-container</span> <span class="nt">matColumnDef</span><span class="o">=</span><span class="s2">&quot;state&quot;</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nt">mat-header-cell</span> <span class="o">*</span><span class="nt">matHeaderCellDef</span> <span class="nt">mat-sort-header</span><span class="o">&gt;</span><span class="nt">状态</span><span class="o">&lt;/</span><span class="nt">mat-header-cell</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nt">mat-cell</span> <span class="o">*</span><span class="nt">matCellDef</span><span class="o">=</span><span class="s2">&quot;let row&quot;</span><span class="o">&gt;</span><span class="p">{{</span><span class="nt">row</span><span class="nc">.state</span> <span class="o">|</span> <span class="nt">i18nSelect</span><span class="nd">:</span> <span class="nt">dicMap</span> <span class="p">}}</span><span class="o">&lt;/</span><span class="nt">mat-cell</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nt">mat-cell</span> <span class="nt">mat-footer-cell</span> <span class="o">*</span><span class="nt">matFooterCellDef</span><span class="o">&gt;&lt;/</span><span class="nt">mat-cell</span><span class="o">&gt;</span>
+            <span class="o">&lt;/</span><span class="nt">ng-container</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="nt">ng-container</span> <span class="nt">matColumnDef</span><span class="o">=</span><span class="s2">&quot;comments&quot;</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nt">mat-header-cell</span> <span class="o">*</span><span class="nt">matHeaderCellDef</span> <span class="nt">mat-sort-header</span><span class="o">&gt;</span><span class="nt">留言数</span><span class="o">&lt;/</span><span class="nt">mat-header-cell</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nt">mat-cell</span> <span class="o">*</span><span class="nt">matCellDef</span><span class="o">=</span><span class="s2">&quot;let row&quot;</span><span class="o">&gt;</span><span class="p">{{</span><span class="nt">row</span><span class="nc">.comments</span><span class="p">}}</span><span class="o">&lt;/</span><span class="nt">mat-cell</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nt">mat-cell</span> <span class="nt">mat-footer-cell</span> <span class="o">*</span><span class="nt">matFooterCellDef</span><span class="o">&gt;</span><span class="p">{{</span><span class="nt">getTotalComments</span><span class="o">()</span><span class="p">}}</span><span class="o">&lt;/</span><span class="nt">mat-cell</span><span class="o">&gt;</span>
+            <span class="o">&lt;/</span><span class="nt">ng-container</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="nt">ng-container</span> <span class="nt">matColumnDef</span><span class="o">=</span><span class="s2">&quot;created&quot;</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nt">mat-header-cell</span> <span class="o">*</span><span class="nt">matHeaderCellDef</span> <span class="nt">mat-sort-header</span> <span class="nt">disableClear</span><span class="o">&gt;</span><span class="nt">创建时间</span><span class="o">&lt;/</span><span class="nt">mat-header-cell</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nt">mat-cell</span> <span class="o">*</span><span class="nt">matCellDef</span><span class="o">=</span><span class="s2">&quot;let row&quot;</span><span class="o">&gt;</span><span class="p">{{</span><span class="nt">row</span><span class="nc">.created_at</span> <span class="o">|</span> <span class="nt">date</span><span class="nd">:</span><span class="s1">&#39;yyyy-MM-dd&#39;</span><span class="p">}}</span><span class="o">&lt;/</span><span class="nt">mat-cell</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nt">mat-cell</span> <span class="nt">mat-footer-cell</span> <span class="o">*</span><span class="nt">matFooterCellDef</span><span class="o">&gt;&lt;/</span><span class="nt">mat-cell</span><span class="o">&gt;</span>
+            <span class="o">&lt;/</span><span class="nt">ng-container</span><span class="o">&gt;</span>
+
+            <span class="o">&lt;</span><span class="nt">mat-header-row</span> <span class="o">*</span><span class="nt">matHeaderRowDef</span><span class="o">=</span><span class="s2">&quot;displayedColumns&quot;</span><span class="o">&gt;&lt;/</span><span class="nt">mat-header-row</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="nt">mat-row</span> <span class="o">*</span><span class="nt">matRowDef</span><span class="o">=</span><span class="s2">&quot;let row; columns: displayedColumns&quot;</span> <span class="o">(</span><span class="nt">click</span><span class="o">)=</span><span class="s2">&quot;onRowClicked(row)&quot;</span><span class="o">&gt;&lt;/</span><span class="nt">mat-row</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="nt">mat-footer-row</span> <span class="o">*</span><span class="nt">matFooterRowDef</span><span class="o">=</span><span class="s2">&quot;displayedColumns&quot;</span><span class="o">&gt;&lt;/</span><span class="nt">mat-footer-row</span><span class="o">&gt;</span>
+        <span class="o">&lt;/</span><span class="nt">mat-table</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="nt">div</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nt">mat-paginator</span> <span class="o">[</span><span class="nt">pageSizeOptions</span><span class="o">]=</span><span class="s2">&quot;[5, 10, 25, 100]&quot;</span><span class="o">&gt;&lt;/</span><span class="nt">mat-paginator</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="nt">div</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="6">
+<li><p>编辑Material组件模板样式。编辑文件src/app/material/material.component.css，并添加以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="c">/* 表格居中显示的样式 */</span>
+<span class="p">.</span><span class="nc">example-container</span> <span class="p">{</span>
+    <span class="k">min-height</span><span class="p">:</span> <span class="mi">200</span><span class="kt">px</span><span class="p">;</span>
+    <span class="k">margin</span><span class="p">:</span> <span class="kc">auto</span><span class="p">;</span>
+    <span class="k">margin-top</span><span class="p">:</span> <span class="mi">1</span><span class="kt">em</span><span class="p">;</span>
+    <span class="k">width</span><span class="p">:</span> <span class="mi">85</span><span class="kt">%</span><span class="p">;</span>
+    <span class="k">border</span><span class="p">:</span> <span class="mi">1</span><span class="kt">px</span> <span class="kc">solid</span> <span class="kc">green</span><span class="p">;</span>
+    <span class="k">padding</span><span class="p">:</span> <span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">example-table-container</span> <span class="p">{</span>
+    <span class="k">max-height</span><span class="p">:</span> <span class="mi">500</span><span class="kt">px</span><span class="p">;</span>
+    <span class="k">overflow</span><span class="p">:</span> <span class="kc">auto</span><span class="p">;</span>
+<span class="p">}</span>
+
+
+<span class="c">/* 表格列宽的样式 */</span>
+<span class="p">.</span><span class="nc">mat-column-comments</span><span class="o">,</span>
+<span class="p">.</span><span class="nc">mat-column-number</span><span class="o">,</span>
+<span class="p">.</span><span class="nc">mat-column-state</span> <span class="p">{</span>
+  <span class="k">max-width</span><span class="p">:</span> <span class="mi">8</span><span class="kt">%</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">mat-column-created</span> <span class="p">{</span>
+  <span class="k">max-width</span><span class="p">:</span> <span class="mi">10</span><span class="kt">%</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">mat-column-menu</span> <span class="p">{</span>
+  <span class="k">max-width</span><span class="p">:</span> <span class="mi">10</span><span class="kt">%</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">mat-column-title</span> <span class="p">{</span>
+  <span class="k">max-width</span><span class="p">:</span> <span class="mi">56</span><span class="kt">%</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="7">
+<li><p>查看应用程序结果。打开Web浏览器并浏览到 “<a class="reference external" href="http://localhost:4200">http://localhost:4200</a>”，页面显示效果如图18-2所示：</p></li>
+</ol>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/Figure18-2.png"><img alt="../_images/Figure18-2.png" src="../_images/Figure18-2.png" style="width: 800px;" /></a>
+<p>图18-2 使用Angular Material的表格</p>
+</div></blockquote>
+<p>在上面的步骤中，完成了以下内容：</p>
+<ol class="arabic simple">
+<li><p>在Material模块中添加了表格组件相关的模块依赖，分别是表格本身、分页和排序组件模块；</p></li>
+<li><p>HttpClientModule属于核心模块，因此，将HttpClientModule导入到根模块中；</p></li>
+<li><p>创建了IssueService服务，用于获取GitHub上Issue的数据；</p></li>
+<li><p>往Material组件类中添加了很多属性和方法，在代码关键位置，标记了注释，帮助读者理解它们的含义。注意其中使用了merge操作符合并排序和分页的数据流，当它们发生变化时，触发查询Issue数据的服务，同时订阅返回的值绑定给表格的数据源；</p></li>
+<li><p>在Material组件模板中增加了表格模板代码，mat-table表格分为列显示模板和行数据模板；列显示模板中定义了表头显示、单元格显示和表底汇总显示的内容模板；行数据模板中分别为列模板中的3个显示部分提供数据，替换列显示模板中的内容。同时，在表格行上添加了单击事件，触发onRowClicked()方法；</p></li>
+<li><p>在Material组件模板样式中，分别设置了表格、列宽的样式，注意其中表格列样式的选择器；</p></li>
+</ol>
+<p>页面加载完成后，默认每页显示5条Issue记录，记录一共有30条，可以单击列头的排序图标针对具体的列字段进行排序，也可以单击分页按钮进行分页浏览记录。至此，表格的排序和分页基本功能完成了，接下来，继续实现需求的其他功能。</p>
+</div>
+</div>
+<div class="section" id="id8">
+<h2><span class="sectnum">18.4</span> 实现加载中效果<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<p>当页面加载或刷新时，表格中加载远程的数据时，由于网络延迟等原因，会出现短暂的空白现象，按照需求，我们添加和完善这个加载显示效果。</p>
+<p>Angular Material的Spinner组件是一个表示进度和活动的圆形指示符，组件用标签&lt;mat-spinner&gt;表示。</p>
+<ol class="arabic simple">
+<li><p>添加Spinner组件模块依赖。编辑文件src/app/material/material.module.ts，并添加以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span><span class="nx">MatProgressSpinnerModule</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/material/progress-spinner&#39;</span><span class="p">;</span>
+
+<span class="nx">imports</span><span class="o">:</span> <span class="p">[</span>
+  <span class="c1">// ...</span>
+  <span class="nx">MatProgressSpinnerModule</span> <span class="c1">// 显示进度</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>编辑Material组件。编辑文件src/app/material/material.component.ts，新增2个变量，并修改ngAfterViewInit()方法内容如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="c1">// 新增2个变量</span>
+<span class="nx">isLoadingResults</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span> <span class="c1">// 表示是否加载完成，等于真时，显示加载进度</span>
+<span class="nx">isRateLimitReached</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span> <span class="c1">// 表示接口是否异常，等于假时，表示无异常</span>
+
+
+<span class="nx">ngAfterViewInit() {</span>
+  <span class="c1">// 如果用户改变了排序顺序，则重置回第一页。</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">sort</span><span class="p">.</span><span class="nx">sortChange</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">paginator</span><span class="p">.</span><span class="nx">pageIndex</span> <span class="o">=</span> <span class="mi">0</span><span class="p">);</span>
+  <span class="nx">merge</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">sort</span><span class="p">.</span><span class="nx">sortChange</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">paginator</span><span class="p">.</span><span class="nx">page</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span>
+      <span class="nx">startWith</span><span class="p">({}),</span>
+      <span class="nx">switchMap</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">isLoadingResults</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span> <span class="c1">// 表示显示加载进度</span>
+        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">issueService</span><span class="p">.</span><span class="nx">getRepoIssues</span><span class="p">(</span>
+          <span class="k">this</span><span class="p">.</span><span class="nx">sort</span><span class="p">.</span><span class="nx">active</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">sort</span><span class="p">.</span><span class="nx">direction</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">paginator</span><span class="p">.</span><span class="nx">pageIndex</span><span class="p">);</span>
+      <span class="p">}),</span>
+      <span class="nx">map</span><span class="p">(</span><span class="nx">data</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">isLoadingResults</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span> <span class="c1">// 表示隐藏加载进度，数据加载完成</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">isRateLimitReached</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span> <span class="c1">// 表示无异常</span>
+        <span class="k">return</span> <span class="nx">data</span><span class="p">.</span><span class="nx">items</span><span class="p">;</span>
+      <span class="p">}),</span>
+      <span class="nx">catchError</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">isLoadingResults</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span> <span class="c1">// 表示隐藏加载进度</span>
+        <span class="c1">// GitHub API 接口有时候会限制访问次数</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">isRateLimitReached</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span> <span class="c1">// 表示无异常</span>
+        <span class="k">return</span> <span class="k">of</span><span class="p">([]);</span>
+      <span class="p">})</span>
+    <span class="p">).</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">data</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">dataSource</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MatTableDataSource</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">dataSource</span><span class="p">.</span><span class="nx">paginator</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">paginator</span><span class="p">;</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">dataSource</span><span class="p">.</span><span class="nx">sort</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">sort</span><span class="p">;</span>
+    <span class="p">});</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><p>编辑Material组件模板。编辑文件src/app/material/material.component.html，并增加以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&lt;div class=&quot;example-loading-shade&quot; *ngIf=&quot;isLoadingResults || isRateLimitReached&quot;&gt;
+  &lt;mat-spinner *ngIf=&quot;isLoadingResults&quot; color=&quot;accent&quot;&gt;&lt;/mat-spinner&gt;
+  &lt;div class=&quot;example-rate-limit-reached&quot; *ngIf=&quot;isRateLimitReached&quot;&gt;
+      GitHub API 接口限制访问次数，请1分钟后再访问！
+  &lt;/div&gt;
+&lt;/div&gt;
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="4">
+<li><p>编辑Material组件模板样式。编辑文件src/app/material/material.component.css，并增加以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-scss notranslate"><div class="highlight"><pre><span></span><span class="nc">.example-loading-shade</span> <span class="p">{</span>
+  <span class="nt">position</span><span class="nd">:</span> <span class="nt">absolute</span><span class="o">;</span>
+  <span class="nt">top</span><span class="nd">:</span> <span class="nt">0</span><span class="o">;</span>
+  <span class="nt">left</span><span class="nd">:</span> <span class="nt">0</span><span class="o">;</span>
+  <span class="nt">bottom</span><span class="nd">:</span> <span class="nt">56px</span><span class="o">;</span>
+  <span class="nt">right</span><span class="nd">:</span> <span class="nt">0</span><span class="o">;</span>
+  <span class="nt">background</span><span class="nd">:</span> <span class="nt">rgba</span><span class="o">(</span><span class="nt">0</span><span class="o">,</span> <span class="nt">0</span><span class="o">,</span> <span class="nt">0</span><span class="o">,</span> <span class="nt">0</span><span class="nc">.15</span><span class="o">);</span>
+  <span class="nt">z-index</span><span class="nd">:</span> <span class="nt">1</span><span class="o">;</span>
+  <span class="nt">display</span><span class="nd">:</span> <span class="nt">flex</span><span class="o">;</span>
+  <span class="nt">align-items</span><span class="nd">:</span> <span class="nt">center</span><span class="o">;</span>
+  <span class="nt">justify-content</span><span class="nd">:</span> <span class="nt">center</span><span class="o">;</span>
+<span class="p">}</span>
+
+<span class="nc">.example-rate-limit-reached</span> <span class="p">{</span>
+  <span class="nt">color</span><span class="nd">:</span> <span class="nn">#980000</span><span class="o">;</span>
+  <span class="nt">max-width</span><span class="nd">:</span> <span class="nt">360px</span><span class="o">;</span>
+  <span class="nt">text-align</span><span class="nd">:</span> <span class="nt">center</span><span class="o">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="5">
+<li><p>查看应用程序结果。刷新页面或者点击列排序时，页面上在数据加载完成前，会一直显示进度圈，页面显示效果如图18-3所示：</p></li>
+</ol>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/Figure18-3.png"><img alt="../_images/Figure18-3.png" src="../_images/Figure18-3.png" style="width: 600px;" /></a>
+<p>图18-3 使用Angular Material的进度圈组件</p>
+</div></blockquote>
+<p>在上面的步骤中，完成了以下内容：</p>
+<ol class="arabic simple">
+<li><p>新定义了2个布尔变量，变量isLoadingResults表示是否加载完成，值为真时，显示进度圈，反之，隐藏进度圈；GitHub API 接口有时候会限制访问次数，定义变量isRateLimitReached表示接口出现异常，值为真时，表示有异常，反之，无异常；</p></li>
+<li><p>在组件类中，变量isLoadingResults的值默认为真，当在数据订阅完成之前，一直处于真状态，当订阅返回结果后，修改状态为假，则隐藏进度圈，表示数据加载完成；另，当接口数据异常时，我们也需要隐藏进度圈，否则页面会一直被屏蔽，这时使用变量isRateLimitReached的值决定页面上是否显示错误异常信息；</p></li>
+</ol>
+</div>
+<div class="section" id="id9">
+<h2><span class="sectnum">18.5</span> 添加表格数据过滤的功能<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+<p>按照需求，需要实现表格数据过滤功能，该功能的实现原理就是对表格的数据源进行数据过滤。</p>
+<ol class="arabic simple">
+<li><p>添加输入框组件模块依赖。编辑文件src/app/material/material.module.ts，并添加以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">MatInputModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/material/input&#39;</span><span class="p">;</span>
+
+<span class="nx">imports</span><span class="o">:</span> <span class="p">[</span>
+  <span class="c1">// ...</span>
+  <span class="nx">MatInputModule</span> <span class="c1">// 输入框</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>编辑Material组件。编辑文件src/app/material/material.component.ts，新增1个过滤方法如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="c1">// 过滤数据</span>
+<span class="nx">applyFilter</span><span class="p">(</span><span class="nx">event</span>: <span class="kt">Event</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kr">const</span> <span class="nx">filterValue</span> <span class="o">=</span> <span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">target</span> <span class="kr">as</span> <span class="nx">HTMLInputElement</span><span class="p">).</span><span class="nx">value</span><span class="p">;</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">dataSource</span><span class="p">.</span><span class="nx">filter</span> <span class="o">=</span> <span class="nx">filterValue</span><span class="p">.</span><span class="nx">trim</span><span class="p">().</span><span class="nx">toLowerCase</span><span class="p">();</span>
+
+  <span class="c1">// 当过滤数据后，页数发生变化时，跳转到第一页</span>
+  <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">dataSource</span><span class="p">.</span><span class="nx">paginator</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">dataSource</span><span class="p">.</span><span class="nx">paginator</span><span class="p">.</span><span class="nx">firstPage</span><span class="p">();</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><p>编辑Material组件模板。编辑文件src/app/material/material.component.html，并增加以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&lt;!--紧跟着标签&lt;div class=&quot;example-container mat-elevation-z8&quot;&gt;后添加--&gt;
+&lt;form&gt;
+    &lt;mat-form-field&gt;
+        &lt;mat-label&gt;搜索&lt;/mat-label&gt;
+        &lt;input matInput (keyup)=&quot;applyFilter($event)&quot; placeholder=&quot;输入过滤字符&quot;&gt;
+    &lt;/mat-form-field&gt;
+&lt;/form&gt;
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="4">
+<li><p>编辑Material组件模板样式。编辑文件src/app/material/material.component.css，并增加以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="nc">mat-form-field</span> <span class="p">{</span>
+  <span class="k">font-size</span><span class="p">:</span> <span class="mi">14</span><span class="kt">px</span><span class="p">;</span>
+  <span class="k">width</span><span class="p">:</span> <span class="mi">40</span><span class="kt">%</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="5">
+<li><p>查看应用程序结果。刷新页面或者点击列排序时，页面上在数据加载完成前，会一直显示进度圈，页面显示效果如图18-4所示：</p></li>
+</ol>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/Figure18-4.png"><img alt="../_images/Figure18-4.png" src="../_images/Figure18-4.png" style="width: 800px;" /></a>
+<p>图18-4 使用Angular Material的输入框组件</p>
+</div></blockquote>
+<p>在上面的步骤中，完成了以下内容：</p>
+<ol class="arabic simple">
+<li><p>applyFilter()方法接受来自页面上传递的参数，在方法中获取输入值，并将其值转换小写字符，赋值给表格数据源实例对象的filter()方法；</p></li>
+<li><p>表格数据源实例对象的类型是MatTableDataSource类，其背后搜索及过滤数据的原理是将每行记录的值全部合并在一起，形成一个大的字符串，然后与关键字进行模糊匹配，当合并的值中包含关键字时，表示匹配成功，最后，仅返回所有匹配上的行数据。比如：某行的原始数据{‘number’:’1445’, ‘title’:’angular’, ‘comments’:’component’}将被组合为字符串“1445angularcomponent”，当输入关键字“component”时，那么它将被认为是匹配的，因为在组合后的字符串中包含了“component”；</p></li>
+</ol>
+</div>
+<div class="section" id="id10">
+<h2><span class="sectnum">18.6</span> 添加拖拽、隐藏及排序数据列功能<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
+<p>当表格的数据列比较多时，隐藏及排序数据列的需求成了多数表格组件中默认的行为功能。它的实现原理相对mat-table表格来说，相当简单，仅需要从行数据模板中删除以及重新排序对应的数据列即可。拖拽功能在Angular Material的CDK（开发工具包）提供了相应的原始组件实现。</p>
+<ol class="arabic simple">
+<li><p>添加菜单及拖拽组件模块依赖。编辑文件src/app/material/material.module.ts，并添加以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">MatMenuModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/material/menu&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">DragDropModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/cdk/drag-drop&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">MatCheckboxModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/material/checkbox&#39;</span><span class="p">;</span>
+
+<span class="nx">imports</span><span class="o">:</span> <span class="p">[</span>
+  <span class="c1">// ...</span>
+  <span class="nx">MatMenuModule</span><span class="p">,</span> <span class="c1">// 菜单</span>
+  <span class="nx">MatCheckboxModule</span><span class="p">,</span> <span class="c1">// 复选框</span>
+  <span class="nx">DragDropModule</span><span class="p">,</span> <span class="c1">// 拖拽</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>编辑Material组件。编辑文件src/app/material/material.component.ts，新增如下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="nx">menuColumns</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="p">{</span> <span class="nx">id</span><span class="o">:</span> <span class="s1">&#39;number&#39;</span><span class="p">,</span> <span class="nx">hide</span>: <span class="kt">true</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="nx">id</span><span class="o">:</span> <span class="s1">&#39;created&#39;</span><span class="p">,</span> <span class="nx">hide</span>: <span class="kt">true</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="nx">id</span><span class="o">:</span> <span class="s1">&#39;state&#39;</span><span class="p">,</span> <span class="nx">hide</span>: <span class="kt">true</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="nx">id</span><span class="o">:</span> <span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="nx">hide</span>: <span class="kt">true</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="nx">id</span><span class="o">:</span> <span class="s1">&#39;comments&#39;</span><span class="p">,</span> <span class="nx">hide</span>: <span class="kt">true</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="nx">id</span><span class="o">:</span> <span class="s1">&#39;menu&#39;</span><span class="p">,</span> <span class="nx">hide</span>: <span class="kt">true</span> <span class="p">}</span>
+<span class="p">]</span>
+
+<span class="nx">drop</span><span class="p">(</span><span class="nx">event</span>: <span class="kt">CdkDragDrop</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">[]</span><span class="o">&gt;</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">moveItemInArray</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">menuColumns</span><span class="p">,</span> <span class="nx">event</span><span class="p">.</span><span class="nx">previousIndex</span><span class="p">,</span> <span class="nx">event</span><span class="p">.</span><span class="nx">currentIndex</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nx">getMenuColumns</span><span class="p">()</span><span class="o">:</span> <span class="kt">string</span><span class="p">[]</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">menuColumns</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">item</span> <span class="o">=&gt;</span> <span class="nx">item</span><span class="p">.</span><span class="nx">hide</span><span class="p">).</span><span class="nx">map</span><span class="p">(</span><span class="nx">item</span> <span class="o">=&gt;</span> <span class="nx">item</span><span class="p">.</span><span class="nx">id</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nx">hideColumns</span><span class="p">(</span><span class="nx">event</span>: <span class="kt">MatCheckboxChange</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kr">const</span> <span class="nx">colName</span> <span class="o">=</span> <span class="nx">event</span><span class="p">.</span><span class="nx">source</span><span class="p">.</span><span class="nx">name</span><span class="p">;</span>
+  <span class="kr">const</span> <span class="nx">checked</span> <span class="o">=</span> <span class="nx">event</span><span class="p">.</span><span class="nx">checked</span><span class="p">;</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">colName</span><span class="p">,</span> <span class="nx">checked</span><span class="p">);</span>
+
+  <span class="kd">let</span> <span class="nx">index</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">menuColumns</span>
+    <span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">item</span> <span class="o">=&gt;</span> <span class="nx">item</span><span class="p">.</span><span class="nx">id</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="nx">colName</span><span class="p">);</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">menuColumns</span><span class="p">[</span><span class="nx">index</span><span class="p">].</span><span class="nx">hide</span> <span class="o">=</span> <span class="nx">checked</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><p>编辑Material组件模板。编辑文件src/app/material/material.component.html，并将原先的搜素框代码替换为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>  &lt;div class=&quot;example-container mat-elevation-z8&quot;&gt;
+    &lt;!--紧跟着标签&lt;div class=&quot;example-container mat-elevation-z8&quot;&gt;添加--&gt;
+    &lt;mat-toolbar-row&gt;
+        &lt;mat-form-field&gt;
+            &lt;mat-label&gt;搜索&lt;/mat-label&gt;
+            &lt;input matInput (keyup)=&quot;applyFilter($event)&quot; placeholder=&quot;输入过滤字符&quot;&gt;
+        &lt;/mat-form-field&gt;
+        &lt;span class=&quot;example-spacer&quot;&gt;&lt;/span&gt;
+        &lt;button mat-icon-button [matMenuTriggerFor]=&quot;menu&quot;&gt;
+            &lt;mat-icon&gt;more_vert&lt;/mat-icon&gt;
+        &lt;/button&gt;
+        &lt;mat-menu #menu=&quot;matMenu&quot;&gt;
+            &lt;div cdkDropList class=&quot;example-list&quot; (cdkDropListDropped)=&quot;drop($event)&quot;&gt;
+                &lt;button class=&quot;example-box&quot; *ngFor=&quot;let col of menuColumns&quot; mat-menu-item cdkDrag&gt;
+                    &lt;mat-icon&gt;drag_handle&lt;/mat-icon&gt;
+                    &lt;mat-checkbox (click)=&quot;$event.stopPropagation()&quot; [checked]=col.hide [name]=col.id
+                        (change)=&quot;hideColumns($event)&quot;&gt;{{col.id}}&lt;/mat-checkbox&gt;
+                &lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/mat-menu&gt;
+    &lt;/mat-toolbar-row&gt;
+
+同时，将模板中的3个displayedColumns变量全部替换为“getMenuColumns()”方法。
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="4">
+<li><p>编辑Material组件模板样式。编辑文件src/app/material/material.component.css，并增加以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="c">/* 隐藏菜单图标 */</span>
+<span class="nt">button</span><span class="p">{</span>
+  <span class="k">border</span><span class="p">:</span> <span class="mi">0</span><span class="kt">ch</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* 显示隐藏菜单 */</span>
+<span class="p">.</span><span class="nc">example-list</span> <span class="p">{</span>
+  <span class="k">max-width</span><span class="p">:</span> <span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
+  <span class="k">min-height</span><span class="p">:</span> <span class="mi">30</span><span class="kt">px</span><span class="p">;</span>
+  <span class="k">display</span><span class="p">:</span> <span class="kc">block</span><span class="p">;</span>
+  <span class="k">background</span><span class="p">:</span> <span class="kc">white</span><span class="p">;</span>
+  <span class="k">border-radius</span><span class="p">:</span> <span class="mi">4</span><span class="kt">px</span><span class="p">;</span>
+  <span class="k">overflow</span><span class="p">:</span> <span class="kc">hidden</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">example-box</span> <span class="p">{</span>
+  <span class="k">border-bottom</span><span class="p">:</span> <span class="kc">solid</span> <span class="mi">1</span><span class="kt">px</span> <span class="mh">#ccc</span><span class="p">;</span>
+  <span class="k">color</span><span class="p">:</span> <span class="nb">rgba</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.87</span><span class="p">);</span>
+  <span class="k">display</span><span class="p">:</span> <span class="kc">flex</span><span class="p">;</span>
+  <span class="k">flex-direction</span><span class="p">:</span> <span class="kc">row</span><span class="p">;</span>
+  <span class="k">align-items</span><span class="p">:</span> <span class="kc">center</span><span class="p">;</span>
+  <span class="k">box-sizing</span><span class="p">:</span> <span class="kc">border-box</span><span class="p">;</span>
+  <span class="k">cursor</span><span class="p">:</span> <span class="kc">move</span><span class="p">;</span>
+  <span class="k">background</span><span class="p">:</span> <span class="kc">white</span><span class="p">;</span>
+  <span class="k">font-size</span><span class="p">:</span> <span class="mi">14</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">cdk-drag-preview</span> <span class="p">{</span>
+  <span class="k">box-sizing</span><span class="p">:</span> <span class="kc">border-box</span><span class="p">;</span>
+  <span class="k">border-radius</span><span class="p">:</span> <span class="mi">4</span><span class="kt">px</span><span class="p">;</span>
+  <span class="k">box-shadow</span><span class="p">:</span> <span class="mi">0</span> <span class="mi">5</span><span class="kt">px</span> <span class="mi">5</span><span class="kt">px</span> <span class="mi">-3</span><span class="kt">px</span> <span class="nb">rgba</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">),</span>
+              <span class="mi">0</span> <span class="mi">8</span><span class="kt">px</span> <span class="mi">10</span><span class="kt">px</span> <span class="mi">1</span><span class="kt">px</span> <span class="nb">rgba</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.14</span><span class="p">),</span>
+              <span class="mi">0</span> <span class="mi">3</span><span class="kt">px</span> <span class="mi">14</span><span class="kt">px</span> <span class="mi">2</span><span class="kt">px</span> <span class="nb">rgba</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.12</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">cdk-drag-placeholder</span> <span class="p">{</span>
+  <span class="k">opacity</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">cdk-drag-animating</span> <span class="p">{</span>
+  <span class="k">transition</span><span class="p">:</span> <span class="k">transform</span> <span class="mi">250</span><span class="kt">ms</span> <span class="nb">cubic-bezier</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">example-box</span><span class="p">:</span><span class="nd">last-child</span> <span class="p">{</span>
+  <span class="k">border</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">example-list</span><span class="p">.</span><span class="nc">cdk-drop-list-dragging</span> <span class="p">.</span><span class="nc">example-box</span><span class="p">:</span><span class="nd">not</span><span class="o">(</span><span class="p">.</span><span class="nc">cdk-drag-placeholder</span><span class="o">)</span> <span class="p">{</span>
+  <span class="k">transition</span><span class="p">:</span> <span class="k">transform</span> <span class="mi">250</span><span class="kt">ms</span> <span class="nb">cubic-bezier</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="5">
+<li><p>查看应用程序结果。点击新增的菜单图标，弹出隐藏菜单，可以拖拽移动及反勾选这些菜单项，观察页面表格中数据列的变化。页面显示效果如图18-5所示：</p></li>
+</ol>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/Figure18-5.png"><img alt="../_images/Figure18-5.png" src="../_images/Figure18-5.png" style="width: 800px;" /></a>
+<p>图18-5 添加拖拽、隐藏及排序数据列功能</p>
+</div></blockquote>
+<p>在上面的步骤中，完成了以下内容：</p>
+<ol class="arabic simple">
+<li><p>在Material组件类中定义了一个新的数据列结构，menuColumns数组中由原先的基础上，在每项数据列上添加一个是否隐藏的标识，当用户勾选或者移除某数据列时，更新对应数据列的hide隐藏标识。同时，新增了getMenuColumns()方法，替代原先的模板中的displayedColumns变量值，该方法始终返回hide值为真的数据项；drop()方法对应用户拖拽菜单时的事件行为，调用CDK工具包中提供的moveItemInArray()工具方法对数组对象实现移位操作。hideColumns()方法仅是对用户操作菜单项时，找到menuColumns数组中对应的元素，根据用户操作的行为来修改元素的hide属性值；</p></li>
+<li><p>在Material组件模板中新增了隐藏菜单组件。同时，将模板中表格列的数据来源全部替换为“getMenuColumns()”方法返回的结果；</p></li>
+<li><p>图18-5所示的界面上，显示的是用户移除title数据列，同时，将创建时间列移动到菜单的首位时，表格的当前状态的效果图。</p></li>
+</ol>
+</div>
+<div class="section" id="id11">
+<h2><span class="sectnum">18.7</span> 实现表格数据编辑功能<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h2>
+<p>目前，表格还缺少记录编辑功能。如图18-5所示，在数据表格的最后一列，显示出了编辑的图标（铅笔），现在仅需在这个图标上实现编辑功能。编辑功能需要借助Angular Material提供的对话框组件来实现，当用户点击铅笔图标时，界面弹出一个对话框，对话框里面是关于当前表格行的表单记录信息，用户可以对表单记录进行编辑。</p>
+<ol class="arabic simple">
+<li><p>添加菜单及拖拽组件模块依赖。编辑文件src/app/material/material.module.ts，并添加以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">MatDialogModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/material/dialog&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">MatRadioModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/material/radio&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">FormsModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/forms&#39;</span><span class="p">;</span>
+
+<span class="nx">imports</span><span class="o">:</span> <span class="p">[</span>
+  <span class="c1">// ...</span>
+  <span class="nx">MatDialogModule</span><span class="p">,</span> <span class="c1">// 对话框</span>
+  <span class="nx">MatRadioModule</span><span class="p">,</span> <span class="c1">// 单选框</span>
+  <span class="nx">FormsModule</span> <span class="c1">// 表单</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>新建对话框组件。使用命令 <code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">g</span> <span class="pre">c</span> <span class="pre">material/issueDialog</span> <span class="pre">-m=material</span></code> 新建Material模块下的组件，并将文件src/app/material/issue-dialog/issue-dialog.component.ts更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">OnInit</span><span class="p">,</span> <span class="nx">Inject</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">MatDialogRef</span><span class="p">,</span> <span class="nx">MAT_DIALOG_DATA</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/material/dialog&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">GithubIssue</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;src/app/github-issue&#39;</span><span class="p">;</span>
+
+<span class="kd">@Component</span><span class="p">({</span>
+  <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-issue-dialog&#39;</span><span class="p">,</span>
+  <span class="nx">templateUrl</span><span class="o">:</span> <span class="s1">&#39;./issue-dialog.component.html&#39;</span><span class="p">,</span>
+  <span class="nx">styleUrls</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;./issue-dialog.component.css&#39;</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">IssueDialogComponent</span> <span class="kr">implements</span> <span class="nx">OnInit</span> <span class="p">{</span>
+
+  <span class="kr">constructor</span><span class="p">(</span>
+    <span class="kr">public</span> <span class="nx">dialogRef</span>: <span class="kt">MatDialogRef</span><span class="o">&lt;</span><span class="nx">IssueDialogComponent</span><span class="o">&gt;</span><span class="p">,</span>
+    <span class="kd">@Inject</span><span class="p">(</span><span class="nx">MAT_DIALOG_DATA</span><span class="p">)</span> <span class="kr">public</span> <span class="nx">data</span>: <span class="kt">GithubIssue</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+
+  <span class="nx">onNoClick</span><span class="p">()</span><span class="o">:</span> <span class="k">void</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">dialogRef</span><span class="p">.</span><span class="nx">close</span><span class="p">();</span>
+  <span class="p">}</span>
+
+  <span class="nx">ngOnInit</span><span class="p">()</span><span class="o">:</span> <span class="k">void</span> <span class="p">{</span>
+  <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><p>编辑对话框组件模板。编辑文件src/app/material/issue-dialog/issue-dialog.component.html，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&lt;h1 mat-dialog-title&gt;Issue 编辑&lt;/h1&gt;
+&lt;div mat-dialog-content&gt;
+    &lt;mat-label class=&quot;example-label&quot;&gt;状态：&lt;/mat-label&gt;
+    &lt;mat-radio-group aria-label=&quot;状态&quot; [(ngModel)]=&quot;data.state&quot; class=&quot;example-radio-group&quot;&gt;
+        &lt;mat-radio-button class=&quot;example-radio-button&quot; value=&quot;open&quot;&gt;打开&lt;/mat-radio-button&gt;
+        &lt;mat-radio-button class=&quot;example-radio-button&quot; value=&quot;closed&quot;&gt;关闭&lt;/mat-radio-button&gt;
+    &lt;/mat-radio-group&gt;
+    &lt;mat-form-field class=&quot;example-full-width&quot;&gt;
+        &lt;mat-label&gt;标题：&lt;/mat-label&gt;
+        &lt;textarea matInput [(ngModel)]=&quot;data.title&quot; rows=&quot;3&quot; cols=&quot;40&quot;&gt;&lt;/textarea&gt;
+    &lt;/mat-form-field&gt;
+&lt;/div&gt;
+&lt;div mat-dialog-actions&gt;
+    &lt;button mat-stroked-button (click)=&quot;onNoClick()&quot; style=&quot;font-size: 1em;&quot;&gt;关闭&lt;/button&gt;
+    &lt;button mat-button [mat-dialog-close]=&quot;data.title&quot; cdkFocusInitial
+        style=&quot;font-size: 1em; margin-left: 0.5em;&quot;&gt;保存&lt;/button&gt;
+&lt;/div&gt;
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="4">
+<li><p>编辑对话框组件模板样式。编辑文件src/app/material/issue-dialog/issue-dialog.component.css，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="nc">example-radio-group</span> <span class="p">{</span>
+    <span class="k">display</span><span class="p">:</span> <span class="kc">flex</span><span class="p">;</span>
+    <span class="k">flex-direction</span><span class="p">:</span> <span class="kc">row</span><span class="p">;</span>
+    <span class="k">margin</span><span class="p">:</span> <span class="mi">12</span><span class="kt">px</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">font-size</span><span class="p">:</span> <span class="mi">12</span><span class="kt">px</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">example-radio-button</span> <span class="p">{</span>
+    <span class="k">margin</span><span class="p">:</span> <span class="mi">5</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">example-full-width</span> <span class="p">{</span>
+    <span class="k">width</span><span class="p">:</span> <span class="mi">230</span><span class="kt">px</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="p">.</span><span class="nc">example-label</span> <span class="p">{</span>
+    <span class="k">display</span><span class="p">:</span> <span class="kc">table-cell</span><span class="p">;</span>
+    <span class="k">font-size</span><span class="p">:</span> <span class="mi">12</span><span class="kt">px</span><span class="p">;</span>
+    <span class="k">margin-left</span><span class="p">:</span> <span class="mi">8</span><span class="kt">px</span><span class="p">;</span>
+    <span class="k">width</span><span class="p">:</span> <span class="mi">120</span><span class="kt">px</span><span class="p">;</span>
+    <span class="k">color</span><span class="p">:</span> <span class="kc">grey</span><span class="p">;</span>
+  <span class="p">}</span>
+
+<span class="p">.</span><span class="nc">button-size</span><span class="p">{</span>
+    <span class="k">font-size</span><span class="p">:</span><span class="mi">14</span><span class="kt">px</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="5">
+<li><p>编辑Material组件。编辑文件src/app/material/material.component.ts，新增openDialog()方法，MaterialComponent类完整实战代码如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">AfterViewInit</span><span class="p">,</span> <span class="nx">ViewChild</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">IssueService</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;../issue.service&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">MatTableDataSource</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/material/table&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">GithubIssue</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;../github-issue&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">MatPaginator</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/material/paginator&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">MatSort</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/material/sort&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">merge</span><span class="p">,</span> <span class="k">of</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;rxjs&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">startWith</span><span class="p">,</span> <span class="nx">switchMap</span><span class="p">,</span> <span class="nx">map</span><span class="p">,</span> <span class="nx">catchError</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;rxjs/operators&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">MatCheckboxChange</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/material/checkbox&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">CdkDragDrop</span><span class="p">,</span> <span class="nx">moveItemInArray</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/cdk/drag-drop&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">IssueDialogComponent</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./issue-dialog/issue-dialog.component&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">MatDialog</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/material/dialog&#39;</span><span class="p">;</span>
+
+<span class="kd">@Component</span><span class="p">({</span>
+  <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-material&#39;</span><span class="p">,</span>
+  <span class="nx">templateUrl</span><span class="o">:</span> <span class="s1">&#39;./material.component.html&#39;</span><span class="p">,</span>
+  <span class="nx">styleUrls</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;./material.component.css&#39;</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">MaterialComponent</span> <span class="kr">implements</span> <span class="nx">AfterViewInit</span> <span class="p">{</span>
+
+  <span class="nx">title</span> <span class="o">=</span> <span class="s1">&#39;Github 中 Angular 问题列表&#39;</span>
+
+  <span class="c1">// 定义显示表格的列</span>
+  <span class="c1">// displayedColumns: string[] = [&#39;number&#39;, &#39;created&#39;, &#39;state&#39;, &#39;title&#39;, &#39;comments&#39;, &#39;menu&#39;];</span>
+  <span class="c1">// 使用管道显示对应的文字</span>
+  <span class="nx">dicMap</span>: <span class="kt">any</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">&#39;open&#39;</span><span class="o">:</span> <span class="s1">&#39;打开&#39;</span><span class="p">,</span> <span class="s1">&#39;closed&#39;</span><span class="o">:</span> <span class="s1">&#39;关闭&#39;</span> <span class="p">};</span>
+  <span class="c1">// 定义表格接受的数据源</span>
+  <span class="nx">dataSource</span>: <span class="kt">MatTableDataSource</span><span class="o">&lt;</span><span class="nx">GithubIssue</span><span class="o">&gt;</span><span class="p">;</span>
+  <span class="nx">isLoadingResults</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span> <span class="c1">// 表示是否加载完成，等于真时，显示加载进度</span>
+  <span class="nx">isRateLimitReached</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span> <span class="c1">// 表示接口是否异常，等于假时，表示无异常</span>
+
+  <span class="kr">constructor</span><span class="p">(</span><span class="kr">private</span> <span class="nx">issueService</span>: <span class="kt">IssueService</span><span class="p">,</span> <span class="kr">public</span> <span class="nx">dialog</span>: <span class="kt">MatDialog</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+
+  <span class="c1">// 对应页面上的分页和排序组件</span>
+  <span class="kd">@ViewChild</span><span class="p">(</span><span class="nx">MatPaginator</span><span class="p">,</span> <span class="p">{</span> <span class="kr">static</span><span class="o">:</span> <span class="kc">true</span> <span class="p">})</span> <span class="nx">paginator</span>: <span class="kt">MatPaginator</span><span class="p">;</span>
+  <span class="kd">@ViewChild</span><span class="p">(</span><span class="nx">MatSort</span><span class="p">,</span> <span class="p">{</span> <span class="kr">static</span><span class="o">:</span> <span class="kc">true</span> <span class="p">})</span> <span class="nx">sort</span>: <span class="kt">MatSort</span><span class="p">;</span>
+
+  <span class="nx">ngAfterViewInit() {</span>
+    <span class="c1">// 如果用户改变了排序顺序，则重置回第一页。</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">sort</span><span class="p">.</span><span class="nx">sortChange</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">paginator</span><span class="p">.</span><span class="nx">pageIndex</span> <span class="o">=</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="nx">merge</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">sort</span><span class="p">.</span><span class="nx">sortChange</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">paginator</span><span class="p">.</span><span class="nx">page</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span>
+        <span class="nx">startWith</span><span class="p">({}),</span>
+        <span class="nx">switchMap</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+          <span class="k">this</span><span class="p">.</span><span class="nx">isLoadingResults</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span> <span class="c1">// 表示显示加载进度</span>
+          <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">issueService</span><span class="p">.</span><span class="nx">getRepoIssues</span><span class="p">(</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">sort</span><span class="p">.</span><span class="nx">active</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">sort</span><span class="p">.</span><span class="nx">direction</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">paginator</span><span class="p">.</span><span class="nx">pageIndex</span><span class="p">);</span>
+        <span class="p">}),</span>
+        <span class="nx">map</span><span class="p">(</span><span class="nx">data</span> <span class="o">=&gt;</span> <span class="p">{</span>
+          <span class="k">this</span><span class="p">.</span><span class="nx">isLoadingResults</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span> <span class="c1">// 表示隐藏加载进度，数据加载完成</span>
+          <span class="k">this</span><span class="p">.</span><span class="nx">isRateLimitReached</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span> <span class="c1">// 表示无异常</span>
+          <span class="k">return</span> <span class="nx">data</span><span class="p">.</span><span class="nx">items</span><span class="p">;</span>
+        <span class="p">}),</span>
+        <span class="nx">catchError</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+          <span class="k">this</span><span class="p">.</span><span class="nx">isLoadingResults</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span> <span class="c1">// 表示隐藏加载进度</span>
+          <span class="c1">// GitHub API 接口有时候会限制访问次数</span>
+          <span class="k">this</span><span class="p">.</span><span class="nx">isRateLimitReached</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span> <span class="c1">// 表示无异常</span>
+          <span class="k">return</span> <span class="k">of</span><span class="p">([]);</span>
+        <span class="p">})</span>
+      <span class="p">).</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">data</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">dataSource</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MatTableDataSource</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">dataSource</span><span class="p">.</span><span class="nx">paginator</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">paginator</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">dataSource</span><span class="p">.</span><span class="nx">sort</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">sort</span><span class="p">;</span>
+      <span class="p">});</span>
+  <span class="p">}</span>
+
+  <span class="c1">// 点击行操作时，触发的方法</span>
+  <span class="nx">onRowClicked</span><span class="p">(</span><span class="nx">row</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;点击行操作: &#39;</span><span class="p">,</span> <span class="nx">row</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="c1">// 统计留言数</span>
+  <span class="nx">getTotalComments() {</span>
+    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">dataSource</span><span class="o">?</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">t</span> <span class="o">=&gt;</span> <span class="o">+</span><span class="nx">t</span><span class="p">.</span><span class="nx">comments</span><span class="p">).</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">acc</span><span class="p">,</span> <span class="nx">value</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">acc</span> <span class="o">+</span> <span class="nx">value</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="c1">// 过滤数据</span>
+  <span class="nx">applyFilter</span><span class="p">(</span><span class="nx">event</span>: <span class="kt">Event</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kr">const</span> <span class="nx">filterValue</span> <span class="o">=</span> <span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">target</span> <span class="kr">as</span> <span class="nx">HTMLInputElement</span><span class="p">).</span><span class="nx">value</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">dataSource</span><span class="p">.</span><span class="nx">filter</span> <span class="o">=</span> <span class="nx">filterValue</span><span class="p">.</span><span class="nx">trim</span><span class="p">().</span><span class="nx">toLowerCase</span><span class="p">();</span>
+
+    <span class="c1">// 当过滤数据后，页数发生变化时，跳转到第一页</span>
+    <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">dataSource</span><span class="p">.</span><span class="nx">paginator</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">dataSource</span><span class="p">.</span><span class="nx">paginator</span><span class="p">.</span><span class="nx">firstPage</span><span class="p">();</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+
+  <span class="nx">drop</span><span class="p">(</span><span class="nx">event</span>: <span class="kt">CdkDragDrop</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">[]</span><span class="o">&gt;</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">moveItemInArray</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">menuColumns</span><span class="p">,</span> <span class="nx">event</span><span class="p">.</span><span class="nx">previousIndex</span><span class="p">,</span> <span class="nx">event</span><span class="p">.</span><span class="nx">currentIndex</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="nx">menuColumns</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span> <span class="nx">id</span><span class="o">:</span> <span class="s1">&#39;number&#39;</span><span class="p">,</span> <span class="nx">hide</span>: <span class="kt">true</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="nx">id</span><span class="o">:</span> <span class="s1">&#39;created&#39;</span><span class="p">,</span> <span class="nx">hide</span>: <span class="kt">true</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="nx">id</span><span class="o">:</span> <span class="s1">&#39;state&#39;</span><span class="p">,</span> <span class="nx">hide</span>: <span class="kt">true</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="nx">id</span><span class="o">:</span> <span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="nx">hide</span>: <span class="kt">true</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="nx">id</span><span class="o">:</span> <span class="s1">&#39;comments&#39;</span><span class="p">,</span> <span class="nx">hide</span>: <span class="kt">true</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="nx">id</span><span class="o">:</span> <span class="s1">&#39;menu&#39;</span><span class="p">,</span> <span class="nx">hide</span>: <span class="kt">true</span> <span class="p">}</span>
+  <span class="p">]</span>
+
+  <span class="nx">getMenuColumns</span><span class="p">()</span><span class="o">:</span> <span class="kt">string</span><span class="p">[]</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">menuColumns</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">item</span> <span class="o">=&gt;</span> <span class="nx">item</span><span class="p">.</span><span class="nx">hide</span><span class="p">).</span><span class="nx">map</span><span class="p">(</span><span class="nx">item</span> <span class="o">=&gt;</span> <span class="nx">item</span><span class="p">.</span><span class="nx">id</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="c1">// 修改列属性</span>
+  <span class="nx">hideColumns</span><span class="p">(</span><span class="nx">event</span>: <span class="kt">MatCheckboxChange</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kr">const</span> <span class="nx">colName</span> <span class="o">=</span> <span class="nx">event</span><span class="p">.</span><span class="nx">source</span><span class="p">.</span><span class="nx">name</span><span class="p">;</span>
+    <span class="kr">const</span> <span class="nx">checked</span> <span class="o">=</span> <span class="nx">event</span><span class="p">.</span><span class="nx">checked</span><span class="p">;</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">colName</span><span class="p">,</span> <span class="nx">checked</span><span class="p">);</span>
+
+    <span class="kd">let</span> <span class="nx">index</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">menuColumns</span>
+      <span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">item</span> <span class="o">=&gt;</span> <span class="nx">item</span><span class="p">.</span><span class="nx">id</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="nx">colName</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">menuColumns</span><span class="p">[</span><span class="nx">index</span><span class="p">].</span><span class="nx">hide</span> <span class="o">=</span> <span class="nx">checked</span><span class="p">;</span>
+  <span class="p">}</span>
+
+
+  <span class="c1">//打开对话框</span>
+  <span class="nx">openDialog</span><span class="p">(</span><span class="nx">githubIssue</span>: <span class="kt">GithubIssue</span><span class="p">)</span><span class="o">:</span> <span class="k">void</span> <span class="p">{</span>
+    <span class="kr">const</span> <span class="nx">dialogRef</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">dialog</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="nx">IssueDialogComponent</span><span class="p">,</span> <span class="p">{</span>
+      <span class="nx">width</span><span class="o">:</span> <span class="s1">&#39;300px&#39;</span><span class="p">,</span>
+      <span class="nx">data</span>: <span class="kt">githubIssue</span>
+    <span class="p">});</span>
+
+    <span class="nx">dialogRef</span><span class="p">.</span><span class="nx">afterClosed</span><span class="p">().</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">result</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;The dialog was closed&#39;</span><span class="p">);</span>
+    <span class="p">});</span>
+  <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<div class="admonition- admonition">
+<p class="admonition-title">提示</p>
+<p>上述代码中仅修改constructor处的代码和新增的openDialog()方法与本步骤相关。由于本章前面叙述功能的实现步骤时，贴的相关类的代码都是部分的片段，没有提供全部的代码，同时也是为了节省篇幅，故这里贴出完整的实战代码，供读者参考。</p>
+</div>
+<ol class="arabic simple" start="6">
+<li><p>编辑Material组件模板。编辑文件src/app/material/material.component.html，新增openDialog()方法，修改代码如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>……
+&lt;mat-header-cell *matHeaderCellDef&gt;操作&lt;/mat-header-cell&gt;
+&lt;mat-cell *matCellDef=&quot;let row&quot;&gt;
+    &lt;mat-icon color=&quot;accent&quot;  (click)=&quot;openDialog(row)&quot;&gt;edit&lt;/mat-icon&gt;  &lt;!-- 新增方法 --&gt;
+&lt;/mat-cell&gt;
+……
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="7">
+<li><p>查看应用程序结果。点击记录编辑图标，页面弹出对话框，可以对记录继续修改。页面显示效果如图18-6所示：</p></li>
+</ol>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/Figure18-6.png"><img alt="../_images/Figure18-6.png" src="../_images/Figure18-6.png" style="width: 800px;" /></a>
+<p>图18-6 添加对话框，实现表格数据编辑功能</p>
+</div></blockquote>
+<p>在上面的步骤中，完成了以下内容：</p>
+<ol class="arabic simple">
+<li><p>新建了对话框组件，在对话框组件类的构造方法中通过&#64;Inject(MAT_DIALOG_DATA)装饰器注入GithubIssue类型数据，然后在对话框组件模板中，通过模板驱动表单对数据进行双向绑定；</p></li>
+<li><p>在Material组件类中新增了openDialog()方法，该方法接受来自模板中传入的数据行记录信息，在方法中，调用MatDialog类的open()方法，实现打开对话框面板操作，同时，将dada数据作为参数传递到打开的对话框组件中。</p></li>
+</ol>
+</div>
+<div class="section" id="id12">
+<h2><span class="sectnum">18.8</span> 自定义翻页组件<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h2>
+<p>细心的读者可以已经注意到了，Angular Material组件库提供的翻页组件，显示在页面上的文字是英文“Items per page:”，这对本地化用户的体验来说，不是很友好，而且，甚至有些需求需要自定义显示特别的文字。自定义Angular Material组件其实很简单，分为2个步骤，一是继承组件父类，重写其中的方法，然后，通过配置供应商注册组件实例。下面继续实战介绍自定义翻页组件的详细实现步骤。</p>
+<ol class="arabic simple">
+<li><p>新建文件src/app/material/custom-mat-paginator-intl.ts，并添加以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Injectable</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">MatPaginatorIntl</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/material/paginator&#39;</span><span class="p">;</span>
+
+<span class="kd">@Injectable</span><span class="p">()</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">CustomMatPaginatorIntl</span> <span class="kr">extends</span> <span class="nx">MatPaginatorIntl</span> <span class="p">{</span>
+    <span class="kr">constructor</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kr">super</span><span class="p">();</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">getAndInitTranslations</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="nx">getAndInitTranslations() {</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">itemsPerPageLabel</span> <span class="o">=</span> <span class="s2">&quot;每页显示&quot;</span><span class="p">;</span> <span class="c1">// 翻页组件前面的提示信息</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">nextPageLabel</span> <span class="o">=</span> <span class="s2">&quot;下一页&quot;</span><span class="p">;</span> <span class="c1">// 鼠标悬停在图标上显示</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">previousPageLabel</span> <span class="o">=</span> <span class="s2">&quot;上一页&quot;</span><span class="p">;</span> <span class="c1">// 鼠标悬停在图标上显示</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">changes</span><span class="p">.</span><span class="nx">next</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="nx">getRangeLabel</span> <span class="o">=</span> <span class="p">(</span><span class="nx">page</span>: <span class="kt">number</span><span class="p">,</span> <span class="nx">pageSize</span>: <span class="kt">number</span><span class="p">,</span> <span class="nx">length</span>: <span class="kt">number</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">length</span> <span class="o">===</span> <span class="mi">0</span> <span class="o">||</span> <span class="nx">pageSize</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="sb">`0 / </span><span class="si">${</span><span class="nx">length</span><span class="si">}</span><span class="sb">`</span><span class="p">;</span> <span class="c1">// 记录为空时</span>
+        <span class="p">}</span>
+        <span class="nx">length</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">max</span><span class="p">(</span><span class="nx">length</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+        <span class="kr">const</span> <span class="nx">startIndex</span> <span class="o">=</span> <span class="nx">page</span> <span class="o">*</span> <span class="nx">pageSize</span><span class="p">;</span>
+        <span class="kr">const</span> <span class="nx">endIndex</span> <span class="o">=</span> <span class="nx">startIndex</span> <span class="o">&lt;</span> <span class="nx">length</span> <span class="o">?</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">min</span><span class="p">(</span><span class="nx">startIndex</span> <span class="o">+</span> <span class="nx">pageSize</span><span class="p">,</span> <span class="nx">length</span><span class="p">)</span> <span class="o">:</span>
+            <span class="nx">startIndex</span> <span class="o">+</span> <span class="nx">pageSize</span><span class="p">;</span>
+        <span class="k">return</span> <span class="sb">`</span><span class="si">${</span><span class="nx">startIndex</span> <span class="o">+</span> <span class="mi">1</span><span class="si">}</span><span class="sb"> - </span><span class="si">${</span><span class="nx">endIndex</span><span class="si">}</span><span class="sb"> / </span><span class="si">${</span><span class="nx">length</span><span class="si">}</span><span class="sb">`</span><span class="p">;</span> <span class="c1">// 这里替换原先的提示信息</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>注册CustomMatPaginatorIntl服务。编辑文件src/app/material/material.module.ts，新增providers属性，本类完整实战代码如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">NgModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">CommonModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/common&#39;</span><span class="p">;</span>
+
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">MaterialRoutingModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./material-routing.module&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">MaterialComponent</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./material.component&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">MatToolbarModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/material/toolbar&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">MatIconModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/material/icon&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">MatTableModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/material/table&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">MatPaginatorModule</span><span class="p">,</span> <span class="nx">MatPaginatorIntl</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/material/paginator&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">MatSortModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/material/sort&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">MatProgressSpinnerModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/material/progress-spinner&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">MatInputModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/material/input&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">MatMenuModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/material/menu&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">DragDropModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/cdk/drag-drop&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">MatCheckboxModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/material/checkbox&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">MatDialogModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/material/dialog&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">MatRadioModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/material/radio&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">FormsModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/forms&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">IssueDialogComponent</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./issue-dialog/issue-dialog.component&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">CustomMatPaginatorIntl</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./custom-mat-paginator-intl&#39;</span><span class="p">;</span>
+
+<span class="kd">@NgModule</span><span class="p">({</span>
+  <span class="nx">declarations</span><span class="o">:</span> <span class="p">[</span><span class="nx">MaterialComponent</span><span class="p">,</span> <span class="nx">IssueDialogComponent</span><span class="p">],</span>
+  <span class="nx">imports</span><span class="o">:</span> <span class="p">[</span>
+    <span class="nx">CommonModule</span><span class="p">,</span>
+    <span class="nx">MaterialRoutingModule</span><span class="p">,</span>
+    <span class="nx">MatToolbarModule</span><span class="p">,</span> <span class="c1">// 工具栏</span>
+    <span class="nx">MatIconModule</span><span class="p">,</span> <span class="c1">// 图标</span>
+    <span class="nx">MatTableModule</span><span class="p">,</span> <span class="c1">// 表格</span>
+    <span class="nx">MatPaginatorModule</span><span class="p">,</span> <span class="c1">// 表格的分页</span>
+    <span class="nx">MatSortModule</span><span class="p">,</span> <span class="c1">// 表格的排序</span>
+    <span class="nx">MatProgressSpinnerModule</span><span class="p">,</span> <span class="c1">// 显示进度</span>
+    <span class="nx">MatInputModule</span><span class="p">,</span> <span class="c1">// 输入框</span>
+    <span class="nx">MatMenuModule</span><span class="p">,</span> <span class="c1">// 菜单</span>
+    <span class="nx">MatCheckboxModule</span><span class="p">,</span> <span class="c1">// 复选框</span>
+    <span class="nx">DragDropModule</span><span class="p">,</span> <span class="c1">// 拖拽</span>
+    <span class="nx">MatDialogModule</span><span class="p">,</span> <span class="c1">// 对话框</span>
+    <span class="nx">MatRadioModule</span><span class="p">,</span> <span class="c1">// 单选框</span>
+    <span class="nx">FormsModule</span> <span class="c1">// 表单</span>
+  <span class="p">],</span>
+  <span class="nx">providers</span><span class="o">:</span> <span class="p">[{</span>
+    <span class="nx">provide</span>: <span class="kt">MatPaginatorIntl</span><span class="p">,</span> <span class="c1">// 注册CustomMatPaginatorIntl实例</span>
+    <span class="nx">useClass</span>: <span class="kt">CustomMatPaginatorIntl</span>
+  <span class="p">}]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">MaterialModule</span> <span class="p">{</span> <span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><p>查看应用程序结果。观察表格翻页组件，原先的英文更新成了中文。页面显示效果如图18-7所示：</p></li>
+</ol>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/Figure18-7.png"><img alt="../_images/Figure18-7.png" src="../_images/Figure18-7.png" style="width: 400px;" /></a>
+<p>图18-7 自定义翻页组件</p>
+</div></blockquote>
+<p>在上面的步骤中，完成了以下内容：</p>
+<ol class="arabic simple">
+<li><p>自定义组件类CustomMatPaginatorIntl继承了父类MatPaginatorIntl，getAndInitTranslations()方法主要是替换了英文提示信息和鼠标悬停在翻页图标上的提示语，而getRangeLabel()方法替换了页数显示信息，如：将原先的“6 - 10 of 30”替换成了“6 - 10 / 30”；</p></li>
+<li><p>在MaterialModule中采用的是类提供商的配置方式注册CustomMatPaginatorIntl类实例，这样在整个Material模块内，默认的翻页组件都将被自定义的CustomMatPaginatorIntl类实例取代。</p></li>
+</ol>
+</div>
+<div class="section" id="id13">
+<h2><span class="sectnum">18.9</span> 小结<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h2>
+<p>本章主要是站在实战的角度，带领读者身临其境的感受真实项目的开发场景，通过一个真实的案例来引导读者一步步的实现它的功能。通过本章的学习，读者应该基本掌握了Angular Material的实战开发经验。</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="bootstrap.html" class="btn btn-neutral float-right" title="19 集成Bootstrap前端组件库" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="seventh.html" class="btn btn-neutral float-left" title="第七课" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright CVI Talent
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

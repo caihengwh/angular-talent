@@ -1,0 +1,357 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>26 熟悉Angular测试</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="27 熟悉Angular环境配置及打包" href="package.html" />
+    <link rel="prev" title="25 如何与本地数据打交道" href="localdata.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/main-page-logo-small-hat.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">目录：</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="start.html">Angular 9</a></li>
+<li class="toctree-l1"><a class="reference internal" href="first.html">第一课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="whatisangular.html"><span class="sectnum">1</span> Angular概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="howtolearn.html"><span class="sectnum">2</span> 学习Angular需要什么基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nodejs.html"><span class="sectnum">3</span> 掌握Node.js和npm基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="second.html">第二课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="typescript.html"><span class="sectnum">4</span> 学习TypeScript知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="firstangular.html"><span class="sectnum">5</span> 快速开启第一个Angular</a></li>
+<li class="toctree-l1"><a class="reference internal" href="third.html">第三课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angcomponent.html"><span class="sectnum">6</span> 学习Angular组件知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angtemplate.html"><span class="sectnum">7</span> 学习Angular模板知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angdirective.html"><span class="sectnum">8</span> 掌握Angular指令应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fourth.html">第四课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angmodule.html"><span class="sectnum">9</span> 学习Angular模块知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angroute.html"><span class="sectnum">10</span> 熟悉Angular路由功能</a></li>
+<li class="toctree-l1"><a class="reference internal" href="injection.html"><span class="sectnum">11</span> 学习Angular的服务及依赖注入</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fifth.html">第五课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reactive.html"><span class="sectnum">12</span> 掌握响应式编程基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form.html"><span class="sectnum">13</span> 学习Angular表单知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="httpclient.html"><span class="sectnum">14</span> 熟悉HttpClient模块</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sixth.html">第六课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pipe.html"><span class="sectnum">15</span> 深入学习Angular管道知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ui.html"><span class="sectnum">16</span> Angular与Angular Material组件库</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rxjs.html"><span class="sectnum">17</span> 学习RxJS在Angular中的实际应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="seventh.html">第七课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="material.html"><span class="sectnum">18</span> 实战基于Angular Material实现表格组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bootstrap.html"><span class="sectnum">19</span> 集成Bootstrap前端组件库</a></li>
+<li class="toctree-l1"><a class="reference internal" href="echart.html"><span class="sectnum">20</span> 在Angular项目中使用图表</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appid.html"><span class="sectnum">21</span> 使用IBM Cloud™ App ID对Angular应用进行认证</a></li>
+<li class="toctree-l1"><a class="reference internal" href="communication.html"><span class="sectnum">22</span> 掌握在Angular组件间通信</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pwa.html"><span class="sectnum">23</span> Angular与渐进式WEB应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="message.html"><span class="sectnum">24</span> 实现简单的消息通知机制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="localdata.html"><span class="sectnum">25</span> 如何与本地数据打交道</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#"><span class="sectnum">26</span> 熟悉Angular测试</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1"><span class="sectnum">26.1</span> 测试驱动开发和行为驱动开发</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2"><span class="sectnum">26.2</span> 功能测试和非功能测试</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#jasmine"><span class="sectnum">26.3</span> 什么是Jasmine？</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#it"><span class="sectnum">26.3.1</span> it()方法</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#describe"><span class="sectnum">26.3.2</span> describe()方法</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#expect"><span class="sectnum">26.3.3</span> expect()方法</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#matcher"><span class="sectnum">26.3.4</span> 匹配方法（Matcher）</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#setup-teardown"><span class="sectnum">26.3.5</span> 启动（setup）和销毁（teardown）方法</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#karma"><span class="sectnum">26.4</span> 什么是Karma？</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#angularjasminekarma"><span class="sectnum">26.4.1</span> Angular中的Jasmine和Karma的配置</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id3"><span class="sectnum">26.5</span> 使用 Jasmine 编写测试用例</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4"><span class="sectnum">26.6</span> 小结</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="package.html"><span class="sectnum">27</span> 熟悉Angular环境配置及打包</a></li>
+<li class="toctree-l1"><a class="reference internal" href="universal.html"><span class="sectnum">28</span> 学习Angular服务端渲染</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deploy.html"><span class="sectnum">29</span> 如何部署Angular应用程序</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user.html"><span class="sectnum">30</span> 实战用户管理系统</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">CVI Talent</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">首页</a> &raquo;</li>
+        
+      <li><span class="sectnum">26</span> 熟悉Angular测试</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        <a href="https://pages.github.ibm.com/lanzejun/talent/index.html" class="fa fa-github"> CVITube</a>
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="angular">
+<h1><span class="sectnum">26</span> 熟悉Angular测试<a class="headerlink" href="#angular" title="Permalink to this headline">¶</a></h1>
+<p>本章将带领读者熟悉并掌握Angular测试知识，为了更好的理解本章的内容，在这之前，需要先了解下测试相关的术语。</p>
+<div class="section" id="id1">
+<h2><span class="sectnum">26.1</span> 测试驱动开发和行为驱动开发<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>测试驱动开发，英文全称Test-Driven Development，简称TDD。它要求在编写某个功能的代码之前先编写测试代码，然后只编写使测试通过的功能代码，通过测试来推动整个开发的进行。这有助于编写简洁可用和高质量的代码，并加速开发过程。</p>
+<p>测试驱动开发的优点是：</p>
+<ol class="arabic simple">
+<li><p>能驱使系统最终的实现代码，都可以被测试代码所覆盖到，也即“每一行代码都可测”；</p></li>
+<li><p>测试代码作为实现代码的正确导向，最终演变为正确系统的行为，能让整个开发过程更加高效。</p></li>
+</ol>
+<p>同时，它的局限性也很明确：</p>
+<ol class="arabic simple">
+<li><p>项目的需求必须足够清晰；</p></li>
+<li><p>对于一个业务模型极其复杂、内部模块之间的相互依赖性非常强的项目，采用TDD反而会得不尝失，这会导致程序员在拆分接口和写测试代码的时候工作量非常大。</p></li>
+</ol>
+<p>行为驱动开发（Behavior Drive Development），简称BDD，它把TDD中模糊的那一部分给明确了，强调开发、测试、BA、客户等所有项目相关人员都用自然语言来描述系统的行为。大家看到的描述一致，读到的内容一致，于是最终行为驱动开发产出的结果也应该是最符合用户期望的。</p>
+<p>BDD使项目中的每个人都清楚了解功能的含义以及何时停止构建功能，它的示例可帮助企业清楚地了解所要提出的要求，并在获得要求后立即停止；TDD中的测试可帮助程序员清楚地了解要构建的内容并在构建后停止。因此，可以简单的理解BDD包含了TDD以及额外的需求分析。</p>
+</div>
+<div class="section" id="id2">
+<h2><span class="sectnum">26.2</span> 功能测试和非功能测试<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>功能测试就是对产品的各功能进行验证，根据功能测试用例，逐项测试，检查产品是否达到用户要求的功能。进行功能测试以确保应用程序的功能符合需求规范。这是黑盒测试，不涉及应用程序源代码的详细信息。在执行功能测试时，重点应放在应用程序主要功能的用户友好性上。
+要首先执行功能测试，我们需要识别测试输入并使用选定的测试输入值计算预期结果。然后执行测试用例，并将实际数据与预期结果进行比较。</p>
+<p>功能测试按照类型划分，大致有3种：</p>
+<ol class="arabic simple">
+<li><p>单元测试：单元测试通常由开发人员而不是测试人员完成，主要是在开发阶段测试应用程序的各个组件。测试一段代码形式的功能以验证准确性；</p></li>
+<li><p>集成测试：进行集成测试以检查应用程序的各个组件在集成时是否按预期运行。通常在单元测试之后进行集成测试；</p></li>
+<li><p>端到端测试（e2e）：它测试系统环境中所有的访问点，并在组件级和系统级的测试中将功能测试和性能测试整合在一起。</p></li>
+</ol>
+<p>非功能测试指的是通过​​各种标准（例如负载测试，可伸缩性测试，压力测试等）评估应用程序的就绪状态。它评估应用程序在挑战性条件下的性能。</p>
+<p>Angular的CLI工程默认集成了Jasmine和Karma测试工具。下面分别对它们进行介绍。</p>
+</div>
+<div class="section" id="jasmine">
+<h2><span class="sectnum">26.3</span> 什么是Jasmine？<a class="headerlink" href="#jasmine" title="Permalink to this headline">¶</a></h2>
+<p>Jasmine是一个基于BDD(行为驱动开发)的JavaScript测试框架。它能运行在任何支持JavaScript的平台上，其本身不依赖于任何其它的Javascript框架，也不依赖于文档对象模型（DOM），Jasmine的语法简单且易于阅读，是前端应用的单元测试常用框架之一。如，Mocha也是一种常用的单元测试框架。</p>
+<p>在Angular中，我们使用Jasmine测试框架来编写测试用例。Jasmine提供了编写测试用例的几个常见方法，它们是：</p>
+<div class="section" id="it">
+<h3><span class="sectnum">26.3.1</span> it()方法<a class="headerlink" href="#it" title="Permalink to this headline">¶</a></h3>
+<p>声明一个具体的测试用例。it()方法接受两个参数：一个字符串和一个函数，字符串就是测试用例的名字，函数就是要执行的测试代码。</p>
+</div>
+<div class="section" id="describe">
+<h3><span class="sectnum">26.3.2</span> describe()方法<a class="headerlink" href="#describe" title="Permalink to this headline">¶</a></h3>
+<p>可以理解为一组测试用例，里面可以包含一组it测试用例。describe()方法接受两个参数：一个字符串和一个函数，字符串就是测试用例的名字，函数就是要执行的代码块，里面包含若干个it()和其他方法。</p>
+</div>
+<div class="section" id="expect">
+<h3><span class="sectnum">26.3.3</span> expect()方法<a class="headerlink" href="#expect" title="Permalink to this headline">¶</a></h3>
+<p>使用断言的方式来执行测试结果，expect()方法的参数是一个具体的值，这个值被称为实际值。同时，在expect()方法后需要跟某个匹配方法（Matcher），而匹配方法中的值称为期望值。</p>
+</div>
+<div class="section" id="matcher">
+<h3><span class="sectnum">26.3.4</span> 匹配方法（Matcher）<a class="headerlink" href="#matcher" title="Permalink to this headline">¶</a></h3>
+<p>每个 Matcher 的返回结果是一个布尔值，它的作用就是在实际值和期望值之间作比较。下面代码例举几个Matcher示例：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="nx">expect</span><span class="p">(</span><span class="nx">a</span><span class="p">).</span><span class="nx">toBe</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span> <span class="c1">// 期望变量a为true</span>
+<span class="nx">expect</span><span class="p">(</span><span class="nx">a</span><span class="p">).</span><span class="nx">toEqual</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span> <span class="c1">// 期望变量a等于true</span>
+<span class="nx">expect</span><span class="p">(</span><span class="nx">a</span><span class="p">).</span><span class="nx">toMatch</span><span class="p">(</span><span class="sr">/reg/</span><span class="p">);</span> <span class="c1">// 期望变量a匹配reg正则表达式，也可以是字符串</span>
+<span class="nx">expect</span><span class="p">(</span><span class="nx">a</span><span class="p">.</span><span class="nx">foo</span><span class="p">).</span><span class="nx">toBeDefined</span><span class="p">();</span> <span class="c1">// 期望a.foo已定义</span>
+<span class="nx">expect</span><span class="p">(</span><span class="nx">a</span><span class="p">.</span><span class="nx">foo</span><span class="p">).</span><span class="nx">toBeUndefined</span><span class="p">();</span> <span class="c1">// 期望a.foo未定义</span>
+<span class="nx">expect</span><span class="p">(</span><span class="nx">a</span><span class="p">).</span><span class="nx">toBeNull</span><span class="p">();</span> <span class="c1">// 期望变量a为null</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="setup-teardown">
+<h3><span class="sectnum">26.3.5</span> 启动（setup）和销毁（teardown）方法<a class="headerlink" href="#setup-teardown" title="Permalink to this headline">¶</a></h3>
+<p>为了使每一个测试用例，都可以重复的执行 setup 与 teardown 代码，Jasmine 提供了全局的 beforeEach() 和 afterEach 方法。beforeEach()方法会在每一个测试用例执行前运行，而 afterEach() 方法在每个测试用例执行后被调用。</p>
+</div>
+</div>
+<div class="section" id="karma">
+<h2><span class="sectnum">26.4</span> 什么是Karma？<a class="headerlink" href="#karma" title="Permalink to this headline">¶</a></h2>
+<p>Karma是一个对JavaScript代码执行提供多种浏览器运行环境的工具，简单的说，Karma就是供Jasmine测试时的运行平台。Karma可用于测试所有主流Web浏览器，也可集成到CI（Continuous integration）工具，也可和其他代码编辑器一起使用。
+这个测试工具的一个强大特性就是，它可以监控(Watch)文件的变化，然后自行执行，通过console.log()方法显示测试结果。</p>
+<p>使用Karma运行平台能让Angular应用程序完成下面这些场景的任务：</p>
+<ol class="arabic simple">
+<li><p>在真实的浏览器中测试前端代码；</p></li>
+<li><p>在多平台、多浏览器中测试前端代码；</p></li>
+<li><p>在开发时本地能够进行前端测试；</p></li>
+<li><p>能将前端测试能够整合到持续集成实践中；</p></li>
+<li><p>每次文件的更新都会执行测试；</p></li>
+<li><p>能生成测试覆盖率报告。</p></li>
+</ol>
+<div class="section" id="angularjasminekarma">
+<h3><span class="sectnum">26.4.1</span> Angular中的Jasmine和Karma的配置<a class="headerlink" href="#angularjasminekarma" title="Permalink to this headline">¶</a></h3>
+<p>当使用Angular CLI命令构建项目时，该命令会自动生成与Karma和Jasmine一起使用的单元测试代码。例如，它会生成一个名为app.component.ts的应用程序组件和一个名为app.component.spec.ts的单元测试文件。在单元测试文件中默认已经生成了一些方法，用于直接对组件进行单元测试。</p>
+<p>同时，在Angular项目的根目录下有个karma.conf.js文件，该文件是Jasmine测试框架的配置文件。</p>
+</div>
+</div>
+<div class="section" id="id3">
+<h2><span class="sectnum">26.5</span> 使用 Jasmine 编写测试用例<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng new test-ex100 -t -s --defaults<span class="o">=</span><span class="nb">true</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="id4">
+<h2><span class="sectnum">26.6</span> 小结<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="package.html" class="btn btn-neutral float-right" title="27 熟悉Angular环境配置及打包" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="localdata.html" class="btn btn-neutral float-left" title="25 如何与本地数据打交道" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright CVI Talent
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

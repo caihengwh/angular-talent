@@ -1,0 +1,868 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>15 深入学习Angular管道知识</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="16 Angular与Angular Material组件库" href="ui.html" />
+    <link rel="prev" title="第六课" href="sixth.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/main-page-logo-small-hat.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">目录：</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="start.html">Angular 9</a></li>
+<li class="toctree-l1"><a class="reference internal" href="first.html">第一课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="whatisangular.html"><span class="sectnum">1</span> Angular概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="howtolearn.html"><span class="sectnum">2</span> 学习Angular需要什么基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nodejs.html"><span class="sectnum">3</span> 掌握Node.js和npm基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="second.html">第二课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="typescript.html"><span class="sectnum">4</span> 学习TypeScript知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="firstangular.html"><span class="sectnum">5</span> 快速开启第一个Angular</a></li>
+<li class="toctree-l1"><a class="reference internal" href="third.html">第三课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angcomponent.html"><span class="sectnum">6</span> 学习Angular组件知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angtemplate.html"><span class="sectnum">7</span> 学习Angular模板知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angdirective.html"><span class="sectnum">8</span> 掌握Angular指令应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fourth.html">第四课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angmodule.html"><span class="sectnum">9</span> 学习Angular模块知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angroute.html"><span class="sectnum">10</span> 熟悉Angular路由功能</a></li>
+<li class="toctree-l1"><a class="reference internal" href="injection.html"><span class="sectnum">11</span> 学习Angular的服务及依赖注入</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fifth.html">第五课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reactive.html"><span class="sectnum">12</span> 掌握响应式编程基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form.html"><span class="sectnum">13</span> 学习Angular表单知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="httpclient.html"><span class="sectnum">14</span> 熟悉HttpClient模块</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sixth.html">第六课</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#"><span class="sectnum">15</span> 深入学习Angular管道知识</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1"><span class="sectnum">15.1</span> Angular管道的使用方法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2"><span class="sectnum">15.2</span> 使用Angular的内置管道</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#async"><span class="sectnum">15.2.1</span> 使用async管道</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#currency"><span class="sectnum">15.2.2</span> 使用currency管道</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#date"><span class="sectnum">15.2.3</span> 使用date管道</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#i18nselect"><span class="sectnum">15.2.4</span> 使用i18nSelect管道</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id3"><span class="sectnum">15.3</span> 用户自定义管道</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id4"><span class="sectnum">15.3.1</span> 用户自定义管道的步骤</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pipe-ex100"><span class="sectnum">15.3.2</span> [示例 pipe-ex100] 创建一个排序自定义管道</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id5"><span class="sectnum">15.4</span> 小结</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ui.html"><span class="sectnum">16</span> Angular与Angular Material组件库</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rxjs.html"><span class="sectnum">17</span> 学习RxJS在Angular中的实际应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="seventh.html">第七课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="material.html"><span class="sectnum">18</span> 实战基于Angular Material实现表格组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bootstrap.html"><span class="sectnum">19</span> 集成Bootstrap前端组件库</a></li>
+<li class="toctree-l1"><a class="reference internal" href="echart.html"><span class="sectnum">20</span> 在Angular项目中使用图表</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appid.html"><span class="sectnum">21</span> 使用IBM Cloud™ App ID对Angular应用进行认证</a></li>
+<li class="toctree-l1"><a class="reference internal" href="communication.html"><span class="sectnum">22</span> 掌握在Angular组件间通信</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pwa.html"><span class="sectnum">23</span> Angular与渐进式WEB应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="message.html"><span class="sectnum">24</span> 实现简单的消息通知机制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="localdata.html"><span class="sectnum">25</span> 如何与本地数据打交道</a></li>
+<li class="toctree-l1"><a class="reference internal" href="test.html"><span class="sectnum">26</span> 熟悉Angular测试</a></li>
+<li class="toctree-l1"><a class="reference internal" href="package.html"><span class="sectnum">27</span> 熟悉Angular环境配置及打包</a></li>
+<li class="toctree-l1"><a class="reference internal" href="universal.html"><span class="sectnum">28</span> 学习Angular服务端渲染</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deploy.html"><span class="sectnum">29</span> 如何部署Angular应用程序</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user.html"><span class="sectnum">30</span> 实战用户管理系统</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">CVI Talent</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">首页</a> &raquo;</li>
+        
+      <li><span class="sectnum">15</span> 深入学习Angular管道知识</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        <a href="https://pages.github.ibm.com/lanzejun/talent/index.html" class="fa fa-github"> CVITube</a>
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="angular">
+<h1><span class="sectnum">15</span> 深入学习Angular管道知识<a class="headerlink" href="#angular" title="Permalink to this headline">¶</a></h1>
+<p>本书在介绍模板表达式中有哪些运算符时，简单的介绍了管道运算符（简称管道）。管道运算符和指令一样，在Angular中到处存在，管道运算符的作用是对表达式的结果进行一些转换，如，将文本更改为大写，可以格式化日期显示，可以将数字显示为本地货币格式，或过滤列表并对其进行排序等。它们在整个应用程序中获取数据、转换数据，然后把这些数据显示给用户。</p>
+<div class="section" id="id1">
+<h2><span class="sectnum">15.1</span> Angular管道的使用方法<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>Angular包含了一些内置管道，类似指令一样，不需要额外做些操作，只需直接在模板中直接使用它们。请参阅下面的示例：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Component</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+
+<span class="kd">@Component</span><span class="p">({</span>
+<span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-root&#39;</span><span class="p">,</span>
+<span class="nx">template</span><span class="o">:</span> <span class="sb">`</span>
+<span class="sb">   &lt;p&gt;当前日期: {{ birthday | date }}  &lt;/p&gt;</span>
+<span class="sb">   &lt;p&gt;指定日期格式: {{ birthday | date:&#39;yyyy-MM-dd&#39; }} &lt;/p&gt;</span>
+<span class="sb">`</span><span class="p">,</span>
+<span class="nx">styles</span><span class="o">:</span> <span class="p">[]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">AppComponent</span> <span class="p">{</span>
+<span class="nx">birthday</span> <span class="o">=</span> <span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>上述代码中，在组件模板表达式中，管道操作符(“|”)将左侧的birthday的值输入到右侧的date管道函数中，最终界面打印出以下内容：</p>
+<blockquote>
+<div><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>当前日期: Apr 24, 2020
+
+指定日期格式: 2020-04-24
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="id2">
+<h2><span class="sectnum">15.2</span> 使用Angular的内置管道<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>Angular内置了一些管道，比如异步管道、金额管道、百分比管道、JSON管道、大小写转换管道、日期格式转换管道等，下面详细介绍其中的几种。</p>
+<div class="section" id="async">
+<h3><span class="sectnum">15.2.1</span> 使用async管道<a class="headerlink" href="#async" title="Permalink to this headline">¶</a></h3>
+<p>async 管道即异步管道，它会订阅一个 Observable 或 Promise值对象，并返回它发出的最近一个值。当新值到来时，async 管道就会把该组件标记为需要进行变更检测。当组件被销毁时，async 管道就会自动取消订阅，以消除潜在的内存泄露问题。async 管道的使用场景，请参阅下面的示例：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Component</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">interval</span><span class="p">,</span> <span class="nx">Observable</span><span class="p">,</span> <span class="k">of</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;rxjs&#39;</span><span class="p">;</span>
+
+<span class="kd">@Component</span><span class="p">({</span>
+<span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-root&#39;</span><span class="p">,</span>
+<span class="nx">template</span><span class="o">:</span> <span class="sb">`</span>
+<span class="sb">   &lt;p&gt;当前日期: {{ currentTime$ | async }}  &lt;/p&gt;</span>
+<span class="sb">   &lt;p&gt;指定日期格式: {{ currentTime$ | async| date:&#39;yyyy-MM-dd HH:MM:ss&#39; }} &lt;/p&gt;</span>
+<span class="sb">`</span><span class="p">,</span>
+<span class="nx">styles</span><span class="o">:</span> <span class="p">[]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">AppComponent</span> <span class="p">{</span>
+<span class="nx">birthday</span> <span class="o">=</span> <span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">();</span>
+<span class="nx">currentTime$</span>: <span class="kt">Observable</span><span class="o">&lt;</span><span class="kt">number</span><span class="o">&gt;</span><span class="p">;</span>
+
+<span class="kr">constructor</span><span class="p">()</span> <span class="p">{</span>
+   <span class="nx">interval</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span> <span class="c1">// 每1秒依次发出当前时间</span>
+      <span class="p">.</span><span class="nx">subscribe</span><span class="p">(()</span><span class="o">=&gt;</span><span class="k">this</span><span class="p">.</span><span class="nx">currentTime$</span> <span class="o">=</span> <span class="k">of</span><span class="p">(</span><span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">()))</span>
+<span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>上述代码中，在类的构造方法中通过interval创建符每秒钟发射一个当前的时间戳值，赋值给Observable类型的变量currentTime$，在模板中使用async管道符获取变量currentTime$的最新值，同时使用链式管道转换时间戳值为可读格式的日期。</p>
+</div>
+<div class="section" id="currency">
+<h3><span class="sectnum">15.2.2</span> 使用currency管道<a class="headerlink" href="#currency" title="Permalink to this headline">¶</a></h3>
+<p>currency管道负责把数字转换成金额，currency管道相对其他管道比较灵活，它可以根据配置项进行灵活的格式化，currency管道的使用语法如下：</p>
+<blockquote>
+<div><div class="highlight-scss notranslate"><div class="highlight"><pre><span></span><span class="p">{{</span> <span class="nt">数值表达式</span> <span class="o">|</span> <span class="nt">currency</span> <span class="o">[</span> <span class="nd">:</span> <span class="nt">currencyCode</span> <span class="o">[</span> <span class="nd">:</span> <span class="nt">display</span> <span class="o">[</span> <span class="nd">:</span> <span class="nt">digitsInfo</span> <span class="o">[</span> <span class="nd">:</span> <span class="nt">locale</span> <span class="o">]</span> <span class="o">]</span> <span class="o">]</span> <span class="o">]</span> <span class="p">}}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>上述参数详情描述见下表：</p>
+<blockquote>
+<div><table class="colwidths-given docutils align-default" id="id6">
+<caption><span class="caption-text">currency管道配置选项</span><a class="headerlink" href="#id6" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 67%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>选项</p></td>
+<td><p>类型</p></td>
+<td><p>说明</p></td>
+</tr>
+<tr class="row-even"><td><p>currencyCode（可选）</p></td>
+<td><p>string</p></td>
+<td><p>货币代码，比如：JPY 表示人民币，USD 表示美元（默认）</p></td>
+</tr>
+<tr class="row-odd"><td><p>display（可选）</p></td>
+<td><p>string | boolean</p></td>
+<td><div class="line-block">
+<div class="line">货币指示器的格式（可选，默认值是symbol），有效值包括下面这些：</div>
+<div class="line">code：显示货币代码（如 USD）</div>
+<div class="line">symbol(默认)：显示货币符号（如 $）</div>
+<div class="line">symbol-narrow：使用区域的窄化符号。比如，加拿大元的符号是 CA$，而其窄化符号是 $。</div>
+<div class="line">String：使用指定的字符串值代替货币代码或符号。空字符串将会去掉货币代码或符号。</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>digitsInfo（可选）</p></td>
+<td><p>string</p></td>
+<td><div class="line-block">
+<div class="line">数字展现的选项，通过格式 {a}.{b}-{c} 的字符串指定：</div>
+<div class="line">a：小数点前的最小位数，默认为 1</div>
+<div class="line">b：小数点后的最小位数，默认为 0</div>
+<div class="line">c：小数点后的最大位数，默认为 3</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>locale（可选）</p></td>
+<td><p>string</p></td>
+<td><p>要使用的本地化格式代码。如果未提供，默认为 en-US。</p></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>currency 管道的使用场景，请参阅下面的示例：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Component</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+
+<span class="kd">@Component</span><span class="p">({</span>
+<span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-root&#39;</span><span class="p">,</span>
+<span class="nx">template</span><span class="o">:</span> <span class="sb">`</span>
+<span class="sb">   &lt;!--输出 &#39;$0.26&#39;--&gt;</span>
+<span class="sb">   &lt;p&gt;1、{{a | currency}}&lt;/p&gt;</span>
+
+<span class="sb">   &lt;!--输出 &#39;¥0&#39;--&gt;</span>
+<span class="sb">   &lt;p&gt;2、{{a | currency:&#39;JPY&#39;}}&lt;/p&gt;</span>
+
+<span class="sb">   &lt;!--输出 &#39;¥0.26&#39;--&gt;</span>
+<span class="sb">   &lt;p&gt;3、{{a | currency:&#39;JPY&#39;:&#39;symbol&#39;:&#39;1.2-2&#39;}}&lt;/p&gt;</span>
+
+<span class="sb">   &lt;!--输出 &#39;¥0.26&#39;--&gt;</span>
+<span class="sb">   &lt;p&gt;4、{{a | currency:&#39;¥&#39;}}&lt;/p&gt;</span>
+
+<span class="sb">   &lt;!--输出 &#39;RMB 0.26&#39;--&gt;</span>
+<span class="sb">   &lt;p&gt;5、{{a | currency:&#39;RMB &#39;}}&lt;/p&gt;</span>
+
+<span class="sb">   &lt;!--输出 &#39;¥0.26&#39;--&gt;</span>
+<span class="sb">   &lt;p&gt;6、{{a | currency:&#39;JPY&#39;:&#39;symbol&#39;:&#39;1.2-2&#39;}}&lt;/p&gt;</span>
+
+<span class="sb">   &lt;!--输出 &#39;¥0.258&#39;--&gt;</span>
+<span class="sb">   &lt;p&gt;7、{{a | currency:&#39;JPY&#39;:&#39;symbol&#39;:&#39;1.2-3&#39;}}&lt;/p&gt;</span>
+
+<span class="sb">   &lt;!--输出 &#39;CA$0.26&#39;--&gt;</span>
+<span class="sb">   &lt;p&gt;8、{{a | currency:&#39;CAD&#39;}}&lt;/p&gt;</span>
+
+<span class="sb">   &lt;!--输出 &#39;CAD0.26&#39;--&gt;</span>
+<span class="sb">   &lt;p&gt;9、{{a | currency:&#39;CAD&#39;:&#39;code&#39;}}&lt;/p&gt;</span>
+
+<span class="sb">   &lt;!--输出 &#39;CA$0,123.00&#39;--&gt;</span>
+<span class="sb">   &lt;p&gt;10、{{b | currency:&#39;CAD&#39;:&#39;symbol&#39;:&#39;4.2-2&#39;}}&lt;/p&gt;</span>
+
+<span class="sb">   &lt;!--输出 &#39;$0,123.00&#39;--&gt;</span>
+<span class="sb">   &lt;p&gt;11、{{b | currency:&#39;CAD&#39;:&#39;symbol-narrow&#39;:&#39;4.2-2&#39;}}&lt;/p&gt;</span>
+<span class="sb">   `</span><span class="p">,</span>
+<span class="nx">styles</span><span class="o">:</span> <span class="p">[]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">AppComponent</span> <span class="p">{</span>
+   <span class="nx">a</span>: <span class="kt">number</span> <span class="o">=</span> <span class="mf">0.258</span><span class="p">;</span>
+   <span class="nx">b</span>: <span class="kt">number</span> <span class="o">=</span> <span class="mi">123</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>上述代码中，演示了 currency 管道的常见使用场景，输出结果请参阅代码中的注释。</p>
+</div>
+<div class="section" id="date">
+<h3><span class="sectnum">15.2.3</span> 使用date管道<a class="headerlink" href="#date" title="Permalink to this headline">¶</a></h3>
+<p>date管道负责格式化日期值，date管道的使用语法如下：</p>
+<blockquote>
+<div><div class="highlight-scss notranslate"><div class="highlight"><pre><span></span><span class="p">{{</span> <span class="nt">日期表达式</span> <span class="o">|</span> <span class="nt">date</span> <span class="o">[</span> <span class="nd">:</span> <span class="nt">format</span> <span class="o">[</span> <span class="nd">:</span> <span class="nt">timezone</span> <span class="o">[</span> <span class="nd">:</span> <span class="nt">locale</span> <span class="o">]</span> <span class="o">]</span> <span class="o">]</span> <span class="p">}}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>上述参数详情描述见下表：</p>
+<blockquote>
+<div><table class="colwidths-given docutils align-default" id="id7">
+<caption><span class="caption-text">date管道配置选项</span><a class="headerlink" href="#id7" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 11%" />
+<col style="width: 71%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>选项</p></td>
+<td><p>类型</p></td>
+<td><p>说明</p></td>
+</tr>
+<tr class="row-even"><td><p>format（可选）</p></td>
+<td><p>string</p></td>
+<td><p>日期和时间的格式，使用预定义选项或自定义格式字符串，默认值是 ‘mediumDate’</p></td>
+</tr>
+<tr class="row-odd"><td><p>timezone（可选）</p></td>
+<td><p>string</p></td>
+<td><p>用户浏览器上的本地系统时区，默认值是 ‘undefined’</p></td>
+</tr>
+<tr class="row-even"><td><p>locale（可选）</p></td>
+<td><p>string</p></td>
+<td><p>区域代码，默认值是 ‘undefined’</p></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>关于date管道的format选项的值，使用预定义选项或自定义格式字符串，下面对它们进行归纳说明：</p>
+<blockquote>
+<div><table class="colwidths-given docutils align-default" id="id8">
+<caption><span class="caption-text">预定义的format选项</span><a class="headerlink" href="#id8" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>字符串值</p></td>
+<td><p>说明</p></td>
+</tr>
+<tr class="row-even"><td><p>short</p></td>
+<td><p>等价于 ‘M/d/yy, h:mm a’ (4/25/20, 11:07 PM)</p></td>
+</tr>
+<tr class="row-odd"><td><p>medium</p></td>
+<td><p>等价于 ‘MMM d, y, h:mm:ss a’ (Apr 25, 2020, 11:07:01 PM)</p></td>
+</tr>
+<tr class="row-even"><td><p>long</p></td>
+<td><p>等价于 ‘MMMM d, y, h:mm:ss a z’ (April 25, 2020 at 11:07:01 PM GMT+8)</p></td>
+</tr>
+<tr class="row-odd"><td><p>full</p></td>
+<td><p>等价于 ‘EEEE, MMMM d, y, h:mm:ss a zzzz’ (Saturday, April 25, 2020 at 11:07:01 PM GMT+08:00)</p></td>
+</tr>
+<tr class="row-even"><td><p>shortDate</p></td>
+<td><p>等价于 ‘M/d/yy’ (4/25/20)</p></td>
+</tr>
+<tr class="row-odd"><td><p>mediumDate</p></td>
+<td><p>等价于 ‘MMM d, y’ (Apr 25, 2020)</p></td>
+</tr>
+<tr class="row-even"><td><p>longDate</p></td>
+<td><p>等价于 ‘MMMM d, y’ (April 25, 2020)</p></td>
+</tr>
+<tr class="row-odd"><td><p>fullDate</p></td>
+<td><p>等价于 ‘EEEE, MMMM d, y’ (Saturday, April 25, 2020)</p></td>
+</tr>
+<tr class="row-even"><td><p>shortTime</p></td>
+<td><p>等价于 ‘h:mm a’ (11:07 PM)</p></td>
+</tr>
+<tr class="row-odd"><td><p>mediumTime</p></td>
+<td><p>等价于 ‘h:mm:ss a’ (11:07:01 PM)</p></td>
+</tr>
+<tr class="row-even"><td><p>longTime</p></td>
+<td><p>等价于 ‘h:mm:ss a z’ (11:07:01 PM GMT+8)</p></td>
+</tr>
+<tr class="row-odd"><td><p>fullTime</p></td>
+<td><p>等价于 ‘h:mm:ss a zzzz’ (11:07:01 PM GMT+08:00)</p></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>除了上述使用预定义的format选项外，format选项还可以使用自定义格式字符串，下面对它们进行归纳说明：</p>
+<blockquote>
+<div><table class="colwidths-given docutils align-default" id="id9">
+<caption><span class="caption-text">format选项自定义格式字符串</span><a class="headerlink" href="#id9" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 67%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>格式</p></td>
+<td><p>说明</p></td>
+<td><p>示例</p></td>
+</tr>
+<tr class="row-even"><td><p>y</p></td>
+<td><p>年份</p></td>
+<td><p>2020</p></td>
+</tr>
+<tr class="row-odd"><td><p>yy</p></td>
+<td><p>2位数字的年份。</p></td>
+<td><p>1999（99），2019（19）</p></td>
+</tr>
+<tr class="row-even"><td><p>yyy</p></td>
+<td><p>3位数字的年份。大于3位数时，取全，小于3位数时，数值前面补0</p></td>
+<td><p>2020</p></td>
+</tr>
+<tr class="row-odd"><td><p>yyyy</p></td>
+<td><p>4位数字的年份</p></td>
+<td><p>2020</p></td>
+</tr>
+<tr class="row-even"><td><p>M | L</p></td>
+<td><p>月份</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-odd"><td><p>MM | LL</p></td>
+<td><p>2位数字的月份</p></td>
+<td><p>04</p></td>
+</tr>
+<tr class="row-even"><td><p>MMM | LLL</p></td>
+<td><p>英文月份的缩写</p></td>
+<td><p>Apr</p></td>
+</tr>
+<tr class="row-odd"><td><p>MMMM | LLLL</p></td>
+<td><p>英文月份的全称</p></td>
+<td><p>April</p></td>
+</tr>
+<tr class="row-even"><td><p>MMMMM</p></td>
+<td><p>英文月份的最简写</p></td>
+<td><p>A</p></td>
+</tr>
+<tr class="row-odd"><td><p>LLLLL</p></td>
+<td><p>英文月份的最简写</p></td>
+<td><p>A4</p></td>
+</tr>
+<tr class="row-even"><td><p>w（小写字母）</p></td>
+<td><p>今年的第多少周</p></td>
+<td><p>17</p></td>
+</tr>
+<tr class="row-odd"><td><p>ww（小写字母）</p></td>
+<td><p>今年的第多少周（2位数字表示）</p></td>
+<td><p>17</p></td>
+</tr>
+<tr class="row-even"><td><p>W（大写字母）</p></td>
+<td><p>本月的第多少周</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-odd"><td><p>d</p></td>
+<td><p>本月的第多少日</p></td>
+<td><p>25</p></td>
+</tr>
+<tr class="row-even"><td><p>dd</p></td>
+<td><p>本月的第多少日（2位数字表示）</p></td>
+<td><p>25</p></td>
+</tr>
+<tr class="row-odd"><td><p>E/EE/EEE</p></td>
+<td><p>英文单词星期的缩写</p></td>
+<td><p>Sat</p></td>
+</tr>
+<tr class="row-even"><td><p>EEEE</p></td>
+<td><p>英文单词星期的全称</p></td>
+<td><p>Saturday</p></td>
+</tr>
+<tr class="row-odd"><td><p>EEEEE</p></td>
+<td><p>英文单词星期的最简</p></td>
+<td><p>S</p></td>
+</tr>
+<tr class="row-even"><td><p>EEEEEE</p></td>
+<td><p>英文单词星期的最短</p></td>
+<td><p>Sa</p></td>
+</tr>
+<tr class="row-odd"><td><p>a | aa | aaa</p></td>
+<td><p>上午或下午(am/pm 或 AM/PM)</p></td>
+<td><p>PM</p></td>
+</tr>
+<tr class="row-even"><td><p>h</p></td>
+<td><p>12小时制的小时</p></td>
+<td><p>11</p></td>
+</tr>
+<tr class="row-odd"><td><p>hh</p></td>
+<td><p>12小时制的小时（2位数）</p></td>
+<td><p>11</p></td>
+</tr>
+<tr class="row-even"><td><p>H</p></td>
+<td><p>24小时制的小时</p></td>
+<td><p>23</p></td>
+</tr>
+<tr class="row-odd"><td><p>HH</p></td>
+<td><p>24小时制的小时（2位数）</p></td>
+<td><p>23</p></td>
+</tr>
+<tr class="row-even"><td><p>m</p></td>
+<td><p>分钟</p></td>
+<td><p>7</p></td>
+</tr>
+<tr class="row-odd"><td><p>mm</p></td>
+<td><p>2位数的分钟</p></td>
+<td><p>07</p></td>
+</tr>
+<tr class="row-even"><td><p>s</p></td>
+<td><p>秒</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>ss</p></td>
+<td><p>2位数的秒</p></td>
+<td><p>01</p></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>date 管道的使用场景，请参阅下面的示例：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Component</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+
+<span class="kd">@Component</span><span class="p">({</span>
+<span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-root&#39;</span><span class="p">,</span>
+<span class="nx">template</span><span class="o">:</span> <span class="sb">`</span>
+<span class="sb">   &lt;!--演示date管道示例--&gt;</span>
+<span class="sb">   &lt;div&gt;1、{{currentDate | date}}&lt;/div&gt;</span>
+<span class="sb">   &lt;div *ngFor=&quot;let format of formats; let i = index;&quot;&gt;</span>
+<span class="sb">      {{i+2}}、{{format}} -- {{currentDate | date:format}}</span>
+<span class="sb">   &lt;/div&gt;</span>
+<span class="sb">   `</span><span class="p">,</span>
+<span class="nx">styles</span><span class="o">:</span> <span class="p">[]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">AppComponent</span> <span class="p">{</span>
+<span class="nx">currentDate</span>: <span class="kt">number</span> <span class="o">=</span> <span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">();</span>
+<span class="nx">formats</span>: <span class="kt">Array</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;short&#39;</span><span class="p">,</span> <span class="s1">&#39;medium&#39;</span><span class="p">,</span> <span class="s1">&#39;long&#39;</span><span class="p">,</span> <span class="s1">&#39;full&#39;</span><span class="p">,</span> <span class="s1">&#39;shortDate&#39;</span><span class="p">,</span>
+   <span class="s1">&#39;mediumDate&#39;</span><span class="p">,</span> <span class="s1">&#39;longDate&#39;</span><span class="p">,</span> <span class="s1">&#39;fullDate&#39;</span><span class="p">,</span> <span class="s1">&#39;shortTime&#39;</span><span class="p">,</span> <span class="s1">&#39;mediumTime&#39;</span><span class="p">,</span> <span class="s1">&#39;longTime&#39;</span><span class="p">,</span>
+   <span class="s1">&#39;fullTime&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;yy&#39;</span><span class="p">,</span> <span class="s1">&#39;yyy&#39;</span><span class="p">,</span> <span class="s1">&#39;yyyy&#39;</span><span class="p">,</span> <span class="s1">&#39;M&#39;</span><span class="p">,</span> <span class="s1">&#39;MM&#39;</span><span class="p">,</span> <span class="s1">&#39;MMM&#39;</span><span class="p">,</span> <span class="s1">&#39;MMMM&#39;</span><span class="p">,</span> <span class="s1">&#39;MMMMM&#39;</span><span class="p">,</span>
+   <span class="s1">&#39;L&#39;</span><span class="p">,</span> <span class="s1">&#39;LL&#39;</span><span class="p">,</span> <span class="s1">&#39;LLL&#39;</span><span class="p">,</span> <span class="s1">&#39;LLLL&#39;</span><span class="p">,</span> <span class="s1">&#39;LLLLLL&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="s1">&#39;ww&#39;</span><span class="p">,</span> <span class="s1">&#39;W&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;dd&#39;</span><span class="p">,</span> <span class="s1">&#39;E&#39;</span><span class="p">,</span> <span class="s1">&#39;EE&#39;</span><span class="p">,</span> <span class="s1">&#39;EEE&#39;</span><span class="p">,</span>
+   <span class="s1">&#39;EEEE&#39;</span><span class="p">,</span> <span class="s1">&#39;EEEEE&#39;</span><span class="p">,</span> <span class="s1">&#39;EEEEEE&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;aa&#39;</span><span class="p">,</span> <span class="s1">&#39;aaa&#39;</span><span class="p">,</span> <span class="s1">&#39;h&#39;</span><span class="p">,</span> <span class="s1">&#39;hh&#39;</span><span class="p">,</span> <span class="s1">&#39;H&#39;</span><span class="p">,</span> <span class="s1">&#39;HH&#39;</span><span class="p">,</span> <span class="s1">&#39;m&#39;</span><span class="p">,</span> <span class="s1">&#39;mm&#39;</span><span class="p">,</span> <span class="s1">&#39;s&#39;</span><span class="p">,</span>
+   <span class="s1">&#39;ss&#39;</span><span class="p">,</span><span class="s1">&#39;z&#39;</span><span class="p">,</span><span class="s1">&#39;zz&#39;</span><span class="p">,</span><span class="s1">&#39;zzz&#39;</span><span class="p">,</span><span class="s1">&#39;zzzz&#39;</span><span class="p">,</span><span class="s1">&#39;Z&#39;</span><span class="p">,</span><span class="s1">&#39;ZZ&#39;</span><span class="p">,</span><span class="s1">&#39;ZZZ&#39;</span><span class="p">,</span><span class="s1">&#39;ZZZZ&#39;</span><span class="p">,</span><span class="s1">&#39;ZZZZZ&#39;</span><span class="p">,</span><span class="s1">&#39;O&#39;</span><span class="p">,</span><span class="s1">&#39;OO&#39;</span><span class="p">,</span><span class="s1">&#39;OOO&#39;</span><span class="p">,</span><span class="s1">&#39;OOOO&#39;</span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>上述代码产生的页面结果如下：</p>
+<blockquote>
+<div><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>1、Apr 25, 2020
+2、short -- 4/25/20, 11:07 PM
+3、medium -- Apr 25, 2020, 11:07:01 PM
+4、long -- April 25, 2020 at 11:07:01 PM GMT+8
+5、full -- Saturday, April 25, 2020 at 11:07:01 PM GMT+08:00
+6、shortDate -- 4/25/20
+7、mediumDate -- Apr 25, 2020
+8、longDate -- April 25, 2020
+9、fullDate -- Saturday, April 25, 2020
+10、shortTime -- 11:07 PM
+11、mediumTime -- 11:07:01 PM
+12、longTime -- 11:07:01 PM GMT+8
+13、fullTime -- 11:07:01 PM GMT+08:00
+14、y -- 2020
+15、yy -- 20
+16、yyy -- 2020
+17、yyyy -- 2020
+18、M -- 4
+19、MM -- 04
+20、MMM -- Apr
+21、MMMM -- April
+22、MMMMM -- A
+23、L -- 4
+24、LL -- 04
+25、LLL -- Apr
+26、LLLL -- April
+27、LLLLLL -- A4
+28、w -- 17
+29、ww -- 17
+30、W -- 4
+31、d -- 25
+32、dd -- 25
+33、E -- Sat
+34、EE -- Sat
+35、EEE -- Sat
+36、EEEE -- Saturday
+37、EEEEE -- S
+38、EEEEEE -- Sa
+39、a -- PM
+40、aa -- PM
+41、aaa -- PM
+42、h -- 11
+43、hh -- 11
+44、H -- 23
+45、HH -- 23
+46、m -- 7
+47、mm -- 07
+48、s -- 1
+49、ss -- 01
+50、z -- GMT+8
+51、zz -- GMT+8
+52、zzz -- GMT+8
+53、zzzz -- GMT+08:00
+54、Z -- +0800
+55、ZZ -- +0800
+56、ZZZ -- +0800
+57、ZZZZ -- GMT+08:00
+58、ZZZZZ -- +08:00
+59、O -- GMT+8
+60、OO -- GMT+8
+61、OOO -- GMT+8
+62、OOOO -- GMT+08:00
+</pre></div>
+</div>
+</div></blockquote>
+<p>预定义的format选项就是组合使用format自定义格式字符串的结果，因此用户可以任意组合使用format选项的自定义格式字符串。</p>
+</div>
+<div class="section" id="i18nselect">
+<h3><span class="sectnum">15.2.4</span> 使用i18nSelect管道<a class="headerlink" href="#i18nselect" title="Permalink to this headline">¶</a></h3>
+<p>i18nSelect管道类似一个通用选择器，显示匹配当前值的字符串。
+i18nSelect 管道的使用场景如在数据中存在性别字段，它的值一般为0和1，但是期望在页面上显示中文的性别，这时可以考虑使用i18nSelect 管道，请参阅下面的示例：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Component</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+
+<span class="kd">@Component</span><span class="p">({</span>
+<span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-root&#39;</span><span class="p">,</span>
+<span class="nx">template</span><span class="o">:</span> <span class="sb">`</span>
+<span class="sb">   &lt;!--演示i18nSelect管道示例--&gt;</span>
+<span class="sb">   &lt;div&gt;{{ female | i18nSelect: dicMap }} &lt;/div&gt;</span>
+<span class="sb">   `</span><span class="p">,</span>
+<span class="nx">styles</span><span class="o">:</span> <span class="p">[]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">AppComponent</span> <span class="p">{</span>
+   <span class="nx">female</span>: <span class="kt">string</span> <span class="o">=</span> <span class="s1">&#39;0&#39;</span><span class="p">;</span>
+   <span class="nx">dicMap</span>: <span class="kt">any</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">&#39;0&#39;</span><span class="o">:</span> <span class="s1">&#39;女&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="o">:</span> <span class="s1">&#39;男&#39;</span> <span class="p">};</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>上述代码中，i18nSelect管道显示匹配当前值male的字符串’女’。</p>
+</div>
+</div>
+<div class="section" id="id3">
+<h2><span class="sectnum">15.3</span> 用户自定义管道<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>除了Angular内置管道外，根据实际需求，用户也可以自定义管道。</p>
+<div class="section" id="id4">
+<h3><span class="sectnum">15.3.1</span> 用户自定义管道的步骤<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>实现自定义管道的步骤可以分为3步：</p>
+<ol class="arabic simple">
+<li><p>自定义一个类，该类需要实现PipeTransform接口，并实现接口中的transform()方法；</p></li>
+<li><p>用&#64;Pipe装饰器声明该类，并且通过装饰器中的元数据name属性定义管道的名字，管道名一般推荐小写字符串形式；</p></li>
+<li><p>注册自定义管道类。将管道类导入到NgModule类中declarations数组中。</p></li>
+</ol>
+<div class="admonition- admonition">
+<p class="admonition-title">提示</p>
+<p>&#64;Pipe装饰器中除了name属性外，还有pure属性，它表示该管道是否是纯管道，pure值等于true时，表示为纯管道，意思是当transform()方法中的参数发生变化时，管道才执行方法中的逻辑；反之，则为非纯管道。pure属性为可选的，默认值等于true，Angular中的内置管道都是属于纯管道。</p>
+</div>
+<p>Angular中提供了Angular CLI命令 <code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">generate</span> <span class="pre">pipe</span> <span class="pre">管道类</span></code> 生成自定义管道。由于性能原因，Angular 2+ 之后就没有自带 Filter（过滤）和 OrderBy（排序）管道。下面，我们通过示例演示创建一个排序自定义管道。</p>
+</div>
+<div class="section" id="pipe-ex100">
+<h3><span class="sectnum">15.3.2</span> [示例 pipe-ex100] 创建一个排序自定义管道<a class="headerlink" href="#pipe-ex100" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>用Angular CLI构建应用程序，具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng new pipe-ex100 --minimal --interactive<span class="o">=</span><span class="nb">false</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>启动服务，具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng serve
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><p>查看应用程序结果。打开Web浏览器并浏览到 “<a class="reference external" href="http://localhost:4200">http://localhost:4200</a>”，应该看到文本 “Welcome to pipe-ex100!”。</p></li>
+<li><p>新建接口。使用命令 <code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">generate</span> <span class="pre">pipe</span> <span class="pre">orderby</span> <span class="pre">简写</span> <span class="pre">ng</span> <span class="pre">g</span> <span class="pre">p</span> <span class="pre">orderby</span></code> 新建接口，并将文件src/app/orderby.pipe.ts更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Pipe</span><span class="p">,</span> <span class="nx">PipeTransform</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+
+<span class="kd">@Pipe</span><span class="p">({</span>
+   <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;orderby&#39;</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">OrderbyPipe</span> <span class="kr">implements</span> <span class="nx">PipeTransform</span> <span class="p">{</span>
+
+<span class="nx">transform</span><span class="p">(</span><span class="nx">value</span>: <span class="kt">Array</span><span class="o">&lt;</span><span class="nx">unknown</span><span class="o">&gt;</span><span class="p">,</span> <span class="p">...</span><span class="nx">args</span>: <span class="kt">unknown</span><span class="p">[])</span><span class="o">:</span> <span class="nb">Array</span><span class="o">&lt;</span><span class="nx">unknown</span><span class="o">&gt;</span> <span class="p">{</span>
+   <span class="k">if</span> <span class="p">(</span><span class="nx">args</span><span class="p">.</span><span class="nx">length</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">||</span> <span class="nx">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">===</span> <span class="s1">&#39;asc&#39;</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="nx">value</span><span class="p">.</span><span class="nx">sort</span><span class="p">();</span>
+   <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">===</span> <span class="s1">&#39;desc&#39;</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="nx">value</span><span class="p">.</span><span class="nx">sort</span><span class="p">().</span><span class="nx">reverse</span><span class="p">();</span>
+   <span class="p">}</span>
+   <span class="k">return</span> <span class="nx">value</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="5">
+<li><p>编辑组件。编辑文件src/app/app.component.ts，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Component</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+
+<span class="kd">@Component</span><span class="p">({</span>
+<span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-root&#39;</span><span class="p">,</span>
+<span class="nx">template</span><span class="o">:</span> <span class="sb">`</span>
+<span class="sb">   &lt;!--演示自定义管道示例--&gt;</span>
+<span class="sb">   &lt;div&gt;{{ fruits | orderby }} &lt;/div&gt;</span>
+<span class="sb">   &lt;div&gt;{{ fruits | orderby:&#39;desc&#39; }} &lt;/div&gt;</span>
+<span class="sb">   `</span><span class="p">,</span>
+<span class="nx">styles</span><span class="o">:</span> <span class="p">[]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">AppComponent</span> <span class="p">{</span>
+   <span class="nx">fruits</span>: <span class="kt">Array</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;apple&#39;</span><span class="p">,</span> <span class="s1">&#39;tomato&#39;</span><span class="p">,</span> <span class="s1">&#39;banana&#39;</span><span class="p">];</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="6">
+<li><p>观察应用程序页面，页面显示如下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-scss notranslate"><div class="highlight"><pre><span></span><span class="nt">apple</span><span class="o">,</span><span class="nt">banana</span><span class="o">,</span><span class="nt">tomato</span>
+<span class="nt">tomato</span><span class="o">,</span><span class="nt">banana</span><span class="o">,</span><span class="nt">apple</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>在上面的示例pipe-ex100中，完成了以下内容：</p>
+<ol class="arabic simple">
+<li><p>使用命令 <code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">generate</span> <span class="pre">pipe</span> <span class="pre">orderby</span></code> 时，Angular CLI命令已经帮助用户基本完成了创建自定义管道的3个步骤，用户仅是需要编辑transform()方法中的逻辑内容；</p></li>
+<li><p>transform()方法中的第一个参数是模板中传递的表达式值，这里是变量fruits的值；第二个参数是附加在orderby管道上的参数；在transform()方法通过判断附加在orderby管道上的参数，决定是升序还是降序；</p></li>
+<li><p>在模板中，自定义管道的使用方法与使用Angular的内置管道的方法一样。</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="id5">
+<h2><span class="sectnum">15.4</span> 小结<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>本章介绍了使用Angular管道的应用知识，带领读者从认识管道的基本概念开始，分别详细介绍了4种类型的内置管道，然后通过示例演示了如何创建自定义管道以及使用它的方法。</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="ui.html" class="btn btn-neutral float-right" title="16 Angular与Angular Material组件库" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="sixth.html" class="btn btn-neutral float-left" title="第六课" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright CVI Talent
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

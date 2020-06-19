@@ -1,0 +1,706 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>2 学习Angular需要什么基础</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="3 掌握Node.js和npm基础" href="nodejs.html" />
+    <link rel="prev" title="1 Angular概述" href="whatisangular.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/main-page-logo-small-hat.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">目录：</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="start.html">Angular 9</a></li>
+<li class="toctree-l1"><a class="reference internal" href="first.html">第一课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="whatisangular.html"><span class="sectnum">1</span> Angular概述</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#"><span class="sectnum">2</span> 学习Angular需要什么基础</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#web"><span class="sectnum">2.1</span> 了解Web基础开发</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1"><span class="sectnum">2.1.1</span> 客户端和服务器通信</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id2"><span class="sectnum">2.1.1.1</span> 运行在服务器端的Web应用程序</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3"><span class="sectnum">2.1.1.2</span> 运行在客户端的Web应用程序</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#html"><span class="sectnum">2.1.2</span> 什么是HTML</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dom"><span class="sectnum">2.1.3</span> 什么是DOM文档</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#htmldom"><span class="sectnum">2.1.4</span> HTML特性与DOM属性</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id4"><span class="sectnum">2.1.4.1</span> HTML特性与DOM属性的关系</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id5"><span class="sectnum">2.1.4.2</span> HTML特性与DOM属性的区别</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#css"><span class="sectnum">2.1.5</span> 掌握CSS的基础知识</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id6"><span class="sectnum">2.1.5.1</span> 块状元素</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id7"><span class="sectnum">2.1.5.2</span> 行内元素</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id8"><span class="sectnum">2.1.5.3</span> 行内块状元素</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id9"><span class="sectnum">2.1.5.4</span> CSS属性</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id10"><span class="sectnum">2.1.5.5</span> CSS度量单位</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id11"><span class="sectnum">2.1.5.6</span> CSS选择器</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id12"><span class="sectnum">2.1.6</span> 实战CSS布局</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#css-ex100"><span class="sectnum">2.1.6.1</span> [示例 css-ex100] 元素居中对齐</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#css-ex200"><span class="sectnum">2.1.6.2</span> [示例 css-ex200] 元素自适应屏幕及自动换行</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#nodenpm"><span class="sectnum">2.2</span> 掌握Node和npm基础</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#typescript"><span class="sectnum">2.3</span> 学习Typescript知识</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id13"><span class="sectnum">2.4</span> 了解Web组件的知识</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#mvvm"><span class="sectnum">2.4.1</span> 什么是MVVM模式</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id14"><span class="sectnum">2.4.2</span> MVVM模式的优点</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id15"><span class="sectnum">2.5</span> 选择适合的开发工具</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id16"><span class="sectnum">2.6</span> 如何学习Angular</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id17"><span class="sectnum">2.7</span> 小结</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="nodejs.html"><span class="sectnum">3</span> 掌握Node.js和npm基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="second.html">第二课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="typescript.html"><span class="sectnum">4</span> 学习TypeScript知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="firstangular.html"><span class="sectnum">5</span> 快速开启第一个Angular</a></li>
+<li class="toctree-l1"><a class="reference internal" href="third.html">第三课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angcomponent.html"><span class="sectnum">6</span> 学习Angular组件知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angtemplate.html"><span class="sectnum">7</span> 学习Angular模板知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angdirective.html"><span class="sectnum">8</span> 掌握Angular指令应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fourth.html">第四课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angmodule.html"><span class="sectnum">9</span> 学习Angular模块知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angroute.html"><span class="sectnum">10</span> 熟悉Angular路由功能</a></li>
+<li class="toctree-l1"><a class="reference internal" href="injection.html"><span class="sectnum">11</span> 学习Angular的服务及依赖注入</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fifth.html">第五课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reactive.html"><span class="sectnum">12</span> 掌握响应式编程基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form.html"><span class="sectnum">13</span> 学习Angular表单知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="httpclient.html"><span class="sectnum">14</span> 熟悉HttpClient模块</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sixth.html">第六课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pipe.html"><span class="sectnum">15</span> 深入学习Angular管道知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ui.html"><span class="sectnum">16</span> Angular与Angular Material组件库</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rxjs.html"><span class="sectnum">17</span> 学习RxJS在Angular中的实际应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="seventh.html">第七课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="material.html"><span class="sectnum">18</span> 实战基于Angular Material实现表格组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bootstrap.html"><span class="sectnum">19</span> 集成Bootstrap前端组件库</a></li>
+<li class="toctree-l1"><a class="reference internal" href="echart.html"><span class="sectnum">20</span> 在Angular项目中使用图表</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appid.html"><span class="sectnum">21</span> 使用IBM Cloud™ App ID对Angular应用进行认证</a></li>
+<li class="toctree-l1"><a class="reference internal" href="communication.html"><span class="sectnum">22</span> 掌握在Angular组件间通信</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pwa.html"><span class="sectnum">23</span> Angular与渐进式WEB应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="message.html"><span class="sectnum">24</span> 实现简单的消息通知机制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="localdata.html"><span class="sectnum">25</span> 如何与本地数据打交道</a></li>
+<li class="toctree-l1"><a class="reference internal" href="test.html"><span class="sectnum">26</span> 熟悉Angular测试</a></li>
+<li class="toctree-l1"><a class="reference internal" href="package.html"><span class="sectnum">27</span> 熟悉Angular环境配置及打包</a></li>
+<li class="toctree-l1"><a class="reference internal" href="universal.html"><span class="sectnum">28</span> 学习Angular服务端渲染</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deploy.html"><span class="sectnum">29</span> 如何部署Angular应用程序</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user.html"><span class="sectnum">30</span> 实战用户管理系统</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">CVI Talent</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">首页</a> &raquo;</li>
+        
+      <li><span class="sectnum">2</span> 学习Angular需要什么基础</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        <a href="https://pages.github.ibm.com/lanzejun/talent/index.html" class="fa fa-github"> CVITube</a>
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="angular">
+<h1><span class="sectnum">2</span> 学习Angular需要什么基础<a class="headerlink" href="#angular" title="Permalink to this headline">¶</a></h1>
+<p>本章的内容是为了给入门Angular知识的读者准备的，主要是对学习Angular前的知识进行下梳理，帮助读者更快的入门Angular。针对有经验的前端开发者，本章的内容可以忽略，直接进入下一章的学习。</p>
+<div class="section" id="web">
+<h2><span class="sectnum">2.1</span> 了解Web基础开发<a class="headerlink" href="#web" title="Permalink to this headline">¶</a></h2>
+<p>在深入Angular之前，需要了解Web开发的基本概念。</p>
+<div class="section" id="id1">
+<h3><span class="sectnum">2.1.1</span> 客户端和服务器通信<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>Web应用程序基本上包括两台相互通信的计算机，它们被称为服务器和客户端。</p>
+<ul class="simple">
+<li><p>客户端计算机可能是各种各样的设备，从智能手表到手机，从平板电脑到电脑。用户在客户端上使用Web浏览器与服务器（Web应用程序部署在其上面）进行交互。客户端（用户的计算机）与服务器进行通信，发送HTTP请求和接收结果。</p></li>
+<li><p>服务器位于云端或数据中心，它会监听来自客户端发送来的HTTP请求，并返回结果。服务器还可以其他访问Web应用程序使用的数据，如后端数据库。</p></li>
+</ul>
+<p>目前有两种类型的Web应用程序：运行在服务器端的Web应用程序和运行在客户端的Web应用程序（SPA）。</p>
+<div class="section" id="id2">
+<h4><span class="sectnum">2.1.1.1</span> 运行在服务器端的Web应用程序<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<p>运行在服务器端Web应用程序是指：应用程序的计算和运算逻辑在服务器上完成，客户端基本不参与计算，仅接收服务器返回的全部数据。当用户通过客户端向服务器发送一个请求，服务器执行一些操作并返回一个全新的HTML页面，作为响应显示在客户端上。服务器针对客户端的每次请求重新生成该Web页面的全部数据并将其发送回客户端的Web浏览器中，如图2-1所示。</p>
+<a class="reference internal image-reference" href="../_images/Figure2-1.png"><img alt="运行在服务器端的Web应用程序" src="../_images/Figure2-1.png" style="width: 400px;" /></a>
+<p>图2-1 运行在服务器端的Web应用程序</p>
+</div>
+<div class="section" id="id3">
+<h4><span class="sectnum">2.1.1.2</span> 运行在客户端的Web应用程序<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
+<p>客户端的Web应用程序（也称为单页面应用程序，简称SPA）。许多Web应用程序仍然在服务器上执行，但是一些代码也同时在客户端（Web浏览器）上执行，以避免频繁地重新生成页面。</p>
+<p>当用户在客户端中执行一个操作时，它向服务器发送一个请求，服务器执行一些操作并返回结果信息(通常是JSON格式的数据，而不是一个全新的HTML页面)。客户端代码侦听来自服务器的结果信息，并自行决定在不生成新页面的情况下如何呈现给客户。</p>
+<p>客户端Web应用程序往往更具交互性和灵活性，因为它们可以更快地响应用户交互，它们不必等待发回的全部数据。只需要服务器返回一个局部的结果，而不是整个HTML页面。此体系结构如图2-2所示。</p>
+<a class="reference internal image-reference" href="../_images/Figure2-2.png"><img alt="运行在客户端的Web应用程序" src="../_images/Figure2-2.png" style="width: 400px;" /></a>
+<p>图2-2 运行在客户端的Web应用程序</p>
+<p>服务器端应该承担主要工作，业务逻辑及数据应该保留在服务器端，并在需要时供客户端调用或检索。
+客户端（浏览器）可以使用更先进的异步技术来避免整个页面刷新，客户端仅胜任与用户的交互工作。</p>
+</div>
+</div>
+<div class="section" id="html">
+<h3><span class="sectnum">2.1.2</span> 什么是HTML<a class="headerlink" href="#html" title="Permalink to this headline">¶</a></h3>
+<p>HTML即超文本标记语言（HyperText Markup Language，简称：HTML），它是构建Web的基石，是一种用于创建Web的标准标记语言。HTML是一种基础技术，常与CSS、JavaScript一起被用于设计Web、Web应用程序以及移动应用程序的用户界面。Web浏览器可以读取HTML文件，并将其渲染成可视化网页。HTML描述了一个Web页面的结构语义随着线索的呈现，使之成为一种标记语言而非编程语言。</p>
+<p>HTML允许嵌入图像和对象，并且可以用于创建交互式表单，它被用来结构化信息，如标题、段落和列表等等，也可用来在一定程度上描述文档的外观和语义。HTML的语言形式为尖括号包围的HTML元素（如&lt;html&gt;），浏览器使用HTML标签和脚本来诠释网页内容。</p>
+<p>Angular中使用模板显示页面内容，而模板使用的就是HTML语言，掌握基础的HTML知识，有助于我们加快学习Angular技术。</p>
+</div>
+<div class="section" id="dom">
+<h3><span class="sectnum">2.1.3</span> 什么是DOM文档<a class="headerlink" href="#dom" title="Permalink to this headline">¶</a></h3>
+<p>DOM即文档对象模型（Document Object Model，简称：DOM），它是HTML页面和XML文档的编程接口。DOM文档定义了访问和操作HTML页面的标准方法。</p>
+<p>DOM文档提供了对HTML页面的结构化的表述，并定义了一种方式可以从程序中对该结构进行访问，从而改变HTML页面的结构、样式和内容。DOM文档将HTML页面解析为一个由节点和对象（包含属性和方法的对象）组成的结构集合。简言之，它会将HTML页面和脚本或程序语言连接起来。</p>
+<p>一个HTML页面对应一个DOM文档。这个文档可以在浏览器窗口或作为HTML源码显示出来。DOM文档提供了对同一份HTML页面的另一种表现，存储和操作的方式。</p>
+</div>
+<div class="section" id="htmldom">
+<h3><span class="sectnum">2.1.4</span> HTML特性与DOM属性<a class="headerlink" href="#htmldom" title="Permalink to this headline">¶</a></h3>
+<p>当浏览器解析完HTML后，生成的DOM是一个继承自Object的常规JavaScript对象，因此我们可以像操作任何JavaScript对象那样来操作DOM对象。</p>
+<ul class="simple">
+<li><p>Attribute属于HTML，可以是任意属性，赋值及取值使用setAttribute()和getAttribute()方法。</p></li>
+<li><p>Property属于DOM，赋值或取值使用“.”操作符。</p></li>
+</ul>
+<div class="admonition- admonition">
+<p class="admonition-title">提醒</p>
+<p>HTML中的attribute和DOM中的property，一般情况下都被称呼为“属性”。本书为了区分起见，我们分别称呼他们为：HTML特性（attribute）与DOM属性（property）。</p>
+</div>
+<div class="section" id="id4">
+<h4><span class="sectnum">2.1.4.1</span> HTML特性与DOM属性的关系<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
+<p>当我们为HTML元素设置特性，例如：</p>
+<blockquote>
+<div><div class="highlight-HTML notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">input</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;name&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;Murphy&quot;</span><span class="p">/&gt;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>上述代码书写了一个input标签，并给他定义了2个特性 (id和value)。当浏览器解析这段代码的时候，会把HTML源码解析为DOM对象，确切的说是解析为 HTMLInputElement对象。在DOM对象中，用户可以通过该对象找到对应的id和value属性。简单的说，就是当浏览器解析HTML网页时，将HTML特性映射为了DOM属性。</p>
+</div>
+<div class="section" id="id5">
+<h4><span class="sectnum">2.1.4.2</span> HTML特性与DOM属性的区别<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
+<p>HTML特性与DOM属性的区别主要有：</p>
+<ul class="simple">
+<li><p>并非所有的HTML特性都可以生成DOM属性，如HTML中的colspan特性，DOM上没有对应的属性。HTML也可以添加非标准的特性，例如：</p></li>
+</ul>
+<blockquote>
+<div><div class="highlight-HTML notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">input</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;name&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;Murphy&quot;</span> <span class="na">local</span><span class="o">=</span><span class="s">&quot;wuhan&quot;</span> <span class="p">/&gt;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ul class="simple">
+<li><p>当HTML特性特性映射为DOM属性时，只映射标准特性，访问非标准特性将得到“undefined”值。</p></li>
+</ul>
+<blockquote>
+<div><div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">el</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;local&#39;</span><span class="p">)</span> <span class="c1">// 试图通过getElementById()方法获得DOM对象</span>
+<span class="nx">el</span><span class="p">.</span><span class="nx">local</span> <span class="o">===</span> <span class="kc">undefined</span> <span class="c1">// 由于local特性是非标准特性，因此无法映射为DOM属性</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ul class="simple">
+<li><p>非标准HTML特性并不会自动映射为DOM属性。可以使用“data-”开头的HTML特性时，会映射到DOM的dataset属性里。</p></li>
+</ul>
+<blockquote>
+<div><div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">el</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">&#39;data-myName&#39;</span><span class="p">,</span> <span class="s1">&#39;Murphy&#39;</span><span class="p">);</span> <span class="c1">// 将myName属性的值设置为Murphy</span>
+<span class="nx">el</span><span class="p">.</span><span class="nx">dataset</span><span class="p">.</span><span class="nx">myName</span> <span class="o">===</span> <span class="s1">&#39;Murphy&#39;</span> <span class="c1">// 比较dataset的myName属性值是否等于Murphy</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ul class="simple">
+<li><p>HTML特性是不区分大小写的，而DOM属性是区分大小写的，因此以下代码的效果是一样的：</p></li>
+</ul>
+<blockquote>
+<div><div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">el</span><span class="p">.</span><span class="nx">getAttribute</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">)</span> <span class="c1">// 小写id</span>
+<span class="nx">el</span><span class="p">.</span><span class="nx">getAttribute</span><span class="p">(</span><span class="s1">&#39;ID&#39;</span><span class="p">)</span> <span class="c1">// 大写ID</span>
+<span class="nx">el</span><span class="p">.</span><span class="nx">getAttribute</span><span class="p">(</span><span class="s1">&#39;iD&#39;</span><span class="p">)</span> <span class="c1">// 小写i大写D</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ul class="simple">
+<li><p>当修改HTML特性的值时，DOM属性的值也会更新；但是修改DOM属性的值后，HTML特性的值却还是原值。</p></li>
+</ul>
+<blockquote>
+<div><div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">el</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">&#39;value&#39;</span><span class="p">,</span> <span class="s1">&#39;Jack&#39;</span><span class="p">);</span>       <span class="c1">// HTML特性的值</span>
+<span class="nx">el</span><span class="p">.</span><span class="nx">value</span> <span class="o">===</span> <span class="s1">&#39;Jack&#39;</span>                     <span class="c1">// DOM属性的值也更新了</span>
+
+<span class="nx">el</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="s1">&#39;newValue&#39;</span><span class="p">;</span>                  <span class="c1">// 修改DOM属性的值</span>
+<span class="nx">el</span><span class="p">.</span><span class="nx">getAttribute</span><span class="p">(</span><span class="s1">&#39;value&#39;</span><span class="p">))</span> <span class="o">===</span> <span class="s1">&#39;Murphy&#39;</span>  <span class="c1">// HTML特性的值没有更新</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="css">
+<h3><span class="sectnum">2.1.5</span> 掌握CSS的基础知识<a class="headerlink" href="#css" title="Permalink to this headline">¶</a></h3>
+<p>CSS即层叠样式表(Cascading Style CSS)是一种用来表现HTML文件样式的计算机语言。CSS不仅可以静态地修饰网页，还可以配合各种脚本语言动态地对网页各元素进行格式化。
+CSS 能够对网页中元素位置的排版进行像素级精确控制，支持几乎所有的字体字号样式，拥有对网页对象和模型样式编辑的能力。</p>
+<p>在CSS中，通常把HTML中的标签元素大体分为3种不同的类型：块状元素、行内元素和内联块状元素。理解他们的区别有助于CSS的学习。</p>
+<div class="section" id="id6">
+<h4><span class="sectnum">2.1.5.1</span> 块状元素<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
+<p>HTML中的块状元素主要有:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;div&gt;、&lt;p&gt;、&lt;h1&gt;...&lt;h6&gt;、&lt;ol&gt;、&lt;ul&gt;、&lt;dl&gt;、&lt;table&gt;、&lt;address&gt;、&lt;blockquote&gt;、&lt;form&gt;
+</pre></div>
+</div>
+<p>块状元素的特点有：</p>
+<ul class="simple">
+<li><p>每个块级元素都从新的一行开始，并且其后的元素也另起一行；</p></li>
+<li><p>元素的高度、宽度、行高以及顶和底边距都可设置；</p></li>
+<li><p>元素宽度在不设置的情况下，是它本身父容器的100%（和父元素的宽度一致），除非设定一个宽度；</p></li>
+<li><p>行内元素转换成块状元素：</p></li>
+</ul>
+<blockquote>
+<div><div class="highlight-CSS notranslate"><div class="highlight"><pre><span></span><span class="c">/* 使a行内元素具有块状元素特点 */</span>
+<span class="nt">a</span> <span class="p">{</span>
+    <span class="k">display</span><span class="p">:</span><span class="kc">block</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="id7">
+<h4><span class="sectnum">2.1.5.2</span> 行内元素<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h4>
+<p>HTML中的行内元素主要有:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;a&gt;、&lt;span&gt;、&lt;br&gt;、&lt;i&gt;、&lt;em&gt;、&lt;strong&gt;、&lt;label&gt;、&lt;q&gt;、&lt;var&gt;、&lt;cite&gt;、&lt;code&gt;
+</pre></div>
+</div>
+<p>行内元素的特点有：</p>
+<ul class="simple">
+<li><p>和其他元素都在一行上；</p></li>
+<li><p>元素的高度、宽度及顶部和底部边距不可设置；</p></li>
+<li><p>元素的宽度就是它包含的文字或图片的宽度，不可改变；</p></li>
+<li><p>块状元素转换为行内元素</p></li>
+</ul>
+<blockquote>
+<div><div class="highlight-CSS notranslate"><div class="highlight"><pre><span></span><span class="c">/* 块状元素div转换为行内元素 */</span>
+<span class="nt">div</span> <span class="p">{</span>
+    <span class="k">display</span><span class="p">:</span><span class="kc">inline</span><span class="p">;</span>
+    <span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="id8">
+<h4><span class="sectnum">2.1.5.3</span> 行内块状元素<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h4>
+<p>HTML中的行内块状元素主要有:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;img&gt;、&lt;input&gt;
+</pre></div>
+</div>
+<p>行内块状元素的特点有：</p>
+<ul class="simple">
+<li><p>就是同时具备行内元素、块状元素的特点；</p></li>
+<li><p>和其他元素都在一行上；</p></li>
+<li><p>元素的高度、宽度、行高以及顶和底边距都可设置。</p></li>
+</ul>
+</div>
+<div class="section" id="id9">
+<h4><span class="sectnum">2.1.5.4</span> CSS属性<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h4>
+<p>CSS中有很多属性，每个属性有各自的含义。例如：color是文本的颜色属性，而text-indent则规定了段落的缩进。
+学习CSS属性时，请注意下面的几个方面：</p>
+<ul class="simple">
+<li><p>属性的合法属性值。如段落缩进属性text-indent只接受一个表示长度的值，而背景图案background中的image属性可以接受的值有2种，一种是表示图片位置的链接值，另一种用none表示不用背景图案。</p></li>
+<li><p>属性的默认值。</p></li>
+<li><p>属性所适用的HTML元素。正如HTML元素有多种，CSS属性只适用于特定的类别元素，比如white-space属性就只适用于块级元素。</p></li>
+<li><p>属性的值是否被下一级继承。</p></li>
+<li><p>如果该属性能取百分值，那么该百分值所相对的标准是什么。如margin属性可以取百分值，它是相对于margin所存元素的容器的宽度。</p></li>
+</ul>
+</div>
+<div class="section" id="id10">
+<h4><span class="sectnum">2.1.5.5</span> CSS度量单位<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h4>
+<p>CSS度量单位主要分为两种；绝对单位和相对单位：</p>
+<ul class="simple">
+<li><p>绝对单位，不会因为其他元素的尺寸变化而变化。</p></li>
+<li><p>相对单位 ，没有一个固定的度量值，而是由其他元素尺寸来决定的相对值。</p></li>
+</ul>
+<p>常见的度量单位有：</p>
+<ul class="simple">
+<li><p>px（像素），指的是屏幕上显示的最小单元；</p></li>
+<li><p>em单位是一个相对度量单位，它的计算方式是当前元素的font-size的px值乘以em前面的数字；</p></li>
+<li><p>rem单位和em单位很类似，区别是他是相对于HTML根元素的font-size值去计算的；</p></li>
+<li><p>vw和vh，视窗（viewpoint）的宽度和高度，1vw=视窗宽度的1%，1vh=视窗高度的1%；</p></li>
+<li><p>%，百分比单位；</p></li>
+</ul>
+</div>
+<div class="section" id="id11">
+<h4><span class="sectnum">2.1.5.6</span> CSS选择器<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h4>
+<p>CSS选择器用于选择需要添加样式的HTML元素。使用CSS选择器的原则是：</p>
+<ol class="arabic simple">
+<li><p>准确的选到要控制的标签；</p></li>
+<li><p>使用最合理优先级的选择器；</p></li>
+<li><p>HTML和CSS代码尽量简洁美观。</p></li>
+</ol>
+<p>CSS选择器的种类很多，按照选择器的效率从高到低的排序如下：</p>
+<ol class="arabic simple">
+<li><p>id选择器（#id）</p></li>
+<li><p>类选择器（.classname）</p></li>
+<li><p>标签选择器（div，h1，p）</p></li>
+<li><p>相邻选择器（h1+p）</p></li>
+<li><p>子选择器（ul &gt; li）</p></li>
+<li><p>后代选择器（li a）</p></li>
+<li><p>通配符选择器（*）</p></li>
+<li><p>属性选择器（a[rel=”external”]）</p></li>
+<li><p>伪类选择器（a:hover，li:nth-child）</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="id12">
+<h3><span class="sectnum">2.1.6</span> 实战CSS布局<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<p>在实际项目中，WEB页面元素的布局非常重要，大到页面的整体风格，小到一个文本框的对齐，这些都离不开CSS的布局，下面分别介绍2种实际工作中常见的布局应用。</p>
+<div class="section" id="css-ex100">
+<h4><span class="sectnum">2.1.6.1</span> [示例 css-ex100] 元素居中对齐<a class="headerlink" href="#css-ex100" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic simple">
+<li><p>新建index.html文件，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-HTML notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width, initial-scale=1.0&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Document<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+        <span class="p">.</span><span class="nc">center</span> <span class="p">{</span>
+            <span class="k">margin</span><span class="p">:</span> <span class="kc">auto</span><span class="p">;</span> <span class="c">/* div外的左右空间对称，也就是居中对齐 */</span>
+            <span class="k">width</span><span class="p">:</span> <span class="mi">50</span><span class="kt">%</span><span class="p">;</span> <span class="c">/* div宽度占屏幕框的50% */</span>
+            <span class="k">border</span><span class="p">:</span> <span class="mi">3</span><span class="kt">px</span> <span class="kc">solid</span> <span class="kc">green</span><span class="p">;</span> <span class="c">/* div边框为3像素框的绿色实线条 */</span>
+            <span class="k">padding</span><span class="p">:</span> <span class="mi">10</span><span class="kt">px</span><span class="p">;</span> <span class="c">/* div内空间左右分别留10像素空白 */</span>
+        <span class="p">}</span>
+
+        <span class="p">.</span><span class="nc">china</span> <span class="p">{</span>
+            <span class="k">text-align</span><span class="p">:</span> <span class="kc">center</span><span class="p">;</span> <span class="c">/* div内文本居中对齐 */</span>
+            <span class="k">background-color</span><span class="p">:</span> <span class="kc">yellowgreen</span><span class="p">;</span> <span class="c">/* 定义div的背景色 */</span>
+        <span class="p">}</span>
+    <span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;center&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;china&quot;</span><span class="p">&gt;</span>学习Angular<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>用浏览器打开index.html文件，观察页面，显示效果如图2-3所示。</p></li>
+</ol>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/Figure2-3.png"><img alt="../_images/Figure2-3.png" src="../_images/Figure2-3.png" style="width: 500px;" /></a>
+<p>图2-3 元素居中对齐</p>
+</div></blockquote>
+<p>在上面的示例css-ex100中，完成了以下内容：</p>
+<ol class="arabic simple">
+<li><p>HTML中的body里面定义了2个嵌套的div元素，分别引用了2个不同的样式：center和china；</p></li>
+<li><p>center样式里面最最重要的就是margin，margin的4个值分别对应：上右下左。也就是说 <code class="docutils literal notranslate"><span class="pre">margin:</span> <span class="pre">auto;</span></code> 其实相当于 <code class="docutils literal notranslate"><span class="pre">margin:</span> <span class="pre">auto</span> <span class="pre">auto</span> <span class="pre">auto</span> <span class="pre">auto;</span></code> ，<code class="docutils literal notranslate"><span class="pre">margin:</span> <span class="pre">0</span> <span class="pre">auto;</span></code> 相当于 <code class="docutils literal notranslate"><span class="pre">margin:</span> <span class="pre">0</span> <span class="pre">auto</span> <span class="pre">0</span> <span class="pre">auto;</span></code> 。</p></li>
+</ol>
+</div>
+<div class="section" id="css-ex200">
+<h4><span class="sectnum">2.1.6.2</span> [示例 css-ex200] 元素自适应屏幕及自动换行<a class="headerlink" href="#css-ex200" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic simple">
+<li><p>新建index.html文件，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-HTML notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+        <span class="p">.</span><span class="nc">flex-container</span> <span class="p">{</span>
+            <span class="k">display</span><span class="p">:</span> <span class="kc">flex</span><span class="p">;</span> <span class="c">/* 生成一个块状元素 */</span>
+            <span class="k">justify-content</span><span class="p">:</span> <span class="kc">center</span><span class="p">;</span> <span class="c">/* 水平居中对齐 */</span>
+            <span class="k">background-color</span><span class="p">:</span> <span class="n">DodgerBlue</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="p">.</span><span class="nc">flex-container</span><span class="o">&gt;</span><span class="nt">div</span> <span class="p">{</span>
+            <span class="k">background-color</span><span class="p">:</span> <span class="mh">#f1f1f1</span><span class="p">;</span>
+            <span class="k">width</span><span class="p">:</span> <span class="mi">100</span><span class="kt">px</span><span class="p">;</span>
+            <span class="k">margin</span><span class="p">:</span> <span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
+            <span class="k">text-align</span><span class="p">:</span> <span class="kc">center</span><span class="p">;</span>
+            <span class="k">line-height</span><span class="p">:</span> <span class="mi">75</span><span class="kt">px</span><span class="p">;</span>
+            <span class="k">font-size</span><span class="p">:</span> <span class="mi">30</span><span class="kt">px</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="p">.</span><span class="nc">flex-container-wrap</span> <span class="p">{</span>
+            <span class="k">display</span><span class="p">:</span> <span class="kc">inline-flex</span><span class="p">;</span> <span class="c">/* 生成一个弹性的行内容器 */</span>
+            <span class="k">flex-flow</span><span class="p">:</span> <span class="kc">row</span> <span class="kc">wrap</span><span class="p">;</span> <span class="c">/* 按行排列，超过屏宽后，自动换行 */</span>
+            <span class="k">justify-content</span><span class="p">:</span> <span class="kc">center</span><span class="p">;</span> <span class="c">/* 水平居中对齐 */</span>
+            <span class="k">align-items</span><span class="p">:</span> <span class="kc">center</span><span class="p">;</span> <span class="c">/* 垂直居中对齐 */</span>
+        <span class="p">}</span>
+
+        <span class="p">.</span><span class="nc">flex-container-wrap</span><span class="o">&gt;</span><span class="nt">div</span> <span class="p">{</span>
+            <span class="k">background-color</span><span class="p">:</span> <span class="mh">#f1f1f1</span><span class="p">;</span>
+            <span class="k">width</span><span class="p">:</span> <span class="mi">100</span><span class="kt">px</span><span class="p">;</span>
+            <span class="k">margin</span><span class="p">:</span> <span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
+            <span class="k">text-align</span><span class="p">:</span> <span class="kc">center</span><span class="p">;</span>
+            <span class="k">line-height</span><span class="p">:</span> <span class="mi">75</span><span class="kt">px</span><span class="p">;</span>
+            <span class="k">font-size</span><span class="p">:</span> <span class="mi">30</span><span class="kt">px</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;flex-container&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>1<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>2<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>3<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>4<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>5<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>6<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>7<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>8<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>9<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>10<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;flex-container-wrap&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>1<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>2<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>3<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>4<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>5<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>6<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>7<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>8<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>9<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>10<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>用浏览器打开index.html文件，观察页面，显示效果如图2-4所示。</p></li>
+</ol>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/Figure2-4.png"><img alt="../_images/Figure2-4.png" src="../_images/Figure2-4.png" style="width: 500px;" /></a>
+<p>图2-4 元素自适应屏幕及自动换行</p>
+</div></blockquote>
+<p>在上面的示例css-ex200中，完成了以下内容：</p>
+<ol class="arabic simple">
+<li><p>flex-container样式里面选择 <code class="docutils literal notranslate"><span class="pre">display:</span> <span class="pre">flex;</span></code> ，表示把整行生成一个块状元素，该元素随着屏幕的拉伸自动适应缩放比例，不换行；</p></li>
+<li><p>flex-container-wrap样式里面选择 <code class="docutils literal notranslate"><span class="pre">display:</span> <span class="pre">inline-flex;</span></code> ，表示把整行生成一个弹性的行内容器，该容器内的元素随着屏幕的拉伸自动换行显示。</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="section" id="nodenpm">
+<h2><span class="sectnum">2.2</span> 掌握Node和npm基础<a class="headerlink" href="#nodenpm" title="Permalink to this headline">¶</a></h2>
+<p>Angular的开发与Node和npm紧密相连。Angular工程及Angular CLI工具均是基于Node.js环境的，关于这部分的知识，本书作为独立的章节介绍。</p>
+</div>
+<div class="section" id="typescript">
+<h2><span class="sectnum">2.3</span> 学习Typescript知识<a class="headerlink" href="#typescript" title="Permalink to this headline">¶</a></h2>
+<p>Angular是使用Typescript语言进行开发的，因此掌握Typescript知识势在必行，本书有专门章节介绍Typescript知识。</p>
+</div>
+<div class="section" id="id13">
+<h2><span class="sectnum">2.4</span> 了解Web组件的知识<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h2>
+<p>基于组件的开发可以使关注点清晰分开，并允许用户构建高度可重用的代码。Angular组件设计就是采用MVVM模式。</p>
+<div class="section" id="mvvm">
+<h3><span class="sectnum">2.4.1</span> 什么是MVVM模式<a class="headerlink" href="#mvvm" title="Permalink to this headline">¶</a></h3>
+<p>MVVM模式是Model-View-ViewMode模式的简称：</p>
+<ul class="simple">
+<li><p>M（Model 模型）：模型对应的就是模型数据，Angular中Model用来存放视图层V所需要的基本数据，以及从后台获取的数据；</p></li>
+<li><p>V（View 视图）：它专注于界面的显示和渲染，Angular中视图就是组件模板；</p></li>
+<li><p>VM（ViewModel 视图模型）：视图模型的作用是用来连接V视图层和M数据模型层的桥梁，VM是将M中的数据提供给V用于展示，同时将V中用户改变的数据同步到M中。</p></li>
+</ul>
+<p>通过这三部分实现UI逻辑、呈现逻辑和状态控制、数据与业务逻辑的分离。</p>
+</div>
+<div class="section" id="id14">
+<h3><span class="sectnum">2.4.2</span> MVVM模式的优点<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
+<p>MVVM模式的优点有下面这些：</p>
+<ul class="simple">
+<li><p>双向绑定技术。当Model变化时，View-Model会自动更新，View也会自动变化；</p></li>
+<li><p>低耦合。各层职责分开，可以各干各的事情，如：View可以独立于Model变化和修改；</p></li>
+<li><p>可重用性。视图的计算逻辑放在ViewModel里面，让很多View重用这段计算逻辑；</p></li>
+<li><p>独立开发。开发人员可以专注与业务逻辑和数据的开发(ViewModel)，设计人员可以专注于界面(View)的设计；</p></li>
+<li><p>测试方便。可以针对ViewModel来对界面(View)进行测试。</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="id15">
+<h2><span class="sectnum">2.5</span> 选择适合的开发工具<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h2>
+<p>集成开发环境（Integrated Development Environment，简称：IDE）是用于提供程序开发环境的应用程序，一般包括代码编辑器、编译器、调试器和图形用户界面等。</p>
+<p>进行Angular开发时，需要选择一款针对TypeScript友好的代码编辑器，该代码编辑器默认情况下（或通过插件）支持TypeScript语言开发，并且考虑到也要兼容JavaScript开发，Visual Studio Code，Atom或WebStorm这3款编辑器似乎是当今的理想选择。 无论用户选择那款，目的是使Angular开发变得更加方便和容易。</p>
+<p>本书将使用Visual Studio Code，因为它非常好用，并且免费。 笔者选择Visual Studio Code这个工具的原因是：它是微软开发的开源源代码编辑器，可用于Windows、Linux和macOS。它支持调试代码，git插件，语法高亮提示，代码提示，代码重构。这个编辑器由编写TypeScript的作者编写，所以能很好兼容于TypeScript。它同样适用于编写JavaScript、Java代码等，且相对简洁。</p>
+</div>
+<div class="section" id="id16">
+<h2><span class="sectnum">2.6</span> 如何学习Angular<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h2>
+<p>学习是个漫长的过程，Angular的学习过程也一样。读者在开始接触Angular之前，是位Java后端开发工程师，少有接触前端技能，对日益月薪的前端技术名词感到茫然，不知道从哪里开始学起，一路走了不少弯路。鉴于此，结合自身的学习经验，笔者站在零基础前端技能的角度，给读者分享下如何学习Angular：首先，你需要了解Web，Node.js基础，接着是TypeScript知识，幸好这些都是本书已经给读者准备的入门Angular的内容。本书的内容分别针对不同层次的读者设计的，边读边实践书中的示例，只有反复的实践，才能让人映像深刻。其次是选择有效的学习策略，如记下你犯的错误，针对错误反复的实践。最后就是超越自己，多读Angular的资源，以及Angular API，它会使你更加精通Angular。</p>
+</div>
+<div class="section" id="id17">
+<h2><span class="sectnum">2.7</span> 小结<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h2>
+<p>本章主要是带领读者对入门Angular前的知识进行了梳理，分别介绍了Web基础开发，HTML基础，IDE集成开发环境，以及如何学习Angular。</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="nodejs.html" class="btn btn-neutral float-right" title="3 掌握Node.js和npm基础" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="whatisangular.html" class="btn btn-neutral float-left" title="1 Angular概述" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright CVI Talent
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

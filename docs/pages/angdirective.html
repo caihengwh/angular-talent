@@ -1,0 +1,1372 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>8 掌握Angular指令应用</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="第四课" href="fourth.html" />
+    <link rel="prev" title="7 学习Angular模板知识" href="angtemplate.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/main-page-logo-small-hat.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">目录：</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="start.html">Angular 9</a></li>
+<li class="toctree-l1"><a class="reference internal" href="first.html">第一课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="whatisangular.html"><span class="sectnum">1</span> Angular概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="howtolearn.html"><span class="sectnum">2</span> 学习Angular需要什么基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nodejs.html"><span class="sectnum">3</span> 掌握Node.js和npm基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="second.html">第二课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="typescript.html"><span class="sectnum">4</span> 学习TypeScript知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="firstangular.html"><span class="sectnum">5</span> 快速开启第一个Angular</a></li>
+<li class="toctree-l1"><a class="reference internal" href="third.html">第三课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angcomponent.html"><span class="sectnum">6</span> 学习Angular组件知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angtemplate.html"><span class="sectnum">7</span> 学习Angular模板知识</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#"><span class="sectnum">8</span> 掌握Angular指令应用</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1"><span class="sectnum">8.1</span> 学习Angular结构型指令</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ngif"><span class="sectnum">8.1.1</span> 学习NgIf指令</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#directive-ex100-ngif"><span class="sectnum">8.1.2</span> [示例 directive-ex100] 演示使用NgIf指令来显示和隐藏元素</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ngfor"><span class="sectnum">8.1.3</span> 学习NgFor指令</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#directive-ex200-ngfor"><span class="sectnum">8.1.4</span> [示例 directive-ex200] 演示使用NgFor指令来显示一个列表</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ngswitch"><span class="sectnum">8.1.5</span> 学习NgSwitch指令</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#directive-ex300-ngswitch"><span class="sectnum">8.1.6</span> [示例 directive-ex300] 演示使用NgSwitch指令显示星期几</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ng-container"><span class="sectnum">8.1.7</span> 学习&lt;ng-container&gt;分组元素</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id2"><span class="sectnum">8.2</span> 学习Angular属性型指令</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ngclass"><span class="sectnum">8.2.1</span> 学习NgClass内置指令</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ngstyle"><span class="sectnum">8.2.2</span> 学习NgStyle内置指令</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ngcontent"><span class="sectnum">8.2.3</span> NgContent内置指令</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#directive-ex400-ngcontent"><span class="sectnum">8.2.4</span> [示例 directive-ex400] 演示使用NgContent指令创建可重用添加按钮组件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#contentchildren-ngcontent"><span class="sectnum">8.2.5</span> &#64;ContentChildren()装饰器中使用NgContent内置指令</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#directive-ex500-contentchildren"><span class="sectnum">8.2.6</span> [示例 directive-ex500] 演示使用&#64;ContentChildren()装饰器查询子组件列表</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id3"><span class="sectnum">8.3</span> 如何创建指令</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#dom"><span class="sectnum">8.3.1</span> 如何在指令中访问DOM属性</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#directive-ex600"><span class="sectnum">8.3.2</span> [示例 directive-ex600] 演示使用自定义指令更改按钮的大小</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4"><span class="sectnum">8.3.3</span> 如何在指令中监听事件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#directive-ex700"><span class="sectnum">8.3.4</span> [示例 directive-ex700] 演示如何在指令中监听事件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#hostbindingdom"><span class="sectnum">8.3.5</span> 在指令中使用HostBinding绑定DOM属性</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#directive-ex800-hostbindingdom"><span class="sectnum">8.3.6</span> [示例 directive-ex800] 演示在指令中使用HostBinding绑定DOM属性</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#hostlistenerdom"><span class="sectnum">8.3.7</span> 在指令中使用HostListener监听DOM事件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#directive-ex900"><span class="sectnum">8.3.8</span> [示例 directive-ex900] 演示监听单击事件并实现当点击时增加计数</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id5"><span class="sectnum">8.4</span> 小结</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="fourth.html">第四课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angmodule.html"><span class="sectnum">9</span> 学习Angular模块知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angroute.html"><span class="sectnum">10</span> 熟悉Angular路由功能</a></li>
+<li class="toctree-l1"><a class="reference internal" href="injection.html"><span class="sectnum">11</span> 学习Angular的服务及依赖注入</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fifth.html">第五课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reactive.html"><span class="sectnum">12</span> 掌握响应式编程基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form.html"><span class="sectnum">13</span> 学习Angular表单知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="httpclient.html"><span class="sectnum">14</span> 熟悉HttpClient模块</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sixth.html">第六课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pipe.html"><span class="sectnum">15</span> 深入学习Angular管道知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ui.html"><span class="sectnum">16</span> Angular与Angular Material组件库</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rxjs.html"><span class="sectnum">17</span> 学习RxJS在Angular中的实际应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="seventh.html">第七课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="material.html"><span class="sectnum">18</span> 实战基于Angular Material实现表格组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bootstrap.html"><span class="sectnum">19</span> 集成Bootstrap前端组件库</a></li>
+<li class="toctree-l1"><a class="reference internal" href="echart.html"><span class="sectnum">20</span> 在Angular项目中使用图表</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appid.html"><span class="sectnum">21</span> 使用IBM Cloud™ App ID对Angular应用进行认证</a></li>
+<li class="toctree-l1"><a class="reference internal" href="communication.html"><span class="sectnum">22</span> 掌握在Angular组件间通信</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pwa.html"><span class="sectnum">23</span> Angular与渐进式WEB应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="message.html"><span class="sectnum">24</span> 实现简单的消息通知机制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="localdata.html"><span class="sectnum">25</span> 如何与本地数据打交道</a></li>
+<li class="toctree-l1"><a class="reference internal" href="test.html"><span class="sectnum">26</span> 熟悉Angular测试</a></li>
+<li class="toctree-l1"><a class="reference internal" href="package.html"><span class="sectnum">27</span> 熟悉Angular环境配置及打包</a></li>
+<li class="toctree-l1"><a class="reference internal" href="universal.html"><span class="sectnum">28</span> 学习Angular服务端渲染</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deploy.html"><span class="sectnum">29</span> 如何部署Angular应用程序</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user.html"><span class="sectnum">30</span> 实战用户管理系统</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">CVI Talent</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">首页</a> &raquo;</li>
+        
+      <li><span class="sectnum">8</span> 掌握Angular指令应用</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        <a href="https://pages.github.ibm.com/lanzejun/talent/index.html" class="fa fa-github"> CVITube</a>
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="angular">
+<h1><span class="sectnum">8</span> 掌握Angular指令应用<a class="headerlink" href="#angular" title="Permalink to this headline">¶</a></h1>
+<p>指令是DOM元素上的标记（例如属性），它告诉Angular将指定的行为附加到现有元素。
+指令的核心是一个函数，只要Angular编译器在DOM中找到指令，该指令就执行。Angular指令用于通过赋予其新语法来扩展HTML的功能。</p>
+<p>在组件模板使用了指令，指令以不同的方式影响模板的输出。 某些指令可能会完全改变模板输出的结构。这些指令可以通过添加和删除视图DOM元素来更改DOM布局，我们称之为结构型指令。另一些指令可能只是改变一个DOM元素的外观或行为，我们称之为属性型指令。</p>
+<p>Angular内置了许多指令来帮助用户进行编码。用户也可以自定义指令。</p>
+<div class="section" id="id1">
+<h2><span class="sectnum">8.1</span> 学习Angular结构型指令<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>结构型指令的职责是HTML布局。它们塑造或重塑DOM的结构，比如添加、移除或修改这些元素。
+Angular中包含3个常用的内置结构型指令：NgIf，NgFor 和 NgSwitch。</p>
+<div class="section" id="ngif">
+<h3><span class="sectnum">8.1.1</span> 学习NgIf指令<a class="headerlink" href="#ngif" title="Permalink to this headline">¶</a></h3>
+<p>通过将NgIf指令应用在HTML元素上来从DOM中添加或删除元素。NgIf指令格式如： <code class="docutils literal notranslate"><span class="pre">&lt;div</span> <span class="pre">*ngIf=&quot;模板表达式&quot;</span> <span class="pre">/&gt;</span></code> ，NgIf指令的模板表达式接受一个布尔值，如果值为true，元素里面的内容将显示在视图DOM中，如果值为false，元素里面的内容将不显示（从视图DOM中排除）。因此，NgIf指令用于包含或排除UI的元素，包括它的子元素。由NgIf排除的标记是没有生成的，不可见的，它根本不在DOM中。</p>
+<p>下面通过示例演示使用NgIf指令来显示和隐藏元素。</p>
+</div>
+<div class="section" id="directive-ex100-ngif">
+<h3><span class="sectnum">8.1.2</span> [示例 directive-ex100] 演示使用NgIf指令来显示和隐藏元素<a class="headerlink" href="#directive-ex100-ngif" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>用Angular CLI构建应用程序，具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng new directive-ex100 --minimal --interactive<span class="o">=</span><span class="nb">false</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>启动服务，具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng serve
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><p>查看应用程序结果。打开Web浏览器并浏览到 “<a class="reference external" href="http://localhost:4200">http://localhost:4200</a>”，应该看到文本 “Welcome to directive-ex100!”。</p></li>
+<li><p>编辑组件。编辑文件src/app/app.component.ts，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Component</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+
+<span class="kd">@Component</span><span class="p">({</span>
+<span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-root&#39;</span><span class="p">,</span>
+<span class="nx">template</span><span class="o">:</span> <span class="sb">`</span>
+<span class="sb">   变量showName的值：{{showName}}</span>
+<span class="sb">   &lt;div *ngIf=&quot;showName&quot; class=&quot;box&quot;&gt;</span>
+<span class="sb">   姓名: Murphy</span>
+<span class="sb">   &lt;/div&gt;</span>
+<span class="sb">   &lt;div *ngIf=&quot;!showName&quot; class=&quot;box&quot;&gt;</span>
+<span class="sb">   地址: 光谷</span>
+<span class="sb">   &lt;/div&gt;</span>
+<span class="sb">   &lt;button (click)=&quot;toggle()&quot;&gt;Toggle&lt;/button&gt;</span>
+<span class="sb">`</span><span class="p">,</span>
+<span class="nx">styles</span><span class="o">:</span> <span class="p">[</span><span class="sb">`div.box { width: 200px;padding:20px;margin:20px;</span>
+<span class="sb">      border: 1px solid black; color: white; background-color: green }</span>
+<span class="sb">   `</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">AppComponent</span> <span class="p">{</span>
+<span class="nx">showName</span>: <span class="kt">boolean</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+<span class="nx">toggle() {</span>
+   <span class="k">this</span><span class="p">.</span><span class="nx">showName</span> <span class="o">=</span> <span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="nx">showName</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="5">
+<li><p>观察应用程序页面，单击Toggle按钮，页面显示效果如图8-1所示。</p></li>
+</ol>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/Figure8-1.png"><img alt="../_images/Figure8-1.png" src="../_images/Figure8-1.png" style="width: 600px;" /></a>
+<p>图8-1 演示Class样式绑定</p>
+</div></blockquote>
+<p>在上面的示例directive-ex100中，完成了以下内容：</p>
+<ol class="arabic simple">
+<li><p>将NgIf指令应用在HTML元素的&lt;div&gt;标签上，它根据类属性showName的值来判断，显示姓名还是地址；</p></li>
+<li><p>打开开发者模式，选择查看源代码，可以发现，当showName的值为false时，该&lt;div&gt;标签的值不在DOM中生成；</p></li>
+<li><p>类中定义的toggle()方法与&lt;button&gt;标签绑定，负责每次点击时，对showName的值取反。</p></li>
+</ol>
+</div>
+<div class="section" id="ngfor">
+<h3><span class="sectnum">8.1.3</span> 学习NgFor指令<a class="headerlink" href="#ngfor" title="Permalink to this headline">¶</a></h3>
+<p>NgFor是一个迭代指令，它通过使用可迭代的每个子项作为模板的上下文来重复渲染模板的一种方式。NgFor指令格式如： <code class="docutils literal notranslate"><span class="pre">&lt;div</span> <span class="pre">*ngFor='let</span> <span class="pre">item</span> <span class="pre">of</span> <span class="pre">items'&gt;{{item.name}}&lt;/div&gt;</span></code> 。赋值给 <code class="docutils literal notranslate"><span class="pre">*ngFor</span></code> 的字符串不是模板表达式 。而是由Angular解释的一种小型语言。字符串 “let item of items” 的意思是：将items数组中的每个条目存储在局部循环变量item中，并使其可用于每次迭代的模板视图中。</p>
+<p>NgFor指令对于生成重复内容很有用，例如客户列表，下拉列表等。迭代的每个项目都有其模板上下文中可用的变量，如表8-1所示。</p>
+<table class="colwidths-given docutils align-default" id="id6">
+<caption><span class="caption-text">表8-1 NgFor指令的内置变量</span><a class="headerlink" href="#id6" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 23%" />
+<col style="width: 77%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>内置变量</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>item</p></td>
+<td><p>示例：ngFor =“let item of items” 中，item代表迭代的每个子项</p></td>
+</tr>
+<tr class="row-odd"><td><p>index</p></td>
+<td><p>每个模板上下文的当前循环迭代的索引</p></td>
+</tr>
+<tr class="row-even"><td><p>last</p></td>
+<td><p>布尔值，指示项是否是迭代中的最后一项</p></td>
+</tr>
+<tr class="row-odd"><td><p>even</p></td>
+<td><p>布尔值，指示当前索引是否是偶数索引</p></td>
+</tr>
+<tr class="row-even"><td><p>odd</p></td>
+<td><p>布尔值，指示当前索引是否是奇数索引</p></td>
+</tr>
+</tbody>
+</table>
+<p>下面通过示例演示使用NgFor指令来显示一个列表。</p>
+</div>
+<div class="section" id="directive-ex200-ngfor">
+<h3><span class="sectnum">8.1.4</span> [示例 directive-ex200] 演示使用NgFor指令来显示一个列表<a class="headerlink" href="#directive-ex200-ngfor" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>用Angular CLI构建应用程序，具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng new directive-ex200 --minimal --interactive<span class="o">=</span><span class="nb">false</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>启动服务，具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng serve
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><p>查看应用程序结果。打开Web浏览器并浏览到 “<a class="reference external" href="http://localhost:4200">http://localhost:4200</a>”，应该看到文本 “Welcome to directive-ex200!”。</p></li>
+<li><p>编辑组件。编辑文件src/app/app.component.ts，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Component</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+
+<span class="kd">@Component</span><span class="p">({</span>
+<span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-root&#39;</span><span class="p">,</span>
+<span class="nx">template</span><span class="o">:</span> <span class="sb">`</span>
+<span class="sb">&lt;div *ngFor=&quot;let name of names; let i = index;&quot;&gt;</span>
+<span class="sb">   &lt;div&gt;{{i}} : {{name}}&lt;/div&gt;</span>
+<span class="sb">&lt;/div&gt;</span>
+<span class="sb">`</span><span class="p">,</span>
+<span class="nx">styles</span><span class="o">:</span> <span class="p">[]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">AppComponent</span> <span class="p">{</span>
+   <span class="nx">names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Polo&#39;</span><span class="p">,</span> <span class="s1">&#39;Q5&#39;</span><span class="p">,</span> <span class="s1">&#39;Q7&#39;</span><span class="p">];</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="5">
+<li><p>观察应用程序页面，页面显示效果如图8-2所示。</p></li>
+</ol>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/Figure8-2.png"><img alt="../_images/Figure8-2.png" src="../_images/Figure8-2.png" style="width: 300px;" /></a>
+<p>图8-2 使用NgFor指令来显示一个列表</p>
+</div></blockquote>
+<p>在上面的示例directive-ex200中，完成了以下内容：</p>
+<ol class="arabic simple">
+<li><p>将NgFor指令应用在HTML元素的&lt;div&gt;标签上，它迭代并显示names数组的每个项目；</p></li>
+<li><p>NgFor指令的内置变量索引是从0开始计数的；</p></li>
+</ol>
+</div>
+<div class="section" id="ngswitch">
+<h3><span class="sectnum">8.1.5</span> 学习NgSwitch指令<a class="headerlink" href="#ngswitch" title="Permalink to this headline">¶</a></h3>
+<p>NgSwitch指令类似于JavaScript语言的switch语句。它根据切换条件显示几个可能的元素中的一个。Angular只会将选定的元素放入DOM。</p>
+<p>NgSwitch 实际上是三个协作指令的集合： NgSwitch，NgSwitchCase 和 NgSwitchDefault，NgSwitch指令的格式如下：</p>
+<blockquote>
+<div><div class="highlight-scss notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="nt">container-element</span> <span class="o">[</span><span class="nt">ngSwitch</span><span class="o">]=</span><span class="s2">&quot;switch_expression&quot;</span><span class="o">&gt;</span>
+   <span class="o">&lt;</span><span class="nt">some-element</span> <span class="o">*</span><span class="nt">ngSwitchCase</span><span class="o">=</span><span class="s2">&quot;match_expression_1&quot;</span><span class="o">&gt;</span><span class="nc">...</span><span class="o">&lt;/</span><span class="nt">some-element</span><span class="o">&gt;</span>
+<span class="nc">...</span>
+   <span class="o">&lt;</span><span class="nt">some-element</span> <span class="o">*</span><span class="nt">ngSwitchDefault</span><span class="o">&gt;</span><span class="nc">...</span><span class="o">&lt;/</span><span class="nt">some-element</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="nt">container-element</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>从下面3个方面理解它们之间的关系：</p>
+<ol class="arabic simple">
+<li><p>NgSwitchCase指令和NgSwitchDefault指令都是结构型指令，因为它们会从DOM中添加或移除元素；</p></li>
+<li><p>当NgSwitchCase指令的绑定值等于开关值（switch_expression）时，就将其元素添加到DOM中；否则从DOM中删除；</p></li>
+<li><p>NgSwitchDefault指令会在没有任何一个NgSwitchCase的值被选中时把它所在的元素加入DOM中。</p></li>
+</ol>
+<p>下面通过示例演示NgSwitch指令的应用场景。</p>
+</div>
+<div class="section" id="directive-ex300-ngswitch">
+<h3><span class="sectnum">8.1.6</span> [示例 directive-ex300] 演示使用NgSwitch指令显示星期几<a class="headerlink" href="#directive-ex300-ngswitch" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>用Angular CLI构建应用程序，具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng new directive-ex300 --minimal --interactive<span class="o">=</span><span class="nb">false</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>启动服务，具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng serve
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><p>查看应用程序结果。打开Web浏览器并浏览到 “<a class="reference external" href="http://localhost:4200">http://localhost:4200</a>”，应该看到文本 “Welcome to directive-ex300!”。</p></li>
+<li><p>编辑组件。编辑文件src/app/app.component.ts，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Component</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+
+<span class="kd">@Component</span><span class="p">({</span>
+<span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-root&#39;</span><span class="p">,</span>
+<span class="nx">template</span><span class="o">:</span> <span class="sb">`</span>
+<span class="sb">   &lt;!-- ngSwitch and ngSwitchCase - enum example --&gt;</span>
+<span class="sb">   &lt;p&gt; ngSwitch和ngSwitchCase示例 &lt;/p&gt;</span>
+<span class="sb">   &lt;div [ngSwitch]=&quot;day&quot;&gt;</span>
+<span class="sb">      &lt;b *ngSwitchCase=&quot;days.SUNDAY&quot;&gt; SUNDAY&lt;/b&gt;</span>
+<span class="sb">      &lt;b *ngSwitchCase=&quot;days.MONDAY&quot;&gt; MONDAY&lt;/b&gt;</span>
+<span class="sb">      &lt;b *ngSwitchCase=&quot;days.TUESDAY&quot;&gt;TUESDAY&lt;/b&gt;</span>
+<span class="sb">      &lt;b *ngSwitchCase=&quot;days.WEDNESDAY&quot;&gt;WEDNESDAY&lt;/b&gt;</span>
+<span class="sb">      &lt;b *ngSwitchCase=&quot;days.THURSDAY&quot;&gt;THURSDAY&lt;/b&gt;</span>
+<span class="sb">      &lt;b *ngSwitchCase=&quot;days.FRIDAY&quot;&gt;FRIDAY&lt;/b&gt;</span>
+<span class="sb">      &lt;b *ngSwitchCase=&quot;days.SATURDAY&quot;&gt;SATURDAY&lt;/b&gt;</span>
+<span class="sb">      &lt;b *ngSwitchDefault&gt;No Days&lt;/b&gt;</span>
+<span class="sb">   &lt;/div&gt;</span>
+<span class="sb">`</span><span class="p">,</span>
+<span class="nx">styles</span><span class="o">:</span> <span class="p">[]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">AppComponent</span> <span class="p">{</span>
+   <span class="nx">days</span> <span class="o">=</span> <span class="nx">Days</span><span class="p">;</span>
+   <span class="nx">day</span> <span class="o">=</span> <span class="nx">Days</span><span class="p">.</span><span class="nx">SUNDAY</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kr">export</span> <span class="kr">enum</span> <span class="nx">Days</span> <span class="p">{</span>
+   <span class="nx">SUNDAY</span><span class="p">,</span>
+   <span class="nx">MONDAY</span><span class="p">,</span>
+   <span class="nx">TUESDAY</span><span class="p">,</span>
+   <span class="nx">WEDNESDAY</span><span class="p">,</span>
+   <span class="nx">THURSDAY</span><span class="p">,</span>
+   <span class="nx">FRIDAY</span><span class="p">,</span>
+   <span class="nx">SATURDAY</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="5">
+<li><p>观察应用程序页面，页面显示效果如图8-3所示。</p></li>
+</ol>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/Figure8-3.png"><img alt="../_images/Figure8-3.png" src="../_images/Figure8-3.png" style="width: 500px;" /></a>
+<p>图8-3 演示使用NgSwitch指令显示星期几</p>
+</div></blockquote>
+<p>在上面的示例directive-ex300中，完成了以下内容：</p>
+<ol class="arabic simple">
+<li><p>定义一个枚举类（enum）Days，用于显示周日历；</p></li>
+<li><p>[ngSwitch]指令绑定在类属性day上，day默认赋值为SUNDAY；</p></li>
+<li><p>day的值与ngSwitchCase的值匹配时，显示当前匹配元素的内容，其他不匹配的，被DOM排除在外。</p></li>
+</ol>
+</div>
+<div class="section" id="ng-container">
+<h3><span class="sectnum">8.1.7</span> 学习&lt;ng-container&gt;分组元素<a class="headerlink" href="#ng-container" title="Permalink to this headline">¶</a></h3>
+<p>Angular 的 &lt;ng-container&gt; 是一个分组元素，但它不会污染样式或元素布局，因为 Angular 压根不会把它放进 DOM 中。
+&lt;ng-container&gt; 是一个由 Angular 解析器负责识别处理的语法元素。它不是一个指令、组件、类或接口，更像是 JavaScript 中 if 块中的花括号。
+当没有合适的宿主元素时，可以使用&lt;ng-container&gt;对元素进行分组。</p>
+<p>&lt;ng-container&gt;的使用场景之一是，在需要遍历或if判断时，它可以承担一个载体的作用：</p>
+<blockquote>
+<div><div class="highlight-scss notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="nt">ul</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="nt">ng-container</span> <span class="o">*</span><span class="nt">ngFor</span><span class="o">=</span><span class="s2">&quot;let item of items&quot;</span><span class="o">&gt;</span>
+   <span class="o">&lt;</span><span class="nt">li</span><span class="o">&gt;</span><span class="p">{{</span> <span class="nt">item</span><span class="nc">.firstname</span> <span class="p">}}</span><span class="o">&lt;/</span><span class="nt">li</span><span class="o">&gt;</span>
+   <span class="o">&lt;</span><span class="nt">li</span><span class="o">&gt;</span><span class="p">{{</span> <span class="nt">item</span><span class="nc">.lastname</span> <span class="p">}}</span><span class="o">&lt;/</span><span class="nt">li</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="nt">ng-container</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="nt">ul</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="id2">
+<h2><span class="sectnum">8.2</span> 学习Angular属性型指令<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>属性型指令用于改变一个DOM元素的外观或行为，Angular中包含4个常用的内置属性型指令：NgClass、NgStyle、NgControlName 和 NgModel。</p>
+<div class="section" id="ngclass">
+<h3><span class="sectnum">8.2.1</span> 学习NgClass内置指令<a class="headerlink" href="#ngclass" title="Permalink to this headline">¶</a></h3>
+<p>NgClass内置指令的作用是添加和删除一组CSS样式。NgClass内置指令语法支持3种格式的表达式：</p>
+<ul class="simple">
+<li><p>使用空格分隔的字符串：[ngClass]=”is-info is-item has-border”</p></li>
+<li><p>字符串数组：[ngClass]=”[‘is-info’, ‘is-item’, ‘has-border’]”</p></li>
+<li><p>对象：[ngClass]=”{‘is-info’: true, ‘is-item’: true}”</p></li>
+</ul>
+<p>上述例子是模板中声明的，[ngClass]可以绑定组件类中的属性，只要返回有效的表达式即可：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">export</span> <span class="kr">class</span> <span class="nx">AppComponent</span> <span class="p">{</span>
+   <span class="nx">stringProperty</span> <span class="o">=</span> <span class="s2">&quot;is-info is-item has-border&quot;</span><span class="p">;</span>
+   <span class="nx">arrayProperty</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;is-info&#39;</span><span class="p">,</span> <span class="s1">&#39;is-item&#39;</span><span class="p">,</span> <span class="s1">&#39;has-border&#39;</span><span class="p">];</span>
+   <span class="nx">objectProperty</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;is-info&#39;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="s1">&#39;is-item&#39;</span><span class="o">:</span> <span class="kc">true</span><span class="p">};</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>然后修改模板中的表达式，使其绑定对应的属性即可：</p>
+<blockquote>
+<div><div class="highlight-scss notranslate"><div class="highlight"><pre><span></span><span class="o">[</span><span class="nt">ngClass</span><span class="o">]=</span><span class="s2">&quot;stringProperty&quot;</span>
+<span class="o">[</span><span class="nt">ngClass</span><span class="o">]=</span><span class="s2">&quot;arrayProperty&quot;</span>
+<span class="o">[</span><span class="nt">ngClass</span><span class="o">]=</span><span class="s2">&quot;objectProperty&quot;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>NgClass内置指令相比HTML特性绑定（[class.css-name]=”表达式”）来讲，支持多样格式，更加灵活。</p>
+</div>
+<div class="section" id="ngstyle">
+<h3><span class="sectnum">8.2.2</span> 学习NgStyle内置指令<a class="headerlink" href="#ngstyle" title="Permalink to this headline">¶</a></h3>
+<p>NgStyle内置指令的作用是添加和删除一组Style样式。NgStyle内置指令接受一个键值对的对象表达式，键值对的键是一个样式属性。可以在键上添加一个前缀简化写法，如下面的写法：</p>
+<blockquote>
+<div><div class="highlight-scss notranslate"><div class="highlight"><pre><span></span><span class="o">[</span><span class="nt">ngStyle</span><span class="o">]=</span><span class="s2">&quot;{font-size.px: 15}&quot;</span> <span class="nt">等同于</span> <span class="o">[</span><span class="nt">ngStyle</span><span class="o">]=</span><span class="s2">&quot;{font-size: 15px}&quot;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>与NgClass内置指令类似，[ngStyle]同样可以绑定组件类中的属性，只要该类属性返回有效的表达式即可：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="nx">ngStyle</span><span class="p">]</span><span class="o">=</span><span class="s2">&quot;styler&quot;</span> <span class="c1">// 模板中绑定类属性styler</span>
+
+<span class="nx">styler</span> <span class="o">=</span> <span class="p">{</span> <span class="c1">// 组件类中定义的属性styler</span>
+   <span class="p">[</span><span class="nx">WIDTH</span><span class="p">]</span><span class="o">:</span> <span class="s2">&quot;200&quot;</span><span class="p">,</span> <span class="c1">// 使用常量的写法，WIDTH是常量</span>
+   <span class="s2">&quot;max-width.px&quot;</span><span class="o">:</span> <span class="s2">&quot;600&quot;</span><span class="p">,</span> <span class="c1">// 硬编码的写法</span>
+   <span class="s2">&quot;min-width.px&quot;</span><span class="o">:</span> <span class="s2">&quot;200&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;filter&quot;</span><span class="o">:</span> <span class="s2">&quot;sepia(0)&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>使用NgStyle内置指令需要注意以下几点：</p>
+<ol class="arabic simple">
+<li><p>NgStyle内置指令接受键值对作为输入表达式，前提条件是键必须是有效的属性名称</p></li>
+<li><p>NgStyle内置指令可以绑定组件类中的属性</p></li>
+<li><p>NgStyle内置指令将会重写当前元素的内置样式</p></li>
+</ol>
+</div>
+<div class="section" id="ngcontent">
+<h3><span class="sectnum">8.2.3</span> NgContent内置指令<a class="headerlink" href="#ngcontent" title="Permalink to this headline">¶</a></h3>
+<p>NgContent内置指令的作用就是帮助开发人员创建可重用和可组合的组件。NgContent指令格式如： &lt;ng-content&gt;&lt;/ng-content&gt; 。
+可以将ng-content标记理解为动态内容的占位符，在解析模板时，Angular将其替换为动态内容。Angular中称之为“内容投影”，意思是将内容从父组件投影到子组件中，子组件中包含NgContent指令。</p>
+<p>NgContent内置指令类似插值表达式，不同之处在于插值表达式中的值来自组件类，而对于ng-content，其值来自组件的执行上下文。</p>
+<p>假设要在应用中创建一个可重复使用的按钮，让我们先看一些代码，组件类大概是下面这样的：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Component</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+
+<span class="kd">@Component</span><span class="p">({</span>
+<span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-add-button&#39;</span><span class="p">,</span>
+<span class="nx">template</span><span class="o">:</span> <span class="sb">`</span>
+<span class="sb">   &lt;button (click)=&#39;add()&#39; &gt;</span>
+<span class="sb">      添加物资</span>
+<span class="sb">   &lt;/button&gt;</span>
+<span class="sb">`</span><span class="p">,</span>
+<span class="nx">styles</span><span class="o">:</span> <span class="p">[]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">AddButtonComponent</span><span class="p">{</span>
+
+<span class="nx">add</span><span class="p">(){</span>
+   <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;add-button&#39;</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>在上述组件类中，我们可以看到一个通用的添加按钮，单击该按钮即可触发事件。这里主要关注的是按钮的文字。文本“添加物资”在模板中是硬编码的，如果我们想换一个别的按钮文本该怎么办呢？例如“添加人员”。我们可以将该值替换为插值表达式，如下所示：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Component</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+
+<span class="kd">@Component</span><span class="p">({</span>
+<span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-add-button&#39;</span><span class="p">,</span>
+<span class="nx">template</span><span class="o">:</span> <span class="sb">`</span>
+<span class="sb">   &lt;button (click)=&#39;add()&#39; &gt;</span>
+<span class="sb">      {{buttonText}}</span>
+<span class="sb">   &lt;/button&gt;</span>
+<span class="sb">`</span><span class="p">,</span>
+<span class="nx">styles</span><span class="o">:</span> <span class="p">[]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">AddButtonComponent</span> <span class="p">{</span>
+
+<span class="nx">buttonText</span>: <span class="kt">string</span> <span class="o">=</span> <span class="s1">&#39;添加人员&#39;</span>
+
+<span class="nx">add() {</span>
+   <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;add-button&#39;</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>更进一步，我们可以将buttonText设置为&#64;Input()装饰器声明的类属性，这样它可以接收来自父组件传入的值了。如下所示：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">Input</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+
+<span class="kd">@Component</span><span class="p">({</span>
+<span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-add-button&#39;</span><span class="p">,</span>
+<span class="nx">template</span><span class="o">:</span> <span class="sb">`</span>
+<span class="sb">   &lt;button (click)=&#39;add()&#39; &gt;</span>
+<span class="sb">      {{buttonText}}</span>
+<span class="sb">   &lt;/button&gt;</span>
+<span class="sb">`</span><span class="p">,</span>
+<span class="nx">styles</span><span class="o">:</span> <span class="p">[]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">AddButtonComponent</span> <span class="p">{</span>
+
+<span class="kd">@Input</span><span class="p">()</span> <span class="nx">buttonText</span>: <span class="kt">string</span> <span class="o">=</span> <span class="s1">&#39;添加人员&#39;</span>
+
+<span class="nx">add() {</span>
+   <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;add-button&#39;</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>然后在父组件中调用app-add-button组件，如下所示：</p>
+<blockquote>
+<div><div class="highlight-scss notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="nt">app-add-button</span> <span class="o">[</span><span class="nt">buttonText</span><span class="o">]=</span><span class="s2">&quot;&#39;添加明细&#39;&quot;</span> <span class="o">&gt;&lt;/</span><span class="nt">app-add-button</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>这时，页面上的按钮文字已经变更成了来自父组件传入的文本“添加明细”。</p>
+<p>上面介绍的方法是可行的，下面换成NgContent内置指令实现此功能。</p>
+</div>
+<div class="section" id="directive-ex400-ngcontent">
+<h3><span class="sectnum">8.2.4</span> [示例 directive-ex400] 演示使用NgContent指令创建可重用添加按钮组件<a class="headerlink" href="#directive-ex400-ngcontent" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>用Angular CLI构建应用程序，具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng new directive-ex400 --minimal --interactive<span class="o">=</span><span class="nb">false</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>启动服务，具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng serve
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><p>查看应用程序结果。打开Web浏览器并浏览到 “<a class="reference external" href="http://localhost:4200">http://localhost:4200</a>”，应该看到文本 “Welcome to directive-ex400!”。</p></li>
+<li><p>新增子组件。具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng g c add-button
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="5">
+<li><p>编辑子组件。编辑文件src/app/add-button/add-button.component.ts，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">Input</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+
+<span class="kd">@Component</span><span class="p">({</span>
+<span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-add-button&#39;</span><span class="p">,</span>
+<span class="nx">template</span><span class="o">:</span> <span class="sb">`</span>
+<span class="sb">   &lt;button (click)=&#39;add()&#39;&gt;</span>
+<span class="sb">      &lt;ng-content&gt;&lt;/ng-content&gt;</span>
+<span class="sb">   &lt;/button&gt;</span>
+<span class="sb">`</span><span class="p">,</span>
+<span class="nx">styles</span><span class="o">:</span> <span class="p">[]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">AddButtonComponent</span> <span class="p">{</span>
+
+<span class="nx">add() {</span>
+   <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;add-button&#39;</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="6">
+<li><p>编辑父组件。编辑文件src/app/app.component.ts，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Component</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+
+<span class="kd">@Component</span><span class="p">({</span>
+<span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-root&#39;</span><span class="p">,</span>
+<span class="nx">template</span><span class="o">:</span> <span class="sb">`</span>
+<span class="sb">   &lt;app-add-button&gt;</span>
+<span class="sb">      添加明细</span>
+<span class="sb">   &lt;/app-add-button&gt;</span>
+<span class="sb">`</span><span class="p">,</span>
+<span class="nx">styles</span><span class="o">:</span> <span class="p">[]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">AppComponent</span> <span class="p">{</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="7">
+<li><p>观察应用程序页面，页面显示一个“添加明细”按钮。</p></li>
+</ol>
+<p>在上面的示例directive-ex400中，完成了以下内容：</p>
+<ol class="arabic simple">
+<li><p>在子组件中定义了一个按钮，同时绑定了一个单击事件，同时通过ng-content标签预留了一个占位符，用它来显示按钮文字；</p></li>
+<li><p>父组件通过在标签&lt;app-add-button&gt;内传入文字内容，子组件中接收到文字，替换ng-content占位符；</p></li>
+</ol>
+<p>通过上述示例，可以看出NgContent内置指令创建可重用的组件时提供了很大的遍历。它消除了我们在先前示例中使用的大量额外设置，没有要绑定的输入属性，组件中也没有硬编码的值，只需设置原始模板，然后在实际需要时类似HTML标签一样，嵌入要显示的文本。</p>
+<p>动态文本只是应用NgContent内置指令的冰山一角，可以在组件内部放入许多不同的东西，包括HTML标记甚至其他组件。</p>
+</div>
+<div class="section" id="contentchildren-ngcontent">
+<h3><span class="sectnum">8.2.5</span> &#64;ContentChildren()装饰器中使用NgContent内置指令<a class="headerlink" href="#contentchildren-ngcontent" title="Permalink to this headline">¶</a></h3>
+<p>&#64;ContentChild()和&#64;ContentChildren()装饰器是一起的，类似&#64;ViewChild()和&#64;ViewChildren()装饰器（参照本书前面章节）。
+之所以要将&#64;ContentChild()和&#64;ContentChildren()装饰器放在本章讲解，是因为它们依赖NgContent内置指令的知识。更准确的说，必须要等读者了解NgContent内置指令的知识后，我们才能继续讲解&#64;ContentChild()和&#64;ContentChildren()装饰器的知识。</p>
+<p>首先做个简单的介绍，&#64;ContentChildren()装饰器与内容子节点有关，它是操作投影进来的内容。&#64;ContentChildren()装饰器与&#64;ViewChild()装饰器的区别是：&#64;ViewChild()装饰器是与模板视图本身的子节点有关，它是操作模板自身的视图内容。</p>
+<p>ContentChild和ContentChildren都是参数装饰器，分别用于从内容DOM中获取子元素或指令的查询对象（Query）和查询列表对象（QueryList）。每当添加或删除子元素/组件时，Query或QueryList都会更新。
+子元素或指令的查询在组件的生命周期AfterContentInit发生时完成，因此在ngAfterContentInit()方法中，就能正确获取查询的元素。</p>
+<p>让我们看一个利用&#64;ContentChildren()装饰器查询子组件列表功能的示例。</p>
+</div>
+<div class="section" id="directive-ex500-contentchildren">
+<h3><span class="sectnum">8.2.6</span> [示例 directive-ex500] 演示使用&#64;ContentChildren()装饰器查询子组件列表<a class="headerlink" href="#directive-ex500-contentchildren" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>用Angular CLI构建应用程序，具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng new directive-ex500 --minimal --interactive<span class="o">=</span><span class="nb">false</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>启动服务，具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng serve
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><p>查看应用程序结果。打开Web浏览器并浏览到 “<a class="reference external" href="http://localhost:4200">http://localhost:4200</a>”，应该看到文本 “Welcome to directive-ex500!”。</p></li>
+<li><p>新增子组件和父组件。具体命令分别如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng g c tab
+ng g c tab-list
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="5">
+<li><p>编辑子组件。编辑文件src/app/tab/tab.component.ts，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">OnInit</span><span class="p">,</span> <span class="nx">Input</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+
+<span class="kd">@Component</span><span class="p">({</span>
+<span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-tab&#39;</span><span class="p">,</span>
+<span class="nx">template</span><span class="o">:</span> <span class="sb">`</span>
+<span class="sb">   &lt;h4&gt;{{ tab.title }}&lt;/h4&gt;</span>
+<span class="sb">   &lt;p&gt;{{ tab.content }}&lt;/p&gt;</span>
+<span class="sb">`</span><span class="p">,</span>
+<span class="nx">styles</span><span class="o">:</span> <span class="p">[]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">TabComponent</span> <span class="p">{</span>
+
+<span class="kr">constructor</span><span class="p">()</span> <span class="p">{</span> <span class="p">}</span>
+<span class="kd">@Input</span><span class="p">()</span> <span class="nx">tab</span>: <span class="kt">TabInterFace</span><span class="p">;</span> <span class="c1">// 输入属性</span>
+
+<span class="nx">printTitle() {</span> <span class="c1">// 打印title属性</span>
+   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">tab</span><span class="p">.</span><span class="nx">title</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="p">}</span>
+<span class="c1">// 定义一个Tab接口</span>
+<span class="kr">interface</span> <span class="nx">TabInterFace</span> <span class="p">{</span>
+   <span class="nx">title</span>: <span class="kt">string</span><span class="p">;</span>
+   <span class="nx">content</span>: <span class="kt">string</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="5">
+<li><p>编辑父组件。编辑文件src/app/tab-list/tab-list.component.ts，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">AfterContentInit</span><span class="p">,</span> <span class="nx">ContentChildren</span><span class="p">,</span> <span class="nx">QueryList</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">TabComponent</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;../tab/tab.component&#39;</span><span class="p">;</span>
+
+<span class="kd">@Component</span><span class="p">({</span>
+<span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-tab-list&#39;</span><span class="p">,</span>
+<span class="nx">template</span><span class="o">:</span> <span class="sb">`</span>
+<span class="sb">   &lt;p&gt;</span>
+<span class="sb">      &lt;ng-content&gt;&lt;/ng-content&gt;</span>
+<span class="sb">   &lt;/p&gt;</span>
+<span class="sb">`</span><span class="p">,</span>
+<span class="nx">styles</span><span class="o">:</span> <span class="p">[]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">TabListComponent</span> <span class="kr">implements</span> <span class="nx">AfterContentInit</span> <span class="p">{</span>
+
+<span class="kr">constructor</span><span class="p">()</span> <span class="p">{</span> <span class="p">}</span>
+
+<span class="c1">// 使用ContentChildren装饰器获取包含子组件TabComponent列表的QueryList</span>
+<span class="kd">@ContentChildren</span><span class="p">(</span><span class="nx">TabComponent</span><span class="p">)</span> <span class="nx">tabList</span>: <span class="kt">QueryList</span><span class="o">&lt;</span><span class="nx">TabComponent</span><span class="o">&gt;</span><span class="p">;</span>
+
+<span class="nx">ngAfterContentInit() {</span>
+   <span class="k">this</span><span class="p">.</span><span class="nx">tabList</span><span class="p">.</span><span class="nx">toArray</span><span class="p">()[</span><span class="mi">0</span><span class="p">].</span><span class="nx">printTitle</span><span class="p">();</span> <span class="c1">// 调用列表的第1个子组件的printTitle()方法</span>
+<span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="6">
+<li><p>编辑组件。编辑文件src/app/app.component.ts，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">OnInit</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+
+<span class="kd">@Component</span><span class="p">({</span>
+<span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-root&#39;</span><span class="p">,</span>
+<span class="nx">template</span><span class="o">:</span> <span class="sb">`</span>
+<span class="sb">   &lt;app-tab-list&gt;</span>
+<span class="sb">      &lt;app-tab *ngFor=&quot;let tab of tabs&quot; [tab]=&quot;tab&quot;&gt;&lt;/app-tab&gt;</span>
+<span class="sb">   &lt;/app-tab-list&gt;</span>
+<span class="sb">`</span><span class="p">,</span>
+<span class="nx">styles</span><span class="o">:</span> <span class="p">[]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">AppComponent</span> <span class="kr">implements</span> <span class="nx">OnInit</span> <span class="p">{</span>
+<span class="nx">tabs</span> <span class="o">=</span> <span class="p">[];</span>
+<span class="nx">ngOnInit() {</span>
+   <span class="k">this</span><span class="p">.</span><span class="nx">tabs</span> <span class="o">=</span> <span class="p">[</span>
+      <span class="p">{</span> <span class="nx">title</span><span class="o">:</span> <span class="s2">&quot;First Tab title&quot;</span><span class="p">,</span> <span class="nx">content</span><span class="o">:</span> <span class="s2">&quot;First Tab content&quot;</span> <span class="p">},</span>
+      <span class="p">{</span> <span class="nx">title</span><span class="o">:</span> <span class="s2">&quot;Second Tab title&quot;</span><span class="p">,</span> <span class="nx">content</span><span class="o">:</span> <span class="s2">&quot;Second Tab content&quot;</span> <span class="p">},</span>
+      <span class="p">{</span> <span class="nx">title</span><span class="o">:</span> <span class="s2">&quot;Third Tab title&quot;</span><span class="p">,</span> <span class="nx">content</span><span class="o">:</span> <span class="s2">&quot;Third Tab content&quot;</span> <span class="p">}</span>
+   <span class="p">];</span>
+<span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="7">
+<li><p>观察应用程序页面，页面显示效果如图8-4所示。</p></li>
+</ol>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/Figure8-4.png"><img alt="../_images/Figure8-4.png" src="../_images/Figure8-4.png" style="width: 300px;" /></a>
+<p>图8-4 演示使用&#64;ContentChildren()装饰器查询子组件列表</p>
+</div></blockquote>
+<p>在上面的示例directive-ex500中，完成了以下内容：</p>
+<ol class="arabic simple">
+<li><p>创建选项卡子组件TabComponent，TabComponent类中带有一个输入属性以及一个打印选项卡对象的title属性的方法；</p></li>
+<li><p>创建父组件TabListComponent，其模板视图中使用NgContent内置指令，用来显示父组件投影进来的内容；</p></li>
+<li><p>父组件TabListComponent使用&#64;ContentChildren()装饰器获取包含子组件TabComponent列表的QueryList，该列表存储在组件类的tabList变量中；</p></li>
+<li><p>父组件TabListComponent实现AfterContentInit生命周期接口，在接口的回调方法中获取到子组件TabComponent的QueryList列表对象，接着获取到列表的第1个元素（子组件TabComponent对象），最后调用该元素的printTitle()方法。</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="id3">
+<h2><span class="sectnum">8.3</span> 如何创建指令<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>指令和组件都是Angular对象，它们都对应于模板视图中的元素，并且可以修改生成的视图界面。</p>
+<p>指令和组件一样，都有对应的Angular类，类都有构造函数。指令类用&#64;Directive()装饰器声明。
+&#64;Directive()装饰器和&#64;Component()装饰器类似，它接收的也是一个元数据对象，下表8-2中展示了一些最常用的&#64;Directive()元数据的配置选项：</p>
+<table class="colwidths-given docutils align-default" id="id7">
+<caption><span class="caption-text">表8-2 常见&#64;Directive()装饰器的元数据配置选项</span><a class="headerlink" href="#id7" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 27%" />
+<col style="width: 73%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>元数据配置选项</p></th>
+<th class="head"><p>说明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>selector</p></td>
+<td><p>对应的是HTML标签的属性名称，名称格式如[appSizer]</p></td>
+</tr>
+<tr class="row-odd"><td><p>inputs</p></td>
+<td><p>列举指令的一组可供数据绑定的输入属性</p></td>
+</tr>
+<tr class="row-even"><td><p>outputs</p></td>
+<td><p>列举一组可供事件绑定的输出属性</p></td>
+</tr>
+<tr class="row-odd"><td><p>host</p></td>
+<td><p>使用一组键值对，把类的属性映射到宿主元素的绑定属性和事件</p></td>
+</tr>
+</tbody>
+</table>
+<p>但是，指令和组件并不完全相同。例如，组件需要视图，而指令则不需要。指令没有模板，指令将行为添加到现有DOM元素上。</p>
+<p>创建指令与创建组件类似，主要命令如下：</p>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng generate directive 指令名称 <span class="c1"># 简写：ng g d 指令名称</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>如前所述，指令是DOM元素（例如属性）上的标记，它告诉Angular将指定的行为附加到现有元素。这意味着我们需要一种方法来访问应用该指令的DOM元素，以及修改DOM元素的方法。Angular为我们提供了两个非常有用的对象：ElementRef和Renderer2对象。</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>ElementRef对象</dt><dd><p>可以通过ElementRef对象的nativeElement属性直接访问应用该指令的DOM元素。</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Renderer2对象</dt><dd><p>Renderer2对象实现自定义渲染器，它提供了许多辅助方法，如可以通过该对象修改DOM元素的样式。</p>
+</dd>
+</dl>
+</li>
+</ul>
+<p>我们可以将两者通过构造函数注入到指令类中，并使每个元素成为私有实例变量，代码如下：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">constructor</span><span class="p">(</span><span class="kr">private</span> <span class="nx">element</span>: <span class="kt">ElementRef</span><span class="p">,</span> <span class="kr">private</span> <span class="nx">renderer</span>: <span class="kt">Renderer2</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<div class="admonition- admonition">
+<p class="admonition-title">提示</p>
+<p>关于依赖注入的知识，本书后续章节将会进行详细介绍。</p>
+</div>
+<div class="section" id="dom">
+<h3><span class="sectnum">8.3.1</span> 如何在指令中访问DOM属性<a class="headerlink" href="#dom" title="Permalink to this headline">¶</a></h3>
+<p>在表8-2中，&#64;Directive()装饰器元数据配置的host选项中提到了宿主元素，那么什么是宿主元素呢？</p>
+<p>宿主元素（Host Element）的概念仅是针对组件和属性型指令来讲的。针对组件来说，组件的宿主元素对应的是组件在HTML中的标签元素。针对属性型指令来说，如果将指令放置在模板HTML中的某个元素上，那么该元素将成为该指令的宿主元素。如下有一个应用UserDetailComponent组件的HTML中的标签代码：</p>
+<blockquote>
+<div><div class="highlight-scss notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="nt">user-detail</span> <span class="nt">log</span><span class="o">&gt;&lt;/</span><span class="nt">user-detail</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>&lt;user-detail&gt;是组件UserDetailComponent对应HTML中的标签，针对UserDetailComponent组件来说，&lt;user-detail&gt;标签元素就是该组件的宿主元素，针对log指令来说，log指令放置在&lt;user-detail&gt;标签元素上，那么&lt;user-detail&gt;标签元素就是log指令的宿主元素。</p>
+<p>在表8-2中，&#64;Directive()装饰器中的inputs元数据，它的值声明了指令的输入属性，装饰器通过inputs元数据将指令的输入属性与指令类的同名属性进行绑定。
+我们通过示例演示inputs元数据的用法，创建一个简单的指令访问宿主元素的DOM属性，用于更改HTML元素的样式。</p>
+</div>
+<div class="section" id="directive-ex600">
+<h3><span class="sectnum">8.3.2</span> [示例 directive-ex600] 演示使用自定义指令更改按钮的大小<a class="headerlink" href="#directive-ex600" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>用Angular CLI构建应用程序，具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng new directive-ex600 --minimal --interactive<span class="o">=</span><span class="nb">false</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>启动服务，具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng serve
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><p>查看应用程序结果。打开Web浏览器并浏览到 “<a class="reference external" href="http://localhost:4200">http://localhost:4200</a>”，应该看到文本 “Welcome to directive-ex600!”。</p></li>
+<li><p>创建指令。具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng g d log
+</pre></div>
+</div>
+<p>该命令执行后，将在当前目录下生成log.directive.ts文件。</p>
+</div></blockquote>
+<ol class="arabic simple" start="5">
+<li><p>编辑指令类。编辑文件src/app/log.directive.ts，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Directive</span><span class="p">,</span> <span class="nx">OnInit</span><span class="p">,</span> <span class="nx">ElementRef</span><span class="p">,</span> <span class="nx">Renderer2</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+
+<span class="kd">@Directive</span><span class="p">({</span>
+<span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;[log]&#39;</span><span class="p">,</span> <span class="c1">// HTML标签的属性名称</span>
+<span class="nx">inputs</span> <span class="o">:</span> <span class="p">[</span><span class="s1">&#39;size&#39;</span><span class="p">]</span> <span class="c1">// 绑定指令的输入属性</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">LogDirective</span> <span class="kr">implements</span> <span class="nx">OnInit</span> <span class="p">{</span>
+
+<span class="kr">constructor</span><span class="p">(</span><span class="kr">private</span> <span class="nx">element</span>: <span class="kt">ElementRef</span><span class="p">,</span> <span class="kr">private</span> <span class="nx">renderer</span>: <span class="kt">Renderer2</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+
+<span class="nx">size</span>: <span class="kt">string</span><span class="p">;</span> <span class="c1">// 与元数据中的输入属性对应</span>
+
+<span class="nx">ngOnInit() {</span>
+   <span class="k">this</span><span class="p">.</span><span class="nx">renderer</span><span class="p">.</span><span class="nx">setStyle</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">element</span><span class="p">.</span><span class="nx">nativeElement</span><span class="p">,</span> <span class="s1">&#39;font-size&#39;</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">size</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="6">
+<li><p>编辑组件。编辑文件src/app/app.component.ts，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Component</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+
+<span class="kd">@Component</span><span class="p">({</span>
+<span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-root&#39;</span><span class="p">,</span>
+<span class="nx">template</span><span class="o">:</span> <span class="sb">`</span>
+<span class="sb">   &lt;button log size=18px&gt;click me&lt;/button&gt;</span>
+<span class="sb">`</span><span class="p">,</span>
+<span class="nx">styles</span><span class="o">:</span> <span class="p">[]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">AppComponent</span> <span class="p">{</span>
+<span class="nx">title</span> <span class="o">=</span> <span class="s1">&#39;directive-ex600&#39;</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="7">
+<li><p>观察应用程序页面，页面显示效果如图8-5所示。</p></li>
+</ol>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/Figure8-5.png"><img alt="../_images/Figure8-5.png" src="../_images/Figure8-5.png" style="width: 400px;" /></a>
+<p>图8-5 演示使用自定义指令更改HTML元素的字体大小</p>
+</div></blockquote>
+<p>在上面的示例directive-ex600中，完成了以下内容：</p>
+<ol class="arabic simple">
+<li><p>父组件模板中通过将log指令应用到&lt;button&gt;标签元素的属性上，因此，log指令的宿主元素就是&lt;button&gt;标签元素；</p></li>
+<li><p>创建了一个log指令，&#64;Directive()装饰器声明指令类，装饰器的元数据中接收一个selector属性，它的值（注意它的格式）作为宿主元素标签的属性名，因此log指令属于属性型指令；元数据中还包括inputs属性，它的值声明了指令的输入属性，装饰器通过inputs元数据将指令的输入属性与指令类的同名属性进行绑定；</p></li>
+<li><p>指令类通过构造函数将ElementRef和Renderer2对象注入到指令类中，并使每个元素成为私有实例变量；</p></li>
+<li><p>指令类实现OnInit生命周期接口，在ngOnInit()回调方法中调用Renderer2对象实例的setStyle()方法，修改宿主元素的样式，这里是将该宿主元素的字体大小设置为size值的大小，ElementRef对象有个nativeElement属性用来获取宿主元素的对象；</p></li>
+<li><p>指令类中的size属性其实是一个输入型属性，与宿主元素中的size属性绑定，接收按钮字体的大小值；如果在&#64;Directive()装饰器中省略inputs属性，那么指令类中的size属性需要用Input()装饰器进行声明，如下面的代码片段：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kd">@Directive</span><span class="p">({</span>
+<span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;[log]&#39;</span><span class="p">,</span> <span class="c1">// HTML标签的属性名称</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">LogDirective</span> <span class="kr">implements</span> <span class="nx">OnInit</span> <span class="p">{</span>
+
+<span class="kd">@Input</span><span class="p">()</span> <span class="nx">size</span>: <span class="kt">string</span><span class="p">;</span> <span class="c1">// 定义输入型属性，对应宿主元素中的size属性</span>
+
+<span class="c1">// ……</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="id4">
+<h3><span class="sectnum">8.3.3</span> 如何在指令中监听事件<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>我们已经知道了Angular事件绑定的主要目的是监听组件模板中元素的事件。那么，现在如何在组件的宿主元素上监听事件呢？这正是本节将要介绍的内容。</p>
+<p>上面我们学习了如何访问宿主元素的DOM属性，&#64;Directive()装饰器中的inputs元数据用于绑定属性，它还有一个host元数据，用于绑定事件。下面我们通过示例讲解如何在指令中监听事件。</p>
+</div>
+<div class="section" id="directive-ex700">
+<h3><span class="sectnum">8.3.4</span> [示例 directive-ex700] 演示如何在指令中监听事件<a class="headerlink" href="#directive-ex700" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>用Angular CLI构建应用程序，具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng new directive-ex700 --minimal --interactive<span class="o">=</span><span class="nb">false</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>启动服务，具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng serve
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><p>查看应用程序结果。打开Web浏览器并浏览到 “<a class="reference external" href="http://localhost:4200">http://localhost:4200</a>”，应该看到文本 “Welcome to directive-ex700!”。</p></li>
+<li><p>创建指令。具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng g d log
+</pre></div>
+</div>
+<p>该命令执行后，将在当前目录下生成log.directive.ts文件。</p>
+</div></blockquote>
+<ol class="arabic simple" start="5">
+<li><p>编辑指令类。编辑文件src/app/log.directive.ts，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Directive</span><span class="p">,</span> <span class="nx">ElementRef</span><span class="p">,</span> <span class="nx">Renderer2</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+
+<span class="kd">@Directive</span><span class="p">({</span>
+<span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;[log]&#39;</span><span class="p">,</span>
+<span class="nx">host</span><span class="o">:</span> <span class="p">{</span> <span class="c1">// 绑定事件</span>
+   <span class="s1">&#39;(click)&#39;</span><span class="o">:</span> <span class="s1">&#39;onClick($event)&#39;</span>
+<span class="p">}</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">LogDirective</span> <span class="p">{</span>
+
+<span class="kr">constructor</span><span class="p">(</span><span class="kr">private</span> <span class="nx">elementRef</span>: <span class="kt">ElementRef</span><span class="p">,</span> <span class="kr">private</span> <span class="nx">renderer</span>: <span class="kt">Renderer2</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+<span class="nx">count</span>: <span class="kt">number</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="nx">onClick</span><span class="p">(</span><span class="nx">event</span>: <span class="kt">Event</span><span class="p">)</span> <span class="p">{</span>
+   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="nx">event</span><span class="p">);</span> <span class="c1">// 控制台打印出event模板变量信息</span>
+   <span class="k">this</span><span class="p">.</span><span class="nx">count</span> <span class="o">+=</span> <span class="mi">1</span>
+   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;counts&#39;</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">count</span><span class="p">)</span> <span class="c1">// 控制台打印出count值</span>
+
+   <span class="kr">const</span> <span class="nx">textContent</span> <span class="o">=</span> <span class="s1">&#39;click me &#39;</span>
+   <span class="k">this</span><span class="p">.</span><span class="nx">renderer</span><span class="p">.</span><span class="nx">setProperty</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">elementRef</span><span class="p">.</span><span class="nx">nativeElement</span><span class="p">,</span>
+      <span class="s1">&#39;textContent&#39;</span><span class="p">,</span> <span class="nx">textContent</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">count</span><span class="p">.</span><span class="nx">toString</span><span class="p">());</span> <span class="c1">// 设置按钮的文本值</span>
+   <span class="k">this</span><span class="p">.</span><span class="nx">renderer</span><span class="p">.</span><span class="nx">setStyle</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">elementRef</span><span class="p">.</span><span class="nx">nativeElement</span><span class="p">,</span>
+      <span class="s1">&#39;background-color&#39;</span><span class="p">,</span> <span class="s1">&#39;yellow&#39;</span><span class="p">);</span> <span class="c1">// 设置按钮的背景颜色</span>
+<span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="6">
+<li><p>编辑组件。编辑文件src/app/app.component.ts，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Component</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+
+<span class="kd">@Component</span><span class="p">({</span>
+   <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-root&#39;</span><span class="p">,</span>
+<span class="nx">template</span><span class="o">:</span> <span class="sb">`</span>
+<span class="sb">   &lt;button log&gt;click me&lt;/button&gt;</span>
+<span class="sb">`</span><span class="p">,</span>
+<span class="nx">styles</span><span class="o">:</span> <span class="p">[]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">AppComponent</span> <span class="p">{</span>
+   <span class="nx">title</span> <span class="o">=</span> <span class="s1">&#39;directive-ex700&#39;</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="7">
+<li><p>观察应用程序页面，单击页面按钮，进入开发者模式，同时查看控制台中打印的日志信息。</p></li>
+</ol>
+<p>在上面的示例directive-ex700中，完成了以下内容：</p>
+<ol class="arabic simple">
+<li><p>创建了一个log指令类，&#64;Directive()装饰器中host元数据是用来监听的宿主元素对象，host元数据接收一组键值对（key-value）数据，当key为属性时，对应的是宿主元素的DOM属性，value对应的是具体DOM属性的值；当key为事件名时，对应的就是监听宿主元素上的DOM事件，value对应的是处理的方法，装饰器通过host元数据将指令的触发事件与指令类中的方法进行绑定；</p></li>
+<li><p>log指令类通过构造函数将ElementRef和Renderer2对象注入到指令类中，并使每个元素成为私有实例变量；</p></li>
+<li><p>在根组件模板中，&lt;button&gt;标签元素中使用了log指令，这时，&lt;button&gt;标签元素就是log指令的宿主元素，当用户单击宿主元素（按钮）时，指令监听到对应的事件，触发处理方法，在控制台中打印出累加计数的信息，并修改按钮上的显示文字和背景色；</p></li>
+</ol>
+</div>
+<div class="section" id="hostbindingdom">
+<h3><span class="sectnum">8.3.5</span> 在指令中使用HostBinding绑定DOM属性<a class="headerlink" href="#hostbindingdom" title="Permalink to this headline">¶</a></h3>
+<p>上面介绍了使用ElementRef对象的nativeElement属性来访问宿主元素，然后使用Renderer2对象操作其DOM属性。这么做需要额外的注入底层的ElementRef对象和Renderer2对象。其实，Angular提供了一种简单的绑定属性的实现方式，可以使用&#64;HostBinding()装饰器绑定宿主元素上的DOM属性，从而可以处理DOM属性的值。</p>
+<p>&#64;HostBinding()装饰器仅接收1个元数据属性，格式如：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kd">@HostBinding</span><span class="p">(</span><span class="s1">&#39;hostPropertyName&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>hostPropertyName表示绑定到宿主元素上的DOM属性。</p>
+<p>我们在示例directive-ex600的基础上，改为使用&#64;HostBinding()装饰器的代码。</p>
+</div>
+<div class="section" id="directive-ex800-hostbindingdom">
+<h3><span class="sectnum">8.3.6</span> [示例 directive-ex800] 演示在指令中使用HostBinding绑定DOM属性<a class="headerlink" href="#directive-ex800-hostbindingdom" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>用Angular CLI构建应用程序，具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng new directive-ex800 --minimal --interactive<span class="o">=</span><span class="nb">false</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>启动服务，具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng serve
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><p>查看应用程序结果。打开Web浏览器并浏览到 “<a class="reference external" href="http://localhost:4200">http://localhost:4200</a>”，应该看到文本 “Welcome to directive-ex800!”。</p></li>
+<li><p>创建指令。具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng g d log
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="5">
+<li><p>编辑指令类。编辑文件src/app/log.directive.ts，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Directive</span><span class="p">,</span> <span class="nx">HostBinding</span><span class="p">,</span> <span class="nx">OnInit</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+
+<span class="kd">@Directive</span><span class="p">({</span>
+<span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;[log]&#39;</span><span class="p">,</span> <span class="c1">// HTML标签的属性名称</span>
+<span class="nx">inputs</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;size&#39;</span><span class="p">]</span> <span class="c1">// 绑定指令的输入属性</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">LogDirective</span> <span class="kr">implements</span> <span class="nx">OnInit</span> <span class="p">{</span>
+
+<span class="nx">size</span>: <span class="kt">string</span><span class="p">;</span> <span class="c1">// 与元数据中的输入属性对应</span>
+
+<span class="kd">@HostBinding</span><span class="p">(</span><span class="s1">&#39;style.font-size&#39;</span><span class="p">)</span>  <span class="c1">// 绑定宿主元素的字体样式属性</span>
+<span class="nx">fontSize</span>: <span class="kt">string</span><span class="p">;</span>
+
+<span class="kd">@HostBinding</span><span class="p">(</span><span class="s1">&#39;style.background-color&#39;</span><span class="p">)</span>  <span class="c1">// 绑定宿主元素的背景样式属性</span>
+<span class="nx">backgroundColor</span>: <span class="kt">string</span><span class="p">;</span>
+
+<span class="nx">ngOnInit() {</span>
+   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;绑定指令的输入属性 &#39;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">size</span><span class="p">);</span>
+   <span class="k">this</span><span class="p">.</span><span class="nx">fontSize</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">size</span><span class="p">;</span>  <span class="c1">// 将字体大小更新size的值</span>
+   <span class="k">this</span><span class="p">.</span><span class="nx">backgroundColor</span> <span class="o">=</span> <span class="s1">&#39;yellow&#39;</span><span class="p">;</span> <span class="c1">// 将背景色更新为黄色</span>
+<span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>观察应用程序页面，发现页面上的效果与示例directive-ex600相同。</p></li>
+</ol>
+<p>在上面的示例directive-ex800中，完成了以下内容：</p>
+<ol class="arabic simple">
+<li><p>log指令类中使用&#64;HostBinding()装饰器绑定宿主元素上的样式属性；</p></li>
+<li><p>&#64;HostBinding()装饰器声明的类属性名可以是任意命名。换句话说，&#64;HostBinding()装饰器通过类属性名将元数据的信息与类属性的值进行绑定，这时类属性名仅充当了桥梁作用，因此，类属性名可以是任意命名，即上面示例中的fontSize和backgroundColor类属性名可以任意命名。</p></li>
+</ol>
+</div>
+<div class="section" id="hostlistenerdom">
+<h3><span class="sectnum">8.3.7</span> 在指令中使用HostListener监听DOM事件<a class="headerlink" href="#hostlistenerdom" title="Permalink to this headline">¶</a></h3>
+<p>同样，Angular也提供了一种简单的绑定事件的实现方式，使用&#64;HostListener()装饰器绑定宿主元素上的事件。</p>
+<p>&#64;HostListener()装饰器接收2个元数据属性，格式如：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kd">@HostListener</span><span class="p">(</span><span class="s1">&#39;eventName&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;$event&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>第一个元数据eventName属性是要监听的事件名，第二个元数据属性是选项参数，它是当该事件发生时传给组件类方法的一组参数。如果有多个参数，参数间以逗号分隔。让我们看一个使用&#64;HostListener()装饰器监听指令中的DOM事件的示例。</p>
+</div>
+<div class="section" id="directive-ex900">
+<h3><span class="sectnum">8.3.8</span> [示例 directive-ex900] 演示监听单击事件并实现当点击时增加计数<a class="headerlink" href="#directive-ex900" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>用Angular CLI构建应用程序，具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng new directive-ex900 --minimal --interactive<span class="o">=</span><span class="nb">false</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>启动服务，具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng serve
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><p>查看应用程序结果。打开Web浏览器并浏览到 “<a class="reference external" href="http://localhost:4200">http://localhost:4200</a>”，应该看到文本 “Welcome to directive-ex900!”。</p></li>
+<li><p>创建指令。具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng g d log
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="5">
+<li><p>编辑指令类。编辑文件src/app/log.directive.ts，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Directive</span><span class="p">,</span> <span class="nx">HostBinding</span><span class="p">,</span> <span class="nx">HostListener</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+
+<span class="kd">@Directive</span><span class="p">({</span>
+   <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;[log]&#39;</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">LogDirective</span> <span class="p">{</span>
+
+<span class="kr">constructor</span><span class="p">()</span> <span class="p">{</span> <span class="p">}</span>
+<span class="nx">count</span>: <span class="kt">number</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="kd">@HostBinding</span><span class="p">(</span><span class="s1">&#39;textContent&#39;</span><span class="p">)</span>  <span class="c1">// 绑定宿主元素的文本属性</span>
+<span class="nx">textContent</span>: <span class="kt">string</span> <span class="o">=</span> <span class="s1">&#39;click me&#39;</span><span class="p">;</span>
+
+<span class="kd">@HostListener</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;$event&#39;</span><span class="p">])</span> <span class="c1">// 监听宿主元素的click事件</span>
+<span class="nx">onClick</span><span class="p">(</span><span class="nx">event</span>: <span class="kt">Event</span><span class="p">)</span> <span class="p">{</span>
+   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="nx">event</span><span class="p">);</span>
+   <span class="k">this</span><span class="p">.</span><span class="nx">count</span> <span class="o">+=</span> <span class="mi">1</span>
+   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;counts&#39;</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">count</span><span class="p">)</span>
+   <span class="k">this</span><span class="p">.</span><span class="nx">textContent</span> <span class="o">=</span> <span class="s1">&#39;click me &#39;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">count</span> <span class="c1">// 更新宿主元素上的文本内容</span>
+<span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="6">
+<li><p>编辑组件。编辑文件src/app/app.component.ts，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Component</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+
+<span class="kd">@Component</span><span class="p">({</span>
+   <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-root&#39;</span><span class="p">,</span>
+<span class="nx">template</span><span class="o">:</span> <span class="sb">`</span>
+<span class="sb">   &lt;button log&gt;click me&lt;/button&gt;</span>
+<span class="sb">`</span><span class="p">,</span>
+<span class="nx">styles</span><span class="o">:</span> <span class="p">[]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">AppComponent</span> <span class="p">{</span>
+   <span class="nx">title</span> <span class="o">=</span> <span class="s1">&#39;directive-ex900&#39;</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="7">
+<li><p>观察应用程序页面，进入开发者模式，单击页面按钮，查看控制台显示打印日志信息。</p></li>
+</ol>
+<p>在上面的示例directive-ex900中，完成了以下内容：</p>
+<ol class="arabic simple">
+<li><p>创建了一个log指令，使用&#64;HostListener()装饰器监听宿主元素上的单击事件；</p></li>
+<li><p>在组件模板中，在&lt;button&gt;标签中使用log指令，这时，&lt;button&gt;就是log指令的宿主元素，当用户单击宿主元素（按钮）时，控制台显示累加计数的信息；</p></li>
+<li><p>组件类中&#64;HostListener()装饰器声明onClick()方法上，该装饰器的元数据接收了2个参数，第一个参数是监听的单击事件名称，第二个选项参数是Angular提供了一个模板变量，它将当前宿主元素上的DOM事件对象传递给onClick()方法。</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="id5">
+<h2><span class="sectnum">8.4</span> 小结<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>本章分别介绍了Angular结构型指令和Angular属性型指令，在介绍NgContent内置指令之后，讲解了ContentChild和ContentChildren装饰器，最后介绍了创建自定义指令的相关知识。</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="fourth.html" class="btn btn-neutral float-right" title="第四课" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="angtemplate.html" class="btn btn-neutral float-left" title="7 学习Angular模板知识" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright CVI Talent
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

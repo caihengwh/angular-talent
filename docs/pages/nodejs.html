@@ -1,0 +1,720 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>3 掌握Node.js和npm基础</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="第二课" href="second.html" />
+    <link rel="prev" title="2 学习Angular需要什么基础" href="howtolearn.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/main-page-logo-small-hat.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">目录：</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="start.html">Angular 9</a></li>
+<li class="toctree-l1"><a class="reference internal" href="first.html">第一课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="whatisangular.html"><span class="sectnum">1</span> Angular概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="howtolearn.html"><span class="sectnum">2</span> 学习Angular需要什么基础</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#"><span class="sectnum">3</span> 掌握Node.js和npm基础</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#node-js"><span class="sectnum">3.1</span> 安装Node.js环境</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#node"><span class="sectnum">3.2</span> 如何使用node命令</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1"><span class="sectnum">3.3</span> 学习Node.js模块知识</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#exports"><span class="sectnum">3.3.1</span> exports对象</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#require"><span class="sectnum">3.3.2</span> require函数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module"><span class="sectnum">3.3.3</span> module对象</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#npm"><span class="sectnum">3.4</span> 掌握NPM基础</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2"><span class="sectnum">3.4.1</span> 使用npm命令安装模块</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#global"><span class="sectnum">3.4.1.1</span> 什么是全局模式(global)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#local"><span class="sectnum">3.4.1.2</span> 什么是本地模式(local)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id3"><span class="sectnum">3.4.2</span> 如何更新依赖</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4"><span class="sectnum">3.4.3</span> 如何卸载依赖</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id5"><span class="sectnum">3.5</span> 开始第一个Node.js工程</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id6"><span class="sectnum">3.5.1</span> 初始化Node.js工程</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7"><span class="sectnum">3.5.2</span> 安装Node.js工程依赖</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8"><span class="sectnum">3.5.3</span> 启动Node.js项目</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id9"><span class="sectnum">3.6</span> 准备Node.js工程的开发环境</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ide"><span class="sectnum">3.6.1</span> 安装IDE集成开发环境</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id10"><span class="sectnum">3.6.2</span> Node.js项目结构介绍</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#node-modules"><span class="sectnum">3.6.3</span> node_modules文件夹的作用</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#package-json"><span class="sectnum">3.6.4</span> package.json文件介绍</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id11"><span class="sectnum">3.6.5</span> 识别依赖库的版本号</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#package-lock-json"><span class="sectnum">3.6.6</span> package-lock.json文件的作用</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#debug-node-js"><span class="sectnum">3.6.7</span> 如何调试(debug)Node.js工程</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id12"><span class="sectnum">3.7</span> 小结</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="second.html">第二课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="typescript.html"><span class="sectnum">4</span> 学习TypeScript知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="firstangular.html"><span class="sectnum">5</span> 快速开启第一个Angular</a></li>
+<li class="toctree-l1"><a class="reference internal" href="third.html">第三课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angcomponent.html"><span class="sectnum">6</span> 学习Angular组件知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angtemplate.html"><span class="sectnum">7</span> 学习Angular模板知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angdirective.html"><span class="sectnum">8</span> 掌握Angular指令应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fourth.html">第四课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angmodule.html"><span class="sectnum">9</span> 学习Angular模块知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angroute.html"><span class="sectnum">10</span> 熟悉Angular路由功能</a></li>
+<li class="toctree-l1"><a class="reference internal" href="injection.html"><span class="sectnum">11</span> 学习Angular的服务及依赖注入</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fifth.html">第五课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reactive.html"><span class="sectnum">12</span> 掌握响应式编程基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form.html"><span class="sectnum">13</span> 学习Angular表单知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="httpclient.html"><span class="sectnum">14</span> 熟悉HttpClient模块</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sixth.html">第六课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pipe.html"><span class="sectnum">15</span> 深入学习Angular管道知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ui.html"><span class="sectnum">16</span> Angular与Angular Material组件库</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rxjs.html"><span class="sectnum">17</span> 学习RxJS在Angular中的实际应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="seventh.html">第七课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="material.html"><span class="sectnum">18</span> 实战基于Angular Material实现表格组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bootstrap.html"><span class="sectnum">19</span> 集成Bootstrap前端组件库</a></li>
+<li class="toctree-l1"><a class="reference internal" href="echart.html"><span class="sectnum">20</span> 在Angular项目中使用图表</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appid.html"><span class="sectnum">21</span> 使用IBM Cloud™ App ID对Angular应用进行认证</a></li>
+<li class="toctree-l1"><a class="reference internal" href="communication.html"><span class="sectnum">22</span> 掌握在Angular组件间通信</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pwa.html"><span class="sectnum">23</span> Angular与渐进式WEB应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="message.html"><span class="sectnum">24</span> 实现简单的消息通知机制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="localdata.html"><span class="sectnum">25</span> 如何与本地数据打交道</a></li>
+<li class="toctree-l1"><a class="reference internal" href="test.html"><span class="sectnum">26</span> 熟悉Angular测试</a></li>
+<li class="toctree-l1"><a class="reference internal" href="package.html"><span class="sectnum">27</span> 熟悉Angular环境配置及打包</a></li>
+<li class="toctree-l1"><a class="reference internal" href="universal.html"><span class="sectnum">28</span> 学习Angular服务端渲染</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deploy.html"><span class="sectnum">29</span> 如何部署Angular应用程序</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user.html"><span class="sectnum">30</span> 实战用户管理系统</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">CVI Talent</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">首页</a> &raquo;</li>
+        
+      <li><span class="sectnum">3</span> 掌握Node.js和npm基础</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        <a href="https://pages.github.ibm.com/lanzejun/talent/index.html" class="fa fa-github"> CVITube</a>
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="node-jsnpm">
+<h1><span class="sectnum">3</span> 掌握Node.js和npm基础<a class="headerlink" href="#node-jsnpm" title="Permalink to this headline">¶</a></h1>
+<p>Node.js是一个基于Chrome V8引擎的JavaScript运行环境，它主要用于创建快速的、可扩展的网络应用。Node.js采用事件驱动和非阻塞I/O模型，使其轻量又高效，非常适合构建运行在分布式设备的数据密集型的实时应用。</p>
+<p>Node.js则是服务器端JavaScript的代码解析器，存在于服务器端的JavaScript代码由Node.js来解析和运行。Node.js也是JavaScript运行的一种环境，它为JavaScript提供了操作文件、创建HTTP服务、创建TCP/UDP服务等的接口，所以Node.js可以完成其他后台语言（Python、Java等）能完成的工作，Node.js的作用与他们类似，只不过是使用JavaScript来开发。</p>
+<p>Node.js通过包管理器（npm）提供依赖项管理，npm是全球最大的开源库生态系统。通过npm能够管理项目中所使用的第三方JavaScript库的依赖关系。掌握npm的操作是非常重要的。</p>
+<div class="section" id="node-js">
+<h2><span class="sectnum">3.1</span> 安装Node.js环境<a class="headerlink" href="#node-js" title="Permalink to this headline">¶</a></h2>
+<p>可以通过官方网站下载并安装Node.js，如图3-1所示。</p>
+<a class="reference internal image-reference" href="../_images/Figure3-1.png"><img alt="../_images/Figure3-1.png" src="../_images/Figure3-1.png" style="width: 600px;" /></a>
+<p>图3-1 Node.js官方主页</p>
+<p>读者可以选择下载和安装推荐的版本或者最新的版本。本书推荐版本为：12.14.1。</p>
+<p>安装完成后，打开终端，键入 <code class="docutils literal notranslate"><span class="pre">node</span> <span class="pre">-v</span></code> 命令，显示node版本信息，例如：</p>
+<blockquote>
+<div><div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ node -v
+v12.14.1
+</pre></div>
+</div>
+</div></blockquote>
+<p>出现上述信息，表示Node.js安装完毕。</p>
+</div>
+<div class="section" id="node">
+<h2><span class="sectnum">3.2</span> 如何使用node命令<a class="headerlink" href="#node" title="Permalink to this headline">¶</a></h2>
+<p>打开终端，键入node进入命令交互模式，可以输入一条代码语句，点击回车键后立即执行并显示结果，例如：</p>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ node
+&gt; console.log<span class="o">(</span><span class="s1">&#39;Hello World!&#39;</span><span class="o">)</span><span class="p">;</span>
+Hello World!
+</pre></div>
+</div>
+</div></blockquote>
+<p>如果要运行一大段代码，可以先写一个JavaScript文件，然后再运行此文件。例如有以下hello.js文件：</p>
+<blockquote>
+<div><div class="highlight-JavaScript notranslate"><div class="highlight"><pre><span></span><span class="c1">// 文件hello.js中的内容</span>
+<span class="kd">function</span> <span class="nx">hello</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Hello World!&#39;</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="nx">hello</span><span class="p">();</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>在终端下键入 <code class="docutils literal notranslate"><span class="pre">node</span> <span class="pre">hello.js</span></code> 命令并运行，结果如下：</p>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ node hello.js
+Hello World!
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="id1">
+<h2><span class="sectnum">3.3</span> 学习Node.js模块知识<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>编写稍大一点的程序时一般都会将代码模块化。在Node.js中，一般将代码合理拆分到不同的JavaScript文件中，为了让这些文件可以相互调用，Node.js提供了一个简单的模块系统。
+模块是Node.js应用程序的基本组成部分，文件和模块是一一对应的。换言之，每一个文件就是一个模块，而文件路径就是模块名。</p>
+<p>在编写模块时，Node.js提供了3个很有用的函数或对象：exports对象、require函数、和module对象。</p>
+<div class="section" id="exports">
+<h3><span class="sectnum">3.3.1</span> exports对象<a class="headerlink" href="#exports" title="Permalink to this headline">¶</a></h3>
+<p>exports对象是当前模块的导出对象，用于导出模块公有方法和属性。下面例子导出了一个公有方法：</p>
+<blockquote>
+<div><div class="highlight-JavaScript notranslate"><div class="highlight"><pre><span></span><span class="nx">exports</span><span class="p">.</span><span class="nx">hello</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Hello World!&#39;</span><span class="p">);</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="require">
+<h3><span class="sectnum">3.3.2</span> require函数<a class="headerlink" href="#require" title="Permalink to this headline">¶</a></h3>
+<p>require函数用于在当前模块中加载和使用别的模块。使用方法是传入一个模块名，返回一个该模块导出的对象或方法。模块名可使用相对路径（以 <code class="docutils literal notranslate"><span class="pre">./</span></code> 开头），或者是绝对路径（以 <code class="docutils literal notranslate"><span class="pre">/</span></code> 开头）。另外，模块名中的.js扩展名可以省略。</p>
+<p>相对路径一般有下面几种表示方式：</p>
+<ul class="simple">
+<li><p>以 <code class="docutils literal notranslate"><span class="pre">./</span></code> 开头的路径，表示当前目录；</p></li>
+<li><p>以 <code class="docutils literal notranslate"><span class="pre">../</span></code> 开头的路径，表示父目录；</p></li>
+<li><p>以 <code class="docutils literal notranslate"><span class="pre">../../</span></code> 开头的路径，表示父目录的父目录，多个 <code class="docutils literal notranslate"><span class="pre">../</span></code> 开头的路径，目录层次依此类推；</p></li>
+</ul>
+<p>下面是require函数使用的例子：</p>
+<blockquote>
+<div><div class="highlight-JavaScript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">foo1</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./foo&#39;</span><span class="p">);</span> <span class="c1">// 导入当前目录下的文件，省略了扩展名</span>
+<span class="kd">let</span> <span class="nx">foo2</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./foo.js&#39;</span><span class="p">);</span> <span class="c1">// 导入当前目录下的文件</span>
+<span class="kd">let</span> <span class="nx">foo3</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;/home/foo&#39;</span><span class="p">);</span> <span class="c1">// 导入绝对路径/home目录下的文件</span>
+<span class="kd">let</span> <span class="nx">foo4</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;../../foo.js&#39;</span><span class="p">);</span> <span class="c1">// 导入当前目录的上2层父目录下的文件</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="module">
+<h3><span class="sectnum">3.3.3</span> module对象<a class="headerlink" href="#module" title="Permalink to this headline">¶</a></h3>
+<p>module对象相当于当前文件的上下文，通过module对象可以访问到当前模块内容。module一般与exports对象联合使用，导出当前模块的内容。比如，有一个hello.js文件，内容如下：</p>
+<blockquote>
+<div><div class="highlight-JavaScript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">Hello</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">sayHello</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Hello &#39;</span> <span class="o">+</span> <span class="nx">name</span><span class="p">);</span>
+    <span class="p">};</span>
+<span class="p">};</span>
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">Hello</span><span class="p">;</span> <span class="c1">// module一般与exports对象联合使用</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>在同目录下，新建文件main.js，内容如下：</p>
+<blockquote>
+<div><div class="highlight-JavaScript notranslate"><div class="highlight"><pre><span></span><span class="c1">//main.js</span>
+<span class="kr">const</span> <span class="nx">Hello</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./hello&#39;</span><span class="p">);</span> <span class="c1">// 导入hello模块内容</span>
+<span class="kd">let</span> <span class="nx">hello</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Hello</span><span class="p">();</span>
+<span class="nx">hello</span><span class="p">.</span><span class="nx">sayHello</span><span class="p">(</span><span class="s1">&#39;Murphy&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>打开终端，键入 <code class="docutils literal notranslate"><span class="pre">node</span> <span class="pre">mian.js</span></code> 命令并立即执行，显示结果如下：</p>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ node main.js
+Hello Murphy
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="npm">
+<h2><span class="sectnum">3.4</span> 掌握NPM基础<a class="headerlink" href="#npm" title="Permalink to this headline">¶</a></h2>
+<p>npm是是Node.js的包管理工具，随同Node.js一起安装，主要是提供依赖项管理。安装完成Node.js后，可以使用 <code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">-v</span></code> 命令检查npm版本，例如：</p>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>npm -v
+</pre></div>
+</div>
+</div></blockquote>
+<p>npm类似Java中的Maven，Python中的pip等，可以方便的管理Node.js项目中的依赖。在项目中以package.json的形式展示。</p>
+<p>npm命令用来安装、更新或卸载模块或依赖，它们分别有许多不同的参数。</p>
+<div class="section" id="id2">
+<h3><span class="sectnum">3.4.1</span> 使用npm命令安装模块<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>使用 <code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">install</span></code> 命令进行模块安装。安装Node.js模块有两种模式：全局模式和本地模式。</p>
+<div class="section" id="global">
+<h4><span class="sectnum">3.4.1.1</span> 什么是全局模式(global)<a class="headerlink" href="#global" title="Permalink to this headline">¶</a></h4>
+<p>在命令行里的 <code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">install</span></code> 命令后添加 <code class="docutils literal notranslate"><span class="pre">-g</span></code> 或者 <code class="docutils literal notranslate"><span class="pre">-global</span></code> 参数进行全局安装，例如全局安装TypeScript：</p>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>npm install -g typescript <span class="c1"># 或 npm install -global typescript</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>一旦进行全局模式安装完成后，用户可以在系统的任何地方使用该模块。上述命令表示可以在系统的任何目录下使用TypeScript命令。</p>
+</div>
+<div class="section" id="local">
+<h4><span class="sectnum">3.4.1.2</span> 什么是本地模式(local)<a class="headerlink" href="#local" title="Permalink to this headline">¶</a></h4>
+<p>本地模式安装区别全局模式的地方就是省略 <code class="docutils literal notranslate"><span class="pre">-g</span></code> 参数，例如安装express：</p>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>npm install express
+</pre></div>
+</div>
+</div></blockquote>
+<p>本地模式中，安装模块并将其保存为项目依赖（写入package.json文件），有两种场景：</p>
+<ul class="simple">
+<li><p>保存依赖到depdendencies节点信息中，在命令后添加 <code class="docutils literal notranslate"><span class="pre">--save</span></code> 参数：</p></li>
+</ul>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>npm install express --save
+</pre></div>
+</div>
+</div></blockquote>
+<ul class="simple">
+<li><p>保存依赖到devDepdendencies节点信息中，在命令后添加 <code class="docutils literal notranslate"><span class="pre">--save-dev</span></code> 参数：</p></li>
+</ul>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>npm install express --save-dev
+</pre></div>
+</div>
+</div></blockquote>
+<p>命令install可以简写为一个小写字母 <code class="docutils literal notranslate"><span class="pre">i</span></code> , <code class="docutils literal notranslate"><span class="pre">--save</span></code> 参数可以简写为 <code class="docutils literal notranslate"><span class="pre">-S</span></code> （大写字母S）, <code class="docutils literal notranslate"><span class="pre">--save-dev</span></code> 参数可以简写为 <code class="docutils literal notranslate"><span class="pre">-D</span></code> （大写字母D）。例如：</p>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>npm i express    <span class="c1"># 等同于 npm install express</span>
+npm i express -S <span class="c1"># 等同于 npm install express --save</span>
+npm i express -D <span class="c1"># 等同于 npm install express --save-dev</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="id3">
+<h3><span class="sectnum">3.4.2</span> 如何更新依赖<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>有时依赖关系会改变。如要添加一个新的模块，但是添加该模块要求其他模块具有较高的版本号。npm提供了以下命令检查模块是否过时：</p>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>npm outdated module-name <span class="c1"># module-name为待检查的模块名</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>Node.js中有两种不同的模块更新方式：</p>
+<ol class="arabic simple">
+<li><p>可以使用命令npm update更新指定模块。如果想要保存结果，还需要参照上面讲的本地模式操作。package.json文件也会保存新版本的信息。也可参照全局模式更新，则该命令将更新全局安装的包。</p></li>
+<li><p>可以编辑package.json文件，更新其中模块版本依赖信息，然后运行“npm update”。这将更新模块以匹配此文件中的规范。</p></li>
+</ol>
+</div>
+<div class="section" id="id4">
+<h3><span class="sectnum">3.4.3</span> 如何卸载依赖<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>执行 <code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">uninstall</span></code> 命令卸载指定的模块。卸载依赖与更新依赖一样，也可以参照更新依赖进行操作。</p>
+</div>
+</div>
+<div class="section" id="id5">
+<h2><span class="sectnum">3.5</span> 开始第一个Node.js工程<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>Node.js工程是指工程里面含有package.json文件，并且本工程的所有依赖通过package.json文件进行管理。</p>
+<p>Express是流行的基于Node.js的Web开发框架，可以快速地搭建一个完整功能的网站。我们就从Express开始，创建一个Node.js的Web工程。</p>
+<div class="section" id="id6">
+<h3><span class="sectnum">3.5.1</span> 初始化Node.js工程<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<p>打开终端，新建一个文件夹并进入目录下，运行 <code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">init</span></code> 命令初始化项目，例如：</p>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>mkdir mynode <span class="o">&amp;&amp;</span> <span class="nb">cd</span> mynode <span class="c1"># 新建mynode文件夹，并进入文件夹目录中</span>
+npm init <span class="c1"># 初始化项目</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>按照提示输入项目的一些相关信息，例如：</p>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ npm init
+This utility will walk you through creating a package.json file.
+It only covers the most common items, and tries to guess sensible defaults.
+
+See <span class="sb">`</span>npm <span class="nb">help</span> json<span class="sb">`</span> <span class="k">for</span> definitive documentation on these fields
+and exactly what they <span class="k">do</span>.
+
+Use <span class="sb">`</span>npm install &lt;pkg&gt;<span class="sb">`</span> afterwards to install a package and
+save it as a dependency in the package.json file.
+
+Press ^C at any <span class="nb">time</span> to quit.
+package name: <span class="o">(</span>mynode<span class="o">)</span>
+version: <span class="o">(</span><span class="m">1</span>.0.0<span class="o">)</span>
+description: mynode
+entry point: <span class="o">(</span>index.js<span class="o">)</span>
+<span class="nb">test</span> command: <span class="nb">test</span>
+git repository:
+keywords: node
+author: Murphy
+license: <span class="o">(</span>ISC<span class="o">)</span>
+About to write to /mynode/package.json:
+
+<span class="o">{</span>
+<span class="s2">&quot;name&quot;</span>: <span class="s2">&quot;mynode&quot;</span>,
+<span class="s2">&quot;version&quot;</span>: <span class="s2">&quot;1.0.0&quot;</span>,
+<span class="s2">&quot;description&quot;</span>: <span class="s2">&quot;mynode&quot;</span>,
+<span class="s2">&quot;main&quot;</span>: <span class="s2">&quot;index.js&quot;</span>,
+<span class="s2">&quot;scripts&quot;</span>: <span class="o">{</span>
+    <span class="s2">&quot;test&quot;</span>: <span class="s2">&quot;test&quot;</span>
+<span class="o">}</span>,
+<span class="s2">&quot;keywords&quot;</span>: <span class="o">[</span>
+    <span class="s2">&quot;node&quot;</span>
+<span class="o">]</span>,
+<span class="s2">&quot;author&quot;</span>: <span class="s2">&quot;Murphy&quot;</span>,
+<span class="s2">&quot;license&quot;</span>: <span class="s2">&quot;ISC&quot;</span>
+<span class="o">}</span>
+
+
+Is this OK? <span class="o">(</span>yes<span class="o">)</span> yes
+$
+</pre></div>
+</div>
+</div></blockquote>
+<p>最后输入 <code class="docutils literal notranslate"><span class="pre">yes</span></code> 后，当前目录下将会生成一个package.json文件。</p>
+</div>
+<div class="section" id="id7">
+<h3><span class="sectnum">3.5.2</span> 安装Node.js工程依赖<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<p>安装Express框架。打开终端，进入工程根目录下，输入 <code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">install</span> <span class="pre">express</span> <span class="pre">--save</span></code> 命令进行安装，例如：</p>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ npm install express --save
+npm notice created a lockfile as package-lock.json. You should commit this file.
+npm WARN mynode@1.0.0 No repository field.
+
++ express@4.17.1
+added <span class="m">50</span> packages from <span class="m">37</span> contributors in <span class="m">4</span>.77s
+</pre></div>
+</div>
+</div></blockquote>
+<p>同样在工程的根目录下，新建index.js文件，并加入如下代码：</p>
+<blockquote>
+<div><div class="highlight-JavaScript notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">express</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;express&#39;</span><span class="p">);</span> <span class="c1">// 导入express模块</span>
+<span class="kd">var</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">express</span><span class="p">();</span> <span class="c1">// 生成实例</span>
+
+<span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">,</span> <span class="nx">rep</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">rep</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="s1">&#39;Hello, word!&#39;</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="nx">app</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="mi">3000</span><span class="p">);</span> <span class="c1">// 设置监听3000端口</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="id8">
+<h3><span class="sectnum">3.5.3</span> 启动Node.js项目<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<p>打开终端，进入工程根目录下，输入如下命令启动项目：</p>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>node index.js
+</pre></div>
+</div>
+</div></blockquote>
+<p>使用浏览器访问 <a class="reference external" href="http://localhost:3000/">http://localhost:3000/</a>，就可以看到效果了，如图3-2所示：</p>
+<a class="reference internal image-reference" href="../_images/Figure3-2.png"><img alt="../_images/Figure3-2.png" src="../_images/Figure3-2.png" style="width: 400px;" /></a>
+<p>图3-2 第一个Node.js工程</p>
+</div>
+</div>
+<div class="section" id="id9">
+<h2><span class="sectnum">3.6</span> 准备Node.js工程的开发环境<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+<p>现在已经安装了Node.js运行环境，有了npm包管理器，并且尝试了第一个Node.js工程，但是工欲善其事，必先利其器，使用文本编辑器写代码虽然可行，但是离开发的要求还是有些距离，比如，我们的代码不光需要编辑，还需要有代码智能提示，需要进行代码调试，跟踪等。所以我们需要一个IDE集成开发环境，让我们能在一个环境里编码、运行、调试，这样就可以大大提升开发效率。本书推荐的IDE集成开发环境为Visual Studio Code（简称：VSCode），推荐的理由是不但功能强大，好用，而且免费。</p>
+<div class="section" id="ide">
+<h3><span class="sectnum">3.6.1</span> 安装IDE集成开发环境<a class="headerlink" href="#ide" title="Permalink to this headline">¶</a></h3>
+<p>如果读者还没有用过VSCode，请进入官方网站下载并安装它。如图3-3展示了其下载页面：</p>
+<a class="reference internal image-reference" href="../_images/Figure3-3.png"><img alt="../_images/Figure3-3.png" src="../_images/Figure3-3.png" style="width: 500px;" /></a>
+<p>图3-3 Visual Studio Code官方下载页面</p>
+<p>安装完程序后，打开编辑器的方式有两种：</p>
+<ol class="arabic simple">
+<li><p>双击VSCode图标打开它。</p></li>
+<li><p>在终端根目录下，输入 <code class="docutils literal notranslate"><span class="pre">code</span> <span class="pre">.</span></code> 命令(code和.之间有个空格)，则将自动打开编辑器。</p></li>
+</ol>
+<p>用户根据喜爱选择自己的方式。</p>
+</div>
+<div class="section" id="id10">
+<h3><span class="sectnum">3.6.2</span> Node.js项目结构介绍<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<p>打开VSCode编辑器，选择菜单栏中的“文件”-&gt;“打开目录”命令并选择上面Express项目的根目录。从编辑器中，可以看到，在Express工程中，已经有了1个文件夹和3个文件：</p>
+<blockquote>
+<div><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>└── node_modules
+├── index.js
+├── package-lock.json
+└── package.json
+</pre></div>
+</div>
+</div></blockquote>
+<p>index.js文件是本工程的核心文件，它是使用express模块的简单应用。先是导入express模块，然后创建express的实例，增加一个路由，返回文本信息。最后发布服务的同时监听3000端口。一旦有请求进入到路由，路由收到响应返回“Hello, word!”字符串。</p>
+<p>其他文件及文件夹分别在下面进行介绍。</p>
+</div>
+<div class="section" id="node-modules">
+<h3><span class="sectnum">3.6.3</span> node_modules文件夹的作用<a class="headerlink" href="#node-modules" title="Permalink to this headline">¶</a></h3>
+<p>npm在安装模块时，将下载该模块及依赖项，并将其放入项目文件夹中的node_modules文件夹中。如果安装的模块有许多依赖项，则最终会得到一个巨大的node_modules文件夹，里面有几十个模块子目录。有时npm安装命令需要很长时间来下载和安装项目的模块和依赖。</p>
+<p>注意：拷贝Node.js项目时，不要同时拷贝这个node_modules文件夹，因为这可能会导致不可知的后果。如果要将项目从一台电脑复制到另一台电脑，请先删除“node_modules”文件夹，然后在目标电脑上运行“npm install”安装Node.js模块。</p>
+</div>
+<div class="section" id="package-json">
+<h3><span class="sectnum">3.6.4</span> package.json文件介绍<a class="headerlink" href="#package-json" title="Permalink to this headline">¶</a></h3>
+<p>package.json文件记录项目中所需要的所有模块。
+在Node.js中安装模块有两种不同的方式：</p>
+<ul class="simple">
+<li><p>运行 <code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">install</span></code> 命令安装指定模块；</p></li>
+<li><p>编辑package.json文件，然后运行 <code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">install</span></code> 安装。</p></li>
+</ul>
+<p>手动编辑package.json文件是安装多个模块时的最佳方式。</p>
+<p>打开package.json文件，里面有刚刚通过npm安装的express模块，由于安装时省略了版本信息，npm默认安装它的最新版本：</p>
+<blockquote>
+<div><div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;mynode&quot;</span><span class="p">,</span>
+<span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0.0&quot;</span><span class="p">,</span>
+<span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;mynode&quot;</span><span class="p">,</span>
+<span class="nt">&quot;main&quot;</span><span class="p">:</span> <span class="s2">&quot;index.js&quot;</span><span class="p">,</span>
+<span class="nt">&quot;scripts&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;test&quot;</span><span class="p">:</span> <span class="s2">&quot;test&quot;</span>
+<span class="p">},</span>
+<span class="nt">&quot;keywords&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="s2">&quot;node&quot;</span>
+<span class="p">],</span>
+<span class="nt">&quot;author&quot;</span><span class="p">:</span> <span class="s2">&quot;Murphy&quot;</span><span class="p">,</span>
+<span class="nt">&quot;license&quot;</span><span class="p">:</span> <span class="s2">&quot;ISC&quot;</span><span class="p">,</span>
+<span class="nt">&quot;dependencies&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;express&quot;</span><span class="p">:</span> <span class="s2">&quot;^4.17.1&quot;</span>
+<span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="id11">
+<h3><span class="sectnum">3.6.5</span> 识别依赖库的版本号<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<p>当查看package.json中已安装的模块信息时，会发现他们的版本号之前都会加一个符号，有的是插入符号（^），有的是波浪符号（~）。如上面安装的express模块：</p>
+<blockquote>
+<div><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&quot;dependencies&quot;: {
+    &quot;express&quot;: &quot;^4.17.1&quot;
+}
+</pre></div>
+</div>
+</div></blockquote>
+<p>npm中有多重方式灵活地指定版本号，以版本4.17.1为例，表3-1是示例版本号对照表：</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 23%" />
+<col style="width: 77%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>版本</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>4.17.1</p></td>
+<td><p>完全匹配版本 4.17.1</p></td>
+</tr>
+<tr class="row-odd"><td><p>&gt;4.17.1</p></td>
+<td><p>高于版本 4.17.1</p></td>
+</tr>
+<tr class="row-even"><td><p>&gt;=4.17.1</p></td>
+<td><p>高于或者等于版本 4.17.1</p></td>
+</tr>
+<tr class="row-odd"><td><p>&lt;4.17.1</p></td>
+<td><p>低于版本 4.17.1</p></td>
+</tr>
+<tr class="row-even"><td><p>&lt;=4.17.1</p></td>
+<td><p>低于或等于版本 4.17.1</p></td>
+</tr>
+<tr class="row-odd"><td><p>～4.17.1</p></td>
+<td><p>约等于版本 4.17.1，相当于版本号位于区间[4.17.1, 4.(17+1).0) 即[4.17.1, 4.18.0)</p></td>
+</tr>
+<tr class="row-even"><td><p>^4.17.1</p></td>
+<td><p>^4.17.1 相当于版本号位于区间[4.17.1, 5.0.0)</p></td>
+</tr>
+<tr class="row-odd"><td><p>4.17.x</p></td>
+<td><p>匹配版本的前2位数 4.17.*</p></td>
+</tr>
+<tr class="row-even"><td><p>*</p></td>
+<td><p>匹配任何版本</p></td>
+</tr>
+</tbody>
+</table>
+<p>表3-1 示例版本号对照表</p>
+</div>
+<div class="section" id="package-lock-json">
+<h3><span class="sectnum">3.6.6</span> package-lock.json文件的作用<a class="headerlink" href="#package-lock-json" title="Permalink to this headline">¶</a></h3>
+<p>上述安装的express模块的版本号是: “^4.17.1”，对照表3-1所示，相当于版本号位于区间[4.17.1, 5.0.0)，意思是，在这个区间范围内的版本号，都是允许的。那么如何保证每个人电脑上执行的 <code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">install</span></code> 命令后安装的依赖版本都是一样的呢？npm处理版本范围时，依据更新到最新版本的原则，即如果package.json中记录的依赖包的版本是一个版本范围, 一旦执行 <code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">install</span></code> 命令会导致这个包更新到最新版本。</p>
+<p>更新到最新版本的原则并没有解决所有问题，如：</p>
+<ol class="arabic simple">
+<li><p>不同用户的npm版本可能是不同的；</p></li>
+<li><p>不同用户执行 <code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">install</span></code> 命令的时间不一致，如存在某个依赖包的版本昨天和今天的版本不一致。</p></li>
+</ol>
+<p>如果依赖包的版本不一致, 会导致开发环境和生产环境上的产品不一致，即使同在开发环境，也会导致不同成员之间的本地环境不一致。</p>
+<p>npm使用package-lock.json文件来解决这个问题。
+package-lock.json文件锁定所有模块的版本号，包括主模块和所有依赖子模块。当执行 <code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">install</span></code> 命令的时候，npm从package.json文件读取模块名称，从package-lock.json文件中获取版本号，然后进行下载或者更新。</p>
+<p>一旦修改package.json文件，并且执行了npm安装、更新和卸载等命令, 都会自动同步修改package-lock.json文件。</p>
+</div>
+<div class="section" id="debug-node-js">
+<h3><span class="sectnum">3.6.7</span> 如何调试(debug)Node.js工程<a class="headerlink" href="#debug-node-js" title="Permalink to this headline">¶</a></h3>
+<p>在VSCode中调试Node.js代码，很容易，先在需要打断点的代码处打上断点，然后使用 <code class="docutils literal notranslate"><span class="pre">node</span> <span class="pre">--inspect</span> <span class="pre">index.js</span></code> 命令启动工程。</p>
+<p>以上面的Express工程为例，调试的步骤如下：</p>
+<ol class="arabic simple">
+<li><p>在index.js文件中打上断点；</p></li>
+<li><p>然后在VSCode里的TERMINAL面板中，工程的根目录下输入 <code class="docutils literal notranslate"><span class="pre">node</span> <span class="pre">--inspect</span> <span class="pre">index.js</span></code> 命令启动工程；</p></li>
+<li><p>触发请求，使代码进行到断点处。如打开浏览器，输入地址：<a class="reference external" href="http://localhost:3000">http://localhost:3000</a> 触发请求；</p></li>
+</ol>
+<p>当代码进行到断点处时，VSCode中显示的界面如图3-4所示：</p>
+<a class="reference internal image-reference" href="../_images/Figure3-4.png"><img alt="../_images/Figure3-4.png" src="../_images/Figure3-4.png" style="width: 600px;" /></a>
+<p>图3-4 在Visual Studio Code中调试代码</p>
+</div>
+</div>
+<div class="section" id="id12">
+<h2><span class="sectnum">3.7</span> 小结<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h2>
+<p>本章介绍了Node.js以及npm的基础知识，并且开始了第一个Node.js工程，详细的介绍了工程结构和相关的工程文件，最后演示了如何调试工程代码。</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="second.html" class="btn btn-neutral float-right" title="第二课" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="howtolearn.html" class="btn btn-neutral float-left" title="2 学习Angular需要什么基础" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright CVI Talent
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

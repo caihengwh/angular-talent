@@ -1,0 +1,718 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>22 掌握在Angular组件间通信</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="23 Angular与渐进式WEB应用" href="pwa.html" />
+    <link rel="prev" title="21 使用IBM Cloud™ App ID对Angular应用进行认证" href="appid.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/main-page-logo-small-hat.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">目录：</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="start.html">Angular 9</a></li>
+<li class="toctree-l1"><a class="reference internal" href="first.html">第一课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="whatisangular.html"><span class="sectnum">1</span> Angular概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="howtolearn.html"><span class="sectnum">2</span> 学习Angular需要什么基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nodejs.html"><span class="sectnum">3</span> 掌握Node.js和npm基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="second.html">第二课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="typescript.html"><span class="sectnum">4</span> 学习TypeScript知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="firstangular.html"><span class="sectnum">5</span> 快速开启第一个Angular</a></li>
+<li class="toctree-l1"><a class="reference internal" href="third.html">第三课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angcomponent.html"><span class="sectnum">6</span> 学习Angular组件知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angtemplate.html"><span class="sectnum">7</span> 学习Angular模板知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angdirective.html"><span class="sectnum">8</span> 掌握Angular指令应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fourth.html">第四课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angmodule.html"><span class="sectnum">9</span> 学习Angular模块知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angroute.html"><span class="sectnum">10</span> 熟悉Angular路由功能</a></li>
+<li class="toctree-l1"><a class="reference internal" href="injection.html"><span class="sectnum">11</span> 学习Angular的服务及依赖注入</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fifth.html">第五课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reactive.html"><span class="sectnum">12</span> 掌握响应式编程基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form.html"><span class="sectnum">13</span> 学习Angular表单知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="httpclient.html"><span class="sectnum">14</span> 熟悉HttpClient模块</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sixth.html">第六课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pipe.html"><span class="sectnum">15</span> 深入学习Angular管道知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ui.html"><span class="sectnum">16</span> Angular与Angular Material组件库</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rxjs.html"><span class="sectnum">17</span> 学习RxJS在Angular中的实际应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="seventh.html">第七课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="material.html"><span class="sectnum">18</span> 实战基于Angular Material实现表格组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bootstrap.html"><span class="sectnum">19</span> 集成Bootstrap前端组件库</a></li>
+<li class="toctree-l1"><a class="reference internal" href="echart.html"><span class="sectnum">20</span> 在Angular项目中使用图表</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appid.html"><span class="sectnum">21</span> 使用IBM Cloud™ App ID对Angular应用进行认证</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#"><span class="sectnum">22</span> 掌握在Angular组件间通信</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1"><span class="sectnum">22.1</span> Angular组件间的通信方式有哪些</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2"><span class="sectnum">22.2</span> 通过组件的引用调用对方的属性和方法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3"><span class="sectnum">22.3</span> 通过事件总线共享数据</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4"><span class="sectnum">22.4</span> 通过服务的可观察对象共享数据</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id5"><span class="sectnum">22.5</span> 小结</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pwa.html"><span class="sectnum">23</span> Angular与渐进式WEB应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="message.html"><span class="sectnum">24</span> 实现简单的消息通知机制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="localdata.html"><span class="sectnum">25</span> 如何与本地数据打交道</a></li>
+<li class="toctree-l1"><a class="reference internal" href="test.html"><span class="sectnum">26</span> 熟悉Angular测试</a></li>
+<li class="toctree-l1"><a class="reference internal" href="package.html"><span class="sectnum">27</span> 熟悉Angular环境配置及打包</a></li>
+<li class="toctree-l1"><a class="reference internal" href="universal.html"><span class="sectnum">28</span> 学习Angular服务端渲染</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deploy.html"><span class="sectnum">29</span> 如何部署Angular应用程序</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user.html"><span class="sectnum">30</span> 实战用户管理系统</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">CVI Talent</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">首页</a> &raquo;</li>
+        
+      <li><span class="sectnum">22</span> 掌握在Angular组件间通信</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        <a href="https://pages.github.ibm.com/lanzejun/talent/index.html" class="fa fa-github"> CVITube</a>
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="angular">
+<h1><span class="sectnum">22</span> 掌握在Angular组件间通信<a class="headerlink" href="#angular" title="Permalink to this headline">¶</a></h1>
+<p>组件间通信在Angular中是必不可少的，但是随着应用的组件逐渐的增多，功能变得越来越复杂。根据不同的场景，选择及掌握在Angular组件间通信的方式至关重要，这也是本章重点阐述的内容。</p>
+<div class="section" id="id1">
+<h2><span class="sectnum">22.1</span> Angular组件间的通信方式有哪些<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>在Angular组件间通信的方式实则是在Angular组件之间共享数据，常见的方式主要有下面这4种：</p>
+<ol class="arabic simple">
+<li><p>父组件通过&#64;Input()装饰器与子组件通信；</p></li>
+<li><p>子组件通过&#64;Output()装饰器与父组件通信；</p></li>
+<li><p>通过组件的引用调用对方的属性和方法；</p></li>
+<li><p>通过服务共享数据。</p></li>
+</ol>
+<p>其中，通过服务共享数据又有下面这两种方式：</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>通过事件总线共享数据；</p></li>
+<li><p>通过服务的可观察对象共享数据；</p></li>
+</ol>
+</div></blockquote>
+<p>上面的关于父子组件间的通信方式，在本书介绍组件知识时，已经进行了详细介绍，在此仅是做个归纳。它们的详情信息，读者可以前往组件章节查阅[示例 components-ex900] 演示父组件传递数据到子组件 和 [示例 components-ex1000] 演示子组件传递数据到父组件。</p>
+<p>下面分别介绍剩下的几种通信方式。</p>
+</div>
+<div class="section" id="id2">
+<h2><span class="sectnum">22.2</span> 通过组件的引用调用对方的属性和方法<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>通过组件的引用调用对方的属性和方法指的是：传递一个A组件的引用给B组件，从而在B组件中通过引用来调用A组件的属性和方法；Angular中能实现对组件的引用，&#64;ViewChild()装饰器就是其中之一。本书在介绍Angular模板知识时演示了使用&#64;ViewChild()属性装饰器获取模板中的元素，这里将元素定位为组件，就变成了对组件的引用。</p>
+<p>这里需要注意的是A组件引用B组件，只有当B组件中的属性和方法声明为非私有（private）范围时，才能被A组件调用。另外，由于&#64;ViewChild()装饰器的特性，只有在引用方A组件的初始化生命周期在AfterViewInit之后，A组件才能访问B组件的引用，进而调用B组件的属性和方法。</p>
+<p>下面通过示例演示通过组件的引用调用对方的属性和方法。</p>
+<p>[示例 communication-ex100] 通过组件的引用调用对方的属性和方法</p>
+<ol class="arabic simple">
+<li><p>用Angular CLI构建应用程序，具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng n communication-ex100 --minimal --defaults<span class="o">=</span><span class="nb">true</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>启动服务，具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng serve
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><p>新增子组件。使用命令 <code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">g</span> <span class="pre">c</span> <span class="pre">li-show</span></code> 新建组件类，并将文件src/app/li-show/li-show.component.ts更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">OnInit</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+
+<span class="kd">@Component</span><span class="p">({</span>
+  <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-li-show&#39;</span><span class="p">,</span>
+  <span class="nx">template</span><span class="o">:</span> <span class="sb">`</span>
+<span class="sb">    &lt;p&gt;</span>
+<span class="sb">      {{title}} works!</span>
+<span class="sb">    &lt;/p&gt;</span>
+<span class="sb">  `</span><span class="p">,</span>
+  <span class="nx">styles</span><span class="o">:</span> <span class="p">[</span>
+  <span class="p">]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">LiShowComponent</span> <span class="kr">implements</span> <span class="nx">OnInit</span> <span class="p">{</span>
+
+  <span class="nx">title</span> <span class="o">=</span> <span class="s1">&#39;app-li-show&#39;</span><span class="p">;</span>
+  <span class="kr">constructor</span><span class="p">()</span> <span class="p">{</span> <span class="p">}</span>
+  <span class="nx">ngOnInit</span><span class="p">()</span><span class="o">:</span> <span class="k">void</span> <span class="p">{</span> <span class="p">}</span>
+  <span class="nx">show() {</span>
+    <span class="k">return</span> <span class="s1">&#39;这是LiShowComponent组件里面的方法&#39;</span>
+  <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="4">
+<li><p>编辑根组件。编辑文件src/app/app.component.ts，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">ViewChild</span><span class="p">,</span> <span class="nx">AfterViewInit</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">LiShowComponent</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./li-show/li-show.component&#39;</span><span class="p">;</span>
+
+<span class="kd">@Component</span><span class="p">({</span>
+  <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-root&#39;</span><span class="p">,</span>
+  <span class="nx">template</span><span class="o">:</span> <span class="sb">`</span>
+<span class="sb">    &lt;app-li-show&gt;&lt;/app-li-show&gt;</span>
+<span class="sb">  `</span><span class="p">,</span>
+  <span class="nx">styles</span><span class="o">:</span> <span class="p">[]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">AppComponent</span> <span class="kr">implements</span> <span class="nx">AfterViewInit</span> <span class="p">{</span>
+  <span class="nx">title</span> <span class="o">=</span> <span class="s1">&#39;communication-ex100&#39;</span><span class="p">;</span>
+
+  <span class="kd">@ViewChild</span><span class="p">(</span><span class="nx">LiShowComponent</span><span class="p">,</span> <span class="p">{</span> <span class="kr">static</span><span class="o">:</span> <span class="kc">false</span> <span class="p">})</span>
+  <span class="kr">private</span> <span class="nx">liShowComponent</span>: <span class="kt">LiShowComponent</span><span class="p">;</span>
+
+  <span class="c1">// 调用子组件的属性和方法</span>
+  <span class="nx">ngAfterViewInit() {</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;在ngAfterViewInit中执行：&#39;</span>
+      <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">liShowComponent</span><span class="p">.</span><span class="nx">title</span> <span class="c1">// 调用子组件的title属性</span>
+      <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">liShowComponent</span><span class="p">.</span><span class="nx">show</span><span class="p">())</span> <span class="c1">//调用子组件的show()方法</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="5">
+<li><p>观察应用程序页面，进入页面开发者模式，观察控制台打印信息。</p></li>
+</ol>
+<p>在上面的示例communication-ex100中，在根组件中通过&#64;ViewChild()装饰器引用了LiShowComponent子组件，然后在ngAfterViewInit()方法中，获取它的title属性和调用它的show()方法。</p>
+</div>
+<div class="section" id="id3">
+<h2><span class="sectnum">22.3</span> 通过事件总线共享数据<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>通过事件总线共享数据可以实现任何组件之间共享数据，组件之间无需建立关联。实现它的步骤是，首先创建一个事件总线服务。然后，向总线服务发送事件，如果有任何一个订阅者监听并注册了该事件名称，那么它就会执行回调函数。</p>
+<p>为了体现组件间无需建立关联关系，下面通过演示一个深层次的嵌套组件示例通过事件总线服务共享数据。</p>
+<p>[示例 communication-ex200] 通过事件总线共享数据</p>
+<ol class="arabic simple">
+<li><p>用Angular CLI构建应用程序，具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng n communication-ex200 --minimal --defaults<span class="o">=</span><span class="nb">true</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>启动服务，具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng serve
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><p>创建事件总线服务。使用命令 <code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">g</span> <span class="pre">s</span> <span class="pre">EventBus</span></code> 新建服务类，并将文件src/app/event-bus.service.ts更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Injectable</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">Subject</span><span class="p">,</span> <span class="nx">Subscription</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;rxjs&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">filter</span><span class="p">,</span> <span class="nx">map</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;rxjs/operators&#39;</span><span class="p">;</span>
+
+<span class="c1">// 定义的事件对象</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">EmitEvent</span> <span class="p">{</span>
+  <span class="kr">constructor</span><span class="p">(</span><span class="kr">public</span> <span class="nx">name</span>: <span class="kt">any</span><span class="p">,</span> <span class="kr">public</span> <span class="nx">value?</span>: <span class="kt">any</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// 定义的事件类型</span>
+<span class="kr">export</span> <span class="kr">enum</span> <span class="nx">Events</span> <span class="p">{</span>
+  <span class="nx">ButtonClicked</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="kd">@Injectable</span><span class="p">({</span>
+  <span class="nx">providedIn</span><span class="o">:</span> <span class="s1">&#39;root&#39;</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">EventBusService</span> <span class="p">{</span>
+
+  <span class="kr">constructor</span><span class="p">()</span> <span class="p">{</span> <span class="p">}</span>
+
+  <span class="kr">private</span> <span class="nx">subject$</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Subject</span><span class="p">();</span>
+
+  <span class="kr">public</span> <span class="nx">emit</span><span class="p">(</span><span class="nx">event</span>: <span class="kt">EmitEvent</span><span class="p">)</span><span class="o">:</span> <span class="k">void</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">subject$</span><span class="p">.</span><span class="nx">next</span><span class="p">(</span><span class="nx">event</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="kr">public</span> <span class="nx">on</span><span class="p">(</span><span class="nx">event</span>: <span class="kt">Events</span><span class="p">,</span> <span class="nx">action</span>: <span class="kt">any</span><span class="p">)</span><span class="o">:</span> <span class="nx">Subscription</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">subject$</span><span class="p">.</span><span class="nx">pipe</span><span class="p">(</span>
+      <span class="nx">filter</span><span class="p">((</span><span class="nx">e</span>: <span class="kt">EmitEvent</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">e</span><span class="p">.</span><span class="nx">name</span> <span class="o">===</span> <span class="nx">event</span><span class="p">),</span>
+      <span class="nx">map</span><span class="p">((</span><span class="nx">e</span>: <span class="kt">EmitEvent</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">e</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span>
+    <span class="p">).</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">action</span><span class="p">);</span> <span class="c1">// action是回调方法</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="4">
+<li><p>创建组件。使用命令 <code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">g</span> <span class="pre">c</span> <span class="pre">button</span></code> 新建组件类，并将文件src/app/button/button.component.ts更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Component</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">EmitEvent</span><span class="p">,</span> <span class="nx">EventBusService</span><span class="p">,</span> <span class="nx">Events</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;../event-bus.service&#39;</span><span class="p">;</span>
+
+<span class="kd">@Component</span><span class="p">({</span>
+  <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-button&#39;</span><span class="p">,</span>
+  <span class="nx">template</span><span class="o">:</span> <span class="sb">`</span>
+<span class="sb">    &lt;button (click)=&quot;onClick()&quot;&gt;</span>
+<span class="sb">      &lt;ng-content&gt;&lt;/ng-content&gt;</span>
+<span class="sb">    &lt;/button&gt;</span>
+<span class="sb">  `</span><span class="p">,</span>
+  <span class="nx">styles</span><span class="o">:</span> <span class="p">[</span><span class="sb">`</span>
+<span class="sb">      :host {</span>
+<span class="sb">        margin: 10px;</span>
+<span class="sb">      }</span>
+<span class="sb">  `</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">ButtonComponent</span> <span class="p">{</span>
+
+  <span class="kr">constructor</span><span class="p">(</span><span class="kr">private</span> <span class="nx">eventBusService</span>: <span class="kt">EventBusService</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+
+  <span class="kr">public</span> <span class="nx">onClick</span><span class="p">()</span><span class="o">:</span> <span class="k">void</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">eventBusService</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="k">new</span> <span class="nx">EmitEvent</span><span class="p">(</span><span class="nx">Events</span><span class="p">.</span><span class="nx">ButtonClicked</span><span class="p">,</span> <span class="s1">&#39;点击按钮&#39;</span><span class="p">));</span>
+  <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="5">
+<li><p>创建组件。使用命令 <code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">g</span> <span class="pre">c</span> <span class="pre">buttonContainer</span></code> 新建组件类，并将文件src/app/buttonContainer/buttonContainer.component.ts更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Component</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+
+<span class="kd">@Component</span><span class="p">({</span>
+  <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;button-container&#39;</span><span class="p">,</span>
+  <span class="nx">template</span><span class="o">:</span> <span class="s1">&#39;&lt;ng-content&gt;&lt;/ng-content&gt;&#39;</span><span class="p">,</span>
+  <span class="nx">styles</span><span class="o">:</span> <span class="p">[</span><span class="sb">`</span>
+<span class="sb">      :host {</span>
+<span class="sb">        padding: 10px 0 0 10px;</span>
+<span class="sb">        margin: 10px;</span>
+<span class="sb">        display: flex;</span>
+<span class="sb">        justify-content: center;</span>
+<span class="sb">        border: 1px solid #ccc;</span>
+<span class="sb">      }</span>
+<span class="sb">  `</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">ButtonContainerComponent</span> <span class="p">{</span> <span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="6">
+<li><p>编辑根组件。编辑文件src/app/app.component.ts，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Component</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">EventBusService</span><span class="p">,</span> <span class="nx">Events</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./event-bus.service&#39;</span><span class="p">;</span>
+
+<span class="kd">@Component</span><span class="p">({</span>
+  <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-root&#39;</span><span class="p">,</span>
+  <span class="nx">template</span><span class="o">:</span> <span class="sb">`</span>
+<span class="sb">    &lt;button-container&gt;</span>
+<span class="sb">      &lt;button-container&gt;</span>
+<span class="sb">        &lt;button-container&gt;</span>
+<span class="sb">          &lt;button-container&gt;</span>
+<span class="sb">            &lt;button-container&gt;</span>
+<span class="sb">                &lt;app-button&gt;A Button&lt;/app-button&gt;</span>
+<span class="sb">            &lt;/button-container&gt;</span>
+<span class="sb">          &lt;/button-container&gt;</span>
+<span class="sb">        &lt;/button-container&gt;</span>
+<span class="sb">      &lt;/button-container&gt;</span>
+<span class="sb">    &lt;/button-container&gt;</span>
+<span class="sb">    {{ buttonClicked ? &#39;点击了按钮&#39; : null }}</span>
+<span class="sb">  `</span><span class="p">,</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">AppComponent</span> <span class="p">{</span>
+  <span class="kr">public</span> <span class="nx">buttonClicked</span>: <span class="kt">boolean</span><span class="p">;</span>
+
+  <span class="kr">constructor</span><span class="p">(</span><span class="kr">private</span> <span class="nx">eventBusService</span>: <span class="kt">EventBusService</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">eventBusService</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="nx">Events</span><span class="p">.</span><span class="nx">ButtonClicked</span><span class="p">,</span> <span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">buttonClicked</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+    <span class="p">})</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="7">
+<li><p>查看应用程序结果。打开Web浏览器并浏览到 “<a class="reference external" href="http://localhost:4200">http://localhost:4200</a>”，点击按钮，查看控制台，页面显示效果如图22-1所示：</p></li>
+</ol>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/Figure22-1.png"><img alt="../_images/Figure22-1.png" src="../_images/Figure22-1.png" style="width: 600px;" /></a>
+<p>图22-1 一个深层次的嵌套组件间共享数据</p>
+</div></blockquote>
+<p>在上面的步骤中，完成了以下内容：</p>
+<ol class="arabic simple">
+<li><p>在总线服务类EventBusService中，我们通过RxJs库的主题对象共享数据。注意on()方法，它返回的是一个订阅者对象，该方法提供给订阅者使用；</p></li>
+<li><p>在ButtonComponent组件中，给按钮绑定了点击事件，同时在事件方法中调用总线服务的emit方法，发送了一个数据。EmitEvent对象接受2个参数，前一个是事件类型，后一个是具体的发送数据；</p></li>
+<li><p>在ButtonComponent和ButtonContainerComponent组件中，样式中使用了“:host”选择器，表示选择的是当前模板中的宿主元素；</p></li>
+<li><p>在根组件中的构造方法里面调用了总线服务的on()方法，该方法的第二个参数就是回调方法。</p></li>
+</ol>
+<p>通过上述示例可以看出，总线服务通信方式可以贯穿在整个系统中，这种方式在实际业务中非常适用。</p>
+</div>
+<div class="section" id="id4">
+<h2><span class="sectnum">22.4</span> 通过服务的可观察对象共享数据<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>通过服务的可观察对象共享数据的原理就是创建一个库存，在里面储存值。每当这个库存发生变化时，监听它的观察者就会知道消息，并执行回调。</p>
+<p>我们分别创建一个列表组件和详情组件，点击列表项时，往库存中添加每一项的值，同时，详情组件中监听的库存的回调方法会立即被调用。下面是具体的示例讲解。</p>
+<p>[示例 communication-ex300] 通过服务的可观察对象共享数据</p>
+<ol class="arabic simple">
+<li><p>用Angular CLI构建应用程序，具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng n communication-ex300 --minimal --defaults<span class="o">=</span><span class="nb">true</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>启动服务，具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng serve
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><p>创建接口。使用命令 <code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">g</span> <span class="pre">i</span> <span class="pre">Article</span></code> 新建接口类，并将文件src/app/article.ts更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">export</span> <span class="kr">interface</span> <span class="nx">Article</span> <span class="p">{</span>
+    <span class="nx">id</span>: <span class="kt">number</span><span class="p">;</span>
+    <span class="nx">title</span>: <span class="kt">string</span><span class="p">;</span>
+    <span class="nx">content</span>: <span class="kt">string</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="4">
+<li><p>创建服务类。使用命令 <code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">g</span> <span class="pre">s</span> <span class="pre">share</span></code> 新建接口类，并将文件src/app/share.service.ts更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Injectable</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">BehaviorSubject</span><span class="p">,</span> <span class="nx">Observable</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;rxjs&#39;</span><span class="p">;</span>
+
+<span class="kd">@Injectable</span><span class="p">({</span>
+  <span class="nx">providedIn</span><span class="o">:</span> <span class="s1">&#39;root&#39;</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">ShareService</span><span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;</span> <span class="p">{</span>
+
+  <span class="kr">private</span> <span class="nx">inventorySubject$</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">BehaviorSubject</span><span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+
+  <span class="nx">getLatestInventory</span><span class="p">()</span><span class="o">:</span> <span class="nx">Observable</span><span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">inventorySubject$</span><span class="p">.</span><span class="nx">asObservable</span><span class="p">();</span>
+  <span class="p">}</span>
+
+  <span class="nx">addToInventory</span><span class="p">(</span><span class="nx">t</span>: <span class="kt">T</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">inventorySubject$</span><span class="p">.</span><span class="nx">next</span><span class="p">(</span><span class="nx">t</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="5">
+<li><p>创建列表组件。使用命令 <code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">g</span> <span class="pre">c</span> <span class="pre">ArticleList</span></code> 新建列表组件类，并将文件src/app/article-list/article-list.component.ts更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">OnInit</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">Article</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;../article&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">ShareService</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;../share.service&#39;</span><span class="p">;</span>
+
+<span class="kd">@Component</span><span class="p">({</span>
+  <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-article-list&#39;</span><span class="p">,</span>
+  <span class="nx">template</span><span class="o">:</span> <span class="sb">`</span>
+<span class="sb">  &lt;ul&gt;</span>
+<span class="sb">    &lt;li *ngFor=&quot;let item of articles&quot; style=&quot;list-style-type:none;&quot;&gt;</span>
+<span class="sb">      &lt;button style=&#39;font-size:24px&#39;&gt;</span>
+<span class="sb">        &lt;a href=&quot;#&quot; (click)=&quot;viewArticle(item)&quot;&gt;{{item.title}}&lt;/a&gt;</span>
+<span class="sb">      &lt;/button&gt;</span>
+<span class="sb">    &lt;/li&gt;</span>
+<span class="sb">  &lt;/ul&gt;</span>
+<span class="sb">  `</span><span class="p">,</span>
+  <span class="nx">styles</span><span class="o">:</span> <span class="p">[</span>
+  <span class="p">]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">ArticleListComponent</span> <span class="kr">implements</span> <span class="nx">OnInit</span> <span class="p">{</span>
+
+  <span class="nx">articles</span>: <span class="kt">Array</span><span class="o">&lt;</span><span class="nx">Article</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="nx">id</span>: <span class="kt">1</span><span class="p">,</span>
+      <span class="nx">title</span><span class="o">:</span> <span class="s2">&quot;Angular&quot;</span><span class="p">,</span>
+      <span class="nx">content</span><span class="o">:</span> <span class="s2">&quot;Master Angular&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nx">id</span>: <span class="kt">1</span><span class="p">,</span>
+      <span class="nx">title</span><span class="o">:</span> <span class="s2">&quot;Java&quot;</span><span class="p">,</span>
+      <span class="nx">content</span><span class="o">:</span> <span class="s2">&quot;Master Java&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nx">id</span>: <span class="kt">3</span><span class="p">,</span>
+      <span class="nx">title</span><span class="o">:</span> <span class="s2">&quot;Node&quot;</span><span class="p">,</span>
+      <span class="nx">content</span><span class="o">:</span> <span class="s2">&quot;Master Node.js&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nx">id</span>: <span class="kt">4</span><span class="p">,</span>
+      <span class="nx">title</span><span class="o">:</span> <span class="s2">&quot;Python&quot;</span><span class="p">,</span>
+      <span class="nx">content</span><span class="o">:</span> <span class="s2">&quot;Master Python 3&quot;</span>
+    <span class="p">},</span>
+  <span class="p">]</span>
+
+  <span class="kr">constructor</span><span class="p">(</span><span class="kr">private</span> <span class="nx">shareService</span>: <span class="kt">ShareService</span><span class="o">&lt;</span><span class="nx">Article</span><span class="o">&gt;</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+
+  <span class="nx">ngOnInit</span><span class="p">()</span><span class="o">:</span> <span class="k">void</span> <span class="p">{</span>
+  <span class="p">}</span>
+
+  <span class="nx">viewArticle</span><span class="p">(</span><span class="nx">article</span>: <span class="kt">Article</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">shareService</span><span class="p">.</span><span class="nx">addToInventory</span><span class="p">(</span><span class="nx">article</span><span class="p">);</span>
+  <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="6">
+<li><p>创建详情组件。使用命令 <code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">g</span> <span class="pre">c</span> <span class="pre">ArticleDetail</span></code> 新建详情组件类，并将文件src/app/article.ts更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">OnInit</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">Article</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;../article&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">ShareService</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;../share.service&#39;</span><span class="p">;</span>
+
+<span class="kd">@Component</span><span class="p">({</span>
+  <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-article-detail&#39;</span><span class="p">,</span>
+  <span class="nx">template</span><span class="o">:</span> <span class="sb">`</span>
+<span class="sb">    &lt;p&gt;</span>
+<span class="sb">      {{detail?.id}} ：{{detail?.title}}：{{detail?.content}}</span>
+<span class="sb">    &lt;/p&gt;</span>
+<span class="sb">  `</span><span class="p">,</span>
+  <span class="nx">styles</span><span class="o">:</span> <span class="p">[</span>
+  <span class="p">]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">ArticleDetailComponent</span> <span class="kr">implements</span> <span class="nx">OnInit</span> <span class="p">{</span>
+
+  <span class="nx">detail</span>: <span class="kt">Article</span><span class="p">;</span>
+  <span class="kr">constructor</span><span class="p">(</span><span class="kr">private</span> <span class="nx">shareService</span>: <span class="kt">ShareService</span><span class="o">&lt;</span><span class="nx">Article</span><span class="o">&gt;</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+
+  <span class="nx">ngOnInit</span><span class="p">()</span><span class="o">:</span> <span class="k">void</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">shareService</span><span class="p">.</span><span class="nx">getLatestInventory</span><span class="p">().</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">article</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">detail</span> <span class="o">=</span> <span class="nx">article</span><span class="p">;</span>
+    <span class="p">})</span>
+  <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="7">
+<li><p>编辑根组件。编辑文件src/app/app.component.ts，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Component</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+
+<span class="kd">@Component</span><span class="p">({</span>
+  <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-root&#39;</span><span class="p">,</span>
+  <span class="nx">template</span><span class="o">:</span> <span class="sb">`</span>
+<span class="sb">  &lt;h1 align = &quot;center&quot;&gt;{{title}}&lt;/h1&gt;</span>
+<span class="sb">  &lt;div align = &quot;center&quot;&gt;</span>
+<span class="sb">    &lt;app-article-list&gt;&lt;/app-article-list&gt;</span>
+<span class="sb">    &lt;app-article-detail&gt;&lt;/app-article-detail&gt;</span>
+<span class="sb">  &lt;/div&gt;</span>
+
+<span class="sb">  `</span><span class="p">,</span>
+  <span class="nx">styles</span><span class="o">:</span> <span class="p">[</span>
+  <span class="p">]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">AppComponent</span> <span class="p">{</span>
+  <span class="nx">title</span> <span class="o">=</span> <span class="s1">&#39;communication-ex300&#39;</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="8">
+<li><p>查看应用程序结果。打开Web浏览器并浏览到 “<a class="reference external" href="http://localhost:4200">http://localhost:4200</a>”，点击按钮，查看页面显示效果。</p></li>
+</ol>
+<p>在上面的步骤中，完成了以下内容：</p>
+<ol class="arabic simple">
+<li><p>在ShareService服务类中，通过使用泛型参数来定义增加到库存中数据的类型，使用inventorySubject$变量表示库存。getLatestInventory()方法返回库存中的最新值，addToInventory()方法表示往库存中添加数据；</p></li>
+<li><p>在ArticleListComponent列表组件类中，调用viewArticle()方法，往库存中添加列表项的数据；</p></li>
+<li><p>在ArticleDetailComponent详情组件类中，订阅了库存中最新添加的数据，在详情组件初始化过程中，这时用户还没有来得及点击列表，这时，类属性detail变量的值为null，因此，在模板中调用detail变量的值时需要添加”?”操作符；</p></li>
+</ol>
+<p>本示例中，列表组件和详情组件之间并没有建立关联关系，它们是通过服务的可观察对象共享数据。</p>
+</div>
+<div class="section" id="id5">
+<h2><span class="sectnum">22.5</span> 小结<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>本章介绍了如何在Angular组件间进行通信，介绍了4种常见的通信方式，通过示例分别对每种方式进行了详细的演示，这些方式在实际应用中使用得非常普遍。</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="pwa.html" class="btn btn-neutral float-right" title="23 Angular与渐进式WEB应用" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="appid.html" class="btn btn-neutral float-left" title="21 使用IBM Cloud™ App ID对Angular应用进行认证" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright CVI Talent
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

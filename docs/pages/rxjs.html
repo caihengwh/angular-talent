@@ -1,0 +1,860 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>17 学习RxJS在Angular中的实际应用</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="第七课" href="seventh.html" />
+    <link rel="prev" title="16 Angular与Angular Material组件库" href="ui.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/main-page-logo-small-hat.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">目录：</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="start.html">Angular 9</a></li>
+<li class="toctree-l1"><a class="reference internal" href="first.html">第一课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="whatisangular.html"><span class="sectnum">1</span> Angular概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="howtolearn.html"><span class="sectnum">2</span> 学习Angular需要什么基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nodejs.html"><span class="sectnum">3</span> 掌握Node.js和npm基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="second.html">第二课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="typescript.html"><span class="sectnum">4</span> 学习TypeScript知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="firstangular.html"><span class="sectnum">5</span> 快速开启第一个Angular</a></li>
+<li class="toctree-l1"><a class="reference internal" href="third.html">第三课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angcomponent.html"><span class="sectnum">6</span> 学习Angular组件知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angtemplate.html"><span class="sectnum">7</span> 学习Angular模板知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angdirective.html"><span class="sectnum">8</span> 掌握Angular指令应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fourth.html">第四课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angmodule.html"><span class="sectnum">9</span> 学习Angular模块知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angroute.html"><span class="sectnum">10</span> 熟悉Angular路由功能</a></li>
+<li class="toctree-l1"><a class="reference internal" href="injection.html"><span class="sectnum">11</span> 学习Angular的服务及依赖注入</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fifth.html">第五课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reactive.html"><span class="sectnum">12</span> 掌握响应式编程基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form.html"><span class="sectnum">13</span> 学习Angular表单知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="httpclient.html"><span class="sectnum">14</span> 熟悉HttpClient模块</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sixth.html">第六课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pipe.html"><span class="sectnum">15</span> 深入学习Angular管道知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ui.html"><span class="sectnum">16</span> Angular与Angular Material组件库</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#"><span class="sectnum">17</span> 学习RxJS在Angular中的实际应用</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#subject"><span class="sectnum">17.1</span> 什么是主题（Subject）</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1"><span class="sectnum">17.1.1</span> 理解数据生产者和数据消费者</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2"><span class="sectnum">17.1.2</span> 理解单播和多播</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id3"><span class="sectnum">17.2</span> 不同类型的主题（Subject）</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#behaviorsubject"><span class="sectnum">17.2.1</span> 使用BehaviorSubject类型主题</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#replaysubject"><span class="sectnum">17.2.2</span> 使用ReplaySubject类型主题</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#asyncsubject"><span class="sectnum">17.2.3</span> 使用AsyncSubject类型主题</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#rxjs-ex100-angular"><span class="sectnum">17.3</span> [示例 rxjs-ex100] 演示Angular请求防抖示例</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4"><span class="sectnum">17.4</span> 什么时候需要取消订阅</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#rxjs"><span class="sectnum">17.5</span> 通过RxJS实现缓存</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#rxjs-ex200-httpclienthttp"><span class="sectnum">17.5.1</span> [示例 rxjs-ex200] 了解HttpClient执行Http请求的性能问题</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rxjssharereplay"><span class="sectnum">17.5.2</span> 使用RxJS的shareReplay操作符实现缓存效果</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id5"><span class="sectnum">17.6</span> 小结</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="seventh.html">第七课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="material.html"><span class="sectnum">18</span> 实战基于Angular Material实现表格组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bootstrap.html"><span class="sectnum">19</span> 集成Bootstrap前端组件库</a></li>
+<li class="toctree-l1"><a class="reference internal" href="echart.html"><span class="sectnum">20</span> 在Angular项目中使用图表</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appid.html"><span class="sectnum">21</span> 使用IBM Cloud™ App ID对Angular应用进行认证</a></li>
+<li class="toctree-l1"><a class="reference internal" href="communication.html"><span class="sectnum">22</span> 掌握在Angular组件间通信</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pwa.html"><span class="sectnum">23</span> Angular与渐进式WEB应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="message.html"><span class="sectnum">24</span> 实现简单的消息通知机制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="localdata.html"><span class="sectnum">25</span> 如何与本地数据打交道</a></li>
+<li class="toctree-l1"><a class="reference internal" href="test.html"><span class="sectnum">26</span> 熟悉Angular测试</a></li>
+<li class="toctree-l1"><a class="reference internal" href="package.html"><span class="sectnum">27</span> 熟悉Angular环境配置及打包</a></li>
+<li class="toctree-l1"><a class="reference internal" href="universal.html"><span class="sectnum">28</span> 学习Angular服务端渲染</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deploy.html"><span class="sectnum">29</span> 如何部署Angular应用程序</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user.html"><span class="sectnum">30</span> 实战用户管理系统</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">CVI Talent</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">首页</a> &raquo;</li>
+        
+      <li><span class="sectnum">17</span> 学习RxJS在Angular中的实际应用</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        <a href="https://pages.github.ibm.com/lanzejun/talent/index.html" class="fa fa-github"> CVITube</a>
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="rxjsangular">
+<h1><span class="sectnum">17</span> 学习RxJS在Angular中的实际应用<a class="headerlink" href="#rxjsangular" title="Permalink to this headline">¶</a></h1>
+<p>在响应式编程章节，我们介绍了RxJS库，并且介绍了它的一些基本功能。本章，我们继续介绍RxJS的一些高级知识以及在Angular中的实际应用。</p>
+<div class="section" id="subject">
+<h2><span class="sectnum">17.1</span> 什么是主题（Subject）<a class="headerlink" href="#subject" title="Permalink to this headline">¶</a></h2>
+<p>RxJS库提供了多种用于操控数据流的类，Subject（主题）就是其中之一。理解Subject对象，需要从以下方面进行了解。</p>
+<div class="section" id="id1">
+<h3><span class="sectnum">17.1.1</span> 理解数据生产者和数据消费者<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>数据生产者发送数据，数据消费者接收数据，在响应式编程里，可观察对象(Observable)负责发送数据，观察者(Observers)负责接收数据。普通的Observable只是数据生产者，发送数据。而Subject 同时继承了 Observable 和 Observer的特性，因此，可以理解它既是Observable，也是Observer。Subjects 作为可观察者对象，它可以被订阅；作为观察者，它有next()，error()和complete()这样的方法，要向 Subject 发送一个新值，只需调用它的next()方法，它就会将值传播到它的订阅方法中。</p>
+</div>
+<div class="section" id="id2">
+<h3><span class="sectnum">17.1.2</span> 理解单播和多播<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>使用Subject的主要原因是多播。默认情况下，Observable是单播。单播意味着每个订阅的观察者拥有Observable的独立执行，意思是每次从头开始把值
+发给观察者。为了证明这一点，请参阅下面的示例：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">obs$</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Observable</span><span class="p">((</span><span class="nx">observer</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="c1">// 定义一个普通的Observable对象</span>
+  <span class="nx">observer</span><span class="p">.</span><span class="nx">next</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">());</span>
+<span class="p">});</span>
+<span class="nx">obs$</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">item</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;1st subscriber:&quot;</span> <span class="o">+</span> <span class="nx">item</span><span class="p">));</span><span class="c1">// 订阅者甲</span>
+<span class="nx">obs$</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">item</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;2st subscriber:&quot;</span> <span class="o">+</span> <span class="nx">item</span><span class="p">));</span><span class="c1">// 订阅者乙</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>执行上面代码后，控制台分别打印出2个不同的值，说明对obs$对象订阅时，每次返回的是独立的执行对象。</p>
+<p>我们将上面代码中的普通可观察对象obs$改用Subject类型来实现，请参阅下面的示例：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">subject$</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Subject</span><span class="p">();</span>
+<span class="nx">subject$</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">item</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;1st subscriber:&quot;</span> <span class="o">+</span> <span class="nx">item</span><span class="p">));</span><span class="c1">// 订阅者甲</span>
+<span class="nx">subject$</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">item</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;2st subscriber:&quot;</span> <span class="o">+</span> <span class="nx">item</span><span class="p">));</span><span class="c1">// 订阅者乙</span>
+<span class="nx">subject$</span><span class="p">.</span><span class="nx">next</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">());</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>上述代码中的最后一行调用Subject类型对象的next()方法，发送数据，这是因为Subject对象同时具有Observer对象的特性。执行上面代码后，控制台分别打印出2个相同的值，说明对subject$对象订阅时，每次返回的是同一个相同的对象。Subject多播的特性用在应用中，可以同时对多个订阅者对象进行广播，它们同一时刻均接收到相同的值。</p>
+<p>上面提到，Subject可以是Observer（观察者）类型对象，因此，我们可以将Subject类型的对象作为参数传递给普通的Observable对象的subscribe()方法，请参阅下面的示例：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">obs$</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Observable</span><span class="p">((</span><span class="nx">observer</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+   <span class="nx">observer</span><span class="p">.</span><span class="nx">next</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">());</span>
+<span class="p">});</span>
+
+<span class="kd">let</span> <span class="nx">subject$</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Subject</span><span class="p">();</span>
+<span class="nx">subject$</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">item</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;1st subscriber:&quot;</span> <span class="o">+</span> <span class="nx">item</span><span class="p">));</span><span class="c1">// 订阅者甲</span>
+<span class="nx">subject$</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">item</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;2st subscriber:&quot;</span> <span class="o">+</span> <span class="nx">item</span><span class="p">));</span><span class="c1">// 订阅者乙</span>
+
+<span class="nx">obs$</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">subject$</span><span class="p">);</span> <span class="c1">// 将subject$变量作为参数传递给obs$对象</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>上述代码，通过把subject$变量作为参数传递给obs$对象的subscribe()方法，这时obs$（普通的Observable类型对象）单播变成了多播。执行上述代码，控制台打印2行相同的结果值。</p>
+</div>
+</div>
+<div class="section" id="id3">
+<h2><span class="sectnum">17.2</span> 不同类型的主题（Subject）<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>Subject 的作用是实现 Observable 的多播。多播的作用是在多个订阅者之间共享的，所以它可以确保每个订阅者接收到的数据绝对相等。除了上面介绍了Subject可以实现多播，RxJS 还提供了一些 Subject 的变体以应对不同场景，它们分别是：BehaviorSubject、ReplaySubject 以及 AsyncSubject。所有的Subject都是特殊的Observable。</p>
+<div class="section" id="behaviorsubject">
+<h3><span class="sectnum">17.2.1</span> 使用BehaviorSubject类型主题<a class="headerlink" href="#behaviorsubject" title="Permalink to this headline">¶</a></h3>
+<p>Subject的主要变体之一是BehaviorSubject。 BehaviorSubject具有存储“当前”值的特征，我们可以直接从BehaviorSubject获取最后(最近)发出的值。
+有两种方法可以获得最后一次发出的值：可以通过访问BehaviorSubject上的value属性来获取值，也可以直接订阅（subscribe）它。无论订阅者订阅的时间是否晚于数据产生的时间，BehaviorSubject都将直接向订阅者发出当前值。请参阅以下示例：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">subject$</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">BehaviorSubject</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span> <span class="c1">// 在创建BehaviorSubject对象时，需要为它初始化一个默认值。</span>
+
+<span class="c1">// 订阅者 A</span>
+<span class="nx">subject$</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">((</span><span class="nx">data</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Subscriber A:&#39;</span><span class="p">,</span> <span class="nx">data</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="nx">subject$</span><span class="p">.</span><span class="nx">next</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">());</span>
+<span class="nx">subject$</span><span class="p">.</span><span class="nx">next</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">());</span>
+
+<span class="c1">// 订阅者 B</span>
+<span class="nx">subject$</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">((</span><span class="nx">data</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Subscriber B:&#39;</span><span class="p">,</span> <span class="nx">data</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="nx">subject$</span><span class="p">.</span><span class="nx">next</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">());</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">subject$</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>执行上述代码，控制台将打印类似如下内容：</p>
+<blockquote>
+<div><div class="highlight-scss notranslate"><div class="highlight"><pre><span></span><span class="nt">Subscriber</span> <span class="nt">A</span><span class="nd">:</span> <span class="nt">1</span>
+<span class="nt">Subscriber</span> <span class="nt">A</span><span class="nd">:</span> <span class="nt">0</span><span class="nc">.6231195135064151</span>
+<span class="nt">Subscriber</span> <span class="nt">A</span><span class="nd">:</span> <span class="nt">0</span><span class="nc">.5133829347977827</span>
+<span class="nt">Subscriber</span> <span class="nt">B</span><span class="nd">:</span> <span class="nt">0</span><span class="nc">.5133829347977827</span>
+<span class="nt">Subscriber</span> <span class="nt">A</span><span class="nd">:</span> <span class="nt">0</span><span class="nc">.8149887082595697</span>
+<span class="nt">Subscriber</span> <span class="nt">B</span><span class="nd">:</span> <span class="nt">0</span><span class="nc">.8149887082595697</span>
+<span class="nt">0</span><span class="nc">.8149887082595697</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>上述代码中，完成了以下内容：</p>
+<ol class="arabic simple">
+<li><p>首先创建一个BehaviorSubject主题，在创建BehaviorSubject对象时，需要为它初始化一个默认值；</p></li>
+<li><p>订阅者A订阅subject$主题，新订阅者将自动接收最后存储的值并记录此信息，这时控制台将打印初始化的值。然后，调用subject$的next()方法，模拟连续发送2个随机值。代码执行到这里时，控制台将连续执行2次订阅者A的订阅方法，打印2行不同的随机数；</p></li>
+<li><p>接着订阅者B订阅subject$主题，新订阅者B将自动接收最后存储的值并记录此信息：最后一个随机数值；</p></li>
+<li><p>BehaviorSubject主题再次发出新值。现在，两个订阅者都将收到值并记录它们；</p></li>
+<li><p>最后，调用BehaviorSubject主题的value属性即可记录当前的最新值，且获取value值的方式是同步的。</p></li>
+</ol>
+<p>注意，新订阅者将自动接收BehaviorSubject主题最后存储的值，并记录此信息。</p>
+</div>
+<div class="section" id="replaysubject">
+<h3><span class="sectnum">17.2.2</span> 使用ReplaySubject类型主题<a class="headerlink" href="#replaysubject" title="Permalink to this headline">¶</a></h3>
+<p>ReplaySubject与BehaviorSubject相比，它不但可以向新订阅者发送最近的值，还能发送旧值。ReplaySubject主题可以记录及存储多个值，并将它们“重放”给新订阅者。</p>
+<p>当创建ReplaySubject主题变量时，可以指定存储的数量以及数据的过期时间。如：存储最后5个值，然后将它们发送给订阅者。请参阅以下示例代码：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">subject</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ReplaySubject</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+
+<span class="c1">// 订阅者 A</span>
+<span class="nx">subject</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">((</span><span class="nx">data</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Subscriber A:&#39;</span><span class="p">,</span> <span class="nx">data</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="nx">subject</span><span class="p">.</span><span class="nx">next</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">())</span>
+<span class="nx">subject</span><span class="p">.</span><span class="nx">next</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">())</span>
+<span class="nx">subject</span><span class="p">.</span><span class="nx">next</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">())</span>
+
+<span class="c1">// 订阅者 B</span>
+<span class="nx">subject</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">((</span><span class="nx">data</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Subscriber B:&#39;</span><span class="p">,</span> <span class="nx">data</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="nx">subject</span><span class="p">.</span><span class="nx">next</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">());</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>执行上述代码，控制台将打印类似如下内容：</p>
+<blockquote>
+<div><div class="highlight-scss notranslate"><div class="highlight"><pre><span></span><span class="nt">Subscriber</span> <span class="nt">A</span><span class="nd">:</span> <span class="nt">0</span><span class="nc">.9869085038777468</span>
+<span class="nt">Subscriber</span> <span class="nt">A</span><span class="nd">:</span> <span class="nt">0</span><span class="nc">.35373571090521394</span>
+<span class="nt">Subscriber</span> <span class="nt">A</span><span class="nd">:</span> <span class="nt">0</span><span class="nc">.46486423218699646</span>
+<span class="nt">Subscriber</span> <span class="nt">B</span><span class="nd">:</span> <span class="nt">0</span><span class="nc">.35373571090521394</span>
+<span class="nt">Subscriber</span> <span class="nt">B</span><span class="nd">:</span> <span class="nt">0</span><span class="nc">.46486423218699646</span>
+<span class="nt">Subscriber</span> <span class="nt">A</span><span class="nd">:</span> <span class="nt">0</span><span class="nc">.548199728993469</span>
+<span class="nt">Subscriber</span> <span class="nt">B</span><span class="nd">:</span> <span class="nt">0</span><span class="nc">.548199728993469</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>上述代码中，完成了以下内容：</p>
+<ol class="arabic simple">
+<li><p>首先创建一个ReplaySubject主题，同时为它初始化一个默认的存储的数量值：2；</p></li>
+<li><p>订阅者A订阅subject$主题，然后，调用subject$的next()方法，模拟连续发送3个随机值。代码执行到这里时，控制台将连续执行3次订阅者A的订阅方法，打印3行不同的随机数；</p></li>
+<li><p>接着订阅者B订阅subject$主题，新订阅者B将自动接收最后存储的值并记录此信息，控制台将连续打印最后的两个随机数值；</p></li>
+<li><p>最后，ReplaySubject主题再次发出新值。现在，两个订阅者都将收到值并记录它们；</p></li>
+</ol>
+<p>注意，ReplaySubject主题不同于BehaviorSubject主题，初始化时，不需要指定默认值，因此当订阅者A第一次订阅它时，并不执行订阅方法中的代码。</p>
+<p>如前所述，也可以指定在ReplaySubject主题中存储值的时间，如：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">subject</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ReplaySubject</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1000</span><span class="p">);</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>上述代码表示，初始化一个BehaviorSubject主题，默认存储2个数值，且时间不超过1秒。</p>
+</div>
+<div class="section" id="asyncsubject">
+<h3><span class="sectnum">17.2.3</span> 使用AsyncSubject类型主题<a class="headerlink" href="#asyncsubject" title="Permalink to this headline">¶</a></h3>
+<p>虽然 BehaviorSubject 和 ReplaySubject 都存储值，但 AsyncSubject 的工作方式略有不同。AsyncSubject的特点是：当执行多次AsyncSubject主题的next()方法时，只有执行最后一次时，并且在执行 complete()方法时才会发送值给它的订阅者。 请参阅下面的示例代码：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span> <span class="kr">const</span> <span class="nx">subject</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">AsyncSubject</span><span class="p">();</span>
+
+<span class="c1">// 订阅者 A</span>
+<span class="nx">subject</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">((</span><span class="nx">data</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Subscriber A:&#39;</span><span class="p">,</span> <span class="nx">data</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="nx">subject</span><span class="p">.</span><span class="nx">next</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">())</span>
+<span class="nx">subject</span><span class="p">.</span><span class="nx">next</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">())</span>
+<span class="nx">subject</span><span class="p">.</span><span class="nx">next</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">())</span>
+
+<span class="c1">// 订阅者 B</span>
+<span class="nx">subject</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">((</span><span class="nx">data</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Subscriber B:&#39;</span><span class="p">,</span> <span class="nx">data</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="nx">subject</span><span class="p">.</span><span class="nx">next</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">());</span>
+<span class="nx">subject</span><span class="p">.</span><span class="nx">complete</span><span class="p">();</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>执行上述代码，控制台将打印类似如下内容：</p>
+<blockquote>
+<div><div class="highlight-scss notranslate"><div class="highlight"><pre><span></span><span class="nt">Subscriber</span> <span class="nt">A</span><span class="nd">:</span> <span class="nt">0</span><span class="nc">.028503049750259413</span>
+<span class="nt">Subscriber</span> <span class="nt">B</span><span class="nd">:</span> <span class="nt">0</span><span class="nc">.028503049750259413</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>上述代码中，完成了以下内容：</p>
+<ol class="arabic simple">
+<li><p>首先创建一个AsyncSubject主题；</p></li>
+<li><p>订阅者A订阅subject$主题。然后，调用subject$的next()方法，模拟连续发送3个随机值；</p></li>
+<li><p>接着订阅者B订阅subject$主题。然后，调用subject$的next()方法，再次模拟发送1个随机值；</p></li>
+<li><p>最后，调用AsyncSubject主题的complete()方法。现在，两个订阅者都将收到最新的值并记录它们，控制台分别执行2个订阅者订阅的方法，打印2行相同的值。</p></li>
+</ol>
+<p>注意，AsyncSubject主题初始化时，也不需要指定默认值，并且在执行complete()方法之前，不执行所有的订阅者订阅的方法。</p>
+<p>下面我们看一个在实际应用中的示例，使用Subject主题的演示搜索Github的用户信息。</p>
+</div>
+</div>
+<div class="section" id="rxjs-ex100-angular">
+<h2><span class="sectnum">17.3</span> [示例 rxjs-ex100] 演示Angular请求防抖示例<a class="headerlink" href="#rxjs-ex100-angular" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>用Angular CLI构建应用程序，具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng new rxjs-ex100 --minimal --interactive<span class="o">=</span><span class="nb">false</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>启动服务，具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng serve
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><p>查看应用程序结果。打开Web浏览器并浏览到 “<a class="reference external" href="http://localhost:4200">http://localhost:4200</a>”，应该看到文本 “Welcome to rxjs-ex100!”。</p></li>
+<li><p>新建接口。使用命令 <code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">g</span> <span class="pre">interface</span> <span class="pre">user</span></code> 新建接口，并将文件src/app/user.ts更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">export</span> <span class="kr">interface</span> <span class="nx">User</span> <span class="p">{</span>
+   <span class="nx">items</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">id</span>: <span class="kt">string</span><span class="p">;</span>
+      <span class="nx">login</span>: <span class="kt">string</span><span class="p">;</span>
+      <span class="nx">url</span>: <span class="kt">string</span><span class="p">;</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kr">export</span> <span class="kr">interface</span> <span class="nx">SearchResult</span> <span class="p">{</span>
+   <span class="nx">total_count</span>: <span class="kt">number</span><span class="p">,</span>
+   <span class="nx">incomplete_results</span>: <span class="kt">boolean</span><span class="p">,</span>
+   <span class="nx">items</span>: <span class="kt">Array</span><span class="o">&lt;</span><span class="nx">User</span><span class="o">&gt;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="5">
+<li><p>编辑模块。编辑文件src/app/app.module.ts，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">BrowserModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/platform-browser&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">NgModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">HttpClientModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/common/http&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">AppComponent</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./app.component&#39;</span><span class="p">;</span>
+
+<span class="kd">@NgModule</span><span class="p">({</span>
+<span class="nx">declarations</span><span class="o">:</span> <span class="p">[</span>
+   <span class="nx">AppComponent</span>
+<span class="p">],</span>
+<span class="nx">imports</span><span class="o">:</span> <span class="p">[</span>
+   <span class="nx">BrowserModule</span><span class="p">,</span>
+   <span class="nx">HttpClientModule</span>
+<span class="p">],</span>
+<span class="nx">providers</span><span class="o">:</span> <span class="p">[],</span>
+<span class="nx">bootstrap</span><span class="o">:</span> <span class="p">[</span><span class="nx">AppComponent</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">AppModule</span> <span class="p">{</span> <span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="6">
+<li><p>新建服务。使用命令 <code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">g</span> <span class="pre">s</span> <span class="pre">search</span></code> 新建服务，并将文件src/app/search.service.ts更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Injectable</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">HttpClient</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/common/http&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">Observable</span><span class="p">,</span> <span class="k">of</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;rxjs&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">catchError</span><span class="p">,</span> <span class="nx">map</span><span class="p">,</span> <span class="nx">tap</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;rxjs/operators&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">SearchResult</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./user&#39;</span><span class="p">;</span>
+
+<span class="kd">@Injectable</span><span class="p">({</span>
+   <span class="nx">providedIn</span><span class="o">:</span> <span class="s1">&#39;root&#39;</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">SearchService</span> <span class="p">{</span>
+
+<span class="kr">constructor</span><span class="p">(</span><span class="kr">private</span> <span class="nx">http</span>: <span class="kt">HttpClient</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+
+<span class="nx">searchUser</span><span class="p">(</span><span class="nx">val</span>: <span class="kt">string</span><span class="p">)</span> <span class="p">{</span>
+   <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">http</span><span class="p">.</span><span class="nx">get</span><span class="o">&lt;</span><span class="nx">Observable</span><span class="o">&lt;</span><span class="nx">SearchResult</span><span class="o">&gt;&gt;</span><span class="p">(</span><span class="s2">&quot;https://api.github.com/search/users?q=&quot;</span> <span class="o">+</span> <span class="nx">val</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span>
+      <span class="nx">tap</span><span class="p">(</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">),</span> <span class="c1">// 打印日志</span>
+      <span class="nx">map</span><span class="p">(</span><span class="nx">response</span> <span class="o">=&gt;</span> <span class="nx">response</span><span class="p">),</span>
+      <span class="nx">catchError</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;something went wrong, &quot;</span> <span class="o">+</span> <span class="nx">error</span><span class="p">);</span>
+         <span class="k">return</span> <span class="k">of</span><span class="p">([]);</span>
+      <span class="p">})</span>
+      <span class="p">)</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="7">
+<li><p>编辑组件。编辑文件src/app/app.component.ts，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">OnInit</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">Subject</span><span class="p">,</span> <span class="nx">Observable</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;rxjs&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">User</span><span class="p">,</span> <span class="nx">SearchResult</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./user&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">SearchService</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./search.service&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">debounceTime</span><span class="p">,</span> <span class="nx">distinctUntilChanged</span><span class="p">,</span> <span class="nx">switchMap</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;rxjs/operators&#39;</span><span class="p">;</span>
+
+<span class="kd">@Component</span><span class="p">({</span>
+<span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-root&#39;</span><span class="p">,</span>
+<span class="nx">template</span><span class="o">:</span> <span class="sb">`</span>
+<span class="sb">   &lt;div style=&quot;text-align:center&quot;&gt;</span>
+<span class="sb">      &lt;h3&gt;</span>
+<span class="sb">      Welcome to {{title}}!</span>
+<span class="sb">      &lt;/h3&gt;</span>
+<span class="sb">      &lt;div&gt;Search Github user:&lt;/div&gt;</span>
+<span class="sb">      &lt;input type=&quot;text&quot; (keyup)=&quot;onChange($event.target.value)&quot; /&gt;</span>
+<span class="sb">      &lt;ul *ngFor=&quot;let user of users&quot; style=&quot;text-align:left&quot;&gt;</span>
+<span class="sb">      &lt;li&gt; Id:{{user.id}}&lt;/li&gt;</span>
+<span class="sb">      &lt;li&gt; Name: {{user.login}}&lt;/li&gt;</span>
+<span class="sb">      &lt;li&gt; URL:{{user.url}} &lt;/li&gt;</span>
+<span class="sb">      &lt;/ul&gt;</span>
+<span class="sb">      &lt;div *ngIf=&quot;!users.length&quot;&gt;</span>
+<span class="sb">      &lt;label style=&quot;color:red&quot;&gt;no search result!&lt;/label&gt;</span>
+<span class="sb">      &lt;/div&gt;</span>
+<span class="sb">   &lt;/div&gt;</span>
+<span class="sb">`</span><span class="p">,</span>
+<span class="nx">styles</span><span class="o">:</span> <span class="p">[]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">AppComponent</span> <span class="kr">implements</span> <span class="nx">OnInit</span> <span class="p">{</span>
+<span class="nx">title</span> <span class="o">=</span> <span class="s1">&#39;rxjs-ex100&#39;</span><span class="p">;</span>
+<span class="nx">onSearchUser$</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Subject</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="nx">users</span>: <span class="kt">Array</span><span class="o">&lt;</span><span class="nx">User</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">[];</span>
+<span class="kr">constructor</span><span class="p">(</span><span class="kr">private</span> <span class="nx">searchService</span>: <span class="kt">SearchService</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+
+<span class="nx">ngOnInit() {</span>
+   <span class="kd">let</span> <span class="nx">validSearch$</span>: <span class="kt">Observable</span><span class="o">&lt;</span><span class="nx">any</span><span class="o">&gt;</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">validSearch</span><span class="p">();</span>
+   <span class="nx">validSearch$</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">resp</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">resp</span> <span class="o">&amp;&amp;</span> <span class="nx">resp</span><span class="p">.</span><span class="nx">items</span> <span class="o">&amp;&amp;</span> <span class="nx">resp</span><span class="p">.</span><span class="nx">items</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">resp</span> <span class="kr">as</span> <span class="nx">SearchResult</span><span class="p">;</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">users</span> <span class="o">=</span> <span class="nx">result</span><span class="p">.</span><span class="nx">items</span><span class="p">;</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">users</span> <span class="o">=</span> <span class="p">[];</span>
+      <span class="p">}</span>
+   <span class="p">})</span>
+<span class="p">}</span>
+
+<span class="kr">public</span> <span class="nx">onChange</span><span class="p">(</span><span class="nx">searchText</span>: <span class="kt">string</span><span class="p">)</span> <span class="p">{</span>
+   <span class="k">this</span><span class="p">.</span><span class="nx">onSearchUser$</span><span class="p">.</span><span class="nx">next</span><span class="p">(</span><span class="nx">searchText</span><span class="p">);</span> <span class="c1">// 向主题发送数据</span>
+<span class="p">}</span>
+
+<span class="kr">private</span> <span class="nx">validSearch</span><span class="p">()</span><span class="o">:</span> <span class="nx">Observable</span><span class="o">&lt;</span><span class="nx">any</span><span class="o">&gt;</span> <span class="p">{</span>
+   <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">onSearchUser$</span><span class="p">.</span><span class="nx">pipe</span><span class="p">(</span>
+      <span class="nx">debounceTime</span><span class="p">(</span><span class="mi">500</span><span class="p">),</span> <span class="c1">// 等待0.5秒</span>
+      <span class="nx">distinctUntilChanged</span><span class="p">(),</span> <span class="c1">// 等待搜索内容发生变化</span>
+      <span class="nx">switchMap</span><span class="p">(</span><span class="nx">userName</span> <span class="o">=&gt;</span> <span class="c1">// 请求发送给服务</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">searchService</span><span class="p">.</span><span class="nx">searchUser</span><span class="p">(</span><span class="nx">userName</span><span class="p">))</span>
+   <span class="p">);</span>
+<span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="8">
+<li><p>观察应用程序页面，在输入框中输入字符串“murphyl”，页面显示效果如图17-1所示。</p></li>
+</ol>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/Figure17-1.png"><img alt="../_images/Figure17-1.png" src="../_images/Figure17-1.png" style="width: 400px;" /></a>
+<p>图17-1 演示搜索Github用户信息</p>
+</div></blockquote>
+<p>在上面的示例rxjs-ex100中，完成了以下内容：</p>
+<ol class="arabic simple">
+<li><p>新建一个User接口，接口中字段参照地址“<a class="reference external" href="https://api.github.com/search/users?q=abc">https://api.github.com/search/users?q=abc</a>”返回的数据进行定义；</p></li>
+<li><p>编辑模块类，添加HttpClientModule库；</p></li>
+<li><p>新建服务类，访问Github接口，返回Observable&lt;SearchResult&gt;类型结果；</p></li>
+<li><p>在组件类中，定义了Subject&lt;string&gt;类型的onSearchUser$主题变量，在页面初始化时，订阅该主题；页面初始化完成后，用户在页面输入文本时，通过绑定事件方法，向主题发送数据；在订阅主题的过程中，我们使用了3个Rxjs操作符，这也是本示例的核心所在，这3个操作符的作用介绍如下：</p></li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li><p>debounceTime操作符隶属于过滤型操作符，它的作用是过滤掉指定时间内产生的数据。在本示例中，过滤掉用户在连续敲击键盘时间小于0.5秒内的数据。换句话说，就是在用户输入字符时，等待0.5秒，才发出当前输入框的值。如果用户输入很快，那么就一直忽略，直到停顿时间大于0.5秒，才发出当前输入框的值；</p></li>
+<li><p>distinctUntilChanged操作符的作用是比较当前值与上一个发出的值不同时，才发出当前输入框的值。在上面的额示例中，假设用户输入速度很快，0.5秒内连续输入了2次相同的文本，distinctUntilChanged操作符能保证让系统仅请求一次HTTP服务，自动过滤掉最后一次相同的请求服务；</p></li>
+<li><p>switchMap操作符的作用是切换新的请求，即终止之前未完成的请求，开始使用新的请求。这在本示例中，当用户先输入的文本和后输入的文本不一致时，期望以后输入的文本为准，这时switchMap操作符就能满足此要求，立即终止之前的请求，无论它是否完成，立即开始新的请求。关于switchMap操作符已经在本书前面章节有详细的介绍，读者可以自行翻阅查看。</p></li>
+</ul>
+</div></blockquote>
+<ol class="arabic simple" start="5">
+<li><p>在模板中，使用*ngFor指令遍历users，通过模板表达式分别输出user的属性id、login和url的值。同时，判断users数组的长度来显示结果是否存在。</p></li>
+</ol>
+</div>
+<div class="section" id="id4">
+<h2><span class="sectnum">17.4</span> 什么时候需要取消订阅<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>使用RxJS时，订阅的时候，时刻都不忘调用unsubscribe()以防内存泄漏。对于结束Observable，释放内存的方式有三种方式：</p>
+<ol class="arabic simple">
+<li><p>Observable完成值的发送，执行Observable.onComplete()方法；</p></li>
+<li><p>Observable发生错误，执行Observable.OnError()方法；</p></li>
+<li><p>订阅者主动取消订阅，执行subscription.unsubscribe()方法。</p></li>
+</ol>
+<p>对于Observable.onComplete()和Observable.OnError()，RxJS自身会处理这两种情况，所以不需要在代码里再手动取消订阅释放内存。对于第三种方式，如果Observable还在源源不断的发送值，订阅者想主动取消订阅，那就需要在代码里调用unsubscribe()取消订阅释放内存。</p>
+<p>在Angular项目中，常用到的订阅以及是否需要调用unsubscribe()方法来取消订阅，主要有以下几种场景：</p>
+<ol class="arabic simple">
+<li><p>Angular中通过HttpClient执行Http请求API后返回的Observable对象，订阅这些Observable对象拿到返回的数据时，不需要调用unsubscribe()方法取消订阅。</p></li>
+<li><p>使用Angular AsyncPipe异步管道操作符时，不需要调用unsubscribe()取消订阅。</p></li>
+<li><p>RxJS自带的一些操作符：take，takeWhile，first等操作符，不需要调用unsubscribe()取消订阅。</p></li>
+<li><p>通过Subject，BehaviorSubject，AsyncSubject和ReplaySubject在各个Component之间通信，需要调用unsubscribe()方法取消订阅。</p></li>
+</ol>
+<p>在Angular组件销毁时的生命周期接口OnDestroy中有个钩子函数：ngOnDestroy，在组件被销毁之前执行，所以一般都是把Subscription对象的unsubscribe()方法放在这个函数里执行，代码如下：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="nx">ngOnDestroy() {</span>
+   <span class="k">this</span><span class="p">.</span><span class="nx">subscription</span><span class="p">.</span><span class="nx">unsubscribe</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="rxjs">
+<h2><span class="sectnum">17.5</span> 通过RxJS实现缓存<a class="headerlink" href="#rxjs" title="Permalink to this headline">¶</a></h2>
+<p>本书在前面章节简单的介绍了RxJS的可观察对象的冷热模式，Angular中通过HttpClient执行Http请求，HttpClient中的所有 API 都是基于 Observable 的，也就是说像 get、post、put或delete等方法返回的都是Observable。因为Observable天生是惰性的，所以只有当我们调用subscribe时才会真正发起请求。但是，对同一个Observable调用多次subscribe会导致源Observable一遍又一遍地重新创建，即在每个订阅 (subscription) 上执行一个请求。这种现象对应的是RxJS的可观察对象的冷模式。</p>
+<p>下面我们看一个示例，页面上打印Github中User列表的信息，通过这个示例，我们将演示如何通过RxJS实现缓存数据功能。</p>
+<div class="section" id="rxjs-ex200-httpclienthttp">
+<h3><span class="sectnum">17.5.1</span> [示例 rxjs-ex200] 了解HttpClient执行Http请求的性能问题<a class="headerlink" href="#rxjs-ex200-httpclienthttp" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>用Angular CLI构建应用程序，具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng new rxjs-ex200 --minimal --interactive<span class="o">=</span><span class="nb">false</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>启动服务，具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng serve
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><p>查看应用程序结果。打开Web浏览器并浏览到 “<a class="reference external" href="http://localhost:4200">http://localhost:4200</a>”，应该看到文本 “Welcome to rxjs-ex200!”。</p></li>
+<li><p>编辑模块。编辑文件src/app/app.module.ts，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">BrowserModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/platform-browser&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">NgModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">HttpClientModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/common/http&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">AppComponent</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./app.component&#39;</span><span class="p">;</span>
+
+<span class="kd">@NgModule</span><span class="p">({</span>
+<span class="nx">declarations</span><span class="o">:</span> <span class="p">[</span>
+   <span class="nx">AppComponent</span>
+<span class="p">],</span>
+<span class="nx">imports</span><span class="o">:</span> <span class="p">[</span>
+   <span class="nx">BrowserModule</span><span class="p">,</span>
+   <span class="nx">HttpClientModule</span>
+<span class="p">],</span>
+<span class="nx">providers</span><span class="o">:</span> <span class="p">[],</span>
+<span class="nx">bootstrap</span><span class="o">:</span> <span class="p">[</span><span class="nx">AppComponent</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">AppModule</span> <span class="p">{</span> <span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="5">
+<li><p>新建接口。使用命令 <code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">g</span> <span class="pre">interface</span> <span class="pre">user</span></code> 新建接口，并将文件src/app/user.ts更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">export</span> <span class="kr">interface</span> <span class="nx">User</span> <span class="p">{</span>
+   <span class="nx">id</span>: <span class="kt">string</span><span class="p">;</span>
+   <span class="nx">login</span>: <span class="kt">string</span><span class="p">;</span>
+   <span class="nx">url</span>: <span class="kt">string</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="6">
+<li><p>新建服务。使用命令 <code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">g</span> <span class="pre">s</span> <span class="pre">user</span></code> 新建UserService服务类，并将文件src/app/user.service.ts更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Injectable</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">HttpClient</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/common/http&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">Observable</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;rxjs&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">User</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./user&#39;</span><span class="p">;</span>
+
+<span class="kd">@Injectable</span><span class="p">({</span>
+   <span class="nx">providedIn</span><span class="o">:</span> <span class="s1">&#39;root&#39;</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">UserService</span> <span class="p">{</span>
+
+<span class="kr">private</span> <span class="nx">usersUrl</span> <span class="o">=</span> <span class="s1">&#39;https://api.github.com/users?since=1&amp;per_page=3&#39;</span><span class="p">;</span>  <span class="c1">//演示用，仅返回3条记录</span>
+
+<span class="kr">constructor</span><span class="p">(</span><span class="kr">private</span> <span class="nx">http</span>: <span class="kt">HttpClient</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+
+<span class="nx">getUsers</span><span class="p">()</span><span class="o">:</span> <span class="nx">Observable</span><span class="o">&lt;</span><span class="nx">User</span><span class="p">[]</span><span class="o">&gt;</span> <span class="p">{</span>
+   <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">http</span><span class="p">.</span><span class="nx">get</span><span class="o">&lt;</span><span class="nx">User</span><span class="p">[]</span><span class="o">&gt;</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">usersUrl</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="7">
+<li><p>编辑组件。编辑文件src/app/app.component.ts，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">OnInit</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">Observable</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;rxjs&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">User</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./user&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">UserService</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./user.service&#39;</span><span class="p">;</span>
+
+<span class="kd">@Component</span><span class="p">({</span>
+<span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-root&#39;</span><span class="p">,</span>
+<span class="nx">template</span><span class="o">:</span> <span class="sb">`</span>
+<span class="sb">   &lt;div style=&quot;text-align:center&quot;&gt;</span>
+<span class="sb">      &lt;h1&gt;</span>
+<span class="sb">      Welcome to {{title}}!</span>
+<span class="sb">      &lt;/h1&gt;</span>
+<span class="sb">      &lt;span style=&quot;display: block&quot;&gt;{{ title }} app is running!&lt;/span&gt;</span>
+<span class="sb">      &lt;h3&gt;Github users lists1:&lt;/h3&gt;</span>
+<span class="sb">      &lt;div *ngFor=&quot;let user of users$ |async&quot;&gt;</span>
+<span class="sb">      &lt;strong&gt;User Name:&lt;/strong&gt;  {{ user.login }}</span>
+<span class="sb">      &lt;strong&gt;GitHub URL:&lt;/strong&gt; {{ user.url }}</span>
+<span class="sb">      &lt;/div&gt;</span>
+<span class="sb">      &lt;h3&gt;Github users lists2:&lt;/h3&gt;</span>
+<span class="sb">      &lt;div *ngFor=&quot;let user of users$ |async&quot;&gt;</span>
+<span class="sb">      &lt;strong&gt;User Name:&lt;/strong&gt;  {{ user.login }}</span>
+<span class="sb">      &lt;strong&gt;GitHub URL:&lt;/strong&gt; {{ user.url }}</span>
+<span class="sb">      &lt;/div&gt;</span>
+<span class="sb">   &lt;/div&gt;</span>
+<span class="sb">`</span><span class="p">,</span>
+<span class="nx">styles</span><span class="o">:</span> <span class="p">[]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">AppComponent</span> <span class="kr">implements</span> <span class="nx">OnInit</span> <span class="p">{</span>
+<span class="nx">title</span> <span class="o">=</span> <span class="s1">&#39;rxjs-ex200&#39;</span><span class="p">;</span>
+<span class="nx">users$</span>: <span class="kt">Observable</span><span class="o">&lt;</span><span class="nb">Array</span><span class="o">&lt;</span><span class="nx">User</span><span class="o">&gt;&gt;</span><span class="p">;</span>
+
+<span class="kr">constructor</span><span class="p">(</span><span class="kr">private</span> <span class="nx">userService</span>: <span class="kt">UserService</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+
+<span class="nx">ngOnInit() {</span>
+   <span class="k">this</span><span class="p">.</span><span class="nx">users$</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">userService</span><span class="p">.</span><span class="nx">getUsers</span><span class="p">();</span>
+<span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="8">
+<li><p>观察应用程序页面，进入页面开发者模式，观察控制台打印信息，显示效果如图17-2所示。</p></li>
+</ol>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/Figure17-2.png"><img alt="../_images/Figure17-2.png" src="../_images/Figure17-2.png" style="width: 800px;" /></a>
+<p>图17-2 页面上打印Github中User列表的信息</p>
+</div></blockquote>
+<p>在上面的示例rxjs-ex200中，完成了以下内容：</p>
+<ol class="arabic simple">
+<li><p>新建了UserService服务类，该服务类通过构造函数注入HttpClient服务实例，然后在getUsers()方法调用该实例的GET方法请求Github中用户列表信息；</p></li>
+<li><p>AppComponent类中通过构造函数注入UserService服务实例，然后在ngOnInit()方法调用该实例的getUsers()方法获取Github中用户列表信息；</p></li>
+<li><p>在模板页面上通过async管道符订阅users$的数据流信息，一共订阅了2次；</p></li>
+<li><p>如图17-2所示，当前页面会调用两次GET请求（<a class="reference external" href="https://api.github.com/users?since=1&amp;per_page=3">https://api.github.com/users?since=1&amp;per_page=3</a>），并且两个用户列表列出的3位用户信息一模一样。</p></li>
+</ol>
+<p>示例rxjs-ex200中两个userlist订阅users$，生成了两个Observable实例，并且都是订阅开始之后才开始发送值，也就是说Angular中通过HttpClient执行Http请求返回的Observabl是Cold Observable（冷模式）。</p>
+<p>每次调用API，都会生成一个新的Observable实例，有订阅之后才开始发送值，这也符合现在前端开发要求。但是实际开发过程中，有时候后端会有提供一些静态数据的API，不同页面都需要用这些静态数据，按现在的调用API的方式，会导致静态数据API在不同的页面重复多次被调用，这种方式显然性能不好。</p>
+</div>
+<div class="section" id="rxjssharereplay">
+<h3><span class="sectnum">17.5.2</span> 使用RxJS的shareReplay操作符实现缓存效果<a class="headerlink" href="#rxjssharereplay" title="Permalink to this headline">¶</a></h3>
+<p>本章前面详细介绍了ReplaySubject，用ReplaySubject(size)可以发送之前的旧值给新的订阅者，size是定义发送具体多少个旧值给新的订阅者。因此，在代码中可以用ReplaySubject实现缓存效果。</p>
+<p>在实际应用中，RxJS中提供了shareReplay操作符，这个操作符会自动创建一个ReplaySubject，一旦HTTP请求执行一次以后，就会在后续的订阅和源头Observable之间建立一个ReplaySubject，ReplaySubject是一个多播的Hot Observable（热模式），后续订阅都是从这个中间ReplaySubject拿到最新的值，从而达到缓存效果。</p>
+<p>我们将示例rxjs-ex200中的UserService代码改下：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Injectable</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">HttpClient</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/common/http&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">Observable</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;rxjs&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">shareReplay</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;rxjs/operators&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">User</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./user&#39;</span><span class="p">;</span>
+
+<span class="kd">@Injectable</span><span class="p">({</span>
+<span class="nx">providedIn</span><span class="o">:</span> <span class="s1">&#39;root&#39;</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">UserService</span> <span class="p">{</span>
+
+<span class="kr">private</span> <span class="nx">usersUrl</span> <span class="o">=</span> <span class="s1">&#39;https://api.github.com/users?since=1&amp;per_page=3&#39;</span><span class="p">;</span>  <span class="c1">//演示用，仅返回3条记录</span>
+<span class="kr">private</span> <span class="nx">cacheUsers$</span>: <span class="kt">Observable</span><span class="o">&lt;</span><span class="nb">Array</span><span class="o">&lt;</span><span class="nx">User</span><span class="o">&gt;&gt;</span><span class="p">;</span>
+<span class="kr">constructor</span><span class="p">(</span><span class="kr">private</span> <span class="nx">http</span>: <span class="kt">HttpClient</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+
+<span class="nx">getUsers</span><span class="p">()</span><span class="o">:</span> <span class="nx">Observable</span><span class="o">&lt;</span><span class="nx">User</span><span class="p">[]</span><span class="o">&gt;</span> <span class="p">{</span>
+   <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="nx">cacheUsers$</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">cacheUsers$</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">requestUsers</span><span class="p">()</span>
+      <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span>
+         <span class="nx">shareReplay</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1">// shareReplay缓存数据</span>
+      <span class="p">);</span>
+   <span class="p">}</span>
+   <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">cacheUsers$</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">requestUsers</span><span class="p">()</span><span class="o">:</span> <span class="nx">Observable</span><span class="o">&lt;</span><span class="nx">User</span><span class="p">[]</span><span class="o">&gt;</span> <span class="p">{</span>
+   <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">http</span><span class="p">.</span><span class="nx">get</span><span class="o">&lt;</span><span class="nx">User</span><span class="p">[]</span><span class="o">&gt;</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">usersUrl</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>运行以上代码发现，页面里两个用户列表都是列出了相同的3位Github用户信息，但是只调用了一次GET请求（<a class="reference external" href="https://api.github.com/users?since=1&amp;per_page=3">https://api.github.com/users?since=1&amp;per_page=3</a>）。也就是说第二次订阅不是从通过后端API拿到用户信息，而是从ReplaySubject中拿到的，从而实现了缓存效果。</p>
+</div>
+</div>
+<div class="section" id="id5">
+<h2><span class="sectnum">17.6</span> 小结<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>本章介绍了使用RxJS实现响应式编程的应用知识，带领读者从认识主题的基本概念开始，分别演示了4种类型的主题，通过Angular请求防抖示例演示主题的使用场景，然后介绍了Angular中什么时候需要取消订阅，最后通过示例演示了通过RxJS实现缓存的效果。</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="seventh.html" class="btn btn-neutral float-right" title="第七课" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="ui.html" class="btn btn-neutral float-left" title="16 Angular与Angular Material组件库" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright CVI Talent
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

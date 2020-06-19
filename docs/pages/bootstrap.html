@@ -1,0 +1,1217 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>19 集成Bootstrap前端组件库</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="20 在Angular项目中使用图表" href="echart.html" />
+    <link rel="prev" title="18 实战基于Angular Material实现表格组件" href="material.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/main-page-logo-small-hat.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">目录：</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="start.html">Angular 9</a></li>
+<li class="toctree-l1"><a class="reference internal" href="first.html">第一课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="whatisangular.html"><span class="sectnum">1</span> Angular概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="howtolearn.html"><span class="sectnum">2</span> 学习Angular需要什么基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nodejs.html"><span class="sectnum">3</span> 掌握Node.js和npm基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="second.html">第二课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="typescript.html"><span class="sectnum">4</span> 学习TypeScript知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="firstangular.html"><span class="sectnum">5</span> 快速开启第一个Angular</a></li>
+<li class="toctree-l1"><a class="reference internal" href="third.html">第三课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angcomponent.html"><span class="sectnum">6</span> 学习Angular组件知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angtemplate.html"><span class="sectnum">7</span> 学习Angular模板知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angdirective.html"><span class="sectnum">8</span> 掌握Angular指令应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fourth.html">第四课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angmodule.html"><span class="sectnum">9</span> 学习Angular模块知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angroute.html"><span class="sectnum">10</span> 熟悉Angular路由功能</a></li>
+<li class="toctree-l1"><a class="reference internal" href="injection.html"><span class="sectnum">11</span> 学习Angular的服务及依赖注入</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fifth.html">第五课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reactive.html"><span class="sectnum">12</span> 掌握响应式编程基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form.html"><span class="sectnum">13</span> 学习Angular表单知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="httpclient.html"><span class="sectnum">14</span> 熟悉HttpClient模块</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sixth.html">第六课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pipe.html"><span class="sectnum">15</span> 深入学习Angular管道知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ui.html"><span class="sectnum">16</span> Angular与Angular Material组件库</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rxjs.html"><span class="sectnum">17</span> 学习RxJS在Angular中的实际应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="seventh.html">第七课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="material.html"><span class="sectnum">18</span> 实战基于Angular Material实现表格组件</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#"><span class="sectnum">19</span> 集成Bootstrap前端组件库</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1"><span class="sectnum">19.1</span> 学习Bootstrap的公共样式</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2"><span class="sectnum">19.1.1</span> 学习文本处理的样式</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id3"><span class="sectnum">19.1.1.1</span> 文本的对齐方式</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4"><span class="sectnum">19.1.1.2</span> 文本溢出换行的样式</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id5"><span class="sectnum">19.1.1.3</span> 字母大小写转换的样式</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#marginpadding"><span class="sectnum">19.1.2</span> 简化Margin与Padding的间距处理</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#flex"><span class="sectnum">19.1.3</span> 掌握Flex弹性布局</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id6"><span class="sectnum">19.2</span> 学习Bootstrap的布局</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#container"><span class="sectnum">19.2.1</span> Container容器</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7"><span class="sectnum">19.2.2</span> 响应式栅格系统</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id8"><span class="sectnum">19.2.2.1</span> 列宽布局</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id9"><span class="sectnum">19.2.2.2</span> 垂直和水平对齐</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id10"><span class="sectnum">19.3</span> 学习Bootstrap的组件库</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ng-bootstrap"><span class="sectnum">19.4</span> 安装 NG-Bootstrap 组件库</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#angularfontawesome"><span class="sectnum">19.5</span> Angular中使用FontAwesome字体</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#fontawesome"><span class="sectnum">19.5.1</span> 安装FontAwesome字体</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id11"><span class="sectnum">19.5.2</span> 使用FontAwesome字体</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#bootstrap-ex100-ng-bootstrap"><span class="sectnum">19.6</span> [示例 bootstrap-ex100] 使用NG-Bootstrap打造产品展示界面</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id12"><span class="sectnum">19.7</span> 小结</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="echart.html"><span class="sectnum">20</span> 在Angular项目中使用图表</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appid.html"><span class="sectnum">21</span> 使用IBM Cloud™ App ID对Angular应用进行认证</a></li>
+<li class="toctree-l1"><a class="reference internal" href="communication.html"><span class="sectnum">22</span> 掌握在Angular组件间通信</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pwa.html"><span class="sectnum">23</span> Angular与渐进式WEB应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="message.html"><span class="sectnum">24</span> 实现简单的消息通知机制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="localdata.html"><span class="sectnum">25</span> 如何与本地数据打交道</a></li>
+<li class="toctree-l1"><a class="reference internal" href="test.html"><span class="sectnum">26</span> 熟悉Angular测试</a></li>
+<li class="toctree-l1"><a class="reference internal" href="package.html"><span class="sectnum">27</span> 熟悉Angular环境配置及打包</a></li>
+<li class="toctree-l1"><a class="reference internal" href="universal.html"><span class="sectnum">28</span> 学习Angular服务端渲染</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deploy.html"><span class="sectnum">29</span> 如何部署Angular应用程序</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user.html"><span class="sectnum">30</span> 实战用户管理系统</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">CVI Talent</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">首页</a> &raquo;</li>
+        
+      <li><span class="sectnum">19</span> 集成Bootstrap前端组件库</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        <a href="https://pages.github.ibm.com/lanzejun/talent/index.html" class="fa fa-github"> CVITube</a>
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="bootstrap">
+<h1><span class="sectnum">19</span> 集成Bootstrap前端组件库<a class="headerlink" href="#bootstrap" title="Permalink to this headline">¶</a></h1>
+<p>Bootstrap是全球最受欢迎的前端组件库，用于开发响应式布局、移动设备优先的WEB项目。</p>
+<p>Bootstrap是一个用于 HTML、CSS 和 JavaScript 开发的开源工具包。它提供了很多功能，帮助开发者快速地开发出产品原型或构建整个App应用。Bootstrap的内容除了组件库外，还有页面布局和公共样式，这些功能针对开发者来讲，可以一站式解决WEB页面开发的实际问题。下面分别介绍下这些内容。</p>
+<div class="section" id="id1">
+<h2><span class="sectnum">19.1</span> 学习Bootstrap的公共样式<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>Bootstrap的公共样式适用与页面中的任何元素，大到页面布局，小到某一个细节元素。
+Bootstrap中内置了很多公共样式，这些公共样式其实就是原子样式的合集，方便开发者直接拿来适用。公共样式里面的包含的内容有很多，如：针对元素边框的样式、文字颜色的样式、文本的样式，元素规格的样式等，本书选取其中部分内容做介绍。</p>
+<div class="section" id="id2">
+<h3><span class="sectnum">19.1.1</span> 学习文本处理的样式<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>Bootstrap的文本公共样式主要是处理文本对齐方式、文本溢出换行、字母大小写转换、字体粗细和斜体效果、重置文本颜色和文字装饰等效果的样式。下面介绍其中的几种。</p>
+<div class="section" id="id3">
+<h4><span class="sectnum">19.1.1.1</span> 文本的对齐方式<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
+<p>关于文本的对齐方式，示例代码如下：</p>
+<blockquote>
+<div><div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;text-justify&quot;</span><span class="p">&gt;</span>这个样式表示将文本重新对齐到组件：Bootstrap是一个用于 HTML、CSS 和 JavaScript
+    开发的开源工具包。它提供了很多功能，帮助开发者快速地开发出产品原型或构建整个App应用。
+    Bootstrap的内容除了组件库外，还有页面布局和公共样式，这些功能针对开发者来讲，
+    可以一站式解决WEB页面开发的实际问题。<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;text-left&quot;</span><span class="p">&gt;</span>在所有视窗尺寸上的左对齐文本。<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;text-center&quot;</span><span class="p">&gt;</span>在所有视窗尺寸上居中对齐文本。<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;text-right&quot;</span><span class="p">&gt;</span>在所有视窗尺寸上的右对齐文本。<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;text-sm-left&quot;</span><span class="p">&gt;</span>在SM（小尺寸）或更宽的视窗上左对齐文字。<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;text-md-left&quot;</span><span class="p">&gt;</span>在MD（中型）或更大尺寸的视窗上左对齐文字。<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;text-lg-left&quot;</span><span class="p">&gt;</span>LG（大）或更宽的视窗上的左对齐文本。<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;text-xl-left&quot;</span><span class="p">&gt;</span>在XL（特大号）或更大尺寸的视窗上的左对齐文本。<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="id4">
+<h4><span class="sectnum">19.1.1.2</span> 文本溢出换行的样式<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
+<p>文本长度大于所在的组件宽度时，可以使用溢出换行的样式。示例代码如下：</p>
+<blockquote>
+<div><div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;badge badge-primary text-wrap&quot;</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;width: 6rem;&quot;</span><span class="p">&gt;</span>
+    这段文本换行的效果
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>上述代码显示的效果如图19-1所示：</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/Figure19-1.png"><img alt="../_images/Figure19-1.png" src="../_images/Figure19-1.png" style="width: 150px;" /></a>
+<p>图19-1 文本换行的样式</p>
+</div></blockquote>
+</div>
+<div class="section" id="id5">
+<h4><span class="sectnum">19.1.1.3</span> 字母大小写转换的样式<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
+<p>字母大小写转换的样式可以使英文（不支持中文）文本在大小写之间转换。示例代码如下：</p>
+<blockquote>
+<div><div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="c">&lt;!-- 页面显示：lowercased text. --&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;text-lowercase&quot;</span><span class="p">&gt;</span>Lowercased text.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+
+<span class="c">&lt;!-- 页面显示：UPPERCASED TEXT. --&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;text-uppercase&quot;</span><span class="p">&gt;</span>Uppercased text.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+
+<span class="c">&lt;!-- 页面显示：CapiTaliZed Text. --&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;text-capitalize&quot;</span><span class="p">&gt;</span>CapiTaliZed text.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>text-capitalize样式的效果是使每个单词的第一个字母转为大写，而其它字母不受影响。</p>
+</div>
+</div>
+<div class="section" id="marginpadding">
+<h3><span class="sectnum">19.1.2</span> 简化Margin与Padding的间距处理<a class="headerlink" href="#marginpadding" title="Permalink to this headline">¶</a></h3>
+<p>Bootstrap中提供了一组缩写CSS的规范，对元素的 margin 或 padding 属性里的单个属性项、所有属性项以及垂直、水平等属性项进行赋值，距离单位是在采用 0.25rem 到 3rem之间的数字。具体的规则如下：</p>
+<p>针对不同的屏幕宽度，分为两类表示法。
+对于xs屏幕，使用固定格式{property}{sides}-{size} 命名CSS，对于 sm、md、lg、xl 大小的屏幕，使用 {property}{sides}-{breakpoint}-{size}格式命名CSS。</p>
+<ul class="simple">
+<li><p>property的值是“margin”或者“padding”，二选一；规定采用简写的方式：“m”表示“margin”，“p”表示“padding”;</p></li>
+<li><p>sides的值表示方向，如：top、bottom、left和right。同样的，规定采用简写的方式：取各个单词的首字母，如果同时表示left和right，用”横向”单词首字母“x”表示，同理，同时表示top和bottom，用”纵向”单词的首字母“y”表示；sides的值也可以不写，留空，表示4个方向；</p></li>
+<li><p>size的值范围为数字0到5整数，还可以是“auto”值，表示按浏览器默认值自由展现；</p></li>
+<li><p>breakpoint取值为sm、md、lg、xl和xs的一种。</p></li>
+</ul>
+<p>下面通过代码例举说明：</p>
+<blockquote>
+<div><div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Margin与Padding<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;ml-3 text-white bg-primary&quot;</span><span class="p">&gt;</span>1、P元素距离左边3个空位置开始<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;ml-1 text-white bg-primary&quot;</span><span class="p">&gt;</span>2、P元素距离左边1个空位置开始<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;mr-3 text-white bg-primary&quot;</span><span class="p">&gt;</span>3、P元素距离右边3个空位置截止<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;mx-auto text-white bg-primary&quot;</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;width: 200px;&quot;</span><span class="p">&gt;</span>4、P元素居中<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;mx-auto text-white bg-primary&quot;</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;width: 200px;&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;text-center&quot;</span><span class="p">&gt;</span>5、文字居中<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>运行上述代码后，显示的效果如图19-2所示：</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/Figure19-2.png"><img alt="../_images/Figure19-2.png" src="../_images/Figure19-2.png" style="width: 600px;" /></a>
+<p>图19-2 Margin与Padding</p>
+</div></blockquote>
+</div>
+<div class="section" id="flex">
+<h3><span class="sectnum">19.1.3</span> 掌握Flex弹性布局<a class="headerlink" href="#flex" title="Permalink to this headline">¶</a></h3>
+<p>Flex是Flexible Box的缩写，意为”弹性布局”，用来提供一个更加有效的方式实现响应式布局。任何一个容器都可以指定为Flex布局。</p>
+<p>采用Flex布局的元素，称为Flex容器（flex container），简称”容器”。它的所有子元素自动成为容器成员，称为Flex项目（flex item），简称”项目”。容器默认存在两根轴：水平的主轴（main axis）和垂直的交叉轴（cross axis）。</p>
+<p>我们先来了解下一个简单的Flex弹性布局，请看如下的示例代码：</p>
+<blockquote>
+<div><div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;container mt-3&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Flex<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>使用 d-flex 类创建一个弹性盒子容器，并设置三个弹性子元素：<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;d-flex p-3 bg-secondary text-white&quot;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;p-2 bg-info&quot;</span><span class="p">&gt;</span>Flex item 1<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;p-2 bg-warning&quot;</span><span class="p">&gt;</span>Flex item 2<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;p-2 bg-primary&quot;</span><span class="p">&gt;</span>Flex item 3<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>上述代码中，父&lt;div&gt;的样式“d-flex”就是我们上面介绍的Flex容器样式，在它下面有3个子&lt;div&gt;标签，它们代表着容器成员，称为Flex项目。</p>
+<p>Flex容器样式的值有两种，一种是“d-flex”，另一种是“d-inline-flex”。如果将上述代码中的Flex容器样式值换成“d-inline-flex”，这种样式，我们称为“行内 Flex”，如下面的示例代码：</p>
+<blockquote>
+<div><div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;container mt-3&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>行内 Flex<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>使用 d-inline-flex 类创建显示在同一行上的弹性盒子容器：<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;d-inline-flex p-3 bg-secondary text-white&quot;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;p-2 bg-info&quot;</span><span class="p">&gt;</span>Flex item 1<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;p-2 bg-warning&quot;</span><span class="p">&gt;</span>Flex item 2<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;p-2 bg-primary&quot;</span><span class="p">&gt;</span>Flex item 3<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>我们将上面的两个示例代码合在一起对比，这样从视觉上可以很容易的区别它们的差异。运行上述代码后，显示的效果如图19-3所示：</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/Figure19-3.png"><img alt="../_images/Figure19-3.png" src="../_images/Figure19-3.png" style="width: 600px;" /></a>
+<p>图19-3 Flex容器样式</p>
+</div></blockquote>
+<p>可以根据不同的设备，设置Flex布局样式，从而实现页面响应式布局。使用 .d-{breakpoint}-flex 或者 .d-{breakpoint}-inline-flex 格式来表达其CSS样式。其中{breakpoint}代表着设备型号，分别对应sm（小型设备）、md（中型设备），lg（大型设备）和 xl（超大型设备）。</p>
+<p>确定了设备后，接着可以在容器上设置样式，来限制容器成员的布局方式，请看如下的示例代码：</p>
+<blockquote>
+<div><div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;container mt-3&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>水平方向<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>使用 .flex-row 类设置弹性子元素水平显示：<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;d-flex flex-row bg-secondary mb-3&quot;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;p-2 bg-info&quot;</span><span class="p">&gt;</span>Flex item 1<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;p-2 bg-warning&quot;</span><span class="p">&gt;</span>Flex item 2<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;p-2 bg-primary&quot;</span><span class="p">&gt;</span>Flex item 3<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>.flex-row-reverse 设置右对齐方向:<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;d-flex flex-row-reverse bg-secondary&quot;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;p-2 bg-info&quot;</span><span class="p">&gt;</span>Flex item 1<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;p-2 bg-warning&quot;</span><span class="p">&gt;</span>Flex item 2<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;p-2 bg-primary&quot;</span><span class="p">&gt;</span>Flex item 3<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>上述代码中，分别使用了 .flex-row 和 .flex-row-reverse 类设置弹性子元素水平显示方式。运行上述代码后，显示的效果如图19-4所示：</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/Figure19-4.png"><img alt="../_images/Figure19-4.png" src="../_images/Figure19-4.png" style="width: 600px;" /></a>
+<p>图19-4 Flex容器样式水平方向对齐方式</p>
+</div></blockquote>
+<p>关于作用在容器上的样式有很多，下面对Flex布局样式的常见值进行归纳，便于读者分辨和理解它们的使用场景。如表19-1所示：</p>
+<blockquote>
+<div><table class="colwidths-given docutils align-default" id="id13">
+<caption><span class="caption-text">表19-1 Flex布局容器样式一览表</span><a class="headerlink" href="#id13" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 29%" />
+<col style="width: 57%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>功能</p></td>
+<td><p>样式</p></td>
+<td><p>说明</p></td>
+</tr>
+<tr class="row-even"><td><p>弹性容器</p></td>
+<td><p>.d-{breakpoint}-flex</p></td>
+<td><p>根据不同的屏幕设备创建弹性盒子容器</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>.d-{breakpoint}-inline-flex</p></td>
+<td><p>根据不同的屏幕设备创建行内弹性盒子容器</p></td>
+</tr>
+<tr class="row-even"><td><p>水平方向</p></td>
+<td><p>.flex-{breakpoint}-row</p></td>
+<td><p>根据不同的屏幕设备在水平方向显示弹性子元素</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>.flex-{breakpoint}-row-reverse</p></td>
+<td><p>根据不同的屏幕设备在水平方向显示弹性子元素，且右对齐</p></td>
+</tr>
+<tr class="row-even"><td><p>垂直方向</p></td>
+<td><p>.flex-{breakpoint}-column</p></td>
+<td><p>根据不同的屏幕设备在垂直方向显示弹性子元素</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>.flex-{breakpoint}-row-reverse</p></td>
+<td><p>根据不同的屏幕设备在水平方向显示弹性子元素，且方向相反</p></td>
+</tr>
+<tr class="row-even"><td><p>内容排列方式</p></td>
+<td><p>.justify-content-{breakpoint}-start</p></td>
+<td><p>根据不同屏幕设备在开始位置显示弹性子元素 (左对齐)</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>.justify-content-{breakpoint}-end</p></td>
+<td><p>根据不同屏幕设备在尾部显示弹性子元素 (右对齐)</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>.justify-content-{breakpoint}-center</p></td>
+<td><p>根据不同屏幕设备在容器中显示子元素（居中）</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>.justify-content-{breakpoint}-between</p></td>
+<td><p>根据不同屏幕设备在容器中显示子元素（两端对齐）</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>.justify-content-{breakpoint}-around</p></td>
+<td><p>根据不同屏幕设备在容器中显示子元素（间隔相等对齐）</p></td>
+</tr>
+<tr class="row-odd"><td><p>等宽</p></td>
+<td><p>.flex-{breakpoint}-fill</p></td>
+<td><p>根据不同的屏幕设备强制等宽</p></td>
+</tr>
+<tr class="row-even"><td><p>包裹</p></td>
+<td><p>.flex-{breakpoint}-nowrap</p></td>
+<td><p>不同的屏幕设备不设置包裹元素</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>.flex-{breakpoint}-wrap</p></td>
+<td><p>根据不同的屏幕设备设置包裹元素</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>.flex-{breakpoint}-wrap-reverse</p></td>
+<td><p>根据不同的屏幕设备设置扩展反转包裹元素</p></td>
+</tr>
+<tr class="row-odd"><td><p>元素对齐</p></td>
+<td><p>.align-items-{breakpoint}-start</p></td>
+<td><p>根据不同屏幕设备，让元素在头部显示在同一行</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>.align-items-{breakpoint}-end</p></td>
+<td><p>根据不同屏幕设备，让元素在尾部显示在同一行</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>.align-items-{breakpoint}-center</p></td>
+<td><p>根据不同屏幕设备，让元素在中间位置显示在同一行</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>.align-items-{breakpoint}-baseline</p></td>
+<td><p>根据不同屏幕设备，让元素在基线上显示在同一行</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>.align-items-{breakpoint}-stretch</p></td>
+<td><p>根据不同屏幕设备，让元素延展高度并显示在同一行</p></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>表19-1例举的样式是作用在Flex容器上的，对于它的容器子元素也有对应的样式，请看如下的示例代码：</p>
+<blockquote>
+<div><div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;container mt-3&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>外边距<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>.mr-auto 类可以设置子元素右外边距为 auto，.ml-auto 类可以设置子元素左外边距为 auto，<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;d-flex mb-3 bg-secondary&quot;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;p-2 mr-auto bg-info&quot;</span><span class="p">&gt;</span>Flex item 1<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;p-2 bg-warning&quot;</span><span class="p">&gt;</span>Flex item 2<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;p-2 bg-primary&quot;</span><span class="p">&gt;</span>Flex item 3<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;d-flex mb-3 bg-secondary&quot;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;p-2  bg-info&quot;</span><span class="p">&gt;</span>Flex item 1<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;p-2 bg-warning&quot;</span><span class="p">&gt;</span>Flex item 2<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;p-2 ml-auto bg-primary&quot;</span><span class="p">&gt;</span>Flex item 3<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>运行上述代码后，显示的效果如图19-5所示：</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/Figure19-5.png"><img alt="../_images/Figure19-5.png" src="../_images/Figure19-5.png" style="width: 600px;" /></a>
+<p>图19-5 Flex容器子元素水平方向对齐方式</p>
+</div></blockquote>
+<p>Flex布局容器子元素样式也有多种，下表19-2汇总常见的子元素样式：</p>
+<blockquote>
+<div><table class="colwidths-given docutils align-default" id="id14">
+<caption><span class="caption-text">表19-2 Flex布局容器子元素样式一览表</span><a class="headerlink" href="#id14" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 29%" />
+<col style="width: 57%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>功能</p></td>
+<td><p>样式</p></td>
+<td><p>说明</p></td>
+</tr>
+<tr class="row-even"><td><p>扩展</p></td>
+<td><p>.flex-{breakpoint}-grow-0</p></td>
+<td><p>不同的屏幕设备不设置扩展</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>.flex-{breakpoint}-grow-1</p></td>
+<td><p>根据不同的屏幕设备设置扩展</p></td>
+</tr>
+<tr class="row-even"><td><p>收缩</p></td>
+<td><p>.flex-{breakpoint}-shrink-0</p></td>
+<td><p>不同的屏幕设备不设置收缩</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>.flex-{breakpoint}-shrink-1</p></td>
+<td><p>根据不同的屏幕设备设置收缩</p></td>
+</tr>
+<tr class="row-even"><td><p>排序</p></td>
+<td><p>.order-1 到 .order-12</p></td>
+<td><p>设置容器子元素的排序</p></td>
+</tr>
+<tr class="row-odd"><td><p>外边距</p></td>
+<td><p>.mr-auto</p></td>
+<td><p>设置容器子元素右外边距为 auto</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>.ml-auto</p></td>
+<td><p>设置容器子元素左外边距为 auto</p></td>
+</tr>
+<tr class="row-odd"><td><p>对齐</p></td>
+<td><p>.align-self-{breakpoint}-start</p></td>
+<td><p>根据不同屏幕设备，指定子元素显示在头部</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>.align-self-{breakpoint}-end</p></td>
+<td><p>根据不同屏幕设备，指定子元素显示在尾部</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>.align-self-{breakpoint}-center</p></td>
+<td><p>根据不同屏幕设备，指定子元素显示在居中位置</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>.align-self-{breakpoint}-baseline</p></td>
+<td><p>根据不同屏幕设备，指定子元素显示在基线位置</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>.align-self-{breakpoint}-stretch</p></td>
+<td><p>根据不同屏幕设备，延展子元素显示</p></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Flex布局贯穿着Bootstrap布局的方方面面，在Bootstrap中，无论是页面、组件还是具体的元素都使用到了Flex布局。</p>
+</div>
+</div>
+<div class="section" id="id6">
+<h2><span class="sectnum">19.2</span> 学习Bootstrap的布局<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<p>如果将Flex布局视为原始的基础，在它之上，Bootstrap专门设计了页面级的Container容器布局和响应式的用于排列组件的栅格系统布局，下面分别介绍它们。</p>
+<div class="section" id="container">
+<h3><span class="sectnum">19.2.1</span> Container容器<a class="headerlink" href="#container" title="Permalink to this headline">¶</a></h3>
+<p>Container容器是页面窗口级布局的元素，使用.container或.container-fluid类来定义其样式。默认的.container类样式声明是一个响应式容器，它有固定宽度和最大宽度（max-width）的设置，并支持响应式断点，一般使用它作为整个&lt;div&gt;的最外层容器：</p>
+<ul class="simple">
+<li><p>.container类样式用于声明固定宽度且居中显示的响应式容器；</p></li>
+<li><p>.container-fluid类样式用于声明全屏宽度的容器；</p></li>
+<li><p>.container-{breakpoint}类样式用于声明根据不同屏幕设备，显示固定的宽度比例的响应式容器。</p></li>
+</ul>
+<p>在前面的示例代码中，我们用到了Container容器，代码示例如下：</p>
+<blockquote>
+<div><div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;container mt-3&quot;</span><span class="p">&gt;</span>
+  固定宽度且居中显示的响应式容器
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;container-fluid&quot;</span><span class="p">&gt;</span>
+  全屏宽度的响应式容器
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;container-md&quot;</span><span class="p">&gt;</span>
+  支持响应式断点，显示中等屏幕固定的宽度比例的响应式容器
+<span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="id7">
+<h3><span class="sectnum">19.2.2</span> 响应式栅格系统<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<p>Bootstrap 提供了一套响应式、移动设备优先的流式栅格系统，随着屏幕或视区（viewport）尺寸的增加，系统会自动分为最多12列。栅格系统通过一系列的行（row）与列（col）的组合来创建页面布局。通过“行”在水平方向创建一组“列”，“列”作为“行”的直接子元素，“列”可以通过“col-n”或“col-{breakpoint}-n”来设置列宽，其中n为1到12的整数。</p>
+<div class="section" id="id8">
+<h4><span class="sectnum">19.2.2.1</span> 列宽布局<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h4>
+<p>下面来演示响应式栅格系统的列宽布局，请看如下的示例代码：</p>
+<blockquote>
+<div><div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;container mt-3&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>等宽布局<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;row&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;col bg-info&quot;</span><span class="p">&gt;</span>
+            1 of 2
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;col bg-warning&quot;</span><span class="p">&gt;</span>
+            2 of 2
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;row bg-secondary mt-3&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;col bg-info&quot;</span><span class="p">&gt;</span>
+            1 of 3
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;col bg-warning&quot;</span><span class="p">&gt;</span>
+            2 of 3
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;col bg-primary&quot;</span><span class="p">&gt;</span>
+            3 of 3
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>设置一列宽度<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;row&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;col bg-info&quot;</span><span class="p">&gt;</span>
+            1 of 3
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;col-6 bg-warning&quot;</span><span class="p">&gt;</span>
+            2 of 3 (12格中占6格，其它6格另外两列平分)
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;col bg-primary&quot;</span><span class="p">&gt;</span>
+            3 of 3
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;row  mt-3&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;col bg-info&quot;</span><span class="p">&gt;</span>
+            1 of 3
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;col-5 bg-warning&quot;</span><span class="p">&gt;</span>
+            2 of 3 (12格中占5格,其它7格另外两列平分)
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;col bg-primary&quot;</span><span class="p">&gt;</span>
+            3 of 3
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>可变列宽度<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;row justify-content-md-center&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;col col-sm-2 bg-info&quot;</span><span class="p">&gt;</span>
+            1 of 3
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;col-sm-auto bg-warning&quot;</span><span class="p">&gt;</span>
+            可变宽度内容自由伸张，左右宽度不变
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;col col-sm-2 bg-primary&quot;</span><span class="p">&gt;</span>
+            3 of 3
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;row mt-3&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;col bg-info&quot;</span><span class="p">&gt;</span>
+            1 of 3
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;col-sm-auto bg-warning&quot;</span><span class="p">&gt;</span>
+            可变宽度内容自由伸张,左列宽度变化(右列绑定col-sm-2栅格数)
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;col col-sm-2 bg-primary&quot;</span><span class="p">&gt;</span>
+            3 of 3
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>等宽多行<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;row&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;col bg-info&quot;</span><span class="p">&gt;</span>col<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;col bg-warning&quot;</span><span class="p">&gt;</span>col<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;w-100&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;col bg-primary&quot;</span><span class="p">&gt;</span>col<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;col bg-secondary&quot;</span><span class="p">&gt;</span>col<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>运行上述代码后，显示的效果如图19-6所示：</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/Figure19-6.png"><img alt="../_images/Figure19-6.png" src="../_images/Figure19-6.png" style="width: 800px;" /></a>
+<p>图19-6 栅格系统的列宽布局</p>
+</div></blockquote>
+</div>
+<div class="section" id="id9">
+<h4><span class="sectnum">19.2.2.2</span> 垂直和水平对齐<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h4>
+<p>下面来演示响应式栅格系统的垂直和水平对齐布局，请看如下的示例代码：</p>
+<blockquote>
+<div><div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;container mt-3&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>垂直对齐<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;row&quot;</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;height:10vh&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;col align-self-start bg-info&quot;</span><span class="p">&gt;</span>
+            上边对齐
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;col align-self-center bg-warning&quot;</span><span class="p">&gt;</span>
+            上下居中对齐
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;col align-self-end bg-primary&quot;</span><span class="p">&gt;</span>
+            下边对齐
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>水平对齐<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;row justify-content-start&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;col-4 bg-info&quot;</span><span class="p">&gt;</span>
+            左对齐
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;col-4 bg-warning&quot;</span><span class="p">&gt;</span>
+            左对齐
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;row justify-content-center&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;col-4 bg-info&quot;</span><span class="p">&gt;</span>
+            居中对齐
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;col-4 bg-warning&quot;</span><span class="p">&gt;</span>
+            居中对齐
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;row justify-content-end&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;col-4 bg-info&quot;</span><span class="p">&gt;</span>
+            右对齐
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;col-4 bg-warning&quot;</span><span class="p">&gt;</span>
+            右对齐
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;row justify-content-around&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;col-4 bg-info&quot;</span><span class="p">&gt;</span>
+            间隔相等对齐
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;col-4 bg-warning&quot;</span><span class="p">&gt;</span>
+            间隔相等对齐
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;row justify-content-between&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;col-4 bg-info&quot;</span><span class="p">&gt;</span>
+            两端对齐
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;col-4 bg-warning&quot;</span><span class="p">&gt;</span>
+            两端对齐
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>运行上述代码后，显示的效果如图19-7所示：</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/Figure19-7.png"><img alt="../_images/Figure19-7.png" src="../_images/Figure19-7.png" style="width: 600px;" /></a>
+<p>图19-7 栅格系统的垂直和水平对齐</p>
+</div></blockquote>
+<p>注意上述示例代码中，我们在垂直对齐中，对row的定义了一个高度样式，目的是拉开行的高度，让我们区别垂直上、垂直中和垂直下的布局效果。</p>
+</div>
+</div>
+</div>
+<div class="section" id="id10">
+<h2><span class="sectnum">19.3</span> 学习Bootstrap的组件库<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
+<p>Bootstrap的组件库中包含了很多组件，种类同Angular Material中的组件类似，本章中不再对此进行详细介绍。由于Bootstrap的多数组件依赖jQuery.js，而JS是不能直接使用在Angular中的。因此，Bootstrap的组件多数是不能直接用在Angular中的，需要把它们转换为Angular方式的组件。</p>
+<p>正是由于Bootstrap如此出名，业界目前同时存在多个Angular版本的Bootstrap组件库，如：NGX-Bootstrap、NG-Bootstrap和MDBootstrap等，它们分别是不同的团队开发和维护的，目标均是基于Bootstrap的原型，打造出Angular版本的组件库，但是在组件种类、个数、使用语法、样式和风格上存在些差异。当然了，每个团队都坚称自家才是最好的。本章选取其中的NG-Bootstrap组件库进行讲解。</p>
+<p>NG-Bootstrap 的定位是基于 Angular开发的 Bootstrap 框架的指令集。</p>
+</div>
+<div class="section" id="ng-bootstrap">
+<h2><span class="sectnum">19.4</span> 安装 NG-Bootstrap 组件库<a class="headerlink" href="#ng-bootstrap" title="Permalink to this headline">¶</a></h2>
+<p>使用用Angular CLI命令安装NG-Bootstrap，具体命令如下：</p>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng add @ng-bootstrap/ng-bootstrap
+</pre></div>
+</div>
+</div></blockquote>
+<p>如果有多个Angular项目，可以通过project参数为指定项目进行安装，如：</p>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng add @ng-bootstrap/ng-bootstrap --project myProject <span class="c1"># myProject为Angular项目名称</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="angularfontawesome">
+<h2><span class="sectnum">19.5</span> Angular中使用FontAwesome字体<a class="headerlink" href="#angularfontawesome" title="Permalink to this headline">¶</a></h2>
+<p>FontAwesome是一种带有网页功能的象形文字语言，它是一套字库, 提供了675个图标，这些图标字体含有可缩放的矢量图标，可以被定制大小、颜色、阴影以及任何可以用CSS的样式。更重要的是不需要 JavaScript 支持。该字体是完全开源并且免费的，最初是为Bootstrap而设计的，现在FontAwesome适用于所有框架。</p>
+<div class="section" id="fontawesome">
+<h3><span class="sectnum">19.5.1</span> 安装FontAwesome字体<a class="headerlink" href="#fontawesome" title="Permalink to this headline">¶</a></h3>
+<p>FontAwesome字体专为Angular打造了一个官方的Angular组件，使用如下命令进行安装：</p>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng add @fortawesome/angular-fontawesome
+</pre></div>
+</div>
+</div></blockquote>
+<p>ng add命令安装FontAwesome字体的同时，将会询问用户选择安装哪种字体：</p>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ ng add @fortawesome/angular-fontawesome
+Skipping installation: Package already installed
+? Choose Font Awesome icon packages you would like to use: <span class="o">(</span>Press &lt;space&gt; to <span class="k">select</span>, &lt;a&gt; to toggle all, &lt;i&gt; to inv
+ert selection<span class="o">)</span>
+❯◉ Free Solid Icons
+◯ Free Regular Icons
+◯ Free Brands Icons
+◯ Pro Solid Icons    <span class="o">[</span> Requires: https://fontawesome.com/pro <span class="o">]</span>
+◯ Pro Regular Icons  <span class="o">[</span> Requires: https://fontawesome.com/pro <span class="o">]</span>
+◯ Pro Light Icons    <span class="o">[</span> Requires: https://fontawesome.com/pro <span class="o">]</span>
+◯ Pro Duotone Icons  <span class="o">[</span> Requires: https://fontawesome.com/pro <span class="o">]</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>按照命令的提示，点击“方向键”选择字体类型，然后点击“空格键”确认，“回车”后，命令开始进行安装。安装过程中，ng add命令自动添加FontAwesomeModule模块到Angular项目的根模块中，查看src/app/app.module.ts文件，示例代码如下：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">BrowserModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/platform-browser&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">NgModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">AppComponent</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./app.component&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">FontAwesomeModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@fortawesome/angular-fontawesome&#39;</span><span class="p">;</span>
+
+<span class="kd">@NgModule</span><span class="p">({</span>
+  <span class="nx">imports</span><span class="o">:</span> <span class="p">[</span>
+    <span class="nx">BrowserModule</span><span class="p">,</span>
+    <span class="nx">FontAwesomeModule</span>
+  <span class="p">],</span>
+  <span class="nx">declarations</span><span class="o">:</span> <span class="p">[</span><span class="nx">AppComponent</span><span class="p">],</span>
+  <span class="nx">bootstrap</span><span class="o">:</span> <span class="p">[</span><span class="nx">AppComponent</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">AppModule</span> <span class="p">{</span> <span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>FontAwesome字体中有3种类型的字体是免费的。这3种免费的字体所属的依赖包详情如下：</p>
+<table class="colwidths-given docutils align-default" id="id15">
+<caption><span class="caption-text">FontAwesome中的免费字体</span><a class="headerlink" href="#id15" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 60%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>类型</p></td>
+<td><p>前缀</p></td>
+<td><p>所属包</p></td>
+</tr>
+<tr class="row-even"><td><p>Solid</p></td>
+<td><p>fas</p></td>
+<td><p>&#64;fortawesome/free-solid-svg-icons</p></td>
+</tr>
+<tr class="row-odd"><td><p>Regular</p></td>
+<td><p>far</p></td>
+<td><p>&#64;fortawesome/free-regular-svg-icons</p></td>
+</tr>
+<tr class="row-even"><td><p>Brands</p></td>
+<td><p>fab</p></td>
+<td><p>&#64;fortawesome/free-brands-svg-icons</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id11">
+<h3><span class="sectnum">19.5.2</span> 使用FontAwesome字体<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<p>首先需要导入对应字体的依赖包到组件中，如下面的示例代码：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Component</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">faCoffee</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@fortawesome/free-solid-svg-icons&#39;</span><span class="p">;</span>
+
+<span class="kd">@Component</span><span class="p">({</span>
+  <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-root&#39;</span><span class="p">,</span>
+  <span class="nx">templateUrl</span><span class="o">:</span> <span class="s1">&#39;./app.component.html&#39;</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">AppComponent</span> <span class="p">{</span>
+  <span class="nx">faCoffee</span> <span class="o">=</span> <span class="nx">faCoffee</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>然后，在组件模板中通过引用&lt;fa-icon&gt;组件使用FontAwesome字体，如下面的示例代码：</p>
+<blockquote>
+<div><div class="highlight-scss notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="nt">fa-icon</span> <span class="o">[</span><span class="nt">icon</span><span class="o">]=</span><span class="s2">&quot;faCoffee&quot;</span><span class="o">&gt;&lt;/</span><span class="nt">fa-icon</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>&lt;fa-icon&gt;组件接受size（大小）、rotate（旋转）等输入型参数。请参阅如下面的示例代码：</p>
+<blockquote>
+<div><div class="highlight-scss notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="nt">section</span> <span class="nt">class</span><span class="o">=</span><span class="s2">&quot;jumbotron text-center mb-3&quot;</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="nt">div</span> <span class="nt">class</span><span class="o">=</span><span class="s2">&quot;container&quot;</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nt">h1</span> <span class="nt">class</span><span class="o">=</span><span class="s2">&quot;jumbotron-heading&quot;</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nt">fa-icon</span> <span class="o">[</span><span class="nt">icon</span><span class="o">]=</span><span class="s2">&quot;faAngular&quot;</span> <span class="nt">size</span><span class="o">=</span><span class="s2">&quot;xs&quot;</span> <span class="nt">style</span><span class="o">=</span><span class="s2">&quot;color:red&quot;</span><span class="o">&gt;&lt;/</span><span class="nt">fa-icon</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nt">fa-icon</span> <span class="o">[</span><span class="nt">icon</span><span class="o">]=</span><span class="s2">&quot;faAngular&quot;</span> <span class="nt">size</span><span class="o">=</span><span class="s2">&quot;sm&quot;</span> <span class="nt">style</span><span class="o">=</span><span class="s2">&quot;color:red&quot;</span><span class="o">&gt;&lt;/</span><span class="nt">fa-icon</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nt">fa-icon</span> <span class="o">[</span><span class="nt">icon</span><span class="o">]=</span><span class="s2">&quot;faAngular&quot;</span> <span class="nt">size</span><span class="o">=</span><span class="s2">&quot;lg&quot;</span> <span class="nt">style</span><span class="o">=</span><span class="s2">&quot;color:red&quot;</span><span class="o">&gt;&lt;/</span><span class="nt">fa-icon</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nt">fa-icon</span> <span class="o">[</span><span class="nt">icon</span><span class="o">]=</span><span class="s2">&quot;faAngular&quot;</span> <span class="nt">size</span><span class="o">=</span><span class="s2">&quot;2x&quot;</span> <span class="nt">style</span><span class="o">=</span><span class="s2">&quot;color:red&quot;</span><span class="o">&gt;&lt;/</span><span class="nt">fa-icon</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nt">fa-icon</span> <span class="o">[</span><span class="nt">icon</span><span class="o">]=</span><span class="s2">&quot;faAngular&quot;</span> <span class="nt">size</span><span class="o">=</span><span class="s2">&quot;3x&quot;</span> <span class="nt">style</span><span class="o">=</span><span class="s2">&quot;color:red&quot;</span><span class="o">&gt;&lt;/</span><span class="nt">fa-icon</span><span class="o">&gt;&lt;</span><span class="nt">br</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nt">fa-icon</span> <span class="o">[</span><span class="nt">icon</span><span class="o">]=</span><span class="s2">&quot;faAngular&quot;</span> <span class="nt">size</span><span class="o">=</span><span class="s2">&quot;3x&quot;</span> <span class="nt">style</span><span class="o">=</span><span class="s2">&quot;color:red&quot;</span> <span class="nt">rotate</span><span class="o">=</span><span class="s2">&quot;90&quot;</span><span class="o">&gt;&lt;/</span><span class="nt">fa-icon</span><span class="o">&gt;&lt;!</span><span class="nt">--</span> <span class="nt">旋转字体</span> <span class="nt">--</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nt">fa-icon</span> <span class="o">[</span><span class="nt">icon</span><span class="o">]=</span><span class="s2">&quot;faAngular&quot;</span> <span class="nt">size</span><span class="o">=</span><span class="s2">&quot;3x&quot;</span> <span class="nt">style</span><span class="o">=</span><span class="s2">&quot;color:red&quot;</span> <span class="nt">rotate</span><span class="o">=</span><span class="s2">&quot;180&quot;</span><span class="o">&gt;&lt;/</span><span class="nt">fa-icon</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nt">fa-icon</span> <span class="o">[</span><span class="nt">icon</span><span class="o">]=</span><span class="s2">&quot;faAngular&quot;</span> <span class="nt">size</span><span class="o">=</span><span class="s2">&quot;3x&quot;</span> <span class="nt">style</span><span class="o">=</span><span class="s2">&quot;color:red&quot;</span> <span class="nt">rotate</span><span class="o">=</span><span class="s2">&quot;270&quot;</span><span class="o">&gt;&lt;/</span><span class="nt">fa-icon</span><span class="o">&gt;&lt;</span><span class="nt">br</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nt">fa-icon</span> <span class="o">[</span><span class="nt">icon</span><span class="o">]=</span><span class="s2">&quot;faAngular&quot;</span> <span class="nt">size</span><span class="o">=</span><span class="s2">&quot;3x&quot;</span> <span class="nt">style</span><span class="o">=</span><span class="s2">&quot;color:red&quot;</span> <span class="nt">flip</span><span class="o">=</span><span class="s2">&quot;horizontal&quot;</span><span class="o">&gt;&lt;/</span><span class="nt">fa-icon</span><span class="o">&gt;&lt;!</span><span class="nt">--</span> <span class="nt">翻转字体</span> <span class="nt">--</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nt">fa-icon</span> <span class="o">[</span><span class="nt">icon</span><span class="o">]=</span><span class="s2">&quot;faAngular&quot;</span> <span class="nt">size</span><span class="o">=</span><span class="s2">&quot;3x&quot;</span> <span class="nt">style</span><span class="o">=</span><span class="s2">&quot;color:red&quot;</span> <span class="nt">flip</span><span class="o">=</span><span class="s2">&quot;vertical&quot;</span><span class="o">&gt;&lt;/</span><span class="nt">fa-icon</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nt">fa-icon</span> <span class="o">[</span><span class="nt">icon</span><span class="o">]=</span><span class="s2">&quot;faAngular&quot;</span> <span class="nt">size</span><span class="o">=</span><span class="s2">&quot;3x&quot;</span> <span class="nt">style</span><span class="o">=</span><span class="s2">&quot;color:red&quot;</span> <span class="o">[</span><span class="nt">spin</span><span class="o">]=</span><span class="s2">&quot;true&quot;</span><span class="o">&gt;&lt;/</span><span class="nt">fa-icon</span><span class="o">&gt;&lt;!</span><span class="nt">--</span> <span class="nt">匀速转动字体</span> <span class="nt">--</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nt">fa-icon</span> <span class="o">[</span><span class="nt">icon</span><span class="o">]=</span><span class="s2">&quot;faAngular&quot;</span> <span class="nt">size</span><span class="o">=</span><span class="s2">&quot;3x&quot;</span> <span class="nt">style</span><span class="o">=</span><span class="s2">&quot;color:red&quot;</span> <span class="o">[</span><span class="nt">pulse</span><span class="o">]=</span><span class="s2">&quot;true&quot;</span><span class="o">&gt;&lt;/</span><span class="nt">fa-icon</span><span class="o">&gt;&lt;!</span><span class="nt">--</span> <span class="nt">每圈分8次转动字体</span> <span class="nt">--</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="nt">h1</span><span class="o">&gt;</span>
+  <span class="o">&lt;/</span><span class="nt">div</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="nt">section</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>上述示例代码运行后，页面显示效果如图19-8所示：</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/Figure19-8.png"><img alt="../_images/Figure19-8.png" src="../_images/Figure19-8.png" style="width: 400px;" /></a>
+<p>图19-8 FontAwesome字体示例</p>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="bootstrap-ex100-ng-bootstrap">
+<h2><span class="sectnum">19.6</span> [示例 bootstrap-ex100] 使用NG-Bootstrap打造产品展示界面<a class="headerlink" href="#bootstrap-ex100-ng-bootstrap" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>用Angular CLI构建应用程序，具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng n bootstrap-ex100 -S --routing --defaults<span class="o">=</span><span class="nb">true</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>启动服务，具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng serve
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><p>查看应用程序结果。打开Web浏览器并浏览到 “<a class="reference external" href="http://localhost:4200">http://localhost:4200</a>”，应该看到文本 “Welcome to bootstrap-ex100!”。</p></li>
+<li><p>安装NG-Bootstrap组件库，具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng add @ng-bootstrap/ng-bootstrap
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="5">
+<li><p>添加NG-Bootstrap组件库中的Collapse组件。按照官方文档指导，编辑根组件类文件src/app/app.component.ts，增加类变量如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="nx">isMenuCollapsed</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="6">
+<li><p>编写Collapse组件模板。编辑组件模板文件src/app/app.component.html，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-scss notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="nt">div</span> <span class="nt">class</span><span class="o">=</span><span class="s2">&quot;container-fluid&quot;</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="nt">nav</span> <span class="nt">class</span><span class="o">=</span><span class="s2">&quot;navbar navbar-expand-lg navbar-dark mb-3 shadow p-3 rounded&quot;</span> <span class="nt">style</span><span class="o">=</span><span class="s2">&quot;background-color:orangered&quot;</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="nt">a</span> <span class="nt">class</span><span class="o">=</span><span class="s2">&quot;navbar-brand&quot;</span> <span class="o">[</span><span class="nt">routerLink</span><span class="o">]=</span><span class="s2">&quot;&#39;.&#39;&quot;</span><span class="o">&gt;</span><span class="p">{{</span><span class="nt">title</span><span class="p">}}</span><span class="o">&lt;/</span><span class="nt">a</span><span class="o">&gt;</span>
+
+  <span class="o">&lt;!</span><span class="nt">--</span> <span class="nt">Step</span> <span class="nt">3</span><span class="nd">:</span> <span class="nt">Toggle</span> <span class="nt">the</span> <span class="nt">value</span> <span class="nt">of</span> <span class="nt">the</span> <span class="nt">property</span> <span class="nt">when</span> <span class="nt">the</span> <span class="nt">toggler</span> <span class="nt">button</span> <span class="nt">is</span> <span class="nt">clicked</span><span class="nc">.</span> <span class="nt">--</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="nt">button</span> <span class="nt">class</span><span class="o">=</span><span class="s2">&quot;navbar-toggler&quot;</span> <span class="nt">type</span><span class="o">=</span><span class="s2">&quot;button&quot;</span> <span class="o">(</span><span class="nt">click</span><span class="o">)=</span><span class="s2">&quot;isMenuCollapsed = !isMenuCollapsed&quot;</span><span class="o">&gt;</span>
+    <span class="k">&amp;</span><span class="nn">#9776</span><span class="o">;</span>
+  <span class="o">&lt;/</span><span class="nt">button</span><span class="o">&gt;</span>
+
+  <span class="o">&lt;!</span><span class="nt">--</span> <span class="nt">Step</span> <span class="nt">2</span><span class="nd">:</span> <span class="nt">Add</span> <span class="nt">the</span> <span class="nt">ngbCollapse</span> <span class="nt">directive</span> <span class="nt">to</span> <span class="nt">the</span> <span class="nt">element</span> <span class="nt">below</span><span class="nc">.</span> <span class="nt">--</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="nt">div</span> <span class="o">[</span><span class="nt">ngbCollapse</span><span class="o">]=</span><span class="s2">&quot;isMenuCollapsed&quot;</span> <span class="nt">class</span><span class="o">=</span><span class="s2">&quot;collapse navbar-collapse&quot;</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nt">ul</span> <span class="nt">class</span><span class="o">=</span><span class="s2">&quot;navbar-nav&quot;</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nt">li</span> <span class="nt">class</span><span class="o">=</span><span class="s2">&quot;nav-item active&quot;</span><span class="o">&gt;</span>
+        <span class="o">&lt;!</span><span class="nt">--</span> <span class="nt">Step</span> <span class="nt">4</span><span class="nd">:</span> <span class="nt">Close</span> <span class="nt">the</span> <span class="nt">menu</span> <span class="nt">when</span> <span class="nt">a</span> <span class="nt">link</span> <span class="nt">is</span> <span class="nt">clicked</span><span class="nc">.</span> <span class="nt">--</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nt">a</span> <span class="nt">class</span><span class="o">=</span><span class="s2">&quot;nav-link&quot;</span> <span class="o">[</span><span class="nt">routerLink</span><span class="o">]=</span><span class="s2">&quot;&#39;.&#39;&quot;</span> <span class="o">(</span><span class="nt">click</span><span class="o">)=</span><span class="s2">&quot;isMenuCollapsed = true&quot;</span><span class="o">&gt;</span><span class="nt">活动菜单</span><span class="o">&lt;/</span><span class="nt">a</span><span class="o">&gt;</span>
+      <span class="o">&lt;/</span><span class="nt">li</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nt">li</span> <span class="nt">class</span><span class="o">=</span><span class="s2">&quot;nav-item&quot;</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nt">a</span> <span class="nt">class</span><span class="o">=</span><span class="s2">&quot;nav-link&quot;</span> <span class="o">[</span><span class="nt">routerLink</span><span class="o">]=</span><span class="s2">&quot;&#39;.&#39;&quot;</span> <span class="o">(</span><span class="nt">click</span><span class="o">)=</span><span class="s2">&quot;isMenuCollapsed = true&quot;</span><span class="o">&gt;</span><span class="nt">菜单2</span><span class="o">&lt;/</span><span class="nt">a</span><span class="o">&gt;</span>
+      <span class="o">&lt;/</span><span class="nt">li</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nt">li</span> <span class="nt">class</span><span class="o">=</span><span class="s2">&quot;nav-item&quot;</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nt">a</span> <span class="nt">class</span><span class="o">=</span><span class="s2">&quot;nav-link&quot;</span> <span class="o">[</span><span class="nt">routerLink</span><span class="o">]=</span><span class="s2">&quot;&#39;.&#39;&quot;</span> <span class="o">(</span><span class="nt">click</span><span class="o">)=</span><span class="s2">&quot;isMenuCollapsed = true&quot;</span><span class="o">&gt;</span><span class="nt">菜单3</span><span class="o">&lt;/</span><span class="nt">a</span><span class="o">&gt;</span>
+      <span class="o">&lt;/</span><span class="nt">li</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="nt">ul</span><span class="o">&gt;</span>
+  <span class="o">&lt;/</span><span class="nt">div</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="nt">nav</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="nt">div</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="7">
+<li><p>安装FontAwesome字体，具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng add @fortawesome/angular-fontawesome
+</pre></div>
+</div>
+<p>选择安装Free Brands Icons字体。</p>
+</div></blockquote>
+<ol class="arabic simple" start="8">
+<li><p>添加Angular和Bootstrap字体。编辑根组件类文件src/app/app.component.ts，增加如下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">faAngular</span><span class="p">,</span> <span class="nx">faBootstrap</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@fortawesome/free-brands-svg-icons&#39;</span><span class="p">;</span>
+
+<span class="nx">faAngular</span> <span class="o">=</span> <span class="nx">faAngular</span><span class="p">;</span>
+<span class="nx">faBootstrap</span> <span class="o">=</span> <span class="nx">faBootstrap</span><span class="p">;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="9">
+<li><p>添加广告大块屏幕（Jumbotron）组件。编辑根组件类文件src/app/app.component.ts，增加如下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&lt;main role=&quot;main&quot;&gt;
+  &lt;section class=&quot;jumbotron text-center mb-3&quot;&gt;
+    &lt;div class=&quot;container&quot;&gt;
+      &lt;h1 class=&quot;jumbotron-heading&quot;&gt;
+        &lt;fa-icon [icon]=&quot;faAngular&quot; size=&quot;2x&quot; style=&quot;color:rgb(255, 51, 0)&quot; class=&quot;d-inline-block align-middle mr-1&quot;&gt;
+        &lt;/fa-icon&gt;Angular 集成 Bootstrap
+        &lt;fa-icon [icon]=&quot;faBootstrap&quot; size=&quot;2x&quot; style=&quot;color:rgb(247, 0, 255)&quot;
+          class=&quot;d-inline-block align-middle mr-1&quot;&gt;&lt;/fa-icon&gt;
+      &lt;/h1&gt;
+      &lt;p class=&quot;lead text-muted&quot;&gt;通过引用.jumbotron-heading类样式，实现构建超大的广告界面，醒目的在网站上展示关键的营销信息。&lt;/p&gt;
+      &lt;p&gt;
+        &lt;a href=&quot;#&quot; class=&quot;btn btn-primary my-2&quot;&gt;主要操作&lt;/a&gt;
+        &lt;a href=&quot;#&quot; class=&quot;btn btn-secondary my-2&quot;&gt;次要操作&lt;/a&gt;
+      &lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/section&gt;
+&lt;/main&gt;
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="10">
+<li><p>添加图片来源。编辑根组件类文件src/app/app.component.ts，增加如下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="nx">images</span> <span class="o">=</span> <span class="p">[</span><span class="mi">22</span><span class="p">,</span> <span class="mi">74</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="mi">1001</span><span class="p">,</span> <span class="mi">1011</span><span class="p">].</span><span class="nx">map</span><span class="p">((</span><span class="nx">n</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="sb">`https://picsum.photos/id/</span><span class="si">${</span><span class="nx">n</span><span class="si">}</span><span class="sb">/348/225`</span><span class="p">);</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="11">
+<li><p>使用栅格系统（Grid）和卡片（Card）组件展示商品信息。编辑根组件模板文件src/app/app.component.html，增加如下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&lt;div class=&quot;py-5 bg-light&quot;&gt;
+  &lt;div class=&quot;container&quot;&gt;
+    &lt;div class=&quot;row&quot;&gt;
+      &lt;div class=&quot;col-md-4&quot; *ngFor=&#39;let item of images&#39;&gt;
+        &lt;div class=&quot;card mb-4 box-shadow&quot;&gt;
+          &lt;img class=&quot;card-img-top&quot; src=&quot;{{item}}&quot; alt=&quot;Card image cap&quot;&gt;
+          &lt;div class=&quot;card-body&quot;&gt;
+            &lt;p class=&quot;card-text&quot;&gt;这是一个展示商品的卡片，下面有配套的文字，作为补充内容。
+              此例仅是演示用，卡片文字均相同，图片来自网上。&lt;/p&gt;
+            &lt;div class=&quot;d-flex justify-content-between align-items-center&quot;&gt;
+              &lt;div class=&quot;btn-group&quot;&gt;
+                &lt;button type=&quot;button&quot; class=&quot;btn btn-sm btn-outline-secondary&quot;&gt;View&lt;/button&gt;
+                &lt;button type=&quot;button&quot; class=&quot;btn btn-sm btn-outline-secondary&quot;&gt;Edit&lt;/button&gt;
+              &lt;/div&gt;
+              &lt;small class=&quot;text-muted&quot;&gt;9 mins&lt;/small&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="12">
+<li><p>添加页脚（footer）组件。编辑根组件模板文件src/app/app.component.html，此文件最终完整代码如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&lt;div class=&quot;container-fluid&quot;&gt;
+  &lt;nav class=&quot;navbar navbar-expand-lg navbar-dark mb-3 shadow p-3 rounded&quot; style=&quot;background-color:orangered&quot;&gt;
+    &lt;a class=&quot;navbar-brand&quot; [routerLink]=&quot;&#39;.&#39;&quot;&gt;{{title}}&lt;/a&gt;
+
+    &lt;!-- Step 3: Toggle the value of the property when the toggler button is clicked. --&gt;
+    &lt;button class=&quot;navbar-toggler&quot; type=&quot;button&quot; (click)=&quot;isMenuCollapsed = !isMenuCollapsed&quot;&gt;
+      &amp;#9776;
+    &lt;/button&gt;
+
+    &lt;!-- Step 2: Add the ngbCollapse directive to the element below. --&gt;
+    &lt;div [ngbCollapse]=&quot;isMenuCollapsed&quot; class=&quot;collapse navbar-collapse&quot;&gt;
+      &lt;ul class=&quot;navbar-nav&quot;&gt;
+        &lt;li class=&quot;nav-item active&quot;&gt;
+          &lt;!-- Step 4: Close the menu when a link is clicked. --&gt;
+          &lt;a class=&quot;nav-link&quot; [routerLink]=&quot;&#39;.&#39;&quot; (click)=&quot;isMenuCollapsed = true&quot;&gt;活动菜单&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class=&quot;nav-item&quot;&gt;
+          &lt;a class=&quot;nav-link&quot; [routerLink]=&quot;&#39;.&#39;&quot; (click)=&quot;isMenuCollapsed = true&quot;&gt;菜单2&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class=&quot;nav-item&quot;&gt;
+          &lt;a class=&quot;nav-link&quot; [routerLink]=&quot;&#39;.&#39;&quot; (click)=&quot;isMenuCollapsed = true&quot;&gt;菜单3&lt;/a&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;/nav&gt;
+
+  &lt;main role=&quot;main&quot;&gt;
+    &lt;section class=&quot;jumbotron text-center mb-3&quot;&gt;
+      &lt;div class=&quot;container&quot;&gt;
+        &lt;h1 class=&quot;jumbotron-heading&quot;&gt;
+          &lt;fa-icon [icon]=&quot;faAngular&quot; size=&quot;2x&quot; style=&quot;color:rgb(255, 51, 0)&quot; class=&quot;d-inline-block align-middle mr-1&quot;&gt;
+          &lt;/fa-icon&gt;Angular 集成 Bootstrap
+          &lt;fa-icon [icon]=&quot;faBootstrap&quot; size=&quot;2x&quot; style=&quot;color:rgb(247, 0, 255)&quot;
+            class=&quot;d-inline-block align-middle mr-1&quot;&gt;&lt;/fa-icon&gt;
+        &lt;/h1&gt;
+        &lt;p class=&quot;lead text-muted&quot;&gt;通过引用.jumbotron-heading类样式，实现构建超大的广告界面，醒目的在网站上展示关键的营销信息。&lt;/p&gt;
+        &lt;p&gt;
+          &lt;a href=&quot;#&quot; class=&quot;btn btn-primary my-2&quot;&gt;主要操作&lt;/a&gt;
+          &lt;a href=&quot;#&quot; class=&quot;btn btn-secondary my-2&quot;&gt;次要操作&lt;/a&gt;
+        &lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;div class=&quot;py-5 bg-light&quot;&gt;
+      &lt;div class=&quot;container&quot;&gt;
+        &lt;div class=&quot;row&quot;&gt;
+          &lt;div class=&quot;col-md-4&quot; *ngFor=&#39;let item of images&#39;&gt;
+            &lt;div class=&quot;card mb-4 box-shadow&quot;&gt;
+              &lt;img class=&quot;card-img-top&quot; src=&quot;{{item}}&quot; alt=&quot;Card image cap&quot;&gt;
+              &lt;div class=&quot;card-body&quot;&gt;
+                &lt;p class=&quot;card-text&quot;&gt;这是一个展示商品的卡片，下面有配套的文字，作为补充内容。
+                  此例仅是演示用，卡片文字均相同，图片来自网上。&lt;/p&gt;
+                &lt;div class=&quot;d-flex justify-content-between align-items-center&quot;&gt;
+                  &lt;div class=&quot;btn-group&quot;&gt;
+                    &lt;button type=&quot;button&quot; class=&quot;btn btn-sm btn-outline-secondary&quot;&gt;View&lt;/button&gt;
+                    &lt;button type=&quot;button&quot; class=&quot;btn btn-sm btn-outline-secondary&quot;&gt;Edit&lt;/button&gt;
+                  &lt;/div&gt;
+                  &lt;small class=&quot;text-muted&quot;&gt;9 mins&lt;/small&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+  &lt;/main&gt;
+  &lt;footer class=&quot;text-muted&quot;&gt;
+    &lt;div class=&quot;container&quot;&gt;
+      &lt;p class=&quot;float-right&quot;&gt;
+        &lt;a href=&quot;#&quot;&gt;回到顶部&lt;/a&gt;
+      &lt;/p&gt;
+      &lt;p&gt;仿照 Album example is &amp;copy; Bootstrap, 可以根据实际情况进一步加工、调整&lt;/p&gt;
+      &lt;p&gt;关于更多的 Bootstrap 细节知识，请参阅其官方文档 &lt;a href=&quot;.&quot;&gt;Visit the homepage&lt;/a&gt; 或者直接进入 &lt;a
+          href=&quot;.&quot;&gt;getting
+          started &lt;/a&gt;指南。&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/footer&gt;
+&lt;/div&gt;
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="13">
+<li><p>观察应用程序页面，页面显示效果如图19-9所示：</p></li>
+</ol>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/Figure19-9.png"><img alt="../_images/Figure19-9.png" src="../_images/Figure19-9.png" style="width: 500px;" /></a>
+<p>图19-9 使用NG-Bootstrap打造产品展示界面</p>
+</div></blockquote>
+<p>在上面的步骤中，完成了以下内容：</p>
+<ol class="arabic simple">
+<li><p>安装了NG-Bootstrap组件库，相当于可以直接在Angular项目中使用Bootstrap组件的组件了，步骤6中的Collapse组件来自NG-Bootstrap组件库，而步骤9和11中的广告大块屏幕（Jumbotron）组件、栅格系统（Grid）和卡片（Card）组件均来自Bootstrap；</p></li>
+<li><p>步骤8中添加了Angular和Bootstrap字体，该字体属于“Free Brands Icons”字体，同时在组件模板中使用&lt;fa-icon&gt;组件显示它们；</p></li>
+<li><p>卡片组件初始化时，调用组件类的images变量，该变量返回图片URL的数组；</p></li>
+</ol>
+<p>此示例中几乎没有业务逻辑代码，纯粹是为了展示如何在Angular项目中集成NG-Bootstrap组件库和FontAwesome字体。</p>
+</div>
+<div class="section" id="id12">
+<h2><span class="sectnum">19.7</span> 小结<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h2>
+<p>本章主要介绍了如何在Angular项目中集成NG-Bootstrap组件库和FontAwesome字体。同时通过一个真实的案例来引导读者一步步的使用它的功能。通过本章的学习，读者应该基本掌握了Bootstrap组件的实战开发经验。</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="echart.html" class="btn btn-neutral float-right" title="20 在Angular项目中使用图表" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="material.html" class="btn btn-neutral float-left" title="18 实战基于Angular Material实现表格组件" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright CVI Talent
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

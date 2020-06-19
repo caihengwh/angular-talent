@@ -1,0 +1,1160 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>23 Angular与渐进式WEB应用</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="24 实现简单的消息通知机制" href="message.html" />
+    <link rel="prev" title="22 掌握在Angular组件间通信" href="communication.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/main-page-logo-small-hat.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">目录：</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="start.html">Angular 9</a></li>
+<li class="toctree-l1"><a class="reference internal" href="first.html">第一课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="whatisangular.html"><span class="sectnum">1</span> Angular概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="howtolearn.html"><span class="sectnum">2</span> 学习Angular需要什么基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nodejs.html"><span class="sectnum">3</span> 掌握Node.js和npm基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="second.html">第二课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="typescript.html"><span class="sectnum">4</span> 学习TypeScript知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="firstangular.html"><span class="sectnum">5</span> 快速开启第一个Angular</a></li>
+<li class="toctree-l1"><a class="reference internal" href="third.html">第三课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angcomponent.html"><span class="sectnum">6</span> 学习Angular组件知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angtemplate.html"><span class="sectnum">7</span> 学习Angular模板知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angdirective.html"><span class="sectnum">8</span> 掌握Angular指令应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fourth.html">第四课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angmodule.html"><span class="sectnum">9</span> 学习Angular模块知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angroute.html"><span class="sectnum">10</span> 熟悉Angular路由功能</a></li>
+<li class="toctree-l1"><a class="reference internal" href="injection.html"><span class="sectnum">11</span> 学习Angular的服务及依赖注入</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fifth.html">第五课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reactive.html"><span class="sectnum">12</span> 掌握响应式编程基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form.html"><span class="sectnum">13</span> 学习Angular表单知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="httpclient.html"><span class="sectnum">14</span> 熟悉HttpClient模块</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sixth.html">第六课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pipe.html"><span class="sectnum">15</span> 深入学习Angular管道知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ui.html"><span class="sectnum">16</span> Angular与Angular Material组件库</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rxjs.html"><span class="sectnum">17</span> 学习RxJS在Angular中的实际应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="seventh.html">第七课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="material.html"><span class="sectnum">18</span> 实战基于Angular Material实现表格组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bootstrap.html"><span class="sectnum">19</span> 集成Bootstrap前端组件库</a></li>
+<li class="toctree-l1"><a class="reference internal" href="echart.html"><span class="sectnum">20</span> 在Angular项目中使用图表</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appid.html"><span class="sectnum">21</span> 使用IBM Cloud™ App ID对Angular应用进行认证</a></li>
+<li class="toctree-l1"><a class="reference internal" href="communication.html"><span class="sectnum">22</span> 掌握在Angular组件间通信</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#"><span class="sectnum">23</span> Angular与渐进式WEB应用</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#web"><span class="sectnum">23.1</span> 什么是渐进式WEB应用</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pwa"><span class="sectnum">23.2</span> 了解PWA的核心技术</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#manifest"><span class="sectnum">23.2.1</span> Manifest技术</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#service-worker"><span class="sectnum">23.2.2</span> Service Worker技术</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1"><span class="sectnum">23.2.3</span> 离线通知技术</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#app-shell"><span class="sectnum">23.2.4</span> App Shell技术</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id2"><span class="sectnum">23.3</span> PWA的优势和最低要求</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id3"><span class="sectnum">23.3.1</span> PWA的优势有哪些</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4"><span class="sectnum">23.3.2</span> PWA的最低要求</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#angularpwa"><span class="sectnum">23.4</span> 为Angular项目添加PWA功能</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#angularapp-shell"><span class="sectnum">23.5</span> 为Angular项目应用App Shell技术</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#angularservice-worker"><span class="sectnum">23.6</span> Angular与Service Worker通讯</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pwa-ex100"><span class="sectnum">23.7</span> [示例 pwa-ex100] 实战打造一个培训学校点名系统</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#angular"><span class="sectnum">23.7.1</span> 创建Angular工程</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#angular-material"><span class="sectnum">23.7.2</span> 安装Angular Material依赖</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#restfull-api"><span class="sectnum">23.7.3</span> 准备后端RestFull API服务</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5"><span class="sectnum">23.7.4</span> 设计数据模型</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6"><span class="sectnum">23.7.5</span> 创建页面布局</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7"><span class="sectnum">23.7.6</span> 学生列表组件的开发</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8"><span class="sectnum">23.7.7</span> 学生卡片组件的开发</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9"><span class="sectnum">23.7.8</span> 为应用添加PWA功能</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id10"><span class="sectnum">23.7.9</span> 为应用增加App Shell技术</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#pwaapp-shell"><span class="sectnum">23.8</span> 正确理解PWA与App Shell技术</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id11"><span class="sectnum">23.9</span> 小结</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="message.html"><span class="sectnum">24</span> 实现简单的消息通知机制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="localdata.html"><span class="sectnum">25</span> 如何与本地数据打交道</a></li>
+<li class="toctree-l1"><a class="reference internal" href="test.html"><span class="sectnum">26</span> 熟悉Angular测试</a></li>
+<li class="toctree-l1"><a class="reference internal" href="package.html"><span class="sectnum">27</span> 熟悉Angular环境配置及打包</a></li>
+<li class="toctree-l1"><a class="reference internal" href="universal.html"><span class="sectnum">28</span> 学习Angular服务端渲染</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deploy.html"><span class="sectnum">29</span> 如何部署Angular应用程序</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user.html"><span class="sectnum">30</span> 实战用户管理系统</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">CVI Talent</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">首页</a> &raquo;</li>
+        
+      <li><span class="sectnum">23</span> Angular与渐进式WEB应用</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        <a href="https://pages.github.ibm.com/lanzejun/talent/index.html" class="fa fa-github"> CVITube</a>
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="angularweb">
+<h1><span class="sectnum">23</span> Angular与渐进式WEB应用<a class="headerlink" href="#angularweb" title="Permalink to this headline">¶</a></h1>
+<p>一直以来，WEB应用程序的竞争对手就是原生应用程序。尤其在在用户体验上，WEB应用在一直努力提升首页渲染的速度，动画的流畅度，虽然有很多方式和方法的优化，性能确实有不小的提升，但是无论怎么优化，还是比原生应用程序要差很多。在访问速度上，原生应用程序安装完毕后会在用户桌面上有一个入口，让用户打开App只需一次点击，而WEB应用程序，必须先要打开浏览器，然后输入或者点击收藏夹里面的网址才能达到WEB站点。原生应用程序可以缓存网络资源，在没有网络的情况下，依然可以看到部分缓存过的内容。</p>
+<p>上述场景就是渐进式WEB应用程序发挥作用的地方。渐进式WEB应用程序的出发点就是为了减少与原生应用程序直接的差距，同时还提供了一些优于原生应用的功能。它利用了一些当前的浏览器技术，以提供流畅的用户体验，即使在几乎没有网络连接的情况下，也能提供流畅的用户体验。它们使用一些核心技术，如Service Worker来拦截网络请求并缓存响应，使用Manifest技术，让WEB应用程序也能像原生应用一样被安装在客户的桌面，甚至更简单和直接等。</p>
+<div class="section" id="web">
+<h2><span class="sectnum">23.1</span> 什么是渐进式WEB应用<a class="headerlink" href="#web" title="Permalink to this headline">¶</a></h2>
+<p>渐进式WEB应用（Progress Web Application），简称PWA。Google 提出 PWA 的时候，并没有给它一个准确的定义，它不是特指某一项技术，而是应用多项技术来改善用户体验的 Web App，其核心技术包括 Web App Manifest，Service Worker，Web Push 等，用户体验才是 PWA 的核心。</p>
+<p>PWA是一套使用现代浏览器功能的准则，它创建的WEB应用程序使用现代浏览器的功能，提供了非常贴近原生应用的用户体验。虽然它依然是一个WEB应用，但它的外观和感觉就像一个本地的原生应用程序，并提供了普通WEB应用程序所不具备的功能。当用户在浏览器中通过URL访问PWA时，将会得到一个提示，提示用户是否需要 “添加到桌面”，而不需要从应用商店下载和安装。当用户从桌面上打开PWA时，使用效果同原生应用程序一样，直接在本地呈现WEB应用页面。</p>
+</div>
+<div class="section" id="pwa">
+<h2><span class="sectnum">23.2</span> 了解PWA的核心技术<a class="headerlink" href="#pwa" title="Permalink to this headline">¶</a></h2>
+<p>前面提到，PWA的核心是用户体验，能让PWA达到原生应用的体验并不仅仅依赖于某一项技术，而是多管齐下，进行改进，从而在安全、性能和体验上都获得很大的提升。下面将简单介绍几个PWA应用中经常使用到的技术，后面的章节会进行更详细的讲解。</p>
+<div class="section" id="manifest">
+<h3><span class="sectnum">23.2.1</span> Manifest技术<a class="headerlink" href="#manifest" title="Permalink to this headline">¶</a></h3>
+<p>通过Manifest技术可以将WEB应用程序安装在桌面，可以定义用户添加到主屏的图标、应用名称等。Manifest允许开发者配置隐藏浏览器多余的 UI（地址栏、导航栏、菜单等），让 PWA 具有和原生应用程序一样的沉浸式体验。</p>
+</div>
+<div class="section" id="service-worker">
+<h3><span class="sectnum">23.2.2</span> Service Worker技术<a class="headerlink" href="#service-worker" title="Permalink to this headline">¶</a></h3>
+<p>Service Worker可以翻译为服务工作线程，本书为了消除歧义，保持原状。Service Worker是浏览器在后端独立于网页主进程运行的脚本，它可以拦截网络请求，可以操作本地缓存，还可以接受服务器推送的离线消息。Service Worker是一个特殊的线程，独立于当前网页主线程，有自己的执行上下文。一旦被安装，就持续存在，除非取消注册。Service Worker技术必须在 HTTPS 环境下才能工作。</p>
+</div>
+<div class="section" id="id1">
+<h3><span class="sectnum">23.2.3</span> 离线通知技术<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>离线通知其实是Service Worker的功能。离线通知是指在用户没有打开 PWA应用的情况下，也能接受到服务器推送过来的通知，并呈现给用户，其中包括了两部分，离线推送和呈现通知，分别是 Web Push 和 Notification API。浏览器在接受到服务中心推送过来的离线消息时，会唤醒已经注册的 Service Worker，开发者可以通过Service Worker处理接受到的请求，显示通知。</p>
+</div>
+<div class="section" id="app-shell">
+<h3><span class="sectnum">23.2.4</span> App Shell技术<a class="headerlink" href="#app-shell" title="Permalink to this headline">¶</a></h3>
+<p>App Shell 是 PWA 界面展示所需的最小资源集合，即让页面能够正常运行起来的最小的 HTML、CSS 和 JavaScript 等静态资源集，每个页面都需要加载这一部分资源。利用 Service Worker 把这部分资源缓存在本地，就能够在打开 PWA 时不需要从服务器端获取这部分资源，从而能够瞬间渲染出页面框架，不仅提升了首页的速度，还减小了服务器流量的消耗。简单的说，App Shell技术能够缩短用户进入页面时的等待时间。</p>
+</div>
+</div>
+<div class="section" id="id2">
+<h2><span class="sectnum">23.3</span> PWA的优势和最低要求<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>技术的发展是循序渐进的，从Google提出PWA以后，PWA取得的成绩有目共睹。随着标准的进一步完善，国内外各大浏览器都会逐步支持，向标准靠拢。除了Google的Chrome浏览器支持PWA外，苹果公司从iOS 11.3版本开始在Safari上支持Service Worker，iOS 12.2 版本修复了PWA 很多致命的体验问题，支持了Web Share API等。下面列举关于PWA的优势和最低要求。</p>
+<div class="section" id="id3">
+<h3><span class="sectnum">23.3.1</span> PWA的优势有哪些<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>PWA有与传统的WEB应用相比有下面这些优势：</p>
+<ol class="arabic simple">
+<li><p>即使在网络不稳定甚至断网的环境下，也能瞬间加载并展现；</p></li>
+<li><p>快速响应，加载速度快，具有平滑的过渡动画及用户操作的反馈；</p></li>
+<li><p>始终是最新的，无版本和更新问题。服务器更新过程中，会始终保持APP的最新动态；</p></li>
+<li><p>和原生应用程序一样，可以被添加到桌面，能接受离线通知，具有沉浸式的用户体验，无需下载和安装；</p></li>
+<li><p>通过HTTPS访问，允许授权、安全交易，并防止未经授权的访问。</p></li>
+</ol>
+</div>
+<div class="section" id="id4">
+<h3><span class="sectnum">23.3.2</span> PWA的最低要求<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>PWA 采用的最新技术，当前一些浏览器还没有达到完全支持的程度，很多技术在W3C还没有定稿，不过这也意味着这些技术的还有很大的想象空间。首先，需要支持Service Worker技术的浏览器；其次，服务器需要使用 HTTPS发布；最后，设计应用时，需要PWA所有的URL在断网的情况下有内容呈现。</p>
+<p>PWA其实并不是Angular独有的技术，将Angular应用程序打造成PWA，其实就是为Angular应用程序添加 Service Worker 功能。Angular 提供了自己的 Service Worker 实现。 Angular 开发人员可以直接基于这个实现，而无需再针对底层 API 写代码。</p>
+</div>
+</div>
+<div class="section" id="angularpwa">
+<h2><span class="sectnum">23.4</span> 为Angular项目添加PWA功能<a class="headerlink" href="#angularpwa" title="Permalink to this headline">¶</a></h2>
+<p>为Angular项目添加PWA功能，分为两个步骤：</p>
+<ol class="arabic simple">
+<li><p>使用Angular CLI 命令： <code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">add</span> <span class="pre">&#64;angular/pwa</span></code> 为项目添加 “service-worker” 及依赖包，并会创建及配置好相关的文件，该命令自动完成了如下内容：</p></li>
+</ol>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>添加了&#64;angular/service-worker包及依赖到项目中；</p></li>
+<li><p>在Angular CLI 中启用了 Service Worker 的构建支持；</p></li>
+<li><p>在根模块中导入并注册了 Service Worker；</p></li>
+<li><p>修改了 index.html 文件：添加到manifest.json文件中的链接和为theme-color添加meta标签；</p></li>
+<li><p>创建了PWA的桌面图标；</p></li>
+<li><p>创建了一个名叫 ngsw-config.json 的 Service Worker 配置文件，用来配置应用缓存的行为及其他的配置。</p></li>
+</ol>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>使用Angular CLI 命令： <code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">build</span> <span class="pre">--prod</span></code> 将Angular项目构建为PWA应用。</p></li>
+</ol>
+<blockquote>
+<div><p>命令： <code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">add</span> <span class="pre">&#64;angular/pwa</span></code> 有个选项参数 <code class="docutils literal notranslate"><span class="pre">--project</span></code> ，通过该参数，我们可以指定转换的Angular工程，如：</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng add @angular/pwa --project 项目名称
+</pre></div>
+</div>
+<p>通过project参数的设置，这意味着，我们可以为任何使用Angular CLI 命令生成的已有项目转换为PWA项目。</p>
+</div></blockquote>
+</div>
+<div class="section" id="angularapp-shell">
+<h2><span class="sectnum">23.5</span> 为Angular项目应用App Shell技术<a class="headerlink" href="#angularapp-shell" title="Permalink to this headline">¶</a></h2>
+<p>前面介绍了App Shell技术，Angular应用是单页应用（Single Page Application），为了能减少页面跳转带来的开销，可以在页面切换时增加过渡动画，避免出现加载时的白屏。那么在页面切换时页面上固定不动的内容就是应用App Shell技术需要解决的。</p>
+<p>如何将应用的显示内容划分为主体内容部分和外壳部分。App Shell 就是外壳部分，即页面的基本结构。App Shell 是页面能够展现所需的最小资源集合，采用 App Shell 的应用程序，每个页面都会先加载 App Shell 的内容，再由 App Shell 根据当前页面 URL 渲染对应的主体内容。</p>
+<p>Angular项目借助路由渲染应用App Shell技术，因此需要确保Angular项目中已经启用了RouterModule模块，且在应用中使用了&lt;router-outlet&gt;路由出口。</p>
+<p>Angular项目满足上述条件后，为项目添加App Shell技术功能，分为两个步骤：</p>
+<ol class="arabic simple">
+<li><p>使用Angular CLI 命令为项目添加App Shell，具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng generate app-shell
+</pre></div>
+</div>
+<p>执行上述命令后，控制台输出下列信息：</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ ng generate app-shell
+CREATE src/main.server.ts <span class="o">(</span><span class="m">298</span> bytes<span class="o">)</span>
+CREATE src/app/app.server.module.ts <span class="o">(</span><span class="m">590</span> bytes<span class="o">)</span>
+CREATE tsconfig.server.json <span class="o">(</span><span class="m">308</span> bytes<span class="o">)</span>
+CREATE src/app/app-shell/app-shell.component.css <span class="o">(</span><span class="m">0</span> bytes<span class="o">)</span>
+CREATE src/app/app-shell/app-shell.component.html <span class="o">(</span><span class="m">24</span> bytes<span class="o">)</span>
+CREATE src/app/app-shell/app-shell.component.ts <span class="o">(</span><span class="m">286</span> bytes<span class="o">)</span>
+UPDATE package.json <span class="o">(</span><span class="m">1470</span> bytes<span class="o">)</span>
+UPDATE angular.json <span class="o">(</span><span class="m">5832</span> bytes<span class="o">)</span>
+UPDATE src/main.ts <span class="o">(</span><span class="m">432</span> bytes<span class="o">)</span>
+UPDATE src/app/app.module.ts <span class="o">(</span><span class="m">903</span> bytes<span class="o">)</span>
+✔ Packages installed successfully.
+</pre></div>
+</div>
+<p>查看angular.json配置文件，里面已经增加了一些节点信息，如：“app-shell”节点。</p>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>使用App Shell技术构建Angular应用程序内容，具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng run app-name:app-shell <span class="c1"># app-name 是项目名称</span>
+</pre></div>
+</div>
+<p>上述命令中，还可以添加环境参数，如： <code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">run</span> <span class="pre">app-name:app-shell:production</span></code>。</p>
+<p>执行上述命令后，在dist/app-name/的目录下，将会生成2个文件夹：browser和server文件夹。要验证构建的输出，可以打开dist/app-name/browser/index.html文件，里面可以找到默认的文本 app-shell works! 这就表示App Shell技术已经借助路由渲染出来内容了。</p>
+</div></blockquote>
+</div>
+<div class="section" id="angularservice-worker">
+<h2><span class="sectnum">23.6</span> Angular与Service Worker通讯<a class="headerlink" href="#angularservice-worker" title="Permalink to this headline">¶</a></h2>
+<p>前面提到为Angular项目添加PWA功能时，在Angular项目的根模块中导入了ServiceWorkerModule，并注册了 Service Worker。ServiceWorkerModule模块中提供了一些服务，可以让开发者能和 Service Worker 通讯，如：检查更新、强制激活更新，控制应用的缓存等。</p>
+<p>ServiceWorkerModule中提供了一个SwUpdate服务，SwUpdate 服务支持下面的操作：</p>
+<ol class="arabic simple">
+<li><p>要求 Service Worker 向服务器查询是否有新版本，如果要刷新页面，这些就是可加载的新版本。</p></li>
+<li><p>要求 Service Worker 为当前页面激活该应用的最新版本。</p></li>
+</ol>
+<p>下面是一个演示SwUpdate服务的代码示例：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Injectable</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">SwUpdate</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/service-worker&#39;</span><span class="p">;</span>
+
+<span class="kd">@Injectable</span><span class="p">({</span>
+   <span class="nx">providedIn</span><span class="o">:</span> <span class="s1">&#39;root&#39;</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">CheckUpdateService</span> <span class="p">{</span>
+
+<span class="kr">constructor</span><span class="p">(</span><span class="nx">updates</span>: <span class="kt">SwUpdate</span><span class="p">)</span> <span class="p">{</span>
+   <span class="c1">// 有可用的更新</span>
+   <span class="nx">updates</span><span class="p">.</span><span class="nx">available</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">event</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;当前的版本&#39;</span><span class="p">,</span> <span class="nx">event</span><span class="p">.</span><span class="nx">current</span><span class="p">);</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;服务器上最新的版本&#39;</span><span class="p">,</span> <span class="nx">event</span><span class="p">.</span><span class="nx">available</span><span class="p">);</span>
+   <span class="p">});</span>
+
+   <span class="c1">// 已激活的更新</span>
+   <span class="nx">updates</span><span class="p">.</span><span class="nx">activated</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">event</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;上一个版本&#39;</span><span class="p">,</span> <span class="nx">event</span><span class="p">.</span><span class="nx">previous</span><span class="p">);</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;当前的版本&#39;</span><span class="p">,</span> <span class="nx">event</span><span class="p">.</span><span class="nx">current</span><span class="p">);</span>
+   <span class="p">});</span>
+<span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>透过上述代码，用户可以在具体的方法中添加具体的业务逻辑，关于Service Worker提供的技术有很多，本书仅是引导读者了解下入门的基础。</p>
+<p>下面我们看一个在实际应用中的示例，完成一个培训学校点名系统，并将该应用转换为PWA应用程序。</p>
+</div>
+<div class="section" id="pwa-ex100">
+<h2><span class="sectnum">23.7</span> [示例 pwa-ex100] 实战打造一个培训学校点名系统<a class="headerlink" href="#pwa-ex100" title="Permalink to this headline">¶</a></h2>
+<p>本示例中的UI来自Angular Material的组件库，因此，需要准备及创建一个Angular工程，且安装好Angular Material的依赖包。</p>
+<div class="section" id="angular">
+<h3><span class="sectnum">23.7.1</span> 创建Angular工程<a class="headerlink" href="#angular" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>用Angular CLI构建应用程序，具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng new pwa-ex100 -S --routing --defaults<span class="o">=</span><span class="nb">true</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>在项目根目录下启动服务，具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng serve
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><p>查看应用程序结果。打开Web浏览器并浏览到 “<a class="reference external" href="http://localhost:4200">http://localhost:4200</a>”，应该看到文本 “Welcome to pwa-ex100!”。</p></li>
+</ol>
+</div>
+<div class="section" id="angular-material">
+<h3><span class="sectnum">23.7.2</span> 安装Angular Material依赖<a class="headerlink" href="#angular-material" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>安装 Angular Material，具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng add @angular/material --defaults<span class="o">=</span><span class="nb">true</span> <span class="c1"># defaults=true 表示问答时选择默认值</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>新建Material模块，具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng g m material --route main --module app
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><p>查看应用程序结果。打开Web浏览器并浏览到 “<a class="reference external" href="http://localhost:4200/main">http://localhost:4200/main</a>”，在页面的底部应该可以看到文本 “material works!”。</p></li>
+</ol>
+<p>在上面的步骤中，完成了以下内容：</p>
+<ol class="arabic simple">
+<li><p>安装了Angular Material依赖库；</p></li>
+<li><p>新建了一个带路由功能的Material模块，同时，在根模块中通过延迟加载特性加载Material模块，默认延迟加载的子路由路径为“main”；</p></li>
+</ol>
+<p>本应用中，单独新建的Material模块主要用来存放Angular Material的组件。</p>
+</div>
+<div class="section" id="restfull-api">
+<h3><span class="sectnum">23.7.3</span> 准备后端RestFull API服务<a class="headerlink" href="#restfull-api" title="Permalink to this headline">¶</a></h3>
+<p>考虑到，本应用程序最终将会生成PWA应用，因此，我们选择使用json-server创建RestFull API服务，方便模拟PWA应用程序与网络隔离。而且，后续部署时，也可以方便切换到其他的URL地址。</p>
+<ol class="arabic simple">
+<li><p>新建一个data文件夹，在data文件夹中创建一个db.json的文件，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="nt">&quot;students&quot;</span><span class="p">:</span> <span class="p">[</span>
+         <span class="p">{</span>
+            <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;luyinwh&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;css&quot;</span><span class="p">:</span> <span class="s2">&quot;my-selected1&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;icon&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+         <span class="p">},</span>
+         <span class="p">{</span>
+            <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;cdjianz&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;css&quot;</span><span class="p">:</span> <span class="s2">&quot;my-selected1&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;icon&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+         <span class="p">},</span>
+         <span class="p">{</span>
+            <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;zhuzz&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;css&quot;</span><span class="p">:</span> <span class="s2">&quot;my-selected1&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;icon&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+         <span class="p">}</span>
+   <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>启动json-server，使用如下命令：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> data
+json-server db.json
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><p>查看RestFull API服务的结果。打开Web浏览器并浏览到 “<a class="reference external" href="http://localhost:3000/students">http://localhost:3000/students</a>”，在页面应该可以看到上面定义的JSON格式的数据。</p></li>
+</ol>
+</div>
+<div class="section" id="id5">
+<h3><span class="sectnum">23.7.4</span> 设计数据模型<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p>结合上述RestFull API服务返回的信息，我们定义1个接口类，用来表示返回的数据模型。</p>
+<ol class="arabic simple">
+<li><p>创建学生数据模型接口，具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng g i student
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>编辑学生数据模型接口。编辑文件src/app/student.ts，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">export</span> <span class="kr">interface</span> <span class="nx">Student</span> <span class="p">{</span>
+   <span class="nx">id</span>: <span class="kt">number</span><span class="p">;</span>
+   <span class="nx">name</span>: <span class="kt">string</span><span class="p">;</span>
+   <span class="nx">css</span>: <span class="kt">string</span><span class="p">;</span>
+   <span class="nx">icon</span>: <span class="kt">string</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>在上面的步骤中，Student接口中的字段名与RestFull API服务返回的对应字段名完全匹配。</p>
+</div>
+<div class="section" id="id6">
+<h3><span class="sectnum">23.7.5</span> 创建页面布局<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<p>本示例点名系统的界面分为上下两个部分，上面是工具栏，下面是具体的数据呈现；数据呈现部分分别对应两个独立的页面：列表和卡片页面。用户可以点击工具栏中的图标可以进行页面切换。因此，点名系统将要应用Angular Material的工具栏，卡片以及列表等组件，我们将这些UI组件都统一添加在Material模块中。</p>
+<ol class="arabic simple">
+<li><p>创建列表和卡片组件，具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng g c material/user-list
+ng g c material/user-card
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>添加Angular Material组件模块的依赖。编辑文件src/app/material/material.module.ts，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">NgModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">CommonModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/common&#39;</span><span class="p">;</span>
+
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">MaterialRoutingModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./material-routing.module&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">MaterialComponent</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./material.component&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">MatToolbarModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/material/toolbar&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">MatIconModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/material/icon&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">UserListComponent</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./user-list/user-list.component&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">MatListModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/material/list&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">UserCardComponent</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./user-card/user-card.component&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">MatCardModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/material/card&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">MatGridListModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/material/grid-list&#39;</span><span class="p">;</span>
+
+<span class="kd">@NgModule</span><span class="p">({</span>
+<span class="nx">declarations</span><span class="o">:</span> <span class="p">[</span><span class="nx">MaterialComponent</span><span class="p">,</span> <span class="nx">UserListComponent</span><span class="p">,</span> <span class="nx">UserCardComponent</span><span class="p">],</span>
+<span class="nx">imports</span><span class="o">:</span> <span class="p">[</span>
+   <span class="nx">CommonModule</span><span class="p">,</span>
+   <span class="nx">MaterialRoutingModule</span><span class="p">,</span>
+   <span class="nx">MatToolbarModule</span><span class="p">,</span> <span class="c1">// 工具栏</span>
+   <span class="nx">MatIconModule</span><span class="p">,</span> <span class="c1">// 图标</span>
+   <span class="nx">MatListModule</span><span class="p">,</span> <span class="c1">// 列表</span>
+   <span class="nx">MatCardModule</span><span class="p">,</span> <span class="c1">// 卡片</span>
+   <span class="nx">MatGridListModule</span>
+<span class="p">]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">MaterialModule</span> <span class="p">{</span> <span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><p>编辑根模块，增加HttpClientModule。编辑文件src/app/app.module.ts，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">BrowserModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/platform-browser&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">NgModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">AppRoutingModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./app-routing.module&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">AppComponent</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./app.component&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">BrowserAnimationsModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/platform-browser/animations&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">HttpClientModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/common/http&#39;</span><span class="p">;</span>
+
+<span class="kd">@NgModule</span><span class="p">({</span>
+  <span class="nx">declarations</span><span class="o">:</span> <span class="p">[</span>
+    <span class="nx">AppComponent</span>
+  <span class="p">],</span>
+  <span class="nx">imports</span><span class="o">:</span> <span class="p">[</span>
+    <span class="nx">BrowserModule</span><span class="p">,</span>
+    <span class="nx">AppRoutingModule</span><span class="p">,</span>
+    <span class="nx">BrowserAnimationsModule</span><span class="p">,</span>
+    <span class="nx">HttpClientModule</span> <span class="c1">// HttpClient服务</span>
+  <span class="p">],</span>
+  <span class="nx">providers</span><span class="o">:</span> <span class="p">[],</span>
+  <span class="nx">bootstrap</span><span class="o">:</span> <span class="p">[</span><span class="nx">AppComponent</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">AppModule</span> <span class="p">{</span> <span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="4">
+<li><p>新建服务。使用命令 <code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">g</span> <span class="pre">s</span> <span class="pre">user</span></code> 新建服务，并将文件src/app/user.service.ts更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Injectable</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">Student</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./student&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">BehaviorSubject</span><span class="p">,</span> <span class="nx">Observable</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;rxjs&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">HttpClient</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/common/http&#39;</span><span class="p">;</span>
+
+<span class="kd">@Injectable</span><span class="p">({</span>
+   <span class="nx">providedIn</span><span class="o">:</span> <span class="s1">&#39;root&#39;</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">UserService</span> <span class="p">{</span>
+
+   <span class="kr">private</span> <span class="nx">inventorySubject$</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">BehaviorSubject</span><span class="o">&lt;</span><span class="nx">Student</span><span class="p">[]</span><span class="o">&gt;</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+   <span class="kr">constructor</span><span class="p">(</span><span class="kr">private</span> <span class="nx">http</span>: <span class="kt">HttpClient</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+
+   <span class="kr">private</span> <span class="nx">studentUrl</span> <span class="o">=</span> <span class="s1">&#39;http://localhost:3000/students&#39;</span><span class="p">;</span>  <span class="c1">// RESTFul API地址</span>
+
+   <span class="nx">getUsers</span><span class="p">()</span><span class="o">:</span> <span class="nx">Observable</span><span class="o">&lt;</span><span class="nx">Student</span><span class="p">[]</span><span class="o">&gt;</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">http</span><span class="p">.</span><span class="nx">get</span><span class="o">&lt;</span><span class="nx">Student</span><span class="p">[]</span><span class="o">&gt;</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">studentUrl</span><span class="p">);</span> <span class="c1">// 指定响应类型为Student接口数组</span>
+   <span class="p">}</span>
+
+   <span class="nx">getLatestInventory</span><span class="p">()</span><span class="o">:</span> <span class="nx">Observable</span><span class="o">&lt;</span><span class="nx">Student</span><span class="p">[]</span><span class="o">&gt;</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">inventorySubject$</span><span class="p">.</span><span class="nx">asObservable</span><span class="p">();</span>
+   <span class="p">}</span>
+
+   <span class="nx">addToInventory</span><span class="p">(</span><span class="nx">t</span>: <span class="kt">Student</span><span class="p">[])</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">inventorySubject$</span><span class="p">.</span><span class="nx">next</span><span class="p">(</span><span class="nx">t</span><span class="p">);</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="5">
+<li><p>编辑Material组件。编辑文件src/app/material/material.component.ts，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">OnInit</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">Router</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/router&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">UserService</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;../user.service&#39;</span><span class="p">;</span>
+
+<span class="kd">@Component</span><span class="p">({</span>
+<span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-material&#39;</span><span class="p">,</span>
+<span class="nx">templateUrl</span><span class="o">:</span> <span class="s1">&#39;./material.component.html&#39;</span><span class="p">,</span>
+<span class="nx">styleUrls</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;./material.component.css&#39;</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">MaterialComponent</span> <span class="kr">implements</span> <span class="nx">OnInit</span> <span class="p">{</span>
+
+<span class="nx">title</span> <span class="o">=</span> <span class="s1">&#39;点名&#39;</span><span class="p">;</span>
+<span class="nx">view_list</span>: <span class="kt">boolean</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+<span class="kr">constructor</span><span class="p">(</span>
+   <span class="kr">private</span> <span class="nx">router</span>: <span class="kt">Router</span><span class="p">,</span>
+   <span class="kr">private</span> <span class="nx">userService</span>: <span class="kt">UserService</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+
+<span class="nx">ngOnInit</span><span class="p">()</span><span class="o">:</span> <span class="k">void</span> <span class="p">{</span>
+   <span class="k">this</span><span class="p">.</span><span class="nx">userService</span><span class="p">.</span><span class="nx">getUsers</span><span class="p">().</span><span class="nx">subscribe</span><span class="p">(</span>
+      <span class="nx">data</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">userService</span><span class="p">.</span><span class="nx">addToInventory</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+      <span class="p">}</span>
+   <span class="p">)</span>
+   <span class="c1">// 获取当前的URL</span>
+   <span class="kd">let</span> <span class="nx">currentpath</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">router</span><span class="p">.</span><span class="nx">url</span><span class="p">;</span>
+   <span class="k">this</span><span class="p">.</span><span class="nx">view_list</span> <span class="o">=</span> <span class="nx">currentpath</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s1">&#39;card&#39;</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">?</span> <span class="kc">false</span> <span class="o">:</span> <span class="kc">true</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">changeIcon</span><span class="p">(</span><span class="nx">view_list</span>: <span class="kt">boolean</span><span class="p">)</span> <span class="p">{</span>
+   <span class="k">this</span><span class="p">.</span><span class="nx">view_list</span> <span class="o">=</span> <span class="o">!</span><span class="nx">view_list</span>
+   <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">view_list</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">router</span><span class="p">.</span><span class="nx">navigate</span><span class="p">([</span><span class="s1">&#39;/main&#39;</span><span class="p">]);</span>
+   <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">router</span><span class="p">.</span><span class="nx">navigate</span><span class="p">([</span><span class="s1">&#39;/main/card&#39;</span><span class="p">]);</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="6">
+<li><p>编辑Material组件模板。编辑文件src/app/material/material.component.html，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&lt;mat-toolbar color=&quot;accent&quot;&gt;
+   &lt;mat-toolbar-row&gt;
+      &lt;span&gt;{{title}}&lt;/span&gt;
+      &lt;span class=&quot;example-spacer&quot;&gt;&lt;/span&gt;
+      &lt;mat-icon class=&quot;example-icon&quot; aria-hidden=&quot;false&quot; aria-label=&quot;list&quot; (click)=&quot;changeIcon(view_list)&quot;&gt;
+            {{view_list?&quot;view_module&quot;:&quot;view_list&quot;}}&lt;/mat-icon&gt;
+      &lt;mat-icon class=&quot;example-icon&quot; aria-hidden=&quot;false&quot; aria-label=&quot;退出&quot;&gt;logout&lt;/mat-icon&gt;
+   &lt;/mat-toolbar-row&gt;
+&lt;/mat-toolbar&gt;
+&lt;router-outlet&gt;&lt;/router-outlet&gt;
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="7">
+<li><p>编辑Material组件模板样式。编辑文件src/app/material/material.component.css，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-scss notranslate"><div class="highlight"><pre><span></span><span class="nc">.example-icon</span> <span class="p">{</span>
+   <span class="nt">padding</span><span class="nd">:</span> <span class="nt">0</span> <span class="nt">14px</span><span class="o">;</span>
+<span class="p">}</span>
+
+<span class="cm">/* 工具栏图标靠右的样式 */</span>
+<span class="nc">.example-spacer</span> <span class="p">{</span>
+   <span class="nt">flex</span><span class="nd">:</span> <span class="nt">1</span> <span class="nt">1</span> <span class="nt">auto</span><span class="o">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="8">
+<li><p>编辑Material模块路由。编辑文件src/app/material/material-routing.module.ts，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">NgModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">Routes</span><span class="p">,</span> <span class="nx">RouterModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/router&#39;</span><span class="p">;</span>
+
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">MaterialComponent</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./material.component&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">UserListComponent</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./user-list/user-list.component&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">UserCardComponent</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./user-card/user-card.component&#39;</span><span class="p">;</span>
+
+<span class="kr">const</span> <span class="nx">routes</span>: <span class="kt">Routes</span> <span class="o">=</span> <span class="p">[</span>
+<span class="p">{</span>
+   <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="nx">component</span>: <span class="kt">MaterialComponent</span><span class="p">,</span>
+   <span class="nx">children</span><span class="o">:</span> <span class="p">[</span>
+      <span class="p">{</span> <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="nx">component</span>: <span class="kt">UserListComponent</span> <span class="p">},</span>
+      <span class="p">{</span> <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;card&#39;</span><span class="p">,</span> <span class="nx">component</span>: <span class="kt">UserCardComponent</span> <span class="p">}</span>
+   <span class="p">]</span>
+<span class="p">}</span>
+<span class="p">];</span>
+
+<span class="kd">@NgModule</span><span class="p">({</span>
+<span class="nx">imports</span><span class="o">:</span> <span class="p">[</span><span class="nx">RouterModule</span><span class="p">.</span><span class="nx">forChild</span><span class="p">(</span><span class="nx">routes</span><span class="p">)],</span>
+<span class="nx">exports</span><span class="o">:</span> <span class="p">[</span><span class="nx">RouterModule</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">MaterialRoutingModule</span> <span class="p">{</span> <span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="9">
+<li><p>编辑根模块路由。编辑文件src/app/app-routing.module.ts，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">NgModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">Routes</span><span class="p">,</span> <span class="nx">RouterModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/router&#39;</span><span class="p">;</span>
+
+
+<span class="kr">const</span> <span class="nx">routes</span>: <span class="kt">Routes</span> <span class="o">=</span> <span class="p">[</span>
+<span class="p">{</span> <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="nx">redirectTo</span><span class="o">:</span> <span class="s1">&#39;/main&#39;</span><span class="p">,</span> <span class="nx">pathMatch</span><span class="o">:</span> <span class="s1">&#39;full&#39;</span> <span class="p">},</span>
+<span class="p">{</span>
+   <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;main&#39;</span><span class="p">,</span> <span class="nx">loadChildren</span><span class="o">:</span> <span class="p">()</span> <span class="o">=&gt;</span>
+      <span class="kr">import</span><span class="p">(</span><span class="s1">&#39;./material/material.module&#39;</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">m</span> <span class="o">=&gt;</span> <span class="nx">m</span><span class="p">.</span><span class="nx">MaterialModule</span><span class="p">)</span>
+<span class="p">}];</span>
+
+<span class="kd">@NgModule</span><span class="p">({</span>
+<span class="nx">imports</span><span class="o">:</span> <span class="p">[</span><span class="nx">RouterModule</span><span class="p">.</span><span class="nx">forRoot</span><span class="p">(</span><span class="nx">routes</span><span class="p">)],</span>
+<span class="nx">exports</span><span class="o">:</span> <span class="p">[</span><span class="nx">RouterModule</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">AppRoutingModule</span> <span class="p">{</span> <span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="10">
+<li><p>编辑根组件模板。编辑文件src/app/app.component.html，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">router-outlet</span><span class="p">&gt;&lt;/</span><span class="nt">router-outlet</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="11">
+<li><p>查看应用程序结果。打开Web浏览器并浏览到 “<a class="reference external" href="http://localhost:4200">http://localhost:4200</a>”，页面显示效果如图23-1所示：</p></li>
+</ol>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/Figure23-1.png"><img alt="../_images/Figure23-1.png" src="../_images/Figure23-1.png" style="width: 400px;" /></a>
+<p>图23-1 使用Angular Material的工具栏</p>
+</div></blockquote>
+<p>在上面的步骤中，完成了以下内容：</p>
+<ol class="arabic simple">
+<li><p>单独创建了Material模块，并在其中添加了工具栏、图标以及卡片等模块的依赖；</p></li>
+<li><p>在UserService服务类中，我们使用了通过服务的可观察对象共享数据。使用inventorySubject$变量表示库存。getLatestInventory()方法返回库存中的最新值，addToInventory()方法表示往库存中添加数据。getUsers()方法中请求的是利用json-server创建的本地RestFull API服务；</p></li>
+<li><p>Material组件初始化时，调用UserService服务类中的方法，往库存inventorySubject$变量中添加数据；</p></li>
+<li><p>AppRoutingModule根路由类中修改了默认主路径，使其跳转到Material组件。</p></li>
+</ol>
+<p>点击工具栏中的“view_list”和“view_module”图标，可以看到下方的内容在列表和卡片页面来回切换。接下来，我们开始列表和卡片页面的开发。</p>
+</div>
+<div class="section" id="id7">
+<h3><span class="sectnum">23.7.6</span> 学生列表组件的开发<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<p>Angular Material组件库中提供了一个用于包装和格式化一系列条目列表的组件，可用来显示多行数据，并支持选取列表。选取列表组件用标签&lt;mat-selection-list&gt;和&lt;mat-list-option&gt;表示。&lt;mat-selection-list&gt; 是一个容器组件，用于包装和格式化一系列&lt;mat-list-option&gt;条目。</p>
+<ol class="arabic simple">
+<li><p>编辑列表组件。编辑文件src/app/user-list/user-list.component.ts，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">OnInit</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">UserService</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;src/app/user.service&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">Student</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;src/app/student&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">Observable</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;rxjs&#39;</span><span class="p">;</span>
+
+<span class="kd">@Component</span><span class="p">({</span>
+<span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-user-list&#39;</span><span class="p">,</span>
+<span class="nx">templateUrl</span><span class="o">:</span> <span class="s1">&#39;./user-list.component.html&#39;</span><span class="p">,</span>
+<span class="nx">styleUrls</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;./user-list.component.css&#39;</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">UserListComponent</span> <span class="kr">implements</span> <span class="nx">OnInit</span> <span class="p">{</span>
+
+<span class="kr">constructor</span><span class="p">(</span><span class="kr">private</span> <span class="nx">userService</span>: <span class="kt">UserService</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+
+<span class="nx">students$</span>: <span class="kt">Observable</span><span class="o">&lt;</span><span class="nx">Student</span><span class="p">[]</span><span class="o">&gt;</span>
+
+<span class="nx">ngOnInit</span><span class="p">()</span><span class="o">:</span> <span class="k">void</span> <span class="p">{</span>
+   <span class="k">this</span><span class="p">.</span><span class="nx">students$</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">userService</span><span class="p">.</span><span class="nx">getLatestInventory</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="nx">doStuff</span><span class="p">(</span><span class="nx">user</span>: <span class="kt">Student</span><span class="p">)</span> <span class="p">{</span>
+   <span class="k">if</span> <span class="p">(</span><span class="s2">&quot;my-selected1&quot;</span> <span class="o">===</span> <span class="nx">user</span><span class="p">.</span><span class="nx">css</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">user</span><span class="p">.</span><span class="nx">css</span> <span class="o">=</span> <span class="s2">&quot;my-selected2&quot;</span><span class="p">;</span>
+      <span class="nx">user</span><span class="p">.</span><span class="nx">icon</span> <span class="o">=</span> <span class="s2">&quot;sentiment_very_satisfied&quot;</span><span class="p">;</span>
+   <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="nx">user</span><span class="p">.</span><span class="nx">css</span> <span class="o">=</span> <span class="s2">&quot;my-selected1&quot;</span><span class="p">;</span>
+      <span class="nx">user</span><span class="p">.</span><span class="nx">icon</span> <span class="o">=</span> <span class="s2">&quot;sentiment_very_dissatisfied&quot;</span><span class="p">;</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nx">isChecked</span><span class="p">(</span><span class="nx">user</span>: <span class="kt">Student</span><span class="p">)</span><span class="o">:</span> <span class="kr">boolean</span> <span class="p">{</span>
+   <span class="k">if</span> <span class="p">(</span><span class="s2">&quot;my-selected1&quot;</span> <span class="o">===</span> <span class="nx">user</span><span class="p">.</span><span class="nx">css</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+   <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>编辑列表组件模板。编辑文件src/app/user-list/user-list.component.html，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&lt;div class=&quot;my-list&quot;&gt;
+   &lt;mat-selection-list #total&gt;
+      &lt;mat-list-option *ngFor=&quot;let student of students$ |async&quot; [ngClass]=&quot;student.css&quot;
+            [selected]=&quot;isChecked(student)&quot; (click)=&quot;doStuff(student)&quot;&gt;
+            &lt;mat-icon mat-list-icon&gt;{{student.icon}}&lt;/mat-icon&gt;{{student.id}}、 {{student.name}}
+      &lt;/mat-list-option&gt;
+   &lt;/mat-selection-list&gt;
+   &lt;p&gt;
+      选取项个数: {{total.selectedOptions.selected.length}}
+   &lt;/p&gt;
+&lt;/div&gt;
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><p>编辑列表组件模板样式。编辑文件src/app/user-list/user-list.component.css，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="nc">my-list</span> <span class="p">{</span>
+   <span class="k">min-height</span><span class="p">:</span> <span class="mi">200</span><span class="kt">px</span><span class="p">;</span>
+   <span class="k">margin</span><span class="p">:</span> <span class="kc">auto</span><span class="p">;</span>
+   <span class="k">margin-top</span><span class="p">:</span> <span class="mi">1</span><span class="kt">em</span><span class="p">;</span>
+   <span class="k">width</span><span class="p">:</span> <span class="mi">35</span><span class="kt">%</span><span class="p">;</span>
+   <span class="k">border</span><span class="p">:</span> <span class="mi">1</span><span class="kt">px</span> <span class="kc">solid</span> <span class="kc">green</span><span class="p">;</span>
+   <span class="k">padding</span><span class="p">:</span> <span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">my-selected1</span><span class="p">{</span>
+   <span class="k">color</span><span class="p">:</span> <span class="kc">gainsboro</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">my-selected2</span> <span class="p">{</span>
+   <span class="k">color</span><span class="p">:</span> <span class="kc">green</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="4">
+<li><p>观察应用程序页面，页面显示效果如图23-2所示。</p></li>
+</ol>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/Figure23-2.png"><img alt="../_images/Figure23-2.png" src="../_images/Figure23-2.png" style="width: 500px;" /></a>
+<p>图23-2 选取学生列表组件</p>
+</div></blockquote>
+<p>在上面的步骤中，完成了以下内容：</p>
+<ol class="arabic simple">
+<li><p>列表组件初始化时，调用服务类的方法，获取库存inventorySubject$变量的最新值；</p></li>
+<li><p>列表组件模板中通过[ngClass]绑定了css样式，同时单击选项时，绑定了doStuff()方法，该方法中通过判断选项当前的css样式，更新当前选项新的样式和图标；</p></li>
+<li><p>单击列表中的项时，模板的下方通过引用模板变量#total，显示选取项的个数；</p></li>
+</ol>
+<p>接下来，我们开始学生卡片页面的开发。</p>
+</div>
+<div class="section" id="id8">
+<h3><span class="sectnum">23.7.7</span> 学生卡片组件的开发<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<p>同列表组件类似，卡片页面选择使用Angular Material组件库中的卡片组件，显示学生信息的布局排列。卡片组件用标签&lt;mat-card&gt;表示。它同列表组件一样，也是一个容器组件，卡片组件包含了若干个子选项标签，我们在下面的示例中演示。</p>
+<ol class="arabic simple">
+<li><p>编辑卡片组件。编辑文件src/app/user-list/user-card.component.ts，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">OnInit</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">UserService</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;src/app/user.service&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">Student</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;src/app/student&#39;</span><span class="p">;</span>
+
+<span class="kd">@Component</span><span class="p">({</span>
+<span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-user-card&#39;</span><span class="p">,</span>
+<span class="nx">templateUrl</span><span class="o">:</span> <span class="s1">&#39;./user-card.component.html&#39;</span><span class="p">,</span>
+<span class="nx">styleUrls</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;./user-card.component.css&#39;</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">UserCardComponent</span> <span class="kr">implements</span> <span class="nx">OnInit</span> <span class="p">{</span>
+
+<span class="kr">constructor</span><span class="p">(</span><span class="kr">private</span> <span class="nx">userService</span>: <span class="kt">UserService</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+
+<span class="nx">students</span>: <span class="kt">Student</span><span class="p">[];</span>
+
+<span class="nx">ngOnInit</span><span class="p">()</span><span class="o">:</span> <span class="k">void</span> <span class="p">{</span>
+   <span class="k">this</span><span class="p">.</span><span class="nx">userService</span><span class="p">.</span><span class="nx">getLatestInventory</span><span class="p">().</span><span class="nx">subscribe</span><span class="p">(</span>
+      <span class="nx">data</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">students</span> <span class="o">=</span> <span class="nx">data</span><span class="p">;</span>
+      <span class="p">}</span>
+   <span class="p">)</span>
+<span class="p">}</span>
+
+<span class="nx">doStuff</span><span class="p">(</span><span class="nx">student</span>: <span class="kt">Student</span><span class="p">)</span> <span class="p">{</span>
+   <span class="k">if</span> <span class="p">(</span><span class="s2">&quot;my-selected1&quot;</span> <span class="o">===</span> <span class="nx">student</span><span class="p">.</span><span class="nx">css</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">student</span><span class="p">.</span><span class="nx">css</span> <span class="o">=</span> <span class="s2">&quot;my-selected2&quot;</span><span class="p">;</span>
+      <span class="nx">student</span><span class="p">.</span><span class="nx">icon</span> <span class="o">=</span> <span class="s2">&quot;sentiment_very_satisfied&quot;</span><span class="p">;</span>
+   <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="nx">student</span><span class="p">.</span><span class="nx">css</span> <span class="o">=</span> <span class="s2">&quot;my-selected1&quot;</span><span class="p">;</span>
+      <span class="nx">student</span><span class="p">.</span><span class="nx">icon</span> <span class="o">=</span> <span class="s2">&quot;sentiment_very_dissatisfied&quot;</span><span class="p">;</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>编辑卡片组件模板。编辑文件src/app/user-list/user-card.component.html，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&lt;div class=&quot;flex-me&quot;&gt;
+   &lt;mat-card *ngFor=&quot;let student of students&quot; (click)=&quot;doStuff(student)&quot; [ngClass]=&quot;student.css&quot;&gt;
+      &lt;mat-card-header&gt;
+            &lt;div mat-card-avatar&gt;
+               &lt;mat-icon&gt;{{student.icon}}&lt;/mat-icon&gt;
+            &lt;/div&gt;
+            &lt;mat-card-title&gt;{{student.id}}&lt;/mat-card-title&gt;
+            &lt;mat-card-subtitle&gt;{{student.name}}&lt;/mat-card-subtitle&gt;
+      &lt;/mat-card-header&gt;
+   &lt;/mat-card&gt;
+&lt;/div&gt;
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><p>编辑卡片组件模板样式。编辑文件src/app/user-list/user-card.component.css，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="nc">flex-me</span> <span class="p">{</span>
+   <span class="k">margin-top</span><span class="p">:</span> <span class="mi">2</span><span class="kt">em</span><span class="p">;</span>
+   <span class="k">display</span><span class="p">:</span> <span class="kc">flex</span><span class="p">;</span>
+   <span class="k">flex-flow</span><span class="p">:</span> <span class="kc">row</span> <span class="kc">wrap</span><span class="p">;</span>
+   <span class="k">justify-content</span><span class="p">:</span> <span class="kc">center</span><span class="p">;</span>
+   <span class="k">align-items</span><span class="p">:</span> <span class="kc">center</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* 鼠标悬停在card上的样式 */</span>
+<span class="nt">mat-card</span><span class="p">:</span><span class="nd">hover</span>  <span class="p">{</span>
+   <span class="k">cursor</span><span class="p">:</span> <span class="kc">pointer</span><span class="p">;</span>
+   <span class="k">background</span><span class="p">:</span> <span class="kc">green</span><span class="p">;</span>
+   <span class="k">box-shadow</span><span class="p">:</span> <span class="mi">0</span> <span class="mi">5</span><span class="kt">px</span> <span class="mi">5</span><span class="kt">px</span> <span class="mi">-3</span><span class="kt">px</span> <span class="nb">rgba</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mf">.2</span><span class="p">),</span> <span class="mi">0</span> <span class="mi">8</span><span class="kt">px</span> <span class="mi">10</span><span class="kt">px</span> <span class="mi">1</span><span class="kt">px</span> <span class="nb">rgba</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mf">.14</span><span class="p">),</span> <span class="mi">0</span> <span class="mi">3</span><span class="kt">px</span> <span class="mi">14</span><span class="kt">px</span> <span class="mi">2</span><span class="kt">px</span> <span class="nb">rgba</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mf">.12</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">mat-card-header</span> <span class="p">{</span>
+   <span class="k">justify-content</span><span class="p">:</span> <span class="kc">center</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">my-selected1</span><span class="p">{</span>
+   <span class="k">color</span><span class="p">:</span> <span class="kc">gainsboro</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">my-selected2</span> <span class="p">{</span>
+<span class="k">color</span><span class="p">:</span> <span class="kc">white</span><span class="p">;</span>
+<span class="k">background</span><span class="p">:</span> <span class="kc">green</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="5">
+<li><p>观察应用程序页面，页面显示效果如图23-3所示。</p></li>
+</ol>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/Figure23-3.png"><img alt="../_images/Figure23-3.png" src="../_images/Figure23-3.png" style="width: 500px;" /></a>
+<p>图23-3 选取学生卡片组件</p>
+</div></blockquote>
+<p>在上面的步骤中，完成了以下内容：</p>
+<ol class="arabic simple">
+<li><p>卡片组件初始化时，调用服务类的方法，获取库存inventorySubject$变量的最新值；</p></li>
+<li><p>卡片组件模板中通过[ngClass]绑定了css样式，同时单击卡片时，绑定了doStuff()方法，该方法中通过判断选项当前的css样式，更新当前卡片新的样式和图标；</p></li>
+</ol>
+<p>卡片组件和列表组件中共享库存inventorySubject$变量的最新值，因此，列表组件中更新了学生属性的值，在卡片组件中可以看到更新后的值，反之也是一样的。</p>
+</div>
+<div class="section" id="id9">
+<h3><span class="sectnum">23.7.8</span> 为应用添加PWA功能<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>为应用添加PWA功能，具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng add @angular/pwa
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>将项目构建为PWA应用，具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng build --prod
+</pre></div>
+</div>
+</div></blockquote>
+<p>PWA功能底层使用的是Service Worker技术，由于 ng serve 对 Service Worker 无效，所以必须用一个独立的 HTTP 服务器在本地测试我们的项目。这里，我们使用http-server来作为本地开发的服务器。</p>
+<ol class="arabic simple" start="3">
+<li><p>安装http-server服务器，具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>npm install -g http-server <span class="c1"># -g表示global，意思是全局安装</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="4">
+<li><p>本地部署PWA应用，具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>http-server -p <span class="m">8080</span> -c-1 dist/pwa-ex100 <span class="c1"># -c-1 参数表示禁用缓存</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="5">
+<li><p>观察应用程序页面，打开浏览器，输入地址：<a class="reference external" href="http://localhost:8080">http://localhost:8080</a>，页面正常显示，与之前本地执行 <code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">serve</span></code> 命令时显示的效果完全一样。但是，浏览器的地址栏中得到一个提示，提示用户是否需要 “添加到桌面”，页面显示效果如图23-4所示。</p></li>
+</ol>
+<blockquote>
+<div><blockquote>
+<div><a class="reference internal image-reference" href="../_images/Figure23-4.png"><img alt="../_images/Figure23-4.png" src="../_images/Figure23-4.png" style="width: 500px;" /></a>
+<p>图23-4 PWA应用程序提示安装界面</p>
+</div></blockquote>
+<p>点击图23-4中的“+”进行安装，接着页面显示效果如图23-5所示。</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/Figure23-5.png"><img alt="../_images/Figure23-5.png" src="../_images/Figure23-5.png" style="width: 500px;" /></a>
+<p>图23-5 PWA应用程序界面</p>
+</div></blockquote>
+<p>同时，我们的桌面上多出了一个Angular图标，如图23-6所示，这表示是PWA应用程序，看上去和桌面上的其他应用程序并没有什么区别。</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/Figure23-6.png"><img alt="../_images/Figure23-6.png" src="../_images/Figure23-6.png" style="width: 100px;" /></a>
+<p>图23-6 PWA应用程序桌面图标</p>
+</div></blockquote>
+</div></blockquote>
+<ol class="arabic simple" start="6">
+<li><p>停止及断开本地的RESTFul API服务，通过桌面上的PWA应用程序图标，打开应用程序，发现，我们的PWA应用程序依然还能正常工作。</p></li>
+</ol>
+</div>
+<div class="section" id="id10">
+<h3><span class="sectnum">23.7.9</span> 为应用增加App Shell技术<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<p>截止到目前，咱们的应用已经完成了所有的功能。接下来，演示如何使用App Shell技术，保证在页面刷新时，缩短显示白屏的时间。</p>
+<ol class="arabic simple">
+<li><p>使用Angular CLI 命令为项目添加App Shell，具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng generate app-shell
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>编辑app-shell组件模板。编辑文件src/app/app-shell/app-shell.component.html，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&lt;p&gt;演示app-shell功能&lt;/p&gt;
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><p>使用App Shell技术构建Angular应用程序生成静态文件，具体命令如下（根据环境二选一）：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng run pwa-ex100:app-shell <span class="c1"># 开发环境</span>
+ng run pwa-ex100:app-shell:production <span class="c1"># 生产环境</span>
+</pre></div>
+</div>
+<p>上述命令执行完成后，在dist/pwa-ex100目录下，将会生成2个子目录：browser和server目录。browser目录下对应的应用的全部静态文件，server目录下的文件用作动态部署时的入口文件。</p>
+</div></blockquote>
+<ol class="arabic simple" start="4">
+<li><p>在开发阶段，本地可以动态部署app-shell应用，具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng serve --prod
+</pre></div>
+</div>
+<p>上述命令将会启动本地 Node Server 服务，其入口文件是dist/pwa-ex100/server/main.js文件。部署完成后，通过地址：<a class="reference external" href="http://localhost:4200">http://localhost:4200</a> 访问应用。</p>
+</div></blockquote>
+<div class="admonition- admonition">
+<p class="admonition-title">注意</p>
+<p>当通过地址：<a class="reference external" href="http://localhost:4200">http://localhost:4200</a> 访问应用时，查看页面控制台，发现有错误信息：</p>
+<p>Service worker registration failed with: TypeError: Failed to register a ServiceWorker for scope (‘<a class="reference external" href="http://localhost:4200/">http://localhost:4200/</a>’) with script (‘<a class="reference external" href="http://localhost:4200/ngsw-worker.js">http://localhost:4200/ngsw-worker.js</a>’): A bad HTTP response code (404) was received when fetching the script.</p>
+<p>这是Service worker服务异常的错误信息，产生的原因是Service Worker服务必须要在HTTPS环境下才工作。</p>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>本地部署PWA应用，具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> dist/pwa-ex100/browser <span class="c1"># 进入到构建后生成的文件夹</span>
+cp index.html <span class="m">404</span>.html  <span class="c1"># 增加404错误页面</span>
+http-server -p <span class="m">8080</span> -c-1 . <span class="c1"># 注意命令后面有个小数点，表示当前目录</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="6">
+<li><p>观察应用程序页面，打开浏览器，输入地址：<a class="reference external" href="http://localhost:8080">http://localhost:8080</a>，等待页面正常显示后，刷新页面，可以看到原先的白屏页面已经显示了文字：演示app-shell功能。也可以，直接打开dist/pwa-ex100/browser/index.html文件检验，可以在HTML源代码中找到文字：演示app-shell功能。</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="pwaapp-shell">
+<h2><span class="sectnum">23.8</span> 正确理解PWA与App Shell技术<a class="headerlink" href="#pwaapp-shell" title="Permalink to this headline">¶</a></h2>
+<p>许多人认为渐进式Web应用程序（PWA）必须具有App Shell技术，这是不正确的。如前所述，App Shell技术作为PWA核心功能中的一块，它能够缩短用户进入页面时的等待时间，但是这个具体的时间取决于应用页面动态数据的多少，如果页面上静态数据占有多，动态数据少甚至没有，那么这时App Shell技术就发挥不了多大的作用了。</p>
+<p>本章在示例pwa-ex100中，完成PWA功能后，额外的增加了演示App Shell技术功能。在添加App Shell技术之前，采用 <code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">build</span></code> 命令构建PWA应用时，默认的文件目录为：“dist/pwa-ex100”。在添加App Shell技术之后，使用 <code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">run</span> <span class="pre">pwa-ex100:app-shell</span></code> 命令构建PWA应用时，Angular CLI命令将之前 <code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">build</span></code> 命令生成的PWA应用文件全部清空了，重新规划了新的目录，“dist/pwa-ex100/browser”和“dist/pwa-ex100/server”，如前所述，browser目录下对应的是PWA应用的全部静态文件，server目录下的文件用作动态部署PWA时的入口文件。由于目录的变更，使用http-server服务部署应用时，需要注意目录的变化。由此可见， <code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">run</span> <span class="pre">pwa-ex100:app-shell</span></code> 命令的构建过程中包含了 <code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">build</span></code> 命令的功能。</p>
+<p>在Angular目前社区的反馈中，App Shell技术一般用来与Angular服务端渲染（Angular Universal SSR）配合使用。</p>
+<div class="admonition- admonition">
+<p class="admonition-title">提示</p>
+<p>关于Angular服务端渲染（Angular Universal）的知识，在本书后续章节中有专题介绍。</p>
+</div>
+</div>
+<div class="section" id="id11">
+<h2><span class="sectnum">23.9</span> 小结<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h2>
+<p>本章介绍了如何为Angular项目添加PWA功能，重点介绍了PWA应用程序有哪些功能，如何增强静态首页体验的功能，Angular应用程序如何与 Service Worker通讯，最后通过实战演示了开发点名系统的PWA示例。</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="message.html" class="btn btn-neutral float-right" title="24 实现简单的消息通知机制" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="communication.html" class="btn btn-neutral float-left" title="22 掌握在Angular组件间通信" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright CVI Talent
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

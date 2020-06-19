@@ -1,0 +1,729 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>25 如何与本地数据打交道</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="26 熟悉Angular测试" href="test.html" />
+    <link rel="prev" title="24 实现简单的消息通知机制" href="message.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/main-page-logo-small-hat.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">目录：</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="start.html">Angular 9</a></li>
+<li class="toctree-l1"><a class="reference internal" href="first.html">第一课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="whatisangular.html"><span class="sectnum">1</span> Angular概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="howtolearn.html"><span class="sectnum">2</span> 学习Angular需要什么基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nodejs.html"><span class="sectnum">3</span> 掌握Node.js和npm基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="second.html">第二课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="typescript.html"><span class="sectnum">4</span> 学习TypeScript知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="firstangular.html"><span class="sectnum">5</span> 快速开启第一个Angular</a></li>
+<li class="toctree-l1"><a class="reference internal" href="third.html">第三课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angcomponent.html"><span class="sectnum">6</span> 学习Angular组件知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angtemplate.html"><span class="sectnum">7</span> 学习Angular模板知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angdirective.html"><span class="sectnum">8</span> 掌握Angular指令应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fourth.html">第四课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angmodule.html"><span class="sectnum">9</span> 学习Angular模块知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angroute.html"><span class="sectnum">10</span> 熟悉Angular路由功能</a></li>
+<li class="toctree-l1"><a class="reference internal" href="injection.html"><span class="sectnum">11</span> 学习Angular的服务及依赖注入</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fifth.html">第五课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reactive.html"><span class="sectnum">12</span> 掌握响应式编程基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form.html"><span class="sectnum">13</span> 学习Angular表单知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="httpclient.html"><span class="sectnum">14</span> 熟悉HttpClient模块</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sixth.html">第六课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pipe.html"><span class="sectnum">15</span> 深入学习Angular管道知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ui.html"><span class="sectnum">16</span> Angular与Angular Material组件库</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rxjs.html"><span class="sectnum">17</span> 学习RxJS在Angular中的实际应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="seventh.html">第七课</a></li>
+<li class="toctree-l1"><a class="reference internal" href="material.html"><span class="sectnum">18</span> 实战基于Angular Material实现表格组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bootstrap.html"><span class="sectnum">19</span> 集成Bootstrap前端组件库</a></li>
+<li class="toctree-l1"><a class="reference internal" href="echart.html"><span class="sectnum">20</span> 在Angular项目中使用图表</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appid.html"><span class="sectnum">21</span> 使用IBM Cloud™ App ID对Angular应用进行认证</a></li>
+<li class="toctree-l1"><a class="reference internal" href="communication.html"><span class="sectnum">22</span> 掌握在Angular组件间通信</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pwa.html"><span class="sectnum">23</span> Angular与渐进式WEB应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="message.html"><span class="sectnum">24</span> 实现简单的消息通知机制</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#"><span class="sectnum">25</span> 如何与本地数据打交道</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#json"><span class="sectnum">25.1</span> 读取本地JSON文件数据</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#typescriptjson"><span class="sectnum">25.1.1</span> 使用TypeScript语言特性读取本地JSON文件数据</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#localdata-ex100-typescriptjson"><span class="sectnum">25.1.2</span> [示例 localdata-ex100] 使用TypeScript语言特性导入及使用本地JSON文件数据</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#es6-json"><span class="sectnum">25.1.3</span> 使用ES6+导入语句导入本地的JSON文件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#localdata-ex200-es6-json"><span class="sectnum">25.1.4</span> [示例 localdata-ex200] 使用ES6+导入语句导入本地的JSON文件数据</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#angularhttpclientjson"><span class="sectnum">25.1.5</span> 使用Angular的HttpClient导入本地JSON文件数据</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#localdata-ex300-angularhttpclientjson"><span class="sectnum">25.1.6</span> [示例 localdata-ex300] 使用Angular的HttpClient导入本地JSON文件数据</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#excel"><span class="sectnum">25.2</span> 导出数据到EXCEL表格</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#xlsx"><span class="sectnum">25.2.1</span> 安装xlsx模块</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#localdata-ex400-xlsxexcel"><span class="sectnum">25.2.2</span> [示例 localdata-ex400] 使用xlsx模块导出数据到EXCEL表格</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id2"><span class="sectnum">25.3</span> 小结</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="test.html"><span class="sectnum">26</span> 熟悉Angular测试</a></li>
+<li class="toctree-l1"><a class="reference internal" href="package.html"><span class="sectnum">27</span> 熟悉Angular环境配置及打包</a></li>
+<li class="toctree-l1"><a class="reference internal" href="universal.html"><span class="sectnum">28</span> 学习Angular服务端渲染</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deploy.html"><span class="sectnum">29</span> 如何部署Angular应用程序</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user.html"><span class="sectnum">30</span> 实战用户管理系统</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">CVI Talent</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">首页</a> &raquo;</li>
+        
+      <li><span class="sectnum">25</span> 如何与本地数据打交道</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        <a href="https://pages.github.ibm.com/lanzejun/talent/index.html" class="fa fa-github"> CVITube</a>
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1><span class="sectnum">25</span> 如何与本地数据打交道<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>日常开发过程中，不可避免的需要读取本地文件的数据。尤其是在涉及到项目的配置数据，或者本地开发测试时，读取本地文件的数据最大的好处之一是能加快程序员的开发效率。</p>
+<div class="section" id="json">
+<h2><span class="sectnum">25.1</span> 读取本地JSON文件数据<a class="headerlink" href="#json" title="Permalink to this headline">¶</a></h2>
+<p>本章结合Angular的特点，介绍3种不同的方式读取本地JSON文件数据。</p>
+<div class="section" id="typescriptjson">
+<h3><span class="sectnum">25.1.1</span> 使用TypeScript语言特性读取本地JSON文件数据<a class="headerlink" href="#typescriptjson" title="Permalink to this headline">¶</a></h3>
+<p>在Typescript 2.9 的官方文档中介绍的一种简单的导入本地JSON文件的解决方案，即从Typescript 2.9版本开始，支持导入本地JSON文件了，仅需要做的工作就是在文件tsconfig.json中编译选项中添加resolveJsonModule选项。即在文件tsconfig.json中，添加如下的内容：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;compilerOptions&quot;</span><span class="o">:</span> <span class="p">{</span>
+   <span class="p">...</span>
+   <span class="s2">&quot;resolveJsonModule&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+   <span class="s2">&quot;allowSyntheticDefaultImports&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>上述编译配置中，resolveJsonModule选项的作用就是允许使用导入语句导入本地JSON文件，就像任何TypeScript模块一样。allowSyntheticDefaultImports选项是可选的，它的目的是允许项目识别从模块进行默认导入。Angular从6.1版本起，开始支持TypeScript 2.9，因此Angular 6.1+ 之后的版本都支持这种方式导入JSON文件。</p>
+<p>下面通过具体的示例来讲解如何使用TypeScript语言特性导入及使用本地JSON文件数据。</p>
+</div>
+<div class="section" id="localdata-ex100-typescriptjson">
+<h3><span class="sectnum">25.1.2</span> [示例 localdata-ex100] 使用TypeScript语言特性导入及使用本地JSON文件数据<a class="headerlink" href="#localdata-ex100-typescriptjson" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>用Angular CLI构建应用程序，具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng n localdata-ex100 -S --defaults<span class="o">=</span><span class="nb">true</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>启动服务，具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng serve
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><p>查看应用程序结果。打开Web浏览器并浏览到 “<a class="reference external" href="http://localhost:4200">http://localhost:4200</a>”，应该看到文本 “Welcome to localdata-ex100!”。</p></li>
+<li><p>创建本地JSON格式文件src/app/_files/users.json，文件内容如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
+   <span class="p">{</span> <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Murphy&quot;</span> <span class="p">},</span>
+   <span class="p">{</span> <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Bombasto&quot;</span> <span class="p">},</span>
+   <span class="p">{</span> <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Magneta&quot;</span> <span class="p">},</span>
+   <span class="p">{</span> <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Tornado&quot;</span> <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="5">
+<li><p>编辑文件tsconfig.json，在编译选项compilerOptions中添加下面两个配置选项：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;compilerOptions&quot;</span><span class="o">:</span> <span class="p">{</span>
+   <span class="p">...</span>
+   <span class="s2">&quot;resolveJsonModule&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+   <span class="s2">&quot;allowSyntheticDefaultImports&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="6">
+<li><p>编辑组件。编辑文件src/app/app.component.ts，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Component</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">users</span> <span class="nx">from</span> <span class="s1">&#39;./_files/users.json&#39;</span><span class="p">;</span> <span class="c1">// 导入本地文件</span>
+
+<span class="kd">@Component</span><span class="p">({</span>
+   <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-root&#39;</span><span class="p">,</span>
+   <span class="nx">templateUrl</span><span class="o">:</span> <span class="s1">&#39;./app.component.html&#39;</span><span class="p">,</span>
+   <span class="nx">styleUrls</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;./app.component.css&#39;</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">AppComponent</span> <span class="p">{</span>
+<span class="nx">title</span> <span class="o">=</span> <span class="s1">&#39;localdata-ex100&#39;</span><span class="p">;</span>
+<span class="nx">userList</span><span class="o">:</span> <span class="p">{</span> <span class="nx">id</span>: <span class="kt">number</span><span class="p">,</span> <span class="nx">name</span>: <span class="kt">string</span> <span class="p">}[]</span> <span class="o">=</span> <span class="nx">users</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="7">
+<li><p>编辑组件模板。编辑文件src/app/app.component.html，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&lt;div&gt;
+&lt;h3&gt;
+   读取本地JSON文件中的数据
+&lt;/h3&gt;
+&lt;ul *ngFor=&quot;let item of userList&quot;&gt;
+   &lt;li&gt;
+      id :{{item.id}}，姓名：{{item.name}}
+   &lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="8">
+<li><p>观察应用程序页面，页面显示效果如图26-1所示：</p></li>
+</ol>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/Figure26-1.png"><img alt="../_images/Figure26-1.png" src="../_images/Figure26-1.png" style="width: 400px;" /></a>
+<p>图26-1 加载及使用本地JSON文件</p>
+</div></blockquote>
+<p>在上述示例中，步骤5的作用是允许使用导入语句导入本地JSON文件。默认情况下，TypeScript编译器不识别导入的本地JSON文件。</p>
+</div>
+<div class="section" id="es6-json">
+<h3><span class="sectnum">25.1.3</span> 使用ES6+导入语句导入本地的JSON文件<a class="headerlink" href="#es6-json" title="Permalink to this headline">¶</a></h3>
+<p>第2种解决方案是可以使用ES6+导入语句导入本地的JSON文件。这种方案的操作步骤分为3步：</p>
+<p>首先，在Angular项目的文件夹src/app目录下新建一个文件，文件名如：json-typings.d.ts，并添加以下内容：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">declare</span> <span class="nx">module</span> <span class="s2">&quot;*.json&quot;</span> <span class="p">{</span>
+   <span class="kr">const</span> <span class="nx">value</span>: <span class="kt">any</span><span class="p">;</span>
+   <span class="kr">export</span> <span class="k">default</span> <span class="nx">value</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>然后，在项目的任意目录下，创建一个本地的JSON文件，如：data.json。</p>
+<p>最后，在需要用到该JSON数据的组件里，通过下面的语句导入其数据：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="o">*</span> <span class="kr">as</span> <span class="nx">data</span> <span class="nx">from</span> <span class="s2">&quot;data.json&quot;</span><span class="p">;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>下面，我们通过示例演示使用ES6+导入语句导入本地的JSON文件。</p>
+</div>
+<div class="section" id="localdata-ex200-es6-json">
+<h3><span class="sectnum">25.1.4</span> [示例 localdata-ex200] 使用ES6+导入语句导入本地的JSON文件数据<a class="headerlink" href="#localdata-ex200-es6-json" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>用Angular CLI构建应用程序，具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng n localdata-ex200 -S --defaults<span class="o">=</span><span class="nb">true</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>启动服务，具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng serve
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><p>查看应用程序结果。打开Web浏览器并浏览到 “<a class="reference external" href="http://localhost:4200">http://localhost:4200</a>”，应该看到文本 “Welcome to localdata-ex200!”。</p></li>
+<li><p>创建本地JSON格式文件src/app/_files/users.json，文件内容如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
+   <span class="p">{</span> <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Murphy&quot;</span> <span class="p">},</span>
+   <span class="p">{</span> <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Bombasto&quot;</span> <span class="p">},</span>
+   <span class="p">{</span> <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Magneta&quot;</span> <span class="p">},</span>
+   <span class="p">{</span> <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Tornado&quot;</span> <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="5">
+<li><p>创建文件src/app/json-typings.d.ts，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">declare</span> <span class="nx">module</span> <span class="s2">&quot;*.json&quot;</span> <span class="p">{</span>
+   <span class="kr">const</span> <span class="nx">value</span>: <span class="kt">any</span><span class="p">;</span>
+   <span class="kr">export</span> <span class="k">default</span> <span class="nx">value</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="6">
+<li><p>编辑组件。编辑文件src/app/app.component.ts，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Component</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">users</span> <span class="nx">from</span> <span class="s1">&#39;./_files/users.json&#39;</span><span class="p">;</span> <span class="c1">// 导入本地文件</span>
+
+<span class="kd">@Component</span><span class="p">({</span>
+   <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-root&#39;</span><span class="p">,</span>
+   <span class="nx">templateUrl</span><span class="o">:</span> <span class="s1">&#39;./app.component.html&#39;</span><span class="p">,</span>
+   <span class="nx">styleUrls</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;./app.component.css&#39;</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">AppComponent</span> <span class="p">{</span>
+<span class="nx">title</span> <span class="o">=</span> <span class="s1">&#39;localdata-ex100&#39;</span><span class="p">;</span>
+<span class="nx">userList</span><span class="o">:</span> <span class="p">{</span> <span class="nx">id</span>: <span class="kt">number</span><span class="p">,</span> <span class="nx">name</span>: <span class="kt">string</span> <span class="p">}[]</span> <span class="o">=</span> <span class="nx">users</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="7">
+<li><p>编辑组件模板。编辑文件src/app/app.component.html，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&lt;div&gt;
+&lt;h3&gt;
+   读取本地JSON文件中的数据
+&lt;/h3&gt;
+&lt;ul *ngFor=&quot;let item of userList&quot;&gt;
+   &lt;li&gt;
+      id :{{item.id}}，姓名：{{item.name}}
+   &lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="8">
+<li><p>观察应用程序页面，页面显示效果如图26-1所示一摸一样。</p></li>
+</ol>
+<p>本示例与localdata-ex100进行比较，仅是步骤5不同，在本示例中它是通过使用ES6+导入语句导入本地的JSON文件数据。使用这种方案不在受限TypeScript的版本了，即在Angular 2+的项目中都有效。</p>
+</div>
+<div class="section" id="angularhttpclientjson">
+<h3><span class="sectnum">25.1.5</span> 使用Angular的HttpClient导入本地JSON文件数据<a class="headerlink" href="#angularhttpclientjson" title="Permalink to this headline">¶</a></h3>
+<p>最后一种方式是使用Angular的HttpClient导入本地JSON文件数据。在Angular工程项目中，文件夹src/assets里面的内容被视为静态文件，常放置一些样式（CSS）文件，图片（Image）文件等，而这些文件在项目启动后，可以通过URL进行访问。同理，我们借助这个特性，将JSON文件放置在该目录下，然后在组件中通过HttpClient访问URL的方式，就可以读取到JSON文件里的数据了。</p>
+<p>下面通过示例来演示使用Angular的HttpClient导入本地JSON文件数据</p>
+</div>
+<div class="section" id="localdata-ex300-angularhttpclientjson">
+<h3><span class="sectnum">25.1.6</span> [示例 localdata-ex300] 使用Angular的HttpClient导入本地JSON文件数据<a class="headerlink" href="#localdata-ex300-angularhttpclientjson" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>用Angular CLI构建应用程序，具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng n localdata-ex300 -S --defaults<span class="o">=</span><span class="nb">true</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>启动服务，具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng serve
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><p>查看应用程序结果。打开Web浏览器并浏览到 “<a class="reference external" href="http://localhost:4200">http://localhost:4200</a>”，应该看到文本 “Welcome to localdata-ex300!”。</p></li>
+<li><p>创建本地JSON格式文件src/assets/users.json，文件内容如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
+   <span class="p">{</span> <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Murphy&quot;</span> <span class="p">},</span>
+   <span class="p">{</span> <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Bombasto&quot;</span> <span class="p">},</span>
+   <span class="p">{</span> <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Magneta&quot;</span> <span class="p">},</span>
+   <span class="p">{</span> <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Tornado&quot;</span> <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="5">
+<li><p>编辑模块。编辑文件src/app/app.module.ts，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">BrowserModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/platform-browser&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">NgModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">AppComponent</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./app.component&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">HttpClientModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/common/http&#39;</span><span class="p">;</span>
+
+<span class="kd">@NgModule</span><span class="p">({</span>
+<span class="nx">declarations</span><span class="o">:</span> <span class="p">[</span>
+   <span class="nx">AppComponent</span>
+<span class="p">],</span>
+<span class="nx">imports</span><span class="o">:</span> <span class="p">[</span>
+   <span class="nx">BrowserModule</span><span class="p">,</span>
+   <span class="nx">HttpClientModule</span>
+<span class="p">],</span>
+<span class="nx">providers</span><span class="o">:</span> <span class="p">[],</span>
+<span class="nx">bootstrap</span><span class="o">:</span> <span class="p">[</span><span class="nx">AppComponent</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">AppModule</span> <span class="p">{</span> <span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="6">
+<li><p>编辑组件。编辑文件src/app/app.component.ts，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">OnInit</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">HttpClient</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/common/http&#39;</span><span class="p">;</span>
+
+<span class="kd">@Component</span><span class="p">({</span>
+<span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-root&#39;</span><span class="p">,</span>
+<span class="nx">templateUrl</span><span class="o">:</span> <span class="s1">&#39;./app.component.html&#39;</span><span class="p">,</span>
+<span class="nx">styleUrls</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;./app.component.css&#39;</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">AppComponent</span> <span class="kr">implements</span> <span class="nx">OnInit</span> <span class="p">{</span>
+<span class="nx">title</span> <span class="o">=</span> <span class="s1">&#39;localdata-ex300&#39;</span><span class="p">;</span>
+<span class="nx">userList</span><span class="o">:</span> <span class="p">{</span> <span class="nx">id</span>: <span class="kt">number</span><span class="p">,</span> <span class="nx">name</span>: <span class="kt">string</span> <span class="p">}[];</span>
+
+<span class="kr">constructor</span><span class="p">(</span><span class="kr">private</span> <span class="nx">httpClient</span>: <span class="kt">HttpClient</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+<span class="nx">ngOnInit() {</span>
+   <span class="k">this</span><span class="p">.</span><span class="nx">httpClient</span><span class="p">.</span><span class="nx">get</span><span class="o">&lt;</span><span class="p">{</span> <span class="nx">id</span>: <span class="kt">number</span><span class="p">,</span> <span class="nx">name</span>: <span class="kt">string</span> <span class="p">}[]</span><span class="o">&gt;</span><span class="p">(</span><span class="s2">&quot;assets/users.json&quot;</span><span class="p">).</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">data</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">userList</span> <span class="o">=</span> <span class="nx">data</span><span class="p">;</span>
+   <span class="p">})</span>
+<span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="7">
+<li><p>编辑组件模板。编辑文件src/app/app.component.html，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&lt;div&gt;
+&lt;h3&gt;
+   读取本地JSON文件中的数据
+&lt;/h3&gt;
+&lt;ul *ngFor=&quot;let item of userList&quot;&gt;
+   &lt;li&gt;
+      id :{{item.id}}，姓名：{{item.name}}
+   &lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="8">
+<li><p>观察应用程序页面，页面显示效果如图26-1所示一摸一样。</p></li>
+</ol>
+<p>本示例中，文件夹src/assets里面的JSON文件访问的URL地址为：“assets/users.json”，这意味着，使用这种方式读取的本地文件，在项目外也可以通过URL(例如本地：<a class="reference external" href="http://localhost:4200/assets/users.json">http://localhost:4200/assets/users.json</a>）单独访问JSON文件。</p>
+</div>
+</div>
+<div class="section" id="excel">
+<h2><span class="sectnum">25.2</span> 导出数据到EXCEL表格<a class="headerlink" href="#excel" title="Permalink to this headline">¶</a></h2>
+<p>在工作中，我们经常需要将数据导出成PDF、EXCEL等格式的数据，用于生成发票、报表等分析数据。
+我们选择SheetJS库操作Excel，SheetJS库中的js-xlsx模块是目前关注度最高的处理EXCEL表格的JavaScript库。js-xlsx将注意力集中到了数据转换和导出上，所以它支持相当多种类的数据解析和导出，如支持xls、xlsx、csv和ods等多种类型表格格式，且功能非常强大。</p>
+<div class="section" id="xlsx">
+<h3><span class="sectnum">25.2.1</span> 安装xlsx模块<a class="headerlink" href="#xlsx" title="Permalink to this headline">¶</a></h3>
+<p>在Angular项目中使用SheetJS库中的js-xlsx模块，首先需要安装它，具体命令如下：</p>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>npm i xlsx -S
+</pre></div>
+</div>
+</div></blockquote>
+<p>然后在需要使用该模块的组件中，使用命令导入xlsx：</p>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="o">*</span> <span class="kr">as</span> <span class="nx">XLSX</span> <span class="nx">from</span> <span class="s1">&#39;xlsx&#39;</span><span class="p">;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>下面我们通过示例演示如何使用SheetJS库中的js-xlsx模块将数据导出到EXCEL表格。</p>
+</div>
+<div class="section" id="localdata-ex400-xlsxexcel">
+<h3><span class="sectnum">25.2.2</span> [示例 localdata-ex400] 使用xlsx模块导出数据到EXCEL表格<a class="headerlink" href="#localdata-ex400-xlsxexcel" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>用Angular CLI构建应用程序，具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng n localdata-ex400 -S --defaults<span class="o">=</span><span class="nb">true</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>安装xlsx模块并启动服务，具体命令如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>npm i xlsx -S
+ng serve
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><p>查看应用程序结果。打开Web浏览器并浏览到 “<a class="reference external" href="http://localhost:4200">http://localhost:4200</a>”，应该看到文本 “Welcome to localdata-ex400!”。</p></li>
+<li><p>创建本地JSON格式文件src/app/_files/users.json，文件内容如下：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
+   <span class="p">{</span> <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Murphy&quot;</span> <span class="p">},</span>
+   <span class="p">{</span> <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Bombasto&quot;</span> <span class="p">},</span>
+   <span class="p">{</span> <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Magneta&quot;</span> <span class="p">},</span>
+   <span class="p">{</span> <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Tornado&quot;</span> <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="5">
+<li><p>编辑文件tsconfig.json，在编译选项compilerOptions中添加下面两个配置选项：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;compilerOptions&quot;</span><span class="o">:</span> <span class="p">{</span>
+   <span class="p">...</span>
+   <span class="s2">&quot;resolveJsonModule&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+   <span class="s2">&quot;allowSyntheticDefaultImports&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="6">
+<li><p>编辑组件。编辑文件src/app/app.component.ts，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">ViewChild</span><span class="p">,</span> <span class="nx">ElementRef</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">users</span> <span class="nx">from</span> <span class="s1">&#39;./_files/users.json&#39;</span><span class="p">;</span> <span class="c1">// 导入本地文件</span>
+<span class="kr">import</span> <span class="o">*</span> <span class="kr">as</span> <span class="nx">XLSX</span> <span class="nx">from</span> <span class="s1">&#39;xlsx&#39;</span><span class="p">;</span>
+
+<span class="kd">@Component</span><span class="p">({</span>
+<span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-root&#39;</span><span class="p">,</span>
+<span class="nx">templateUrl</span><span class="o">:</span> <span class="s1">&#39;./app.component.html&#39;</span><span class="p">,</span>
+<span class="nx">styleUrls</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;./app.component.css&#39;</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">AppComponent</span> <span class="p">{</span>
+<span class="nx">title</span> <span class="o">=</span> <span class="s1">&#39;localdata-ex400&#39;</span><span class="p">;</span>
+<span class="nx">userList</span><span class="o">:</span> <span class="p">{</span> <span class="nx">id</span>: <span class="kt">number</span><span class="p">,</span> <span class="nx">name</span>: <span class="kt">string</span> <span class="p">}[]</span> <span class="o">=</span> <span class="nx">users</span><span class="p">;</span>
+<span class="nx">fileName</span> <span class="o">=</span> <span class="s1">&#39;ExcelSheet.xlsx&#39;</span><span class="p">;</span>
+
+<span class="c1">// ViewChild装饰器获取模板中的元素</span>
+<span class="kd">@ViewChild</span><span class="p">(</span><span class="s1">&#39;exceltable&#39;</span><span class="p">)</span>
+<span class="nx">excelTable</span>: <span class="kt">ElementRef</span><span class="p">;</span>
+
+<span class="nx">exportexcel</span><span class="p">()</span><span class="o">:</span> <span class="k">void</span> <span class="p">{</span>
+   <span class="kr">const</span> <span class="nx">ws</span>: <span class="kt">XLSX.WorkSheet</span> <span class="o">=</span> <span class="nx">XLSX</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">table_to_sheet</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">excelTable</span><span class="p">.</span><span class="nx">nativeElement</span><span class="p">);</span>
+
+   <span class="cm">/* 生成 workbook 和添加 worksheet */</span>
+   <span class="kr">const</span> <span class="nx">wb</span>: <span class="kt">XLSX.WorkBook</span> <span class="o">=</span> <span class="nx">XLSX</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">book_new</span><span class="p">();</span>
+   <span class="nx">XLSX</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">book_append_sheet</span><span class="p">(</span><span class="nx">wb</span><span class="p">,</span> <span class="nx">ws</span><span class="p">,</span> <span class="s1">&#39;Sheet1&#39;</span><span class="p">);</span>
+
+   <span class="cm">/* 保存数据到文件中 */</span>
+   <span class="nx">XLSX</span><span class="p">.</span><span class="nx">writeFile</span><span class="p">(</span><span class="nx">wb</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">fileName</span><span class="p">);</span>
+
+<span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="7">
+<li><p>编辑组件模板。编辑文件src/app/app.component.html，并将其更改为以下内容：</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&lt;div&gt;
+&lt;button (click)=&quot;exportexcel()&quot;&gt;导出Excel&lt;/button&gt;
+
+&lt;table #exceltable&gt;
+   &lt;tr&gt;
+      &lt;th&gt;Id&lt;/th&gt;
+      &lt;th&gt;Name&lt;/th&gt;
+   &lt;/tr&gt;
+   &lt;tr *ngFor=&quot;let item of userList&quot;&gt;
+      &lt;td&gt;{{item.id}}&lt;/td&gt;
+      &lt;td&gt;{{item.name}}&lt;/td&gt;
+   &lt;/tr&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="8">
+<li><p>观察应用程序页面，页面显示效果如图26-2所示：</p></li>
+</ol>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/Figure26-2.png"><img alt="../_images/Figure26-2.png" src="../_images/Figure26-2.png" style="width: 400px;" /></a>
+<p>图26-2 导出数据到EXCEL表格中</p>
+</div></blockquote>
+<p>在上面的步骤中，完成了以下内容：</p>
+<ol class="arabic simple">
+<li><p>步骤2中，安装了xlsx模块；</p></li>
+<li><p>步骤5中，使用TypeScript语言特性读取本地JSON文件数据；</p></li>
+<li><p>步骤6中使用ViewChild装饰器获取模板中定义的表格元素“exceltable”，接着将其值转换为本地DOM元素类型，先生成 workbook对象和添加worksheet表，最后使用writeFile()方法将表格数据保存到指定的EXCEL文件中；</p></li>
+<li><p>在页面中点击“导出Excel”按钮，将自动生成ExcelSheet.xlsx文件并下载到本地。</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="id2">
+<h2><span class="sectnum">25.3</span> 小结<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>本章介绍了如何在Angular工程中读取本地JSON数据和导出数据到EXCEL表格中，重点介绍了3种导入本地JSON数据的方式，同时分析了它们的使用范围，通过本章的示例，读者掌握了如何与本地数据打交道。</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="test.html" class="btn btn-neutral float-right" title="26 熟悉Angular测试" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="message.html" class="btn btn-neutral float-left" title="24 实现简单的消息通知机制" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright CVI Talent
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
